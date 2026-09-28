@@ -1,0 +1,20 @@
+# Docs (internal, not for public repo)
+docs/
+AGENTS.md
+
+# Backend
+backend/.env
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/app/data/*.db
+backend/*.db
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# OS/Editor
+.DS_Store
+.idea/
+*.pyc

@@ -1,0 +1,167 @@
+name_en,name_hi,category,energy_kcal,protein_g,iron_mg,calcium_mg,vit_d_iu,b12_mcg,serving_g
+"Rice, raw (white, milled)",चावल (कच्चा),Cereals,356,7.9,0.65,7,0,0.0,60
+"Rice, raw (parboiled)",उसना चावल (कच्चा),Cereals,352,7.8,0.72,8,0,0.0,60
+"Rice, raw (brown)",ब्राउन राइस (कच्चा),Cereals,354,9.2,1.02,11,0,0.0,60
+"Rice flakes (poha), raw",पोहा (कच्चा),Cereals,354,7.4,4.46,9,0,0.0,40
+Puffed rice (murmura),मुरमुरे,Cereals,362,7.5,4.55,15,0,0.0,20
+Wheat flour (atta),गेहूं का आटा,Cereals,320,10.6,4.1,31,0,0.0,40
+"Wheat flour, refined (maida)",मैदा,Cereals,352,10.4,1.77,20,0,0.0,40
+Semolina (sooji/rava),सूजी / रवा,Cereals,334,11.4,2.98,29,0,0.0,40
+Broken wheat (dalia),दलिया,Cereals,342,10.8,3.86,27,0,0.0,40
+Vermicelli (sevai),सेवई,Cereals,333,9.7,2.02,19,0,0.0,30
+Bajra (pearl millet),बाजरा,Cereals,348,11.0,6.42,27,0,0.0,40
+Jowar (sorghum),ज्वार,Cereals,334,10.0,3.95,28,0,0.0,40
+Ragi (finger millet),रागी,Cereals,321,7.2,4.62,364,0,0.0,40
+"Maize, dry",मक्का (सूखी),Cereals,334,8.8,2.49,9,0,0.0,50
+Quinoa,क्विनोआ,Cereals,328,13.1,7.51,198,0,0.0,40
+Barley (jau),जौ,Cereals,316,10.9,1.56,29,0,0.0,40
+"Red gram dal (toor/arhar), raw",तूर / अरहर दाल (कच्ची),Pulses,331,21.7,3.9,72,0,0.0,30
+"Green gram dal (moong), raw",मूंग दाल (कच्ची),Pulses,326,23.9,3.93,43,0,0.0,30
+"Green gram, whole (moong), raw",साबुत मूंग (कच्चा),Pulses,294,22.5,4.89,92,0,0.0,30
+"Lentil dal (masoor), raw",मसूर दाल (कच्ची),Pulses,322,24.4,7.06,44,0,0.0,30
+"Bengal gram dal (chana dal), raw",चना दाल (कच्ची),Pulses,329,21.6,6.08,46,0,0.0,30
+"Bengal gram, whole (kala chana), raw",काला चना (कच्चा),Pulses,287,18.8,6.78,150,0,0.0,50
+"Black gram dal (urad), raw",उड़द दाल (कच्ची),Pulses,324,23.1,4.67,56,0,0.0,30
+"Black gram, whole (urad), raw",साबुत उड़द (कच्चा),Pulses,291,22.0,5.97,86,0,0.0,30
+"Rajma (kidney beans), raw",राजमा (कच्चा),Pulses,298,19.5,6.2,131,0,0.0,50
+"Cowpea (lobia), raw",लोबिया (कच्चा),Pulses,320,20.8,5.47,83,0,0.0,30
+"Peas, dry (matar)",सूखे मटर,Pulses,303,20.4,5.09,75,0,0.0,30
+"Soya bean, raw",सोयाबीन (कच्चा),Pulses,379,36.7,8.25,217,0,0.0,30
+"Moth bean (matki), raw",मोठ / मटकी (कच्ची),Pulses,309,19.8,7.9,154,0,0.0,30
+Spinach (palak),पालक,Vegetables,24,2.1,2.95,82,0,0.0,100
+Fenugreek leaves (methi),मेथी के पत्ते,Vegetables,34,3.7,5.69,274,0,0.0,50
+Amaranth leaves (chaulai),चौलाई,Vegetables,32,3.4,5.72,281,0,0.0,100
+Drumstick leaves (moringa),सहजन के पत्ते,Vegetables,67,6.4,4.56,314,0,0.0,50
+Mustard leaves (sarson),सरसों का साग,Vegetables,30,3.5,2.84,191,0,0.0,100
+Bathua leaves,बथुआ,Vegetables,28,2.5,2.66,211,0,0.0,100
+Cabbage (patta gobhi),पत्ता गोभी,Vegetables,22,1.4,0.35,52,0,0.0,100
+Colocasia leaves (arbi ke patte),अरबी के पत्ते,Vegetables,43,3.4,3.41,216,0,0.0,100
+Coriander leaves (dhania),धनिया पत्ता,Vegetables,31,3.5,5.3,146,0,0.0,10
+Curry leaves,कढ़ी पत्ता,Vegetables,64,7.4,8.67,659,0,0.0,5
+Cauliflower (phool gobhi),फूलगोभी,Vegetables,23,2.2,0.96,25,0,0.0,100
+Brinjal (baingan),बैंगन,Vegetables,25,1.5,0.37,17,0,0.0,100
+Okra (bhindi),भिंडी,Vegetables,27,2.1,0.84,86,0,0.0,100
+Bitter gourd (karela),करेला,Vegetables,20,1.5,1.17,18,0,0.0,100
+Bottle gourd (lauki),लौकी,Vegetables,13,0.5,0.29,16,0,0.0,150
+Pumpkin (kaddu),कद्दू,Vegetables,24,0.9,0.32,24,0,0.0,100
+"Green peas, fresh (matar)",हरी मटर,Vegetables,81,7.2,1.58,28,0,0.0,80
+French beans (fansi),फ्रेंच बीन्स / फली,Vegetables,23,2.3,1.12,53,0,0.0,100
+Ridge gourd (turai),तुरई,Vegetables,14,0.9,0.46,14,0,0.0,100
+Cluster beans (gavar),ग्वार फली,Vegetables,40,3.6,3.9,121,0,0.0,100
+"Capsicum, green (shimla mirch)",शिमला मिर्च,Vegetables,16,1.1,0.48,15,0,0.0,100
+Cucumber (kheera),खीरा,Vegetables,20,0.7,0.46,16,0,0.0,100
+Drumstick pods (sahjan),सहजन की फली,Vegetables,29,2.6,0.73,33,0,0.0,100
+Tinda,टिंडा,Vegetables,14,1.0,0.41,20,0,0.0,100
+Parwal (pointed gourd),परवल,Vegetables,24,1.4,0.5,31,0,0.0,100
+Tomato,टमाटर,Vegetables,19,0.8,0.26,10,0,0.0,100
+Onion (pyaz),प्याज,Vegetables,48,1.5,0.43,21,0,0.0,100
+Garlic (lahsun),लहसुन,Vegetables,123,6.8,0.97,19,0,0.0,5
+Ginger (adrak),अदरक,Vegetables,55,2.2,1.9,19,0,0.0,5
+Green chilli (hari mirch),हरी मिर्च,Vegetables,42,2.4,1.2,18,0,0.0,5
+Beetroot (chukandar),चुकंदर,Vegetables,36,2.0,0.76,17,0,0.0,100
+Carrot (gajar),गाजर,Vegetables,33,1.0,0.6,35,0,0.0,100
+"Radish, white (mooli)",मूली,Vegetables,32,0.8,0.38,32,0,0.0,100
+Potato (aloo),आलू,Vegetables,68,1.6,0.59,9,0,0.0,150
+Sweet potato (shakarkand),शकरकंद,Vegetables,109,1.3,0.43,28,0,0.0,150
+Colocasia (arbi),अरबी,Vegetables,89,3.3,0.66,30,0,0.0,100
+"Yam, elephant foot (suran)",सूरन / जिमीकंद,Vegetables,84,2.6,1.22,47,0,0.0,100
+Banana (kela),केला,Fruits,108,1.3,0.32,8,0,0.0,100
+"Mango, ripe (aam)",आम,Fruits,48,0.5,0.39,15,0,0.0,150
+Guava (amrud),अमरूद,Fruits,39,1.3,0.36,16,0,0.0,100
+"Papaya, ripe (papita)",पपीता,Fruits,24,0.4,0.23,15,0,0.0,150
+Orange (santra),संतरा,Fruits,37,0.7,0.81,20,0,0.0,100
+Sweet lime (mosambi),मौसम्बी,Fruits,27,0.8,0.11,26,0,0.0,150
+Pomegranate (anar),अनार,Fruits,55,1.3,0.31,11,0,0.0,100
+Apple (seb),सेब,Fruits,60,0.3,0.23,8,0,0.0,100
+Watermelon (tarbooz),तरबूज,Fruits,19,0.6,0.19,5,0,0.0,200
+Grapes (angoor),अंगूर,Fruits,69,1.0,0.28,14,0,0.0,100
+"Dates, dry (khajur)",खजूर,Fruits,316,2.4,4.0,69,0,0.0,30
+Raisins (kishmish),किशमिश,Fruits,301,2.7,5.54,63,0,0.0,30
+Indian gooseberry (amla),आंवला,Fruits,24,0.3,1.25,20,0,0.0,50
+Lemon juice (nimbu),नींबू का रस,Fruits,37,0.4,0.12,23,0,0.0,10
+Muskmelon (kharbuja),खरबूजा,Fruits,25,0.5,0.2,9,0,0.0,150
+Pineapple (ananas),अनानास,Fruits,43,0.5,0.28,11,0,0.0,100
+Sapota (chikoo),चीकू,Fruits,73,0.9,0.49,18,0,0.0,100
+Custard apple (sitaphal),सीताफल,Fruits,99,1.6,0.42,28,0,0.0,100
+Fig (anjeer),अंजीर,Fruits,82,2.0,0.69,79,0,0.0,50
+Pear (nashpati),नाशपाती,Fruits,38,0.4,0.28,7,0,0.0,100
+Tamarind pulp (imli),इमली का गूदा,Fruits,288,2.9,9.16,149,0,0.0,10
+Almond (badam),बादाम,Nuts,609,18.4,4.59,228,0,0.0,30
+Cashew nut (kaju),काजू,Nuts,583,18.8,5.95,34,0,0.0,30
+Groundnut (moongfali),मूंगफली,Nuts,520,23.6,3.44,54,0,0.0,30
+"Sesame seeds, white (til)",तिल,Nuts,520,21.7,15.04,1283,0,0.0,15
+Flax seeds (alsi),अलसी,Nuts,444,18.6,5.44,257,0,0.0,15
+Sunflower seeds,सूरजमुखी के बीज,Nuts,586,23.5,5.85,176,0,0.0,15
+Walnut (akhrot),अखरोट,Nuts,671,14.9,3.21,105,0,0.0,30
+Pistachio (pista),पिस्ता,Nuts,539,23.4,4.5,135,0,0.0,30
+"Coconut, fresh (nariyal)",नारियल (ताज़ा),Nuts,409,3.8,1.3,8,0,0.0,50
+"Coconut, dry (khopra)",सूखा नारियल (खोपरा),Nuts,624,7.3,3.13,32,0,0.0,20
+Garden cress seeds (halim),हलीम / असालिया,Nuts,445,23.4,17.2,318,0,0.0,10
+"Milk, cow",दूध (गाय),Dairy,73,3.3,0.15,118,0,0.5,250
+"Milk, buffalo",दूध (भैंस),Dairy,107,3.7,0.16,121,0,0.5,250
+Paneer,पनीर,Dairy,258,18.9,0.9,476,0,0.4,100
+Khoa (mawa),खोया / मावा,Dairy,316,16.3,2.32,602,0,0.5,30
+"Egg, whole, raw",अंडा (कच्चा),Eggs,135,13.3,1.82,49,34,0.9,50
+"Egg, whole, boiled",उबला अंडा,Eggs,148,13.4,1.87,55,30,1.1,50
+Egg omelette,ऑमलेट,Eggs,170,16.5,2.16,53,119,1.1,60
+"Chicken, skinless (leg/thigh/breast), raw",चिकन (बिना त्वचा),Meat,251,19.8,1.07,17,50,0.4,100
+"Chicken breast, skinless, raw",चिकन ब्रेस्ट,Meat,168,21.8,0.83,13,55,0.4,100
+"Mutton (goat), raw",मटन (बकरा),Meat,161,20.9,1.71,6,20,1.1,100
+"Fish, rohu",रोहू मछली,Fish,102,19.7,1.04,39,34,2.0,100
+"Fish, catla",कतला मछली,Fish,94,17.9,1.14,44,76,2.0,100
+"Fish, pomfret",पॉम्फ्रेट,Fish,112,19.7,0.5,13,45,2.0,100
+"Fish, Bombay duck (bombil)",बॉम्बे डक (बोम्बिल),Fish,69,13.5,0.81,159,38,2.0,100
+"Fish, sardine",सार्डिन (तारली),Fish,152,17.9,0.83,42,140,9.0,100
+"Fish, tuna",टूना,Fish,112,24.5,1.6,10,4,3.0,100
+"Fish, salmon",सैल्मन,Fish,172,21.0,0.98,24,34,3.5,100
+Prawns,झींगा,Fish,81,16.2,0.82,58,26,2.0,100
+"Mushroom, button, fresh",मशरूम,Vegetables,27,3.7,0.29,18,0,0.0,50
+Jaggery (gur),गुड़,Sugars,354,1.8,4.63,107,0,0.0,20
+Sugarcane juice,गन्ने का रस,Beverages,58,0.2,1.12,18,0,0.0,200
+Coconut water,नारियल पानी,Beverages,15,0.3,0.06,27,0,0.0,250
+Ghee,घी,Fats,900,0.0,0.0,0,0,0.0,10
+Mustard oil,सरसों का तेल,Fats,884,0.0,0.0,0,0,0.0,10
+Groundnut oil (cooking oil),मूंगफली का तेल,Fats,884,0.0,0.0,0,0,0.0,10
+Sunflower oil,सूरजमुखी का तेल,Fats,884,0.0,0.0,0,0,0.0,10
+Coconut oil,नारियल तेल,Fats,884,0.0,0.0,0,0,0.0,10
+Sugar (chini),चीनी,Sugars,398,0.0,0.05,1,0,0.0,10
+Honey (shahad),शहद,Sugars,304,0.3,0.4,6,0,0.0,15
+"Tea, plain brewed (no milk/sugar)",चाय (सादी),Beverages,1,0.0,0.0,0,0,0.0,150
+"Coffee, plain brewed (no milk/sugar)",कॉफ़ी (सादी),Beverages,2,0.0,0.0,0,0,0.0,150
+"Rice, cooked (white)",पका चावल,Cereals,143,3.2,0.26,3,0,0.0,150
+"Rice, cooked (brown)",पका ब्राउन राइस,Cereals,141,3.7,0.41,4,0,0.0,150
+"Roti / chapati (wheat, plain)",रोटी / चपाती,Cereals,241,7.9,3.08,23,0,0.0,40
+Bajra roti (rotla),बाजरा रोटी (रोटला),Cereals,262,8.2,4.83,21,0,0.0,60
+Jowar roti (bhakri),ज्वार रोटी (भाखरी),Cereals,251,7.5,2.97,21,0,0.0,50
+"Dal, cooked (toor/arhar, plain)",पकी दाल (अरहर),Pulses,66,4.3,0.78,14,0,0.0,150
+"Dal, cooked (moong, plain)",पकी मूंग दाल,Pulses,65,4.8,0.79,9,0,0.0,150
+"Dal, cooked (masoor, plain)",पकी मसूर दाल,Pulses,64,4.9,1.41,9,0,0.0,150
+"Dal, cooked (chana dal, plain)",पकी चना दाल,Pulses,66,4.3,1.22,9,0,0.0,150
+"Dal, cooked (urad, plain)",पकी उड़द दाल,Pulses,65,4.6,0.93,11,0,0.0,150
+"Rajma, boiled (no gravy)",उबला राजमा,Pulses,119,7.8,2.48,53,0,0.0,100
+"Chana / chole, boiled (no gravy)",उबला चना / छोले,Pulses,115,7.5,2.71,60,0,0.0,100
+"Curd (dahi), whole milk",दही,Dairy,73,3.3,0.15,118,0,0.5,150
+"Buttermilk (chaas), diluted",छाछ,Dairy,18,0.8,0.04,30,0,0.12,250
+Chai (milk tea with sugar),चाय (दूध और चीनी),Beverages,43,1.3,0.06,47,0,0.2,150
+"Khichdi (rice + moong dal, with ghee)",खिचड़ी,Mixed,83,3.2,0.46,5,0,0.0,200
+"Dal fry / dal tadka (toor, home style)",दाल फ्राई / तड़का,Mixed,103,4.6,0.86,18,0,0.0,150
+"Sabzi, mixed vegetable (dry)",मिक्स सब्ज़ी,Mixed,95,2.4,0.84,23,0,0.0,100
+Aloo sabzi (dry),आलू की सब्ज़ी,Mixed,110,1.6,0.59,11,0,0.0,100
+Palak paneer,पालक पनीर,Mixed,123,6.6,2.25,182,0,0.1,150
+Chana masala (chole),छोले मसाला,Mixed,95,4.1,1.45,34,0,0.0,150
+Rajma masala,राजमा मसाला,Mixed,97,4.2,1.33,30,0,0.0,150
+Sambar,सांभर,Mixed,47,2.3,0.48,14,0,0.0,150
+Idli,इडली,Mixed,152,5.1,0.75,9,0,0.0,80
+"Dosa, plain",सादा डोसा,Mixed,218,6.1,0.9,10,0,0.0,100
+Poha (prepared),पोहा (बना हुआ),Mixed,176,4.0,1.69,10,0,0.0,150
+Upma (sooji),उपमा,Mixed,104,2.8,0.75,11,0,0.0,150
+"Paratha, plain (wheat, with oil)",सादा पराठा,Mixed,290,7.3,2.84,21,0,0.0,65
+"Thepla, methi",मेथी थेपला,Mixed,294,7.8,4.74,128,0,0.0,50
+Dhokla / khaman (chana dal based),ढोकला / खमण,Mixed,141,7.2,2.03,15,0,0.0,60
+Kadhi (Gujarati style),कढ़ी,Mixed,47,2.2,0.35,42,0,0.17,150
+Curd rice,दही चावल,Mixed,108,3.2,0.2,60,0,0.25,200
+Egg bhurji,अंडा भुर्जी,Mixed,155,10.6,1.51,43,26,0.69,100
+Paneer bhurji,पनीर भुर्जी,Mixed,212,12.1,0.69,299,0,0.25,100
+Chicken curry,चिकन करी,Mixed,190,11.8,0.74,16,28,0.23,150
+Fish curry (rohu),फिश करी,Mixed,107,11.3,0.69,27,19,1.11,150
+Vegetable pulao,वेज पुलाव,Mixed,147,3.2,0.45,11,0,0.0,150
