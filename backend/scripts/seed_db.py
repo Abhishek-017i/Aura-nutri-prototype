@@ -7,7 +7,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from sqlalchemy.orm import Session
 
 from app.database import Base, engine
-from app.models import Food
+from app.models import Food, MealLog, User
+
+# Import all models so Base.metadata.create_all creates every table.
+_ = (MealLog, User)
 
 
 def _to_float(value: str) -> float:

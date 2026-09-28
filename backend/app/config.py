@@ -19,6 +19,7 @@ class Settings:
     def __init__(self) -> None:
         _load_env()
         self.groq_api_key: str = os.getenv("GROQ_API_KEY", "")
+        self.groq_rate_limit_rpm: int = int(os.getenv("GROQ_RATE_LIMIT_RPM", "20"))
         self.database_url: str = os.getenv(
             "DATABASE_URL", "sqlite:///./app/data/aura.db"
         )

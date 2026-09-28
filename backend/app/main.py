@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.database import Base, engine
 from app.errors import add_exception_handler
+from app.routers import chat, cheat_day, dashboard, foods, logs, parse, users
 
 structlog.configure(
     processors=[
@@ -32,6 +33,14 @@ def create_app() -> FastAPI:
     add_exception_handler(app)
 
     Base.metadata.create_all(bind=engine)
+
+    app.include_router(users.router)
+    app.include_router(foods.router)
+    app.include_router(logs.router)
+    app.include_router(parse.router)
+    app.include_router(dashboard.router)
+    app.include_router(cheat_day.router)
+    app.include_router(chat.router)
 
     @app.get("/health")
     async def health_check() -> dict[str, str]:
