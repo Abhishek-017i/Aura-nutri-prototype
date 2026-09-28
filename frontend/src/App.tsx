@@ -1,121 +1,84 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
-
 function App() {
-  const [count, setCount] = useState(0)
+  const colors = [
+    { name: 'paper', value: '#FAF7F2' },
+    { name: 'ink', value: '#1A1A18' },
+    { name: 'ink-soft', value: '#5C5A55' },
+    { name: 'line', value: '#E5DFD5' },
+    { name: 'surface', value: '#FFFFFF' },
+    { name: 'iron', value: '#B7410E' },
+    { name: 'calcium', value: '#2F6B5E' },
+    { name: 'vitd', value: '#C98A12' },
+    { name: 'b12', value: '#6B4FA0' },
+    { name: 'risk-high', value: '#B7410E' },
+    { name: 'risk-med', value: '#C98A12' },
+    { name: 'risk-low', value: '#2F6B5E' },
+  ] as const
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <main className="min-h-screen w-full max-w-dashboard mx-auto p-6">
+      <h1 className="font-display text-3xl font-semibold text-ink mb-6">
+        AURA-Nutri Design Tokens
+      </h1>
+
+      <section className="mb-8">
+        <h2 className="font-display text-xl font-medium text-ink mb-4">
+          Colors
+        </h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          {colors.map(({ name, value }) => (
+            <div
+              key={name}
+              className="border border-line rounded-card p-4 bg-surface"
+            >
+              <div
+                className="h-16 w-full rounded-data mb-3 border border-line"
+                style={{ backgroundColor: value }}
+              />
+              <p className="text-sm font-medium text-ink">{name}</p>
+              <p className="text-sm text-ink-soft">{value}</p>
+            </div>
+          ))}
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="font-display text-xl font-medium text-ink mb-4">
+          Typography
+        </h2>
+        <div className="space-y-4">
+          <div className="border border-line rounded-card p-4 bg-surface">
+            <p className="text-sm text-ink-soft mb-1">Display / Fraunces 600</p>
+            <p className="font-display text-2xl font-semibold text-ink">
+              Iron intake today
+            </p>
+          </div>
+          <div className="border border-line rounded-card p-4 bg-surface">
+            <p className="text-sm text-ink-soft mb-1">Body / Source Sans 3 400</p>
+            <p className="font-sans text-base text-ink">
+              AURA-Nutri provides food intelligence, not medical advice.
+            </p>
+          </div>
+          <div className="border border-line rounded-card p-4 bg-surface">
+            <p className="text-sm text-ink-soft mb-1">Hindi / Tiro Devanagari Hindi</p>
+            <p className="font-hindi text-base text-ink">
+              आज आपने क्या खाया?
+            </p>
+          </div>
         </div>
+      </section>
+
+      <section>
+        <h2 className="font-display text-xl font-medium text-ink mb-4">
+          Focus ring
+        </h2>
         <button
           type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
+          className="px-4 py-2 bg-iron text-paper rounded-data font-sans font-medium"
         >
-          Count is {count}
+          Focus me
         </button>
       </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+    </main>
   )
 }
 

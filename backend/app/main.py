@@ -1,0 +1,44 @@
+import structlog
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+from app.database import Base, engine
+from app.errors import add_exception_handler
+
+structlog.configure(
+    processors=[
+        structlog.processors.TimeStamper(fmt="iso"),
+        structlog.processors.JSONRenderer(),
+    ],
+    wrapper_class=structlog.make_filtering_bound_logger(20),
+    context_class=dict,
+    logger_factory=structlog.PrintLoggerFactory(),
+)
+
+logger = structlog.get_logger()
+
+
+def create_app() -> FastAPI:
+    app = FastAPI(title="AURA-Nutri API", version="0.1.0")
+
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["http://localhost:5173"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+
+    add_exception_handler(app)
+
+    Base.metadata.create_all(bind=engine)
+
+    @app.get("/health")
+    async def health_check() -> dict[str, str]:
+        logger.info("health_check_called")
+        return {"status": "ok"}
+
+    return app
+
+
+app = create_app()
