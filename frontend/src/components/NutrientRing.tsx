@@ -1,24 +1,11 @@
 import { RadialBar, RadialBarChart, ResponsiveContainer } from 'recharts'
 
-const NUTRIENT_COLORS: Record<string, string> = {
-  iron: '#B7410E',
-  calcium: '#2F6B5E',
-  vit_d: '#C98A12',
-  b12: '#6B4FA0',
-}
+import { nutrientLabels, t } from '../lib/copy.ts'
+import type { Language } from '../lib/language.tsx'
 
-const HINDI_LABELS: Record<string, string> = {
-  iron: 'लोहा',
-  calcium: 'कैल्शियम',
-  vit_d: 'विटामिन डी',
-  b12: 'विटामिन बी12',
-}
-
-const ENGLISH_LABELS: Record<string, string> = {
-  iron: 'Iron',
-  calcium: 'Calcium',
-  vit_d: 'Vitamin D',
-  b12: 'Vitamin B12',
+function ringColor(percent: number): string {
+  if (percent >= 100) return '#10B981'
+  return '#F59E0B'
 }
 
 interface NutrientRingProps {
@@ -28,6 +15,7 @@ interface NutrientRingProps {
   percent: number
   unit: string
   size?: 'lg' | 'md'
+  language?: Language
 }
 
 export function NutrientRing({
@@ -37,11 +25,16 @@ export function NutrientRing({
   percent,
   unit,
   size = 'md',
+  language = 'en',
 }: NutrientRingProps) {
-  const data = [{ name: nutrient, value: Math.min(percent, 100), fill: NUTRIENT_COLORS[nutrient] }]
+  const color = ringColor(percent)
+  const data = [{ name: nutrient, value: Math.min(percent, 100), fill: color }]
   const sizeClass = size === 'lg' ? 'w-44 h-44' : 'w-28 h-28'
   const textSize = size === 'lg' ? 'text-2xl' : 'text-lg'
   const subTextSize = size === 'lg' ? 'text-sm' : 'text-xs'
+
+  const label = t(nutrientLabels[nutrient], language)
+  const fontClass = language === 'hi' ? 'font-hindi' : 'font-sans'
 
   return (
     <div className={`${sizeClass} flex flex-col items-center`}>
@@ -54,31 +47,21 @@ export function NutrientRing({
             startAngle={90}
             endAngle={-270}
           >
-            <RadialBar
-              dataKey="value"
-              background
-              fill={NUTRIENT_COLORS[nutrient]}
-            />
+            <RadialBar dataKey="value" background fill={color} />
           </RadialBarChart>
         </ResponsiveContainer>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className={`font-display font-semibold ${textSize} text-ink`}>
+          <span className={`font-display font-semibold ${textSize} text-charcoal`}>
             {Math.round(percent)}%
           </span>
-          <span className={`font-sans ${subTextSize} text-ink-soft`}>
+          <span className={`font-sans ${subTextSize} text-charcoal-soft`}>
             {Math.round(current)} / {Math.round(target)} {unit}
           </span>
         </div>
       </div>
       <div className="mt-2 text-center">
-        <p className={`font-sans font-medium ${subTextSize} text-ink`}>
-          {ENGLISH_LABELS[nutrient]}
-        </p>
-        <p
-          className={`font-hindi ${subTextSize}`}
-          style={{ color: NUTRIENT_COLORS[nutrient] }}
-        >
-          {HINDI_LABELS[nutrient]}
+        <p className={`${fontClass} font-medium ${subTextSize} text-charcoal`}>
+          {label}
         </p>
       </div>
     </div>

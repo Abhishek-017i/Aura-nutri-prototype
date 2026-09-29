@@ -24,18 +24,27 @@ async def get_cheat_day_status(
     user_id: str,
     db: Session = Depends(get_db),
 ) -> CheatDayStatus:
-    """Check whether the user can use a cheat day right now."""
+    """Check the user's cheat-charm balance and cooldown."""
     user = _user_or_404(db, user_id)
-    status = cheat_day_status(user)
-    logger.info("cheat_day_status_checked", user_id=user_id, available=status.available)
-    return status
+    return cheat_day_status(user)
 
 
-@router.post("/{user_id}", response_model=CheatDayStatus)
+@router.post("/use/{user_id}", response_model=CheatDayStatus)
 async def post_use_cheat_day(
     user_id: str,
     db: Session = Depends(get_db),
 ) -> CheatDayStatus:
-    """Use the user's one cheat day for the current 7-day window."""
+    """Consume one cheat charm to preserve a streak across a skipped day."""
+    user = _user_or_404(db, user_id)
+    return use_cheat_day(db, user)
+
+
+# Backwards-compatible alias kept for existing clients.
+@router.post("/{user_id}", response_model=CheatDayStatus)
+async def post_use_cheat_day_alias(
+    user_id: str,
+    db: Session = Depends(get_db),
+) -> CheatDayStatus:
+    """Deprecated alias for consuming a cheat charm."""
     user = _user_or_404(db, user_id)
     return use_cheat_day(db, user)

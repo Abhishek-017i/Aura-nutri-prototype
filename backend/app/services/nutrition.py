@@ -55,6 +55,14 @@ def calculate_daily_summary(
             )
         )
 
+    note: str | None = None
+    if (
+        not logs
+        and target_date < date.today()
+        and user.current_streak == 0
+    ):
+        note = "nutrients reset to 0"
+
     logger.info(
         "daily_summary_calculated",
         user_id=user_id,
@@ -69,4 +77,5 @@ def calculate_daily_summary(
         total_energy_kcal=round(total_energy, 2),
         total_protein_g=round(total_protein, 2),
         nutrients=nutrients,
+        note=note,
     )

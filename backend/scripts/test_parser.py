@@ -18,7 +18,7 @@ from sqlalchemy.orm import Session
 from app.database import engine
 from app.models import Food
 from app.schemas.parse import ParsedMeal
-from app.services.parser import parse_meal
+from app.services.parser import _legacy_parse_meal
 import scripts.seed_db as seed_db
 
 
@@ -149,7 +149,7 @@ def _qty_matches(actual: float, expected: float) -> bool:
 
 
 def _evaluate_case(db: Session, case: TestCase) -> _CaseResult:
-    result: ParsedMeal = parse_meal(db, case.text)
+    result: ParsedMeal = _legacy_parse_meal(db, case.text)
     item_hits = 0
     matches: list[_ItemMatch] = []
 

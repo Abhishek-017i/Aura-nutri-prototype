@@ -19,27 +19,36 @@ def _user_or_404(db: Session, user_id: str) -> User:
     return user
 
 
+def _build_system_prompt(user: User) -> str:
+    return (
+        "You are AURA-Nutri, a calm Indian nutrition assistant. "
+        "Respond in plain conversational English only. "
+        "Do not start with greetings such as 'Hi', 'Hello', 'Namaste', or the user's name. "
+        "Answer directly, clearly, and supportively. "
+        "Never use markdown tables, code blocks, raw JSON, or bullet lists. "
+        "Never prescribe supplements, dosages, or diagnose conditions. "
+        "If the user reports a medical concern, tell them to consult a qualified "
+        "physician or registered dietitian.\n"
+        f"User context: phase={user.phase}, "
+        f"daily targets: iron={user.target_iron_mg}mg, "
+        f"calcium={user.target_calcium_mg}mg, "
+        f"vitamin D={user.target_vit_d_iu}IU, "
+        f"B12={user.target_b12_mcg}mcg."
+    )
+
+
 @router.post("", response_model=ChatOut)
 async def post_chat(payload: ChatIn, db: Session = Depends(get_db)) -> ChatOut:
     """Get a grounded nutrition assistant reply from Groq.
 
-    Falls back to a deterministic, safe response if the Groq key is missing
-    or the upstream service is unavailable.
+    Uses the shared Groq client wrapper and token-bucket rate limiter. Errors
+    from the upstream service are returned through the global exception handler.
     """
     user = _user_or_404(db, payload.user_id)
     messages = [{"role": msg.role, "content": msg.content} for msg in payload.messages]
 
-    try:
-        reply = await chat_completion(messages)
-    except AppError as exc:
-        if exc.code in ("groq_key_missing", "groq_client_init_failed"):
-            logger.warning("chat_groq_unavailable", user_id=user.id, code=exc.code)
-            reply = (
-                "Assistant abhi configure nahi hai. Aap apna meal text box mein "
-                "type karke log kar sakte hain."
-            )
-        else:
-            raise
+    system_prompt = _build_system_prompt(user)
+    reply = await chat_completion(messages, system_prompt=system_prompt)
 
     logger.info("chat_reply_sent", user_id=user.id, reply_length=len(reply))
     return ChatOut(reply=reply)

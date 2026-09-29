@@ -15,10 +15,10 @@ async def parse_meal_endpoint(
     payload: ParseMealIn,
     db: Session = Depends(get_db),
 ) -> ParsedMeal:
-    """Parse a Hinglish meal description into structured food items and nutrients.
+    """Parse a multilingual meal description into structured food items and nutrients.
 
     Example request body:
         {"text": "2 roti aur 1 bowl dal"}
     """
     logger.info("parse_meal_endpoint_called", text=payload.text)
-    return parse_meal(db, payload.text)
+    return await parse_meal(db, payload.text)

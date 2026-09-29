@@ -1,21 +1,37 @@
 import { useState } from 'react'
+
+import { Chat } from './pages/Chat.tsx'
 import { Dashboard } from './pages/Dashboard.tsx'
-import { Onboarding } from './pages/Onboarding.tsx'
-import type { User } from './lib/types.ts'
+import { History } from './pages/History.tsx'
+import { Login } from './pages/Login.tsx'
+import { NutriCard } from './pages/NutriCard.tsx'
+import { Profile } from './pages/Profile.tsx'
+import { Layout, type Tab } from './components/Layout.tsx'
+import { LogMealModal } from './components/LogMealModal.tsx'
+import type { Dashboard as DashboardType, Phase, UserProfile } from './lib/types.ts'
 
 const STORAGE_KEY = 'aura_user'
 
-function loadStoredUser(): User | null {
+function loadStoredUser(): UserProfile | null {
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
     if (!raw) return null
-    return JSON.parse(raw) as User
+    const parsed = JSON.parse(raw) as UserProfile
+    // Treat users without a phase as needing to finish setup in Profile.
+    if (!parsed.phase) {
+      parsed.phase = null
+    }
+    return parsed
   } catch {
     return null
   }
 }
 
-function saveUser(user: User | null) {
+function initialTab(user: UserProfile | null): Tab {
+  return user && user.phase ? 'home' : 'profile'
+}
+
+function saveUser(user: UserProfile | null) {
   if (user) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(user))
   } else {
@@ -24,16 +40,99 @@ function saveUser(user: User | null) {
 }
 
 export default function App() {
-  const [user, setUser] = useState<User | null>(() => loadStoredUser())
+  const [user, setUser] = useState<UserProfile | null>(() => loadStoredUser())
+  const [activeTab, setActiveTab] = useState<Tab>(() => initialTab(loadStoredUser()))
+  const [logOpen, setLogOpen] = useState(false)
+  const [refreshTrigger, setRefreshTrigger] = useState(0)
+  const [nutriCardDashboard, setNutriCardDashboard] = useState<DashboardType | null>(null)
 
-  const handleComplete = (newUser: User) => {
+  const handleComplete = (newUser: UserProfile) => {
     saveUser(newUser)
     setUser(newUser)
+    setActiveTab(newUser.phase ? 'home' : 'profile')
   }
 
-  if (user) {
-    return <Dashboard user={user} />
+  const handleLogout = () => {
+    saveUser(null)
+    setUser(null)
+    setActiveTab('home')
+    setNutriCardDashboard(null)
   }
 
-  return <Onboarding onComplete={handleComplete} />
+  const handleLogged = () => {
+    setRefreshTrigger((n) => n + 1)
+  }
+
+  const handlePhaseChange = (phase: Phase) => {
+    setUser((prev) => {
+      if (!prev) return prev
+      const updated = { ...prev, phase }
+      saveUser(updated)
+      return updated
+    })
+  }
+
+  const handleSetupComplete = (updated: UserProfile) => {
+    saveUser(updated)
+    setUser(updated)
+    setActiveTab('home')
+  }
+
+  const handleShowNutriCard = (dashboard: DashboardType) => {
+    setNutriCardDashboard(dashboard)
+  }
+
+  const handleCloseNutriCard = () => {
+    setNutriCardDashboard(null)
+  }
+
+  if (!user) {
+    return <Login onComplete={handleComplete} />
+  }
+
+  return (
+    <>
+      <Layout
+        user={user}
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+        onLogout={handleLogout}
+        onOpenLog={() => setLogOpen(true)}
+      >
+        {activeTab === 'home' && (
+          <Dashboard
+            user={user}
+            refreshTrigger={refreshTrigger}
+            onOpenLog={() => setLogOpen(true)}
+          />
+        )}
+        {activeTab === 'chat' && <Chat user={user} />}
+        {activeTab === 'history' && <History user={user} refreshTrigger={refreshTrigger} />}
+        {activeTab === 'profile' && (
+          <Profile
+            user={user}
+            refreshTrigger={refreshTrigger}
+            onPhaseChange={handlePhaseChange}
+            onSetupComplete={handleSetupComplete}
+          />
+        )}
+      </Layout>
+
+      <LogMealModal
+        user={user}
+        open={logOpen}
+        onClose={() => setLogOpen(false)}
+        onLogged={handleLogged}
+        onShowNutriCard={handleShowNutriCard}
+      />
+
+      {nutriCardDashboard && user && (
+        <NutriCard
+          user={user}
+          dashboard={nutriCardDashboard}
+          onClose={handleCloseNutriCard}
+        />
+      )}
+    </>
+  )
 }

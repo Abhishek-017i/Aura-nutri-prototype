@@ -4,18 +4,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        paper: '#FAF7F2',
-        ink: '#1A1A18',
-        'ink-soft': '#5C5A55',
-        line: '#E5DFD5',
-        surface: '#FFFFFF',
+        lavender: '#F3E8FF',
+        pink: '#FCE7F3',
+        charcoal: '#334155',
+        'charcoal-soft': '#64748B',
+        line: '#E9D5FF',
+        white: '#FFFFFF',
+        emerald: '#10B981',
+        amber: '#F59E0B',
+        rose: '#F43F5E',
         iron: '#B7410E',
         calcium: '#2F6B5E',
         vitd: '#C98A12',
         b12: '#6B4FA0',
-        'risk-high': '#B7410E',
-        'risk-med': '#C98A12',
-        'risk-low': '#2F6B5E',
       },
       fontFamily: {
         display: ['Fraunces', 'Georgia', 'Times New Roman', 'serif'],
@@ -39,6 +40,9 @@ export default {
       maxWidth: {
         dashboard: '1120px',
         chat: '640px',
+      },
+      boxShadow: {
+        modal: '0 8px 24px rgba(51,65,85,.12)',
       },
     },
   },

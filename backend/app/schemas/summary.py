@@ -19,3 +19,4 @@ class DailySummary(BaseModel):
     total_energy_kcal: float = Field(..., ge=0)
     total_protein_g: float = Field(..., ge=0)
     nutrients: list[NutrientSummary]
+    note: str | None = Field(default=None)

@@ -7,10 +7,7 @@ interface ChatProps {
 
 export function Chat({ user }: ChatProps) {
   return (
-    <main className="min-h-screen w-full max-w-chat mx-auto px-6 py-8">
-      <h1 className="font-display text-2xl font-semibold text-ink mb-6">
-        AURA Assistant
-      </h1>
+    <main className="min-h-[60vh] w-full max-w-chat mx-auto px-6 py-8">
       <ChatWindow user={user} />
     </main>
   )

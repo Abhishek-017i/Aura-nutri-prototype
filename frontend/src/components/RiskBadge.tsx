@@ -1,7 +1,10 @@
+import { bodyFontClass, copy, t } from '../lib/copy.ts'
+import { useLanguage } from '../lib/useLanguage.ts'
+
 const RISK_COLORS: Record<string, string> = {
-  LOW: '#2F6B5E',
-  MEDIUM: '#C98A12',
-  HIGH: '#B7410E',
+  LOW: '#10B981',
+  MEDIUM: '#F59E0B',
+  HIGH: '#F43F5E',
 }
 
 interface RiskBadgeProps {
@@ -10,12 +13,13 @@ interface RiskBadgeProps {
 }
 
 export function RiskBadge({ level, label }: RiskBadgeProps) {
+  const { language } = useLanguage()
   const color = RISK_COLORS[level]
-  const prefix = level === 'HIGH' ? 'HIGH RISK' : level
+  const prefix = level === 'HIGH' ? t(copy.riskBadge.HIGH_RISK, language) : t(copy.riskBadge[level], language)
 
   return (
     <span
-      className="inline-flex items-center px-3 py-1 rounded-data border font-sans text-sm font-medium"
+      className={`inline-flex items-center px-3 py-1 rounded-data border ${bodyFontClass(language)} text-sm font-medium`}
       style={{
         backgroundColor: `${color}1A`,
         borderColor: color,

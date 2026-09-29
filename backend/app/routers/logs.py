@@ -8,7 +8,9 @@ from app.database import get_db
 from app.errors import AppError
 from app.models import Food, MealLog, User
 from app.schemas import DailySummary, MealLogCreate, MealLogRead
+from app.services.cheat_day import refresh_charms
 from app.services.nutrition import calculate_daily_summary
+from app.services.streak_service import process_log_for_streak, user_state_from_model
 
 logger = structlog.get_logger()
 router = APIRouter(prefix="/api/logs", tags=["logs"])
@@ -63,12 +65,29 @@ async def create_log(payload: MealLogCreate, db: Session = Depends(get_db)) -> M
     db.add(log)
     db.commit()
     db.refresh(log)
+
+    # Update deterministic streak/cheat state.
+    log_date = log.logged_at.date()
+    refresh_charms(user)
+    update = process_log_for_streak(user_state_from_model(user), log_date)
+    user.current_streak = update.current_streak
+    user.longest_streak = update.longest_streak
+    user.last_log_date = update.last_log_date
+    if update.consumed_charm:
+        user.cheat_charms_available = max(0, user.cheat_charms_available - 1)
+        user.cheat_charms_used_this_week += 1
+        if user.cheat_day_used_at is None:
+            user.cheat_day_used_at = log.logged_at
+    db.commit()
+    db.refresh(user)
+
     logger.info(
         "meal_log_created",
         log_id=log.id,
         user_id=payload.user_id,
         food_id=payload.food_id,
         qty_g=payload.qty_g,
+        current_streak=user.current_streak,
     )
     return log
 
@@ -78,6 +97,8 @@ async def list_logs(
     user_id: str,
     start_date: date | None = Query(default=None),
     end_date: date | None = Query(default=None),
+    limit: int = Query(default=100, ge=1, le=500),
+    offset: int = Query(default=0, ge=0),
     db: Session = Depends(get_db),
 ) -> list[MealLog]:
     q = db.query(MealLog).filter(MealLog.user_id == user_id)
@@ -85,7 +106,7 @@ async def list_logs(
         q = q.filter(MealLog.logged_at >= datetime.combine(start_date, datetime.min.time()))
     if end_date:
         q = q.filter(MealLog.logged_at <= datetime.combine(end_date, datetime.max.time()))
-    return q.order_by(MealLog.logged_at.desc()).all()
+    return q.order_by(MealLog.logged_at.desc()).offset(offset).limit(limit).all()
 
 
 @router.get("/summary", response_model=DailySummary)

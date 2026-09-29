@@ -1,8 +1,7 @@
-"""Cheat-day mechanic: one relaxed day per rolling 7-day window.
+"""Cheat-day mechanic: one cheat charm per rolling 7-day window.
 
-A cheat day is intentionally simple: it records when the user last used the
-relaxation and enforces a 7-day cooldown. No nutrient math changes in this
-prototype; the flag is surfaced to the UI as a stateful affordance.
+Streak-preserving cheat days are tracked as integer charms. The service is
+deterministic and contains no LLM involvement.
 """
 
 from datetime import datetime, timedelta, timezone
@@ -23,45 +22,68 @@ def _now_utc() -> datetime:
     return datetime.now(timezone.utc)
 
 
-def _make_status(
-    available: bool,
-    used_at: datetime | None,
-    remaining: timedelta,
-) -> CheatDayStatus:
-    return CheatDayStatus(
-        available=available,
-        used_at=used_at,
-        cooldown_seconds=int(remaining.total_seconds()),
-        days_remaining=round(remaining.total_seconds() / 86400.0, 2),
-    )
+def _ensure_aware(value: datetime | None) -> datetime | None:
+    if value is None:
+        return None
+    if value.tzinfo is None:
+        return value.replace(tzinfo=timezone.utc)
+    return value
+
+
+def _next_available_on(used_at: datetime | None) -> datetime | None:
+    if used_at is None:
+        return None
+    aware = used_at.replace(tzinfo=timezone.utc) if used_at.tzinfo is None else used_at
+    return aware + timedelta(days=_COOLDOWN_DAYS)
+
+
+def refresh_charms(user: User, now: datetime | None = None) -> None:
+    """Reset the weekly charm allowance if the 7-day cooldown has passed.
+
+    This is idempotent: calling it repeatedly with the same state is safe.
+    """
+    reference = now or _now_utc()
+    used_at = _ensure_aware(user.cheat_day_used_at)
+
+    if used_at is None:
+        if user.cheat_charms_available != 1 or user.cheat_charms_used_this_week != 0:
+            user.cheat_charms_available = 1
+            user.cheat_charms_used_this_week = 0
+        return
+
+    elapsed = reference - used_at
+    if elapsed >= timedelta(days=_COOLDOWN_DAYS):
+        user.cheat_charms_available = 1
+        user.cheat_charms_used_this_week = 0
 
 
 def cheat_day_status(user: User, now: datetime | None = None) -> CheatDayStatus:
-    """Return the current cheat-day availability for a user.
+    """Return the current cheat-charm availability for a user.
 
-    Args:
-        user: The user profile.
-        now: Optional reference time (defaults to UTC now).
-
-    Returns:
-        A :class:`CheatDayStatus` model with availability and cooldown details.
+    Refreshes the allowance automatically if the rolling cooldown has passed.
     """
     reference = now or _now_utc()
-    used_at = user.cheat_day_used_at
+    refresh_charms(user, reference)
 
-    if used_at is None:
-        return _make_status(True, None, timedelta(seconds=0))
+    used_at = _ensure_aware(user.cheat_day_used_at)
+    next_on = _next_available_on(used_at)
 
-    # Ensure both datetimes are timezone-aware before subtraction.
-    if used_at.tzinfo is None:
-        used_at = used_at.replace(tzinfo=timezone.utc)
-
-    elapsed = reference - used_at
-    cooldown = timedelta(days=_COOLDOWN_DAYS)
-    if elapsed >= cooldown:
-        return _make_status(True, used_at, timedelta(seconds=0))
-
-    return _make_status(False, used_at, cooldown - elapsed)
+    return CheatDayStatus(
+        available=user.cheat_charms_available > 0,
+        used_at=user.cheat_day_used_at,
+        cooldown_seconds=int(
+            max((next_on - reference).total_seconds(), 0) if next_on else 0
+        ),
+        days_remaining=round(
+            max((next_on - reference).total_seconds() / 86400.0, 0)
+            if next_on
+            else 0,
+            2,
+        ),
+        cheat_charms_available=user.cheat_charms_available,
+        cheat_charms_used_this_week=user.cheat_charms_used_this_week,
+        next_charm_available_on=next_on,
+    )
 
 
 def use_cheat_day(
@@ -69,7 +91,7 @@ def use_cheat_day(
     user: User,
     now: datetime | None = None,
 ) -> CheatDayStatus:
-    """Mark a cheat day for the user if the cooldown has passed.
+    """Consume one cheat charm if available.
 
     Args:
         db: SQLAlchemy session.
@@ -80,26 +102,30 @@ def use_cheat_day(
         Updated :class:`CheatDayStatus`.
 
     Raises:
-        AppError: 429 if the cheat day is still on cooldown.
+        AppError: 422 if no cheat charm is available.
     """
-    status = cheat_day_status(user, now)
-    if not status.available:
+    reference = now or _now_utc()
+    refresh_charms(user, reference)
+
+    if user.cheat_charms_available <= 0:
+        status = cheat_day_status(user, reference)
         logger.warning(
-            "cheat_day_denied",
+            "cheat_charm_denied",
             user_id=user.id,
             used_at=user.cheat_day_used_at.isoformat() if user.cheat_day_used_at else None,
             days_remaining=status.days_remaining,
         )
         raise AppError(
-            "cheat_day_on_cooldown",
-            f"Cheat day available in {status.days_remaining} days",
-            status=429,
+            "cheat_charm_unavailable",
+            "No cheat charm available. Complete the cooldown to earn another.",
+            status=422,
         )
 
-    reference = now or _now_utc()
+    user.cheat_charms_available -= 1
+    user.cheat_charms_used_this_week += 1
     user.cheat_day_used_at = reference
     db.commit()
     db.refresh(user)
 
-    logger.info("cheat_day_used", user_id=user.id, used_at=reference.isoformat())
+    logger.info("cheat_charm_used", user_id=user.id, used_at=reference.isoformat())
     return cheat_day_status(user, reference)

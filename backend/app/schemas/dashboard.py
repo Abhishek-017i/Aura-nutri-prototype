@@ -20,7 +20,7 @@ class Dashboard(BaseModel):
 
     user_id: str
     name: str
-    phase: str
+    phase: str | None
     date: date
     total_energy_kcal: float = Field(..., ge=0)
     total_protein_g: float = Field(..., ge=0)

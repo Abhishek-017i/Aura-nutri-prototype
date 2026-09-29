@@ -24,6 +24,13 @@ def _user_or_404(db: Session, user_id: str) -> User:
 
 
 def _phase_targets(user: User) -> DynamicRDAs:
+    if user.phase is None:
+        return DynamicRDAs(
+            target_iron_mg=user.target_iron_mg,
+            target_calcium_mg=user.target_calcium_mg,
+            target_vit_d_mcg=user.target_vit_d_iu / 40.0,
+            target_b12_mcg=user.target_b12_mcg,
+        )
     try:
         return calculate_dynamic_rdas(
             base_age=user.age or 30,

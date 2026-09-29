@@ -20,12 +20,12 @@ export function MicButton({
         'relative w-16 h-16 rounded-full border-2 flex items-center justify-center',
         'transition-colors duration-200 disabled:opacity-50',
         isListening
-          ? 'border-iron bg-iron'
-          : 'border-iron bg-paper',
+          ? 'border-charcoal bg-charcoal'
+          : 'border-charcoal bg-lavender',
       ].join(' ')}
     >
       {!isListening && (
-        <span className="absolute inset-0 rounded-full border-2 border-iron animate-ping opacity-40" />
+        <span className="absolute inset-0 rounded-full border-2 border-charcoal animate-ping opacity-20" />
       )}
       {isListening ? (
         <svg
@@ -33,7 +33,7 @@ export function MicButton({
           height="28"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#FAF7F2"
+          stroke="#FFFFFF"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -47,7 +47,7 @@ export function MicButton({
           height="28"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#B7410E"
+          stroke="#334155"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"

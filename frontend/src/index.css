@@ -2,9 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .bg-lavender {
+    background-color: #F3E8FF;
+  }
+  .bg-pink {
+    background-color: #FCE7F3;
+  }
+  .text-charcoal {
+    color: #334155;
+  }
+}
+
 @layer base {
   body {
-    @apply bg-paper text-ink font-sans antialiased;
+    @apply bg-lavender text-charcoal font-sans antialiased;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -13,7 +25,7 @@
 
   :focus-visible {
     @apply outline-none;
-    outline: 2px solid theme('colors.iron');
+    outline: 2px solid theme('colors.charcoal');
     outline-offset: 2px;
   }
 

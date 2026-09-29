@@ -1,5 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
+import { copy, t } from '../lib/copy.ts'
+import type { Language } from '../lib/language.tsx'
+
 interface SpeechRecognitionAlternative {
   transcript: string
   confidence: number
@@ -45,6 +48,7 @@ type SpeechRecognitionConstructor = new () => SpeechRecognition
 
 interface VoiceOptions {
   onTranscript?: (text: string) => void
+  language?: Language
 }
 
 interface VoiceState {
@@ -66,8 +70,17 @@ function getRecognitionConstructor(): SpeechRecognitionConstructor | null {
   return (win.SpeechRecognition ?? win.webkitSpeechRecognition) as SpeechRecognitionConstructor | null
 }
 
+const LANG_CODE: Record<Language, string> = {
+  en: 'en-IN',
+  hi: 'hi-IN',
+}
+
 export function useVoice(options: VoiceOptions = {}): VoiceState & VoiceActions {
-  const { onTranscript } = options
+  // Default to English so the mic does not force Hindi when the caller has not
+  // supplied a language. The app normally passes the active UI language, which
+  // lets English/Hindi/Hinglish speakers use the language they are comfortable
+  // with. Web Speech API requires a specific locale code; it cannot auto-detect.
+  const { onTranscript, language = 'en' } = options
   const [isListening, setIsListening] = useState(false)
   const [transcript, setTranscript] = useState('')
   const [interimTranscript, setInterimTranscript] = useState('')
@@ -89,7 +102,7 @@ export function useVoice(options: VoiceOptions = {}): VoiceState & VoiceActions 
   const start = useCallback(() => {
     const Constructor = getRecognitionConstructor()
     if (!Constructor) {
-      setError('Speech recognition is not supported in this browser.')
+      setError(t(copy.voice.unsupported, language))
       return
     }
 
@@ -98,7 +111,7 @@ export function useVoice(options: VoiceOptions = {}): VoiceState & VoiceActions 
     setIsListening(true)
 
     const recognition = new Constructor()
-    recognition.lang = 'hi-IN'
+    recognition.lang = LANG_CODE[language]
     recognition.continuous = false
     recognition.interimResults = true
     recognition.maxAlternatives = 1
@@ -115,23 +128,22 @@ export function useVoice(options: VoiceOptions = {}): VoiceState & VoiceActions 
           interim += text
         }
       }
-        if (final) {
-          const full = final
-          setTranscript((prev) => `${prev} ${full}`.trim())
-          onTranscript?.(full)
-        }
-        setInterimTranscript(interim)
-
+      if (final) {
+        const full = final
+        setTranscript((prev) => `${prev} ${full}`.trim())
+        onTranscript?.(full)
+      }
+      setInterimTranscript(interim)
     }
 
     recognition.onerror = (event) => {
-      let message = 'Voice input failed. Please try again or type your meal.'
+      let message = t(copy.voice.genericError, language)
       if (event.error === 'no-speech') {
-        message = 'Kuch suna nahi. Phir se bolein.'
+        message = t(copy.voice.noSpeech, language)
       } else if (event.error === 'audio-capture') {
-        message = 'Microphone access nahi mila. Check karein.'
+        message = t(copy.voice.audioCapture, language)
       } else if (event.error === 'not-allowed') {
-        message = 'Mic permission denied. Browser settings mein allow karein.'
+        message = t(copy.voice.notAllowed, language)
       }
       setError(message)
       setIsListening(false)
@@ -144,7 +156,7 @@ export function useVoice(options: VoiceOptions = {}): VoiceState & VoiceActions 
 
     recognitionRef.current = recognition
     recognition.start()
-  }, [onTranscript])
+  }, [language, onTranscript])
 
   useEffect(() => {
     return () => {
