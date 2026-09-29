@@ -57,7 +57,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog }: DashboardProps) {
   }, [language, user.id])
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+    // eslint-disable-next-border react-hooks/set-state-in-effect
     void loadData()
   }, [loadData, refreshTrigger])
 
@@ -129,16 +129,16 @@ export function Dashboard({ user, refreshTrigger, onOpenLog }: DashboardProps) {
     return (
       <main className="min-h-[60vh] w-full max-w-dashboard mx-auto px-6 py-8">
         <div className="bg-rose/10 border border-rose rounded-card p-6">
-          <h2 className="font-display text-xl font-semibold text-charcoal mb-2">
+          <h2 className="font-display text-xl font-semibold text-dark-text mb-2">
             {t(copy.dashboard.errorTitle, language)}
           </h2>
-          <p className={`${bodyFontClass(language)} text-charcoal mb-4`}>
+          <p className={`${bodyFontClass(language)} text-dark-text mb-4`}>
             {error ?? t(copy.dashboard.loadFallback, language)}
           </p>
           <button
             type="button"
             onClick={() => void loadData()}
-            className="px-4 py-2 bg-charcoal text-white rounded-data font-sans font-medium"
+            className="px-4 py-2 bg-primary text-white rounded-data font-sans font-medium"
           >
             {t(copy.dashboard.retry, language)}
           </button>
@@ -152,25 +152,25 @@ export function Dashboard({ user, refreshTrigger, onOpenLog }: DashboardProps) {
   return (
     <main className="w-full max-w-dashboard mx-auto px-6 py-6 space-y-6">
       {hasNoData ? (
-        <section className="bg-white border border-line rounded-card p-8 text-center">
-          <h2 className="font-display text-xl font-medium text-charcoal mb-2">
+        <section className="bg-white border border-border rounded-card p-8 text-center">
+          <h2 className="font-display text-xl font-medium text-dark-text mb-2">
             {t(copy.dashboard.emptyTitle, language)}
           </h2>
-          <p className={`${bodyFontClass(language)} text-charcoal-soft mb-6 max-w-md mx-auto`}>
+          <p className={`${bodyFontClass(language)} text-muted mb-6 max-w-md mx-auto`}>
             {t(copy.dashboard.emptyBody, language)}
           </p>
           <button
             type="button"
             onClick={onOpenLog}
-            className="px-6 py-3 bg-charcoal text-white rounded-data font-sans font-medium"
+            className="px-6 py-3 bg-primary text-white rounded-data font-sans font-medium"
           >
             {t(copy.dashboard.logMeal, language)}
           </button>
         </section>
       ) : (
         <>
-          <section className="bg-white border border-line rounded-card p-6">
-            <h2 className="font-display text-lg font-medium text-charcoal mb-6">
+          <section className="bg-white border border-border rounded-card p-6">
+            <h2 className="font-display text-lg font-medium text-dark-text mb-6">
               {t(copy.dashboard.progressTitle, language)}
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center">
@@ -197,29 +197,29 @@ export function Dashboard({ user, refreshTrigger, onOpenLog }: DashboardProps) {
 
           <NutrientHistograms data={weeklyData} targets={targets} />
 
-          <section className="bg-white border border-line rounded-card p-4">
+          <section className="bg-white border border-border rounded-card p-4">
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div>
-                <p className={`${bodyFontClass(language)} text-xs text-charcoal-soft uppercase tracking-wide`}>
+                <p className={`${bodyFontClass(language)} text-xs text-muted uppercase tracking-wide`}>
                   {t(copy.dashboard.phaseLabel, language)}
                 </p>
-                <p className="font-display text-xl font-medium text-charcoal capitalize">
+                <p className="font-display text-xl font-medium text-dark-text capitalize">
                   {dashboard.phase ? t(phaseLabels[dashboard.phase], language) : '-'}
                 </p>
               </div>
               <div className="text-right">
-                <p className={`${bodyFontClass(language)} text-xs text-charcoal-soft uppercase tracking-wide`}>
+                <p className={`${bodyFontClass(language)} text-xs text-muted uppercase tracking-wide`}>
                   {t(copy.dashboard.calories, language)}
                 </p>
-                <p className="font-display text-xl font-medium text-charcoal">
+                <p className="font-display text-xl font-medium text-dark-text">
                   {Math.round(dashboard.total_energy_kcal)}
                 </p>
               </div>
               <div className="text-right">
-                <p className={`${bodyFontClass(language)} text-xs text-charcoal-soft uppercase tracking-wide`}>
+                <p className={`${bodyFontClass(language)} text-xs text-muted uppercase tracking-wide`}>
                   {t(copy.dashboard.protein, language)}
                 </p>
-                <p className="font-display text-xl font-medium text-charcoal">
+                <p className="font-display text-xl font-medium text-dark-text">
                   {Math.round(dashboard.total_protein_g)}g
                 </p>
               </div>
@@ -228,7 +228,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog }: DashboardProps) {
         </>
       )}
 
-      <p className={`${bodyFontClass(language)} text-xs text-charcoal-soft text-center`}>
+      <p className={`${bodyFontClass(language)} text-xs text-muted text-center`}>
         {dashboard.disclaimer}
       </p>
     </main>
@@ -238,35 +238,35 @@ export function Dashboard({ user, refreshTrigger, onOpenLog }: DashboardProps) {
 function DashboardSkeleton() {
   return (
     <main className="w-full max-w-dashboard mx-auto px-6 py-6 space-y-6 animate-pulse">
-      <div className="bg-white border border-line rounded-card p-6">
-        <div className="h-6 w-40 bg-charcoal/10 rounded-data mb-6" />
+      <div className="bg-white border border-border rounded-card p-6">
+        <div className="h-6 w-40 bg-primary/10 rounded-data mb-6" />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center">
           {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="w-36 h-36 rounded-full bg-charcoal/10" />
+            <div key={i} className="w-36 h-36 rounded-full bg-primary/10" />
           ))}
         </div>
       </div>
 
-      <div className="bg-white border border-line rounded-card p-6">
-        <div className="h-6 w-32 bg-charcoal/10 rounded-data mb-6" />
+      <div className="bg-white border border-border rounded-card p-6">
+        <div className="h-6 w-32 bg-primary/10 rounded-data mb-6" />
         <div className="flex items-start justify-between gap-2">
           {[1, 2, 3, 4, 5, 6, 7].map((i) => (
             <div key={i} className="flex flex-col items-center gap-2">
-              <div className="w-14 h-14 rounded-full bg-charcoal/10" />
-              <div className="h-3 w-8 bg-charcoal/10 rounded-data" />
+              <div className="w-14 h-14 rounded-full bg-primary/10" />
+              <div className="h-3 w-8 bg-primary/10 rounded-data" />
             </div>
           ))}
         </div>
       </div>
 
-      <div className="bg-white border border-line rounded-card p-6 space-y-6">
-        <div className="h-6 w-32 bg-charcoal/10 rounded-data" />
+      <div className="bg-white border border-border rounded-card p-6 space-y-6">
+        <div className="h-6 w-32 bg-primary/10 rounded-data" />
         {[1, 2, 3, 4].map((i) => (
           <div key={i}>
-            <div className="h-4 w-24 bg-charcoal/10 rounded-data mb-3" />
+            <div className="h-4 w-24 bg-primary/10 rounded-data mb-3" />
             <div className="flex items-end gap-3 h-24">
               {[1, 2, 3, 4, 5, 6, 7].map((j) => (
-                <div key={j} className="flex-1 h-16 bg-charcoal/10 rounded-t-data" />
+                <div key={j} className="flex-1 h-16 bg-primary/10 rounded-t-data" />
               ))}
             </div>
           </div>

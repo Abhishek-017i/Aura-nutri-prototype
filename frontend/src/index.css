@@ -3,20 +3,20 @@
 @tailwind utilities;
 
 @layer utilities {
-  .bg-lavender {
+  .bg-background {
     background-color: #F3E8FF;
   }
-  .bg-pink {
+  .bg-peach {
     background-color: #FCE7F3;
   }
-  .text-charcoal {
+  .text-dark-text {
     color: #334155;
   }
 }
 
 @layer base {
   body {
-    @apply bg-lavender text-charcoal font-sans antialiased;
+    @apply bg-background text-dark-text font-sans antialiased;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -25,7 +25,7 @@
 
   :focus-visible {
     @apply outline-none;
-    outline: 2px solid theme('colors.charcoal');
+    outline: 2px solid theme('colors.dark-text');
     outline-offset: 2px;
   }
 

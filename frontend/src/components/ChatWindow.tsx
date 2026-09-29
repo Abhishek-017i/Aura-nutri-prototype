@@ -23,25 +23,25 @@ export function ChatWindow({ user }: ChatWindowProps) {
   }
 
   return (
-    <div className="flex flex-col h-[60vh] bg-white border border-line rounded-card">
-      <div className="flex items-center justify-between px-4 py-3 border-b border-line">
-        <h2 className="font-display text-lg font-medium text-charcoal">{t(copy.chat.title, language)}</h2>
+    <div className="flex flex-col h-[60vh] bg-white border border-border rounded-card">
+      <div className="flex items-center justify-between px-4 py-3 border-b border-border">
+        <h2 className="font-display text-lg font-medium text-dark-text">{t(copy.chat.title, language)}</h2>
         <button
           type="button"
           onClick={clear}
-          className={`${bodyFontClass(language)} text-sm text-charcoal-soft hover:text-charcoal`}
+          className={`${bodyFontClass(language)} text-sm text-muted hover:text-dark-text`}
         >
           {t(copy.chat.clear, language)}
         </button>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-lavender">
+      <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-background">
         {messages.length === 0 && (
           <div className="text-center py-8">
-            <p className={`${bodyFontClass(language)} text-sm text-charcoal-soft`}>
+            <p className={`${bodyFontClass(language)} text-sm text-muted`}>
               {t(copy.chat.emptyPrompt, language)}
             </p>
-            <p className={`${bodyFontClass(language)} text-sm text-charcoal-soft mt-1`}>
+            <p className={`${bodyFontClass(language)} text-sm text-muted mt-1`}>
               {t(copy.chat.emptyExample, language)}
             </p>
           </div>
@@ -59,8 +59,8 @@ export function ChatWindow({ user }: ChatWindowProps) {
               className={[
                 `max-w-[80%] px-4 py-2 rounded-data ${bodyFontClass(language)} text-sm`,
                 message.role === 'user'
-                  ? 'bg-charcoal text-white'
-                  : 'bg-white border border-line text-charcoal',
+                  ? 'bg-primary text-white'
+                  : 'bg-white border border-border text-dark-text',
               ].join(' ')}
             >
               {message.content}
@@ -70,7 +70,7 @@ export function ChatWindow({ user }: ChatWindowProps) {
 
         {isLoading && (
           <div className="flex justify-start">
-            <div className={`bg-white border border-line rounded-data px-4 py-2 ${bodyFontClass(language)} text-sm text-charcoal-soft`}>
+            <div className={`bg-white border border-border rounded-data px-4 py-2 ${bodyFontClass(language)} text-sm text-muted`}>
               {t(copy.chat.typing, language)}
             </div>
           </div>
@@ -85,26 +85,26 @@ export function ChatWindow({ user }: ChatWindowProps) {
 
       <form
         onSubmit={handleSubmit}
-        className="flex gap-2 p-4 border-t border-line bg-white"
+        className="flex gap-2 p-4 border-t border-border bg-white"
       >
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder={t(copy.chat.placeholder, language)}
-          className="flex-1 px-4 py-2 bg-lavender border border-line rounded-data font-sans text-charcoal placeholder:text-charcoal-soft focus-visible:outline-charcoal"
+          className="flex-1 px-4 py-2 bg-background border border-border rounded-data font-sans text-dark-text placeholder:text-muted focus-visible:outline-dark-text"
           disabled={isLoading}
         />
         <button
           type="submit"
           disabled={isLoading || !input.trim()}
-          className={`${bodyFontClass(language)} px-4 py-2 bg-charcoal text-white rounded-data font-medium disabled:opacity-50`}
+          className={`${bodyFontClass(language)} px-4 py-2 bg-primary text-white rounded-data font-medium disabled:opacity-50`}
         >
           {t(copy.chat.send, language)}
         </button>
       </form>
 
-      <p className={`${bodyFontClass(language)} px-4 pb-3 text-xs text-charcoal-soft text-center bg-white`}>
+      <p className={`${bodyFontClass(language)} px-4 pb-3 text-xs text-muted text-center bg-white`}>
         AURA-Nutri provides food intelligence, not medical advice. Always consult a
         qualified physician or registered dietitian before changing your diet or taking
         supplements.

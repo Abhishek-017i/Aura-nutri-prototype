@@ -37,7 +37,7 @@ export function LanguageToggle() {
   const { language, setLanguage } = useLanguage()
 
   return (
-    <div className="inline-flex bg-white border border-line rounded-data overflow-hidden">
+    <div className="inline-flex bg-white border border-border rounded-data overflow-hidden">
       <button
         type="button"
         onClick={() => setLanguage('en')}
@@ -45,8 +45,8 @@ export function LanguageToggle() {
         className={[
           'px-3 py-1 text-sm font-sans font-medium transition-colors',
           language === 'en'
-            ? 'bg-charcoal text-white'
-            : 'text-charcoal hover:bg-lavender',
+            ? 'bg-primary text-white'
+            : 'text-dark-text hover:bg-background',
         ].join(' ')}
       >
         EN
@@ -58,8 +58,8 @@ export function LanguageToggle() {
         className={[
           'px-3 py-1 text-sm font-sans font-medium transition-colors',
           language === 'hi'
-            ? 'bg-charcoal text-white'
-            : 'text-charcoal hover:bg-lavender',
+            ? 'bg-primary text-white'
+            : 'text-dark-text hover:bg-background',
         ].join(' ')}
       >
         HI

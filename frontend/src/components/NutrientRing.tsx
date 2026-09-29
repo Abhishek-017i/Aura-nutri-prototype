@@ -51,16 +51,16 @@ export function NutrientRing({
           </RadialBarChart>
         </ResponsiveContainer>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className={`font-display font-semibold ${textSize} text-charcoal`}>
+          <span className={`font-display font-semibold ${textSize} text-dark-text`}>
             {Math.round(percent)}%
           </span>
-          <span className={`font-sans ${subTextSize} text-charcoal-soft`}>
+          <span className={`font-sans ${subTextSize} text-muted`}>
             {Math.round(current)} / {Math.round(target)} {unit}
           </span>
         </div>
       </div>
       <div className="mt-2 text-center">
-        <p className={`${fontClass} font-medium ${subTextSize} text-charcoal`}>
+        <p className={`${fontClass} font-medium ${subTextSize} text-dark-text`}>
           {label}
         </p>
       </div>

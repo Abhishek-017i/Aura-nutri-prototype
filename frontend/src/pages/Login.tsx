@@ -48,21 +48,21 @@ export function Login({ onComplete }: LoginProps) {
   }
 
   return (
-    <main className="min-h-screen w-full max-w-chat mx-auto px-6 py-12 flex flex-col justify-center bg-lavender">
-      <div className="bg-white border border-line rounded-card p-8">
+    <main className="min-h-screen w-full max-w-chat mx-auto px-6 py-12 flex flex-col justify-center bg-background">
+      <div className="bg-white border border-border rounded-card p-8">
         <div className="flex items-start justify-between gap-4 mb-2">
-          <h1 className="font-display text-3xl font-semibold text-charcoal">
+          <h1 className="font-display text-3xl font-semibold text-dark-text">
             {t(copy.login.title, language)}
           </h1>
           <LanguageToggle />
         </div>
-        <p className={`${bodyFontClass(language)} text-lg text-charcoal-soft mb-8`}>
+        <p className={`${bodyFontClass(language)} text-lg text-muted mb-8`}>
           {t(copy.login.subtitle, language)}
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="username" className={`${bodyFontClass(language)} block text-sm font-medium text-charcoal mb-2`}>
+            <label htmlFor="username" className={`${bodyFontClass(language)} block text-sm font-medium text-dark-text mb-2`}>
               {t(copy.login.usernameLabel, language)}
             </label>
             <input
@@ -71,14 +71,14 @@ export function Login({ onComplete }: LoginProps) {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder={t(copy.login.usernamePlaceholder, language)}
-              className="w-full px-4 py-3 bg-lavender border border-line rounded-data font-sans text-charcoal placeholder:text-charcoal-soft focus-visible:outline-charcoal"
+              className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-dark-text placeholder:text-muted focus-visible:outline-dark-text"
               disabled={loading}
               autoComplete="username"
             />
           </div>
 
           <div>
-            <label htmlFor="password" className={`${bodyFontClass(language)} block text-sm font-medium text-charcoal mb-2`}>
+            <label htmlFor="password" className={`${bodyFontClass(language)} block text-sm font-medium text-dark-text mb-2`}>
               {t(copy.login.passwordLabel, language)}
             </label>
             <input
@@ -87,7 +87,7 @@ export function Login({ onComplete }: LoginProps) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder={t(copy.login.passwordPlaceholder, language)}
-              className="w-full px-4 py-3 bg-lavender border border-line rounded-data font-sans text-charcoal placeholder:text-charcoal-soft focus-visible:outline-charcoal"
+              className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-dark-text placeholder:text-muted focus-visible:outline-dark-text"
               disabled={loading}
               autoComplete="current-password"
             />
@@ -99,14 +99,14 @@ export function Login({ onComplete }: LoginProps) {
           <button
             type="submit"
             disabled={loading || !username.trim() || !password}
-            className={`${bodyFontClass(language)} w-full px-6 py-3 bg-charcoal text-white rounded-data font-medium disabled:opacity-50`}
+            className={`${bodyFontClass(language)} w-full px-6 py-3 bg-primary text-white rounded-data font-medium disabled:opacity-50`}
           >
             {loading ? t(copy.login.saving, language) : t(copy.login.continue, language)}
           </button>
         </form>
       </div>
 
-      <p className={`${bodyFontClass(language)} mt-6 text-xs text-charcoal-soft text-center`}>
+      <p className={`${bodyFontClass(language)} mt-6 text-xs text-muted text-center`}>
         AURA-Nutri provides food intelligence, not medical advice. Always consult a
         qualified physician or registered dietitian before changing your diet or taking
         supplements.

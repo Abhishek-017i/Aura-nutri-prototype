@@ -60,10 +60,10 @@ export function MealPreview({
 
   return (
     <div className="space-y-6">
-      <h3 className="font-display text-lg font-medium text-charcoal">
+      <h3 className="font-display text-lg font-medium text-dark-text">
         {t(copy.dashboard.previewTitle, language)}
       </h3>
-      <p className={`${bodyFontClass(language)} text-sm text-charcoal-soft`}>
+      <p className={`${bodyFontClass(language)} text-sm text-muted`}>
         {t(copy.dashboard.confirmHint, language)}
       </p>
 
@@ -71,11 +71,11 @@ export function MealPreview({
         {items.map((item, index) => (
           <li
             key={index}
-            className="border border-line rounded-data p-3 space-y-2"
+            className="border border-border rounded-data p-3 space-y-2"
           >
             <div className="flex items-start justify-between gap-3">
               <div className="flex-1 min-w-0">
-                <p className={`${bodyFontClass(language)} text-sm font-medium text-charcoal`}>
+                <p className={`${bodyFontClass(language)} text-sm font-medium text-dark-text`}>
                   {item.food_name}
                   {!item.matched && (
                     <span className="ml-2 text-xs text-rose">
@@ -83,7 +83,7 @@ export function MealPreview({
                     </span>
                   )}
                 </p>
-                <p className={`${bodyFontClass(language)} text-xs text-charcoal-soft`}>
+                <p className={`${bodyFontClass(language)} text-xs text-muted`}>
                   {item.serving_description}
                 </p>
               </div>
@@ -98,7 +98,7 @@ export function MealPreview({
             </div>
 
             <div className="flex flex-wrap items-center gap-4">
-              <label className={`${bodyFontClass(language)} text-xs text-charcoal-soft`}>
+              <label className={`${bodyFontClass(language)} text-xs text-muted`}>
                 {t(copy.dashboard.quantity, language)}
                 <input
                   type="number"
@@ -107,10 +107,10 @@ export function MealPreview({
                   value={item.qty_g}
                   onChange={(e) => handleQtyChange(index, e.target.value)}
                   disabled={isLoading}
-                  className="ml-2 w-24 px-2 py-1 bg-lavender border border-line rounded-data text-sm text-charcoal focus-visible:outline-charcoal disabled:opacity-60"
+                  className="ml-2 w-24 px-2 py-1 bg-background border border-border rounded-data text-sm text-dark-text focus-visible:outline-dark-text disabled:opacity-60"
                 />
               </label>
-              <span className={`${bodyFontClass(language)} text-xs text-charcoal-soft`}>
+              <span className={`${bodyFontClass(language)} text-xs text-muted`}>
                 {Math.round(item.energy_kcal)} {t(copy.dashboard.calories, language)} ·{' '}
                 {Math.round(item.protein_g)}g {t(copy.dashboard.protein, language)} ·{' '}
                 {Math.round(item.iron_mg)}mg {t(copy.dashboard.iron, language)}
@@ -120,7 +120,7 @@ export function MealPreview({
         ))}
       </ul>
 
-      <div className={`${bodyFontClass(language)} flex flex-wrap gap-4 text-sm text-charcoal-soft border-t border-line pt-3`}>
+      <div className={`${bodyFontClass(language)} flex flex-wrap gap-4 text-sm text-muted border-t border-border pt-3`}>
         <span>
           {Math.round(tTotals.energy)} {t(copy.dashboard.calories, language)}
         </span>
@@ -138,7 +138,7 @@ export function MealPreview({
           type="button"
           onClick={onConfirm}
           disabled={isLoading || !canConfirm}
-          className={`${bodyFontClass(language)} flex-1 px-4 py-3 bg-charcoal text-white rounded-data text-base font-medium disabled:opacity-50`}
+          className={`${bodyFontClass(language)} flex-1 px-4 py-3 bg-primary text-white rounded-data text-base font-medium disabled:opacity-50`}
         >
           {isLoading
             ? t(copy.dashboard.logging, language)
@@ -148,7 +148,7 @@ export function MealPreview({
           type="button"
           onClick={onCancel}
           disabled={isLoading}
-          className={`${bodyFontClass(language)} flex-1 px-4 py-3 bg-white border border-line text-charcoal rounded-data font-medium disabled:opacity-50`}
+          className={`${bodyFontClass(language)} flex-1 px-4 py-3 bg-white border border-border text-dark-text rounded-data font-medium disabled:opacity-50`}
         >
           {t(copy.dashboard.cancel, language)}
         </button>

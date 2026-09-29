@@ -29,14 +29,14 @@ export function NutrientHistograms({ data, targets }: NutrientHistogramsProps) {
   const { language } = useLanguage()
 
   return (
-    <section className="bg-white border border-line rounded-card p-6">
-      <h2 className="font-display text-lg font-medium text-charcoal mb-6">
+    <section className="bg-white border border-border rounded-card p-6">
+      <h2 className="font-display text-lg font-medium text-dark-text mb-6">
         {t(copy.dashboard.weeklyTrendsTitle, language)}
       </h2>
 
       {data.length === 0 || data.every((d) => Object.values(d.values).every((v) => v === 0)) ? (
-        <div className="border border-dashed border-line rounded-data p-6 text-center">
-          <p className={`${bodyFontClass(language)} text-charcoal-soft`}>
+        <div className="border border-dashed border-border rounded-data p-6 text-center">
+          <p className={`${bodyFontClass(language)} text-muted`}>
             {t(copy.dashboard.weeklyEmpty, language)}
           </p>
         </div>
@@ -47,10 +47,10 @@ export function NutrientHistograms({ data, targets }: NutrientHistogramsProps) {
             return (
               <div key={nutrient}>
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className={`${bodyFontClass(language)} font-medium text-charcoal`}>
+                  <h3 className={`${bodyFontClass(language)} font-medium text-dark-text`}>
                     {t(nutrientLabels[nutrient], language)}
                   </h3>
-                  <span className={`${bodyFontClass(language)} text-xs text-charcoal-soft`}>
+                  <span className={`${bodyFontClass(language)} text-xs text-muted`}>
                     {Math.round(target)} {nutrient === 'vit_d' ? 'IU' : nutrient === 'b12' ? 'mcg' : 'mg'}
                   </span>
                 </div>
@@ -60,7 +60,7 @@ export function NutrientHistograms({ data, targets }: NutrientHistogramsProps) {
                     const percent = target > 0 ? (value / target) * 100 : 0
                     return (
                       <div key={day.date} className="flex-1 flex flex-col items-center gap-1 min-w-[2rem]">
-                        <div className="w-full flex items-end h-24 bg-lavender rounded-t-data overflow-hidden">
+                        <div className="w-full flex items-end h-24 bg-background rounded-t-data overflow-hidden">
                           <div
                             className="w-full rounded-t-data"
                             style={{
@@ -70,7 +70,7 @@ export function NutrientHistograms({ data, targets }: NutrientHistogramsProps) {
                             title={`${Math.round(value)} / ${Math.round(target)}`}
                           />
                         </div>
-                        <span className={`${bodyFontClass(language)} text-[10px] text-charcoal-soft uppercase`}>
+                        <span className={`${bodyFontClass(language)} text-[10px] text-muted uppercase`}>
                           {day.label}
                         </span>
                       </div>

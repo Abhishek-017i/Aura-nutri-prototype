@@ -92,7 +92,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
   }, [language, user.id])
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+    // eslint-disable-next-border react-hooks/set-state-in-effect
     void loadData()
   }, [loadData, refreshTrigger])
 
@@ -223,16 +223,16 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
     return (
       <main className="min-h-[60vh] w-full max-w-dashboard mx-auto px-6 py-8">
         <div className="bg-rose/10 border border-rose rounded-card p-6">
-          <h2 className="font-display text-xl font-semibold text-charcoal mb-2">
+          <h2 className="font-display text-xl font-semibold text-dark-text mb-2">
             {t(copy.dashboard.errorTitle, language)}
           </h2>
-          <p className={`${bodyFontClass(language)} text-charcoal mb-4`}>
+          <p className={`${bodyFontClass(language)} text-dark-text mb-4`}>
             {error ?? t(copy.profile.loadError, language)}
           </p>
           <button
             type="button"
             onClick={() => void loadData()}
-            className="px-4 py-2 bg-charcoal text-white rounded-data font-sans font-medium"
+            className="px-4 py-2 bg-primary text-white rounded-data font-sans font-medium"
           >
             {t(copy.profile.retry, language)}
           </button>
@@ -244,17 +244,17 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
   if (!profile.phase) {
     return (
       <main className="min-h-[60vh] w-full max-w-dashboard mx-auto px-6 py-8">
-        <div className="bg-white border border-line rounded-card p-8">
-          <h1 className="font-display text-2xl font-semibold text-charcoal mb-2">
+        <div className="bg-white border border-border rounded-card p-8">
+          <h1 className="font-display text-2xl font-semibold text-dark-text mb-2">
             {t(copy.profile.setupTitle, language)}
           </h1>
-          <p className={`${bodyFontClass(language)} text-charcoal-soft mb-6`}>
+          <p className={`${bodyFontClass(language)} text-muted mb-6`}>
             {t(copy.profile.setupSubtitle, language)}
           </p>
 
           <form onSubmit={handleSetupSubmit} className="space-y-6">
             <div>
-              <label htmlFor="setup-name" className={`${bodyFontClass(language)} block text-sm font-medium text-charcoal mb-2`}>
+              <label htmlFor="setup-name" className={`${bodyFontClass(language)} block text-sm font-medium text-dark-text mb-2`}>
                 {t(copy.profile.name, language)}
               </label>
               <input
@@ -262,13 +262,13 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
                 type="text"
                 value={setupName}
                 onChange={(e) => setSetupName(e.target.value)}
-                className="w-full px-4 py-3 bg-lavender border border-line rounded-data font-sans text-charcoal focus-visible:outline-charcoal"
+                className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-dark-text focus-visible:outline-dark-text"
                 disabled={setupSaving}
               />
             </div>
 
             <div>
-              <label htmlFor="setup-age" className={`${bodyFontClass(language)} block text-sm font-medium text-charcoal mb-2`}>
+              <label htmlFor="setup-age" className={`${bodyFontClass(language)} block text-sm font-medium text-dark-text mb-2`}>
                 {t(copy.profile.age, language)}
               </label>
               <input
@@ -279,20 +279,20 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
                 value={setupAge}
                 onChange={(e) => setSetupAge(e.target.value)}
                 placeholder="30"
-                className="w-full px-4 py-3 bg-lavender border border-line rounded-data font-sans text-charcoal placeholder:text-charcoal-soft focus-visible:outline-charcoal"
+                className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-dark-text placeholder:text-muted focus-visible:outline-dark-text"
                 disabled={setupSaving}
               />
             </div>
 
             <div>
-              <label htmlFor="setup-phase" className={`${bodyFontClass(language)} block text-sm font-medium text-charcoal mb-2`}>
+              <label htmlFor="setup-phase" className={`${bodyFontClass(language)} block text-sm font-medium text-dark-text mb-2`}>
                 {t(copy.profile.phase, language)}
               </label>
               <select
                 id="setup-phase"
                 value={setupPhase}
                 onChange={(e) => setSetupPhase(e.target.value as Phase)}
-                className="w-full px-4 py-3 bg-lavender border border-line rounded-data font-sans text-charcoal focus-visible:outline-charcoal"
+                className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-dark-text focus-visible:outline-dark-text"
                 disabled={setupSaving}
               >
                 {PHASE_OPTIONS.map((option) => (
@@ -301,7 +301,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
                   </option>
                 ))}
               </select>
-              <p className={`${bodyFontClass(language)} mt-2 text-xs text-charcoal-soft`}>
+              <p className={`${bodyFontClass(language)} mt-2 text-xs text-muted`}>
                 {t(copy.onboarding.phaseHint, language)}
               </p>
             </div>
@@ -315,14 +315,14 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
             <button
               type="submit"
               disabled={setupSaving || !setupName.trim()}
-              className={`${bodyFontClass(language)} w-full px-6 py-3 bg-charcoal text-white rounded-data font-medium disabled:opacity-50`}
+              className={`${bodyFontClass(language)} w-full px-6 py-3 bg-primary text-white rounded-data font-medium disabled:opacity-50`}
             >
               {setupSaving ? t(copy.profile.updating, language) : t(copy.profile.save, language)}
             </button>
           </form>
         </div>
 
-        <p className={`${bodyFontClass(language)} mt-6 text-xs text-charcoal-soft text-center`}>
+        <p className={`${bodyFontClass(language)} mt-6 text-xs text-muted text-center`}>
           AURA-Nutri provides food intelligence, not medical advice. Always consult a qualified
           physician or registered dietitian before changing your diet or taking supplements.
         </p>
@@ -332,16 +332,16 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
 
   return (
     <main className="w-full max-w-dashboard mx-auto px-6 py-6 space-y-6">
-      <section className="bg-white border border-line rounded-card p-6">
+      <section className="bg-white border border-border rounded-card p-6">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="font-display text-lg font-medium text-charcoal">
+          <h2 className="font-display text-lg font-medium text-dark-text">
             {t(copy.profile.personal, language)}
           </h2>
           {!isEditing && (
             <button
               type="button"
               onClick={() => void handleStartEdit()}
-              className={`${bodyFontClass(language)} px-3 py-1.5 bg-lavender border border-line rounded-data text-sm font-medium text-charcoal`}
+              className={`${bodyFontClass(language)} px-3 py-1.5 bg-background border border-border rounded-data text-sm font-medium text-dark-text`}
             >
               {t(copy.profile.edit, language)}
             </button>
@@ -352,7 +352,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
           <form onSubmit={handleSaveEdit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
-                <label htmlFor="edit-username" className={`${bodyFontClass(language)} block text-sm font-medium text-charcoal mb-2`}>
+                <label htmlFor="edit-username" className={`${bodyFontClass(language)} block text-sm font-medium text-dark-text mb-2`}>
                   {t(copy.profile.username, language)}
                 </label>
                 <input
@@ -360,12 +360,12 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
                   type="text"
                   value={editUsername}
                   onChange={(e) => setEditUsername(e.target.value)}
-                  className="w-full px-4 py-3 bg-lavender border border-line rounded-data font-sans text-charcoal focus-visible:outline-charcoal"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-dark-text focus-visible:outline-dark-text"
                   disabled={editSaving}
                 />
               </div>
               <div>
-                <label htmlFor="edit-name" className={`${bodyFontClass(language)} block text-sm font-medium text-charcoal mb-2`}>
+                <label htmlFor="edit-name" className={`${bodyFontClass(language)} block text-sm font-medium text-dark-text mb-2`}>
                   {t(copy.profile.name, language)}
                 </label>
                 <input
@@ -373,12 +373,12 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
                   type="text"
                   value={editName}
                   onChange={(e) => setEditName(e.target.value)}
-                  className="w-full px-4 py-3 bg-lavender border border-line rounded-data font-sans text-charcoal focus-visible:outline-charcoal"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-dark-text focus-visible:outline-dark-text"
                   disabled={editSaving}
                 />
               </div>
               <div>
-                <label htmlFor="edit-age" className={`${bodyFontClass(language)} block text-sm font-medium text-charcoal mb-2`}>
+                <label htmlFor="edit-age" className={`${bodyFontClass(language)} block text-sm font-medium text-dark-text mb-2`}>
                   {t(copy.profile.age, language)}
                 </label>
                 <input
@@ -388,7 +388,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
                   max={120}
                   value={editAge}
                   onChange={(e) => setEditAge(e.target.value)}
-                  className="w-full px-4 py-3 bg-lavender border border-line rounded-data font-sans text-charcoal focus-visible:outline-charcoal"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-dark-text focus-visible:outline-dark-text"
                   disabled={editSaving}
                 />
               </div>
@@ -404,7 +404,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
               <button
                 type="submit"
                 disabled={editSaving || !editName.trim() || !editUsername.trim()}
-                className={`${bodyFontClass(language)} px-4 py-2 bg-charcoal text-white rounded-data font-medium disabled:opacity-50`}
+                className={`${bodyFontClass(language)} px-4 py-2 bg-primary text-white rounded-data font-medium disabled:opacity-50`}
               >
                 {editSaving ? t(copy.profile.updating, language) : t(copy.profile.saveChanges, language)}
               </button>
@@ -412,7 +412,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
                 type="button"
                 onClick={() => void handleCancelEdit()}
                 disabled={editSaving}
-                className={`${bodyFontClass(language)} px-4 py-2 bg-lavender border border-line rounded-data font-medium text-charcoal disabled:opacity-50`}
+                className={`${bodyFontClass(language)} px-4 py-2 bg-background border border-border rounded-data font-medium text-dark-text disabled:opacity-50`}
               >
                 {t(copy.profile.cancel, language)}
               </button>
@@ -420,25 +420,25 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
           </form>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="p-3 bg-lavender rounded-data">
-              <p className={`${bodyFontClass(language)} text-xs text-charcoal-soft uppercase tracking-wide`}>
+            <div className="p-3 bg-background rounded-data">
+              <p className={`${bodyFontClass(language)} text-xs text-muted uppercase tracking-wide`}>
                 {t(copy.profile.name, language)}
               </p>
-              <p className="font-display text-lg font-medium text-charcoal">{profile.name}</p>
+              <p className="font-display text-lg font-medium text-dark-text">{profile.name}</p>
             </div>
-            <div className="p-3 bg-lavender rounded-data">
-              <p className={`${bodyFontClass(language)} text-xs text-charcoal-soft uppercase tracking-wide`}>
+            <div className="p-3 bg-background rounded-data">
+              <p className={`${bodyFontClass(language)} text-xs text-muted uppercase tracking-wide`}>
                 {t(copy.profile.age, language)}
               </p>
-              <p className="font-display text-lg font-medium text-charcoal">
+              <p className="font-display text-lg font-medium text-dark-text">
                 {profile.age ?? t(copy.profile.ageNotSet, language)}
               </p>
             </div>
-            <div className="p-3 bg-lavender rounded-data">
-              <p className={`${bodyFontClass(language)} text-xs text-charcoal-soft uppercase tracking-wide`}>
+            <div className="p-3 bg-background rounded-data">
+              <p className={`${bodyFontClass(language)} text-xs text-muted uppercase tracking-wide`}>
                 {t(copy.profile.phase, language)}
               </p>
-              <p className="font-display text-lg font-medium text-charcoal capitalize">
+              <p className="font-display text-lg font-medium text-dark-text capitalize">
                 {t(phaseLabels[profile.phase], language)}
               </p>
             </div>
@@ -446,11 +446,11 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
         )}
       </section>
 
-      <section className="bg-white border border-line rounded-card p-6">
-        <h2 className="font-display text-lg font-medium text-charcoal mb-2">
+      <section className="bg-white border border-border rounded-card p-6">
+        <h2 className="font-display text-lg font-medium text-dark-text mb-2">
           {t(copy.profile.phaseAdjust, language)}
         </h2>
-        <p className={`${bodyFontClass(language)} text-sm text-charcoal-soft mb-4`}>
+        <p className={`${bodyFontClass(language)} text-sm text-muted mb-4`}>
           {t(copy.profile.phaseHint, language)}
         </p>
 
@@ -459,7 +459,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
             type="button"
             onClick={() => void handlePhaseOffset(-2)}
             disabled={phaseUpdating}
-            className="px-3 py-2 bg-lavender border border-line rounded-data text-sm font-medium text-charcoal disabled:opacity-50"
+            className="px-3 py-2 bg-background border border-border rounded-data text-sm font-medium text-dark-text disabled:opacity-50"
           >
             {t(copy.profile.shiftBack2, language)}
           </button>
@@ -467,18 +467,18 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
             type="button"
             onClick={() => void handlePhaseOffset(-1)}
             disabled={phaseUpdating}
-            className="px-3 py-2 bg-lavender border border-line rounded-data text-sm font-medium text-charcoal disabled:opacity-50"
+            className="px-3 py-2 bg-background border border-border rounded-data text-sm font-medium text-dark-text disabled:opacity-50"
           >
             {t(copy.profile.shiftBack1, language)}
           </button>
-          <div className="px-4 py-2 bg-pink rounded-data text-sm font-medium text-charcoal capitalize">
+          <div className="px-4 py-2 bg-peach rounded-data text-sm font-medium text-dark-text capitalize">
             {t(phaseLabels[profile.phase], language)}
           </div>
           <button
             type="button"
             onClick={() => void handlePhaseOffset(1)}
             disabled={phaseUpdating}
-            className="px-3 py-2 bg-lavender border border-line rounded-data text-sm font-medium text-charcoal disabled:opacity-50"
+            className="px-3 py-2 bg-background border border-border rounded-data text-sm font-medium text-dark-text disabled:opacity-50"
           >
             {t(copy.profile.shiftForward1, language)}
           </button>
@@ -486,14 +486,14 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
             type="button"
             onClick={() => void handlePhaseOffset(2)}
             disabled={phaseUpdating}
-            className="px-3 py-2 bg-lavender border border-line rounded-data text-sm font-medium text-charcoal disabled:opacity-50"
+            className="px-3 py-2 bg-background border border-border rounded-data text-sm font-medium text-dark-text disabled:opacity-50"
           >
             {t(copy.profile.shiftForward2, language)}
           </button>
         </div>
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-          <label htmlFor="phase-select" className={`${bodyFontClass(language)} text-sm font-medium text-charcoal`}>
+          <label htmlFor="phase-select" className={`${bodyFontClass(language)} text-sm font-medium text-dark-text`}>
             {t(copy.profile.setPhase, language)}
           </label>
           <select
@@ -501,7 +501,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
             value={profile.phase}
             onChange={(e) => void handleSetPhase(e.target.value as Phase)}
             disabled={phaseUpdating}
-            className="px-3 py-2 bg-lavender border border-line rounded-data font-sans text-charcoal disabled:opacity-50"
+            className="px-3 py-2 bg-background border border-border rounded-data font-sans text-dark-text disabled:opacity-50"
           >
             {PHASE_OPTIONS.map((option) => (
               <option key={option} value={option}>
@@ -510,7 +510,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
             ))}
           </select>
           {phaseUpdating && (
-            <span className={`${bodyFontClass(language)} text-sm text-charcoal-soft`}>
+            <span className={`${bodyFontClass(language)} text-sm text-muted`}>
               {t(copy.profile.updating, language)}
             </span>
           )}
@@ -521,46 +521,46 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
         )}
       </section>
 
-      <section className="bg-white border border-line rounded-card p-6">
-        <h2 className="font-display text-lg font-medium text-charcoal mb-4">
+      <section className="bg-white border border-border rounded-card p-6">
+        <h2 className="font-display text-lg font-medium text-dark-text mb-4">
           {t(copy.profile.streakTitle, language)}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-          <div className="p-3 bg-lavender rounded-data">
-            <p className={`${bodyFontClass(language)} text-xs text-charcoal-soft uppercase tracking-wide`}>
+          <div className="p-3 bg-background rounded-data">
+            <p className={`${bodyFontClass(language)} text-xs text-muted uppercase tracking-wide`}>
               {t(copy.profile.currentStreak, language)}
             </p>
-            <p className="font-display text-2xl font-medium text-charcoal">
+            <p className="font-display text-2xl font-medium text-dark-text">
               {streak?.current_streak ?? 0}{' '}
-              <span className="text-sm font-sans text-charcoal-soft">
+              <span className="text-sm font-sans text-muted">
                 {t(copy.profile.days, language)}
               </span>
             </p>
           </div>
-          <div className="p-3 bg-lavender rounded-data">
-            <p className={`${bodyFontClass(language)} text-xs text-charcoal-soft uppercase tracking-wide`}>
+          <div className="p-3 bg-background rounded-data">
+            <p className={`${bodyFontClass(language)} text-xs text-muted uppercase tracking-wide`}>
               {t(copy.profile.longestStreak, language)}
             </p>
-            <p className="font-display text-2xl font-medium text-charcoal">
+            <p className="font-display text-2xl font-medium text-dark-text">
               {streak?.longest_streak ?? 0}{' '}
-              <span className="text-sm font-sans text-charcoal-soft">
+              <span className="text-sm font-sans text-muted">
                 {t(copy.profile.days, language)}
               </span>
             </p>
           </div>
-          <div className="p-3 bg-lavender rounded-data">
-            <p className={`${bodyFontClass(language)} text-xs text-charcoal-soft uppercase tracking-wide`}>
+          <div className="p-3 bg-background rounded-data">
+            <p className={`${bodyFontClass(language)} text-xs text-muted uppercase tracking-wide`}>
               {t(copy.profile.cheatCharms, language)}
             </p>
-            <p className="font-display text-2xl font-medium text-charcoal">
+            <p className="font-display text-2xl font-medium text-dark-text">
               {cheat?.cheat_charms_available ?? 0}
             </p>
           </div>
-          <div className="p-3 bg-lavender rounded-data">
-            <p className={`${bodyFontClass(language)} text-xs text-charcoal-soft uppercase tracking-wide`}>
+          <div className="p-3 bg-background rounded-data">
+            <p className={`${bodyFontClass(language)} text-xs text-muted uppercase tracking-wide`}>
               {t(copy.profile.nextCharm, language)}
             </p>
-            <p className="font-display text-lg font-medium text-charcoal">
+            <p className="font-display text-lg font-medium text-dark-text">
               {cheat?.next_charm_available_on
                 ? formatDateTime(cheat.next_charm_available_on, language)
                 : t(copy.profile.nextCharmUnknown, language)}
@@ -572,26 +572,26 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
           type="button"
           onClick={() => void handleUseCheat()}
           disabled={cheatLoading || !cheat?.available}
-          className={`${bodyFontClass(language)} px-4 py-2 bg-charcoal text-white rounded-data font-medium disabled:opacity-50`}
+          className={`${bodyFontClass(language)} px-4 py-2 bg-primary text-white rounded-data font-medium disabled:opacity-50`}
         >
           {cheatLoading ? t(copy.profile.updating, language) : t(copy.profile.useCheatDay, language)}
         </button>
 
         {cheatMessage && (
-          <p className={`${bodyFontClass(language)} mt-3 text-sm text-charcoal-soft`}>{cheatMessage}</p>
+          <p className={`${bodyFontClass(language)} mt-3 text-sm text-muted`}>{cheatMessage}</p>
         )}
       </section>
 
-      <section className="bg-white border border-line rounded-card p-6">
-        <h2 className="font-display text-lg font-medium text-charcoal mb-2">
+      <section className="bg-white border border-border rounded-card p-6">
+        <h2 className="font-display text-lg font-medium text-dark-text mb-2">
           {t(copy.dashboard.logout, language)}
         </h2>
-        <p className={`${bodyFontClass(language)} text-sm text-charcoal-soft`}>
+        <p className={`${bodyFontClass(language)} text-sm text-muted`}>
           {t(copy.profile.logoutHint, language)}
         </p>
       </section>
 
-      <p className={`${bodyFontClass(language)} text-xs text-charcoal-soft text-center`}>
+      <p className={`${bodyFontClass(language)} text-xs text-muted text-center`}>
         AURA-Nutri provides food intelligence, not medical advice. Always consult a qualified
         physician or registered dietitian before changing your diet or taking supplements.
       </p>
@@ -602,30 +602,30 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
 function ProfileSkeleton() {
   return (
     <main className="w-full max-w-dashboard mx-auto px-6 py-6 space-y-6 animate-pulse">
-      <div className="bg-white border border-line rounded-card p-6">
-        <div className="h-6 w-40 bg-charcoal/10 rounded-data mb-4" />
+      <div className="bg-white border border-border rounded-card p-6">
+        <div className="h-6 w-40 bg-primary/10 rounded-data mb-4" />
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[1, 2, 3].map((i) => (
-            <div key={i} className="h-20 bg-lavender rounded-data" />
+            <div key={i} className="h-20 bg-background rounded-data" />
           ))}
         </div>
       </div>
 
-      <div className="bg-white border border-line rounded-card p-6">
-        <div className="h-6 w-48 bg-charcoal/10 rounded-data mb-4" />
+      <div className="bg-white border border-border rounded-card p-6">
+        <div className="h-6 w-48 bg-primary/10 rounded-data mb-4" />
         <div className="flex flex-wrap gap-2 mb-4">
           {[1, 2, 3, 4, 5].map((i) => (
-            <div key={i} className="h-9 w-16 bg-lavender rounded-data" />
+            <div key={i} className="h-9 w-16 bg-background rounded-data" />
           ))}
         </div>
-        <div className="h-10 w-48 bg-lavender rounded-data" />
+        <div className="h-10 w-48 bg-background rounded-data" />
       </div>
 
-      <div className="bg-white border border-line rounded-card p-6">
-        <div className="h-6 w-48 bg-charcoal/10 rounded-data mb-4" />
+      <div className="bg-white border border-border rounded-card p-6">
+        <div className="h-6 w-48 bg-primary/10 rounded-data mb-4" />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="h-24 bg-lavender rounded-data" />
+            <div key={i} className="h-24 bg-background rounded-data" />
           ))}
         </div>
       </div>

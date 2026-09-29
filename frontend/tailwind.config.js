@@ -4,11 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        lavender: '#F3E8FF',
-        pink: '#FCE7F3',
-        charcoal: '#334155',
-        'charcoal-soft': '#64748B',
-        line: '#E9D5FF',
+        background: '#FAF6F0',
+        card: '#FFFFFF',
+        primary: '#8A7568',
+        sage: '#82977F',
+        peach: '#DFA58D',
+        'dark-text': '#332D29',
+        muted: '#817A74',
+        border: '#E8DED4',
         white: '#FFFFFF',
         emerald: '#10B981',
         amber: '#F59E0B',

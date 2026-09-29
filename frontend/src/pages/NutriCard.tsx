@@ -51,17 +51,17 @@ export function NutriCard({ user, dashboard, onClose }: NutriCardProps) {
   const progressMap = new Map(dashboard.progress.map((p) => [p.nutrient, p]))
 
   return (
-    <div className="fixed inset-0 z-[60] bg-lavender overflow-y-auto">
+    <div className="fixed inset-0 z-[60] bg-background overflow-y-auto">
       <div className="min-h-screen px-6 py-8">
         <div className="max-w-dashboard mx-auto">
           <div className="flex items-center justify-between mb-6">
-            <h1 className="font-display text-2xl font-semibold text-charcoal">
+            <h1 className="font-display text-2xl font-semibold text-dark-text">
               AURA-Nutri
             </h1>
             <button
               type="button"
               onClick={onClose}
-              className="w-10 h-10 rounded-card bg-white border border-line flex items-center justify-center text-charcoal-soft hover:text-charcoal"
+              className="w-10 h-10 rounded-card bg-white border border-border flex items-center justify-center text-muted hover:text-dark-text"
               aria-label={t(copy.dashboard.close, language)}
             >
               <svg
@@ -79,15 +79,15 @@ export function NutriCard({ user, dashboard, onClose }: NutriCardProps) {
             </button>
           </div>
 
-          <div className="bg-white border border-line rounded-card p-6 md:p-8 space-y-6">
+          <div className="bg-white border border-border rounded-card p-6 md:p-8 space-y-6">
             <div className="text-center">
-              <p className={`${bodyFontClass(language)} text-sm text-charcoal-soft uppercase tracking-wide`}>
+              <p className={`${bodyFontClass(language)} text-sm text-muted uppercase tracking-wide`}>
                 {today}
               </p>
-              <h2 className="font-display text-xl font-medium text-charcoal capitalize mt-1">
+              <h2 className="font-display text-xl font-medium text-dark-text capitalize mt-1">
                 {user.name}
               </h2>
-              <p className={`${bodyFontClass(language)} text-sm text-charcoal-soft mt-1 capitalize`}>
+              <p className={`${bodyFontClass(language)} text-sm text-muted mt-1 capitalize`}>
                 {t({ en: 'Phase', hi: 'अवस्था' }, language)}: {dashboard.phase}
               </p>
             </div>
@@ -111,13 +111,13 @@ export function NutriCard({ user, dashboard, onClose }: NutriCardProps) {
               })}
             </div>
 
-            <div className="border-t border-line pt-4">
-              <p className={`${bodyFontClass(language)} text-center text-charcoal font-medium`}>
+            <div className="border-t border-border pt-4">
+              <p className={`${bodyFontClass(language)} text-center text-dark-text font-medium`}>
                 {riskSummary(dashboard.progress, language)}
               </p>
             </div>
 
-            <p className={`${bodyFontClass(language)} text-xs text-charcoal-soft text-center`}>
+            <p className={`${bodyFontClass(language)} text-xs text-muted text-center`}>
               {dashboard.disclaimer}
             </p>
           </div>

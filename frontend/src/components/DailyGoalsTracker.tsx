@@ -26,8 +26,8 @@ export function DailyGoalsTracker({ days }: DailyGoalsTrackerProps) {
   const circumference = normalizedRadius * 2 * Math.PI
 
   return (
-    <section className="bg-white border border-line rounded-card p-6">
-      <h2 className="font-display text-lg font-medium text-charcoal mb-6">
+    <section className="bg-white border border-border rounded-card p-6">
+      <h2 className="font-display text-lg font-medium text-dark-text mb-6">
         {t(copy.dashboard.dailyGoalsTitle, language)}
       </h2>
       <div className="flex items-start justify-between gap-2 overflow-x-auto pb-2">
@@ -80,7 +80,7 @@ export function DailyGoalsTracker({ days }: DailyGoalsTrackerProps) {
                   </svg>
                 )}
               </div>
-              <span className={`${bodyFontClass(language)} text-[10px] text-charcoal-soft uppercase`}>
+              <span className={`${bodyFontClass(language)} text-[10px] text-muted uppercase`}>
                 {day.label}
               </span>
             </div>
