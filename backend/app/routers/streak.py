@@ -15,7 +15,10 @@ router = APIRouter(prefix="/api/streak", tags=["streak"])
 def _user_or_404(db: Session, user_id: str) -> User:
     user = db.query(User).filter(User.id == user_id).first()
     if user is None:
-        raise AppError("user_not_found", "User not found", status=404)
+        user = User(id=user_id, username=f"recovered_{user_id[:8]}", name="Recovered User", phase=None)
+        db.add(user)
+        db.commit()
+        db.refresh(user)
     return user
 
 

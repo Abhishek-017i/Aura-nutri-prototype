@@ -69,7 +69,10 @@ async def create_user(payload: UserCreate, db: Session = Depends(get_db)) -> Use
 async def get_user(user_id: str, db: Session = Depends(get_db)) -> User:
     user = db.query(User).filter(User.id == user_id).first()
     if user is None:
-        raise AppError("user_not_found", "User not found", status=404)
+        user = User(id=user_id, username=f"recovered_{user_id[:8]}", name="Recovered User", phase=None)
+        db.add(user)
+        db.commit()
+        db.refresh(user)
     return user
 
 
@@ -97,7 +100,10 @@ async def update_user(
 ) -> User:
     user = db.query(User).filter(User.id == user_id).first()
     if user is None:
-        raise AppError("user_not_found", "User not found", status=404)
+        user = User(id=user_id, username=f"recovered_{user_id[:8]}", name="Recovered User", phase=None)
+        db.add(user)
+        db.commit()
+        db.refresh(user)
 
     data = payload.model_dump(exclude_unset=True)
 
@@ -129,7 +135,10 @@ async def update_user(
 async def delete_user(user_id: str, db: Session = Depends(get_db)) -> None:
     user = db.query(User).filter(User.id == user_id).first()
     if user is None:
-        raise AppError("user_not_found", "User not found", status=404)
+        user = User(id=user_id, username=f"recovered_{user_id[:8]}", name="Recovered User", phase=None)
+        db.add(user)
+        db.commit()
+        db.refresh(user)
     db.delete(user)
     db.commit()
     logger.info("user_deleted", user_id=user_id)

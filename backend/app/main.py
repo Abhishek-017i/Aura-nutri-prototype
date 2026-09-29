@@ -34,6 +34,15 @@ def create_app() -> FastAPI:
 
     Base.metadata.create_all(bind=engine)
 
+    from sqlalchemy.orm import Session
+    from app.models import Food
+    from scripts.seed_db import seed
+
+    with Session(engine) as session:
+        if session.query(Food).count() == 0:
+            logger.info("database_empty_seeding_now")
+            seed()
+
     app.include_router(users.router)
     app.include_router(foods.router)
     app.include_router(logs.router)
