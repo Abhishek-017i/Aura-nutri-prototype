@@ -49,7 +49,7 @@ export function Login({ onComplete }: LoginProps) {
 
   return (
     <main className="min-h-screen w-full max-w-chat mx-auto px-6 py-12 flex flex-col justify-center bg-background">
-      <div className="bg-white border border-border rounded-card p-8">
+      <div className="bg-card border border-border rounded-card p-8">
         <div className="flex items-start justify-between gap-4 mb-2">
           <h1 className="font-display text-3xl font-semibold text-dark-text">
             {t(copy.login.title, language)}

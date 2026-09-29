@@ -20,8 +20,8 @@ export function MicButton({
         'relative w-16 h-16 rounded-full border-2 flex items-center justify-center',
         'transition-colors duration-200 disabled:opacity-50',
         isListening
-          ? 'border-primary bg-primary'
-          : 'border-primary bg-background',
+          ? 'border-primary bg-primary text-white'
+          : 'border-primary bg-soft-sage',
       ].join(' ')}
     >
       {!isListening && (

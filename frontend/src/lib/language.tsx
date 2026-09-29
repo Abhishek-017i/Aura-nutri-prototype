@@ -37,7 +37,7 @@ export function LanguageToggle() {
   const { language, setLanguage } = useLanguage()
 
   return (
-    <div className="inline-flex bg-white border border-border rounded-data overflow-hidden">
+    <div className="inline-flex bg-card border border-border rounded-data overflow-hidden">
       <button
         type="button"
         onClick={() => setLanguage('en')}

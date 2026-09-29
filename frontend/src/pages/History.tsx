@@ -185,7 +185,7 @@ export function History({ user, refreshTrigger }: HistoryProps) {
 
   return (
     <main className="w-full max-w-dashboard mx-auto px-6 py-6 space-y-6">
-      <section className="bg-white border border-border rounded-card p-6">
+      <section className="bg-card border border-border rounded-card p-6">
         <h2 className="font-display text-lg font-medium text-dark-text mb-4">
           {t(copy.history.trendTitle, language)}
         </h2>
@@ -217,7 +217,7 @@ export function History({ user, refreshTrigger }: HistoryProps) {
         )}
       </section>
 
-      <section className="bg-white border border-border rounded-card p-6">
+      <section className="bg-card border border-border rounded-card p-6">
         <h2 className="font-display text-lg font-medium text-dark-text mb-4">
           {t(copy.history.title, language)}
         </h2>
@@ -298,12 +298,12 @@ export function History({ user, refreshTrigger }: HistoryProps) {
 function statusColor(level: NutrientRisk['risk_level']): string {
   switch (level) {
     case 'LOW':
-      return '#10B981'
+      return '#5F8A68'
     case 'MEDIUM':
-      return '#F59E0B'
+      return '#C8953D'
     case 'HIGH':
     default:
-      return '#F43F5E'
+      return '#C96B67'
   }
 }
 
@@ -349,7 +349,7 @@ function NutrientSummaryLines({
 function HistorySkeleton() {
   return (
     <main className="w-full max-w-dashboard mx-auto px-6 py-6 space-y-6 animate-pulse">
-      <div className="bg-white border border-border rounded-card p-6">
+      <div className="bg-card border border-border rounded-card p-6">
         <div className="h-6 w-40 bg-primary/10 rounded-data mb-4" />
         <div className="h-4 w-64 bg-primary/10 rounded-data mb-6" />
         <div className="space-y-3">
@@ -365,7 +365,7 @@ function HistorySkeleton() {
         </div>
       </div>
 
-      <div className="bg-white border border-border rounded-card p-6 space-y-4">
+      <div className="bg-card border border-border rounded-card p-6 space-y-4">
         <div className="h-6 w-32 bg-primary/10 rounded-data mb-4" />
         {[1, 2, 3].map((i) => (
           <div key={i}>

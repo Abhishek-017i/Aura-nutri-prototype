@@ -57,14 +57,14 @@ export function Layout({
               <button
                 type="button"
                 onClick={() => setMenuOpen((prev) => !prev)}
-                className="w-9 h-9 rounded-full bg-white border border-border flex items-center justify-center text-sm font-sans font-semibold text-dark-text"
+                className="w-9 h-9 rounded-full bg-card border border-border flex items-center justify-center text-sm font-sans font-semibold text-dark-text"
                 aria-haspopup="menu"
                 aria-expanded={menuOpen}
               >
                 {initial}
               </button>
               {menuOpen && (
-                <div className="absolute right-0 top-full mt-2 w-40 bg-white border border-border rounded-card shadow-modal overflow-hidden">
+                <div className="absolute right-0 top-full mt-2 w-40 bg-card border border-border rounded-card shadow-modal overflow-hidden">
                   <button
                     type="button"
                     onClick={() => {
@@ -87,7 +87,7 @@ export function Layout({
       <button
         type="button"
         onClick={() => {}}
-        className="fixed bottom-20 left-4 z-30 w-12 h-12 rounded-full bg-white border border-border flex items-center justify-center text-muted hover:text-dark-text"
+        className="fixed bottom-20 left-4 z-30 w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center text-muted hover:text-dark-text"
         aria-label="Cheat day"
       >
         <IconCheatDay className="w-5 h-5" />
@@ -96,13 +96,13 @@ export function Layout({
       <button
         type="button"
         onClick={onOpenLog}
-        className="fixed bottom-20 right-4 z-30 w-14 h-14 rounded-card bg-peach border border-border flex items-center justify-center text-dark-text shadow-none"
+        className="fixed bottom-20 right-4 z-30 w-14 h-14 rounded-card bg-primary border border-border flex items-center justify-center text-dark-text shadow-none"
         aria-label={t(copy.dashboard.logMeal, language)}
       >
         <IconPlus className="w-7 h-7" />
       </button>
 
-      <nav className="fixed bottom-0 inset-x-0 z-30 bg-white border-t border-border">
+      <nav className="fixed bottom-0 inset-x-0 z-30 bg-card border-t border-border">
         <div className="max-w-dashboard mx-auto h-14 flex items-center justify-around">
           {TABS.map(({ id, labelKey, icon: Icon }) => {
             const isActive = activeTab === id
@@ -114,7 +114,7 @@ export function Layout({
                 className={[
                   'flex flex-col items-center justify-center gap-0.5 w-16 h-12 rounded-data transition-colors',
                   isActive
-                    ? 'bg-peach text-dark-text'
+                    ? 'bg-soft-peach text-dark-text'
                     : 'text-muted hover:text-dark-text',
                 ].join(' ')}
                 aria-current={isActive ? 'page' : undefined}

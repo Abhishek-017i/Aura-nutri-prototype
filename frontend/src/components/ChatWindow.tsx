@@ -23,7 +23,7 @@ export function ChatWindow({ user }: ChatWindowProps) {
   }
 
   return (
-    <div className="flex flex-col h-[60vh] bg-white border border-border rounded-card">
+    <div className="flex flex-col h-[60vh] bg-card border border-border rounded-card">
       <div className="flex items-center justify-between px-4 py-3 border-b border-border">
         <h2 className="font-display text-lg font-medium text-dark-text">{t(copy.chat.title, language)}</h2>
         <button
@@ -60,7 +60,7 @@ export function ChatWindow({ user }: ChatWindowProps) {
                 `max-w-[80%] px-4 py-2 rounded-data ${bodyFontClass(language)} text-sm`,
                 message.role === 'user'
                   ? 'bg-primary text-white'
-                  : 'bg-white border border-border text-dark-text',
+                  : 'bg-card border border-border text-dark-text',
               ].join(' ')}
             >
               {message.content}
@@ -70,7 +70,7 @@ export function ChatWindow({ user }: ChatWindowProps) {
 
         {isLoading && (
           <div className="flex justify-start">
-            <div className={`bg-white border border-border rounded-data px-4 py-2 ${bodyFontClass(language)} text-sm text-muted`}>
+            <div className={`bg-card border border-border rounded-data px-4 py-2 ${bodyFontClass(language)} text-sm text-muted`}>
               {t(copy.chat.typing, language)}
             </div>
           </div>
@@ -85,7 +85,7 @@ export function ChatWindow({ user }: ChatWindowProps) {
 
       <form
         onSubmit={handleSubmit}
-        className="flex gap-2 p-4 border-t border-border bg-white"
+        className="flex gap-2 p-4 border-t border-border bg-card"
       >
         <input
           type="text"
@@ -104,7 +104,7 @@ export function ChatWindow({ user }: ChatWindowProps) {
         </button>
       </form>
 
-      <p className={`${bodyFontClass(language)} px-4 pb-3 text-xs text-muted text-center bg-white`}>
+      <p className={`${bodyFontClass(language)} px-4 pb-3 text-xs text-muted text-center bg-card`}>
         AURA-Nutri provides food intelligence, not medical advice. Always consult a
         qualified physician or registered dietitian before changing your diet or taking
         supplements.

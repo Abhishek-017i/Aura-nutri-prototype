@@ -2,9 +2,9 @@ import { bodyFontClass, copy, t } from '../lib/copy.ts'
 import { useLanguage } from '../lib/useLanguage.ts'
 
 const RISK_COLORS: Record<string, string> = {
-  LOW: '#10B981',
-  MEDIUM: '#F59E0B',
-  HIGH: '#F43F5E',
+  LOW: '#5F8A68',
+  MEDIUM: '#C8953D',
+  HIGH: '#C96B67',
 }
 
 interface RiskBadgeProps {

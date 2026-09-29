@@ -4,8 +4,8 @@ import { nutrientLabels, t } from '../lib/copy.ts'
 import type { Language } from '../lib/language.tsx'
 
 function ringColor(percent: number): string {
-  if (percent >= 100) return '#10B981'
-  return '#F59E0B'
+  if (percent >= 100) return '#5F8A68'
+  return '#C8953D'
 }
 
 interface NutrientRingProps {
@@ -47,7 +47,7 @@ export function NutrientRing({
             startAngle={90}
             endAngle={-270}
           >
-            <RadialBar dataKey="value" background fill={color} />
+            <RadialBar dataKey="value" background={{ fill: '#E5DDD3' }} fill={color} />
           </RadialBarChart>
         </ResponsiveContainer>
         <div className="absolute inset-0 flex flex-col items-center justify-center">

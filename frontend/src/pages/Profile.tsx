@@ -244,7 +244,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
   if (!profile.phase) {
     return (
       <main className="min-h-[60vh] w-full max-w-dashboard mx-auto px-6 py-8">
-        <div className="bg-white border border-border rounded-card p-8">
+        <div className="bg-card border border-border rounded-card p-8">
           <h1 className="font-display text-2xl font-semibold text-dark-text mb-2">
             {t(copy.profile.setupTitle, language)}
           </h1>
@@ -332,7 +332,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
 
   return (
     <main className="w-full max-w-dashboard mx-auto px-6 py-6 space-y-6">
-      <section className="bg-white border border-border rounded-card p-6">
+      <section className="bg-card border border-border rounded-card p-6">
         <div className="flex items-center justify-between mb-4">
           <h2 className="font-display text-lg font-medium text-dark-text">
             {t(copy.profile.personal, language)}
@@ -446,7 +446,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
         )}
       </section>
 
-      <section className="bg-white border border-border rounded-card p-6">
+      <section className="bg-card border border-border rounded-card p-6">
         <h2 className="font-display text-lg font-medium text-dark-text mb-2">
           {t(copy.profile.phaseAdjust, language)}
         </h2>
@@ -521,7 +521,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
         )}
       </section>
 
-      <section className="bg-white border border-border rounded-card p-6">
+      <section className="bg-card border border-border rounded-card p-6">
         <h2 className="font-display text-lg font-medium text-dark-text mb-4">
           {t(copy.profile.streakTitle, language)}
         </h2>
@@ -582,7 +582,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
         )}
       </section>
 
-      <section className="bg-white border border-border rounded-card p-6">
+      <section className="bg-card border border-border rounded-card p-6">
         <h2 className="font-display text-lg font-medium text-dark-text mb-2">
           {t(copy.dashboard.logout, language)}
         </h2>
@@ -602,7 +602,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
 function ProfileSkeleton() {
   return (
     <main className="w-full max-w-dashboard mx-auto px-6 py-6 space-y-6 animate-pulse">
-      <div className="bg-white border border-border rounded-card p-6">
+      <div className="bg-card border border-border rounded-card p-6">
         <div className="h-6 w-40 bg-primary/10 rounded-data mb-4" />
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[1, 2, 3].map((i) => (
@@ -611,7 +611,7 @@ function ProfileSkeleton() {
         </div>
       </div>
 
-      <div className="bg-white border border-border rounded-card p-6">
+      <div className="bg-card border border-border rounded-card p-6">
         <div className="h-6 w-48 bg-primary/10 rounded-data mb-4" />
         <div className="flex flex-wrap gap-2 mb-4">
           {[1, 2, 3, 4, 5].map((i) => (
@@ -621,7 +621,7 @@ function ProfileSkeleton() {
         <div className="h-10 w-48 bg-background rounded-data" />
       </div>
 
-      <div className="bg-white border border-border rounded-card p-6">
+      <div className="bg-card border border-border rounded-card p-6">
         <div className="h-6 w-48 bg-primary/10 rounded-data mb-4" />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[1, 2, 3, 4].map((i) => (

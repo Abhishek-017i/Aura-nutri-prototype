@@ -137,7 +137,7 @@ export function LogMealModal({
         if (e.target === e.currentTarget && !isLoading) handleClose()
       }}
     >
-      <div className="w-full max-w-chat max-h-[90vh] overflow-y-auto bg-white border border-border rounded-card shadow-modal p-6">
+      <div className="w-full max-w-chat max-h-[90vh] overflow-y-auto bg-card border border-border rounded-card shadow-modal p-6">
         <div className="flex items-start justify-between gap-4 mb-4">
           <h2 className="font-display text-xl font-medium text-dark-text">
             {view === 'input'

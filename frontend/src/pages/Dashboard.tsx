@@ -152,7 +152,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog }: DashboardProps) {
   return (
     <main className="w-full max-w-dashboard mx-auto px-6 py-6 space-y-6">
       {hasNoData ? (
-        <section className="bg-white border border-border rounded-card p-8 text-center">
+        <section className="bg-card border border-border rounded-card p-8 text-center">
           <h2 className="font-display text-xl font-medium text-dark-text mb-2">
             {t(copy.dashboard.emptyTitle, language)}
           </h2>
@@ -169,7 +169,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog }: DashboardProps) {
         </section>
       ) : (
         <>
-          <section className="bg-white border border-border rounded-card p-6">
+          <section className="bg-card border border-border rounded-card p-6">
             <h2 className="font-display text-lg font-medium text-dark-text mb-6">
               {t(copy.dashboard.progressTitle, language)}
             </h2>
@@ -197,7 +197,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog }: DashboardProps) {
 
           <NutrientHistograms data={weeklyData} targets={targets} />
 
-          <section className="bg-white border border-border rounded-card p-4">
+          <section className="bg-card border border-border rounded-card p-4">
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div>
                 <p className={`${bodyFontClass(language)} text-xs text-muted uppercase tracking-wide`}>
@@ -238,7 +238,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog }: DashboardProps) {
 function DashboardSkeleton() {
   return (
     <main className="w-full max-w-dashboard mx-auto px-6 py-6 space-y-6 animate-pulse">
-      <div className="bg-white border border-border rounded-card p-6">
+      <div className="bg-card border border-border rounded-card p-6">
         <div className="h-6 w-40 bg-primary/10 rounded-data mb-6" />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center">
           {[1, 2, 3, 4].map((i) => (
@@ -247,7 +247,7 @@ function DashboardSkeleton() {
         </div>
       </div>
 
-      <div className="bg-white border border-border rounded-card p-6">
+      <div className="bg-card border border-border rounded-card p-6">
         <div className="h-6 w-32 bg-primary/10 rounded-data mb-6" />
         <div className="flex items-start justify-between gap-2">
           {[1, 2, 3, 4, 5, 6, 7].map((i) => (
@@ -259,7 +259,7 @@ function DashboardSkeleton() {
         </div>
       </div>
 
-      <div className="bg-white border border-border rounded-card p-6 space-y-6">
+      <div className="bg-card border border-border rounded-card p-6 space-y-6">
         <div className="h-6 w-32 bg-primary/10 rounded-data" />
         {[1, 2, 3, 4].map((i) => (
           <div key={i}>

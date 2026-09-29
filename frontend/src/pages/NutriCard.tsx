@@ -61,7 +61,7 @@ export function NutriCard({ user, dashboard, onClose }: NutriCardProps) {
             <button
               type="button"
               onClick={onClose}
-              className="w-10 h-10 rounded-card bg-white border border-border flex items-center justify-center text-muted hover:text-dark-text"
+              className="w-10 h-10 rounded-card bg-card border border-border flex items-center justify-center text-muted hover:text-dark-text"
               aria-label={t(copy.dashboard.close, language)}
             >
               <svg
@@ -79,7 +79,7 @@ export function NutriCard({ user, dashboard, onClose }: NutriCardProps) {
             </button>
           </div>
 
-          <div className="bg-white border border-border rounded-card p-6 md:p-8 space-y-6">
+          <div className="bg-card border border-border rounded-card p-6 md:p-8 space-y-6">
             <div className="text-center">
               <p className={`${bodyFontClass(language)} text-sm text-muted uppercase tracking-wide`}>
                 {today}

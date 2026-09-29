@@ -20,16 +20,16 @@ const NUTRIENT_ORDER: ('iron' | 'calcium' | 'vit_d' | 'b12')[] = [
 ]
 
 function statusColor(percent: number): string {
-  if (percent >= 100) return '#10B981'
-  if (percent >= 50) return '#F59E0B'
-  return '#F43F5E'
+  if (percent >= 100) return '#5F8A68'
+  if (percent >= 50) return '#C8953D'
+  return '#C96B67'
 }
 
 export function NutrientHistograms({ data, targets }: NutrientHistogramsProps) {
   const { language } = useLanguage()
 
   return (
-    <section className="bg-white border border-border rounded-card p-6">
+    <section className="bg-card border border-border rounded-card p-6">
       <h2 className="font-display text-lg font-medium text-dark-text mb-6">
         {t(copy.dashboard.weeklyTrendsTitle, language)}
       </h2>

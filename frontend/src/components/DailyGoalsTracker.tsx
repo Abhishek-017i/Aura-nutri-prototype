@@ -13,9 +13,9 @@ interface DailyGoalsTrackerProps {
 }
 
 function ringColor(percent: number): string {
-  if (percent >= 100) return '#10B981'
-  if (percent >= 50) return '#F59E0B'
-  return '#F43F5E'
+  if (percent >= 100) return '#5F8A68'
+  if (percent >= 50) return '#C8953D'
+  return '#C96B67'
 }
 
 export function DailyGoalsTracker({ days }: DailyGoalsTrackerProps) {
@@ -26,7 +26,7 @@ export function DailyGoalsTracker({ days }: DailyGoalsTrackerProps) {
   const circumference = normalizedRadius * 2 * Math.PI
 
   return (
-    <section className="bg-white border border-border rounded-card p-6">
+    <section className="bg-card border border-border rounded-card p-6">
       <h2 className="font-display text-lg font-medium text-dark-text mb-6">
         {t(copy.dashboard.dailyGoalsTitle, language)}
       </h2>

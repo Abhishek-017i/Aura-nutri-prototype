@@ -148,7 +148,7 @@ export function MealPreview({
           type="button"
           onClick={onCancel}
           disabled={isLoading}
-          className={`${bodyFontClass(language)} flex-1 px-4 py-3 bg-white border border-border text-dark-text rounded-data font-medium disabled:opacity-50`}
+          className={`${bodyFontClass(language)} flex-1 px-4 py-3 bg-card border border-border text-dark-text rounded-data font-medium disabled:opacity-50`}
         >
           {t(copy.dashboard.cancel, language)}
         </button>
