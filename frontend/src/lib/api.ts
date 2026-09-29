@@ -179,3 +179,27 @@ export async function sendChat(userId: string, messages: ChatMessage[]): Promise
     body: JSON.stringify({ user_id: userId, messages }),
   })
 }
+
+export async function transcribeAudio(audioBlob: Blob): Promise<{ transcript: string }> {
+  const formData = new FormData()
+  const filename = audioBlob.type.includes('mp4') || audioBlob.type.includes('mp3')
+    ? 'audio.mp3'
+    : 'audio.webm'
+  formData.append('audio', audioBlob, filename)
+
+  const response = await fetch(`${API_BASE_URL}/api/transcribe`, {
+    method: 'POST',
+    body: formData,
+  })
+
+  if (!response.ok) {
+    const body = (await response.json().catch(() => ({}))) as Partial<ApiError>
+    throw new HTTPError(response.status, {
+      code: body.code ?? 'request_failed',
+      message: body.message ?? `Request failed with ${response.status}`,
+      detail: body.detail ?? null,
+    })
+  }
+
+  return (await response.json()) as { transcript: string }
+}

@@ -1,50 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { copy, t } from '../lib/copy.ts'
+import { transcribeAudio } from '../lib/api.ts'
 import type { Language } from '../lib/language.tsx'
-
-interface SpeechRecognitionAlternative {
-  transcript: string
-  confidence: number
-}
-
-interface SpeechRecognitionResult {
-  isFinal: boolean
-  length: number
-  item(index: number): SpeechRecognitionAlternative
-  [index: number]: SpeechRecognitionAlternative
-}
-
-interface SpeechRecognitionResultList {
-  length: number
-  item(index: number): SpeechRecognitionResult
-  [index: number]: SpeechRecognitionResult
-}
-
-interface SpeechRecognitionEvent extends Event {
-  resultIndex: number
-  results: SpeechRecognitionResultList
-}
-
-interface SpeechRecognitionErrorEvent extends Event {
-  error: string
-  message: string
-}
-
-interface SpeechRecognition extends EventTarget {
-  lang: string
-  continuous: boolean
-  interimResults: boolean
-  maxAlternatives: number
-  start(): void
-  stop(): void
-  abort(): void
-  onresult: ((event: SpeechRecognitionEvent) => void) | null
-  onerror: ((event: SpeechRecognitionErrorEvent) => void) | null
-  onend: (() => void) | null
-}
-
-type SpeechRecognitionConstructor = new () => SpeechRecognition
 
 interface VoiceOptions {
   onTranscript?: (text: string) => void
@@ -65,28 +23,42 @@ interface VoiceActions {
   reset: () => void
 }
 
-function getRecognitionConstructor(): SpeechRecognitionConstructor | null {
-  const win = window as unknown as Record<string, unknown>
-  return (win.SpeechRecognition ?? win.webkitSpeechRecognition) as SpeechRecognitionConstructor | null
+function selectMimeType(): string | undefined {
+  if (typeof MediaRecorder === 'undefined') return undefined
+  const types = [
+    'audio/webm;codecs=opus',
+    'audio/webm',
+    'audio/ogg;codecs=opus',
+    'audio/mp4',
+  ]
+  for (const type of types) {
+    if (MediaRecorder.isTypeSupported(type)) return type
+  }
+  return undefined
 }
 
-const LANG_CODE: Record<Language, string> = {
-  en: 'en-IN',
-  hi: 'hi-IN',
+function isSupported(): boolean {
+  return (
+    typeof window !== 'undefined' &&
+    typeof navigator !== 'undefined' &&
+    typeof navigator.mediaDevices !== 'undefined' &&
+    typeof navigator.mediaDevices.getUserMedia === 'function' &&
+    typeof MediaRecorder !== 'undefined'
+  )
 }
 
 export function useVoice(options: VoiceOptions = {}): VoiceState & VoiceActions {
-  // Default to English so the mic does not force Hindi when the caller has not
-  // supplied a language. The app normally passes the active UI language, which
-  // lets English/Hindi/Hinglish speakers use the language they are comfortable
-  // with. Web Speech API requires a specific locale code; it cannot auto-detect.
   const { onTranscript, language = 'en' } = options
   const [isListening, setIsListening] = useState(false)
   const [transcript, setTranscript] = useState('')
   const [interimTranscript, setInterimTranscript] = useState('')
   const [error, setError] = useState<string | null>(null)
-  const [supported] = useState(() => typeof window !== 'undefined' && getRecognitionConstructor() !== null)
-  const recognitionRef = useRef<SpeechRecognition | null>(null)
+  const [supported] = useState(() => isSupported())
+
+  const mediaStreamRef = useRef<MediaStream | null>(null)
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null)
+  const chunksRef = useRef<Blob[]>([])
+  const abortControllerRef = useRef<AbortController | null>(null)
 
   const reset = useCallback(() => {
     setTranscript('')
@@ -94,14 +66,29 @@ export function useVoice(options: VoiceOptions = {}): VoiceState & VoiceActions 
     setError(null)
   }, [])
 
-  const stop = useCallback(() => {
-    recognitionRef.current?.stop()
-    setIsListening(false)
+  const cleanup = useCallback(() => {
+    abortControllerRef.current?.abort()
+    abortControllerRef.current = null
+    mediaRecorderRef.current = null
+    if (mediaStreamRef.current) {
+      mediaStreamRef.current.getTracks().forEach((track) => track.stop())
+      mediaStreamRef.current = null
+    }
+    chunksRef.current = []
   }, [])
 
-  const start = useCallback(() => {
-    const Constructor = getRecognitionConstructor()
-    if (!Constructor) {
+  const stop = useCallback(() => {
+    try {
+      mediaRecorderRef.current?.stop()
+    } catch {
+      // Ignore errors if recorder is already stopped.
+    }
+    setIsListening(false)
+    setInterimTranscript('')
+  }, [])
+
+  const start = useCallback(async () => {
+    if (!supported) {
       setError(t(copy.voice.unsupported, language))
       return
     }
@@ -109,60 +96,78 @@ export function useVoice(options: VoiceOptions = {}): VoiceState & VoiceActions 
     setError(null)
     setInterimTranscript('')
     setIsListening(true)
+    chunksRef.current = []
 
-    const recognition = new Constructor()
-    recognition.lang = LANG_CODE[language]
-    recognition.continuous = false
-    recognition.interimResults = true
-    recognition.maxAlternatives = 1
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
+      mediaStreamRef.current = stream
 
-    recognition.onresult = (event) => {
-      let final = ''
-      let interim = ''
-      for (let i = event.resultIndex; i < event.results.length; i += 1) {
-        const result = event.results[i]
-        const text = result[0]?.transcript ?? ''
-        if (result.isFinal) {
-          final += text
-        } else {
-          interim += text
+      const mimeType = selectMimeType()
+      const recorder = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream)
+      mediaRecorderRef.current = recorder
+
+      recorder.ondataavailable = (event) => {
+        if (event.data.size > 0) {
+          chunksRef.current.push(event.data)
         }
       }
-      if (final) {
-        const full = final
-        setTranscript((prev) => `${prev} ${full}`.trim())
-        onTranscript?.(full)
+
+      recorder.onstop = async () => {
+        setIsListening(false)
+        setInterimTranscript('')
+
+        if (chunksRef.current.length === 0) {
+          setError(t(copy.voice.noSpeech, language))
+          cleanup()
+          return
+        }
+
+        const blob = new Blob(chunksRef.current, { type: recorder.mimeType || 'audio/webm' })
+        cleanup()
+
+        try {
+          const { transcript: text } = await transcribeAudio(blob)
+          if (text) {
+            setTranscript((prev) => (prev ? `${prev} ${text}` : text).trim())
+            onTranscript?.(text)
+          } else {
+            setError(t(copy.voice.noSpeech, language))
+          }
+        } catch (err) {
+          const message = err instanceof Error ? err.message : t(copy.voice.genericError, language)
+          setError(message)
+        }
       }
-      setInterimTranscript(interim)
-    }
 
-    recognition.onerror = (event) => {
-      let message = t(copy.voice.genericError, language)
-      if (event.error === 'no-speech') {
-        message = t(copy.voice.noSpeech, language)
-      } else if (event.error === 'audio-capture') {
-        message = t(copy.voice.audioCapture, language)
-      } else if (event.error === 'not-allowed') {
-        message = t(copy.voice.notAllowed, language)
+      recorder.onerror = () => {
+        setError(t(copy.voice.genericError, language))
+        setIsListening(false)
+        cleanup()
       }
-      setError(message)
-      setIsListening(false)
-    }
 
-    recognition.onend = () => {
+      recorder.start()
+    } catch (err) {
       setIsListening(false)
-      setInterimTranscript('')
+      if (err instanceof DOMException) {
+        if (err.name === 'NotAllowedError' || err.name === 'PermissionDeniedError') {
+          setError(t(copy.voice.notAllowed, language))
+        } else if (err.name === 'NotFoundError' || err.name === 'DevicesNotFoundError') {
+          setError(t(copy.voice.audioCapture, language))
+        } else {
+          setError(t(copy.voice.genericError, language))
+        }
+      } else {
+        setError(t(copy.voice.genericError, language))
+      }
+      cleanup()
     }
-
-    recognitionRef.current = recognition
-    recognition.start()
-  }, [language, onTranscript])
+  }, [language, onTranscript, supported, cleanup])
 
   useEffect(() => {
     return () => {
-      recognitionRef.current?.abort()
+      cleanup()
     }
-  }, [])
+  }, [cleanup])
 
   return {
     isListening,
