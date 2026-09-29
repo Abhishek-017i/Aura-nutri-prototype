@@ -46,7 +46,20 @@ export function Layout({
   const initial = user.name.trim().charAt(0).toUpperCase() || 'U'
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      {/* Botanical Watermarks */}
+      <div className="fixed top-0 left-0 w-64 h-64 -translate-x-1/4 -translate-y-1/4 pointer-events-none opacity-[0.15]">
+        <svg viewBox="0 0 100 100" fill="currentColor" className="text-sage w-full h-full">
+          <path d="M10,90 Q40,90 40,50 Q40,10 90,10 Q60,10 60,50 Q60,90 10,90 Z" />
+          <path d="M20,70 Q50,60 70,30 Q40,40 20,70 Z" />
+        </svg>
+      </div>
+      <div className="fixed bottom-0 right-0 w-80 h-80 translate-x-1/3 translate-y-1/3 pointer-events-none opacity-[0.15]">
+        <svg viewBox="0 0 100 100" fill="currentColor" className="text-sage w-full h-full transform rotate-180">
+          <path d="M10,90 Q40,90 40,50 Q40,10 90,10 Q60,10 60,50 Q60,90 10,90 Z" />
+          <path d="M20,70 Q50,60 70,30 Q40,40 20,70 Z" />
+        </svg>
+      </div>
       <header className="fixed top-0 inset-x-0 z-40 bg-background border-b border-border">
         <div className="max-w-dashboard mx-auto px-4 h-14 flex items-center justify-between">
           <LanguageToggle />
@@ -96,7 +109,7 @@ export function Layout({
       <button
         type="button"
         onClick={onOpenLog}
-        className="fixed bottom-20 right-4 z-30 w-14 h-14 rounded-card bg-primary border border-border flex items-center justify-center text-dark-text shadow-none"
+        className="fixed bottom-20 right-4 z-30 w-14 h-14 rounded-card bg-primary border border-primary flex items-center justify-center text-white shadow-none"
         aria-label={t(copy.dashboard.logMeal, language)}
       >
         <IconPlus className="w-7 h-7" />

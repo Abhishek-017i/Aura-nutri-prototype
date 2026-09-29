@@ -2,17 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .bg-background {
-    background-color: #F3E8FF;
-  }
-  .bg-peach {
-    background-color: #FCE7F3;
-  }
-  .text-dark-text {
-    color: #334155;
-  }
-}
 
 @layer base {
   body {
