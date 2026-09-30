@@ -1,5 +1,4 @@
 import { useMemo } from 'react'
-import { t, copy } from '../lib/copy.ts'
 import type { Language } from '../lib/language.tsx'
 import type { MealLog } from '../lib/types.ts'
 

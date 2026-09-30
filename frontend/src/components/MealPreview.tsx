@@ -115,7 +115,7 @@ export function MealPreview({
               <span className={`${bodyFontClass(language)} text-xs text-muted`}>
                 {Math.round(item.iron_mg)}mg {t(copy.dashboard.iron, language)} ·{' '}
                 {Math.round(item.calcium_mg)}mg {t(nutrientLabels.calcium, language)} ·{' '}
-                {Math.round(item.vit_d_iu)}IU {t(nutrientLabels.vitD, language)} ·{' '}
+                {Math.round(item.vit_d_iu)}IU {t(nutrientLabels.vit_d, language)} ·{' '}
                 {Math.round(item.b12_mcg)}mcg {t(nutrientLabels.b12, language)}
               </span>
             </div>
@@ -129,7 +129,7 @@ export function MealPreview({
           {Math.round(tTotals.calcium)}mg {t(nutrientLabels.calcium, language)}
         </span>
         <span>
-          {Math.round(tTotals.vit_d)}IU {t(nutrientLabels.vitD, language)}
+          {Math.round(tTotals.vit_d)}IU {t(nutrientLabels.vit_d, language)}
         </span>
         <span>
           {Math.round(tTotals.b12)}mcg {t(nutrientLabels.b12, language)}

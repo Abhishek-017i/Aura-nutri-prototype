@@ -5,14 +5,13 @@ import { useLanguage } from '../lib/useLanguage.ts'
 import {
   claimCheatDay,
   getCheatDayStatus,
-  getStreak,
   getUser,
   HTTPError,
   patchPhase,
   updateUser,
   listLogs,
 } from '../lib/api.ts'
-import type { CheatDayStatus, Phase, PhaseOut, StreakOut, UserProfile, MealLog } from '../lib/types.ts'
+import type { CheatDayStatus, Phase, PhaseOut, UserProfile, MealLog } from '../lib/types.ts'
 import { StreakHeatmap } from '../components/StreakHeatmap.tsx'
 
 interface ProfileProps {
@@ -30,20 +29,9 @@ const PHASE_OPTIONS: Phase[] = [
   'pregnancy_lactation',
 ]
 
-function formatDateTime(iso: string | null, language: string): string {
-  if (!iso) return ''
-  const d = new Date(iso)
-  return d.toLocaleDateString(language === 'hi' ? 'hi-IN' : 'en-IN', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  })
-}
-
 export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }: ProfileProps) {
   const { language } = useLanguage()
   const [profile, setProfile] = useState<UserProfile | null>(null)
-  const [streak, setStreak] = useState<StreakOut | null>(null)
   const [cheat, setCheat] = useState<CheatDayStatus | null>(null)
   const [logs, setLogs] = useState<MealLog[]>([])
   const [loading, setLoading] = useState(true)
@@ -75,14 +63,12 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
     setCheatMessage(null)
 
     try {
-      const [profileData, streakData, cheatData, logsData] = await Promise.all([
+      const [profileData, cheatData, logsData] = await Promise.all([
         getUser(user.id),
-        getStreak(user.id),
         getCheatDayStatus(user.id),
         listLogs({ userId: user.id, limit: 300 }),
       ])
       setProfile(profileData)
-      setStreak(streakData)
       setCheat(cheatData)
       setLogs(logsData)
     } catch (err) {
@@ -141,8 +127,6 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
     try {
       const result = await claimCheatDay(user.id)
       setCheat(result)
-      const streakData = await getStreak(user.id)
-      setStreak(streakData)
       setCheatMessage(t(copy.profile.cheatDayUsed, language))
     } catch (err) {
       setCheatMessage(err instanceof HTTPError ? err.message : t(copy.profile.cheatDayUnavailable, language))
