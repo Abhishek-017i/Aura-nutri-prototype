@@ -76,8 +76,111 @@ def seed() -> int:
         for row in data:
             session.add(Food(**row))
         session.commit()
+        
+        seed_users(session, data)
 
     return len(data)
+
+from datetime import datetime, timezone, timedelta, date, time
+from uuid import uuid4
+from app.services.phase_engine import calculate_dynamic_rdas
+
+def seed_users(session: Session, foods_data: list[dict[str, object]]) -> None:
+    users_info = [
+        {"username": "krisha", "name": "Krisha", "age": 19, "phase": "follicular"},
+        {"username": "sneha", "name": "Sneha", "age": 26, "phase": "menstrual"},
+        {"username": "garima", "name": "Garima", "age": 19, "phase": "luteal"},
+        {"username": "anshika", "name": "Anshika", "age": 20, "phase": "follicular"},
+        {"username": "juhi", "name": "Juhi", "age": 57, "phase": "menopause"},
+        {"username": "priya", "name": "Priya", "age": 36, "phase": "luteal"},
+    ]
+    
+    # We clear these specific users and their logs
+    usernames = [u["username"] for u in users_info]
+    existing_users = session.query(User).filter(User.username.in_(usernames)).all()
+    user_ids = [u.id for u in existing_users]
+    if user_ids:
+        session.query(MealLog).filter(MealLog.user_id.in_(user_ids)).delete(synchronize_session=False)
+        session.query(User).filter(User.username.in_(usernames)).delete(synchronize_session=False)
+        session.commit()
+        
+    db_foods = {f.name_en: f for f in session.query(Food).all()}
+    
+    # Create the users
+    for ui in users_info:
+        targets = calculate_dynamic_rdas(
+            base_age=ui["age"],
+            base_gender="female",
+            phase=ui["phase"]
+        )
+        user = User(
+            id=str(uuid4()),
+            username=ui["username"],
+            name=ui["name"],
+            age=ui["age"],
+            gender="female",
+            phase=ui["phase"],
+            target_iron_mg=targets.target_iron_mg,
+            target_calcium_mg=targets.target_calcium_mg,
+            target_vit_d_iu=targets.target_vit_d_mcg * 40.0,
+            target_b12_mcg=targets.target_b12_mcg,
+        )
+        session.add(user)
+        session.commit()
+        session.refresh(user)
+        
+        # Seed realistic historical meal logs from Sep 24 to Sep 29
+        # 2026-09-24 to 2026-09-29
+        
+        days_to_seed = [
+            date(2026, 9, 24),
+            date(2026, 9, 25),
+            date(2026, 9, 26),
+            date(2026, 9, 27),
+            date(2026, 9, 28),
+            date(2026, 9, 29),
+        ]
+        
+        # Realistic meals pool
+        # Breakfast: 8:30-9:15, Lunch: 13:00-14:15, Snacks: 17:00, Dinner: 20:00-21:30
+        food_options = list(db_foods.values())
+        
+        for d in days_to_seed:
+            meal_times = [
+                (time(8, 45, 0), "Roti / chapati (wheat, plain)", 80),
+                (time(13, 30, 0), "Rice, cooked (white)", 150),
+                (time(17, 15, 0), "Banana (kela)", 100),
+                (time(20, 30, 0), "Spinach (palak)", 100)
+            ]
+            
+            for t_idx, (m_time, default_food, qty_g) in enumerate(meal_times):
+                food = db_foods.get(default_food)
+                if not food and food_options:
+                    food = food_options[t_idx % len(food_options)]
+                if not food:
+                    continue
+                
+                ratio = qty_g / 100.0
+                logged_at = datetime.combine(d, m_time, tzinfo=timezone.utc)
+                log = MealLog(
+                    id=str(uuid4()),
+                    user_id=user.id,
+                    food_id=food.id,
+                    food_name=food.name_en,
+                    logged_at=logged_at,
+                    meal_type="demo",
+                    qty_g=qty_g,
+                    energy_kcal=round(food.energy_kcal * ratio, 2),
+                    protein_g=round(food.protein_g * ratio, 2),
+                    iron_mg=round(food.iron_mg * ratio, 2),
+                    calcium_mg=round(food.calcium_mg * ratio, 2),
+                    vit_d_iu=round(food.vit_d_iu * ratio, 2),
+                    b12_mcg=round(food.b12_mcg * ratio, 2),
+                    notes="Seeded by natural timestamps logic",
+                )
+                session.add(log)
+    
+    session.commit()
 
 
 def verify_iron_values() -> bool:
