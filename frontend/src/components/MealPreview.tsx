@@ -31,6 +31,8 @@ function totals(items: ParsedItem[]) {
     protein: items.reduce((sum, item) => sum + item.protein_g, 0),
     iron: items.reduce((sum, item) => sum + item.iron_mg, 0),
     calcium: items.reduce((sum, item) => sum + item.calcium_mg, 0),
+    vit_d: items.reduce((sum, item) => sum + item.vit_d_iu, 0),
+    b12: items.reduce((sum, item) => sum + item.b12_mcg, 0),
   }
 }
 
@@ -111,9 +113,10 @@ export function MealPreview({
                 />
               </label>
               <span className={`${bodyFontClass(language)} text-xs text-muted`}>
-                {Math.round(item.energy_kcal)} {t(copy.dashboard.calories, language)} ·{' '}
-                {Math.round(item.protein_g)}g {t(copy.dashboard.protein, language)} ·{' '}
-                {Math.round(item.iron_mg)}mg {t(copy.dashboard.iron, language)}
+                {Math.round(item.iron_mg)}mg {t(copy.dashboard.iron, language)} ·{' '}
+                {Math.round(item.calcium_mg)}mg {t(nutrientLabels.calcium, language)} ·{' '}
+                {Math.round(item.vit_d_iu)}IU {t(nutrientLabels.vitD, language)} ·{' '}
+                {Math.round(item.b12_mcg)}mcg {t(nutrientLabels.b12, language)}
               </span>
             </div>
           </li>
@@ -121,15 +124,15 @@ export function MealPreview({
       </ul>
 
       <div className={`${bodyFontClass(language)} flex flex-wrap gap-4 text-sm text-muted border-t border-border pt-3`}>
-        <span>
-          {Math.round(tTotals.energy)} {t(copy.dashboard.calories, language)}
-        </span>
-        <span>
-          {Math.round(tTotals.protein)}g {t(copy.dashboard.protein, language)}
-        </span>
         <span>{Math.round(tTotals.iron)}mg {t(copy.dashboard.iron, language)}</span>
         <span>
           {Math.round(tTotals.calcium)}mg {t(nutrientLabels.calcium, language)}
+        </span>
+        <span>
+          {Math.round(tTotals.vit_d)}IU {t(nutrientLabels.vitD, language)}
+        </span>
+        <span>
+          {Math.round(tTotals.b12)}mcg {t(nutrientLabels.b12, language)}
         </span>
       </div>
 

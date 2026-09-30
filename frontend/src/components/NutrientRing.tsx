@@ -1,4 +1,4 @@
-import { RadialBar, RadialBarChart, ResponsiveContainer } from 'recharts'
+import { RadialBar, RadialBarChart, ResponsiveContainer, PolarAngleAxis } from 'recharts'
 
 import { nutrientLabels, t } from '../lib/copy.ts'
 import type { Language } from '../lib/language.tsx'
@@ -47,7 +47,8 @@ export function NutrientRing({
             startAngle={90}
             endAngle={-270}
           >
-            <RadialBar dataKey="value" background={{ fill: '#E5DDD3' }} fill={color} />
+            <PolarAngleAxis type="number" domain={[0, 100]} angleAxisId={0} tick={false} />
+            <RadialBar dataKey="value" background={{ fill: '#E5DDD3' }} fill={color} cornerRadius={percent > 0 && percent < 100 ? 4 : 0} />
           </RadialBarChart>
         </ResponsiveContainer>
         <div className="absolute inset-0 flex flex-col items-center justify-center">

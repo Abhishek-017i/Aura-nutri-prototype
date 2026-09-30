@@ -208,20 +208,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog }: DashboardProps) {
                 </p>
               </div>
               <div className="text-right">
-                <p className={`${bodyFontClass(language)} text-xs text-muted uppercase tracking-wide`}>
-                  {t(copy.dashboard.calories, language)}
-                </p>
-                <p className="font-display text-xl font-medium text-dark-text">
-                  {Math.round(dashboard.total_energy_kcal)}
-                </p>
-              </div>
-              <div className="text-right">
-                <p className={`${bodyFontClass(language)} text-xs text-muted uppercase tracking-wide`}>
-                  {t(copy.dashboard.protein, language)}
-                </p>
-                <p className="font-display text-xl font-medium text-dark-text">
-                  {Math.round(dashboard.total_protein_g)}g
-                </p>
+                {/* Removed kcal and protein stats */}
               </div>
             </div>
           </section>

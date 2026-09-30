@@ -249,7 +249,7 @@ export function History({ user, refreshTrigger }: HistoryProps) {
                           {log.food_name ?? t(copy.dashboard.notMatched, language)}
                         </p>
                         <p className="font-sans text-xs text-muted">
-                          {formatTime(log.logged_at, language)} · {Math.round(log.qty_g)}g · {Math.round(log.energy_kcal)} {t(copy.dashboard.calories, language)}
+                          {formatTime(log.logged_at, language)} · {Math.round(log.qty_g)}g
                         </p>
                       </div>
                       <div className="flex items-center gap-3 flex-shrink-0">

@@ -10,8 +10,10 @@ import {
   HTTPError,
   patchPhase,
   updateUser,
+  listLogs,
 } from '../lib/api.ts'
-import type { CheatDayStatus, Phase, PhaseOut, StreakOut, UserProfile } from '../lib/types.ts'
+import type { CheatDayStatus, Phase, PhaseOut, StreakOut, UserProfile, MealLog } from '../lib/types.ts'
+import { StreakHeatmap } from '../components/StreakHeatmap.tsx'
 
 interface ProfileProps {
   user: { id: string; name: string }
@@ -43,6 +45,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
   const [profile, setProfile] = useState<UserProfile | null>(null)
   const [streak, setStreak] = useState<StreakOut | null>(null)
   const [cheat, setCheat] = useState<CheatDayStatus | null>(null)
+  const [logs, setLogs] = useState<MealLog[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [phaseUpdating, setPhaseUpdating] = useState(false)
@@ -72,14 +75,16 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
     setCheatMessage(null)
 
     try {
-      const [profileData, streakData, cheatData] = await Promise.all([
+      const [profileData, streakData, cheatData, logsData] = await Promise.all([
         getUser(user.id),
         getStreak(user.id),
         getCheatDayStatus(user.id),
+        listLogs({ userId: user.id, limit: 300 }),
       ])
       setProfile(profileData)
       setStreak(streakData)
       setCheat(cheatData)
+      setLogs(logsData)
     } catch (err) {
       if (err instanceof HTTPError) {
         setError(err.message)
@@ -525,47 +530,8 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
         <h2 className="font-display text-lg font-medium text-dark-text mb-4">
           {t(copy.profile.streakTitle, language)}
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-          <div className="p-3 bg-background rounded-data">
-            <p className={`${bodyFontClass(language)} text-xs text-muted uppercase tracking-wide`}>
-              {t(copy.profile.currentStreak, language)}
-            </p>
-            <p className="font-display text-2xl font-medium text-dark-text">
-              {streak?.current_streak ?? 0}{' '}
-              <span className="text-sm font-sans text-muted">
-                {t(copy.profile.days, language)}
-              </span>
-            </p>
-          </div>
-          <div className="p-3 bg-background rounded-data">
-            <p className={`${bodyFontClass(language)} text-xs text-muted uppercase tracking-wide`}>
-              {t(copy.profile.longestStreak, language)}
-            </p>
-            <p className="font-display text-2xl font-medium text-dark-text">
-              {streak?.longest_streak ?? 0}{' '}
-              <span className="text-sm font-sans text-muted">
-                {t(copy.profile.days, language)}
-              </span>
-            </p>
-          </div>
-          <div className="p-3 bg-background rounded-data">
-            <p className={`${bodyFontClass(language)} text-xs text-muted uppercase tracking-wide`}>
-              {t(copy.profile.cheatCharms, language)}
-            </p>
-            <p className="font-display text-2xl font-medium text-dark-text">
-              {cheat?.cheat_charms_available ?? 0}
-            </p>
-          </div>
-          <div className="p-3 bg-background rounded-data">
-            <p className={`${bodyFontClass(language)} text-xs text-muted uppercase tracking-wide`}>
-              {t(copy.profile.nextCharm, language)}
-            </p>
-            <p className="font-display text-lg font-medium text-dark-text">
-              {cheat?.next_charm_available_on
-                ? formatDateTime(cheat.next_charm_available_on, language)
-                : t(copy.profile.nextCharmUnknown, language)}
-            </p>
-          </div>
+        <div className="mb-6">
+          <StreakHeatmap logs={logs} language={language} />
         </div>
 
         <button

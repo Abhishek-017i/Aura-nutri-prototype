@@ -59,8 +59,8 @@ export function NutrientHistograms({ data, targets }: NutrientHistogramsProps) {
                     const value = day.values[nutrient] ?? 0
                     const percent = target > 0 ? (value / target) * 100 : 0
                     return (
-                      <div key={day.date} className="flex-1 flex flex-col items-center gap-1 min-w-[2rem]">
-                        <div className="w-full flex items-end h-24 bg-background rounded-t-data overflow-hidden">
+                      <div key={day.date} className="flex-1 flex flex-col items-center gap-1 min-w-0">
+                        <div className="w-1/2 flex items-end h-24 bg-background rounded-t-data overflow-hidden mx-auto">
                           <div
                             className="w-full rounded-t-data"
                             style={{
@@ -70,7 +70,7 @@ export function NutrientHistograms({ data, targets }: NutrientHistogramsProps) {
                             title={`${Math.round(value)} / ${Math.round(target)}`}
                           />
                         </div>
-                        <span className={`${bodyFontClass(language)} text-[10px] text-muted uppercase`}>
+                        <span className={`${bodyFontClass(language)} text-[9px] whitespace-nowrap text-muted uppercase tracking-tighter`}>
                           {day.label}
                         </span>
                       </div>
