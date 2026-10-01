@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import html2canvas from 'html2canvas'
 import { getDashboard } from '../lib/api.ts'
-import { useLanguage } from '../lib/useLanguage.ts'
+//import { useLanguage } from '../lib/useLanguage.ts'
 import type { Dashboard, User } from '../lib/types.ts'
 import { IconFire, IconLeaf } from '../components/icons.tsx'
 
@@ -19,11 +19,11 @@ const NUTRIENT_ORDER: ('iron' | 'calcium' | 'vit_d' | 'b12')[] = [
 ]
 
 export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriCardProps) {
-  const { language } = useLanguage()
+  //const { language } = useLanguage()
   const [dashboard, setDashboard] = useState<Dashboard | null>(initialDashboard || null)
   const [loading, setLoading] = useState(!initialDashboard)
   const [imageSrc, setImageSrc] = useState<string | null>(null)
-  
+
   const cardRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -102,14 +102,14 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
             onClick={handleDownload}
             className="px-4 py-2 rounded-full bg-white text-black font-sans text-sm font-semibold flex items-center gap-2"
           >
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" /></svg>
             Save
           </button>
         </div>
       </div>
 
       {/* Card Container */}
-      <div 
+      <div
         ref={cardRef}
         className="w-full max-w-[360px] aspect-[9/16] relative overflow-hidden rounded-[32px] shadow-2xl bg-black"
         style={{
@@ -122,7 +122,7 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
           {/* Subtle gradient overlay to ensure text legibility */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/90" />
         </div>
-        
+
         {/* Hidden File Input for snapping/uploading */}
         <label className="absolute inset-0 z-10 cursor-pointer">
           <input type="file" accept="image/*" className="hidden" onChange={handleImageUpload} />
@@ -135,10 +135,10 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
             <div>
               <p className="text-white/80 text-[10px] tracking-[0.2em] font-medium mb-2 uppercase">{todayStr}</p>
               <h1 className="text-white font-bold text-3xl leading-[1.1] tracking-tight mb-2">
-                DAILY<br/>NUTRITION
+                DAILY<br />NUTRITION
               </h1>
               <p className="text-white/80 text-[10px] tracking-[0.15em] uppercase leading-relaxed">
-                SMALL CHOICES.<br/>BIG IMPACT.
+                SMALL CHOICES.<br />BIG IMPACT.
               </p>
             </div>
             <div className="flex flex-col items-center pt-2">
@@ -167,7 +167,7 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
                 const isComplete = percentVal >= 100
                 const ringColor = isComplete ? '#5F8A68' : '#DFA58D' // Emerald or Peach/Amber
                 const trackColor = 'rgba(255,255,255,0.15)'
-                
+
                 // SVG Circle math
                 const size = 64
                 const strokeWidth = 4
