@@ -44,6 +44,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<Tab>(() => initialTab(loadStoredUser()))
   const [logOpen, setLogOpen] = useState(false)
   const [refreshTrigger, setRefreshTrigger] = useState(0)
+  const [nutriCardOpen, setNutriCardOpen] = useState(false)
   const [nutriCardDashboard, setNutriCardDashboard] = useState<DashboardType | null>(null)
 
   const handleComplete = (newUser: UserProfile) => {
@@ -57,6 +58,7 @@ export default function App() {
     setUser(null)
     setActiveTab('home')
     setNutriCardDashboard(null)
+    setNutriCardOpen(false)
   }
 
   const handleLogged = () => {
@@ -80,10 +82,12 @@ export default function App() {
 
   const handleShowNutriCard = (dashboard: DashboardType) => {
     setNutriCardDashboard(dashboard)
+    setNutriCardOpen(true)
   }
 
   const handleCloseNutriCard = () => {
     setNutriCardDashboard(null)
+    setNutriCardOpen(false)
   }
 
   if (!user) {
@@ -98,6 +102,7 @@ export default function App() {
         onTabChange={setActiveTab}
         onLogout={handleLogout}
         onOpenLog={() => setLogOpen(true)}
+        onOpenNutriCard={() => setNutriCardOpen(true)}
       >
         {activeTab === 'home' && (
           <Dashboard
@@ -126,10 +131,10 @@ export default function App() {
         onShowNutriCard={handleShowNutriCard}
       />
 
-      {nutriCardDashboard && user && (
+      {nutriCardOpen && user && (
         <NutriCard
           user={user}
-          dashboard={nutriCardDashboard}
+          dashboard={nutriCardDashboard || undefined}
           onClose={handleCloseNutriCard}
         />
       )}

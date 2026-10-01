@@ -138,3 +138,21 @@ export function IconChevronDown({ className = 'w-4 h-4' }: IconProps) {
     </svg>
   )
 }
+
+export function IconLeaf({ className = 'w-5 h-5' }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 1 8.3C19.2 15.6 15.3 20 11 20z" />
+      <path d="M11 20v-9" />
+    </svg>
+  )
+}

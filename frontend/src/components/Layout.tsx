@@ -22,6 +22,7 @@ interface LayoutProps {
   onTabChange: (tab: Tab) => void
   onLogout: () => void
   onOpenLog: () => void
+  onOpenNutriCard: () => void
   children: React.ReactNode
 }
 
@@ -38,6 +39,7 @@ export function Layout({
   onTabChange,
   onLogout,
   onOpenLog,
+  onOpenNutriCard,
   children,
 }: LayoutProps) {
   const { language } = useLanguage()
@@ -99,9 +101,9 @@ export function Layout({
 
       <button
         type="button"
-        onClick={() => {}}
+        onClick={onOpenNutriCard}
         className="fixed bottom-20 left-4 z-30 w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center text-muted hover:text-dark-text"
-        aria-label="Cheat day"
+        aria-label="NutriCard"
       >
         <IconCheatDay className="w-5 h-5" />
       </button>
