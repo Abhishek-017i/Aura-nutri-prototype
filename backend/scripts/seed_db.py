@@ -23,30 +23,20 @@ def _to_optional_float(value: str) -> float | None:
 
 def load_seed_data() -> list[dict[str, object]]:
     data_dir = Path(__file__).resolve().parent.parent / "app" / "data"
-    seed_path = data_dir / "ifct_seed_v2.csv"
-    provenance_path = data_dir / "ifct_seed_v2_provenance.csv"
+    seed_path = data_dir / "foods_import.csv"
 
     if not seed_path.exists():
         raise FileNotFoundError(f"Seed file not found: {seed_path}")
-    if not provenance_path.exists():
-        raise FileNotFoundError(f"Provenance file not found: {provenance_path}")
 
     with seed_path.open(newline="", encoding="utf-8") as f:
-        seed_rows: dict[str, dict[str, str]] = {
-            row["name_en"]: row for row in csv.DictReader(f)
-        }
-
-    with provenance_path.open(newline="", encoding="utf-8") as f:
-        provenance_rows: dict[str, dict[str, str]] = {
-            row["name_en"]: row for row in csv.DictReader(f)
-        }
+        rows = list(csv.DictReader(f))
 
     merged: list[dict[str, object]] = []
-    for name_en, row in seed_rows.items():
-        prov = provenance_rows.get(name_en, {})
+    for row in rows:
         merged.append(
             {
-                "name_en": name_en,
+                "id": row.get("id"),
+                "name_en": row.get("name_en"),
                 "name_hi": row.get("name_hi") or None,
                 "category": row.get("category") or None,
                 "energy_kcal": _to_float(row.get("energy_kcal", "")),
@@ -58,8 +48,8 @@ def load_seed_data() -> list[dict[str, object]]:
                 "serving_g": _to_float(row.get("serving_g", "")),
                 "aliases": row.get("aliases") or None,
                 "piece_g": _to_optional_float(row.get("piece_g", "")),
-                "tier": prov.get("tier") or row.get("tier") or None,
-                "source": prov.get("source") or row.get("source") or None,
+                "tier": row.get("tier") or None,
+                "source": row.get("source") or None,
             }
         )
 
@@ -185,7 +175,7 @@ def seed_users(session: Session, foods_data: list[dict[str, object]]) -> None:
 
 def verify_iron_values() -> bool:
     data_dir = Path(__file__).resolve().parent.parent / "app" / "data"
-    seed_path = data_dir / "ifct_seed_v2.csv"
+    seed_path = data_dir / "foods_import.csv"
 
     with seed_path.open(newline="", encoding="utf-8") as f:
         csv_rows = {row["name_en"]: row for row in csv.DictReader(f)}

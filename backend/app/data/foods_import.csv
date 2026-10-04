@@ -1,0 +1,1013 @@
+﻿id,name_en,name_hi,category,energy_kcal,protein_g,iron_mg,calcium_mg,vit_d_iu,b12_mcg,serving_g,aliases,piece_g,tier,source
+6435b519-bab7-5d57-acec-3116ef3ab498,Hot tea (Garam Chai),गरम चाय,Dish,16.144,0.388,0.022,14.204,0.0,0.055,210.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4d94c5fe-bbc6-5040-8d4d-c22ec4cc732f,Instant coffee,इंस्टेंट कॉफी,Dish,23.156,0.641,0.061,20.867,0.0,0.077,450.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e47baee6-202e-57b5-a22f-b9a72fb786df,Espreso coffee,एस्प्रेसो कॉफी,Dish,51.543,1.747,0.148,58.104,0.0,0.217,158.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b74f6cd3-23fa-572d-bf4b-1ad2411237bd,Iced tea,आइस्ड टी,Dish,10.342,0.028,0.021,1.18,0.0,0.0,320.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+257cba8b-b585-5c26-973e-20dd31e06c43,Raw mango drink (Aam panna),आम पन्ना,Dish,35.918,0.157,0.135,7.078,58.412,0.0,268.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+08723f18-6863-5386-a2df-ca1c43160599,Fruit Punch (with fresh juices),फ्रूट पंच (ताज़े रस के साथ),Dish,36.117,0.139,0.102,5.068,1.965,0.0,544.335,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6b10b7fb-775a-5277-826d-31a25703f006,Fruit Punch (with squashes),फ्रूट पंच (स्क्वैश के साथ),Dish,23.128,0.072,0.061,3.301,2.145,0.0,502.835,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ccb99fd5-894d-5f2f-924b-19e02cdedc29,Lemonade,नींबू पानी,Dish,20.799,0.035,0.048,1.84,0.386,0.0,349.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e5833b55-dd09-551a-92a2-171f7a2cac5a,Lem-o-gin,लेम-ओ-जिन,Dish,21.517,0.081,0.087,2.198,3.817,0.0,356.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+28a0a821-edaf-5cfe-a948-cae7017f0f98,Cumin infused water (Jeere/Zeere ka pani),जीरे का पानी,Dish,9.09,0.17,0.315,10.844,22.875,0.0,338.875,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+3e3bc779-f8e8-5d28-aff7-50d55f7674f3,Coco pine cooler,कोको पाइन कूलर,Dish,32.749,0.555,0.126,17.81,2.686,0.045,432.2,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+abdaf14d-1c9d-544d-b829-e29c8bf618ea,Summer cooler,समर कूलर,Dish,22.429,0.374,0.277,8.13,5.55,0.0,494.66,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1cddc439-e502-50e1-92f7-c639d7c40a55,Hot cocoa,गरम कोको,Dish,90.1,3.363,0.315,113.665,0.0,0.433,191.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+758bfdc5-29a7-5ec9-82db-f8c5091a46d0,Cold coffee with ice cream,आइसक्रीम वाली कोल्ड कॉफी,Dish,67.849,1.57,0.124,53.294,0.0,0.202,301.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6608b409-94a3-5b05-b4e0-4db60e3aede7,Banana milkshake (Kele milkshake),केले का मिल्कशेक,Dish,65.306,1.843,0.132,62.639,0.926,0.239,345.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8a7cdb34-536b-56ab-aca3-2cff3d1cc0d7,Mango milkshake (Aam milkshake),आम का मिल्कशेक,Dish,56.901,1.727,0.155,62.333,20.872,0.233,355.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e64a2ff9-9c4c-5c32-a61b-c2c89f2ed748,Pineapple milkshake (Ananas milkshake),अनानास मिल्कशेक,Dish,55.718,1.659,0.114,59.918,0.0,0.227,364.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4cea069c-eadb-58ea-9b80-30bd4497d913,Orange milkshake (Narangi milkshake),नारंगी मिल्कशेक,Dish,57.415,1.865,0.106,67.418,0.0,0.259,319.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b8e44721-a6e1-583d-a485-7004efb4b523,Egg nog,एग नॉग,Dish,97.141,4.776,0.431,102.132,8.611,0.51,303.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4aae9bd8-adfb-597c-9755-26441eccb0bb,Sweet Lassi (Meethi lassi),मीठी लस्सी,Dish,35.661,1.288,0.032,45.65,0.0,0.084,442.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+aee710e3-3db3-5e09-9834-629369632bc4,Lassi (salted),नमकीन लस्सी,Dish,18.845,1.355,0.036,47.784,0.286,0.087,423.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f830421c-c3a7-5974-b2ec-aee4bb0779da,Cheese and chilli sandwich ,चीज़ और मिर्च सैंडविच,Dish,218.115,6.796,0.991,113.789,9.629,0.128,111.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+2ac6084c-4d18-583d-a4cc-6f127dca90e3,Egg sandwich (Ande ka sandwich),अंडे का सैंडविच,Dish,285.957,8.695,1.442,110.133,13.336,0.244,101.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+bfb173b5-a274-53f9-87a4-fb4265270013,Cucumber sandwich (Kheere ka sandwich),खीरे का सैंडविच,Dish,188.598,4.798,1.019,87.835,24.968,0.014,121.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6394217f-7955-5427-b463-2c242278fcbb,Cheese and pineapple sandwich (Cheese aur ananas ka sandwich),चीज़ और अनानास का सैंडविच,Dish,257.714,8.197,1.044,199.732,6.113,0.166,111.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+59b46f11-e9b6-5925-a7f8-8be64a6e51cf,Cheese and tomato sandwich (Cheese aur tamatar ke sandwich),चीज़ और टमाटर के सैंडविच,Dish,243.32,7.919,0.999,191.202,105.954,0.159,116.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+dece203b-7e46-5085-aeb4-62367d97ab84,Chicken sandwich,चिकन सैंडविच,Dish,253.273,13.124,1.186,89.558,25.73,0.096,116.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+df2ce323-0b0d-5933-a760-a84f99f702e1,Peanut and tomato sandwich (Moongfali aur tamatar ka sandwich),मूंगफली और टमाटर का सैंडविच,Dish,291.427,9.529,1.583,94.033,160.03,0.014,121.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+06002052-2b43-518e-bd10-b6f7037fc08d,Rainbow sandwich,रेनबो सैंडविच,Dish,272.751,7.747,1.204,172.038,5.183,0.118,95.65,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+093ceab0-8ce6-5748-a7c4-8a85ef6e027f,Club sandwich ,क्लब सैंडविच,Dish,235.324,7.31,0.862,115.679,76.539,0.279,175.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+3f3ac959-569a-5567-962d-d966ebd67dc8,Vegetarian club sandwich,शाकाहारी क्लब सैंडविच,Dish,198.329,5.451,0.775,122.439,130.726,0.09,165.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+bd0aeed9-bd5b-581a-bd47-0b94e14e410a,Pin wheel sandwich,पिनव्हील सैंडविच,Dish,311.521,8.767,1.36,67.753,19.674,0.424,55.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1781a6d6-eca8-5dd5-9242-175141037e94,Carrot apple sandwich (Gajar aur seb ka sandwich),गाजर और सेब का सैंडविच,Dish,214.112,5.297,1.798,118.048,18.122,0.024,97.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8c38ea50-dbba-5d42-8d5a-bc59b0e65adc,Salami sandwich,सलामी सैंडविच,Dish,255.594,8.696,1.107,73.543,17.034,0.401,148.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+25a8c6b0-94cc-5926-9b6a-296ae200626e,Vegetable and mayonnaise sandwich,सब्ज़ी और मेयोनेज़ सैंडविच,Dish,244.262,4.474,0.915,79.528,71.685,0.023,136.6,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c9b3231b-bb13-5ce7-b06d-d18772f1d049,Egg and tomato sandwich (Ande aur tamatar ka sandwich),अंडे और टमाटर का सैंडविच,Dish,222.106,7.656,1.303,95.712,61.081,0.201,119.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+edd4f5c8-9c39-5127-aaf6-548bee301cde,Sweet open sandwich,मीठा ओपन सैंडविच,Dish,244.246,4.985,1.146,85.184,5.098,0.014,118.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+2ebba60e-8533-55a6-9c70-d6c7f80fecfe,Mushroom and cheese sandwich (toasted),मशरूम और चीज़ सैंडविच (टोस्टेड),Dish,227.419,7.786,0.844,172.353,274.545,0.155,151.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+135cae80-95cf-5674-8169-afe1516bc788,Cheese and tomato sandwich (toasted) (Cheese aur tamatar ke sandwich (toasted)),चीज़ और टमाटर के सैंडविच (टोस्टेड),Dish,224.58,6.822,0.821,169.224,159.562,0.155,151.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+2c537710-3aaa-54ad-a223-ecb8e295febd,Pea potato sandwich (toasted) (Matar aloo ka sandwich),मटर आलू का सैंडविच,Dish,164.901,4.605,1.107,64.153,69.881,0.0,177.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ad39cc3f-5519-5852-98bf-b90a2eb8f47e,Paneer pea sandwich (toasted) (Paneer matar ka sandwich),पनीर मटर का सैंडविच,Dish,249.556,12.4,1.256,274.102,68.801,0.315,177.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b9ddc9c5-b836-5544-b864-0187a3be7c85,Chicken sandwich (toasted),चिकन सैंडविच (टोस्टेड),Dish,167.368,12.081,0.989,99.987,29.062,0.123,171.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+aca834db-664f-5c8c-b068-f3a8a4967bad,Pea keema sandwich (toasted) (Matar aur keema ka sandwich),मटर और कीमा सैंडविच,Dish,171.775,11.055,1.507,70.787,73.258,0.819,169.28,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+783c7670-0820-51d7-bd86-57c523515992,Classic club sandwich,क्लासिक क्लब सैंडविच,Dish,200.831,6.736,1.094,107.726,50.64,0.192,223.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+efb7de6c-465d-56e5-bc58-6e488de2e07b,Sesame toast,तिल टोस्ट,Dish,495.186,1.899,0.719,43.445,41.079,0.0,249.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0f192a5e-e37d-5f45-a0e1-f0680c9a1933,Cracked wheat porridge (Meetha daliya),मीठा दलिया,Dish,81.565,2.643,0.322,75.881,0.0,0.285,403.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f6cf233b-dac3-5874-9970-2bfb8ff73b20,Semolina porridge (Suji/Rava daliya),सूजी दलिया,Dish,100.894,3.75,0.355,108.517,23.568,0.413,278.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8a245fee-d92d-50bb-b3ae-a04168e24700,Oatmeal Porridge,ओटमील पोरिज,Dish,72.854,2.595,0.281,76.834,0.0,0.289,398.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1df1cee5-a91d-5deb-83fc-a8e3292697ad,Cornflakes with milk,दूध के साथ कॉर्नफ्लेक्स,Dish,117.327,3.591,0.424,106.475,0.0,0.397,278.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9d54e723-b72f-546f-9cc0-529f866fb067,Rice flakes (Chiwda/Aval),चिवड़ा,Dish,112.44,3.617,0.617,103.15,0.0,0.397,278.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4e8a56e2-7b01-5913-8350-b84135587786,Wheat flakes,गेहूं के फ्लेक्स,Dish,112.44,3.617,0.617,103.15,0.0,0.397,278.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+107999ea-890d-5a19-a6cd-7645245bcef8,Murmura (Puffed rice),मुरमुरा,Dish,113.317,3.621,0.626,103.787,0.0,0.397,278.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5d8b20e8-8325-567f-8649-088093b63c9f,Puffed wheat (Murmure/Moori),मुरमुरे,Dish,113.317,3.621,0.626,103.787,0.0,0.397,278.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+380cebaf-d247-5e2a-8dda-8a85dba3332c,Boiled egg (Ubla anda),उबला अंडा,Dish,45.355,4.431,0.643,17.745,14.527,0.295,151.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b0d43cab-f869-5e27-97b8-02bb30bcdfcc,Fried Egg ,तला हुआ अंडा,Dish,223.667,11.585,1.693,46.398,37.984,0.771,57.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a63b0c1d-38ca-58cd-b199-1b386d2c73f7,Poached egg,पोच्ड अंडा,Dish,123.867,11.976,1.747,48.241,39.171,0.795,56.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+118709b7-b77a-5fcc-b0a5-32945b129df9,Scrambled egg (Ande ki bhurji),अंडे की भुर्जी,Dish,155.971,10.291,1.419,64.593,31.337,0.746,70.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4ed31ff9-d5fd-5d9b-8d26-7751be3c1ab6,Baked egg ,बेक्ड अंडा,Dish,218.847,11.882,1.481,164.054,21.719,0.574,101.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5db5bdd0-dfe3-51a2-940d-dc475c56dd64,Plain omelette/omlet,सादा ऑमलेट,Dish,272.411,9.664,1.35,48.402,27.088,0.671,143.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+25851d01-371e-58ac-8a06-dfa65d0b292d,Stuffed egg omelette/omlet,भरवां अंडा ऑमलेट,Dish,203.515,8.603,0.914,89.909,141.121,0.489,262.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+cf7a0d3a-36a1-58f4-8f3e-cc7b9cbf346f,Pancake,पैनकेक,Dish,203.356,5.682,0.694,79.49,66.977,0.359,169.1,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1da503ae-3fc4-5f5c-8413-c456182571bf,Keema pancake,कीमा पैनकेक,Dish,176.275,9.007,0.927,40.963,86.338,0.928,441.53,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1def4efe-2d6c-5383-b7fc-09599fa310bd,Vegetable pancake,सब्ज़ी पैनकेक,Dish,125.176,3.866,0.786,42.886,169.56,0.135,468.6,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+3c3c0ba0-313e-5b2a-9c65-ce9697220843,Jam and fruit pancake,जैम और फल पैनकेक,Dish,162.018,3.792,0.518,54.056,45.111,0.231,263.1,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+159dcdf1-3e16-5c27-ae91-f22b5d3e95c4,Khoa and coconut pancake,खोया और नारियल पैनकेक,Dish,271.981,6.98,1.119,157.223,43.711,0.53,284.6,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+fb79daa8-1771-59ae-a99c-b83afdc6d537,Brown stock,ब्राउन स्टॉक,Dish,21.325,1.948,0.297,17.165,1.652,0.238,486.075,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5b8e3db0-0905-52ef-b82f-c8578e5b6149,Vegetable stock,सब्ज़ी स्टॉक,Dish,17.604,0.3,0.117,5.082,15.873,0.003,415.425,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1caef37d-a5c0-5aef-b266-853c2c8b87a0,Chicken stock,चिकन स्टॉक,Dish,29.88,3.686,0.183,3.57,10.831,0.035,375.95,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b9bab6dc-519b-5b6b-8e9e-82cafdcea6c6,Clear tomato soup (Tamatar ka soup),टमाटर का सूप,Dish,80.074,4.793,1.144,29.046,245.432,0.0,397.65,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b6e17541-e08b-57c7-a8d4-f5c48d6857ef,Lentil soup,दाल का सूप,Dish,31.166,9.653,2.259,40.568,77.324,0.002,389.23,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+386c0f77-ce30-58bb-9f91-90af73fefeee,Chicken consomme (Clear chicken soup),चिकन कंसोमे,Dish,47.945,11.471,1.824,35.479,17.302,0.089,225.9,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e9473588-4068-5558-a83f-88c3a704c531,Cream of tomato soup,क्रीम ऑफ टोमेटो सूप,Dish,97.812,4.61,0.954,39.607,208.156,0.073,462.4,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a35e9a3e-181a-5cc7-9a1b-bab5fc4dc90d,Cream of green peas soup,क्रीम ऑफ हरी मटर सूप,Dish,127.841,7.127,1.485,51.013,165.285,0.082,408.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+90e3c988-72e9-582a-b4b9-8accc3ef49f0,Cream of spinach soup,क्रीम ऑफ पालक सूप,Dish,100.538,5.214,2.1,70.77,10.104,0.073,462.63,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+be0c43c3-d761-5f82-b14b-aa7d991c0eac,Cream of mixed vegetable soup,क्रीम ऑफ मिक्स सब्ज़ी सूप,Dish,59.646,6.845,1.363,65.26,143.982,0.104,362.4,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f708c4f2-60f3-5290-92d4-90f8512ef3a5,Cream of mushroom soup,क्रीम ऑफ मशरूम सूप,Dish,117.278,6.64,1.812,70.561,172.239,0.09,375.03,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+425b5698-6323-5093-9ad1-25b1d231349d,Chicken sweet corn soup,चिकन स्वीट कॉर्न सूप,Dish,28.32,14.475,3.827,91.498,7.716,0.025,241.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+dc4cdb09-8e3f-58ac-972b-f5ff70fb632b,Minestrone soup,मिनेस्ट्रोन सूप,Dish,42.659,9.304,1.817,53.554,129.627,0.145,230.125,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+257e8784-9000-5f28-a31a-90ab18771af2,Egg drop soup,एग ड्रॉप सूप,Dish,26.637,12.93,3.93,100.135,5.818,0.073,317.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5f113623-a2c4-5c29-b700-b3973f8ae574,Chinese cabbage and meat ball soup,चाइनीज़ पत्तागोभी और मीटबॉल सूप,Dish,484.305,5.211,1.52,41.07,54.303,0.112,465.46,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a6fc9988-838d-53f5-b838-8ee24e8336fa,French onion soup,फ्रेंच ओनियन सूप,Dish,55.61,11.408,3.522,106.22,8.098,0.031,351.9,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+05daa651-5dc7-5017-952c-4e818c10c332,Hot and sour soup,हॉट एंड सॉर सूप,Dish,31.514,3.116,0.427,10.682,35.865,0.05,393.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+384cc5c5-f28c-5a58-9f75-6ac3a0a7442f,Talaumein soup,तलाउमीन सूप,Dish,35.627,10.122,2.227,42.335,50.833,0.03,369.05,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6efbe185-09e1-5a05-b6f5-1171abd91d9e,Cold cucumber soup (Thanda kheere ka soup),ठंडा खीरे का सूप,Dish,48.03,2.988,0.318,99.792,18.633,0.157,187.655,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6a337321-1218-5d46-ad18-0d7dc2a6136c,Cold summer garden soup,कोल्ड समर गार्डन सूप,Dish,49.186,8.571,2.128,43.934,11.162,0.016,307.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+57126c75-0aab-54a7-81f3-b36a6bd5c039,Chapati/Roti,चपाती,Dish,202.311,5.875,2.278,17.217,298.444,0.0,144.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+df4c4925-9540-5490-960f-41daa28d9528,Plain parantha/paratha,सादा पराठा,Dish,298.301,5.056,1.978,14.814,256.941,0.0,167.26,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+48312b6b-d8d1-5bb4-8639-ab828fadcd28,Potato parantha/paratha (Aloo ka parantha/paratha),आलू का पराठा,Dish,205.042,3.698,1.524,17.382,160.706,0.0,280.09,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+908131c1-c12d-5d1a-bbb3-40fad187230f,Radish parantha/paratha (Mooli ka parantha/paratha),मूली का पराठा,Dish,183.524,3.298,1.39,23.75,148.636,0.0,300.09,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ddd64daa-f9f5-59ea-ad3f-b53d8e24b0a5,Cauliflower parantha/paratha (Phoolgobhi ka parantha/paratha),फूलगोभी का पराठा,Dish,178.07,3.726,1.593,21.998,165.261,0.0,305.59,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+073ed43e-6fa9-50e0-b827-63304b595401,Dal parantha/paratha,दाल पराठा,Dish,268.244,6.776,2.45,23.889,202.113,0.0,230.09,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+40e35d00-82f6-554d-8422-d7cacb6f3e96,Sprouted moong parantha/paratha,अंकुरित मूंग पराठा,Dish,228.594,4.292,1.944,20.327,192.986,0.0,230.09,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+dc67df19-f207-5f4f-98d9-ef4e2424c252,Pea parantha/paratha (Matar ka parantha/paratha),मटर का पराठा,Dish,190.731,5.595,1.78,23.492,335.151,0.0,325.09,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+50ed1450-161f-5311-8704-f5830b1c3e17,Keema parantha/paratha,कीमा पराठा,Dish,238.086,9.406,1.804,19.351,147.97,0.77,300.09,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+aaa78fc0-f3b9-5697-ac2d-e4f75b3aa98a,Paneer parantha/paratha,पनीर पराठा,Dish,262.966,7.984,1.698,127.648,174.724,0.165,255.09,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f8f62674-2c81-5bc4-8560-4db255c4e671,Besan and spinach parantha/paratha (Besan aur palak ka parantha/paratha),बेसन और पालक का पराठा,Dish,216.492,5.545,1.855,33.074,115.562,0.0,246.83,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a71ec96a-7cba-503f-9623-3e6e22b300ae,Poori,पूरी,Dish,737.635,1.355,0.602,3.978,68.817,0.0,624.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+45f070b3-29fe-5432-90b7-414ab8dee280,Spinach poori (Palak poori),पालक पूरी,Dish,684.254,1.422,0.789,10.02,64.439,0.0,675.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e85d46d2-d62a-55d9-ad4e-299b03c83b06,Methi poori,मेथी पूरी,Dish,710.02,1.453,0.811,14.614,69.748,0.0,650.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+55095e12-1107-5eed-bb32-2d00b4cce05f,Dal stuffed poori,दाल भरी पूरी,Dish,785.163,2.075,0.829,6.885,83.97,0.0,593.92,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+2fedee81-e533-5bfa-b1e9-47812afdfd09,Potato stuffed poori (Aloo ki poori),आलू की पूरी,Dish,776.738,1.521,0.702,5.57,72.49,0.0,596.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6a99d3c0-3a41-53a5-88ea-ec71af065b3d,Tandoori parantha/paratha,तंदूरी पराठा,Dish,295.37,5.08,1.964,14.983,257.341,0.002,167.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a6a01f1d-3d23-5244-89e6-df7079305842,Boiled rice (Uble chawal),उबले चावल,Dish,117.19,2.603,0.24,2.703,0.0,0.0,300.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7ea50514-3ac6-5300-8f02-f461d099485d,Plain pulao,सादा पुलाव,Dish,140.208,2.339,0.407,12.757,11.284,0.0,307.9,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4f8806aa-b97c-543e-a1c3-8f07813416d8,Mixed vegetable pulao,मिक्स सब्ज़ी पुलाव,Dish,113.049,2.723,0.602,19.608,78.089,0.0,438.4,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+da844ce0-3f68-5231-960d-e560d52e6f59,Mushroom pulao,मशरूम पुलाव,Dish,124.286,2.523,0.391,13.537,124.315,0.0,358.4,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+3cc01baa-6529-5744-9c79-6b51d2331e5f,Sprouted moong pulao,अंकुरित मूंग पुलाव,Dish,112.971,2.188,0.651,16.26,15.186,0.0,407.9,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+827b98f5-6993-5ed2-9f45-a990bf7a357c,Paneer pulao,पनीर पुलाव,Dish,581.912,1.985,0.261,33.092,4.457,0.042,837.9,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f4849bfc-fc3d-541e-8529-18d055ca7e1d,Peanut pulao ,मूंगफली पुलाव,Dish,193.275,5.316,0.831,18.519,49.384,0.0,357.9,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+55a56a04-43bf-53c9-8011-1c1e30c4156f,Navratan pulao,नवरत्न पुलाव,Dish,261.708,6.198,1.096,59.607,100.25,0.048,183.1,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+cb01dc42-4336-5a6f-bf94-7579e30e811f,Green chickpeas pulao (Choliya pulao/Hare chane ka pulao),हरे चने का पुलाव,Dish,173.428,4.876,0.952,18.938,9.708,0.0,357.9,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+15e4cbcf-0a8b-582e-adf8-b32d3ef7387c,Mutton biryani/biriyani,मटन बिरयानी,Dish,190.763,7.376,1.294,68.582,81.313,0.586,207.815,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f9b34519-4b4f-5685-8a23-1190418ebc06,Vegetable biryani/biriyani,सब्ज़ी बिरयानी,Dish,174.605,3.161,0.864,33.515,113.371,0.021,301.565,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b262a73a-91a0-568c-9a92-311c08a405b0,"Lemon rice (Pulihora, Elumichai sadam, Chitranna)",नींबू चावल,Dish,176.303,4.256,0.77,12.701,51.717,0.0,319.16,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6f880c43-70cf-5a29-8152-5f2ff73f2b35,Sweet rice (Meethe chawal),मीठे चावल,Dish,215.413,2.096,0.34,11.376,8.667,0.01,347.765,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+fb63098b-11d9-55b8-bdfb-318c35342120,Curd rice (Dahi bhaat/Dahi chawal/ Perugu annam/Daddojanam/Thayir saadam),दही चावल,Dish,195.737,5.753,0.591,101.516,63.243,0.232,216.16,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+df521a50-fa89-5765-95b2-a48ccce6d6aa,Tamarind rice (Chintapandu pulihora/Puliyodharai/Puli sadam/Huli anna),इमली चावल,Dish,373.039,7.453,2.89,50.938,282.099,0.0,127.83,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8518fa3f-286c-511a-81ba-d3a9da73cd69,Spanish rice,स्पैनिश राइस,Dish,164.241,4.19,0.919,18.935,167.266,0.0,217.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+494552c7-fa4c-51f7-8d7b-8f8c0a99e2c8,Chinese fried rice,चाइनीज़ फ्राइड राइस,Dish,120.584,4.052,0.987,34.697,27.422,0.127,351.33,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9d687387-bded-5a19-8964-b2c87d76d18b,Macroni cheese pie,मैकरोनी चीज़ पाई,Dish,170.628,5.851,0.54,122.01,100.934,0.286,239.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+913bd10c-580d-5485-90de-ff464a2246cc,Vegetable chowmein,वेजिटेबल चाउमीन,Dish,129.714,3.067,0.994,28.327,23.716,0.0,299.58,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+491d8792-435a-58d2-8570-2a70b17c778d,Chicken chowmein,चिकन चाउमीन,Dish,151.334,6.331,0.892,26.101,30.99,0.037,344.3,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+72d4bd3e-9ca0-55f5-9f72-36763e460028,Cheese noodle ring,चीज़ नूडल रिंग,Dish,133.669,6.224,0.785,99.302,89.896,0.331,397.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6941daf3-180a-55ef-bc76-7f9ec2f59765,Spaghetti and cheese balls in tomato sauce,टमाटर सॉस में स्पघेटी और चीज़ बॉल्स,Dish,508.322,2.409,0.317,40.594,101.121,0.055,965.605,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5def202f-0799-57cb-95e5-58e2c7d19060,Penne platter,पेने प्लैटर,Dish,177.401,5.041,0.9,67.672,61.215,0.067,261.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e7b616b5-b6ce-56a0-a717-50a37a545f27,Pasta hot pot,पास्ता हॉट पॉट,Dish,125.173,5.838,0.82,55.277,66.139,0.484,831.42,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+47602d7a-3dd0-5965-ba96-cb8f69b7a6ef,Chicken lasagne,चिकन लज़ानिया,Dish,187.492,10.452,0.645,119.983,17.04,0.372,514.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1d6d8244-5e4a-52ad-84b0-358891cee266,Fettuccine with spinach sauce,पालक सॉस के साथ फेटुचीनी,Dish,129.207,3.104,1.281,53.668,5.961,0.045,355.13,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4f3e7b30-263e-5961-bd11-c016f76bf265,Naan,नान,Dish,286.45,8.052,1.293,88.006,174.548,0.121,159.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ad734ae5-d626-5d01-91d5-656fb7889e6f,Bhatura,भटूरा,Dish,793.203,1.63,0.329,12.116,36.988,0.013,582.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+02b8a27a-118b-506f-b4a0-ad00766d013c,Idli,इडली,Dish,137.535,4.637,0.682,8.005,33.596,0.0,100.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9a9c129f-ce11-545a-9316-9203e45506bc,Masala dosa,मसाला डोसा,Dish,164.585,3.288,0.787,15.582,59.116,0.0,209.665,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a0f140bf-5404-5e34-957f-b51d9b447fd6,Semolina dosa (Suji/Rava dosa),सूजी डोसा,Dish,227.052,7.3,1.387,116.037,201.171,0.154,73.415,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+03093437-68c9-5e3b-bc5d-bf7de22c9cc9,Onion tomato uttapam,प्याज़ टमाटर उत्तपम,Dish,462.019,1.906,0.364,5.818,57.921,0.0,278.915,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b6b7f2f6-5e93-50db-97c9-d0c0212ee1cc,Paneer kaathi roll,पनीर काठी रोल,Dish,285.942,6.916,1.417,101.662,103.507,0.193,148.335,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c91dbaa4-0945-5257-9f1b-69b6c5c8389b,Makki ki roti,मक्की की रोटी,Dish,263.968,3.492,1.113,14.762,474.588,0.002,170.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+31679b36-cb75-5151-8690-7eb5aaecfcf1,Washed moong dal (Dhuli moong ki dal),धुली मूंग की दाल,Dish,50.003,2.678,0.639,8.48,11.103,0.0,277.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ffc7a0e6-a3cf-5d79-9161-cea09c1fd37e,Washed urad dal (Dhuli urad ki dal),धुली उड़द की दाल,Dish,61.324,2.511,0.721,10.236,39.964,0.0,296.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+42e31ccb-19ee-57a8-a27e-9a2dfdc99992,Split bengal gram with bottle gourd (Channa dal with ghiya/lauki),चना दाल और लौकी,Dish,73.254,2.79,0.987,14.334,73.52,0.0,278.83,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+503a021c-5840-5f18-be45-4f65cf36d954,Dry washed urad,सूखी धुली उड़द,Dish,124.712,6.85,1.887,27.084,108.11,0.0,143.2,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+260549ac-5129-57cb-8ac0-84e2435730f5,Mixed dal,मिक्स दाल,Dish,61.928,2.506,0.782,10.996,23.748,0.0,297.83,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8d13b121-e7c5-5305-b0d1-a9ea0e075a71,Whole moong (Moong ki dal),साबुत मूंग की दाल,Dish,53.699,2.249,0.683,13.581,69.193,0.0,342.33,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d320921f-8635-5d93-bfc6-fa53f6bf6ce5,Whole masoor (Masoor ki dal),साबुत मसूर की दाल,Dish,54.055,2.279,0.948,12.199,120.127,0.0,342.33,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+950f82a1-c89c-5457-806e-61fe04fd0452,Whole moth (Moth ki dal),साबुत मोठ की दाल,Dish,54.997,2.006,0.947,18.977,92.399,0.0,342.33,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+59889ed5-370f-5794-9e55-ce2f83160de5,Whole urad (Urad ki dal),साबुत उड़द की दाल,Dish,53.795,2.213,0.783,13.07,114.035,0.0,339.33,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4665b27a-889d-53f9-8bea-e4582bab9932,Moti mahal dal (Urad rajmah mix dal),मोती महल दाल,Dish,103.128,3.93,1.053,38.126,196.012,0.037,286.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b3746e34-3edd-51fa-85b2-f3130edc1cac,Black channa curry/Bengal gram curry (Kale chane ki curry),काले चने की करी,Dish,140.677,5.666,2.433,53.875,233.326,0.0,119.92,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+adf22e7f-17e3-5df7-b9d4-b69bbaf3ea7d,Chickpeas curry (Safed channa curry),सफ़ेद चने की करी,Dish,163.432,6.099,1.815,30.609,214.014,0.0,119.92,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8115158e-9cfb-56de-bab3-4ee5f2279cef,Lobia curry,लोबिया करी,Dish,148.987,6.064,2.213,36.796,223.22,0.0,119.92,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f41eef96-ff21-5718-bf05-2b7bf1cefbc9,Soyabean curry,सोयाबीन करी,Dish,163.277,10.427,2.793,65.132,912.579,0.0,119.92,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+eac6f5d1-cbb8-5370-96d3-e982fbd08fb4,Kidney bean curry (Rajmah curry),राजमा करी,Dish,143.726,5.951,2.27,47.871,481.492,0.0,119.92,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d3b9abe5-7e33-5c29-a9ca-5df5bb3b7c4e,Sambar,सांबर,Dish,96.918,3.35,1.236,30.238,132.251,0.0,257.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a55e1b04-1d12-5018-8fb8-1843f8dae739,Besan kadhi with pakodies,पकौड़ी वाली बेसन कढ़ी,Dish,403.349,1.644,0.384,24.532,15.487,0.032,586.785,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+65189782-9f6a-549a-8322-cc2a477aff4c,Khatta channa,खट्टा चना,Dish,202.566,6.296,1.942,40.771,252.455,0.0,157.06,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a4dff82d-47f8-5498-aa4b-71c20bbdb0a3,Sprouted moong dal chat,अंकुरित मूंग दाल चाट,Dish,32.474,1.35,0.879,16.536,106.963,0.0,256.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+58106fdb-196f-5503-b383-cd306386cdc2,Potato cauliflower (Aloo gobhi),आलू गोभी,Dish,106.177,1.898,1.065,22.872,41.958,0.0,175.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+81436f6c-054a-5024-af1b-7af8d5836e56,Potato capsicum (Shimla mirch aloo),शिमला मिर्च आलू,Dish,125.53,1.41,0.859,16.447,24.438,0.0,150.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6ec02e13-a6f7-571d-88c8-df0bb26ee6e5,Cabbage and peas (Pattagobhi aur matar),पत्तागोभी और मटर,Dish,63.883,3.239,1.101,45.497,171.794,0.0,166.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+538d9df6-cc07-5379-a675-f5fe57c08bbc,Carrot and fenugreek leaves (Gajar methi),गाजर मेथी,Dish,61.917,2.095,2.718,128.83,72.154,0.0,190.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c28292c2-1c43-5923-98a5-b5e1197afb66,Potato fenugreek (Aloo methi),आलू मेथी,Dish,135.147,2.246,2.53,107.796,44.472,0.0,204.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+63ea4c45-ccf7-5e7d-87c9-6c7816846108,Brinjal bhartha (Baingan ka bhartha),बैंगन का भर्ता,Dish,65.116,1.38,0.482,17.854,107.284,0.0,325.83,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b1e32784-9c85-577a-932e-79744a571eb2,Dry potato (Sookhe aloo),सूखे आलू,Dish,103.146,1.62,0.83,17.196,8.455,0.0,105.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e8d2ada7-5f56-5544-ab6e-65ff94e2f010,Beans with coconut (Nariyal aur sem/phali; Beans thoran),नारियल और फली की सब्ज़ी,Dish,131.631,2.619,1.341,51.918,145.949,0.0,149.54,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5e798139-0c2c-5a5a-aa96-6e3bce9a8ea6,Cauliflower with coconut (Nariyal ke saath phoolgobhi),नारियल के साथ फूलगोभी,Dish,132.111,2.639,1.328,35.374,131.772,0.0,149.54,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+fc6e9ba6-b765-538c-bf38-820ab94a4c64,Carrot and cabbage with coconut (Nariyal ke saath pattagobhi aur gajar),नारियल के साथ पत्तागोभी और गाजर,Dish,106.613,1.82,0.84,48.633,90.133,0.0,199.54,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+66536ef1-f082-573b-80ae-e001a7e61f5b,Raw turnip with coconut ,नारियल के साथ कच्ची शलजम,Dish,132.148,1.803,0.82,50.647,96.463,0.0,149.54,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6608947c-d48d-5ee1-902c-7d0211a1d314,Raw papaya with coconut (Papaya thoran),कच्चे पपीते की थोरन,Dish,132.75,1.535,0.82,33.742,305.103,0.0,149.54,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+79db4fe2-f6e5-5770-bb8e-e626d1485fc2,Stuffed okra (Bharwa bhindi),भरवां भिंडी,Dish,94.34,2.08,1.179,86.891,271.972,0.0,110.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+fc6c3862-7dfa-53a2-ae17-915ba0fe6f58,Stuffed round gourd (Bharwa tinde),भरवां टिंडे,Dish,72.797,1.103,0.588,20.213,198.61,0.0,248.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a581748c-c194-5fac-8e38-50f5760dbaa0,Stuffed capsicum (Bharwa shimla mirch),भरवां शिमला मिर्च,Dish,90.94,1.337,0.614,15.169,20.932,0.0,125.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8c3ea4ce-89d8-56f3-8152-324364ac5d18,Stuffed brinjal (Bharwa baingan),भरवां बैंगन,Dish,92.998,1.533,0.752,24.366,39.484,0.0,110.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1e54de16-816d-5538-b4d3-1302b4ea9af4,Stuffed tomatoes (Bharwa tamatar),भरवां टमाटर,Dish,93.348,3.282,0.619,59.158,326.266,0.065,271.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+441b3bfb-df3f-5bee-8958-c9a6cc9c282d,Pea potato curry (Aloo matar),आलू मटर,Dish,100.923,3.483,1.018,21.101,284.648,0.0,277.33,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0c2721dc-1723-57a1-a415-133333b32619,Pea paneer curry (Matar paneer),मटर पनीर,Dish,134.834,6.605,1.077,105.203,284.215,0.126,277.33,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+eb42179b-a090-5241-8dfd-4b5ab08bc91e,Pea mushroom curry (Matar mushroom),मटर मशरूम,Dish,93.296,3.869,0.967,22.698,431.405,0.0,277.33,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e4defa1b-94f3-5a7a-92c6-93f882072f0d,Pea curry (Matar ki sabzi),मटर की सब्ज़ी,Dish,102.991,4.512,1.2,24.476,376.38,0.0,277.33,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+dbfed5fb-2354-5ce1-b62f-aa0ebe487a51,Pea vadi curry,मटर वड़ी की सब्ज़ी,Dish,101.947,4.637,1.2,23.624,363.281,0.0,287.33,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b5248b1d-6fe4-5693-aa9e-2827a14758d0,Paneer curry,पनीर करी,Dish,176.517,7.801,0.807,189.057,134.985,0.259,202.33,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+3d34932c-f49d-526d-8c46-1d0a5bb71b65,Lotus stem curry (Kamal kakdi curry),कमल ककड़ी करी,Dish,110.338,1.529,1.712,26.591,137.061,0.0,202.33,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5eafbcb5-6b56-5aba-af07-2925fb4c6944,Gravy for kofta,कोफ्ते की ग्रेवी,Dish,125.586,1.748,0.753,39.648,191.698,0.041,139.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+014531c7-89c2-523f-a9e3-3d73184e10f6,Pea kofta curry (Matar kofta curry),मटर कोफ्ता करी,Dish,595.665,2.01,0.56,13.843,133.445,0.007,780.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1062dab6-b4d6-5f88-a461-bc411982f0d2,Spinach kofta curry (Palak kofta curry),पालक कोफ्ता करी,Dish,571.776,1.086,0.83,29.315,35.305,0.007,806.17,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+02aa544c-75f7-5010-9052-bccd0d94889e,Paneer kofta curry,पनीर कोफ्ता करी,Dish,670.911,2.385,0.345,59.491,38.636,0.083,701.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+dfdf6086-5ae1-525c-aa26-814d77696635,Lotus stem kofta curry (Kamal kakdi kofta curry),कमल ककड़ी कोफ्ता करी,Dish,633.564,0.957,0.653,19.308,37.9,0.008,731.17,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8e777133-bda4-5cc8-9ece-7e36ee5ef477,Raw banana kofta curry (Kela kofta curry),कच्चे केले के कोफ्ते की करी,Dish,627.271,0.622,0.283,9.227,36.995,0.008,727.17,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+233f2393-b9f5-5f73-a305-50cc68644294,Cauliflower kofta curry (Phoolgobhi kofta curry),फूलगोभी कोफ्ता करी,Dish,641.1,1.037,0.4,12.259,43.396,0.008,711.17,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c1855c55-e4c6-5489-a88c-154c3a882bb3,Cabbage kofta curry (Pattagobhi kofta curry),पत्तागोभी कोफ्ता करी,Dish,639.813,0.976,0.339,15.457,38.605,0.008,713.17,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+38d9a169-4804-5f14-bd20-5eebd4bfb88b,Ghiya/Lauki Kofta Curry,लौकी कोफ्ता करी,Dish,638.707,0.888,0.329,11.635,40.834,0.008,713.17,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6749854e-9918-5468-919b-6b81daaa5805,Spinach paneer kofta curry (Palak paneer kofta curry),पालक पनीर कोफ्ता करी,Dish,606.025,1.427,0.678,37.708,36.543,0.03,762.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9a8a0a1e-5a4f-53fe-85f1-57d86ea3ffa9,Vegetarian egg kofta curry,शाकाहारी अंडा कोफ्ता करी,Dish,627.406,1.327,0.388,28.389,37.524,0.031,741.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7d933290-a8fa-5083-901b-1b9ca32eabf2,Baked vegetables,बेक्ड सब्ज़ियाँ,Dish,88.987,3.67,0.621,80.199,140.066,0.191,302.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+2509474e-3d58-5cc5-8e5b-92182422def2,Cauliflower musallam (Phoolgobhi musallam),फूलगोभी मुसल्लम,Dish,58.827,1.892,0.832,24.61,121.176,0.0,215.975,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+590fbb71-213c-5637-ad39-0d45555469e1,Baked vegetables with spinach ,पालक के साथ बेक्ड सब्ज़ियाँ,Dish,77.794,3.218,1.158,78.626,104.514,0.14,423.522,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+73c773ee-d525-5a0e-8dba-ca06846f9212,Baked potato with skin ,छिलके सहित बेक्ड आलू,Dish,135.773,3.426,0.495,90.061,8.125,0.179,156.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+74d68e79-58d3-5b68-8a91-035fabb2b0ee,Shepherd's pie (vegetarian),शेफर्ड्स पाई (शाकाहारी),Dish,135.634,5.041,0.76,85.586,103.087,0.131,270.665,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c230539a-2306-54d9-b26e-8873e3902db8,Baked brinjal in tomato sauce,टमाटर सॉस में बेक्ड बैंगन,Dish,38.629,1.579,0.321,26.238,289.433,0.02,430.875,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d9406b48-b5e7-5ed3-afff-82731ad6a458,Dum aloo,दम आलू,Dish,682.33,0.698,0.356,16.494,11.163,0.017,670.58,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+3f3531ff-2278-5a87-818e-ce8d7a7999b8,Spinach paneer (Palak paneer),पालक पनीर,Dish,77.683,4.034,1.851,113.248,92.442,0.095,295.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4f6102db-7bcd-569d-ab58-3a5d379cd26e,Methi chaman,मेथी चमन,Dish,475.625,1.541,0.628,60.569,6.827,0.161,1001.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a96f96b0-9ddf-5444-ae94-d502beaf3eff,Sarson ka saag,सरसों का साग,Dish,87.842,3.005,2.433,134.409,174.776,0.002,141.46,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d833b070-1416-5fc9-8e57-30ad306a4fe8,Jackfruit sabzi (Kathal ki sabzi),कटहल की सब्ज़ी,Dish,625.4,0.689,0.27,9.849,87.079,0.0,361.165,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e88f2f37-f5a5-5320-b7f6-548b0d817d69,Avial,अवियल,Dish,124.559,2.461,1.013,31.901,89.39,0.0,335.05,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0754f064-5b2f-5ef7-87f0-3226ab32c239,Al yakhani,अल यखनी,Dish,147.544,2.857,0.46,103.88,27.455,0.159,232.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+44ad5fcf-9808-55da-b8ee-22e277b2f88b,Shahi paneer,शाही पनीर,Dish,156.496,5.064,0.62,125.377,196.078,0.182,259.34,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+48beb6c0-18d9-5ee8-8cee-b9435deffee3,Paneer in butter sauce,बटर सॉस में पनीर,Dish,145.608,6.987,0.848,170.588,171.212,0.24,156.79,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f1293c90-3114-5bd9-bbee-fcbf7996b8f2,Methi malai paneer,मेथी मलाई पनीर,Dish,194.978,7.341,0.768,183.958,70.932,0.339,193.375,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+97ed6c80-6a66-58b5-ab37-3bcaea8f189e,Chilli paneer,चिली पनीर,Dish,777.514,2.102,0.355,42.904,16.624,0.059,296.88,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5fc967f3-17a1-519d-b9d9-19ca6ba1a7bc,Paneer makhana korma,पनीर मखाना कोरमा,Dish,775.816,3.242,0.553,72.893,8.213,0.125,607.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+15d5a1dc-f6be-5126-ae9d-9c6c8f1d8e8f,Kadhai Paneer,कढ़ाई पनीर,Dish,107.992,4.333,0.645,91.527,163.259,0.11,318.13,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8c55e4df-6224-53fe-8320-e8a7484770ae,Roghan josh,रोगन जोश,Dish,139.586,9.559,1.767,112.326,110.413,1.026,236.01,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5cc9d78e-b92c-5c62-98b4-854a5effb56b,Spinach mutton (Palak mutton),पालक मटन,Dish,80.324,5.743,2.376,96.876,58.967,0.498,486.01,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+05d25848-3664-5eea-8455-67383a22d0ba,Pea keema curry (Matar keema ki sabzi),मटर कीमा की सब्ज़ी,Dish,133.003,8.433,1.35,35.605,235.006,0.688,343.83,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ec1d435f-414e-57ec-9184-b4790cc2624a,Keema kofta curry,कीमा कोफ्ता करी,Dish,154.454,9.77,1.254,49.886,93.676,0.974,165.29,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+26779647-e272-5993-841f-8868b41a3e3b,Kashmiri mutton koftas (Gushtaba),गुश्ताबा,Dish,97.425,6.334,0.849,52.534,12.946,0.669,304.025,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+33955a2b-07aa-5887-bde9-5f7f0c17d94e,Mutton yakhni,मटन यखनी,Dish,104.125,8.272,1.659,88.609,17.411,0.995,232.15,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ce69146c-b9ae-5d94-8348-39bd2a169cd5,Chicken yakhni,चिकन यखनी,Dish,99.002,10.659,0.931,28.236,42.3,0.1,252.15,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c6ca279a-ac43-502e-8863-15494ee7e94d,Mutton do piaza,मटन दो प्याज़ा,Dish,183.305,9.387,1.635,118.614,24.166,0.907,329.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a7ef4f78-26ae-5ae5-aeed-16492e4e54b8,Mutton chops,मटन चॉप्स,Dish,663.638,4.03,0.636,36.178,2.75,0.436,699.27,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+913767d0-c1f6-5c7e-9355-9426dee3dee4,Shammi kebab,शामी कबाब,Dish,685.691,4.517,0.745,13.113,9.798,0.37,342.415,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e04a5662-f8b2-5b16-a7f9-2fe02dff64da,Scotch egg,स्कॉच एग,Dish,676.892,4.051,0.597,15.03,9.06,0.353,684.91,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+39a45a81-4c3a-540b-8034-9659431f2879,Shepherd's pie (with minced meat),शेफर्ड्स पाई (कीमे के साथ),Dish,142.777,7.449,0.843,21.297,7.613,0.807,187.625,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ba666be1-bcdb-5bfe-aad7-12621332a062,Chicken curry,चिकन करी,Dish,129.224,11.795,0.869,27.29,143.843,0.113,247.925,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5bcc9159-5b56-54ac-b73a-978dd78a6c3c,Tandoori chicken,तंदूरी चिकन,Dish,145.199,16.264,0.9,44.326,46.255,0.197,360.2,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f2078141-e45d-51fd-869e-ae2dee0d92f8,Butter chicken,बटर चिकन,Dish,137.003,10.924,0.922,25.28,168.334,0.108,275.205,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+59d8ea3a-72ec-5bf0-9395-2f4187f427ff,Chicken kebab,चिकन कबाब,Dish,729.406,3.707,0.278,3.457,15.24,0.034,619.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d67663b8-acff-5601-8404-e4d903f390bf,Chilli chicken,चिली चिकन,Dish,198.834,9.572,0.656,12.974,84.537,0.085,386.82,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ad3f23f0-b9c9-52d9-bd48-c03d955c23ae,Fried chicken with tomato sauce (Fried chicken tamatar ki chutney kay saath),टमाटर की चटनी के साथ तला चिकन,Dish,125.032,11.478,0.638,16.085,179.658,0.106,247.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+82ad7ad8-1d16-557d-b2a5-1e68d6849f08,Fish curry (Machli curry),मछली करी,Dish,111.128,8.762,1.09,52.061,133.283,0.605,253.97,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d206b85f-7276-59d2-9e3f-14e2df2b5b07,Fried fish (Indian style) (Tali hui machli),तली हुई मछली,Dish,658.544,4.345,0.559,11.114,11.617,1.231,707.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ce35e277-2389-5b6d-8c53-dd73f112634e,Fried fish and Chips (English Style) (Tali hui machli aur chips),तली मछली और चिप्स,Dish,651.749,3.36,0.262,6.562,22.801,0.231,697.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5a94959b-e901-5c6c-9b3d-778147124ea5,Tomato fish,टमाटर मछली,Dish,489.788,2.394,0.237,6.461,104.918,0.156,967.93,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e0ed3486-b816-5cbc-a88c-27105907cad9,Baked fish with cheese sauce,चीज़ सॉस के साथ बेक्ड मछली,Dish,113.962,8.637,0.259,115.642,11.203,0.747,353.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f053341c-06d6-54ab-acfd-72c5f92546e6,Fish tikka,फिश टिक्का,Dish,117.331,15.997,1.41,31.985,24.044,6.127,142.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+671ebcb5-0591-54ec-805c-b33ad6393dcb,Tandoori fish,तंदूरी मछली,Dish,95.98,11.192,0.461,37.273,69.366,0.842,233.625,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+effec76b-307e-575f-bab7-3477c16602f5,"Paneer, apple and pineapple salad","पनीर, सेब और अनानास सलाद",Dish,95.08,3.884,0.84,103.048,67.013,0.146,257.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+fb84b55a-3d15-566e-b721-fbe06ac0ca0e,Russian salad,रशियन सलाद,Dish,114.828,4.263,1.227,34.923,99.633,0.161,316.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7c6e2286-c62f-5dc5-85b3-e5edb34096e4,Pasta salad,पास्ता सलाद,Dish,190.361,4.153,0.814,66.742,76.512,0.098,215.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+875302ab-a254-5ac1-905b-890755526741,Deviled egg,डेविल्ड एग,Dish,98.558,4.967,1.509,36.84,163.223,0.284,159.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6a5b9f00-60fa-5d24-8ce5-04a7005c34e5,Hawain salad,हवाईयन सलाद,Dish,175.233,4.269,1.119,61.028,78.734,0.068,389.563,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f0397f18-0225-54c0-910c-aa3d8152f6c7,Mixed pulse and vegetable salad,मिक्स दाल और सब्ज़ी सलाद,Dish,83.118,4.736,2.127,51.628,110.632,0.0,169.92,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+06dfd150-8846-5082-a8ee-534db88756a7,Sprouted moong salad ,अंकुरित मूंग सलाद,Dish,37.808,2.289,1.455,54.557,72.995,0.054,203.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8143f020-b0a1-50bb-ba87-ebb6dd561d9c,Tossed salad,टॉस्ड सलाद,Dish,62.959,1.025,0.861,32.371,42.616,0.0,341.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a1168265-8498-5d2d-9ba5-7cb21eefcac0,Mixed vegetable salad with curd sauce,दही सॉस के साथ मिक्स सब्ज़ी सलाद,Dish,60.281,4.23,1.346,65.512,200.554,0.065,215.42,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+aac5df49-f9de-5de4-914d-73eceb873c70,Potato salad (Aloo ka salaad),आलू का सलाद,Dish,89.908,1.397,0.995,25.615,10.212,0.0,236.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+93dd7bc2-b645-504e-96e9-10aa4a24977d,Waldroff salad,वाल्डोर्फ सलाद,Dish,141.753,1.474,1.066,29.294,108.008,0.022,246.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+cf5ec9bc-2984-5ea3-9f2b-57fbc6eab6c6,Coleslaw,कोलस्लॉ,Dish,76.713,1.238,0.631,37.001,29.574,0.024,152.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0d2756fe-768b-5bd3-b68e-9842773848db,Fruit salad (Phalon ka salaad),फलों का सलाद,Dish,78.136,0.914,0.806,25.932,44.592,0.015,304.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a98e0857-c6ed-552b-800d-337fb64c9359,Tomato onion raita (Tamatar aur pyaaz ka raita),टमाटर और प्याज़ का रायता,Dish,59.005,3.736,0.256,120.616,114.137,0.208,177.67,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+17c7d26f-2cea-588a-a516-5bd6713a9db7,Peanut raita (Mungfali ka raita),मूंगफली का रायता,Dish,150.388,8.59,0.737,174.597,48.983,0.302,122.67,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+907b54a8-dde7-5be8-a8a8-e78f8296f8cf,Sprouted moong raita ,अंकुरित मूंग रायता,Dish,60.895,4.623,0.862,139.437,2.153,0.242,152.67,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+70ab73ff-5a85-539a-890f-3470fa634a87,Bottle gourd raita (Ghiya/Lauki ka raita),लौकी का रायता,Dish,56.308,3.978,0.227,138.264,11.847,0.242,152.67,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+033d9506-0bbd-50e9-bd99-32a3d848ce2b,Cucumber raita (Kheere ka raita),खीरे का रायता,Dish,59.125,4.037,0.292,138.582,18.66,0.242,152.67,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+2d2ef212-5709-5e55-84d7-78d49e40de80,Carrot and spinach raita (Gajar aur palak ka raita),गाजर और पालक का रायता,Dish,56.826,4.005,1.036,142.565,12.432,0.208,177.67,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4b632e9f-ca6a-5b93-8bb6-0c684606fae1,Mint raita (Pudinay ka raita),पुदीने का रायता,Dish,77.585,5.638,0.37,198.221,5.717,0.353,104.67,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9a32b5dc-1a39-54b7-9470-58edd0047a9b,Potato raita (Aloo ka raita),आलू का रायता,Dish,75.38,4.221,0.336,132.311,4.736,0.235,157.67,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8da47b46-0202-51d2-aa7a-3484172295e2,Boondi raita,बूंदी रायता,Dish,687.719,2.194,0.238,49.003,0.368,0.084,328.875,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5a26a393-24f6-5db5-9378-27f7ae330f28,Sweet raita (Meetha raita),मीठा रायता,Dish,99.243,3.24,0.214,108.912,16.458,0.193,192.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+179d0188-ae60-53aa-99c4-d3bc243ff348,Dahi vadas/Dahi bhalla,दही वड़ा,Dish,667.726,2.961,0.487,49.033,26.392,0.081,344.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f28f341b-1051-5c89-929b-ac81d276b8ef,Gunjia,गुझिया,Dish,667.342,2.982,0.499,48.16,24.639,0.079,349.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9c260065-b0af-5e8c-88e3-1f6697300468,Saunth/Sonth chutney with tamarind/imli,सौंठ की चटनी,Dish,141.526,1.012,2.71,54.74,151.593,0.0,177.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+76fddf08-1cc8-58f5-b181-5fa534ae6684,Rice kheer (Chawal ki kheer),चावल की खीर,Dish,75.026,2.297,0.169,75.573,2.621,0.286,401.11,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9b8b60e8-e3b1-53c1-81e0-b73574aac47a,Makhana kheer,मखाना खीर,Dish,107.849,3.31,0.281,111.643,3.781,0.413,278.11,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ecc1e07d-06c6-5dc5-a9a1-7d2a21af7135,Vermicelli kheer (Semiya/Seviyan ki kheer),सेवइयों की खीर,Dish,120.069,3.355,0.295,104.797,6.232,0.387,232.43,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+27fe7efd-f638-53cb-8f8a-d89d01b718c5,Semolina kheer (Suji/Rava kheer),सूजी की खीर,Dish,113.211,3.427,0.336,105.991,14.93,0.391,230.43,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+bcb70c5b-de99-576a-9b5a-dcfc8913bfd3,Paneer kheer,पनीर खीर,Dish,105.305,4.527,0.264,144.663,1.017,0.449,289.43,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ccce91b1-547a-5893-ba54-444ef19847b4,Cabbage kheer (Pattagobhi ki kheer),पत्तागोभी की खीर,Dish,83.509,2.87,0.238,102.74,1.967,0.354,254.43,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+2e68eae2-14b7-56d5-bc24-0e511efc0c6f,Carrot kheer (Gajar ki kheer),गाजर की खीर,Dish,85.35,2.806,0.277,100.119,9.199,0.354,254.43,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+41f89c83-b357-505b-b6b6-eda736ed54b8,Cauliflower kheer (Phoolgobhi ki kheer),फूलगोभी की खीर,Dish,81.954,3.038,0.303,101.751,7.478,0.37,304.43,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+833daa76-f08d-53c1-a24e-92702bcbc60e,Moong dal kheer,मूंग दाल खीर,Dish,77.157,2.952,0.282,75.665,3.439,0.277,405.43,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4246007b-99b8-5522-85e1-a9b52f66d011,Phirni,फिरनी,Dish,116.117,3.487,0.226,104.57,0.493,0.388,290.22,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8654a2f2-1262-5012-84e4-4ac48ac7ecaf,Semolina halwa (Suji ka halwa),सूजी का हलवा,Dish,225.648,2.164,0.655,11.769,58.499,0.001,159.62,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6703ae1c-daa3-52e5-8f1d-9dd6743f4418,Shahi suji halwa,शाही सूजी हलवा,Dish,382.344,3.48,0.982,18.636,94.046,0.002,98.3,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4f3dd59f-313d-55a6-ba69-5950d1c41bad,Carrot halwa (Gajar ka halwa),गाजर का हलवा,Dish,172.641,3.112,0.764,106.943,37.254,0.256,167.81,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+44a2c62c-dff2-5d58-8b98-d1a650878b4d,Egg halwa (Ande ka halwa),अंडे का हलवा,Dish,299.744,7.854,1.445,35.772,26.47,0.462,96.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+53c3e136-8da1-51ed-a9fe-667f4a0df5ed,Potato halwa (Aloo ka halwa),आलू का हलवा,Dish,151.664,1.526,0.63,14.147,13.037,0.0,158.04,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5a2c0fe4-9a1b-53fb-a6c1-e8df3d17deb3,Pumpkin halwa (Kaddu ka halwa),कद्दू का हलवा,Dish,190.274,1.326,0.63,24.341,43.281,0.0,155.04,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b6d8f585-221c-5a83-875e-988a266dd19b,Moong dal halwa,मूंग दाल हलवा,Dish,349.803,8.351,1.513,110.4,40.895,0.285,95.39,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+767ec3c9-021e-51d0-a55c-861072ee6a60,Caramel custard (steamed),कैरामेल कस्टर्ड,Dish,121.578,4.97,0.512,88.116,7.241,0.483,232.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8328e14d-cc85-5179-89fc-8759e90c268c,Baked custard,बेक्ड कस्टर्ड,Dish,106.526,5.413,0.545,95.319,7.887,0.532,213.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b28d7ceb-2247-507b-91dd-1b8d15385a99,Soft Custard (stirred),सॉफ्ट कस्टर्ड,Dish,109.182,5.013,0.488,95.824,6.733,0.51,249.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0b80aa16-1c14-5349-83c5-8d94fe698598,Chocolate ice cream,चॉकलेट आइसक्रीम,Dish,177.704,4.469,0.473,84.24,4.528,0.394,371.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c448fff7-8efb-5b21-bbdc-617c6d4e7799,Mango ice cream,आम की आइसक्रीम,Dish,125.686,3.403,0.394,67.169,44.364,0.306,456.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9320f19d-b190-57a5-8289-fbc6be8516a0,Fruit Ice cream (Phalon ka Ice cream),फलों की आइसक्रीम,Dish,171.461,4.373,0.364,93.346,0.0,0.308,321.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+df162236-307c-54b2-ba05-d5be7f573f44,Caramel ice cream,कैरामेल आइसक्रीम,Dish,173.523,4.313,0.351,87.319,5.063,0.381,271.45,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e7eaafa0-4390-52c0-a038-96a6bdc33ab8,Lemon souffle,नींबू सूफले,Dish,168.505,6.947,0.565,59.812,7.089,0.314,237.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+fe0ece8e-4e41-5d37-9931-1ac30bb336f9,Orange souffle,संतरा सूफले,Dish,168.284,6.798,0.646,59.035,9.254,0.305,244.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b692fbdb-ebd6-51da-a88a-8fb0352490fb,Vanilla souffle,वनीला सूफले,Dish,187.854,7.715,0.578,70.602,7.724,0.374,217.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1f90527a-604f-5d9e-ae7c-2369949cfd91,Chocolate souffle,चॉकलेट सूफले,Dish,189.319,7.879,0.714,71.548,7.636,0.37,220.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7a14ffc6-75c4-586d-8b78-b1b7707342f0,Pineapple souffle ,अनानास सूफले,Dish,196.143,8.065,0.61,67.23,8.317,0.369,202.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5a387d17-52e7-5b2a-93a8-898cdaa6f1d3,Apple mousse,सेब मूस,Dish,106.925,4.208,0.475,33.76,40.603,0.163,365.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+41881c7c-d21d-52e9-bf62-a690b7b8ed00,Rich chocolate mousse,रिच चॉकलेट मूस,Dish,188.26,7.959,0.971,54.594,7.981,0.314,210.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+2616ce0c-8243-5bc6-8cfb-629594bc1662,Mango mousse,आम मूस,Dish,124.976,3.207,0.349,51.381,67.454,0.129,279.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9b4dd275-9ba3-5e0f-bf43-552c2211e0ad,Orange and pineapple cream,संतरा और अनानास क्रीम,Dish,101.183,1.436,0.408,35.001,5.992,0.084,89.125,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c8c0537a-839a-5b6c-b8ce-0f8bade34e6a,Charlotte rousse,शार्लोट रूस,Dish,188.286,3.955,0.529,34.948,23.17,0.147,253.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ee8b97fa-5a41-5841-b925-2f1be7394fe5,Triffle pudding,ट्राइफल पुडिंग,Dish,116.967,2.933,0.471,48.719,14.388,0.225,292.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6e54a32e-d674-5fa0-8e61-15a27a15a0e8,Snow flakes pudding,स्नो फ्लेक्स पुडिंग,Dish,95.215,4.675,0.418,101.328,7.987,0.501,318.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+59799400-80c9-55a6-b7fc-050f671e0fa6,Kulfi,कुल्फी,Dish,98.427,3.209,0.195,111.858,0.636,0.425,270.12,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+dec9b1ef-2dcb-569f-a814-e05c2773a3a7,Steamed orange pudding,भाप में पका संतरा पुडिंग,Dish,278.033,2.343,0.549,21.148,50.207,0.027,107.46,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d54dadc9-133f-5a2c-84cc-eb057050dc1a,Meringue and rice pudding,मेरिंग और चावल का पुडिंग,Dish,112.927,4.837,0.368,85.433,6.937,0.414,224.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5ef621eb-7a83-54c5-95cf-5d6d6f60e678,Cheese pudding,चीज़ पुडिंग,Dish,285.015,11.291,0.871,226.107,11.105,0.552,120.55,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+2c8840e9-3168-51c4-932d-11f7613724e3,Chocolate pudding,चॉकलेट पुडिंग,Dish,211.963,3.547,0.603,64.561,2.535,0.186,165.687,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+91a254b5-08f2-5422-a0df-46ddf237c5df,Bread and butter pudding ,ब्रेड और बटर पुडिंग,Dish,167.941,5.587,0.901,105.542,13.048,0.374,123.167,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6f0d0612-f8fb-5a86-9789-89a46d10ac8c,Queen of pudding,क्वीन ऑफ पुडिंग,Dish,132.92,5.508,0.531,78.263,9.541,0.361,325.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b79257a6-b12c-5772-894d-b26b0ac2116f,Pineapple upside down pudding,अनानास अपसाइड डाउन पुडिंग,Dish,257.734,3.147,0.68,26.054,44.378,0.118,133.625,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f5fc2d82-bb12-5304-925a-04f338ab5553,Date and nut pie,खजूर और मेवे की पाई,Dish,322.416,3.927,1.542,34.688,252.673,0.015,226.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7ca275c6-1909-54b3-88f4-937dd21fde94,Stewed apple with custard,स्टूड सेब और कस्टर्ड,Dish,92.873,1.27,0.181,49.238,20.6,0.162,283.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b43cb7d9-b712-5fc2-a777-fafbf05db1be,Apple snowballs,सेब स्नोबॉल,Dish,101.511,0.858,0.176,9.425,30.882,0.006,259.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9b36d7b4-c817-514e-9912-b72cdd5cf062,Hot orange souffle,गरम संतरा सूफले,Dish,179.965,6.869,1.031,53.813,28.682,0.486,122.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+91d94205-a392-576c-9ae7-39f4a0081006,Hot chocolate souffle,गरम चॉकलेट सूफले,Dish,226.091,6.7,1.077,60.193,23.206,0.466,142.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+240ebced-f452-5832-9bc6-8568590fcb0e,Hot vanilla souffle,गरम वनीला सूफले,Dish,192.933,6.874,0.929,63.199,25.845,0.519,127.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0bd4e2b6-c4b9-57b1-bd94-9001afa59a34,Plain burfi (Burfi),सादी बर्फी,Dish,408.324,9.816,1.499,355.775,3.576,1.061,87.11,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c9e31d8a-1a5c-5fef-b427-01aa383c8a19,Coconut burfi (Nariyal ki burfi),नारियल की बर्फी,Dish,467.635,8.811,1.822,272.806,2.115,0.794,113.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8c2351e1-119d-5976-813c-69b217c3d8e9,Bottle gourd burfi (Ghiya/Lauki burfi),घिया बर्फी,Dish,275.956,5.858,0.929,215.851,11.924,0.625,144.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+12e1ba35-fa75-5f64-8c68-f236e98586e1,Chocolate burfi,चॉकलेट बर्फी,Dish,339.329,12.998,2.123,466.477,3.692,1.385,65.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0077ce9c-83a6-5b9f-b5c6-f4d0b1eafc9e,Cashewnut burfi (Kaju burfi/Kaju katli),काजू कतली,Dish,421.745,5.475,1.788,12.948,44.767,0.002,86.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+67293132-c043-5022-b928-d74cd5dd3e36,Gram flour burfi (Besan burfi),बेसन की बर्फी,Dish,421.793,11.194,1.474,160.708,9.655,0.413,76.625,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1e022220-9a71-52c7-a67d-d2f8a0b9a1bd,Semolina ladoo with khoya (Suji/Rava aur khoye ke ladoo ),सूजी और खोये के लड्डू,Dish,428.707,6.714,1.727,106.419,98.842,0.282,58.836,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7254cb8a-00e0-5dc1-a98b-b99420e0d974,Semolina ladoo with coconut (Suji/Rava aur nariyal ke ladoo ),सूजी और नारियल के लड्डू,Dish,464.43,5.675,1.829,26.722,118.587,0.033,72.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c9bc0de7-070f-53b5-8015-673e04309f76,Gram flour ladoo (Besan ladoo),बेसन के लड्डू,Dish,476.909,8.934,1.514,25.346,32.084,0.002,70.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+92cb9c4b-939b-5876-9744-d1e5c3e064ad,Sesame ladoo (Til ke ladoo),तिल के लड्डू,Dish,396.957,10.705,8.941,631.818,1149.273,0.0,55.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e54a92cf-07c7-5752-b5ef-e4826568c359,Chenna murki,छेना मुरकी,Dish,252.693,10.463,0.555,266.852,2.885,0.388,90.125,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4e88050a-3a5d-5dad-9dc8-465dba4c17bb,Milk cake,मिल्क केक,Dish,127.408,3.013,0.195,104.943,0.0,0.4,287.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e1e62692-3cac-588e-bf22-b078dd3c80f8,Ghujia/Lavang latika,लवंग लतिका,Dish,768.979,1.863,0.442,31.008,25.709,0.085,212.933,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+841eeacf-3b70-5320-99f0-92e691cc4c85,Gulab Jamun with khoya,खोये वाला गुलाब जामुन,Dish,586.063,2.031,0.388,67.319,7.668,0.194,313.433,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+133386fb-7afa-51c3-974e-8c69d71bb0f7,Mal pua,मालपुआ,Dish,566.678,1.706,0.33,30.051,25.625,0.102,299.267,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+82c4288f-e3fa-524c-8828-342fdf7a0d2d,Shahi tukre,शाही टुकड़े,Dish,189.81,2.763,0.374,76.469,0.421,0.192,203.81,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7dcf3898-2d2d-577b-ae2f-60a3cec391e5,Potato pakora/pakoda (Aloo pakoda),आलू पकोड़ा,Dish,677.19,1.904,0.378,6.587,0.901,0.0,674.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+fbaf3ce3-d2f8-5a69-be26-8055c95f4511,Onion pakora/pakoda (Pyaaz ke pakode),प्याज के पकोड़े,Dish,674.611,1.899,0.361,7.952,3.463,0.0,674.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+3c09b198-5ddc-50a2-840c-d782de81fa4d,Cauliflower pakora/pakoda (Phoolgobhi ke pakode),फूलगोभी के पकोड़े,Dish,671.634,1.976,0.424,8.442,6.262,0.0,674.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7c09f8b0-2c5b-5af0-be80-7d9fd1edc1f5,Mixed vegetable pakora/pakoda,मिक्स वेज पकोड़ा,Dish,673.81,1.939,0.456,9.549,2.965,0.0,674.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b5338d3e-3ba3-5cf9-906a-a53db71b81c9,Spinach pakora/pakoda (Palak pakoda),पालक पकोड़ा,Dish,712.619,1.965,0.516,10.989,0.656,0.0,634.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+40c4dac4-34bb-50a7-b556-10f72860ffa0,Methi pakora/pakoda (Methi ke pakode),मेथी के पकोड़े,Dish,713.252,2.062,0.688,23.075,5.951,0.0,634.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+12b0bea9-d0c8-5e81-b9e4-b7c23707a86d,Egg pakora/pakoda (Ande ke pakode),अंडे के पकोड़े,Dish,710.507,2.832,0.466,9.547,2.607,0.069,644.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+16645236-cf2d-58cf-bd61-62bf97615daf,Bread pakora/pakoda,ब्रेड पकोड़ा,Dish,710.988,2.571,0.457,19.833,0.0,0.0,654.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c83de22f-60fb-55ee-a69e-0fe161e2c571,Paneer pakora/pakoda,पनीर पकोड़ा,Dish,718.122,3.27,0.425,43.376,0.402,0.054,646.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e41f7895-178a-5030-a9e6-b1d8f3c4b829,Potato bonda (Aloo bonda),आलू बोंडा,Dish,632.835,1.089,0.374,6.793,32.635,0.0,358.415,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9b55acf7-ac3c-5048-b868-6f50f88336e4,Potato samosa (Aloo ka samosa),आलू का समोसा,Dish,577.386,1.712,0.499,7.627,68.581,0.0,281.877,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5b27e712-7e9f-5106-a5a1-fc4a2ca19333,Minced meat samosa (Keema ka samosa),कीमा समोसा,Dish,620.988,4.425,0.549,6.704,22.026,0.428,269.733,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+585f74bb-b839-5b05-b54c-c05bc800f7bc,Paneer and pea samosa (Paneer matar ka samosa),पनीर मटर का समोसा,Dish,623.806,4.018,0.533,64.557,84.681,0.087,269.733,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+66e99991-3dbe-5e93-83ef-e5f996274ae1,Mathri,मठरी,Dish,805.123,1.75,0.426,5.231,47.46,0.0,174.429,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+2131b24e-55e0-5b0c-8437-043a8c418b71,Khasta kachori,खस्ता कचौड़ी,Dish,712.729,2.509,0.589,7.839,53.236,0.0,201.357,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+86bda3d4-3f52-51ae-b625-22dc60ceee43,Vegetable cutlet,वेजिटेबल कटलेट,Dish,665.454,1.247,0.402,13.546,29.582,0.016,675.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4396e2ae-e01f-5edb-a7d2-49b27e66874f,Flattened rice cutlet (Chirwa cutlet/Chivda cutlet/Poha cutlet),चिवड़ा कटलेट,Dish,701.711,1.756,0.587,9.165,11.094,0.017,662.67,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c013165f-0ec1-5a75-aabc-223283f3b109,Peanut cutlet (Mungfali ke cutlet),मूंगफली के कटलेट,Dish,698.767,2.627,0.562,14.377,23.421,0.016,677.67,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1ab367dc-a131-5bd7-96d8-1a7b6b9b0a53,Fish cutlet (Machli ka cutlet),मछली का कटलेट,Dish,654.64,2.768,0.355,10.437,10.874,0.177,697.92,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5d05756a-48b6-58ec-8e8f-76fdae8aff20,Paneer potato cutlet (Paneer aloo cutlet),पनीर आलू कटलेट,Dish,672.944,2.47,0.385,45.358,2.709,0.083,686.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b523222d-2006-545c-bd88-4944eff618b7,Spinach chickpeas cutlet (Palak channa dal cutlet),पालक चना दाल कटलेट,Dish,688.028,1.441,0.566,11.301,4.648,0.017,655.67,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a968e262-bfb8-581a-922c-704359ec2880,Cheese toast,चीज़ टोस्ट,Dish,785.367,1.984,0.313,43.865,1.167,0.055,290.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+dbda725e-4f23-57c0-bef4-21a9580d2d58,Vegetable burger,वेज बर्गर,Dish,519.931,3.263,0.703,26.082,29.331,0.014,515.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+195f0a3a-7b2c-53a1-b4d2-7537fbad2328,Cheese pizza,चीज़ पिज़्ज़ा,Dish,249.497,5.791,1.091,96.511,76.14,0.064,262.205,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+af5564cf-d6ad-5abd-ac04-e3c61cd1af82,Vegetable seekh kebab,वेज सीख कबाब,Dish,690.725,1.573,0.358,32.663,5.674,0.032,329.04,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0de2dd5c-7403-5ff2-89da-89d9eaa23ea1,Masala vada,मसाला वड़ा,Dish,826.025,1.686,0.518,7.452,25.358,0.0,539.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5e154304-9143-5496-bbd0-1f8ef209cf2e,Peanut sago vada (Sabudana mungfali vada),साबूदाना मूंगफली वड़ा,Dish,749.886,1.014,0.382,5.026,11.031,0.0,611.17,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4f748c7e-541a-57af-b5fc-6d9bbcbaf982,Vegeterian scotch egg,वेजिटेरियन स्कॉच एग,Dish,681.666,2.163,0.46,15.2,24.465,0.083,668.17,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+fe0b8cf9-5de0-52e3-9ee8-96d82d86780b,Paneer shaslik/tikka,पनीर टिक्का,Dish,93.85,5.113,0.675,123.859,120.026,0.16,438.67,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+133a06e8-dcd4-55dc-b265-07970da265b3,Peanut brittle (Moongfali ki chikki),मूंगफली की चिक्की,Dish,320.463,6.943,3.223,68.03,81.624,0.0,98.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9fec4890-b880-5921-99c8-3c162d06278d,Spring roll,स्प्रिंग रोल,Dish,623.874,1.805,0.488,9.514,35.37,0.03,376.605,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5ff823a8-3583-5861-a23e-db21c15bce3d,Dry mango chutney (Sookhe aam ki chutney),सूखे आम की चटनी,Dish,298.132,2.434,3.979,72.05,90.402,0.0,27.7,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6419b380-de93-551c-8d32-d3a15cb13895,Peanut chutney (Mungfali ki chutney),मूंगफली की चटनी,Dish,258.367,11.795,1.987,34.793,157.449,0.0,21.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f3ccc640-c952-5fe9-9381-ea045ff28fb0,Coconut chutney (Nariyal ki chutney),नारियल की चटनी,Dish,265.925,3.59,1.249,15.7,13.725,0.0,25.332,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5903d0af-fea7-59be-a549-77865a80f0e0,Mint and coriander chutney (Pudinay aur dhaniye ki chutney),पुदीने और धनिये की चटनी,Dish,102.595,2.813,4.761,107.446,272.169,0.0,26.295,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+63e613c2-e5ea-513c-ad71-8dd594b31871,Custard tart,कस्टर्ड टार्ट,Dish,225.599,3.723,0.495,57.47,60.959,0.21,143.375,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6839b8aa-9adf-5d5d-a464-e8508b8d3a1c,Lemon tart,लेमन टार्ट,Dish,303.353,6.117,0.977,24.027,85.842,0.236,108.875,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8ae17d54-380a-5380-a36a-ada8e5965e3d,Jam tart,जैम टार्ट,Dish,360.722,4.419,0.741,12.231,111.585,0.035,72.375,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6952d33b-263a-56b9-b225-55f46bb262e7,Orange cream tart,ऑरेंज क्रीम टार्ट,Dish,197.159,2.578,0.58,13.843,56.644,0.018,144.375,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+3ec8f062-c567-559d-9b31-c1d46b796b11,Pineapple tart,अनानास टार्ट,Dish,195.404,2.288,0.496,12.019,53.13,0.017,154.375,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+031d3e9e-abcb-5e46-b14b-c1a99a2139d0,Cheese and mushroom tart,चीज़ और मशरूम टार्ट,Dish,246.096,5.508,0.588,100.97,155.664,0.231,134.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+93ca8584-7bfc-510f-9174-24cb06c7f61a,Cottage cheese pie,पनीर पाई,Dish,238.98,7.448,0.916,108.047,205.12,0.154,340.333,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e45de9b3-80e2-5c32-800b-bdc270858dba,Minced meat pie,कीमा पाई,Dish,221.553,7.378,1.065,18.136,200.881,0.451,353.833,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+81abd77b-9269-50c2-b27e-8e836768f14e,Apple cinnamon pie,सेब दालचीनी पाई,Dish,258.734,3.351,0.653,16.144,97.191,0.04,177.125,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+958b2c21-56f9-5db1-9e1c-75e3de0d33e0,Lemon meringue pie,लेमन मेरिंग पाई,Dish,224.426,3.876,0.668,16.792,48.255,0.155,156.875,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+dac1f32b-2207-5ba5-ad16-449588e9f972,Chocolate meringue pie,चॉकलेट मेरिंग पाई,Dish,214.757,4.98,0.922,55.978,41.085,0.288,184.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8a8b24c8-1164-5cbe-bd74-7f7bf7eac0bb,Cream puffs,क्रीम पफ,Dish,221.327,4.699,0.584,37.931,42.998,0.254,144.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+53ab222f-5fdb-51e3-a22f-8993819e6922,Chocolate eclairs,चॉकलेट एक्लेयर,Dish,239.415,4.238,0.682,34.213,36.774,0.217,169.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0768f25f-80af-5256-9427-5667d9087abd,Cheese balls,चीज़ बॉल्स,Dish,681.282,2.211,0.324,30.006,18.262,0.103,354.875,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+174c10fb-20a0-5bc2-89f6-6f9be800dfe0,Minced meat patties,कीमा पैटीज़,Dish,265.719,6.877,0.933,19.231,64.31,0.574,129.835,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d2892719-3916-560c-89d1-e9e6089fa120,Cheese patties,चीज़ पैटीज़,Dish,324.009,7.381,0.818,126.415,109.635,0.179,103.96,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+cfb3aea7-1735-53c8-a7ff-860f59902e0a,Hot cheese souffle,गरम चीज़ सूफले,Dish,177.097,9.183,0.828,169.174,21.26,0.638,296.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+3e81382b-2df2-5bc1-a298-081e5f1522b8,Hot potato souffle,गरम आलू सूफले,Dish,125.639,5.507,0.789,56.836,19.689,0.402,366.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+eb77db8b-9946-5514-a497-0c691fe42818,Hot fish souffle,गरम मछली सूफले,Dish,142.921,11.227,0.704,58.184,25.186,0.893,366.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d1e263d2-7a38-5347-aef1-467fc6929a0c,Hot spinach souffle,गरम पालक सूफले,Dish,104.247,5.434,1.672,80.771,19.833,0.371,396.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8e96a73f-090e-5ac1-8346-f64f9e27d11b,Plain cream cake,सादा क्रीम केक,Dish,353.94,6.182,1.024,41.946,77.399,0.269,53.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+feab625a-5b7f-5711-b2bc-f79bd17680d1,Apple cake (Seb ka cake),सेब का केक,Dish,290.076,4.938,0.895,38.987,78.091,0.211,68.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9f478cc2-2e0e-5b09-98f7-80154f85720c,Marble cake,मार्बल केक,Dish,354.105,6.3,1.116,39.595,76.903,0.267,53.594,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7832afdd-7039-53f0-b132-9a9a3b358c41,Chocolate cake,चॉकलेट केक,Dish,335.609,6.007,1.08,41.132,70.004,0.273,58.875,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c77a489c-4650-55db-ad6a-3b6416d20d9a,Orange cake,संतरा केक,Dish,357.609,6.1,1.059,29.717,79.164,0.242,52.063,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+97631ab3-b74d-5445-b1bc-94ab5da4a1e4,Fruit Loaf ,फ्रूट लोफ,Dish,324.195,5.364,0.955,45.711,76.43,0.224,55.875,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+18f1815d-3d65-5115-81e0-f9b371ecaadb,Banana cake (Kele ka cake),केले का केक,Dish,389.514,5.772,1.144,23.552,67.257,0.168,66.313,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+fbeb8da6-4a35-5596-95d2-a51a01a30e5e,Chocolate chiffon cake,चॉकलेट शिफॉन केक,Dish,311.709,5.764,1.068,42.155,141.338,0.197,72.844,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0c780113-d26b-59c4-a5e4-45bdd261352c,Christmas cake,क्रिसमस केक,Dish,372.948,5.493,1.318,40.977,65.295,0.186,104.189,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ea9ba228-a898-5a5b-bb0a-48cdfaf31365,Strawberry and vanilla cake with butter icing,स्ट्रॉबेरी और वनीला केक बटर आइसिंग के साथ,Dish,370.538,3.89,0.701,28.169,69.774,0.173,116.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ccc2e5ae-90e9-5888-b021-f18c1e496048,Eggless cake,एगलेस केक,Dish,318.081,8.119,0.608,212.966,66.231,0.603,60.969,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c50920f2-598c-5099-ad94-518823b3f15b,Swiss roll,स्विस रोल,Dish,251.874,7.297,1.192,24.107,66.482,0.352,63.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+817fff34-b3e4-5450-9a00-34a7af2df769,Pineapple pastry ,अनानास पेस्ट्री,Dish,208.208,6.059,0.863,42.97,51.485,0.326,91.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+60d1288c-0250-56dc-b0fb-c42362bdf7fe,Black forest pastry,ब्लैक फॉरेस्ट पेस्ट्री,Dish,233.546,6.088,0.92,44.154,58.928,0.319,93.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+20da6056-8cdd-5d57-a45d-74741e9d3693,Coconut finger,कोकोनट फिंगर,Dish,274.856,7.09,1.307,24.038,58.811,0.311,71.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5a297765-2e28-5659-b784-bf8b6799d463,Pineapple cake ,अनानास केक,Dish,195.572,5.013,0.645,49.055,40.476,0.29,513.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+209312ae-edc1-5883-bf73-79e044092c61,Chocolate walnut cookies (Chocolate aur akhrot ke cookies),चॉकलेट और अखरोट के कुकीज़,Dish,424.801,6.56,1.366,36.1,279.234,0.088,51.792,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+fb4e60de-560f-5867-a993-7e6c50babd91,Chocolate chip cookies,चॉकलेट चिप कुकीज़,Dish,425.29,5.791,1.218,24.758,105.752,0.117,43.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0cf31c3f-51a5-51f1-875f-46cbe23f3f81,Sweet plain biscuit,मीठा सादा बिस्कुट,Dish,380.757,5.859,0.92,42.878,107.806,0.173,42.917,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6078f23b-af38-52c5-876f-9f3ab85058f0,Chocolate biscuit,चॉकलेट बिस्कुट,Dish,379.762,5.876,1.136,41.508,101.872,0.163,45.417,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d18f883b-913b-5e3d-964e-356646c80162,Coconut biscuit (Nariyal ke biscuit),नारियल के बिस्कुट,Dish,434.983,5.781,1.318,37.81,82.252,0.137,56.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6960c327-a531-5758-bb84-ad4eacfcb651,Sweet and salty biscuit (Meethay aur namkeen biscuit),मीठे और नमकीन बिस्कुट,Dish,407.957,6.153,1.053,37.238,139.482,0.115,32.167,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5b3972cb-10bd-51ae-8878-99b928296545,Peanut biscuit,मूंगफली बिस्कुट,Dish,401.049,8.451,1.341,50.581,131.125,0.139,53.333,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f93ec209-de4d-5d76-a5f3-f8f246af3b1f,Pin wheel biscuit,पिनव्हील बिस्कुट,Dish,404.6,5.4,1.13,42.704,112.872,0.093,39.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0a5d2a3e-3a4c-5dbd-9e36-1381438c8b7c,Saffron biscuit (Kesar biscuit),केसर बिस्कुट,Dish,458.61,6.047,1.232,25.708,155.766,0.025,33.04,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1c1c128f-0517-5c12-99af-e6632691ab24,Masala biscuit,मसाला बिस्कुट,Dish,393.642,6.061,1.315,53.731,246.619,0.022,32.333,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5bd49c3c-04e2-567b-a3c3-4c85661df8b1,Ice box cookies,आइस बॉक्स कुकीज़,Dish,374.243,5.699,1.043,18.495,125.05,0.116,41.583,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+eaf6e45d-d469-5b1c-a586-a3aeac918c17,Ginger bread man,जिंजरब्रेड मैन,Dish,365.0,6.609,2.119,37.921,124.11,0.145,59.425,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b5d2cb3d-c8d0-5b61-bef9-52db38311dd1,Danish cookies,डेनिश कुकीज़,Dish,475.327,5.333,0.982,15.97,133.93,0.051,50.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+44b48e0d-2418-54a6-bb87-0215a320969f,Short bread cookies,शॉर्टब्रेड कुकीज़,Dish,443.094,6.027,1.116,15.922,153.281,0.036,70.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5db3ed1e-721d-5f40-90fa-9ae751c83050,Coffee biscuit,कॉफी बिस्कुट,Dish,416.572,6.898,1.275,48.921,329.099,0.144,51.583,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+43ce0035-3fce-5cdd-ae42-a048a8415447,Melting moments,मेल्टिंग मोमेंट्स,Dish,437.911,5.713,1.202,30.394,92.688,0.114,49.917,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5a2307f5-dce0-5799-a15c-280a1bc63220,Ginger biscuit (Adarak ke biscuit),अदरक के बिस्कुट,Dish,417.909,5.981,2.201,25.967,114.592,0.127,40.375,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b6e302ec-2d8b-5702-8615-448fefc4211a,Soyabean muthias,सोयाबीन मुठिया,Dish,839.327,2.457,0.597,12.157,156.821,0.0,268.415,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a0391095-2a63-5a84-85b9-38f5e3231e80,Soyabean tikki,सोयाबीन टिक्की,Dish,698.17,3.535,1.04,29.231,212.106,0.0,331.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4802f4d0-fd88-5198-ab8c-ac8bdfb99861,Soyabean namak paras,सोयाबीन नमक पारे,Dish,838.464,2.651,0.644,12.131,167.836,0.0,273.625,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5665db6e-fedb-5a24-ac6f-58a00f31560a,Peanut burfi (Moongfali ki burfi),मूंगफली की बर्फी,Dish,550.994,9.311,1.454,25.197,111.811,0.0,63.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b1a230fc-a841-5d83-a1af-259cd2a7844c,Spinach peanut namak paras (Palak moongfali namak paras),पालक मूंगफली नमक पारे,Dish,740.165,1.654,0.67,13.355,29.261,0.0,316.125,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f1075cce-9939-59ab-a3f2-2dc596958b8a,Gram flour and semolina chilla/cheela/savory pancake (Besan suji chilla/cheela),बेसन सूजी चीला,Dish,758.895,2.076,0.669,12.134,22.631,0.0,301.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6dc71381-ad14-521e-8bf7-d02e2a30f332,Rice moong dal cheela (Chawal aur moong dal ka cheela),चावल और मूंग दाल का चीला,Dish,798.261,2.741,0.512,4.995,7.033,0.0,291.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a6841d51-0ebd-5088-adac-993a3fd23381,Split bengal gram sweet rice (Channa dal sweet rice),चना दाल मीठे चावल,Dish,190.211,4.155,1.769,30.372,10.636,0.0,220.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ed207564-b61f-5113-98bf-7dc3db0d2df1,Sweet poori (Meethi poori),मीठी पूरी,Dish,782.746,2.118,1.127,34.241,86.715,0.0,610.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c3a44b8e-0cb2-5ffc-b2bc-6b1c46511dba,Wheat flour and moong dal burfi (Atta aur moong dal ki burfi),आटा और मूंग दाल की बर्फी,Dish,441.082,9.835,2.305,25.198,196.152,0.001,52.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+22955696-3087-5173-bdac-5a859f639b07,Spinach burfi (Palak burfi),पालक बर्फी,Dish,121.172,2.707,1.052,93.676,5.493,0.264,174.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+12be773c-d35d-5760-98bf-2346f99d35e0,Sweet split chickpea roti (Sweet channa dal roti/Puranpoli),पूरनपोली,Dish,366.587,9.515,4.361,53.304,270.014,0.001,106.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d70a6250-03fd-54b7-a8d1-669460056424,Sprouted moong daliya ,अंकुरित मूंग दलिया,Dish,111.563,2.805,1.294,22.623,14.759,0.0,316.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+469fbe74-6ff1-5096-a0a8-c27365f4b399,Sprouted moong poha ,अंकुरित मूंग पोहा,Dish,192.603,5.592,2.426,28.39,93.302,0.0,191.33,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+cc85b03d-49b4-59fe-ac31-a7a461a9cb03,Pearl millet ladoo (Bajra ladoo),बाजरे के लड्डू,Dish,319.656,9.614,4.719,118.737,236.021,0.0,95.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c725f2b4-e632-5942-9e86-bc9ceb6ef721,Paushtik ladoo,पौष्टिक लड्डू,Dish,485.872,7.652,1.626,20.668,116.214,0.002,70.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5c9947ca-0c72-5c5e-83af-db202f0e24b2,Paushtik roti,पौष्टिक रोटी,Dish,149.255,7.168,2.624,52.743,138.013,0.0,128.83,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ff24e77e-f05d-5daa-b96d-4eb5674d59ee,Semolina carrot vada (Suji gajar vada),सूजी गाजर वड़ा,Dish,699.529,1.56,0.36,26.472,29.339,0.04,325.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e08adee1-145b-5416-a6fb-788e5fcfe906,Dhokla,ढोकला,Dish,216.485,13.448,1.388,123.206,7.413,0.174,79.915,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7eb93269-0831-5461-9187-673e9f1526b6,Kashmiri tea (Kehwa),कश्मीरी कहवा,Dish,24.904,0.174,0.066,3.189,3.958,0.0,256.7,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+540ca2de-c243-5edb-a6e0-d733cc0b5cf0,Steeped hot coffee,गरम कॉफी,Dish,15.908,0.387,0.062,10.396,0.0,0.034,202.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+847067f0-aa3e-5e79-b8a5-0d9cf199c406,Hot chocolate,हॉट चॉकलेट,Dish,90.006,3.429,0.331,113.63,0.0,0.434,190.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+db601c5f-39c9-55c6-9112-6383f21819c1,Cold coffee (with cream),क्रीम वाली कोल्ड कॉफी,Dish,82.764,1.934,0.145,64.431,0.0,0.238,250.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8d8d9d4d-5182-5aa5-8028-b1c57f5027c7,Banana milkshake with ice cream (Kele ka milkshake ice cream ke saath),केले का मिल्कशेक आइसक्रीम के साथ,Dish,76.448,2.014,0.138,68.296,0.941,0.26,340.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+88b637a2-3af5-5c8e-acb7-ae9caebfa65a,Flavoured milkshake,फ्लेवर्ड मिल्कशेक,Dish,66.776,2.059,0.105,75.053,0.0,0.29,285.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6d11742b-6a8b-54b4-9b2e-495dbcca3a52,Jal jeera,जलजीरा,Dish,30.241,0.438,0.835,24.718,53.357,0.0,140.022,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8f84509b-63bb-52d8-ad1c-6d04952dc201,Gingo,जिंजर ड्रिंक,Dish,48.018,0.136,0.214,6.331,4.989,0.0,291.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+48476cd1-ac35-59c9-9dba-7a97ecbd5b38,Mintade,पुदीना शरबत,Dish,40.322,0.033,0.053,2.097,1.002,0.0,570.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b1ed50f8-9d37-523c-b324-a7cd7bbbb104,Canjee,कांजी,Dish,6.614,0.244,0.17,5.824,15.111,0.0,170.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7bfa4264-9545-5d1b-b705-22cb1a2b1756,Cauliflower canjee (Phoolgobhi ki canjee),फूलगोभी की कांजी,Dish,6.897,0.389,0.224,6.263,16.795,0.0,178.583,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4c5f5b18-24a7-5875-aac4-dc380b51a8af,Potato canjee (Aloo canjee),आलू कांजी,Dish,16.264,0.435,0.22,5.206,12.152,0.0,195.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d4b4b8f4-b19e-5a8c-a66f-3c1f191b0171,Vermicelli porridge (Semiya/Seviyan porridge),सेवइयों का दलिया,Dish,78.398,2.497,0.204,72.96,6.477,0.278,396.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a91493f3-c09e-5928-966e-679a9946bfb9,Semolina upma (Suji/Rava upma),सूजी उपमा,Dish,147.893,3.301,1.096,21.571,137.701,0.0,106.255,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+3f5d55da-38d8-50ec-9e01-923950134727,Vermicelli upma (Semiya/Seviyan upma),सेवइयों का उपमा,Dish,149.107,3.111,0.928,20.3,100.206,0.0,106.255,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5911f1cc-f717-5efa-8e07-1d600c451f7f,Rice upma,चावल का उपमा,Dish,151.267,2.629,0.671,17.567,76.038,0.0,106.255,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9892c76d-c37b-54e9-8432-f0161d440c51,Bread upma,ब्रेड उपमा,Dish,129.513,2.796,0.817,45.216,76.038,0.0,106.255,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+28b22cfb-756e-56d6-a7ef-026ff32e547a,Vegetable upma,वेजिटेबल उपमा,Dish,146.468,4.727,1.346,26.684,192.603,0.0,235.66,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a40d72f6-50c8-54ce-a164-8af44a197ede,Poha,पोहा,Dish,294.526,6.085,3.015,37.667,149.257,0.0,54.59,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+308ac516-bc79-59ad-808b-5dccdc515f88,Vegetable poha,वेज पोहा,Dish,180.516,4.888,1.924,28.012,165.005,0.0,97.83,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a1821c2e-a743-576c-929b-58ce551753ee,Moong dal stuffed cheela/chilla (Moong dal ka cheela/chilla),मूंग दाल भरा चीला,Dish,154.885,6.974,2.22,39.344,99.637,0.0,227.33,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8d01360c-7cee-5054-b561-f4cd1d82d0f8,Paneer stuffed cheela/chilla,पनीर भरा चीला,Dish,205.189,11.436,2.414,151.298,105.574,0.165,212.33,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+553759ce-a0e1-5a61-8f1e-d1dff1af612b,Indian style egg bhujia (Anda bhujia (Indian style)),अंडा भुर्जी,Dish,102.834,6.097,1.135,31.896,147.465,0.353,125.96,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+3286b4e0-71a4-5c8f-b19e-00b240bed4dd,French omelette/omlet,फ्रेंच ऑमलेट,Dish,211.039,10.031,1.584,46.346,36.435,0.679,68.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+39c76dc4-5b2c-53c3-8490-bbd905b149e4,Puffy omelette/omlet,पफी ऑमलेट,Dish,188.149,8.816,1.199,34.961,22.105,0.608,76.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f7c2d6b6-a255-5341-91e9-b19df0873dd2,Orange omelette/omlet,ऑरेंज ऑमलेट,Dish,194.662,8.934,1.259,37.329,22.105,0.608,76.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+3e687da6-cbf7-5417-983b-d6a50792e25c,Cheese and mushroom omelette/omlet,चीज़ और मशरूम ऑमलेट,Dish,205.627,9.691,1.007,148.773,211.919,0.532,128.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+3fa282ea-fb1c-5e2b-a14b-1fcf2c1f8234,Spanish omelette/omlet,स्पैनिश ऑमलेट,Dish,157.447,8.25,1.282,31.721,218.274,0.356,152.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+44817bf5-83d9-591a-9102-723ec453d131,Mixed stock,मिक्स स्टॉक,Dish,25.193,2.065,0.072,2.058,1.837,0.051,910.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4b3aa78e-3a10-5024-b74b-519067a7a2fd,Meat stock,मीट स्टॉक,Dish,24.483,2.103,0.052,0.862,0.0,0.053,870.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+370877e1-952b-58b8-915d-c032b150bf0e,White stock,व्हाइट स्टॉक,Dish,6.987,0.068,0.027,1.585,2.186,0.001,765.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+110f8d26-0fd3-590f-9443-cdbe7721611e,Meat consomme (with mutton),मटन कॉन्सोमे,Dish,29.764,14.859,4.215,115.878,7.117,0.302,619.9,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+57b4901b-a262-5175-ac99-2c86d6aedf6e,Consomme au julienne,कॉन्सोमे जूलिएन,Dish,27.763,12.493,3.337,85.893,22.065,0.025,769.9,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a1c46187-542c-5c25-8c73-a445060493d7,Consomme au vermicelli,कॉन्सोमे सेवइयाँ,Dish,29.944,15.231,3.978,97.343,15.515,0.03,626.9,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ba6f4a00-a04e-5dd6-a17d-f8fed7fc277c,Green pea soup (Matar ka soup),मटर का सूप,Dish,39.806,11.065,2.184,46.633,98.237,0.069,556.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+df39e6ae-65d3-5192-bef8-d130eacaa917,Spinach soup (Palak ka soup),पालक का सूप,Dish,32.592,10.537,2.681,56.231,8.788,0.003,502.81,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+fe60741d-fcfb-529f-a0dd-d17924f36a5c,Mixed vegetable soup,मिक्स वेज सूप,Dish,35.71,8.216,1.735,50.693,55.278,0.066,440.7,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d10a2e45-5024-5c6b-bbc5-29d73ee0ba1c,Cheese soup,चीज़ सूप,Dish,41.132,12.388,2.396,83.646,7.765,0.06,444.84,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+52a67062-4633-5faf-8f6e-c2b8ad97e463,Mulligatawny soup,मुलिगटोनी सूप,Dish,54.423,11.265,2.654,43.886,14.114,0.002,348.84,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+587f3137-ce51-5dd4-8baf-7c23fc6e288e,Cream of carrot soup,क्रीम ऑफ गाजर सूप,Dish,59.767,8.274,1.73,57.241,19.541,0.09,465.65,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d1f2afa9-d68d-5f1b-9735-80c07b9135b1,Cream of broccoli soup,क्रीम ऑफ ब्रोकली सूप,Dish,56.142,8.97,1.819,66.55,10.305,0.1,460.65,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+db0e4657-5263-562c-a14b-9a3cfccc6b05,Cream of potato soup,क्रीम ऑफ आलू सूप,Dish,60.203,8.1,1.698,51.967,11.578,0.088,475.65,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+11172b4c-eff2-5a13-9bce-9027ecf063bf,Almond soup (Badam ka soup),बादाम का सूप,Dish,78.651,10.131,2.831,114.954,13.888,0.205,477.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+96550d05-200c-5f72-a0ec-63e4f0707f29,Cold cucumber cream soup ,ठंडा खीरा क्रीम सूप,Dish,11.877,0.336,0.165,8.019,16.658,0.004,382.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4f3f7421-69a5-5687-ad33-e80e61247287,Cold tomato soup,ठंडा टमाटर सूप,Dish,16.904,0.113,0.101,4.196,20.944,0.003,274.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0aff471b-118f-5ae1-929d-0b5c60d17764,Chicken stew,चिकन स्टू,Dish,127.546,7.193,0.9,31.531,102.58,0.157,296.86,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+637a1f6c-1d07-55a8-9c49-3bc7ec8f1438,Veg paneer stew,वेज पनीर स्टू,Dish,145.545,6.985,1.366,160.506,195.288,0.177,236.86,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a11b5b99-6cb4-594c-9c5a-f4efd75bb5a7,Onion-green chilli parantha/paratha (Pyaaz aur hari mirch ka parantha/paratha),प्याज और हरी मिर्च का पराठा,Dish,191.271,4.371,1.808,24.908,201.852,0.0,229.35,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9d7e37c6-9e8d-58a6-b0db-3a2fdf59f0cd,Methi parantha/paratha,मेथी पराठा,Dish,148.362,4.271,2.418,65.851,187.376,0.0,273.59,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+422bb6f1-8577-5ca8-aa3e-84444fe4d6a1,Bathua poori,बथुआ पूरी,Dish,598.794,2.353,0.958,30.83,83.804,0.0,409.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6f1df75b-1846-5e58-aeda-f245efd3d0a9,Gram flour poori (Besan poori),बेसन पूरी,Dish,697.665,2.587,0.71,7.09,63.386,0.0,339.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b620cd0d-c5eb-5736-9129-2a8ee49c284a,Beetroot poori (Chukandar ki poori),चुकंदर की पूरी,Dish,527.658,1.913,0.6,5.379,70.026,0.0,463.2,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+2da144cb-635f-57aa-9bb5-15d7231deca8,Peas poori (Matar ki poori),मटर की पूरी,Dish,592.831,3.037,0.844,8.959,150.931,0.0,419.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+db0563ad-3315-51dd-b0c3-25453875371a,Peas kachori (Matar kachori),मटर कचौड़ी,Dish,584.683,3.213,0.773,14.251,159.523,0.0,216.257,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+465633f5-00cd-5762-ac5d-58ce6a6e1032,Pizza,पिज़्ज़ा,Dish,146.773,6.849,0.665,77.231,276.981,0.299,297.295,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8febf81f-e8cb-5a01-8dc1-a7581aa82ce7,Bacon and mushroom pancake,बेकन और मशरूम पैनकेक,Dish,157.669,6.82,0.543,44.736,339.833,0.359,364.51,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+daf19d0e-c5f8-5b56-83a5-0d8a2e5b9f35,Cheese and tomato pancake,चीज़ और टमाटर पैनकेक,Dish,147.385,5.146,0.642,127.511,172.212,0.254,330.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f6e5fa89-8aed-5fa3-a38c-fc211e40dbfa,Minced meat pancake (with chicken),कीमा पैनकेक,Dish,116.041,12.013,1.995,64.717,43.9,0.154,403.12,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f48aa111-bceb-5727-af9e-4a94ed2689f6,Eggplant/Brinjal rice (Vangi bhat),वांगी भात,Dish,184.796,5.279,1.911,36.017,145.587,0.0,291.18,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c0af5d7d-dd3a-532a-bdf4-955644f793a9,Kashmiri 'tahar',कश्मीरी तहर,Dish,98.207,1.952,0.317,3.928,1.533,0.0,325.66,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+cd85af5b-04a5-5a0f-afac-c86bf54a4274,Cumin pulao (Jeera/Zeera pulao),जीरा पुलाव,Dish,135.241,2.472,0.325,7.255,3.948,0.0,270.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+fa1f11c2-b9dd-51a2-9a4c-9b4171719e9b,Peas pulao (Matar pulao),मटर पुलाव,Dish,108.869,3.894,0.785,18.181,172.745,0.0,471.9,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7198fb66-c191-57f7-a9c1-c8a9ee3b75d3,Split bengal gram dal and vegetable pulao (Channa dal and vegetable pulao),चना दाल और सब्जी पुलाव,Dish,116.525,3.601,0.823,19.091,76.937,0.0,441.9,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+298b0f10-6642-59b2-ab32-148db4db2bd5,Black channa pulao/ Bengal gram pulao (Kale chane ka pulao),काले चने का पुलाव,Dish,125.512,3.436,0.773,16.51,18.313,0.0,396.9,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6e250f69-1eaa-5772-82d3-3eaf55200f86,Mutton pulao,मटन पुलाव,Dish,130.772,6.518,1.247,49.87,15.088,0.296,662.625,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e37727fa-574e-5112-a2e1-6def1c954605,Chicken pulao,चिकन पुलाव,Dish,108.241,6.075,0.981,32.245,14.964,0.063,668.125,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6bc78f6a-1cc4-5936-b02c-1abdeaab3775,Mexican rice,मैक्सिकन राइस,Dish,120.566,4.623,0.552,14.506,143.188,0.357,517.76,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4399282f-a158-5765-9d67-0288bdf59f4d,Plain khitchdi (Plain khichri/khichdi),सादी खिचड़ी,Dish,57.03,1.718,0.305,5.045,5.62,0.0,574.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ebaca791-512b-5bdd-8772-193c9802543a,Instant idli (with semolina),सूजी की इंस्टेंट इडली,Dish,247.287,9.165,2.307,93.202,319.588,0.105,105.83,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+906a97f6-5354-541e-b70e-83e1a0e6f9b6,Plain dosa,सादा डोसा,Dish,380.906,10.336,1.498,19.354,70.198,0.017,72.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+31dd73f7-66ee-50c9-838a-201b825e519e,Masala dosa mixed vegetable fillings,मसाला डोसा मिक्स सब्जी भरावन,Dish,144.533,4.835,1.205,31.789,206.764,0.004,277.335,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+604b680e-eb3d-5936-961c-d543cb55f736,Masala dosa paneer fillings,मसाला डोसा पनीर भरावन,Dish,243.116,10.309,1.273,171.23,196.199,0.219,197.335,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c1932a93-e9b6-5cd1-a908-b8f7123b2410,Uttapam,उत्तपम,Dish,255.946,6.183,1.232,40.861,229.795,0.009,136.085,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8fd5e73d-f451-561c-9129-e0f07ee6d174,Appam,अप्पम,Dish,267.698,3.12,0.826,6.363,3.571,0.001,458.67,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b8500799-3450-59dc-a0b5-44c30a495765,Beans and macaroni,बीन्स और मैकरोनी,Dish,136.082,4.583,0.749,86.856,141.785,0.092,254.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+044cb0d2-3c82-5c52-84ab-01685bcdb544,Spaghetti bolognese,स्पेगेटी बोलोनीज़,Dish,97.426,9.35,2.064,73.662,153.587,0.283,374.31,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e8867ac7-1a94-5c8d-a307-24eaaee55c14,Meat and macaroni casserole,मीट और मैकरोनी कैसरोल,Dish,161.55,9.147,1.851,68.276,19.719,0.579,400.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d666ee94-cce4-58d4-b1d0-f95b57c2b5e5,Spaghetti with meat balls and tomato sauce,मीटबॉल और टमाटर सॉस के साथ स्पेगेटी,Dish,158.127,5.606,0.713,40.817,134.584,0.438,555.78,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ec0ea991-1e96-527b-873d-bdf6d995c2e7,Spaghetti with paneer balls and tomato sauce,पनीर बॉल और टमाटर सॉस के साथ स्पेगेटी,Dish,158.536,3.954,0.549,80.732,151.292,0.082,495.78,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+956e16f1-9fe0-5b5b-bb1a-fd01adb740bd,Lasagne with meat sauce,मीट सॉस के साथ लज़ानिया,Dish,63.376,2.902,0.494,24.614,71.956,0.251,887.265,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+2d8e53f4-5284-541d-9bc3-bc9dcb443901,Lasagne with vegetables,सब्जियों वाला लज़ानिया,Dish,49.228,1.705,0.569,32.887,59.683,0.064,878.595,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c4beefaf-7d27-54e2-a283-aa22cd222b50,Home made egg noodles,घर का बना अंडा नूडल्स,Dish,240.845,6.547,1.149,15.959,160.196,0.069,224.95,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+594590b5-80f2-5f97-8551-41dc75240836,Sour lentils (Khatti dal),खट्टी दाल,Dish,34.787,2.216,0.852,8.291,23.179,0.0,362.72,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+df5fbb65-0ede-55b5-87cb-6496e8121d37,Urad special dehusked,धुली उड़द दाल,Dish,69.435,3.14,0.83,16.405,85.989,0.0,266.21,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9aff26dc-34f8-56cf-af4a-a3adec2dcd18,Arhar with spinach (Arhar dal aur palak),अरहर दाल और पालक,Dish,52.837,2.051,0.894,21.81,13.806,0.0,403.3,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ab47d43b-70f0-559b-ad28-d5a3c92c0f52,Moong dal with vadi,वड़ी वाली मूंग दाल,Dish,24.079,0.397,0.182,2.987,26.004,0.0,362.47,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0077acc2-77d8-5a8d-b753-0941388fad13,Rasam with tamarind (Puli rasam/ Chintapandu rasam/ Charu/Saaru),इमली का रसम,Dish,26.741,1.132,0.586,16.558,120.917,0.0,389.87,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8bc37b02-ccd8-5395-babd-67f17fe90b77,Rasam with lemon (Nimmakaya rasam/Nimmakaya charu/Elumichai rasam/Nimbe hannina saaru),नींबू का रसम,Dish,24.412,1.106,0.515,15.559,111.733,0.0,394.37,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+2b5005f6-959e-5ca7-8da5-6170770b6be4,Green gram whole with baghar (Sabut moong dal with tadka),तड़के वाली साबुत मूंग दाल,Dish,63.435,3.231,1.005,25.037,32.058,0.0,225.72,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+60322ecd-2d39-507f-aed0-07de06f4234f,Urad sabut special,स्पेशल साबुत उड़द दाल,Dish,79.393,2.329,0.712,21.449,165.87,0.023,441.8,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+567f2722-3ea2-5940-ad8c-bdbf60fb1642,Kabuli channa curry,काबुली चना करी,Dish,68.574,2.922,0.952,32.03,85.303,0.005,355.63,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a8a78642-1c99-51bd-94db-7f0e6c019501,Besan gatte curry,बेसन गट्टे की करी,Dish,189.38,7.755,1.891,151.085,80.843,0.149,255.66,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e29d599d-8d3f-52bf-87a7-78b76a90ec37,Dry masala chops,सूखे मसाला चॉप्स,Dish,135.072,9.08,1.391,112.249,18.688,1.014,295.21,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+aa38c31e-ee18-5614-bb14-59b8ba5fdd64,Mutton korma,मटन कोरमा,Dish,115.639,7.092,1.092,79.067,9.911,0.803,366.465,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5e07b64b-a1b8-526c-9ef5-c989e4b2b0ba,Shahi keema kofta curry,शाही कीमा कोफ्ता करी,Dish,418.135,4.141,0.675,14.51,63.601,0.449,617.09,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+2406253e-991a-5ed2-b3cc-7e1e3fcfda87,Minced meat ball curry,कीमा कोफ्ता करी,Dish,109.786,6.816,1.006,23.842,106.326,0.743,373.09,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0c736127-4ba9-520c-8055-70d84e6c3aee,Boti kebab,बोटी कबाब,Dish,132.858,9.223,1.412,98.672,33.428,1.054,273.46,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+051f2b3a-7b06-563b-94af-f5b766f7bf6e,Mutton seekh kebab,मटन सीख कबाब,Dish,133.938,11.25,2.195,117.441,37.622,1.284,179.94,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a1db8bdd-3962-55ff-99d2-ebdfdbe154ad,Indian lamb and egg curry (Nargisi kofta),नरगिसी कोफ्ता,Dish,335.751,3.84,0.552,12.908,27.457,0.327,781.85,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+415e831a-e9fe-5b81-bb53-28bd2ac4e9bb,Soya chunks sweet and sour (Nutrinugget sweet and sour),मीठे खट्टे सोया चंक्स,Dish,500.941,2.854,0.699,13.891,44.968,0.042,461.59,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a462c728-bbe3-5866-aecb-a3f906895f19,Soya chunks korma (Nutrinugget korma),सोया चंक्स कोरमा,Dish,131.427,3.862,1.184,89.705,50.382,0.112,248.7,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0ed55fee-9d0f-544e-afd8-5ea85e43998b,Mushroom matar,मशरूम मटर,Dish,70.77,2.792,0.813,21.425,413.663,0.0,262.91,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e6db06bc-6e22-5264-866b-ebbbb60ba3b5,Soya chunks and peas (Nutrinugget matar),सोया चंक्स मटर,Dish,82.622,3.029,0.988,20.322,266.745,0.0,222.91,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+96ac7ab4-abbd-5b95-9da2-c352423ee695,Vegetable yakhni,वेजिटेबल यखनी,Dish,406.058,1.175,0.244,43.674,13.073,0.064,573.74,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+50367569-f6c6-562b-98c3-0fe6d67a58bd,Spinach mushroom (Palak mushroom),पालक मशरूम,Dish,47.625,1.94,1.685,49.749,203.235,0.003,295.09,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+fc7ad0c2-fe08-5cf5-9a7b-25b95d5737e5,Vegetarian nargisi kofta curry,वेज नरगिसी कोफ्ता करी,Dish,332.154,2.288,0.384,47.089,38.86,0.058,797.98,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+78e47ba5-029e-5b57-934c-17302b1ca04b,Roast chicken,रोस्ट चिकन,Dish,199.903,20.486,0.79,13.607,52.77,0.206,133.375,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+48bb63f5-0c8f-5a75-94d2-f24464a28ab5,Shahi chicken masala,शाही चिकन मसाला,Dish,163.695,9.824,0.894,82.68,61.871,0.26,349.15,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d12f1417-5e00-59d3-a819-52816c4832a8,Tomato chicken,टमाटर चिकन,Dish,111.68,10.57,0.871,21.237,247.631,0.095,176.255,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+19144a83-3c87-567a-a542-24f2755fecce,Creamy chicken,क्रीमी चिकन,Dish,152.866,13.518,0.823,50.374,44.535,0.189,217.42,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+66c10a02-ddfe-5b8e-b1a0-30f6987a9e97,Broccoli chicken ala king,ब्रोकली चिकन अ ला किंग,Dish,119.561,7.974,0.777,73.356,12.778,0.133,236.09,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1135199b-50d4-55fa-9e13-23ef03999756,Ginger chicken,अदरक चिकन,Dish,129.168,8.245,0.964,18.409,86.34,0.07,383.93,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e981503f-2148-5c7e-a4fa-3787db5887f5,Chicken sweet and sour,मीठा खट्टा चिकन,Dish,445.094,6.92,0.933,21.976,48.756,0.08,561.59,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+42585927-d548-5fc5-a790-eabffecdb402,Chicken korma,चिकन कोरमा,Dish,147.958,9.831,1.06,68.662,54.595,0.153,347.03,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+62f0f1ac-c6bf-5720-b009-00b010772c2c,Bengal fish curry (Bengali machli curry),बंगाली मछली करी,Dish,109.433,7.263,0.847,44.439,55.054,0.501,310.47,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a247d3b8-abcc-58fa-94d4-5b302baff496,Fish finger,फिश फिंगर,Dish,542.901,5.656,0.38,11.381,14.32,0.388,443.59,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+3f836789-a119-51f1-b43e-53c3afef9bee,Fish in coconut milk (Nariyal ke doodh ke saath machli),नारियल के दूध के साथ मछली,Dish,86.205,8.659,0.915,21.942,46.418,3.207,325.55,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+398b0e36-c5bb-523a-a7f6-e51f9e55fbd0,Prawn curry (with coconut) (Jhinga curry),झींगा करी,Dish,109.549,8.543,0.959,37.245,90.581,0.582,286.12,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+71118b15-3b17-5fc5-b862-0c5f8caa4c46,Baked stuffed fish,बेक्ड स्टफ्ड फिश,Dish,121.96,16.138,0.354,18.8,80.927,1.235,304.233,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e79bbe2a-0d99-5df9-8847-158856b9a866,Fish pie,फिश पाई,Dish,120.895,9.25,0.459,36.149,23.448,0.71,305.59,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d22ccdf6-0867-5c18-b3a3-6240b8dd35dc,Crispy baked fish,क्रिस्पी बेक्ड फिश,Dish,138.402,10.954,0.546,60.035,143.893,0.698,283.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+562254c8-646b-5b6d-9242-083ead20e951,Fish souffle,फिश सूफले,Dish,139.707,10.508,0.589,63.871,28.78,0.852,295.34,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a5b24d3f-f823-5133-ade1-fe456a473acf,Potato curry (Aloo ki sabzi),आलू की सब्जी,Dish,89.555,1.518,0.974,23.736,134.855,0.0,201.57,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ed5eae5e-35e2-521e-b405-a2f0380eee81,Egg curry (Anda curry),अंडा करी,Dish,117.521,5.383,1.52,41.594,185.411,0.294,151.57,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+77bc21bb-9a16-550d-9396-08ed4f885f4c,Vegetable curry with coconut ,नारियल वाली सब्जी करी,Dish,83.071,2.774,0.947,19.626,211.112,0.0,371.57,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c965f90e-4a2a-53b0-8c35-c024201bc188,Curd with potatoes (Dahi aloo),दही आलू,Dish,59.904,1.563,0.473,36.364,59.198,0.049,379.26,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6f60c08c-4df2-54ca-975e-a816ee600a98,Potato kofta curry (Aloo kofta curry),आलू कोफ्ता करी,Dish,455.397,0.56,0.26,7.773,29.96,0.013,1020.08,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4e329a69-296c-5c36-971e-074c19ffb275,Yam kofta curry (Zimikand/Suran kofta curry),जिमीकंद कोफ्ता करी,Dish,322.879,0.715,0.31,8.351,38.218,0.012,750.26,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d50207fd-89bf-53ef-b36f-276b62b86a40,Jackfruit kofta curry (Kathal ka kofta curry),कटहल का कोफ्ता करी,Dish,321.083,0.804,0.244,11.364,84.666,0.012,750.26,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5815e9dc-4433-5c06-9daa-d43887967ce4,Spinach and potato (Palak aloo),पालक आलू,Dish,57.171,1.63,1.587,43.674,82.714,0.0,335.09,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+78c8904c-c280-5f96-8a80-911eb971274c,Mooli bhujia,मूली भुजिया,Dish,91.202,1.687,2.365,131.876,44.903,0.0,198.42,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6122d21d-2cc4-5345-9725-c40e8a736bef,Bathua bhujia,बथुआ भुजिया,Dish,90.901,2.264,2.36,165.844,46.919,0.0,198.42,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f0715ae8-ff90-55f7-9c56-7ef42872efb3,Cabbage rolls (dry) ((Pattagobhi rolls) (dry)),पत्तागोभी रोल्स सूखे,Dish,142.475,8.206,0.98,31.538,28.788,0.838,166.3,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e83c617c-7f0a-5524-8fbd-1798131dcbca,Cabbage rolls (curry) ((Pattagobhi rolls)(curry)),पत्तागोभी रोल्स करी,Dish,124.627,5.76,0.949,29.824,23.485,0.479,291.24,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e9556b8c-d9a7-52f2-a9b4-0298647a75ee,Dry arbi (Sookhi arbi),सूखी अरबी,Dish,134.945,2.116,0.681,22.769,52.774,0.0,200.59,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+67ad792b-e2b7-5592-9e9d-32b22383cd49,Masala arbi,मसाला अरबी,Dish,185.377,3.007,0.994,32.083,12.51,0.0,116.18,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+128a55b8-a8b3-59d5-af5a-95da72cbe9c3,Peas brinjal bhartha (Matar baingan bhartha),मटर बैंगन भर्ता,Dish,84.545,2.051,0.625,19.626,143.319,0.0,261.67,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7fed1a6d-11ac-5093-8e86-d743003c5e47,Okra/Lady's fingers fry (Bhindi sabzi/sabji/subji),भिंडी की सब्जी,Dish,110.808,1.83,0.884,67.883,222.86,0.0,166.34,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+94fffd79-8b4c-5387-aafa-e3cb486ed9b7,Crispy okra/Crispy lady's fingers (Karare bhindi),कुरकुरी भिंडी,Dish,657.76,1.912,0.559,27.612,70.393,0.0,342.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6d853ed7-3f69-598b-9581-f8ae02abe10d,Beans foogath,बीन्स फोगट,Dish,105.065,2.025,0.953,44.198,108.892,0.0,181.17,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+118e42d1-4877-523d-9f89-c5ab33d38ff3,Stuffed bittergourd (wet) (Bharwa karele),भरवां करेले,Dish,162.362,1.363,0.914,17.247,48.267,0.0,156.47,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4f9bc7ba-e4ed-55f7-8302-fde34ce44447,Jackfruit/Kathal (dry),कटहल की सूखी सब्जी,Dish,488.975,0.93,0.333,12.786,109.661,0.0,483.42,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d5dd9ac0-87b2-5acf-a66c-2907ae2b759a,Yam fried (Zimikand/Suran fried),जिमीकंद फ्राई,Dish,491.763,0.791,0.435,8.109,37.574,0.0,483.42,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b0c82908-2094-546b-8ce6-59cd003e3e16,"Cauliflower, pea and potato bhujia (Phoolgobhi, matar aur aloo bhujia)",फूलगोभी मटर और आलू भुजिया,Dish,95.667,2.754,0.976,21.052,193.543,0.0,191.22,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+49f62c9f-075e-5b47-b995-5f8bbb28ec7e,Vegetable jalfrezi,वेजिटेबल जलफ्रेजी,Dish,68.478,1.405,0.683,27.113,163.018,0.0,100.585,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+93a979bb-7665-569e-86af-494565fe3bf4,Vegetables stir fry ,वेजिटेबल स्टर फ्राई,Dish,30.781,1.035,0.344,13.3,96.981,0.0,388.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+18a4c791-2fdb-5e1e-8ebe-71164612e26b,Broccoli delight,ब्रोकली डिलाइट,Dish,40.697,2.49,0.71,26.988,24.421,0.0,199.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e543e462-f7cd-5c38-98b6-55444230e540,Dhansak (vegetarian),धनसाक शाकाहारी,Dish,82.802,3.322,1.264,26.404,64.499,0.0,241.015,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f05b6e64-0d33-5926-982d-ad79467b2f0d,Cauliflower basket,फूलगोभी बास्केट,Dish,90.948,5.205,0.92,100.189,42.973,0.24,241.465,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e12c1e7d-9200-5006-becd-048494ee1a7f,Stuffed bottle gourd (Stuffed ghiya/lauki),भरवां घिया,Dish,93.187,5.838,0.656,71.832,21.121,0.488,355.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+17043617-a14f-590f-b902-c7ea854a8db4,Ducheese potato,डचेस आलू,Dish,140.539,3.602,0.764,18.096,13.133,0.177,171.84,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+637ffc21-0f69-5845-bd78-1c96be98572d,Roast potatoes ,रोस्ट आलू,Dish,87.319,1.526,0.573,10.38,9.036,0.005,154.59,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+07841993-04b0-56aa-a6dc-332a9e1a801f,Stuffed baked potatoes ,भरवां बेक्ड आलू,Dish,100.198,3.815,0.807,25.718,14.901,0.185,208.09,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1d8937c2-8991-5715-86db-298a2920fe7c,Potato nests,आलू नेस्ट,Dish,111.617,5.706,0.87,55.247,145.579,0.183,382.93,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+bfe98f25-d416-585b-b2e3-701f56437569,Parsley potato,पार्सले आलू,Dish,119.514,1.489,0.551,11.429,8.028,0.015,108.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c3639997-0de5-5efe-bedf-4b4e46e0b39e,Creamed spinach and mushroom,क्रीमी पालक और मशरूम,Dish,419.615,2.278,0.905,65.487,78.033,0.1,595.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0eb0fc56-fdc2-5ee1-92a9-aee412c7287c,Fricassee of Mushroom,मशरूम फ्रिकैसी,Dish,106.663,3.651,0.36,84.968,162.618,0.216,280.84,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+39c3a90f-32a5-5ef3-b66c-d8e44e26bef9,Cauliflower au gratin,फूलगोभी ऑ ग्रेटिन,Dish,145.897,4.454,0.573,119.689,27.241,0.28,336.34,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4b0515a4-cf12-5e42-bf29-ef6cd96687a8,Vegetable and cheese pie,सब्जी और चीज़ पाई,Dish,126.877,4.029,0.58,99.48,67.698,0.227,484.84,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+01742070-abe7-5350-b0dd-81bc5ed9b5a5,Spinach souffle ,पालक सूफले,Dish,150.18,7.358,2.149,133.686,32.265,0.337,200.34,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+aad91229-e2e1-5ce2-9bf3-8acc4c0b183d,Beetroot and egg salad (Chukandar aur ande ka salad),चुकंदर और अंडे का सलाद,Dish,84.915,3.357,0.548,18.127,15.294,0.2,222.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c365a384-04ff-5c2d-bb6e-03be0672be63,Sour cream potato salad,सावर क्रीम आलू सलाद,Dish,121.898,2.888,0.9,23.25,15.683,0.162,226.84,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+05f243ab-2db1-5fdf-883e-2aa719f9280b,Tossed green salad,टॉस्ड ग्रीन सलाद,Dish,49.878,1.334,1.267,33.711,72.55,0.0,218.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f73b250c-03a3-5179-925a-3fd96baa6eb4,Spring basket salad,स्प्रिंग बास्केट सलाद,Dish,160.457,3.363,0.853,45.648,240.114,0.013,210.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+31322f36-05ae-55d4-b009-7f4d34725db8,Cucumber and yogurt salad (Kheere aur dahi ka salad),खीरे और दही का सलाद,Dish,36.126,2.091,0.524,68.49,39.946,0.096,115.09,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b5bfe53d-92cd-525d-854d-bcd65c94b6ea,Chicken and tomato towers,चिकन और टमाटर टावर्स,Dish,100.552,6.901,0.773,17.544,202.174,0.065,264.09,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6da8a8ee-b502-535c-b1de-37b4202e1f12,Jellied sunshine fruit salad,जेली वाला सनशाइन फ्रूट सलाद,Dish,48.865,5.851,0.87,37.143,32.177,0.0,248.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8d6c4e21-8c1f-5b87-a86c-f2b54fff1e82,Tomato aspic,टमाटर एस्पिक,Dish,50.373,6.874,1.181,44.283,235.53,0.0,212.74,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5d3045e2-e897-5eeb-85e8-e40cbeff1a3f,Frozen frosty fruit salad (Phalon ka salaad),फ्रोजन फ्रॉस्टी फ्रूट सलाद,Dish,103.507,1.678,0.408,28.614,14.205,0.096,233.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+2a396989-960b-579e-8a79-d7e764b7c7c3,French dressing,फ्रेंच ड्रेसिंग,Dish,733.769,0.323,0.484,6.979,7.836,0.0,151.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e5151a1d-db9c-5621-83a6-2b7901b75780,Mayonnaise without eggs,बिना अंडे की मेयोनेज़,Dish,329.054,2.131,0.266,75.536,1.931,0.285,387.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8a7cec76-6334-5cd6-98e7-13ef0c7d4848,Curd dressing ,दही ड्रेसिंग,Dish,78.796,5.586,0.178,194.591,6.568,0.354,104.59,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+aada8d9e-4834-5232-9934-3566ebf56e0e,Carrot raita (Gajar ka raita),गाजर का रायता,Dish,64.784,4.137,0.553,146.717,26.472,0.235,157.67,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9f44093b-0c81-5b0d-85c2-f3c2d0db0d29,Pumpkin raita (Kaddu ka raita),कद्दू का रायता,Dish,55.602,3.735,0.335,130.114,23.807,0.218,170.01,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+822904fd-7b2f-547f-8041-4551aba45f61,Mint and peanut raita (Pudinay aur moongfali ka raita),पुदीने और मूंगफली का रायता,Dish,112.047,7.046,1.681,191.005,28.06,0.278,133.17,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0106bdc1-37f4-54b5-8183-cc2e67ead375,Spinach raita (Palak ka raita),पालक का रायता,Dish,52.755,3.948,1.608,142.96,10.242,0.182,203.17,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b10e83ab-fb4c-5261-b2ae-f3526d752752,Bathua raita,बथुआ रायता,Dish,54.401,4.126,1.465,206.311,25.008,0.182,203.17,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0598f8a0-1095-5f98-b400-9faf897bf362,Pineapple raita (Ananas ka raita),अनानास का रायता,Dish,67.742,3.898,0.271,134.525,15.523,0.233,158.84,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0d8e9719-ac46-5397-bc6a-c752eea36e80,Banana raita (Kele ka raita),केले का रायता,Dish,89.033,4.128,0.309,133.232,15.397,0.233,158.84,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9ad3c854-056d-5583-a5c9-148e6fd575f3,Mango raita (Aam ka raita),आम का रायता,Dish,67.366,3.904,0.343,136.065,59.592,0.233,158.84,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+122300e0-5abe-53a9-9001-355bf1f256d8,Guava raita (Amarood ka raita),अमरूद का रायता,Dish,64.356,4.188,0.284,136.93,34.032,0.233,158.84,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+15a9e8d6-abb7-5364-b66b-82f27d07b719,Grapes raita (Angoor ka raita),अंगूर का रायता,Dish,72.594,3.975,0.255,134.521,74.45,0.233,158.84,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a32f6e40-1b7c-514f-8813-077048976259,Bottle gourd kheer (Ghiya/Lauki kheer),घिया की खीर,Dish,84.073,2.701,0.225,94.179,9.324,0.343,267.7,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+006af5f4-0f52-54fd-b596-9818b2ed4e8c,Pumpkin kheer (Kaddu ki kheer),कद्दू की खीर,Dish,86.35,2.759,0.244,95.606,14.255,0.343,267.7,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+493db4a4-5172-50f3-8725-ce98886de9ec,Apple kheer (Seb ki kheer),सेब की खीर,Dish,81.295,2.137,0.184,75.668,11.831,0.276,332.705,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+eda1d697-1387-52e0-a800-a1c68fbeb119,Caramel custard (baked),बेक्ड कैरामेल कस्टर्ड,Dish,122.696,5.113,0.526,90.588,7.45,0.503,225.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d4c018bd-0296-547b-b71d-bc7f4bd26397,Vanilla ice cream without egg,बिना अंडे की वनीला आइसक्रीम,Dish,228.673,2.688,0.1,81.266,0.0,0.322,157.375,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+24104790-6183-596a-b47f-d25f15ef68ba,Vanilla ice cream with egg,अंडे वाली वनीला आइसक्रीम,Dish,214.85,4.164,0.337,77.42,4.638,0.406,181.125,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d3fda370-7148-5366-b921-af0ee18fffc2,Strawberry ice cream,स्ट्रॉबेरी आइसक्रीम,Dish,215.606,4.151,0.336,77.085,4.619,0.405,181.875,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d7284dce-fb8b-50fc-8d3c-06fbfed8546c,Chocochip ice cream,चॉकलेट चिप आइसक्रीम,Dish,241.446,4.226,0.509,73.215,4.213,0.369,199.375,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+92b59220-a434-56cd-aa92-3f26fbd44fd2,Choconut ice cream,चॉकलेट नट आइसक्रीम,Dish,273.956,5.041,0.888,67.38,15.366,0.306,240.475,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7d712853-a5af-5855-a7ad-e5d7c98d5b7b,Pear chocholate sunday,नाशपाती चॉकलेट संडे,Dish,183.487,2.084,0.239,56.668,0.363,0.212,243.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f7aaed3f-0439-5005-a109-b9d8bd33648f,Chocolate sauce,चॉकलेट सॉस,Dish,263.2,1.91,1.13,18.8,0.0,0.017,50.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+981c4eeb-5bb8-5f5a-ac2d-1383b568716d,Coffee ice cream,कॉफी आइसक्रीम,Dish,150.62,3.147,0.148,95.715,16.579,0.342,165.875,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+79b7563b-65fa-5d9b-b56b-6e9a59b2b308,Coffee pear alaska,कॉफी पीयर अलास्का,Dish,203.989,2.883,0.224,60.61,2.852,0.229,250.375,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c30d5740-e08e-5908-8b6a-a1143a78eb14,Crunchy butterscotch,क्रंची बटरस्कॉच,Dish,277.319,3.113,0.258,72.258,7.578,0.283,187.375,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9bef95f7-dce9-5e3c-b36f-7629f630470e,Peach melba ice cream,पीच मेल्बा आइसक्रीम,Dish,200.846,2.057,0.113,60.547,0.309,0.236,229.1,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6f4efe49-5b29-5436-8c46-4bc2daa9614c,Vanilla ice cream with apples in hot cherry sauce,गर्म चेरी सॉस में सेब के साथ वनीला आइसक्रीम,Dish,196.319,1.735,0.162,56.341,5.973,0.205,250.95,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+98be51df-7a8c-5ba2-ae82-eb6816686597,Grape and orange whip,अंगूर और संतरे का व्हिप,Dish,57.391,1.414,0.534,17.401,42.074,0.023,121.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f2f1c616-4cbf-58ef-9b68-9b936af7395a,Honey banana cream,शहद केला क्रीम,Dish,125.489,2.775,0.229,43.524,8.401,0.148,331.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0ab607e8-14b5-5898-be57-77309239fdef,Raspberry bavarian cream,रास्पबेरी बवेरियन क्रीम,Dish,150.105,3.343,0.308,26.396,3.013,0.058,237.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4a7944d5-7b02-588a-9655-5bc6d459d141,Fruit delight,फ्रूट डिलाइट,Dish,107.092,2.085,0.149,71.691,7.544,0.273,171.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1e770bd1-e9e0-5391-b701-77b30239236a,Creamy chocolate mousse,क्रीमी चॉकलेट मूस,Dish,230.522,6.851,0.963,45.253,8.286,0.319,202.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+3ebe55fc-942a-5d68-8451-1d9c7c63fd8b,Cold lemon souffle,कोल्ड नींबू सूफले,Dish,169.865,5.894,0.527,55.029,6.928,0.307,242.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+38a7c32d-e098-5022-814d-33f761c9d1d9,Cold orange souffle,कोल्ड संतरा सूफले,Dish,173.19,5.939,0.573,55.448,8.162,0.309,241.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4a2ae9e6-8799-581b-af4e-a2d791743565,Cold pineapple souffle,कोल्ड अनानास सूफले,Dish,181.218,6.23,0.538,57.132,7.368,0.327,228.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9190399a-fbbd-51c8-aba0-08c0fc5781f0,Cold vanilla souffle,कोल्ड वनीला सूफले,Dish,179.539,6.216,0.523,62.47,7.119,0.345,236.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+63d9d9cd-8201-5ab7-9403-51fde7a4072d,Cold chocolate souffle,कोल्ड चॉकलेट सूफले,Dish,187.528,6.368,0.684,62.909,6.914,0.335,243.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+937e15a6-22d1-5c05-9943-4694289ff24f,Stewed fruit (with pear),नाशपाती के साथ स्टूड फल,Dish,74.324,0.25,0.209,5.936,44.593,0.0,120.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4ea68a5f-f2d0-56cd-a42e-53b19f6a02b1,Apricot fool,खुबानी फूल,Dish,240.793,1.537,0.728,26.37,42.518,0.071,228.45,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4a197805-cf27-571d-9140-1203ce16a4db,Pavlova,पावलोवा,Dish,200.596,1.845,0.254,23.003,8.776,0.091,180.825,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c96a071c-af1c-57ce-b28d-1d86f5d53ddc,Apple crumb pudding,सेब क्रम्ब पुडिंग,Dish,220.851,1.54,1.049,38.487,20.234,0.017,98.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5e71fcbb-b330-5e27-87f5-91cc74dd3576,Steamed cake with chocolate sauce,चॉकलेट सॉस के साथ स्टीम्ड केक,Dish,301.908,4.491,0.853,67.761,31.807,0.299,119.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+aeb97b76-383d-5336-99b5-a8e6cc56c71b,Hot lemon souffle,हॉट नींबू सूफले,Dish,155.25,5.288,0.553,48.769,36.874,0.333,121.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0a031593-9307-535a-97a3-b24622254669,Gulab jamun with milk powder,मिल्क पाउडर के गुलाब जामुन,Dish,471.154,0.853,0.126,26.127,4.459,0.037,603.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0edba33f-4626-56ec-a947-9f83100b0f61,Chum chum,चमचम,Dish,130.054,1.517,0.13,62.584,1.511,0.229,311.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+68aac445-2194-56bf-9ade-e02ba39693d3,Dil bahar,दिल बहार,Dish,130.054,1.517,0.13,62.584,1.511,0.229,311.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1078601f-7a6b-57c6-8ddc-5bc4f8156996,Rasbhari,रसभरी,Dish,130.054,1.517,0.13,62.584,1.511,0.229,311.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+531d4a80-1b0d-59a0-8872-2be3a1821a54,Rajbogh,राजभोग,Dish,133.698,1.711,0.168,63.229,2.139,0.227,314.55,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d266b671-2e3c-5999-8c41-845dcac06977,Rasgulla,रसगुल्ला,Dish,118.637,1.384,0.118,57.091,1.378,0.209,341.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7cd26359-ae22-593a-b8d5-c6463ae8c8fc,Rasmalai,रसमलाई,Dish,135.549,1.613,0.154,62.306,1.865,0.229,317.435,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+cc80b4bf-08a4-5a7a-a540-60fc20e609ff,Khoa coconut burfi,खोया नारियल बर्फी,Dish,411.454,9.978,2.099,309.841,11.089,0.896,100.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9140a7dd-2d48-5485-afa8-498002af2eef,Danedar burfi,दानेदार बर्फी,Dish,102.678,3.243,0.243,107.531,2.124,0.411,279.45,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+94539c0f-8184-595c-96bd-1ea79971c972,Semolina burfi (Suji/Rava burfi),सूजी बर्फी,Dish,348.671,3.467,1.009,14.863,92.132,0.002,93.64,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7c8384cf-a437-5066-a371-adae93092fda,Pumpkin coconut burfi (Kaddu aur nariyal ki burfi),कद्दू और नारियल की बर्फी,Dish,186.179,1.752,0.787,21.759,38.563,0.0,120.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7defa229-bd4a-532a-89e4-bdf6ddfa735e,Khoa ladoo,खोया लड्डू,Dish,396.015,12.206,2.253,358.611,10.244,1.0,90.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+17ebc91b-c260-5603-ae31-e197e09932ea,Wheat and gram flour ladoo (Atta besan ladoo),आटा बेसन लड्डू,Dish,501.7,9.38,2.387,35.267,148.379,0.002,60.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+24aef2cc-4d64-5c1f-811a-4c8ef9cd6e15,Semolina ladoo with nuts (Suji/Rava ladoo with nuts),मेवे वाले सूजी के लड्डू,Dish,441.845,5.441,1.808,18.041,146.425,0.002,62.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+dbf1f3e4-071d-5a06-a97b-eb63b1d6fd99,Sesame chickpeas brittle (Til aur channe ki chikki),तिल और चने की चिक्की,Dish,282.737,8.5,4.796,150.734,207.314,0.0,70.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+26105dd4-fdf5-54ff-abe3-08d47718ffdb,Murmura chikki,मुरमुरा चिक्की,Dish,253.818,2.124,3.296,63.299,10.743,0.0,52.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9a15eeb2-5441-504b-bec7-78ee6d09969b,Masala onion pakora/pakoda (Pyaaz ke pakode),प्याज के पकोड़े,Dish,551.643,2.045,0.423,11.055,8.234,0.0,423.13,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+39ebdb79-246c-5a23-8e3a-0a55a3ddf51b,Masala green chilli pakora/pakoda (Hari mirch kay pakode),हरी मिर्च के पकोड़े,Dish,668.759,2.222,0.466,8.579,8.888,0.0,343.11,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+333341a0-75b5-5e22-b734-48c5f454e43d,Chicken pakora/pakoda,चिकन पकोड़ा,Dish,590.093,6.031,0.507,9.077,14.342,0.041,411.13,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+be177210-0c93-55b6-ad26-7b8ad1918298,Fish pakora/pakoda,मछली पकोड़ा,Dish,577.025,5.973,0.63,12.649,5.314,1.693,411.13,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+680c65f1-1462-5900-880e-c6646cd8bc62,Paneer cutlet,पनीर कटलेट,Dish,672.196,4.588,0.483,107.86,7.703,0.135,361.67,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f170554c-ed7a-534c-9bf8-f62a2e19482c,Sago cutlet/vadas (Sabudana cutlet/vadas),साबूदाना कटलेट,Dish,558.755,0.564,0.379,5.435,7.546,0.0,421.67,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+cb0a6ddc-6eae-5870-ab2b-aed7c38d96b2,Poshtik cutlet,पौष्टिक कटलेट,Dish,496.45,2.004,0.687,14.942,15.114,0.0,481.67,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+94dd6006-e940-500c-8206-aa752c8eb4e5,Egg cutlet (Anda cutlet),अंडा कटलेट,Dish,575.022,2.448,0.555,16.225,11.582,0.109,406.67,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+22b085ab-bca9-545c-9f67-97bc69a7025e,Minced meat cutlet,कीमा कटलेट,Dish,531.856,5.099,0.631,20.817,5.19,0.495,466.67,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a1340d3d-fd18-5587-9173-3453eb50bea2,Vegetable samosa,वेजिटेबल समोसा,Dish,443.107,2.207,0.599,10.374,76.232,0.0,201.86,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+351fe983-9bed-5c9a-82a9-3a198dcba20b,Plain urad dal vada (Uzunne vada/Minapa garelu/Ulundu vadai/Medu vada),उड़द दाल वड़ा,Dish,745.499,4.385,0.965,10.603,64.051,0.0,157.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+880c556d-2f20-5ea6-972a-b8a59ac5c394,Masala urad dal vada,मसाला उड़द दाल वड़ा,Dish,703.779,4.322,1.004,11.875,65.581,0.0,171.085,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ec3479a2-cdfd-592b-a56e-16ab6a1125c3,Khaman (dhokla),खमन ढोकला,Dish,54.727,1.925,0.578,5.311,9.629,0.0,355.955,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+73fca427-8d0b-5e70-9285-d7ffc60137d6,Instant dhokla,इंस्टेंट ढोकला,Dish,207.112,7.665,1.047,66.583,30.424,0.087,127.455,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5d2d0a5e-3b90-54d9-8d2c-ba97cbc0df1d,Tomato ginger chutney (Tamatar adarak ki chutney),टमाटर अदरक की चटनी,Dish,44.657,1.05,1.076,23.626,451.859,0.0,32.842,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+491c4e4d-2a32-5e6d-80cf-2f90869ba0c9,Mint tomato chutney (Pudinay aur tamatar ki chutney),पुदीने और टमाटर की चटनी,Dish,43.651,1.527,2.065,47.591,409.967,0.0,37.843,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+13f89244-709a-5c2c-95a9-48f16ede45a2,Coriander chutney (Hare dhaniye ki chutney),हरे धनिये की चटनी,Dish,42.862,1.376,1.634,39.795,410.918,0.0,37.842,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7cd76c35-0458-53ce-92f3-b7e26dc5fa80,Gooseberry chutney (Amla chutney),आंवले की चटनी,Dish,43.016,1.436,1.224,46.398,36.588,0.0,32.085,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+bd4a9736-4d44-57a3-b9e9-13df77ba74a2,Walnut chutney (Akhrot ki chutney),अखरोट की चटनी,Dish,370.431,9.439,1.768,119.568,945.668,0.114,24.793,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0d44367c-e375-569b-a317-d6873e3a869f,Saunth/Sonth chutney with ginger,अदरक वाली सौंठ की चटनी,Dish,84.215,0.281,0.7,15.168,2.517,0.0,32.905,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c54483ae-8cea-5e0a-858a-f8bb0f3db752,Gun powder chutney,गन पाउडर चटनी,Dish,312.338,21.553,5.142,68.873,413.838,0.0,13.916,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1c69ed8d-fe1a-5886-8e51-00bc4673b28f,Dessicated coconut chutney (Sookhe kase nariyal ki chutney) ,सूखे नारियल की चटनी,Dish,346.363,12.884,5.435,73.555,341.073,0.0,21.638,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+abb3dce5-491f-588e-b307-6b6685a0f15c,Curd mint dip ,दही पुदीना डिप,Dish,76.133,4.822,0.818,172.792,19.039,0.281,65.915,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ee17c6dd-e816-5375-bb20-72257c4efed3,Curd vegetable dip,दही सब्जी डिप,Dish,56.207,3.882,0.374,129.582,11.971,0.222,55.613,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7dae5f66-13fe-5d4a-8422-b22e2fcfb646,Mayonnaise vegetable dip,मेयोनेज़ सब्जी डिप,Dish,241.269,3.012,0.281,91.417,7.776,0.197,85.613,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1606cf34-ae4c-5ce9-9f70-0f0a5f1dc671,Tomato and cucumber sandwich (Tamatar aur kheere ka sandwich),टमाटर और खीरे का सैंडविच,Dish,150.678,4.03,1.154,76.753,128.818,0.018,157.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ed5a3722-0fe1-53e2-8b21-52eaec04af41,Tomato sandwich (grilled),ग्रिल्ड टमाटर सैंडविच,Dish,189.924,6.255,0.88,150.896,191.203,0.121,153.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ffc5674a-92cc-5a79-8e4d-bc8d6d2c5993,French sandwich (toasted),टोस्टेड फ्रेंच सैंडविच,Dish,186.749,6.819,1.24,100.729,96.19,0.288,223.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+90fe7a28-bdc6-5166-ab73-d1cd5e22c0b6,Peanut butter cucumber sandwich,पीनट बटर खीरा सैंडविच,Dish,243.33,9.043,1.321,95.355,13.683,0.0,110.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b95beed1-a683-5e02-9f43-7af0d51de199,Mint and peanut sandwich,पुदीना और मूंगफली सैंडविच,Dish,273.588,7.177,1.698,114.991,30.508,0.017,98.17,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+fb764432-2c17-56dd-86e1-01f047f95e0b,Spicy chutney sandwich,मसालेदार चटनी सैंडविच,Dish,249.582,8.742,1.51,154.531,117.153,0.096,115.33,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d85d7602-427d-56c9-9911-c6a984cd59fe,Chicken walnut sandwich (Chicken aur akhrot ke sandwich),चिकन और अखरोट का सैंडविच,Dish,285.778,12.584,1.116,78.447,59.322,0.094,133.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7ab14873-9aed-5c52-a8df-a94b68cf172e,Rolled sandwich,रोल्ड सैंडविच,Dish,293.066,6.453,1.23,117.682,5.045,0.028,44.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9e9e0e4a-0199-5fae-ad4f-d2d70ef58e7e,Ribbon sandwich,रिबन सैंडविच,Dish,239.264,6.263,1.048,157.85,4.458,0.118,128.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9988274b-8b8b-57f9-8e24-f2662214f95f,Checker board sandwich,चेकर बोर्ड सैंडविच,Dish,348.366,7.367,1.111,188.018,2.327,0.182,110.375,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b8145548-827b-5c14-a1e7-2157d985f72c,Submarine sandwich,सबमरीन सैंडविच,Dish,216.918,6.089,1.231,72.349,61.452,0.193,194.375,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0eaae5ef-ae8b-557a-ab0e-c3f0fc6546a9,Cheese open sandwich,चीज़ ओपन सैंडविच,Dish,274.068,9.84,1.217,256.246,0.364,0.238,110.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+16f86fc3-77f6-5fb8-9d59-3493285307ee,Sunset and sunrise open sandwich,सनसेट और सनराइज ओपन सैंडविच,Dish,241.311,8.581,1.276,114.069,73.121,0.332,165.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+23854fc5-749f-525b-b055-78f53285f6f6,Danish luncheon sandwich,डेनिश लंचियन सैंडविच,Dish,193.819,9.027,1.273,77.133,24.021,0.383,172.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+08f834bd-a411-5efa-907a-04ccc6bf70c2,Chicken and corn open sandwich,चिकन और कॉर्न ओपन सैंडविच,Dish,188.159,8.63,0.803,65.127,22.079,0.056,216.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4ef648f0-7bb7-56e2-96be-cea5e4ad3cb3,Chocolate sponge cake,चॉकलेट स्पंज केक,Dish,239.857,9.135,1.815,33.986,66.957,0.422,70.333,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+dd030135-20ab-5a3f-9d14-74ef4103ecbd,Chocolate swiss roll,चॉकलेट स्विस रोल,Dish,306.079,6.009,1.082,42.789,37.277,0.342,94.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+073cbeab-982c-5a4b-b940-b3661d05d5d7,Lemon curd filling,नींबू कर्ड फिलिंग,Dish,225.624,3.432,0.603,16.385,8.4,0.244,200.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+94eec7a0-4eb9-556e-88e4-e0e8f5550cbc,Jam filling,जैम फिलिंग,Dish,184.615,0.0,0.0,0.0,0.0,0.0,65.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+84830a44-4076-5b1f-80fc-444885c2eda4,Chocolate pastry,चॉकलेट पेस्ट्री,Dish,243.37,7.053,1.438,50.698,40.559,0.342,87.083,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9dcbbec6-9f39-5761-b07f-2214e17c1202,Assorted pastry,मिक्स पेस्ट्री,Dish,230.738,6.776,0.941,47.199,52.345,0.37,80.332,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1be1ea01-2f4c-5279-b6e3-e1ff683f8af5,Orange gateau,ऑरेंज गेटो,Dish,178.048,4.779,0.886,41.686,39.242,0.248,79.813,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7f97181c-08e2-5a65-af0c-3c3a71fd443d,Black forest gateau,ब्लैक फॉरेस्ट गेटो,Dish,217.817,5.939,1.086,46.793,35.926,0.303,65.542,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+16c75bd8-cc31-594f-a661-86d590e51513,Lemon cake,नींबू केक,Dish,373.851,5.286,0.909,32.765,68.525,0.221,61.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+00d22c8d-ea01-5a65-a5c6-2a8ae5598780,Dundee cake,डंडी केक,Dish,396.616,7.781,1.57,58.107,71.936,0.234,60.338,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+705028aa-5051-5d07-a43e-1a21ebf7a7c2,Victorian sandwich cake,विक्टोरियन सैंडविच केक,Dish,373.088,5.18,0.858,36.246,64.273,0.237,64.125,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a2c1bbb1-3bae-546f-a678-754f2119c14a,Chocolate eggless cake,बिना अंडे का चॉकलेट केक,Dish,312.006,6.664,0.952,185.384,31.348,0.795,114.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+97bd2b49-97ca-514d-9c32-82261ac74b82,Orange eggless cake,बिना अंडे का ऑरेंज केक,Dish,355.621,7.157,0.517,205.837,54.292,0.918,99.167,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+cf58cfc5-0976-5e5f-91d8-9cc47332042f,Chocolate glace icing,चॉकलेट ग्लेस आइसिंग,Dish,436.292,3.217,2.043,26.747,0.0,0.036,95.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d800979b-7806-5355-9d57-4ba98ed532de,Butter icing,बटर आइसिंग,Dish,500.716,0.186,0.137,12.481,0.0,0.052,81.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+03416a28-4819-5057-a66d-8ffe771b4306,Chocolate butter icing,चॉकलेट बटर आइसिंग,Dish,469.588,3.207,1.847,31.866,0.0,0.044,97.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f2284a3e-184c-5230-a967-de9736e975be,Almond biscuit (Badam ke biscuit),बादाम के बिस्कुट,Dish,407.739,6.245,1.115,44.052,113.428,0.14,37.15,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+021ed690-4199-5fa0-af91-75e0740393ce,Orange biscuit,ऑरेंज बिस्कुट,Dish,354.78,3.627,0.773,20.345,69.762,0.082,60.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+02a8ec60-dff0-59e5-80ee-3c82abb4f870,Gingerman biscuit,जिंजरमैन बिस्कुट,Dish,357.427,6.256,1.587,41.349,146.072,0.105,35.54,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ad3f5e46-431b-5648-a67c-5331a0e6eed5,Coffee drops,कॉफी ड्रॉप्स,Dish,443.071,7.57,1.479,57.088,436.134,0.185,47.212,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+557729b0-ef8a-5b4f-a8ef-60c2f7724994,Christmas biscuit,क्रिसमस बिस्कुट,Dish,406.07,5.667,1.198,29.068,140.157,0.078,41.425,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+875f83a5-aeb0-5516-942d-ce8e2f45a9af,Christmas wreath biscuit,क्रिसमस रीथ बिस्कुट,Dish,386.046,5.43,1.207,29.709,139.032,0.073,43.925,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d2f0613f-fa30-5951-967f-974def991530,Christmas bell biscuit,क्रिसमस बेल बिस्कुट,Dish,404.848,5.662,1.219,31.995,139.735,0.078,41.55,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d29758d9-8153-5ce3-ba2d-a054fa69fea7,Christmas star biscuit,क्रिसमस स्टार बिस्कुट,Dish,392.029,3.54,0.965,22.754,79.443,0.043,74.3,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d4fcc978-0b8e-59d6-8064-d3b3a198b0a9,Christmas tree biscuit,क्रिसमस ट्री बिस्कुट,Dish,385.634,5.43,1.175,35.04,132.18,0.073,43.925,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+317fbfd1-6166-59c1-9007-34e848c514c7,Chocolate cream shells,चॉकलेट क्रीम शेल्स,Dish,427.167,5.103,1.083,28.534,90.973,0.12,45.975,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4194b2d1-0e1b-5e6d-9d18-2c6eba7b6540,Jelly biscuit,जेली बिस्कुट,Dish,404.613,4.229,1.188,36.457,37.585,0.068,35.812,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9139942c-d495-5892-ab86-bfece03ab965,Cherry and walnut cookies,चेरी और अखरोट कुकीज़,Dish,422.604,5.625,1.313,46.265,254.993,0.097,52.725,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+99e7b1f5-41eb-5ea5-b162-76b1d54a1d2b,Cheese straws,चीज़ स्ट्रॉज़,Dish,382.001,9.833,1.289,160.641,128.693,0.457,38.59,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4520276f-62d7-5947-a9c6-90d3dd654e83,Butterfly biscuit,बटरफ्लाई बिस्कुट,Dish,341.447,9.976,1.09,202.493,102.207,0.496,48.59,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f70a158e-d6f4-5c33-af1f-9a2724989233,Flan pastry,फ्लैन पेस्ट्री,Dish,445.797,6.723,1.149,21.847,159.541,0.123,52.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+22b8b3d4-fd23-5412-8414-392bab705f81,Fruit flan,फ्रूट फ्लैन,Dish,261.352,3.299,0.613,19.277,71.669,0.075,232.625,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8880ced6-8d0a-5e1b-bd0d-9364248286ab,Orange cream flan,ऑरेंज क्रीम फ्लैन,Dish,280.283,4.735,0.933,27.904,41.737,0.243,101.037,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a4e4444f-cabb-59b8-8cbe-e0b44a2b2da9,Fruit puree tart,फ्रूट प्यूरी टार्ट,Dish,286.502,3.347,0.632,19.643,87.525,0.059,111.275,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6c41541c-45e0-5d0e-8a21-3876d91ab08f,Apple banana pie,सेब केला पाई,Dish,243.989,3.128,0.79,21.23,103.273,0.02,194.365,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8aa7e75c-2d81-5183-b681-1468ce4f4802,Lemon chiffon pie,लेमन शिफॉन पाई,Dish,259.312,4.878,0.613,34.429,66.612,0.169,134.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9525b1ae-d100-5b58-9b94-4d3395bb0501,Orange chiffon pie,ऑरेंज शिफॉन पाई,Dish,207.569,3.888,0.625,30.34,51.157,0.13,174.625,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e2ebd6b9-5289-5790-9d2d-af044656d95d,Cream buns,क्रीम बन्स,Dish,215.741,4.451,0.498,45.266,35.347,0.264,166.562,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a3f09d6f-d421-5571-8f03-40b8442dc7fd,Savoury puffs,नमकीन पफ,Dish,190.785,9.511,1.193,68.831,36.912,0.283,276.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+fe7e7290-3105-5ef5-a301-0aef8114325b,Choux swans,चू स्वान,Dish,216.335,4.354,0.509,44.673,35.803,0.254,171.165,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+354e83cc-3e78-5323-9894-7b09fa5217e3,Potato aigrettes,आलू एग्रेट,Dish,530.027,2.351,0.449,9.196,25.656,0.1,248.375,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7d62c87a-3111-5192-9aae-0075328fe6f8,Cream horns,क्रीम हॉर्न,Dish,408.227,3.423,0.442,30.935,59.188,0.138,115.125,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5b1507a9-873d-58ca-a3bd-9a8ecbc1df36,Savoury cheese horns,नमकीन चीज़ हॉर्न,Dish,295.147,5.661,0.625,121.828,65.862,0.262,73.917,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+bb4ecc32-f1fa-5f1a-b471-7cc811418f87,Paneer patties,पनीर पैटीज़,Dish,338.582,7.598,0.788,129.904,109.868,0.187,100.71,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+fc4eea6f-eecb-5761-b86b-d9c9bb6980ea,Vegetable patties ,वेजिटेबल पैटीज़,Dish,261.921,4.006,0.865,18.957,189.117,0.012,115.71,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6d6d4648-4a66-5d36-8007-8ef063672355,Pearl millet infant food (Bajra shishu aahaar),बाजरा शिशु आहार,Dish,362.444,11.983,5.667,118.516,252.12,0.0,50.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+fafa92e1-3b61-5129-8f31-bf6053eca88f,Sajina,सजिना,Dish,345.259,10.811,5.385,54.401,135.04,0.0,50.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+af81e120-13ee-5cd4-98ce-dae6f4f39dd9,Cereal mix ,अनाज मिश्रण,Dish,120.81,3.318,1.178,21.397,22.168,0.0,125.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b2d645e5-242d-5861-af06-2be77e3d4bd6,Pulse mix,दाल मिश्रण,Dish,83.292,3.157,1.287,14.927,48.26,0.0,133.333,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ceacceb0-e952-5e1f-ad75-84dd3229add6,Shishu ahar,शिशु आहार,Dish,93.365,2.612,1.02,13.784,8.51,0.0,133.333,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+49c97517-8280-5b0a-a2ec-3b6881dde396,Cereal pulse mix with amylase rice flour,एमाइलेज़ चावल आटे के साथ अनाज दाल मिश्रण,Dish,151.571,4.267,1.189,12.613,126.4,0.0,85.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9788cb54-99e1-5360-9c3e-805459699d94,Banana groundnut paste/puree,केला मूंगफली पेस्ट,Dish,213.188,4.273,1.898,74.931,36.44,0.135,100.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+83a65c63-65c0-57f4-b2a4-0240b1f5121e,Rice dal porridge (Chawal dal ki khichdi/khichri),चावल दाल की खिचड़ी,Dish,383.332,10.797,2.758,50.457,70.64,0.0,33.333,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7c9f6b7e-1665-5a30-ab9c-be725f0a9a18,Lentils and semolina porridge (Dal suji porridge/daliya),दाल सूजी दलिया,Dish,117.289,3.262,1.219,44.744,39.68,0.092,200.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b23f289a-57a0-56dc-8e39-f2b062713702,Spinach khichri (Palak khichri/khichdi),पालक खिचड़ी,Dish,102.179,3.429,0.645,10.431,7.514,0.0,150.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4eb845ca-c2f8-56e8-87f7-533cbcd2e76d,Vegetable mix,सब्जी मिश्रण,Dish,174.209,4.7,2.271,90.055,21.84,0.074,100.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1bfb3e27-910b-565c-8ddd-dfaa488fcab3,Lentils and wheat porridge (Dal wheat porridge/daliya ),दाल गेहूं दलिया,Dish,52.537,2.711,0.522,26.278,4.816,0.081,170.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+96144ed0-eef1-5c37-ba66-90479889370d,Maize porridge,मक्का दलिया,Dish,89.571,2.14,1.115,17.023,123.171,0.0,170.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+3b82fbb5-c5fa-5e60-9106-a77369ae9896,Spinach peanut burfi (Palak aur mungfali ki burfi),पालक और मूंगफली की बर्फी,Dish,105.373,3.355,1.608,40.954,33.917,0.0,240.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+19024447-d6b6-5697-95e6-d50466dabe01,Split bengal gram burfi/fudge (Channa dal burfi),चना दाल बर्फी,Dish,287.359,4.647,0.621,16.442,0.318,0.001,245.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+49319482-111f-570e-a3ea-2403be97c10e,Chickpea flour cookies (Sweet besan rounds/cookies),मीठे बेसन के बिस्कुट,Dish,207.007,4.293,2.165,54.948,20.18,0.0,100.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6a1b0d29-9078-5570-9506-1ce7f9f9c3cc,Pearl millet mathri (Bajra mathri),बाजरा मठरी,Dish,785.078,1.822,0.72,4.63,18.818,0.0,150.125,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+23924a67-7a3d-5f1b-8148-f6a291224f10,Sesame biscuit (Til ke biscuit),तिल के बिस्कुट,Dish,424.034,8.268,5.728,298.06,622.625,0.001,43.625,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e95e2aa4-7008-591c-96b0-0db875863292,Fermented bengal gram vada (Khameerikrit/Ufna hua channa dal ka vada),खमीर उठे चने की दाल का वड़ा,Dish,657.573,4.051,1.383,20.498,36.105,0.0,180.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+15fc6ac2-9f96-5941-bea2-81d62d64a4e3,Poshtik namak paras,पौष्टिक नमक पारे,Dish,613.391,6.49,2.035,60.74,194.581,0.001,258.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+95b2aee8-225f-5f87-8189-9ee065096d3f,Soya chikki,सोया चिक्की,Dish,423.698,7.185,4.474,81.25,19.296,0.001,75.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b83dc4f2-4efd-51be-b6da-e617a6a6e481,Besan bathua chilla/cheela,बेसन बथुआ चीला,Dish,373.816,11.476,2.677,64.752,185.029,0.002,60.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8ae88527-2bc9-5cad-8644-3c5f81357326,Wheat flour and nuts ladoos (Atta nuts ladoos),आटा मेवा लड्डू,Dish,391.902,9.462,4.007,127.286,437.779,0.001,72.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4d62689c-88c5-55e9-986a-2a9b461a70ae,Gram flour and semolina dhokla (Besan suji dhokla),बेसन सूजी ढोकला,Dish,198.91,8.516,1.602,66.664,51.605,0.047,197.58,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7303f6a0-04bf-501d-b603-0c968af17105,Atta dal burfi ,आटा दाल बर्फी,Dish,298.797,6.663,1.561,17.07,132.877,0.001,77.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+dbb5b8b2-f9ae-509e-9996-455746168d1b,Soya roti,सोया रोटी,Dish,283.964,9.183,3.848,53.419,322.94,0.0,151.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c16bc980-2726-57cc-8e91-376218e9454d,Poshtik khichdi/khichri,पौष्टिक खिचड़ी,Dish,93.368,3.043,1.003,30.407,65.715,0.0,360.333,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ea55db49-b291-5a8c-bb0d-1a64ffc2e7ec,Namkeen daliya,नमकीन दलिया,Dish,295.111,8.285,2.994,35.984,102.934,0.0,117.292,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+84682fe1-d9b0-5fe7-bd4b-365db93f4a52,Sprouts upma ,अंकुरित अनाज उपमा,Dish,316.246,9.502,2.761,36.785,293.72,0.0,95.333,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+092b823c-2e9d-5d78-aae9-ec9202b42089,Semolina idli (Suji/Rava idli),सूजी इडली,Dish,206.39,9.345,2.338,100.853,144.051,0.117,118.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+86e37916-0c80-5f6d-9069-cc6ccadd6a0f,Poshtik chilla/cheela,पौष्टिक चीला,Dish,159.534,4.848,2.097,18.181,225.508,0.0,216.95,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0b0230c0-5736-5f39-b54b-d9533e67c4ab,Stuffed bittergourd (dry) (Bharwa karela),भरवां करेला सूखा,Dish,217.648,1.287,1.285,16.722,58.718,0.0,106.09,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8b837eb3-90ee-5832-8860-7b00d17e582a,Cauliflower potato canjee,फूलगोभी आलू कांजी,Dish,16.789,0.57,0.278,6.775,15.349,0.0,211.917,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+aa817fc7-db9b-57c2-b6a1-8e85ff459f35,Creamed spinach,क्रीमी पालक,Dish,96.915,5.184,1.89,122.303,17.399,0.28,385.59,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d63625a0-096a-5cc3-a3c8-c22101df1d24,Mango milkshake with ice cream (Aam milkshake ice cream ke saath),आइसक्रीम के साथ आम मिल्कशेक,Dish,68.35,1.931,0.151,69.355,17.459,0.26,340.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+de3e37a4-5a79-5e05-94a9-4ab65aed88af,Pineapple milkshake with ice cream (Ananas milkshake ice cream ke saath),आइसक्रीम के साथ अनानास मिल्कशेक,Dish,68.491,1.928,0.124,68.78,0.988,0.26,340.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+32cbc120-84c7-5959-826e-5819bd729d8b,Orange milkshake with ice cream (Narangi milkshake ice cream ke saath),आइसक्रीम के साथ संतरा मिल्कशेक,Dish,67.816,1.949,0.186,69.796,1.6,0.26,340.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b5fcb391-6a6e-5282-bc1d-a060ff008933,Woodapple juice (Bel ka sharbat),बेल का शरबत,Dish,34.177,0.629,0.124,11.849,219.127,0.0,351.333,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+35f6d512-a470-5f36-8d4b-215faeb44545,Sattu drink,सत्तू का शरबत,Dish,23.377,0.565,0.167,1.588,1.835,0.0,534.167,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a8681dff-17e1-52c7-a203-afd0563f50bf,Apple and honey sorbet (Seb aur shehad ka sharbat),सेब और शहद का शरबत,Dish,121.297,0.153,0.177,9.112,25.491,0.0,162.375,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+2044ae0c-631f-5245-800d-02eb638358da,Thandai,ठंडाई,Dish,101.177,3.591,0.603,112.314,21.66,0.326,253.471,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8b44674a-7f78-5888-b669-c88e50bcff48,Cucumber sharbat (Kheere ka sharbat),खीरे का शरबत,Dish,27.284,0.259,0.178,6.493,18.394,0.0,411.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1ac78c3a-f1f5-51a4-9353-088f61bba5b6,Apple oats chia seed smoothie,सेब ओट्स चिया सीड स्मूदी,Dish,85.645,3.491,0.496,88.888,7.434,0.144,628.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7e55575d-34df-587f-aae2-6e0ff4606266,Nannari sharbat,नन्नारी शरबत,Dish,88.79,0.01,0.05,2.674,0.14,0.0,1115.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+daa03f96-0a98-58de-b544-bf3104f01b65,Semolina milk drink (Thari kanji),सूजी का थारी कांजी,Dish,44.162,0.984,0.363,8.262,16.203,0.0,263.47,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+696fb623-7a96-5aa3-985a-9fef815ebf65,Saffron milk (Kesariya doodh),केसरिया दूध,Dish,102.181,3.169,0.206,110.876,3.258,0.42,262.74,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+32943433-99e0-5ff7-9ac3-5d516cfd0202,Black rice kheer (Chak-hao kheer),चाक-हाओ खीर,Dish,147.937,4.366,0.46,94.89,1.404,0.354,207.667,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b92a9ff3-d85a-54c6-b5d3-8f23b3576656,Coconut kheer (Nariyal ki kheer),नारियल की खीर,Dish,162.612,3.398,0.528,89.519,3.114,0.294,650.375,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f885d614-1e50-50a3-87cb-0ca9ff42b103,Apple sago payasam (Seb aur sabudana ki kheer),सेब और साबूदाना की खीर,Dish,136.503,3.131,0.314,102.105,9.147,0.404,331.062,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e45274f8-e359-5848-9dad-4e73d9e506e2,Kesari bath,केसरी भात,Dish,244.569,2.395,0.694,7.698,56.443,0.001,176.734,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5c500911-2c1d-5040-ab30-681ffc347e20,Putharekulu,पूतरेकुलु,Dish,318.303,3.657,0.381,6.107,0.0,0.001,53.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+690f23d3-9d04-50dd-8a1a-cc125236903f,Mango malpua,आम मालपुआ,Dish,334.644,1.649,0.695,10.642,110.304,0.005,392.87,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6ac934bb-d02a-5ae0-90bc-c774890e6196,Mango vanilla custard,आम वनीला कस्टर्ड,Dish,147.631,3.43,0.578,84.857,33.641,0.271,203.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+45a3041b-b747-5028-978e-4f766005ce67,Kiwi granola pudding,कीवी ग्रेनोला पुडिंग,Dish,280.988,5.601,1.454,62.202,24.599,0.103,524.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1e00f266-07f1-5167-86c7-225c12573303,Oats burfi,ओट्स बर्फी,Dish,425.187,8.886,2.463,128.581,15.871,0.224,60.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c68db8b2-0de5-5788-bdff-309a9775eb10,Lotus seed halwa (Kamal gattay ka halwa),कमल गट्टे का हलवा,Dish,370.55,7.79,1.799,82.839,2.308,0.002,362.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+be706395-9604-5098-be7b-f1fddc019f03,Amaranth ladoo (Rajgira ladoo),राजगिरा लड्डू,Dish,454.148,10.116,6.473,144.577,1249.887,0.001,43.879,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+fe3e17e6-b433-55fd-9eb9-61cc42149f9b,Chhena poda,छेना पोड़ा,Dish,344.565,13.684,1.414,295.294,23.851,0.408,74.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+189f54da-c5d5-55d3-821b-42935fe2b9c2,Sweet couscous dessert,मीठा कूसकूस मिठाई,Dish,196.2,3.813,0.843,30.936,416.76,0.008,230.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+30ce38cf-2794-569c-9624-27a128af0e02,Sweetened yogurt (Shrikhand),श्रीखंड,Dish,107.177,5.274,0.165,183.019,3.477,0.338,304.638,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d9485ca2-5c37-5955-97d4-882ab2d403f1,Thickened sweetened milk (Rabri),रबड़ी,Dish,102.795,3.515,0.291,111.867,3.855,0.423,220.288,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+aa6b5664-7b62-51cf-9b77-28ddc826ec86,Gram flour halwa (Besan halwa),बेसन का हलवा,Dish,276.788,5.875,0.671,77.422,8.726,0.256,148.545,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4fa5185d-d966-5b7d-b899-1f68b10dc850,Prawn sandwich,झींगा सैंडविच,Dish,169.645,10.361,1.11,75.533,29.083,0.612,228.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+3450961d-7448-522a-bc55-8f9cedb49336,Watercress sandwich,वाटरक्रेस सैंडविच,Dish,229.417,5.168,0.989,98.164,13.968,0.022,54.125,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8ffb260f-9ba2-538d-8ded-29fc930d46d5,Fish sandwich ,फिश सैंडविच,Dish,150.197,4.725,0.688,47.283,5.525,0.218,260.625,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+18ff38b5-23ed-5225-8395-ed7af227bf1f,Kidney bean sandwich with cottage cheese,राजमा और पनीर सैंडविच,Dish,176.641,9.845,1.635,166.629,209.116,0.182,239.705,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7c187c09-a1d9-5e2f-9511-4abf7ae05bf2,Finger millet biscuit (Ragi biscuit),रागी बिस्कुट,Dish,458.564,4.028,2.544,207.045,882.985,0.051,75.325,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+700273c8-c638-52b8-97a2-8f19daa3cdf6,Buttermilk biscuit,छाछ बिस्कुट,Dish,322.544,5.762,0.77,67.162,133.813,0.165,128.497,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+685ca064-3648-5177-9168-f1e3bacc67b5,Lemon cookies,नींबू कुकीज़,Dish,394.477,5.627,0.688,72.038,70.594,0.165,156.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1b4e8e72-ac8a-5a88-bbaa-b908f767286d,Sweet potato biscuit (Shakarkand ke biscuit),शकरकंद के बिस्कुट,Dish,296.398,5.135,0.811,56.341,128.866,0.077,150.917,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8c6f7549-445a-5035-b190-9e62e40f4116,Raspberry shortbread cookies,रास्पबेरी शॉर्टब्रेड कुकीज़,Dish,441.121,2.996,0.6,13.811,72.634,0.05,37.063,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+26dcf183-18ff-5bf8-8e70-af915fae2ec5,Pumpkin cookies ,कद्दू कुकीज़,Dish,218.395,2.514,0.522,19.361,60.723,0.04,85.453,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+31962dcc-face-58a3-bfae-dc9f4ad23367,Greenpea cookies,हरी मटर कुकीज़,Dish,159.417,6.529,1.472,48.45,258.373,0.0,75.85,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+badb9f45-017e-5973-9bc8-ff9b3c1b78b8,Sunflower cookies,सूरजमुखी कुकीज़,Dish,520.623,9.49,2.206,70.452,71.69,0.021,183.3,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d8875a3a-2b2f-578a-8382-ffd6479ad27e,Cardamom cookies (Elaichi cookies),इलायची कुकीज़,Dish,400.489,5.099,1.413,25.206,140.336,0.198,218.6,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+cd6b01af-08a1-5b20-becb-260f19489eb0,Hazelnut cookies,हेज़लनट कुकीज़,Dish,493.316,6.248,1.292,47.427,62.787,0.038,85.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+557e5c6e-2619-5fb6-821d-55eb25694d9b,Milk cookies,दूध कुकीज़,Dish,459.434,10.494,0.745,251.592,97.033,0.79,124.844,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e6e80515-f264-503f-b990-f25aa750393e,Cranberry cookies,क्रैनबेरी कुकीज़,Dish,272.482,3.922,0.711,36.161,70.116,0.154,185.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f32130e0-23dc-5b7b-9fbd-97ee5c5961e1,Olive biscuit,ऑलिव बिस्कुट,Dish,438.29,3.203,1.373,10.757,79.679,0.041,47.3,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+356cf6e0-961f-57fe-9549-ef61f6294fc4,Tutti fruitti biscuit,टूटी फ्रूटी बिस्कुट,Dish,420.782,5.206,1.962,23.808,256.986,0.036,108.7,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d2b31ebe-b294-5361-ac6d-4856f9ce054c,Peach blueberry preserves,आड़ू ब्लूबेरी प्रिज़र्व,Dish,177.381,0.525,0.326,9.035,38.962,0.0,386.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+30de6617-48aa-5c90-94c1-493769c58017,Pear preserves (Naashpati ka murabba),नाशपाती का मुरब्बा,Dish,101.239,0.251,0.233,6.571,40.403,0.0,596.143,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0c50db92-f8fa-5e9c-aea1-10daab1a4d4a,Starfruit preserves ,कमरख प्रिज़र्व,Dish,128.926,0.242,0.2,5.238,10.634,0.0,162.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e65301d1-3885-5452-8e0a-7b6319806e9d,Gooseberry pickle (Amla ka achaar),आंवले का अचार,Dish,278.585,1.546,1.036,31.173,71.064,0.0,23.282,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+051249d3-c893-5083-b8ce-63593b911984,Lotus stem pickle (Kamal kakdi ka achar),कमल ककड़ी का अचार,Dish,102.691,1.443,20.573,137.731,2.808,0.0,393.38,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+677c2e33-36af-57ae-b6e9-e82bd97b503b,Date pickle (Khajoor ka achaar),खजूर का अचार,Dish,182.287,1.677,1.96,41.495,53.177,0.0,138.187,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a6fc3fad-bb05-53a4-8c7a-cdcbf004cacb,Garlic pickle (Lahasun ka achar),लहसुन का अचार,Dish,413.618,3.722,1.819,54.661,44.093,0.0,51.12,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+65bf770b-014b-538f-a115-d88734f21ce4,Fermented bamboo shoot pickle (Mesu pickle),मेसु अचार,Dish,59.832,1.579,0.692,16.62,15.769,0.0,136.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+cf62a198-0a17-53af-9240-661cfd7951a7,Sweet peach pickle (Aadoo ka achaar),आड़ू का मीठा अचार,Dish,144.635,0.462,0.332,11.988,49.871,0.0,241.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+987e15cf-c2ae-5764-a050-ea091755f73c,Pickled mustard greens ,सरसों के पत्तों का अचार,Dish,13.121,1.509,1.216,81.444,92.77,0.0,1174.667,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+48888858-06af-5249-833c-c11e2f80801d,Small onion pickle ,छोटे प्याज़ का अचार,Dish,16.865,1.647,1.202,31.947,0.0,0.0,112.167,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+46cb7c75-3ec6-5bd0-bd09-e79d08f757f8,Green tomato pickle (Haray tamatar ka achaar),हरे टमाटर का अचार,Dish,193.261,1.235,0.773,14.222,52.935,0.0,63.6,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+babe5f1a-e3b4-58a8-a177-0f36b7adb8f0,Pickled cabbage ,पत्तागोभी का अचार,Dish,13.694,0.391,0.186,15.957,4.33,0.0,259.287,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e6cba80b-2d70-56ac-8969-b4a8565fe270,Coconut pickle (Nariyal ka aachar),नारियल का अचार,Dish,517.256,3.023,2.615,44.783,108.033,0.0,28.006,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+2c05e571-2d38-5535-a5e9-99b2f2caa1d3,Potato pickle (Aloo ka achaar),आलू का अचार,Dish,369.14,2.074,1.125,48.462,70.483,0.0,46.912,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d7c7b53c-539a-5329-8725-324c78bf4212,Mango murabba candy,आम मुरब्बा कैंडी,Dish,293.346,0.268,0.325,16.549,95.062,0.0,76.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b71eb180-f87f-50ad-85fb-759583f47e09,Afghani chicken,अफ़गानी चिकन,Dish,151.513,15.663,1.039,35.136,46.334,0.172,189.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b397c8bf-7d45-57c8-8bce-41b753ab559b,Fish orly,फिश ऑर्ली,Dish,563.7,5.872,0.313,9.552,17.558,0.425,294.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b430c8cd-a92c-581b-94a0-62fe779604bb,Hariyali Fish Tikka,हरियाली फिश टिक्का,Dish,150.237,14.01,0.833,34.858,49.61,1.059,178.55,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f4284e6b-8691-50b0-b7f1-c2d78886d7c2,Chicken manchurian,चिकन मंचूरियन,Dish,142.338,9.534,1.281,26.518,27.905,0.109,444.71,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+fd4f7cc6-58fa-5b01-87c9-95b2c3878c03,Handi chicken,हांडी चिकन,Dish,166.02,12.323,0.93,26.848,41.547,0.132,231.875,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+267cb89e-3c32-5cfd-875c-5aed0e1050b7,Lemon chicken,लेमन चिकन,Dish,169.789,20.198,0.953,17.404,52.919,0.197,286.575,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a1270794-75cc-5762-871e-3dfed95b8c3c,Lemon butter fish,लेमन बटर फिश,Dish,160.246,16.383,0.401,18.659,22.579,1.284,200.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+943afaa8-bbe4-500a-a7d4-0ed61a6ba859,Baked eggs in tomato sauce,टमाटर सॉस में बेक्ड अंडे,Dish,80.05,4.92,1.311,71.936,7.012,0.179,497.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+85c164f4-2fad-5765-bb69-152a952eed92,Egg in a pepper,शिमला मिर्च में अंडा,Dish,128.781,12.643,1.76,48.247,34.59,0.841,582.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d5c9b528-932b-5af2-959f-54f5aab46d37,Spinach mushroom scrambled egg (Palak mushroom bhurji),पालक मशरूम भुर्जी,Dish,158.845,13.279,1.602,140.314,82.912,0.834,116.45,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+aa6ec2ec-421a-53fd-9b74-7b52378e7cb2,Corn omelette/omlet,कॉर्न ऑमलेट,Dish,166.928,11.371,1.335,96.225,22.283,0.674,194.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0cd13aa9-8fa8-503d-92b1-b375877a2a2e,Cajun chicken,केजुन चिकन,Dish,184.942,12.692,0.526,156.984,29.443,0.286,167.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5a2fbd24-adf4-5817-8a6a-8a923b462367,Paaner do pyaza,पनीर दो प्याज़ा,Dish,127.705,4.216,0.45,57.222,45.591,0.227,231.873,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+cea0842e-34a9-5222-8627-27ae2948dca8,Cabbage manchurian (Pattagobhi manchurian),पत्तागोभी मंचूरियन,Dish,224.263,0.636,0.199,3.183,15.06,0.0,740.387,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+1050be05-aaf1-50cd-9b35-3cb5f78315f8,Gobi 65,गोभी 65,Dish,278.293,0.561,0.303,12.374,22.053,0.01,857.54,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+841b0f4c-14ba-5d21-9980-6a90cafcc815,Paneer lababdar,पनीर लबाबदार,Dish,105.476,3.984,0.561,55.56,105.679,0.206,382.305,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+052f0a06-4c72-583b-bfae-40b202cd2dee,Roasted cauliflower steak,रोस्टेड फूलगोभी स्टेक,Dish,78.675,2.048,0.952,24.474,51.565,0.0,107.375,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+cb5d7b20-9658-56c5-86b6-dd99dd01db5b,Sauteed radishes with green beans,मूली और फ्रेंच बीन्स की सब्ज़ी,Dish,94.325,2.413,1.013,40.198,45.678,0.006,96.588,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c64851b4-4029-5c5c-8151-681a5d45f3f8,Garlic chutney/Poondu chutney (Lahasun ki chutney),लहसुन की चटनी,Dish,255.508,3.336,3.264,63.508,379.603,0.0,79.383,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ffc4d18b-2c8f-56bd-a96f-f926a90879fc,Schezwan chutney,शेज़वान चटनी,Dish,205.186,3.326,1.959,35.464,90.247,0.0,757.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+fa5b4ae9-9de9-533c-889c-8d698f98509f,Onion chutney (Pyaaz ki chutney/Vengaya chutney),प्याज़ की चटनी,Dish,143.938,2.969,1.186,28.504,109.796,0.0,26.229,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+3928740c-f5cb-5b43-b5ea-bf18941bd663,Dates chutney (Khajoor ki chutney),खजूर की चटनी,Dish,103.572,1.068,1.186,28.716,54.174,0.0,263.83,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+26af376c-3574-5a15-b2f7-c0ee44847c15,Chicken salad,चिकन सलाद,Dish,338.194,15.328,1.233,43.194,44.035,0.141,247.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5a739858-26af-51b2-8e7d-3e14da02122b,Macaroni salad,मैकरोनी सलाद,Dish,262.193,5.016,0.774,35.699,9.131,0.173,161.042,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6bbf8192-cee2-537c-a52b-c2c67e4a7a8e,Cabbage raita (Pattagobhi raita),पत्तागोभी रायता,Dish,84.837,3.244,0.189,118.49,3.598,0.252,232.15,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+609b05e1-e910-5d2d-a4b3-86097f9fcad6,Pomegranate raita (Anaar ka raita),अनार का रायता,Dish,72.645,4.048,0.248,138.309,658.239,0.348,144.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+bdf239b1-f3a5-5617-91ff-9eb16350715a,Onion raita (Pyaaz ka raita),प्याज़ का रायता,Dish,71.557,4.855,0.305,163.796,11.815,0.29,156.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ff0af76a-7d54-5381-8412-3182f976201c,Green chilli raita (Hari mirch ka raita),हरी मिर्च का रायता,Dish,77.129,5.579,0.21,193.582,5.137,0.354,102.52,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f7d80d6e-fe12-5fdc-b23a-800945bdd0cc,Kale salad,केल सलाद,Dish,177.714,4.855,1.295,109.106,19.777,0.148,53.656,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+309602d1-f887-520a-a15c-1ccf93641e23,Spinach and paneer souffle ,पालक पनीर सूफले,Dish,186.195,7.561,1.405,114.316,12.568,0.37,451.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+480656cf-6dfc-5256-a286-6dbd816d0917,Masala souffle ,मसाला सूफले,Dish,123.515,6.383,0.742,103.678,15.797,0.355,1484.66,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+cdc9c024-b5fb-583d-918e-d04f71d5bb35,Chicken and cheese souffle,चिकन और चीज़ सूफले,Dish,182.354,9.068,0.635,61.709,23.672,0.359,195.5,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+a4962f49-438f-5090-973d-88de06285451,Tamarind chutney (Chintapandu pachadi/Puli chutney),इमली की चटनी,Dish,109.148,0.878,1.947,40.295,99.099,0.0,10.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+2e0e5055-fe18-59aa-960a-75a22dad11a7,Pav bhaji masala,पाव भाजी मसाला,Dish,230.466,9.129,12.843,588.91,563.399,0.0,10.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6a6de259-c39f-5edc-8886-99ebbf279560,Green chutney,हरी चटनी,Dish,79.417,5.423,4.578,112.744,112.073,0.0,24.398,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c68b5a51-0625-5cd4-b4b7-86c1e98d543c,Sago khitchdi/khichri (Sabudana khitchdi/khichri),साबूदाना खिचड़ी,Dish,187.164,2.721,0.859,15.129,42.275,0.001,271.36,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+109883ce-a693-5e33-b27a-e9b4e73e8f92,Gram flour chilla/cheela (Besan chilla/cheela),बेसन चीला,Dish,135.93,7.802,2.187,28.381,45.935,0.0,52.073,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+00e4e357-e4e5-5c33-83f7-7ddc2c2f1661,Vegetable namkeen jave,वेजिटेबल नमकीन जावे,Dish,112.231,2.931,1.065,10.321,75.794,0.0,365.29,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+36834b9a-62da-5311-bf38-852bacc3bc34,Khakhra,खाखरा,Dish,178.496,4.775,2.141,21.274,233.075,0.0,75.687,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+94181020-d728-5e47-86ae-bba3baed45ae,Moong bean dosa (Pesarattu),मूंग डोसा,Dish,285.956,12.318,3.384,36.435,55.74,0.001,26.556,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+5e78f789-8888-502c-a887-c24bd512bb35,Methi thepla,मेथी थेपला,Dish,346.156,8.98,4.521,73.51,206.581,0.064,36.446,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+223a08d0-0c0b-5171-b55b-ee3b8e695577,Rice puttu (Ari puttu),चावल का पुट्टू,Dish,81.982,1.26,0.421,4.963,0.0,0.0,420.1,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+dbdf9bc1-d9a6-50cc-bd05-20e4e6516386,Buckwheat pancake (Khura),कुट्टू का पैनकेक,Dish,263.298,2.907,0.689,11.324,18.448,0.035,104.417,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9a8cf486-0fdc-500c-81d1-b2cc7e541e3c,Quinoa khichdi/khichri,क्विनोआ खिचड़ी,Dish,64.011,3.179,1.118,24.591,43.603,0.0,318.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+503680b5-0d18-5b05-8591-a33bf96677d1,Khakhra chaat,खाखरा चाट,Dish,358.663,4.524,1.261,24.49,239.117,0.0,835.453,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+23eebeaa-4180-5457-8c6b-ef6f6d8f99a1,Banana appam,केला अप्पम,Dish,469.805,1.168,0.766,13.738,4.502,0.0,290.375,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+114e68e4-7084-59cc-b634-5f444b78048e,Veg manchurian,वेज मंचूरियन,Dish,585.641,0.889,0.309,16.792,18.01,0.0,194.948,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7ba461ac-7b9a-5df1-8a9d-c47597eadf60,Pav bhaji,पाव भाजी,Dish,96.525,2.66,0.969,24.86,100.513,0.007,581.172,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+06bc85a0-f90a-5f9f-b314-229575e775b1,Rice murukku,चावल मुरुक्कू,Dish,593.99,5.415,1.696,24.629,9.955,0.004,30.857,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ad337222-3f70-5536-8262-80d53df4a511,Bhel puri ,भेल पुरी,Dish,509.887,3.518,1.29,24.221,47.919,0.0,700.87,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+98a2b0b3-c377-547f-b9f0-8b9a4ca05543,Semolina dhokla (Suji/Rava dhokla),सूजी ढोकला,Dish,194.915,5.436,2.524,31.174,172.382,0.0,100.228,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+19cd6bee-497e-56ae-9f12-9b831298e3c9,Spicy corn chaat ,मसालेदार कॉर्न चाट,Dish,479.799,4.607,0.84,17.276,8.005,0.003,554.225,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ee676226-0808-567a-9ad0-20112f5fed10,Jackfruit fritters (Ponsa mulik/Kathal ka pakora),कटहल के पकोड़े,Dish,597.788,2.341,1.148,24.619,65.306,0.0,26.786,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+15a08a7a-1468-5ade-b9e5-ea3edb78a413,Banana chips (Kele ke chips),केले के चिप्स,Dish,665.666,0.367,0.188,2.009,2.348,0.0,170.375,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c699645c-b2f5-54d0-8483-acd1c29e6da1,Wheat cake,गेहूं का केक,Dish,314.629,4.79,1.081,98.913,130.657,0.407,66.813,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+2607ad9a-3723-5c4c-8e77-88a45bd1301c,Mango cheesecake,मैंगो चीज़केक,Dish,152.459,2.388,0.526,55.095,72.042,0.081,174.188,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+10e60274-58fc-5040-ace1-52b730da74bb,Carrot cake (Gajar ka cake),गाजर का केक,Dish,255.587,5.6,1.033,156.101,108.292,0.605,99.95,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6fa8684d-bb8a-5399-9041-d8abfa53e72f,Semolina cake (Suji/Rava cake),सूजी केक,Dish,374.14,6.581,1.356,128.276,61.904,0.488,59.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+789d0ce6-280d-58f8-b3e2-cd372a948b68,Finger millet cake (Ragi cake),रागी केक,Dish,279.462,3.956,1.346,118.383,254.468,0.206,98.617,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+6df3ee8a-9ced-5d6a-8e77-8e7137a33c97,Honey cake,हनी केक,Dish,333.593,3.078,0.456,50.858,49.338,0.094,163.687,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+becea434-9e61-52db-b01a-5ff8fe811086,Almond cardamom cake (Badam elaichi cake),बादाम इलायची केक,Dish,356.348,7.177,1.289,81.291,73.949,0.234,68.146,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c2d291ec-7b0f-54eb-a5c8-f1e082e8c8f5,Tutti frutti cake,टूटी फ्रूटी केक,Dish,347.722,4.491,0.617,61.407,82.513,0.083,848.25,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f4fd7409-4498-5f9c-8ade-901c35e68c78,Ham and Bean soup,हैम और बीन सूप,Dish,96.042,10.607,0.876,20.517,9.41,0.313,150.787,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+e0dfe23c-e39c-58d2-a834-83806b5551de,Whey soup,छाछ का सूप,Dish,68.91,3.455,0.546,164.917,4.09,0.41,223.418,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+171136a1-9efe-5f6c-b0fb-a7bc9f41d753,Bottle gourd soup (Ghiya/Lauki soup),लौकी का सूप,Dish,23.048,0.454,0.256,15.144,13.696,0.007,295.08,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9d789941-f118-5e89-8438-45f1fdaca794,Baked potato soup,बेक्ड आलू सूप,Dish,147.054,5.732,0.268,106.563,5.532,0.476,523.533,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9ced01c0-fbd7-579c-990d-eca0bf834b41,Pumpkin soup,कद्दू का सूप,Dish,40.045,0.47,0.189,12.172,25.545,0.005,318.417,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+44a39da8-7fea-5d6a-9cf8-66e16479d5fd,Sweet corn soup,स्वीट कॉर्न सूप,Dish,32.246,0.99,0.408,3.721,4.249,0.0,392.223,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+df833eec-4ac1-55a7-ae7c-30ee6864c660,Paneer soup,पनीर सूप,Dish,47.851,3.222,0.303,82.761,13.354,0.115,610.75,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+4c762dd9-fee8-5047-9121-d683b44ed6e3,Curried Cauliflower soup,करी फूलगोभी सूप,Dish,37.323,6.715,2.119,37.251,20.629,0.0,347.887,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0acfc552-8ccd-5aa6-8f78-c513f0a24a08,Millet soup,बाजरे का सूप,Dish,55.993,11.263,2.736,65.206,41.887,0.049,231.535,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+2dbc9bf3-6e7a-509e-8075-ae3f33bc3d99,Lemon coriander soup,नींबू धनिया सूप,Dish,108.062,2.268,3.469,102.571,38.838,0.0,48.605,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+b39d707f-eaf9-5fde-9dee-a0fc32bcca96,Garlic soup,लहसुन का सूप,Dish,194.858,2.384,0.729,60.55,10.979,0.125,144.0,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+d3084ab9-b876-5f23-87fe-59ebe9789625,Dal makhani,दाल मखनी,Dish,74.04,3.315,1.226,20.621,106.263,0.01,353.356,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+f7715ac0-2acc-5207-9bfb-eab74a348fb9,Dalma,दालमा,Dish,118.926,4.908,2.096,54.28,174.474,0.0,263.78,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+13c53e9d-9946-525e-bb23-6de7bca68f9d,Split bengal gram dal (Channa dal),चना दाल,Dish,99.671,4.152,1.919,21.989,88.772,0.0,292.165,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+0f830b32-3026-588f-b06f-0be86f8907cb,Horsegram dal (Kulthi dal) ,कुलथी दाल,Dish,55.647,2.909,1.303,38.219,71.489,0.0,360.832,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+838bf48b-9ecd-5c0c-9636-bd0f91e918da,Panchmel dal,पंचमेल दाल,Dish,111.222,4.625,1.419,23.054,101.743,0.001,300.84,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+97d48c70-feb2-5d9e-8483-dc2ae10c55a2,Dal dhokli,दाल ढोकली,Dish,68.737,2.957,0.792,14.54,53.859,0.0,336.66,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+18171815-de7c-52d7-86ca-33406bdca623,Gujarati handvo ,गुजराती हांडवो,Dish,207.089,8.24,2.029,68.21,52.752,0.065,696.58,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+9c95f59d-988a-5711-a565-40a275fc9843,Sev (Omapodi/Karapusa),ओमपापड़ी सेव,Dish,609.143,5.116,0.721,13.948,1.602,0.0,136.95,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+8e453ca6-d4b5-574b-a491-bb425de78e9a,Papdi,पापड़ी,Dish,708.961,1.829,0.437,6.058,47.891,0.0,173.688,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+fbd7adce-3975-56f5-8ff4-e4cc1e6db521,Jowar dosa,ज्वार डोसा,Dish,294.347,8.504,2.025,19.458,105.587,0.0,33.038,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+c8808fae-c74a-5325-9d67-2bddf901deff,Bread roll,ब्रेड रोल,Dish,435.456,2.855,0.707,44.829,23.109,0.0,121.005,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+ad555f2f-b27a-5f32-881d-0d872752e940,Soya seekh kebab,सोया सीख कबाब,Dish,115.049,5.395,1.261,15.671,78.246,0.0,57.15,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+494102db-e28b-54c9-86ce-362f5253210e,Classic seasoned black beans,मसालेदार काली बीन्स,Dish,28.778,8.007,1.9,40.114,3.824,0.0,176.217,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+7700f47c-a2bb-5a30-be95-22efe16d9228,Maa chaane ki dal,मां की दाल,Dish,344.666,19.8,5.965,68.649,231.72,0.001,81.075,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+758fdf10-98b4-5290-9369-de68199b88af,Garlic chickpea soup (Lahasun aur chane ka shoraba),लहसुन और चने का शोरबा,Dish,89.53,4.448,0.955,13.928,56.943,0.0,318.208,,,,INDB (Indian Nutrient Databank); B12 computed from ingredients
+aa71c201-356f-51a2-b69a-3c263ed9fdea,"Milk, whole, Cow",गाय का पूरा दूध,Raw - Dairy,72.897,3.26,0.15,118.0,48.8,0.45,245.0,,,,ICMR-NIN IFCT 2017
+3e8398d5-cbca-59e5-b078-2dc88ec0ca9c,"Mango, green, raw (Mangifera indica)",कच्चा हरा आम,Raw - Fruit,48.996,0.69,0.4,27.0,307.2,0.0,200.0,,,,ICMR-NIN IFCT 2017
+cd334f64-5b55-5dfe-8535-608cc62f6062,"Pineapple juice, unsweetened",बिना चीनी का अनानास जूस,Raw - Fruit,41.0,0.3,0.2,8.0,0.0,0.0,240.0,,,,UK CoFID (McCance & Widdowson)
+f9d0dd65-e0c2-55fa-b111-4d5448121792,"Orange juice, freshly squeezed",ताज़ा संतरे का जूस,Raw - Fruit,33.0,0.6,0.3,12.0,0.0,0.0,240.0,,,,UK CoFID (McCance & Widdowson)
+7b0db2c2-1a0b-5ba9-a043-f76191954dc1,Pineapple (Ananas comosus),अनानास,Raw - Fruit,43.021,0.52,0.28,10.88,8.4,0.0,50.0,,,,ICMR-NIN IFCT 2017
+094eff1c-9c79-5e52-8bf0-7d0cf09ba1ec,"Fruit juice drink/squash, undiluted",फलों का स्क्वैश,Raw - Fruit,34.0,0.1,0.0,6.0,0.0,0.0,30.0,,,,UK CoFID (McCance & Widdowson)
+5d5876c8-ad6d-5343-86cb-1a5c1c347208,"Ice cream, dairy, vanilla, soft scoop",वनीला आइसक्रीम,Raw - Dairy,169.0,3.2,0.06,104.0,0.0,0.39,66.0,,,,UK CoFID (McCance & Widdowson)
+c9f16ab5-cb35-578c-89bf-8d83032fbcfc,"Nuts, coconut water (liquid from coconuts)",नारियल पानी,Raw - Nuts & dried fruit,19.0,0.72,0.29,24.0,0.0,0.0,240.0,,,,USDA FoodData Central
+4e7014b0-5548-57ca-b2bc-e6c440ecfb06,"Banana, ripe, montham (Musa x paradisiaca)",पका केला,Raw - Fruit,110.66,1.25,0.4,6.77,8.0,0.0,100.0,,,,ICMR-NIN IFCT 2017
+1ecd89e0-e4b6-5007-8d72-f6af98c9214d,"Mango, ripe, banganapalli (Mangifera indica)",पका बंगनपल्ली आम,Raw - Fruit,41.826,0.54,0.51,15.77,148.4,0.0,200.0,,,,ICMR-NIN IFCT 2017
+f87f874d-acfb-543f-b55e-b1eb4503d1b6,Nutmeg (Myristica fragrans),जायफल,Raw - Nuts & dried fruit,463.671,6.3,2.33,148.0,1866.8,0.0,2.0,,,,ICMR-NIN IFCT 2017
+5a48df6f-9bb2-5c6b-acf9-3fa94d770f38,"Yogurt, whole milk, plain",सादा फुल क्रीम दही,Raw - Dairy,79.0,5.7,0.1,200.0,0.0,0.37,245.0,,,,UK CoFID (McCance & Widdowson)
+3486dcea-404e-5bd8-89ce-04fcfd38b7c5,"Cheese, cottage, plain",सादा पनीर चीज़,Raw - Dairy,103.0,9.4,0.0,127.0,0.0,0.63,225.0,,,,UK CoFID (McCance & Widdowson)
+b30f6231-879c-5935-ab33-e6e3f3341c12,"Cucumber, green, elongate (Cucumis sativus)",हरा खीरा,Raw - Salad vegetable,19.598,0.71,0.46,16.39,50.4,0.0,150.0,,,,ICMR-NIN IFCT 2017
+ef6986ae-4e5f-5d33-b0eb-f38a2451ddaa,"Cheese, processed, plain",प्रोसेस्ड चीज़,Raw - Dairy,297.0,17.8,0.5,610.0,0.0,0.84,240.0,,,,UK CoFID (McCance & Widdowson)
+44878d20-5d4d-5502-b084-ec5dfd4f5ea5,"Tomato, ripe, hybrid (Solanum lycopersicum)",पका हाइब्रिड टमाटर,Raw - Salad vegetable,18.881,0.76,0.22,8.9,473.2,0.0,50.0,,,,ICMR-NIN IFCT 2017
+914813bd-eda7-5226-9fe7-806e38c765ac,Ground nut (Arachis hypogea),मूंगफली,Raw - Nuts & dried fruit,520.076,23.65,3.44,54.0,284.0,0.0,28.35,,,,ICMR-NIN IFCT 2017
+3b6f090b-caf1-5e46-bc7a-68459bfa6ebe,Tomato ketchup,टोमैटो केचप,Raw - Salad vegetable,115.0,1.6,0.3,13.0,0.0,0.0,15.0,,,,UK CoFID (McCance & Widdowson)
+88dc72c3-14cc-50e6-b80a-7cca7fb59916,"SIVA'S, AMHUR POWDER (DRY MANGO POWDER)",अमचूर पाउडर,Raw - Fruit,360.0,0.0,0.0,200.0,0.0,0.0,2.0,,,,USDA FoodData Central
+497094bd-f009-5f1b-8f48-bb9eb6786e51,Lettuce (Lactuca sativa),सलाद पत्ता,Raw - Salad vegetable,21.75,1.54,2.73,56.71,4.0,0.0,48.0,,,,ICMR-NIN IFCT 2017
+1c605e32-5d3c-5e97-881d-a40baecc37df,"Apple, big (Malus domestica)",बड़ा सेब,Raw - Fruit,62.38,0.29,0.26,13.68,58.4,0.0,80.0,,,,ICMR-NIN IFCT 2017
+184e46e1-70c6-56eb-8164-e95970fef414,"Raisins, dried, black (Vitis vinifera)",काली किशमिश,Raw - Nuts & dried fruit,305.688,2.57,6.81,73.24,70.4,0.0,10.0,,,,ICMR-NIN IFCT 2017
+8845bfbb-a289-5809-a858-a8230e42fa79,"Carrot, orange (Daucus carota)",नारंगी गाजर,Raw - Fruit,33.222,0.95,0.6,35.09,54.4,0.0,60.0,,,,ICMR-NIN IFCT 2017
+7d868271-8892-55bb-bf5a-eb8330cacbb8,"Cheese spread, cream cheese, regular",क्रीम चीज़ स्प्रेड,Raw - Dairy,295.0,7.1,1.13,71.0,0.0,0.22,240.0,,,,USDA FoodData Central
+3d91c7e6-8678-5b03-acad-30a0c2b67d85,"Tomato sauce, homemade",घर का बना टमाटर सॉस,Raw - Salad vegetable,89.0,2.2,0.6,19.0,0.0,0.0,15.0,,,,UK CoFID (McCance & Widdowson)
+c5f6fcce-52a3-5167-96da-e72c82045fdf,Paneer,पनीर,Raw - Dairy,257.887,18.86,0.9,476.0,5.2,0.7,20.0,,,,ICMR-NIN IFCT 2017
+e4468c7c-ea8a-582f-8465-4c958e2c28c3,"Onion, big (Allium cepa)",बड़ा प्याज़,Raw - Salad vegetable,48.04,1.5,0.43,21.03,29.2,0.0,60.0,,,,ICMR-NIN IFCT 2017
+1a09c331-6d52-5e55-bf58-f94609a41225,"Wafers, plain ice cream wafers, not filled",आइसक्रीम वेफर,Raw - Dairy,368.0,10.5,2.3,89.0,0.0,0.0,10.0,,,,UK CoFID (McCance & Widdowson)
+5eb5f631-1145-5b5b-ad4e-e429e8088771,"Spring onions, bulbs and tops, raw",हरी प्याज़,Raw - Salad vegetable,23.0,2.0,1.9,39.0,0.0,0.0,30.0,,,,UK CoFID (McCance & Widdowson)
+2f8ac250-ed83-5982-a723-d5873892095f,"Breakfast cereal, crunchy clusters type, without nuts, unfortified",क्रंची सीरियल,Raw - Nuts & dried fruit,399.0,7.2,2.68,40.0,0.0,0.0,30.0,,,,UK CoFID (McCance & Widdowson)
+c14bab49-7f3d-5b87-88ad-97dd40ff4326,"Coconut, kernel, fresh (Cocos nucifera)",ताज़ा नारियल,Raw - Nuts & dried fruit,408.939,3.84,1.3,8.0,0.0,0.0,30.0,,,,ICMR-NIN IFCT 2017
+056ea226-8359-5686-9dcd-7086012d1053,"MIXED NUTS CASHEWS, ALMONDS, HAZELNUTS, PISTACHIOS, PECANS, MIXED NUTS",मिक्स्ड मेवे,Raw - Nuts & dried fruit,607.0,17.86,5.36,143.0,0.0,0.0,28.35,,,,USDA FoodData Central
+0705941b-e8ea-5765-adc9-4abef6d45360,"Cream, fresh, single",ताज़ी क्रीम,Raw - Dairy,193.0,3.3,0.0,89.0,0.0,0.3,15.0,,,,UK CoFID (McCance & Widdowson)
+2cf90d68-0da6-54c2-bcc7-f98bfcabbcfe,Cashew nut (Anacardium occidentale),काजू,Raw - Nuts & dried fruit,582.696,18.78,5.95,34.0,154.0,0.0,10.0,,,,ICMR-NIN IFCT 2017
+6d5c903a-a4de-5ee9-8510-55762d2b43bf,Almond (Prunus amygdalus),बादाम,Raw - Nuts & dried fruit,609.226,18.41,4.59,228.0,64.4,0.0,10.0,,,,ICMR-NIN IFCT 2017
+41b7057f-7ba0-5b83-864f-75e848e91d70,Pistachio nuts (Pistacla vera),पिस्ता,Raw - Nuts & dried fruit,539.436,23.35,4.5,135.0,72.0,0.0,10.0,,,,ICMR-NIN IFCT 2017
+c98db2ec-5e06-5fe5-9f3d-b745bbc5cd19,"Cheese, Mozzarella, fresh",मोज़ेरेला चीज़,Raw - Dairy,257.0,18.6,0.0,362.0,0.0,0.92,30.0,,,,UK CoFID (McCance & Widdowson)
+cbfc2123-7d57-5263-bf23-acc95e97484d,"Bananas, raw, flesh only, weighed with skin",कच्चा केला,Raw - Fruit,51.0,0.8,0.17,4.0,0.0,0.0,100.0,,,,UK CoFID (McCance & Widdowson)
+09a8d434-7f9d-51ca-a15c-2980a381fdcf,"Coconut, kernal, dry (Cocos nucifera)",सूखा नारियल,Raw - Nuts & dried fruit,624.044,7.27,3.13,32.0,0.0,0.0,10.0,,,,ICMR-NIN IFCT 2017
+a772d613-e0f5-57ef-a353-868e2d827d5d,"Jack fruit, ripe (Artocarpus heterophyllus)",पका कटहल,Raw - Fruit,72.18,2.74,0.36,35.03,299.6,0.0,100.0,,,,ICMR-NIN IFCT 2017
+6699898d-7626-5172-ad91-21212a1077bb,"Pumpkin, orange, round (Cucurbita maxima)",नारंगी कद्दू,Raw - Fruit,23.184,0.84,0.36,23.06,56.0,0.0,100.0,,,,ICMR-NIN IFCT 2017
+20e043b3-79fd-5d7d-9b79-c0df158c3ead,"Oil, coconut",नारियल तेल,Raw - Nuts & dried fruit,899.0,0.0,0.0,0.0,0.0,0.0,14.0,,,,UK CoFID (McCance & Widdowson)
+3b2c7d44-31d2-5e5c-bfa4-8c0c06750591,Tomato puree,टमाटर प्यूरी,Raw - Salad vegetable,67.0,4.4,1.45,45.0,0.0,0.0,15.0,,,,UK CoFID (McCance & Widdowson)
+a5aa4a75-3705-5c14-80db-ce7bf1d756b5,Walnut (Juglans regia),अखरोट,Raw - Nuts & dried fruit,671.367,14.92,3.21,105.0,1852.4,0.0,10.0,,,,ICMR-NIN IFCT 2017
+738fd81d-545b-5f70-8795-bd132f6389df,"Cream, fresh, whipping",व्हिपिंग क्रीम,Raw - Dairy,381.0,2.0,0.0,58.0,0.0,0.27,15.0,,,,UK CoFID (McCance & Widdowson)
+e8e853a3-bd6a-5c42-ac5d-6b311952351b,"Orange, pulp (Citrus aurantium)",संतरे का गूदा,Raw - Fruit,37.285,0.7,0.81,19.52,13.6,0.0,85.0,,,,ICMR-NIN IFCT 2017
+3b7f7637-c499-5e89-beab-b521fbfb2841,"Orange peel, raw",संतरे का छिलका,Raw - Fruit,97.0,1.5,0.8,161.0,0.0,0.0,2.0,,,,USDA FoodData Central
+a5c03057-b3c1-59ec-8755-20a2b1049a17,"Fruit cocktail, canned in syrup, whole contents",फ्रूट कॉकटेल,Raw - Fruit,45.0,0.4,0.4,9.0,0.0,0.0,120.0,,,,UK CoFID (McCance & Widdowson)
+d935a603-2d6c-5fce-b5db-335d62579ff5,Cream of tartar,क्रीम ऑफ टार्टर,Raw - Dairy,239.0,0.0,0.0,0.0,0.0,0.0,3.0,,,,UK CoFID (McCance & Widdowson)
+5698297d-bca0-5b1c-a1de-b3449a7a5f1f,DRIED MANGO,सूखा आम,Raw - Fruit,350.0,0.0,0.0,0.0,0.0,0.0,30.0,,,,USDA FoodData Central
+15f46eac-2263-5134-a933-479c89be1b5a,"Milk, skimmed, dried, fortified",सूखा स्किम्ड दूध,Raw - Dairy,348.0,36.1,0.27,1280.0,0.0,3.58,30.0,,,,UK CoFID (McCance & Widdowson)
+38444047-4f14-5cdf-92bc-0730a16134e7,Coconut milk,नारियल का दूध,Raw - Dairy,22.0,0.3,0.1,29.0,0.0,0.0,244.0,,,,UK CoFID (McCance & Widdowson)
+461b4650-d8c5-517b-aa0f-79e731b5c125,"Onion, stalk (Allium cepa)",प्याज़ की डंडी,Raw - Salad vegetable,25.574,2.07,3.09,31.12,272.4,0.0,30.0,,,,ICMR-NIN IFCT 2017
+e9f62a90-4a92-5ddc-9ea7-2d915f6de8a3,"White sauce, savoury, made with whole milk, homemade",सफ़ेद सॉस,Raw - Dairy,158.0,4.4,0.18,136.0,0.0,0.25,60.0,,,,UK CoFID (McCance & Widdowson)
+9dcb5b9c-4abb-5db7-af2b-1b17133ab8b4,"Tomatoes, cherry, raw",चेरी टमाटर,Raw - Salad vegetable,22.0,1.1,0.34,10.0,0.0,0.0,17.0,,,,UK CoFID (McCance & Widdowson)
+d809f83c-2614-5734-9a24-5b15bd59a548,"Dips, sour-cream based, assorted flavours",सावर क्रीम डिप,Raw - Dairy,360.0,2.9,0.4,72.0,0.0,1.31,30.0,,,,UK CoFID (McCance & Widdowson)
+d02fbbcf-2acc-560a-84e8-48206b05d503,"Peanuts, dry roasted",भुनी मूंगफली,Raw - Nuts & dried fruit,590.0,25.7,2.1,52.0,0.0,0.0,28.35,,,,UK CoFID (McCance & Widdowson)
+be5026bf-25f2-5679-b800-0b1cb179bcb6,"Cream, fluid, light (coffee cream or table cream)",हल्की क्रीम,Raw - Dairy,195.0,2.96,0.05,91.0,44.0,0.3,15.0,,,,USDA FoodData Central
+28045c9a-9a33-5d72-a030-bfa1af37e38a,"Milk, evaporated, light",कम फैट वाला कंडेंस्ड दूध,Raw - Dairy,107.0,7.8,0.0,260.0,0.0,0.23,30.0,,,,UK CoFID (McCance & Widdowson)
+e56f4dfa-6e3e-56dc-9455-4827971d5321,"Peanut butter, smooth",पीनट बटर,Raw - Nuts & dried fruit,607.0,22.8,2.1,37.0,0.0,0.0,15.0,,,,UK CoFID (McCance & Widdowson)
+4977a43a-398f-5cb3-b7fd-cf3900894072,CREAMED CORN,क्रीम्ड कॉर्न,Raw - Dairy,159.0,3.54,0.32,53.0,0.0,0.0,125.0,,,,USDA FoodData Central
+c3a39f45-866f-594d-8d36-2aab1bfa9204,"Milk, condensed, whole, sweetened",मीठा गाढ़ा दूध,Raw - Dairy,310.0,7.4,0.23,290.0,0.0,1.34,19.0,,,,UK CoFID (McCance & Widdowson)
+c52d774d-686a-5f5e-aed5-db26a00e20a4,"Spring onions, bulbs only, raw",प्याज़ के कंद,Raw - Salad vegetable,23.0,2.0,1.9,39.0,0.0,0.0,30.0,,,,INDB ingredient tables
+b75bf58e-900d-5961-9df9-c0d9f5f3d574,Wood Apple (Limonia acidissima),कैथा,Raw - Fruit,78.155,3.14,0.45,55.71,1148.4,0.0,400.0,,,,ICMR-NIN IFCT 2017
+5255774f-ecdd-5cea-891c-e37b6046dc92,"Kiwi fruit, flesh only, raw",कीवी,Raw - Fruit,44.0,0.8,0.22,33.0,0.0,0.0,75.0,,,,UK CoFID (McCance & Widdowson)
+a3c4f0d6-4505-594a-a9e3-43473b5ecdc2,"Apple juice, clear, ambient and chilled",सेब का जूस,Raw - Fruit,37.0,0.1,0.06,6.0,0.0,0.0,240.0,,,,UK CoFID (McCance & Widdowson)
+6f6dc7f0-cfe3-5487-a316-af2cbf3df095,"Milk, buttermilk, fluid, whole",छाछ,Raw - Dairy,62.0,3.21,0.03,115.0,52.0,0.37,245.0,,,,USDA FoodData Central
+115a312b-c259-56ca-9705-8bd5636b1c1d,"Cheese, Ricotta",रिकोटा चीज़,Raw - Dairy,144.0,9.4,0.4,240.0,0.0,0.34,30.0,,,,UK CoFID (McCance & Widdowson)
+e5c8ef01-8984-5e2e-8b84-58383ea48acf,ALMOND MILK,बादाम का दूध,Raw - Dairy,17.0,0.42,0.15,42.0,0.0,0.0,240.0,,,,USDA FoodData Central
+e2da968d-436f-5f1c-944d-e8bdd7266e90,"ALMOND FLOUR, ALMOND",बादाम का आटा,Raw - Nuts & dried fruit,571.0,21.43,3.57,271.0,0.0,0.0,30.0,,,,USDA FoodData Central
+93e6238e-d475-5994-8b3f-35dd6febfe6d,"Hazelnuts, kernel only",हेज़लनट,Raw - Nuts & dried fruit,650.0,14.1,3.2,140.0,0.0,0.0,28.35,,,,UK CoFID (McCance & Widdowson)
+18fa0fff-e957-5de3-9eca-a69e18efcad0,"Milk, dry, nonfat, regular, without added vitamin A and vitamin D",सूखा नॉनफैट दूध,Raw - Dairy,362.0,36.2,0.32,1260.0,0.0,3.58,30.0,,,,USDA FoodData Central
+e56d6630-b269-5f34-a528-84b21630ea96,Star fruit (Averrhoa carambola),कमरख,Raw - Fruit,26.291,0.79,0.45,4.97,38.4,0.0,90.0,,,,ICMR-NIN IFCT 2017
+6d736c2d-fa09-535e-817e-3ec1eda7f760,"Tomato, green (Solanum lycopersicum)",हरा टमाटर,Raw - Salad vegetable,20.793,1.12,0.42,8.49,44.0,0.0,50.0,,,,ICMR-NIN IFCT 2017
+f3f6f1f9-3ecb-5c4e-980f-641d085c7056,"Spices, onion powder",प्याज़ पाउडर,Raw - Salad vegetable,341.0,10.4,3.9,384.0,0.0,0.0,2.0,,,,USDA FoodData Central
+7411f126-e5ad-5322-89c8-80c3b2fbae03,"Cheese, provolone",प्रोवोलोन चीज़,Raw - Dairy,351.0,25.6,0.52,756.0,20.0,1.46,30.0,,,,USDA FoodData Central
+4bdbd002-cc1c-55ec-a34f-b42b78f6cac1,"Cheese, Cheddar, English",चेडर चीज़,Raw - Dairy,416.0,25.4,0.3,739.0,0.0,1.1,28.0,,,,UK CoFID (McCance & Widdowson)
+67b54b0b-d440-5a63-a3a4-7eb13262612c,"Sour cream, regular",खट्टी क्रीम,Raw - Dairy,198.0,2.44,0.07,101.0,0.0,0.34,15.0,,,,USDA FoodData Central
+09120be6-5741-5c15-b22d-b186eec552e3,"Cheese, Feta",फेटा चीज़,Raw - Dairy,250.0,15.6,0.2,360.0,0.0,1.69,17.0,,,,UK CoFID (McCance & Widdowson)
+c361fbd9-c4d4-5247-9938-d09f57bcc548,"Cheese, cream, low fat",लो फैट क्रीम चीज़,Raw - Dairy,208.0,7.85,0.17,148.0,12.0,0.22,15.0,,,,USDA FoodData Central

@@ -1,3 +1,4 @@
+
 """Seed demo users with realistic 14-day meal histories.
 
 This script is for local demo/testing only. It is intentionally not wired into
@@ -9,6 +10,7 @@ window.
 from __future__ import annotations
 
 import os
+import random
 import sys
 from datetime import date, datetime, time, timedelta, timezone
 from uuid import uuid4
@@ -241,18 +243,33 @@ def _create_logs_for_user(
     foods: dict[str, Food],
     meal_plan: list[list[tuple[str, float]]],
 ) -> int:
-    """Create 14 days of backdated logs and return the count created."""
-    today = date.today()
+    """Create 10 days of backdated logs and return the count created."""
     logs_created = 0
+    start_date = date(2026, 9, 24)
 
-    for day_offset, meals in enumerate(meal_plan):
-        day = today - timedelta(days=13 - day_offset)
-        # Log each meal around midday with a small time jitter.
-        base_dt = datetime.combine(day, time(12, 0, 0), tzinfo=timezone.utc)
+    # Base times for up to 5 meals: Breakfast, Lunch, Snack, Dinner, Late Snack
+    base_times = [
+        time(8, 30, 0),
+        time(13, 0, 0),
+        time(17, 0, 0),
+        time(20, 0, 0),
+        time(22, 0, 0)
+    ]
+
+    for day_offset, meals in enumerate(meal_plan[:10]):
+        day = start_date + timedelta(days=day_offset)
         for meal_index, (food_name, qty_g) in enumerate(meals):
             food = foods[food_name]
             ratio = qty_g / 100.0
-            logged_at = base_dt + timedelta(minutes=meal_index * 15)
+            
+            # Map index to a base time, fallback to 12:00 if index > 4
+            m_time = base_times[meal_index] if meal_index < len(base_times) else time(12, 0, 0)
+            base_dt = datetime.combine(day, m_time, tzinfo=timezone.utc)
+            
+            # Add random jitter between -15 to 30 minutes
+            jitter = timedelta(minutes=random.randint(-15, 30))
+            logged_at = base_dt + jitter
+            
             log = MealLog(
                 id=str(uuid4()),
                 user_id=user.id,
