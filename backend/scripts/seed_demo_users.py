@@ -29,27 +29,13 @@ from app.services.phase_engine import calculate_dynamic_rdas
 # ---------------------------------------------------------------------------
 
 _DEMO_USERS: list[dict[str, object]] = [
-    {
-        "username": "priya_sharma",
-        "name": "Priya Sharma",
-        "age": 28,
-        "gender": "female",
-        "phase": "menstrual",
-    },
-    {
-        "username": "kavita_patel",
-        "name": "Kavita Patel",
-        "age": 24,
-        "gender": "female",
-        "phase": "luteal",
-    },
-    {
-        "username": "meena_shah",
-        "name": "Meena Shah",
-        "age": 48,
-        "gender": "female",
-        "phase": "menopause",
-    },
+    {"username": "krisha", "name": "Krisha", "age": 19, "gender": "female", "phase": "follicular"},
+    {"username": "sneha", "name": "Sneha", "age": 25, "gender": "female", "phase": "menstrual"},
+    {"username": "anshika", "name": "Anshika", "age": 20, "gender": "female", "phase": "luteal"},
+    {"username": "garima", "name": "Garima", "age": 19, "gender": "female", "phase": "follicular"},
+    {"username": "juhi", "name": "Juhi", "age": 56, "gender": "female", "phase": "menopause"},
+    {"username": "priya", "name": "Priya", "age": 35, "gender": "female", "phase": "luteal"},
+    {"username": "sakshi", "name": "Sakhi", "age": 23, "gender": "female", "phase": "menstrual"},
 ]
 
 # ---------------------------------------------------------------------------
@@ -92,97 +78,107 @@ _FOOD_NAMES: list[str] = [
 # days show good nutrient coverage and others show gaps.
 # ---------------------------------------------------------------------------
 
+_PLAN_A = [
+    # Strong iron/calcium day.
+    [("Roti / chapati (wheat, plain)", 80), ("Red gram dal (toor/arhar), raw", 80), ("Spinach (palak)", 100), ("Sesame seeds, white (til)", 15), ("Curd (dahi), whole milk", 100)],
+    # Good non-veg day for B12 and D.
+    [("Rice, cooked (white)", 150), ("Fish, sardine", 100), ("Milk, cow", 250)],
+    # Light day.
+    [("Rice flakes (poha), raw", 60), ("Banana (kela)", 100)],
+    # Vegetarian iron focus.
+    [("Bajra roti (rotla)", 120), ("Lentil dal (masoor), raw", 80), ("Spinach (palak)", 100), ("Jaggery (gur)", 20)],
+    # Mixed day.
+    [("Roti / chapati (wheat, plain)", 80), ("Chicken curry", 150), ("Curd (dahi), whole milk", 150), ("Orange (santra)", 150)],
+    # Calcium focus.
+    [("Rice, cooked (white)", 150), ("Paneer", 100), ("Milk, cow", 250), ("Sesame seeds, white (til)", 10)],
+    # Gap day.
+    [],
+    # Iron + protein.
+    [("Roti / chapati (wheat, plain)", 100), ("Rajma, boiled (no gravy)", 150), ("Spinach (palak)", 100), ("Jaggery (gur)", 20)],
+    # Egg day.
+    [("Roti / chapati (wheat, plain)", 80), ("Egg, whole, boiled", 100), ("Milk, cow", 250)],
+    # Light day.
+    [("Rice flakes (poha), raw", 60), ("Curd (dahi), whole milk", 100)],
+    # Strong mixed day.
+    [("Rice, cooked (white)", 150), ("Fish, rohu", 150), ("Palak paneer", 150)],
+    # Vegetarian.
+    [("Roti / chapati (wheat, plain)", 80), ("Chana / chole, boiled (no gravy)", 150), ("Milk, cow", 250), ("Almond (badam)", 20)],
+    # Ragi iron/calcium.
+    [("Ragi (finger millet)", 80), ("Curd (dahi), whole milk", 150), ("Spinach (palak)", 100)],
+    # Snack-like light day.
+    [("Banana (kela)", 100), ("Milk, cow", 200)],
+]
+
+_PLAN_B = [
+    # Balanced start.
+    [("Roti / chapati (wheat, plain)", 80), ("Green gram dal (moong), raw", 80), ("Paneer", 80), ("Milk, cow", 250)],
+    # Good B12/D day.
+    [("Rice, cooked (white)", 150), ("Fish, sardine", 100), ("Curd (dahi), whole milk", 150)],
+    # Light.
+    [("Rice flakes (poha), raw", 60), ("Orange (santra)", 100)],
+    # Egg + greens.
+    [("Roti / chapati (wheat, plain)", 80), ("Egg, whole, boiled", 100), ("Spinach (palak)", 100)],
+    # Generous non-veg.
+    [("Rice, cooked (white)", 200), ("Chicken curry", 150), ("Milk, cow", 250)],
+    # Gap day.
+    [],
+    # Vegetarian calcium day.
+    [("Roti / chapati (wheat, plain)", 80), ("Palak paneer", 150), ("Sesame seeds, white (til)", 15), ("Curd (dahi), whole milk", 150)],
+    # Lentils + greens.
+    [("Bajra roti (rotla)", 100), ("Lentil dal (masoor), raw", 80), ("Spinach (palak)", 100), ("Jaggery (gur)", 20)],
+    # Light.
+    [("Rice flakes (poha), raw", 60), ("Banana (kela)", 100)],
+    # Rajma rice.
+    [("Rice, cooked (white)", 150), ("Rajma, boiled (no gravy)", 150), ("Curd (dahi), whole milk", 150)],
+    # Egg + dairy.
+    [("Roti / chapati (wheat, plain)", 80), ("Egg, whole, boiled", 100), ("Milk, cow", 250)],
+    # Chana.
+    [("Roti / chapati (wheat, plain)", 100), ("Chana / chole, boiled (no gravy)", 150), ("Curd (dahi), whole milk", 150)],
+    # Calcium.
+    [("Ragi (finger millet)", 80), ("Paneer", 80), ("Milk, cow", 250)],
+    # Light.
+    [("Rice flakes (poha), raw", 60), ("Milk, cow", 200)],
+]
+
+_PLAN_C = [
+    # Calcium-heavy day.
+    [("Roti / chapati (wheat, plain)", 80), ("Milk, cow", 250), ("Paneer", 100), ("Sesame seeds, white (til)", 15)],
+    # Greens + dairy.
+    [("Rice, cooked (white)", 150), ("Palak paneer", 150), ("Curd (dahi), whole milk", 150)],
+    # Light.
+    [("Rice flakes (poha), raw", 60), ("Banana (kela)", 100)],
+    # Egg day for D/B12.
+    [("Roti / chapati (wheat, plain)", 80), ("Egg, whole, boiled", 100), ("Milk, cow", 250)],
+    # Calcium focus.
+    [("Ragi (finger millet)", 80), ("Curd (dahi), whole milk", 150), ("Almond (badam)", 20)],
+    # Fish day.
+    [("Rice, cooked (white)", 150), ("Fish, rohu", 150), ("Milk, cow", 250)],
+    # Gap day.
+    [],
+    # Dairy + greens.
+    [("Roti / chapati (wheat, plain)", 80), ("Paneer", 100), ("Spinach (palak)", 100), ("Milk, cow", 250)],
+    # Light.
+    [("Rice flakes (poha), raw", 60), ("Curd (dahi), whole milk", 100)],
+    # Mixed.
+    [("Roti / chapati (wheat, plain)", 80), ("Chicken curry", 100), ("Milk, cow", 250)],
+    # Legumes + dairy.
+    [("Rice, cooked (white)", 150), ("Rajma, boiled (no gravy)", 150), ("Curd (dahi), whole milk", 150)],
+    # Fruit + dairy.
+    [("Orange (santra)", 150), ("Milk, cow", 250)],
+    # Chana.
+    [("Roti / chapati (wheat, plain)", 100), ("Chana / chole, boiled (no gravy)", 150), ("Sesame seeds, white (til)", 10)],
+    # Lentil + paneer.
+    [("Rice, cooked (white)", 150), ("Lentil dal (masoor), raw", 80), ("Paneer", 80)],
+]
+
 _MEAL_PLANS: dict[str, list[list[tuple[str, float]]]] = {
-    "priya_sharma": [
-        # Strong iron/calcium day.
-        [("Roti / chapati (wheat, plain)", 80), ("Red gram dal (toor/arhar), raw", 80), ("Spinach (palak)", 100), ("Sesame seeds, white (til)", 15), ("Curd (dahi), whole milk", 100)],
-        # Good non-veg day for B12 and D.
-        [("Rice, cooked (white)", 150), ("Fish, sardine", 100), ("Milk, cow", 250)],
-        # Light day.
-        [("Rice flakes (poha), raw", 60), ("Banana (kela)", 100)],
-        # Vegetarian iron focus.
-        [("Bajra roti (rotla)", 120), ("Lentil dal (masoor), raw", 80), ("Spinach (palak)", 100), ("Jaggery (gur)", 20)],
-        # Mixed day.
-        [("Roti / chapati (wheat, plain)", 80), ("Chicken curry", 150), ("Curd (dahi), whole milk", 150), ("Orange (santra)", 150)],
-        # Calcium focus.
-        [("Rice, cooked (white)", 150), ("Paneer", 100), ("Milk, cow", 250), ("Sesame seeds, white (til)", 10)],
-        # Gap day.
-        [],
-        # Iron + protein.
-        [("Roti / chapati (wheat, plain)", 100), ("Rajma, boiled (no gravy)", 150), ("Spinach (palak)", 100), ("Jaggery (gur)", 20)],
-        # Egg day.
-        [("Roti / chapati (wheat, plain)", 80), ("Egg, whole, boiled", 100), ("Milk, cow", 250)],
-        # Light day.
-        [("Rice flakes (poha), raw", 60), ("Curd (dahi), whole milk", 100)],
-        # Strong mixed day.
-        [("Rice, cooked (white)", 150), ("Fish, rohu", 150), ("Palak paneer", 150)],
-        # Vegetarian.
-        [("Roti / chapati (wheat, plain)", 80), ("Chana / chole, boiled (no gravy)", 150), ("Milk, cow", 250), ("Almond (badam)", 20)],
-        # Ragi iron/calcium.
-        [("Ragi (finger millet)", 80), ("Curd (dahi), whole milk", 150), ("Spinach (palak)", 100)],
-        # Snack-like light day.
-        [("Banana (kela)", 100), ("Milk, cow", 200)],
-    ],
-    "kavita_patel": [
-        # Balanced start.
-        [("Roti / chapati (wheat, plain)", 80), ("Green gram dal (moong), raw", 80), ("Paneer", 80), ("Milk, cow", 250)],
-        # Good B12/D day.
-        [("Rice, cooked (white)", 150), ("Fish, sardine", 100), ("Curd (dahi), whole milk", 150)],
-        # Light.
-        [("Rice flakes (poha), raw", 60), ("Orange (santra)", 100)],
-        # Egg + greens.
-        [("Roti / chapati (wheat, plain)", 80), ("Egg, whole, boiled", 100), ("Spinach (palak)", 100)],
-        # Generous non-veg.
-        [("Rice, cooked (white)", 200), ("Chicken curry", 150), ("Milk, cow", 250)],
-        # Gap day.
-        [],
-        # Vegetarian calcium day.
-        [("Roti / chapati (wheat, plain)", 80), ("Palak paneer", 150), ("Sesame seeds, white (til)", 15), ("Curd (dahi), whole milk", 150)],
-        # Lentils + greens.
-        [("Bajra roti (rotla)", 100), ("Lentil dal (masoor), raw", 80), ("Spinach (palak)", 100), ("Jaggery (gur)", 20)],
-        # Light.
-        [("Rice flakes (poha), raw", 60), ("Banana (kela)", 100)],
-        # Rajma rice.
-        [("Rice, cooked (white)", 150), ("Rajma, boiled (no gravy)", 150), ("Curd (dahi), whole milk", 150)],
-        # Egg + dairy.
-        [("Roti / chapati (wheat, plain)", 80), ("Egg, whole, boiled", 100), ("Milk, cow", 250)],
-        # Chana.
-        [("Roti / chapati (wheat, plain)", 100), ("Chana / chole, boiled (no gravy)", 150), ("Curd (dahi), whole milk", 150)],
-        # Calcium.
-        [("Ragi (finger millet)", 80), ("Paneer", 80), ("Milk, cow", 250)],
-        # Light.
-        [("Rice flakes (poha), raw", 60), ("Milk, cow", 200)],
-    ],
-    "meena_shah": [
-        # Calcium-heavy day.
-        [("Roti / chapati (wheat, plain)", 80), ("Milk, cow", 250), ("Paneer", 100), ("Sesame seeds, white (til)", 15)],
-        # Greens + dairy.
-        [("Rice, cooked (white)", 150), ("Palak paneer", 150), ("Curd (dahi), whole milk", 150)],
-        # Light.
-        [("Rice flakes (poha), raw", 60), ("Banana (kela)", 100)],
-        # Egg day for D/B12.
-        [("Roti / chapati (wheat, plain)", 80), ("Egg, whole, boiled", 100), ("Milk, cow", 250)],
-        # Calcium focus.
-        [("Ragi (finger millet)", 80), ("Curd (dahi), whole milk", 150), ("Almond (badam)", 20)],
-        # Fish day.
-        [("Rice, cooked (white)", 150), ("Fish, rohu", 150), ("Milk, cow", 250)],
-        # Gap day.
-        [],
-        # Dairy + greens.
-        [("Roti / chapati (wheat, plain)", 80), ("Paneer", 100), ("Spinach (palak)", 100), ("Milk, cow", 250)],
-        # Light.
-        [("Rice flakes (poha), raw", 60), ("Curd (dahi), whole milk", 100)],
-        # Mixed.
-        [("Roti / chapati (wheat, plain)", 80), ("Chicken curry", 100), ("Milk, cow", 250)],
-        # Legumes + dairy.
-        [("Rice, cooked (white)", 150), ("Rajma, boiled (no gravy)", 150), ("Curd (dahi), whole milk", 150)],
-        # Fruit + dairy.
-        [("Orange (santra)", 150), ("Milk, cow", 250)],
-        # Chana.
-        [("Roti / chapati (wheat, plain)", 100), ("Chana / chole, boiled (no gravy)", 150), ("Sesame seeds, white (til)", 10)],
-        # Lentil + paneer.
-        [("Rice, cooked (white)", 150), ("Lentil dal (masoor), raw", 80), ("Paneer", 80)],
-    ],
+    "krisha": _PLAN_A,
+    "sneha": _PLAN_B,
+    "anshika": _PLAN_C,
+    "garima": _PLAN_A,
+    "juhi": _PLAN_B,
+    "priya": _PLAN_C,
+    "sakshi": _PLAN_A,
 }
 
 
