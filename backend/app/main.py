@@ -4,7 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.database import Base, engine
 from app.errors import add_exception_handler
-from app.routers import chat, cheat_day, dashboard, foods, log_meal, logs, parse, phase, streak, transcribe, users
+from app.middleware.firebase_auth import FirebaseAuthMiddleware
+from app.routers import chat, cheat_day, dashboard, foods, health, logs, parse, phase, streak, transcribe, users
 
 structlog.configure(
     processors=[
@@ -21,6 +22,8 @@ logger = structlog.get_logger()
 
 def create_app() -> FastAPI:
     app = FastAPI(title="AURA-Nutri API", version="0.1.0")
+
+    app.add_middleware(FirebaseAuthMiddleware)
 
     app.add_middleware(
         CORSMiddleware,
@@ -44,11 +47,11 @@ def create_app() -> FastAPI:
             logger.info("database_empty_seeding_now")
             seed()
 
+    app.include_router(health.router)
     app.include_router(users.router)
     app.include_router(foods.router)
     app.include_router(logs.router)
     app.include_router(parse.router)
-    app.include_router(log_meal.router)
     app.include_router(dashboard.router)
     app.include_router(cheat_day.router)
     app.include_router(streak.router)

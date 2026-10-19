@@ -1,3 +1,5 @@
+"""Deprecated: migrated to Firestore in 4.0.4."""
+
 from datetime import date, datetime, time, timezone
 
 import structlog
@@ -5,6 +7,7 @@ from sqlalchemy.orm import Session
 
 from app.models import MealLog, User
 from app.schemas.summary import DailySummary, NutrientSummary
+
 
 logger = structlog.get_logger()
 

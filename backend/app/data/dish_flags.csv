@@ -1,0 +1,1175 @@
+food_name,flag_oil_suspect,flag_vitd_implausible,flag_b12_zero_animal
+Hot tea (Garam Chai),False,False,False
+Instant coffee,False,False,False
+Espreso coffee,False,False,False
+Iced tea,False,False,False
+Raw mango drink (Aam panna),False,True,False
+Fruit Punch (with fresh juices),False,False,False
+Fruit Punch (with squashes),False,False,False
+Lemonade,False,False,False
+Lem-o-gin,False,False,False
+Cumin infused water (Jeere/Zeere ka pani),False,True,False
+Coco pine cooler,False,False,False
+Summer cooler,False,True,False
+Hot cocoa,False,False,False
+Cold coffee with ice cream,False,False,False
+Banana milkshake (Kele milkshake),False,False,False
+Mango milkshake (Aam milkshake),False,True,False
+Pineapple milkshake (Ananas milkshake),False,False,False
+Orange milkshake (Narangi milkshake),False,False,False
+Egg nog,False,True,False
+Sweet Lassi (Meethi lassi),False,False,False
+Lassi (salted),False,False,False
+Cheese and chilli sandwich ,False,True,False
+Egg sandwich (Ande ka sandwich),False,True,False
+Cucumber sandwich (Kheere ka sandwich),False,True,False
+Cheese and pineapple sandwich (Cheese aur ananas ka sandwich),False,True,False
+Cheese and tomato sandwich (Cheese aur tamatar ke sandwich),False,True,False
+Chicken sandwich,False,True,False
+Peanut and tomato sandwich (Moongfali aur tamatar ka sandwich),False,True,False
+Rainbow sandwich,False,True,False
+Club sandwich ,False,True,False
+Vegetarian club sandwich,False,True,False
+Pin wheel sandwich,False,True,False
+Carrot apple sandwich (Gajar aur seb ka sandwich),False,True,False
+Salami sandwich,False,True,False
+Vegetable and mayonnaise sandwich,False,True,False
+Egg and tomato sandwich (Ande aur tamatar ka sandwich),False,True,False
+Sweet open sandwich,False,True,False
+Mushroom and cheese sandwich (toasted),False,True,False
+Cheese and tomato sandwich (toasted) (Cheese aur tamatar ke sandwich (toasted)),False,True,False
+Pea potato sandwich (toasted) (Matar aloo ka sandwich),False,True,False
+Paneer pea sandwich (toasted) (Paneer matar ka sandwich),False,True,False
+Chicken sandwich (toasted),False,True,False
+Pea keema sandwich (toasted) (Matar aur keema ka sandwich),False,True,False
+Classic club sandwich,False,True,False
+Sesame toast,False,True,False
+Cracked wheat porridge (Meetha daliya),False,False,False
+Semolina porridge (Suji/Rava daliya),False,True,False
+Oatmeal Porridge,False,False,False
+Cornflakes with milk,False,False,False
+Rice flakes (Chiwda/Aval),False,False,False
+Wheat flakes,False,False,False
+Murmura (Puffed rice),False,False,False
+Puffed wheat (Murmure/Moori),False,False,False
+Boiled egg (Ubla anda),False,True,False
+Fried Egg ,False,True,False
+Poached egg,False,True,False
+Scrambled egg (Ande ki bhurji),False,True,False
+Baked egg ,False,True,False
+Plain omelette/omlet,False,True,False
+Stuffed egg omelette/omlet,False,True,False
+Pancake,False,True,False
+Keema pancake,False,True,False
+Vegetable pancake,False,True,False
+Jam and fruit pancake,False,True,False
+Khoa and coconut pancake,False,True,False
+Brown stock,False,False,False
+Vegetable stock,False,True,False
+Chicken stock,False,True,False
+Clear tomato soup (Tamatar ka soup),False,True,False
+Lentil soup,False,True,False
+Chicken consomme (Clear chicken soup),False,True,False
+Cream of tomato soup,False,True,False
+Cream of green peas soup,False,True,False
+Cream of spinach soup,False,True,False
+Cream of mixed vegetable soup,False,True,False
+Cream of mushroom soup,False,True,False
+Chicken sweet corn soup,False,True,False
+Minestrone soup,False,True,False
+Egg drop soup,False,True,False
+Chinese cabbage and meat ball soup,False,True,False
+French onion soup,False,True,False
+Hot and sour soup,False,True,False
+Talaumein soup,False,True,False
+Cold cucumber soup (Thanda kheere ka soup),False,True,False
+Cold summer garden soup,False,True,False
+Chapati/Roti,False,True,False
+Plain parantha/paratha,False,True,False
+Potato parantha/paratha (Aloo ka parantha/paratha),False,True,False
+Radish parantha/paratha (Mooli ka parantha/paratha),False,True,False
+Cauliflower parantha/paratha (Phoolgobhi ka parantha/paratha),False,True,False
+Dal parantha/paratha,False,True,False
+Sprouted moong parantha/paratha,False,True,False
+Pea parantha/paratha (Matar ka parantha/paratha),False,True,False
+Keema parantha/paratha,False,True,False
+Paneer parantha/paratha,False,True,False
+Besan and spinach parantha/paratha (Besan aur palak ka parantha/paratha),False,True,False
+Poori,True,True,False
+Spinach poori (Palak poori),True,True,False
+Methi poori,True,True,False
+Dal stuffed poori,True,True,False
+Potato stuffed poori (Aloo ki poori),True,True,False
+Tandoori parantha/paratha,False,True,False
+Boiled rice (Uble chawal),False,False,False
+Plain pulao,False,True,False
+Mixed vegetable pulao,False,True,False
+Mushroom pulao,False,True,False
+Sprouted moong pulao,False,True,False
+Paneer pulao,True,False,False
+Peanut pulao ,False,True,False
+Navratan pulao,False,True,False
+Green chickpeas pulao (Choliya pulao/Hare chane ka pulao),False,True,False
+Mutton biryani/biriyani,False,True,False
+Vegetable biryani/biriyani,False,True,False
+"Lemon rice (Pulihora, Elumichai sadam, Chitranna)",False,True,False
+Sweet rice (Meethe chawal),False,True,False
+Curd rice (Dahi bhaat/Dahi chawal/ Perugu annam/Daddojanam/Thayir saadam),False,True,False
+Tamarind rice (Chintapandu pulihora/Puliyodharai/Puli sadam/Huli anna),False,True,False
+Spanish rice,False,True,False
+Chinese fried rice,False,True,False
+Macroni cheese pie,False,True,False
+Vegetable chowmein,False,True,False
+Chicken chowmein,False,True,False
+Cheese noodle ring,False,True,False
+Spaghetti and cheese balls in tomato sauce,False,True,False
+Penne platter,False,True,False
+Pasta hot pot,False,True,False
+Chicken lasagne,False,True,False
+Fettuccine with spinach sauce,False,True,False
+Naan,False,True,False
+Bhatura,True,True,False
+Idli,False,True,False
+Masala dosa,False,True,False
+Semolina dosa (Suji/Rava dosa),False,True,False
+Onion tomato uttapam,False,True,False
+Paneer kaathi roll,False,True,False
+Makki ki roti,False,True,False
+Washed moong dal (Dhuli moong ki dal),False,True,False
+Washed urad dal (Dhuli urad ki dal),False,True,False
+Split bengal gram with bottle gourd (Channa dal with ghiya/lauki),False,True,False
+Dry washed urad,False,True,False
+Mixed dal,False,True,False
+Whole moong (Moong ki dal),False,True,False
+Whole masoor (Masoor ki dal),False,True,False
+Whole moth (Moth ki dal),False,True,False
+Whole urad (Urad ki dal),False,True,False
+Moti mahal dal (Urad rajmah mix dal),False,True,False
+Black channa curry/Bengal gram curry (Kale chane ki curry),False,True,False
+Chickpeas curry (Safed channa curry),False,True,False
+Lobia curry,False,True,False
+Soyabean curry,False,True,False
+Kidney bean curry (Rajmah curry),False,True,False
+Sambar,False,True,False
+Besan kadhi with pakodies,False,True,False
+Khatta channa,False,True,False
+Sprouted moong dal chat,False,True,False
+Potato cauliflower (Aloo gobhi),False,True,False
+Potato capsicum (Shimla mirch aloo),False,True,False
+Cabbage and peas (Pattagobhi aur matar),False,True,False
+Carrot and fenugreek leaves (Gajar methi),False,True,False
+Potato fenugreek (Aloo methi),False,True,False
+Brinjal bhartha (Baingan ka bhartha),False,True,False
+Dry potato (Sookhe aloo),False,True,False
+Beans with coconut (Nariyal aur sem/phali; Beans thoran),False,True,False
+Cauliflower with coconut (Nariyal ke saath phoolgobhi),False,True,False
+Carrot and cabbage with coconut (Nariyal ke saath pattagobhi aur gajar),False,True,False
+Raw turnip with coconut ,False,True,False
+Raw papaya with coconut (Papaya thoran),False,True,False
+Stuffed okra (Bharwa bhindi),False,True,False
+Stuffed round gourd (Bharwa tinde),False,True,False
+Stuffed capsicum (Bharwa shimla mirch),False,True,False
+Stuffed brinjal (Bharwa baingan),False,True,False
+Stuffed tomatoes (Bharwa tamatar),False,True,False
+Pea potato curry (Aloo matar),False,True,False
+Pea paneer curry (Matar paneer),False,True,False
+Pea mushroom curry (Matar mushroom),False,True,False
+Pea curry (Matar ki sabzi),False,True,False
+Pea vadi curry,False,True,False
+Paneer curry,False,True,False
+Lotus stem curry (Kamal kakdi curry),False,True,False
+Gravy for kofta,False,True,False
+Pea kofta curry (Matar kofta curry),True,True,False
+Spinach kofta curry (Palak kofta curry),True,True,False
+Paneer kofta curry,True,True,False
+Lotus stem kofta curry (Kamal kakdi kofta curry),True,True,False
+Raw banana kofta curry (Kela kofta curry),True,True,False
+Cauliflower kofta curry (Phoolgobhi kofta curry),True,True,False
+Cabbage kofta curry (Pattagobhi kofta curry),True,True,False
+Ghiya/Lauki Kofta Curry,True,True,False
+Spinach paneer kofta curry (Palak paneer kofta curry),True,True,False
+Vegetarian egg kofta curry,True,True,False
+Baked vegetables,False,True,False
+Cauliflower musallam (Phoolgobhi musallam),False,True,False
+Baked vegetables with spinach ,False,True,False
+Baked potato with skin ,False,True,False
+Shepherd's pie (vegetarian),False,True,False
+Baked brinjal in tomato sauce,False,True,False
+Dum aloo,True,True,False
+Spinach paneer (Palak paneer),False,True,False
+Methi chaman,False,True,False
+Sarson ka saag,False,True,False
+Jackfruit sabzi (Kathal ki sabzi),True,True,False
+Avial,False,True,False
+Al yakhani,False,True,False
+Shahi paneer,False,True,False
+Paneer in butter sauce,False,True,False
+Methi malai paneer,False,True,False
+Chilli paneer,True,True,False
+Paneer makhana korma,True,True,False
+Kadhai Paneer,False,True,False
+Roghan josh,False,True,False
+Spinach mutton (Palak mutton),False,True,False
+Pea keema curry (Matar keema ki sabzi),False,True,False
+Keema kofta curry,False,True,False
+Kashmiri mutton koftas (Gushtaba),False,True,False
+Mutton yakhni,False,True,False
+Chicken yakhni,False,True,False
+Mutton do piaza,False,True,False
+Mutton chops,True,False,False
+Shammi kebab,True,True,False
+Scotch egg,True,True,False
+Shepherd's pie (with minced meat),False,True,False
+Chicken curry,False,True,False
+Tandoori chicken,False,True,False
+Butter chicken,False,True,False
+Chicken kebab,True,True,False
+Chilli chicken,False,True,False
+Fried chicken with tomato sauce (Fried chicken tamatar ki chutney kay saath),False,True,False
+Fish curry (Machli curry),False,True,False
+Fried fish (Indian style) (Tali hui machli),True,True,False
+Fried fish and Chips (English Style) (Tali hui machli aur chips),True,True,False
+Tomato fish,False,True,False
+Baked fish with cheese sauce,False,True,False
+Fish tikka,False,True,False
+Tandoori fish,False,True,False
+"Paneer, apple and pineapple salad",False,True,False
+Russian salad,False,True,False
+Pasta salad,False,True,False
+Deviled egg,False,True,False
+Hawain salad,False,True,False
+Mixed pulse and vegetable salad,False,True,False
+Sprouted moong salad ,False,True,False
+Tossed salad,False,True,False
+Mixed vegetable salad with curd sauce,False,True,False
+Potato salad (Aloo ka salaad),False,True,False
+Waldroff salad,False,True,False
+Coleslaw,False,True,False
+Fruit salad (Phalon ka salaad),False,True,False
+Tomato onion raita (Tamatar aur pyaaz ka raita),False,True,False
+Peanut raita (Mungfali ka raita),False,True,False
+Sprouted moong raita ,False,False,False
+Bottle gourd raita (Ghiya/Lauki ka raita),False,True,False
+Cucumber raita (Kheere ka raita),False,True,False
+Carrot and spinach raita (Gajar aur palak ka raita),False,True,False
+Mint raita (Pudinay ka raita),False,True,False
+Potato raita (Aloo ka raita),False,False,False
+Boondi raita,True,False,False
+Sweet raita (Meetha raita),False,True,False
+Dahi vadas/Dahi bhalla,True,True,False
+Gunjia,True,True,False
+Saunth/Sonth chutney with tamarind/imli,False,True,False
+Rice kheer (Chawal ki kheer),False,False,False
+Makhana kheer,False,False,False
+Vermicelli kheer (Semiya/Seviyan ki kheer),False,True,False
+Semolina kheer (Suji/Rava kheer),False,True,False
+Paneer kheer,False,False,False
+Cabbage kheer (Pattagobhi ki kheer),False,False,False
+Carrot kheer (Gajar ki kheer),False,True,False
+Cauliflower kheer (Phoolgobhi ki kheer),False,True,False
+Moong dal kheer,False,False,False
+Phirni,False,False,False
+Semolina halwa (Suji ka halwa),False,True,False
+Shahi suji halwa,False,True,False
+Carrot halwa (Gajar ka halwa),False,True,False
+Egg halwa (Ande ka halwa),False,True,False
+Potato halwa (Aloo ka halwa),False,True,False
+Pumpkin halwa (Kaddu ka halwa),False,True,False
+Moong dal halwa,False,True,False
+Caramel custard (steamed),False,True,False
+Baked custard,False,True,False
+Soft Custard (stirred),False,True,False
+Chocolate ice cream,False,False,False
+Mango ice cream,False,True,False
+Fruit Ice cream (Phalon ka Ice cream),False,False,False
+Caramel ice cream,False,True,False
+Lemon souffle,False,True,False
+Orange souffle,False,True,False
+Vanilla souffle,False,True,False
+Chocolate souffle,False,True,False
+Pineapple souffle ,False,True,False
+Apple mousse,False,True,False
+Rich chocolate mousse,False,True,False
+Mango mousse,False,True,False
+Orange and pineapple cream,False,True,False
+Charlotte rousse,False,True,False
+Triffle pudding,False,True,False
+Snow flakes pudding,False,True,False
+Kulfi,False,False,False
+Steamed orange pudding,False,True,False
+Meringue and rice pudding,False,True,False
+Cheese pudding,False,True,False
+Chocolate pudding,False,False,False
+Bread and butter pudding ,False,True,False
+Queen of pudding,False,True,False
+Pineapple upside down pudding,False,True,False
+Date and nut pie,False,True,False
+Stewed apple with custard,False,True,False
+Apple snowballs,False,True,False
+Hot orange souffle,False,True,False
+Hot chocolate souffle,False,True,False
+Hot vanilla souffle,False,True,False
+Plain burfi (Burfi),False,False,False
+Coconut burfi (Nariyal ki burfi),False,False,False
+Bottle gourd burfi (Ghiya/Lauki burfi),False,True,False
+Chocolate burfi,False,False,False
+Cashewnut burfi (Kaju burfi/Kaju katli),False,True,False
+Gram flour burfi (Besan burfi),False,True,False
+Semolina ladoo with khoya (Suji/Rava aur khoye ke ladoo ),False,True,False
+Semolina ladoo with coconut (Suji/Rava aur nariyal ke ladoo ),False,True,False
+Gram flour ladoo (Besan ladoo),False,True,False
+Sesame ladoo (Til ke ladoo),False,True,False
+Chenna murki,False,False,False
+Milk cake,False,False,False
+Ghujia/Lavang latika,True,True,False
+Gulab Jamun with khoya,True,True,False
+Mal pua,True,True,False
+Shahi tukre,False,False,False
+Potato pakora/pakoda (Aloo pakoda),True,False,False
+Onion pakora/pakoda (Pyaaz ke pakode),True,False,False
+Cauliflower pakora/pakoda (Phoolgobhi ke pakode),True,True,False
+Mixed vegetable pakora/pakoda,True,False,False
+Spinach pakora/pakoda (Palak pakoda),True,False,False
+Methi pakora/pakoda (Methi ke pakode),True,True,False
+Egg pakora/pakoda (Ande ke pakode),True,False,False
+Bread pakora/pakoda,True,False,False
+Paneer pakora/pakoda,True,False,False
+Potato bonda (Aloo bonda),True,True,False
+Potato samosa (Aloo ka samosa),True,True,False
+Minced meat samosa (Keema ka samosa),True,True,False
+Paneer and pea samosa (Paneer matar ka samosa),True,True,False
+Mathri,True,True,False
+Khasta kachori,True,True,False
+Vegetable cutlet,True,True,False
+Flattened rice cutlet (Chirwa cutlet/Chivda cutlet/Poha cutlet),True,True,False
+Peanut cutlet (Mungfali ke cutlet),True,True,False
+Fish cutlet (Machli ka cutlet),True,True,False
+Paneer potato cutlet (Paneer aloo cutlet),True,False,False
+Spinach chickpeas cutlet (Palak channa dal cutlet),True,False,False
+Cheese toast,True,False,False
+Vegetable burger,False,True,False
+Cheese pizza,False,True,False
+Vegetable seekh kebab,True,True,False
+Masala vada,True,True,False
+Peanut sago vada (Sabudana mungfali vada),True,True,False
+Vegeterian scotch egg,True,True,False
+Paneer shaslik/tikka,False,True,False
+Peanut brittle (Moongfali ki chikki),False,True,False
+Spring roll,True,True,False
+Dry mango chutney (Sookhe aam ki chutney),False,True,False
+Peanut chutney (Mungfali ki chutney),False,True,False
+Coconut chutney (Nariyal ki chutney),False,True,False
+Mint and coriander chutney (Pudinay aur dhaniye ki chutney),False,True,False
+Custard tart,False,True,False
+Lemon tart,False,True,False
+Jam tart,False,True,False
+Orange cream tart,False,True,False
+Pineapple tart,False,True,False
+Cheese and mushroom tart,False,True,False
+Cottage cheese pie,False,True,False
+Minced meat pie,False,True,False
+Apple cinnamon pie,False,True,False
+Lemon meringue pie,False,True,False
+Chocolate meringue pie,False,True,False
+Cream puffs,False,True,False
+Chocolate eclairs,False,True,False
+Cheese balls,True,True,False
+Minced meat patties,False,True,False
+Cheese patties,False,True,False
+Hot cheese souffle,False,True,False
+Hot potato souffle,False,True,False
+Hot fish souffle,False,True,False
+Hot spinach souffle,False,True,False
+Plain cream cake,False,True,False
+Apple cake (Seb ka cake),False,True,False
+Marble cake,False,True,False
+Chocolate cake,False,True,False
+Orange cake,False,True,False
+Fruit Loaf ,False,True,False
+Banana cake (Kele ka cake),False,True,False
+Chocolate chiffon cake,False,True,False
+Christmas cake,False,True,False
+Strawberry and vanilla cake with butter icing,False,True,False
+Eggless cake,False,True,False
+Swiss roll,False,True,False
+Pineapple pastry ,False,True,False
+Black forest pastry,False,True,False
+Coconut finger,False,True,False
+Pineapple cake ,False,True,False
+Chocolate walnut cookies (Chocolate aur akhrot ke cookies),False,True,False
+Chocolate chip cookies,False,True,False
+Sweet plain biscuit,False,True,False
+Chocolate biscuit,False,True,False
+Coconut biscuit (Nariyal ke biscuit),False,True,False
+Sweet and salty biscuit (Meethay aur namkeen biscuit),False,True,False
+Peanut biscuit,False,True,False
+Pin wheel biscuit,False,True,False
+Saffron biscuit (Kesar biscuit),False,True,False
+Masala biscuit,False,True,False
+Ice box cookies,False,True,False
+Ginger bread man,False,True,False
+Danish cookies,False,True,False
+Short bread cookies,False,True,False
+Coffee biscuit,False,True,False
+Melting moments,False,True,False
+Ginger biscuit (Adarak ke biscuit),False,True,False
+Soyabean muthias,True,True,False
+Soyabean tikki,True,True,False
+Soyabean namak paras,True,True,False
+Peanut burfi (Moongfali ki burfi),True,True,False
+Spinach peanut namak paras (Palak moongfali namak paras),True,True,False
+Gram flour and semolina chilla/cheela/savory pancake (Besan suji chilla/cheela),True,True,False
+Rice moong dal cheela (Chawal aur moong dal ka cheela),True,True,False
+Split bengal gram sweet rice (Channa dal sweet rice),False,True,False
+Sweet poori (Meethi poori),True,True,False
+Wheat flour and moong dal burfi (Atta aur moong dal ki burfi),False,True,False
+Spinach burfi (Palak burfi),False,True,False
+Sweet split chickpea roti (Sweet channa dal roti/Puranpoli),False,True,False
+Sprouted moong daliya ,False,True,False
+Sprouted moong poha ,False,True,False
+Pearl millet ladoo (Bajra ladoo),False,True,False
+Paushtik ladoo,False,True,False
+Paushtik roti,False,True,False
+Semolina carrot vada (Suji gajar vada),True,True,False
+Dhokla,False,True,False
+Kashmiri tea (Kehwa),False,False,False
+Steeped hot coffee,False,False,False
+Hot chocolate,False,False,False
+Cold coffee (with cream),False,False,False
+Banana milkshake with ice cream (Kele ka milkshake ice cream ke saath),False,False,False
+Flavoured milkshake,False,False,False
+Jal jeera,False,True,False
+Gingo,False,False,False
+Mintade,False,False,False
+Canjee,False,True,False
+Cauliflower canjee (Phoolgobhi ki canjee),False,True,False
+Potato canjee (Aloo canjee),False,True,False
+Vermicelli porridge (Semiya/Seviyan porridge),False,True,False
+Semolina upma (Suji/Rava upma),False,True,False
+Vermicelli upma (Semiya/Seviyan upma),False,True,False
+Rice upma,False,True,False
+Bread upma,False,True,False
+Vegetable upma,False,True,False
+Poha,False,True,False
+Vegetable poha,False,True,False
+Moong dal stuffed cheela/chilla (Moong dal ka cheela/chilla),False,True,False
+Paneer stuffed cheela/chilla,False,True,False
+Indian style egg bhujia (Anda bhujia (Indian style)),False,True,False
+French omelette/omlet,False,True,False
+Puffy omelette/omlet,False,True,False
+Orange omelette/omlet,False,True,False
+Cheese and mushroom omelette/omlet,False,True,False
+Spanish omelette/omlet,False,True,False
+Mixed stock,False,False,False
+Meat stock,False,False,False
+White stock,False,False,False
+Meat consomme (with mutton),False,True,False
+Consomme au julienne,False,True,False
+Consomme au vermicelli,False,True,False
+Green pea soup (Matar ka soup),False,True,False
+Spinach soup (Palak ka soup),False,True,False
+Mixed vegetable soup,False,True,False
+Cheese soup,False,True,False
+Mulligatawny soup,False,True,False
+Cream of carrot soup,False,True,False
+Cream of broccoli soup,False,True,False
+Cream of potato soup,False,True,False
+Almond soup (Badam ka soup),False,True,False
+Cold cucumber cream soup ,False,True,False
+Cold tomato soup,False,True,False
+Chicken stew,False,True,False
+Veg paneer stew,False,True,False
+Onion-green chilli parantha/paratha (Pyaaz aur hari mirch ka parantha/paratha),False,True,False
+Methi parantha/paratha,False,True,False
+Bathua poori,True,True,False
+Gram flour poori (Besan poori),True,True,False
+Beetroot poori (Chukandar ki poori),True,True,False
+Peas poori (Matar ki poori),True,True,False
+Peas kachori (Matar kachori),True,True,False
+Pizza,False,True,False
+Bacon and mushroom pancake,False,True,False
+Cheese and tomato pancake,False,True,False
+Minced meat pancake (with chicken),False,True,False
+Eggplant/Brinjal rice (Vangi bhat),False,True,False
+Kashmiri 'tahar',False,False,False
+Cumin pulao (Jeera/Zeera pulao),False,False,False
+Peas pulao (Matar pulao),False,True,False
+Split bengal gram dal and vegetable pulao (Channa dal and vegetable pulao),False,True,False
+Black channa pulao/ Bengal gram pulao (Kale chane ka pulao),False,True,False
+Mutton pulao,False,True,False
+Chicken pulao,False,True,False
+Mexican rice,False,True,False
+Plain khitchdi (Plain khichri/khichdi),False,True,False
+Instant idli (with semolina),False,True,False
+Plain dosa,False,True,False
+Masala dosa mixed vegetable fillings,False,True,False
+Masala dosa paneer fillings,False,True,False
+Uttapam,False,True,False
+Appam,False,False,False
+Beans and macaroni,False,True,False
+Spaghetti bolognese,False,True,False
+Meat and macaroni casserole,False,True,False
+Spaghetti with meat balls and tomato sauce,False,True,False
+Spaghetti with paneer balls and tomato sauce,False,True,False
+Lasagne with meat sauce,False,True,False
+Lasagne with vegetables,False,True,False
+Home made egg noodles,False,True,False
+Sour lentils (Khatti dal),False,True,False
+Urad special dehusked,False,True,False
+Arhar with spinach (Arhar dal aur palak),False,True,False
+Moong dal with vadi,False,True,False
+Rasam with tamarind (Puli rasam/ Chintapandu rasam/ Charu/Saaru),False,True,False
+Rasam with lemon (Nimmakaya rasam/Nimmakaya charu/Elumichai rasam/Nimbe hannina saaru),False,True,False
+Green gram whole with baghar (Sabut moong dal with tadka),False,True,False
+Urad sabut special,False,True,False
+Kabuli channa curry,False,True,False
+Besan gatte curry,False,True,False
+Dry masala chops,False,True,False
+Mutton korma,False,True,False
+Shahi keema kofta curry,False,True,False
+Minced meat ball curry,False,True,False
+Boti kebab,False,True,False
+Mutton seekh kebab,False,True,False
+Indian lamb and egg curry (Nargisi kofta),False,True,False
+Soya chunks sweet and sour (Nutrinugget sweet and sour),False,True,False
+Soya chunks korma (Nutrinugget korma),False,True,False
+Mushroom matar,False,True,False
+Soya chunks and peas (Nutrinugget matar),False,True,False
+Vegetable yakhni,False,True,False
+Spinach mushroom (Palak mushroom),False,True,False
+Vegetarian nargisi kofta curry,False,True,False
+Roast chicken,False,True,False
+Shahi chicken masala,False,True,False
+Tomato chicken,False,True,False
+Creamy chicken,False,True,False
+Broccoli chicken ala king,False,True,False
+Ginger chicken,False,True,False
+Chicken sweet and sour,False,True,False
+Chicken korma,False,True,False
+Bengal fish curry (Bengali machli curry),False,True,False
+Fish finger,False,True,False
+Fish in coconut milk (Nariyal ke doodh ke saath machli),False,True,False
+Prawn curry (with coconut) (Jhinga curry),False,True,False
+Baked stuffed fish,False,True,False
+Fish pie,False,True,False
+Crispy baked fish,False,True,False
+Fish souffle,False,True,False
+Potato curry (Aloo ki sabzi),False,True,False
+Egg curry (Anda curry),False,True,False
+Vegetable curry with coconut ,False,True,False
+Curd with potatoes (Dahi aloo),False,True,False
+Potato kofta curry (Aloo kofta curry),False,True,False
+Yam kofta curry (Zimikand/Suran kofta curry),False,True,False
+Jackfruit kofta curry (Kathal ka kofta curry),False,True,False
+Spinach and potato (Palak aloo),False,True,False
+Mooli bhujia,False,True,False
+Bathua bhujia,False,True,False
+Cabbage rolls (dry) ((Pattagobhi rolls) (dry)),False,True,False
+Cabbage rolls (curry) ((Pattagobhi rolls)(curry)),False,True,False
+Dry arbi (Sookhi arbi),False,True,False
+Masala arbi,False,True,False
+Peas brinjal bhartha (Matar baingan bhartha),False,True,False
+Okra/Lady's fingers fry (Bhindi sabzi/sabji/subji),False,True,False
+Crispy okra/Crispy lady's fingers (Karare bhindi),True,True,False
+Beans foogath,False,True,False
+Stuffed bittergourd (wet) (Bharwa karele),False,True,False
+Jackfruit/Kathal (dry),False,True,False
+Yam fried (Zimikand/Suran fried),False,True,False
+"Cauliflower, pea and potato bhujia (Phoolgobhi, matar aur aloo bhujia)",False,True,False
+Vegetable jalfrezi,False,True,False
+Vegetables stir fry ,False,True,False
+Broccoli delight,False,True,False
+Dhansak (vegetarian),False,True,False
+Cauliflower basket,False,True,False
+Stuffed bottle gourd (Stuffed ghiya/lauki),False,True,False
+Ducheese potato,False,True,False
+Roast potatoes ,False,True,False
+Stuffed baked potatoes ,False,True,False
+Potato nests,False,True,False
+Parsley potato,False,True,False
+Creamed spinach and mushroom,False,True,False
+Fricassee of Mushroom,False,True,False
+Cauliflower au gratin,False,True,False
+Vegetable and cheese pie,False,True,False
+Spinach souffle ,False,True,False
+Beetroot and egg salad (Chukandar aur ande ka salad),False,True,False
+Sour cream potato salad,False,True,False
+Tossed green salad,False,True,False
+Spring basket salad,False,True,False
+Cucumber and yogurt salad (Kheere aur dahi ka salad),False,True,False
+Chicken and tomato towers,False,True,False
+Jellied sunshine fruit salad,False,True,False
+Tomato aspic,False,True,False
+Frozen frosty fruit salad (Phalon ka salaad),False,True,False
+French dressing,True,True,False
+Mayonnaise without eggs,False,False,False
+Curd dressing ,False,True,False
+Carrot raita (Gajar ka raita),False,True,False
+Pumpkin raita (Kaddu ka raita),False,True,False
+Mint and peanut raita (Pudinay aur moongfali ka raita),False,True,False
+Spinach raita (Palak ka raita),False,True,False
+Bathua raita,False,True,False
+Pineapple raita (Ananas ka raita),False,True,False
+Banana raita (Kele ka raita),False,True,False
+Mango raita (Aam ka raita),False,True,False
+Guava raita (Amarood ka raita),False,True,False
+Grapes raita (Angoor ka raita),False,True,False
+Bottle gourd kheer (Ghiya/Lauki kheer),False,True,False
+Pumpkin kheer (Kaddu ki kheer),False,True,False
+Apple kheer (Seb ki kheer),False,True,False
+Caramel custard (baked),False,True,False
+Vanilla ice cream without egg,False,False,False
+Vanilla ice cream with egg,False,False,False
+Strawberry ice cream,False,False,False
+Chocochip ice cream,False,False,False
+Choconut ice cream,False,True,False
+Pear chocholate sunday,False,False,False
+Chocolate sauce,False,False,False
+Coffee ice cream,False,True,False
+Coffee pear alaska,False,False,False
+Crunchy butterscotch,False,True,False
+Peach melba ice cream,False,False,False
+Vanilla ice cream with apples in hot cherry sauce,False,True,False
+Grape and orange whip,False,True,False
+Honey banana cream,False,True,False
+Raspberry bavarian cream,False,False,False
+Fruit delight,False,True,False
+Creamy chocolate mousse,False,True,False
+Cold lemon souffle,False,True,False
+Cold orange souffle,False,True,False
+Cold pineapple souffle,False,True,False
+Cold vanilla souffle,False,True,False
+Cold chocolate souffle,False,True,False
+Stewed fruit (with pear),False,True,False
+Apricot fool,False,True,False
+Pavlova,False,True,False
+Apple crumb pudding,False,True,False
+Steamed cake with chocolate sauce,False,True,False
+Hot lemon souffle,False,True,False
+Gulab jamun with milk powder,False,False,False
+Chum chum,False,False,False
+Dil bahar,False,False,False
+Rasbhari,False,False,False
+Rajbogh,False,False,False
+Rasgulla,False,False,False
+Rasmalai,False,False,False
+Khoa coconut burfi,False,True,False
+Danedar burfi,False,False,False
+Semolina burfi (Suji/Rava burfi),False,True,False
+Pumpkin coconut burfi (Kaddu aur nariyal ki burfi),False,True,False
+Khoa ladoo,False,True,False
+Wheat and gram flour ladoo (Atta besan ladoo),False,True,False
+Semolina ladoo with nuts (Suji/Rava ladoo with nuts),False,True,False
+Sesame chickpeas brittle (Til aur channe ki chikki),False,True,False
+Murmura chikki,False,True,False
+Masala onion pakora/pakoda (Pyaaz ke pakode),True,True,False
+Masala green chilli pakora/pakoda (Hari mirch kay pakode),True,True,False
+Chicken pakora/pakoda,True,True,False
+Fish pakora/pakoda,True,True,False
+Paneer cutlet,True,True,False
+Sago cutlet/vadas (Sabudana cutlet/vadas),True,True,False
+Poshtik cutlet,False,True,False
+Egg cutlet (Anda cutlet),True,True,False
+Minced meat cutlet,False,True,False
+Vegetable samosa,True,True,False
+Plain urad dal vada (Uzunne vada/Minapa garelu/Ulundu vadai/Medu vada),True,True,False
+Masala urad dal vada,True,True,False
+Khaman (dhokla),False,True,False
+Instant dhokla,False,True,False
+Tomato ginger chutney (Tamatar adarak ki chutney),False,True,False
+Mint tomato chutney (Pudinay aur tamatar ki chutney),False,True,False
+Coriander chutney (Hare dhaniye ki chutney),False,True,False
+Gooseberry chutney (Amla chutney),False,True,False
+Walnut chutney (Akhrot ki chutney),False,True,False
+Saunth/Sonth chutney with ginger,False,False,False
+Gun powder chutney,False,True,False
+Dessicated coconut chutney (Sookhe kase nariyal ki chutney) ,False,True,False
+Curd mint dip ,False,True,False
+Curd vegetable dip,False,True,False
+Mayonnaise vegetable dip,False,True,False
+Tomato and cucumber sandwich (Tamatar aur kheere ka sandwich),False,True,False
+Tomato sandwich (grilled),False,True,False
+French sandwich (toasted),False,True,False
+Peanut butter cucumber sandwich,False,True,False
+Mint and peanut sandwich,False,True,False
+Spicy chutney sandwich,False,True,False
+Chicken walnut sandwich (Chicken aur akhrot ke sandwich),False,True,False
+Rolled sandwich,False,True,False
+Ribbon sandwich,False,False,False
+Checker board sandwich,False,False,False
+Submarine sandwich,False,True,False
+Cheese open sandwich,False,False,False
+Sunset and sunrise open sandwich,False,True,False
+Danish luncheon sandwich,False,True,False
+Chicken and corn open sandwich,False,True,False
+Chocolate sponge cake,False,True,False
+Chocolate swiss roll,False,True,False
+Lemon curd filling,False,True,False
+Jam filling,False,False,False
+Chocolate pastry,False,True,False
+Assorted pastry,False,True,False
+Orange gateau,False,True,False
+Black forest gateau,False,True,False
+Lemon cake,False,True,False
+Dundee cake,False,True,False
+Victorian sandwich cake,False,True,False
+Chocolate eggless cake,False,True,False
+Orange eggless cake,False,True,False
+Chocolate glace icing,False,False,False
+Butter icing,False,False,False
+Chocolate butter icing,False,False,False
+Almond biscuit (Badam ke biscuit),False,True,False
+Orange biscuit,False,True,False
+Gingerman biscuit,False,True,False
+Coffee drops,False,True,False
+Christmas biscuit,False,True,False
+Christmas wreath biscuit,False,True,False
+Christmas bell biscuit,False,True,False
+Christmas star biscuit,False,True,False
+Christmas tree biscuit,False,True,False
+Chocolate cream shells,False,True,False
+Jelly biscuit,False,True,False
+Cherry and walnut cookies,False,True,False
+Cheese straws,False,True,False
+Butterfly biscuit,False,True,False
+Flan pastry,False,True,False
+Fruit flan,False,True,False
+Orange cream flan,False,True,False
+Fruit puree tart,False,True,False
+Apple banana pie,False,True,False
+Lemon chiffon pie,False,True,False
+Orange chiffon pie,False,True,False
+Cream buns,False,True,False
+Savoury puffs,False,True,False
+Choux swans,False,True,False
+Potato aigrettes,False,True,False
+Cream horns,False,True,False
+Savoury cheese horns,False,True,False
+Paneer patties,False,True,False
+Vegetable patties ,False,True,False
+Pearl millet infant food (Bajra shishu aahaar),False,True,False
+Sajina,False,True,False
+Cereal mix ,False,True,False
+Pulse mix,False,True,False
+Shishu ahar,False,True,False
+Cereal pulse mix with amylase rice flour,False,True,False
+Banana groundnut paste/puree,False,True,False
+Rice dal porridge (Chawal dal ki khichdi/khichri),False,True,False
+Lentils and semolina porridge (Dal suji porridge/daliya),False,True,False
+Spinach khichri (Palak khichri/khichdi),False,True,False
+Vegetable mix,False,True,False
+Lentils and wheat porridge (Dal wheat porridge/daliya ),False,False,False
+Maize porridge,False,True,False
+Spinach peanut burfi (Palak aur mungfali ki burfi),False,True,False
+Split bengal gram burfi/fudge (Channa dal burfi),False,False,False
+Chickpea flour cookies (Sweet besan rounds/cookies),False,True,False
+Pearl millet mathri (Bajra mathri),True,True,False
+Sesame biscuit (Til ke biscuit),False,True,False
+Fermented bengal gram vada (Khameerikrit/Ufna hua channa dal ka vada),True,True,False
+Poshtik namak paras,True,True,False
+Soya chikki,False,True,False
+Besan bathua chilla/cheela,False,True,False
+Wheat flour and nuts ladoos (Atta nuts ladoos),False,True,False
+Gram flour and semolina dhokla (Besan suji dhokla),False,True,False
+Atta dal burfi ,False,True,False
+Soya roti,False,True,False
+Poshtik khichdi/khichri,False,True,False
+Namkeen daliya,False,True,False
+Sprouts upma ,False,True,False
+Semolina idli (Suji/Rava idli),False,True,False
+Poshtik chilla/cheela,False,True,False
+Stuffed bittergourd (dry) (Bharwa karela),False,True,False
+Cauliflower potato canjee,False,True,False
+Creamed spinach,False,True,False
+Mango milkshake with ice cream (Aam milkshake ice cream ke saath),False,True,False
+Pineapple milkshake with ice cream (Ananas milkshake ice cream ke saath),False,False,False
+Orange milkshake with ice cream (Narangi milkshake ice cream ke saath),False,False,False
+Woodapple juice (Bel ka sharbat),False,True,False
+Sattu drink,False,False,False
+Apple and honey sorbet (Seb aur shehad ka sharbat),False,True,False
+Thandai,False,True,False
+Cucumber sharbat (Kheere ka sharbat),False,True,False
+Apple oats chia seed smoothie,False,True,False
+Nannari sharbat,False,False,False
+Semolina milk drink (Thari kanji),False,True,False
+Saffron milk (Kesariya doodh),False,False,False
+Black rice kheer (Chak-hao kheer),False,False,False
+Coconut kheer (Nariyal ki kheer),False,False,False
+Apple sago payasam (Seb aur sabudana ki kheer),False,True,False
+Kesari bath,False,True,False
+Putharekulu,False,False,False
+Mango malpua,False,True,False
+Mango vanilla custard,False,True,False
+Kiwi granola pudding,False,True,False
+Oats burfi,False,True,False
+Lotus seed halwa (Kamal gattay ka halwa),False,False,False
+Amaranth ladoo (Rajgira ladoo),False,True,False
+Chhena poda,False,True,False
+Sweet couscous dessert,False,True,False
+Sweetened yogurt (Shrikhand),False,False,False
+Thickened sweetened milk (Rabri),False,False,False
+Gram flour halwa (Besan halwa),False,True,False
+Prawn sandwich,False,True,False
+Watercress sandwich,False,True,False
+Fish sandwich ,False,True,False
+Kidney bean sandwich with cottage cheese,False,True,False
+Finger millet biscuit (Ragi biscuit),False,True,False
+Buttermilk biscuit,False,True,False
+Lemon cookies,False,True,False
+Sweet potato biscuit (Shakarkand ke biscuit),False,True,False
+Raspberry shortbread cookies,False,True,False
+Pumpkin cookies ,False,True,False
+Greenpea cookies,False,True,False
+Sunflower cookies,False,True,False
+Cardamom cookies (Elaichi cookies),False,True,False
+Hazelnut cookies,False,True,False
+Milk cookies,False,True,False
+Cranberry cookies,False,True,False
+Olive biscuit,False,True,False
+Tutti fruitti biscuit,False,True,False
+Peach blueberry preserves,False,True,False
+Pear preserves (Naashpati ka murabba),False,True,False
+Starfruit preserves ,False,True,False
+Gooseberry pickle (Amla ka achaar),False,True,False
+Lotus stem pickle (Kamal kakdi ka achar),False,False,False
+Date pickle (Khajoor ka achaar),False,True,False
+Garlic pickle (Lahasun ka achar),False,True,False
+Fermented bamboo shoot pickle (Mesu pickle),False,True,False
+Sweet peach pickle (Aadoo ka achaar),False,True,False
+Pickled mustard greens ,False,True,False
+Small onion pickle ,False,False,False
+Green tomato pickle (Haray tamatar ka achaar),False,True,False
+Pickled cabbage ,False,False,False
+Coconut pickle (Nariyal ka aachar),False,True,False
+Potato pickle (Aloo ka achaar),False,True,False
+Mango murabba candy,False,True,False
+Afghani chicken,False,True,False
+Fish orly,True,True,False
+Hariyali Fish Tikka,False,True,False
+Chicken manchurian,False,True,False
+Handi chicken,False,True,False
+Lemon chicken,False,True,False
+Lemon butter fish,False,True,False
+Baked eggs in tomato sauce,False,True,False
+Egg in a pepper,False,True,False
+Spinach mushroom scrambled egg (Palak mushroom bhurji),False,True,False
+Corn omelette/omlet,False,True,False
+Cajun chicken,False,True,False
+Paaner do pyaza,False,True,False
+Cabbage manchurian (Pattagobhi manchurian),False,True,False
+Gobi 65,False,True,False
+Paneer lababdar,False,True,False
+Roasted cauliflower steak,False,True,False
+Sauteed radishes with green beans,False,True,False
+Garlic chutney/Poondu chutney (Lahasun ki chutney),False,True,False
+Schezwan chutney,False,True,False
+Onion chutney (Pyaaz ki chutney/Vengaya chutney),False,True,False
+Dates chutney (Khajoor ki chutney),False,True,False
+Chicken salad,False,True,False
+Macaroni salad,False,True,False
+Cabbage raita (Pattagobhi raita),False,False,False
+Pomegranate raita (Anaar ka raita),False,True,False
+Onion raita (Pyaaz ka raita),False,True,False
+Green chilli raita (Hari mirch ka raita),False,True,False
+Kale salad,False,True,False
+Spinach and paneer souffle ,False,True,False
+Masala souffle ,False,True,False
+Chicken and cheese souffle,False,True,False
+Tamarind chutney (Chintapandu pachadi/Puli chutney),False,True,False
+Pav bhaji masala,False,True,False
+Green chutney,False,True,False
+Sago khitchdi/khichri (Sabudana khitchdi/khichri),False,True,False
+Gram flour chilla/cheela (Besan chilla/cheela),False,True,False
+Vegetable namkeen jave,False,True,False
+Khakhra,False,True,False
+Moong bean dosa (Pesarattu),False,True,False
+Methi thepla,False,True,False
+Rice puttu (Ari puttu),False,False,False
+Buckwheat pancake (Khura),False,True,False
+Quinoa khichdi/khichri,False,True,False
+Khakhra chaat,False,True,False
+Banana appam,False,False,False
+Veg manchurian,True,True,False
+Pav bhaji,False,True,False
+Rice murukku,True,True,False
+Bhel puri ,True,True,False
+Semolina dhokla (Suji/Rava dhokla),False,True,False
+Spicy corn chaat ,False,True,False
+Jackfruit fritters (Ponsa mulik/Kathal ka pakora),True,True,False
+Banana chips (Kele ke chips),True,False,False
+Wheat cake,False,True,False
+Mango cheesecake,False,True,False
+Carrot cake (Gajar ka cake),False,True,False
+Semolina cake (Suji/Rava cake),False,True,False
+Finger millet cake (Ragi cake),False,True,False
+Honey cake,False,True,False
+Almond cardamom cake (Badam elaichi cake),False,True,False
+Tutti frutti cake,False,True,False
+Ham and Bean soup,False,True,False
+Whey soup,False,False,False
+Bottle gourd soup (Ghiya/Lauki soup),False,True,False
+Baked potato soup,False,True,False
+Pumpkin soup,False,True,False
+Sweet corn soup,False,False,False
+Paneer soup,False,True,False
+Curried Cauliflower soup,False,True,False
+Millet soup,False,True,False
+Lemon coriander soup,False,True,False
+Garlic soup,False,True,False
+Dal makhani,False,True,False
+Dalma,False,True,False
+Split bengal gram dal (Channa dal),False,True,False
+Horsegram dal (Kulthi dal) ,False,True,False
+Panchmel dal,False,True,False
+Dal dhokli,False,True,False
+Gujarati handvo ,False,True,False
+Sev (Omapodi/Karapusa),True,False,False
+Papdi,True,True,False
+Jowar dosa,False,True,False
+Bread roll,False,True,False
+Soya seekh kebab,False,True,False
+Classic seasoned black beans,False,False,False
+Maa chaane ki dal,False,True,False
+Garlic chickpea soup (Lahasun aur chane ka shoraba),False,True,False
+"Milk, whole, Cow",False,True,False
+"Mango, green, raw (Mangifera indica)",False,True,False
+"Pineapple juice, unsweetened",False,False,False
+"Orange juice, freshly squeezed",False,False,False
+Pineapple (Ananas comosus),False,True,False
+"Fruit juice drink/squash, undiluted",False,False,False
+"Ice cream, dairy, vanilla, soft scoop",False,False,False
+"Nuts, coconut water (liquid from coconuts)",False,False,False
+"Banana, ripe, montham (Musa x paradisiaca)",False,True,False
+"Mango, ripe, banganapalli (Mangifera indica)",False,True,False
+Nutmeg (Myristica fragrans),False,True,False
+"Yogurt, whole milk, plain",False,False,False
+"Cheese, cottage, plain",False,False,False
+"Cucumber, green, elongate (Cucumis sativus)",False,True,False
+"Cheese, processed, plain",False,False,False
+"Tomato, ripe, hybrid (Solanum lycopersicum)",False,True,False
+Ground nut (Arachis hypogea),False,True,False
+Tomato ketchup,False,False,False
+"SIVA'S, AMHUR POWDER (DRY MANGO POWDER)",False,False,False
+Lettuce (Lactuca sativa),False,False,False
+"Apple, big (Malus domestica)",False,True,False
+"Raisins, dried, black (Vitis vinifera)",False,True,False
+"Carrot, orange (Daucus carota)",False,True,False
+"Cheese spread, cream cheese, regular",False,False,False
+"Tomato sauce, homemade",False,False,False
+Paneer,False,True,False
+"Onion, big (Allium cepa)",False,True,False
+"Wafers, plain ice cream wafers, not filled",False,False,False
+"Spring onions, bulbs and tops, raw",False,False,False
+"Breakfast cereal, crunchy clusters type, without nuts, unfortified",False,False,False
+"Coconut, kernel, fresh (Cocos nucifera)",False,False,False
+"MIXED NUTS CASHEWS, ALMONDS, HAZELNUTS, PISTACHIOS, PECANS, MIXED NUTS",True,False,False
+"Cream, fresh, single",False,False,False
+Cashew nut (Anacardium occidentale),True,True,False
+Almond (Prunus amygdalus),True,True,False
+Pistachio nuts (Pistacla vera),False,True,False
+"Cheese, Mozzarella, fresh",False,False,False
+"Bananas, raw, flesh only, weighed with skin",False,False,False
+"Coconut, kernal, dry (Cocos nucifera)",True,False,False
+"Jack fruit, ripe (Artocarpus heterophyllus)",False,True,False
+"Pumpkin, orange, round (Cucurbita maxima)",False,True,False
+"Oil, coconut",True,False,False
+Tomato puree,False,False,False
+Walnut (Juglans regia),True,True,False
+"Cream, fresh, whipping",False,False,False
+"Orange, pulp (Citrus aurantium)",False,True,False
+"Orange peel, raw",False,False,False
+"Fruit cocktail, canned in syrup, whole contents",False,False,False
+Cream of tartar,False,False,False
+DRIED MANGO,False,False,False
+"Milk, skimmed, dried, fortified",False,False,False
+Coconut milk,False,False,False
+"Onion, stalk (Allium cepa)",False,True,False
+"White sauce, savoury, made with whole milk, homemade",False,False,False
+"Tomatoes, cherry, raw",False,False,False
+"Dips, sour-cream based, assorted flavours",False,False,False
+"Peanuts, dry roasted",True,False,False
+"Cream, fluid, light (coffee cream or table cream)",False,True,False
+"Milk, evaporated, light",False,False,False
+"Peanut butter, smooth",True,False,False
+CREAMED CORN,False,False,False
+"Milk, condensed, whole, sweetened",False,False,False
+"Spring onions, bulbs only, raw",False,False,False
+Wood Apple (Limonia acidissima),False,True,False
+"Kiwi fruit, flesh only, raw",False,False,False
+"Apple juice, clear, ambient and chilled",False,False,False
+"Milk, buttermilk, fluid, whole",False,True,False
+"Cheese, Ricotta",False,False,False
+ALMOND MILK,False,False,False
+"ALMOND FLOUR, ALMOND",True,False,False
+"Hazelnuts, kernel only",True,False,False
+"Milk, dry, nonfat, regular, without added vitamin A and vitamin D",False,False,False
+Star fruit (Averrhoa carambola),False,True,False
+"Tomato, green (Solanum lycopersicum)",False,True,False
+"Spices, onion powder",False,False,False
+"Cheese, provolone",False,True,False
+"Cheese, Cheddar, English",False,False,False
+"Sour cream, regular",False,False,False
+"Cheese, Feta",False,False,False
+"Cheese, cream, low fat",False,True,False
+"Rice, raw (white, milled)",False,False,False
+"Rice, raw (parboiled)",False,False,False
+"Rice, raw (brown)",False,False,False
+"Rice flakes (poha), raw",False,False,False
+Puffed rice (murmura),False,False,False
+Wheat flour (atta),False,False,False
+"Wheat flour, refined (maida)",False,False,False
+Semolina (sooji/rava),False,False,False
+Broken wheat (dalia),False,False,False
+Vermicelli (sevai),False,False,False
+Bajra (pearl millet),False,False,False
+Jowar (sorghum),False,False,False
+Ragi (finger millet),False,False,False
+"Maize, dry",False,False,False
+Quinoa,False,False,False
+Barley (jau),False,False,False
+"Red gram dal (toor/arhar), raw",False,False,False
+"Green gram dal (moong), raw",False,False,False
+"Green gram, whole (moong), raw",False,False,False
+"Lentil dal (masoor), raw",False,False,False
+"Bengal gram dal (chana dal), raw",False,False,False
+"Bengal gram, whole (kala chana), raw",False,False,False
+"Black gram dal (urad), raw",False,False,False
+"Black gram, whole (urad), raw",False,False,False
+"Rajma (kidney beans), raw",False,False,False
+"Cowpea (lobia), raw",False,False,False
+"Peas, dry (matar)",False,False,False
+"Soya bean, raw",False,False,False
+"Moth bean (matki), raw",False,False,False
+Spinach (palak),False,False,False
+Fenugreek leaves (methi),False,False,False
+Amaranth leaves (chaulai),False,False,False
+Drumstick leaves (moringa),False,False,False
+Mustard leaves (sarson),False,False,False
+Bathua leaves,False,False,False
+Cabbage (patta gobhi),False,False,False
+Colocasia leaves (arbi ke patte),False,False,False
+Coriander leaves (dhania),False,False,False
+Curry leaves,False,False,False
+Cauliflower (phool gobhi),False,False,False
+Brinjal (baingan),False,False,False
+Okra (bhindi),False,False,False
+Bitter gourd (karela),False,False,False
+Bottle gourd (lauki),False,False,False
+Pumpkin (kaddu),False,False,False
+"Green peas, fresh (matar)",False,False,False
+French beans (fansi),False,False,False
+Ridge gourd (turai),False,False,False
+Cluster beans (gavar),False,False,False
+"Capsicum, green (shimla mirch)",False,False,False
+Cucumber (kheera),False,False,False
+Drumstick pods (sahjan),False,False,False
+Tinda,False,False,False
+Parwal (pointed gourd),False,False,False
+Tomato,False,False,False
+Onion (pyaz),False,False,False
+Garlic (lahsun),False,False,False
+Ginger (adrak),False,False,False
+Green chilli (hari mirch),False,False,False
+Beetroot (chukandar),False,False,False
+Carrot (gajar),False,False,False
+"Radish, white (mooli)",False,False,False
+Potato (aloo),False,False,False
+Sweet potato (shakarkand),False,False,False
+Colocasia (arbi),False,False,False
+"Yam, elephant foot (suran)",False,False,False
+Banana (kela),False,False,False
+"Mango, ripe (aam)",False,False,False
+Guava (amrud),False,False,False
+"Papaya, ripe (papita)",False,False,False
+Orange (santra),False,False,False
+Sweet lime (mosambi),False,False,False
+Pomegranate (anar),False,False,False
+Apple (seb),False,False,False
+Watermelon (tarbooz),False,False,False
+Grapes (angoor),False,False,False
+"Dates, dry (khajur)",False,False,False
+Raisins (kishmish),False,False,False
+Indian gooseberry (amla),False,False,False
+Lemon juice (nimbu),False,False,False
+Muskmelon (kharbuja),False,False,False
+Pineapple (ananas),False,False,False
+Sapota (chikoo),False,False,False
+Custard apple (sitaphal),False,False,False
+Fig (anjeer),False,False,False
+Pear (nashpati),False,False,False
+Tamarind pulp (imli),False,False,False
+Almond (badam),False,False,False
+Cashew nut (kaju),False,False,False
+Groundnut (moongfali),False,False,False
+"Sesame seeds, white (til)",False,False,False
+Flax seeds (alsi),False,False,False
+Sunflower seeds,False,False,False
+Walnut (akhrot),False,False,False
+Pistachio (pista),False,False,False
+"Coconut, fresh (nariyal)",False,False,False
+"Coconut, dry (khopra)",False,False,False
+Garden cress seeds (halim),False,False,False
+"Milk, cow",False,False,False
+"Milk, buffalo",False,False,False
+Khoa (mawa),False,False,False
+"Egg, whole, raw",False,False,False
+"Egg, whole, boiled",False,False,False
+Egg omelette,False,False,False
+"Chicken, skinless (leg/thigh/breast), raw",False,False,False
+"Chicken breast, skinless, raw",False,False,False
+"Mutton (goat), raw",False,False,False
+"Fish, rohu",False,False,False
+"Fish, catla",False,False,False
+"Fish, pomfret",False,False,False
+"Fish, Bombay duck (bombil)",False,False,False
+"Fish, sardine",False,False,False
+"Fish, tuna",False,False,False
+"Fish, salmon",False,False,False
+Prawns,False,False,False
+"Mushroom, button, fresh",False,False,False
+Jaggery (gur),False,False,False
+Sugarcane juice,False,False,False
+Coconut water,False,False,False
+Ghee,False,False,False
+Mustard oil,False,False,False
+Groundnut oil (cooking oil),False,False,False
+Sunflower oil,False,False,False
+Coconut oil,False,False,False
+Sugar (chini),False,False,False
+Honey (shahad),False,False,False
+"Tea, plain brewed (no milk/sugar)",False,False,False
+"Coffee, plain brewed (no milk/sugar)",False,False,False
+"Rice, cooked (white)",False,False,False
+"Rice, cooked (brown)",False,False,False
+"Roti / chapati (wheat, plain)",False,False,False
+Bajra roti (rotla),False,False,False
+Jowar roti (bhakri),False,False,False
+"Dal, cooked (toor/arhar, plain)",False,False,False
+"Dal, cooked (moong, plain)",False,False,False
+"Dal, cooked (masoor, plain)",False,False,False
+"Dal, cooked (chana dal, plain)",False,False,False
+"Dal, cooked (urad, plain)",False,False,False
+"Rajma, boiled (no gravy)",False,False,False
+"Chana / chole, boiled (no gravy)",False,False,False
+"Curd (dahi), whole milk",False,False,False
+"Buttermilk (chaas), diluted",False,False,False
+Chai (milk tea with sugar),False,False,False
+"Khichdi (rice + moong dal, with ghee)",False,False,False
+"Dal fry / dal tadka (toor, home style)",False,False,False
+"Sabzi, mixed vegetable (dry)",False,False,False
+Aloo sabzi (dry),False,False,False
+Palak paneer,False,False,False
+Chana masala (chole),False,False,False
+Rajma masala,False,False,False
+"Dosa, plain",False,False,False
+Poha (prepared),False,False,False
+Upma (sooji),False,False,False
+"Paratha, plain (wheat, with oil)",False,False,False
+"Thepla, methi",False,False,False
+Dhokla / khaman (chana dal based),False,False,False
+Kadhi (Gujarati style),False,False,False
+Curd rice,False,False,False
+Egg bhurji,False,False,False
+Paneer bhurji,False,False,False
+Fish curry (rohu),False,False,False
+Vegetable pulao,False,False,False

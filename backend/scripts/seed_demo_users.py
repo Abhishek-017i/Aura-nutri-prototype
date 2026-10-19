@@ -1,12 +1,3 @@
-
-"""Seed demo users with realistic 14-day meal histories.
-
-This script is for local demo/testing only. It is intentionally not wired into
-any production deploy step. Re-running it is safe: existing demo users are
-updated in place and their previous demo logs are replaced with a fresh 14-day
-window.
-"""
-
 from __future__ import annotations
 
 import os
@@ -18,15 +9,11 @@ from uuid import uuid4
 # Ensure imports resolve when running from scripts/.
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from sqlalchemy.orm import Session
+from firebase_admin import auth, firestore
+from google.cloud.firestore import Client
 
-from app.database import SessionLocal, engine
-from app.models import Food, MealLog, User
+from app.services.firebase_auth import _initialize
 from app.services.phase_engine import calculate_dynamic_rdas
-
-# ---------------------------------------------------------------------------
-# Demo user definitions
-# ---------------------------------------------------------------------------
 
 _DEMO_USERS: list[dict[str, object]] = [
     {"username": "krisha", "name": "Krisha", "age": 19, "gender": "female", "phase": "follicular"},
@@ -35,139 +22,57 @@ _DEMO_USERS: list[dict[str, object]] = [
     {"username": "garima", "name": "Garima", "age": 19, "gender": "female", "phase": "follicular"},
     {"username": "juhi", "name": "Juhi", "age": 56, "gender": "female", "phase": "menopause"},
     {"username": "priya", "name": "Priya", "age": 35, "gender": "female", "phase": "luteal"},
-    {"username": "sakshi", "name": "Sakhi", "age": 23, "gender": "female", "phase": "menstrual"},
+    {"username": "sakshi", "name": "Sakshi", "age": 23, "gender": "female", "phase": "menstrual"},
 ]
-
-# ---------------------------------------------------------------------------
-# Reference food catalog (name_en -> canonical DB row)
-# Loaded at runtime from the seeded foods table.
-# ---------------------------------------------------------------------------
-
-_FOOD_NAMES: list[str] = [
-    "Roti / chapati (wheat, plain)",
-    "Rice, cooked (white)",
-    "Red gram dal (toor/arhar), raw",
-    "Green gram dal (moong), raw",
-    "Lentil dal (masoor), raw",
-    "Bengal gram dal (chana dal), raw",
-    "Milk, cow",
-    "Curd (dahi), whole milk",
-    "Paneer",
-    "Palak paneer",
-    "Egg, whole, boiled",
-    "Spinach (palak)",
-    "Fish, rohu",
-    "Fish, sardine",
-    "Chicken curry",
-    "Rajma, boiled (no gravy)",
-    "Chana / chole, boiled (no gravy)",
-    "Banana (kela)",
-    "Orange (santra)",
-    "Indian gooseberry (amla)",
-    "Rice flakes (poha), raw",
-    "Ragi (finger millet)",
-    "Bajra roti (rotla)",
-    "Sesame seeds, white (til)",
-    "Jaggery (gur)",
-    "Almond (badam)",
-]
-
-# ---------------------------------------------------------------------------
-# 14-day meal plans per user.
-# Each tuple is (food_name, qty_g). Quantities are deliberately varied so some
-# days show good nutrient coverage and others show gaps.
-# ---------------------------------------------------------------------------
 
 _PLAN_A = [
-    # Strong iron/calcium day.
     [("Roti / chapati (wheat, plain)", 80), ("Red gram dal (toor/arhar), raw", 80), ("Spinach (palak)", 100), ("Sesame seeds, white (til)", 15), ("Curd (dahi), whole milk", 100)],
-    # Good non-veg day for B12 and D.
     [("Rice, cooked (white)", 150), ("Fish, sardine", 100), ("Milk, cow", 250)],
-    # Light day.
     [("Rice flakes (poha), raw", 60), ("Banana (kela)", 100)],
-    # Vegetarian iron focus.
     [("Bajra roti (rotla)", 120), ("Lentil dal (masoor), raw", 80), ("Spinach (palak)", 100), ("Jaggery (gur)", 20)],
-    # Mixed day.
     [("Roti / chapati (wheat, plain)", 80), ("Chicken curry", 150), ("Curd (dahi), whole milk", 150), ("Orange (santra)", 150)],
-    # Calcium focus.
     [("Rice, cooked (white)", 150), ("Paneer", 100), ("Milk, cow", 250), ("Sesame seeds, white (til)", 10)],
-    # Gap day.
     [],
-    # Iron + protein.
     [("Roti / chapati (wheat, plain)", 100), ("Rajma, boiled (no gravy)", 150), ("Spinach (palak)", 100), ("Jaggery (gur)", 20)],
-    # Egg day.
     [("Roti / chapati (wheat, plain)", 80), ("Egg, whole, boiled", 100), ("Milk, cow", 250)],
-    # Light day.
     [("Rice flakes (poha), raw", 60), ("Curd (dahi), whole milk", 100)],
-    # Strong mixed day.
     [("Rice, cooked (white)", 150), ("Fish, rohu", 150), ("Palak paneer", 150)],
-    # Vegetarian.
     [("Roti / chapati (wheat, plain)", 80), ("Chana / chole, boiled (no gravy)", 150), ("Milk, cow", 250), ("Almond (badam)", 20)],
-    # Ragi iron/calcium.
     [("Ragi (finger millet)", 80), ("Curd (dahi), whole milk", 150), ("Spinach (palak)", 100)],
-    # Snack-like light day.
     [("Banana (kela)", 100), ("Milk, cow", 200)],
 ]
 
 _PLAN_B = [
-    # Balanced start.
     [("Roti / chapati (wheat, plain)", 80), ("Green gram dal (moong), raw", 80), ("Paneer", 80), ("Milk, cow", 250)],
-    # Good B12/D day.
     [("Rice, cooked (white)", 150), ("Fish, sardine", 100), ("Curd (dahi), whole milk", 150)],
-    # Light.
     [("Rice flakes (poha), raw", 60), ("Orange (santra)", 100)],
-    # Egg + greens.
     [("Roti / chapati (wheat, plain)", 80), ("Egg, whole, boiled", 100), ("Spinach (palak)", 100)],
-    # Generous non-veg.
     [("Rice, cooked (white)", 200), ("Chicken curry", 150), ("Milk, cow", 250)],
-    # Gap day.
     [],
-    # Vegetarian calcium day.
     [("Roti / chapati (wheat, plain)", 80), ("Palak paneer", 150), ("Sesame seeds, white (til)", 15), ("Curd (dahi), whole milk", 150)],
-    # Lentils + greens.
     [("Bajra roti (rotla)", 100), ("Lentil dal (masoor), raw", 80), ("Spinach (palak)", 100), ("Jaggery (gur)", 20)],
-    # Light.
     [("Rice flakes (poha), raw", 60), ("Banana (kela)", 100)],
-    # Rajma rice.
     [("Rice, cooked (white)", 150), ("Rajma, boiled (no gravy)", 150), ("Curd (dahi), whole milk", 150)],
-    # Egg + dairy.
     [("Roti / chapati (wheat, plain)", 80), ("Egg, whole, boiled", 100), ("Milk, cow", 250)],
-    # Chana.
     [("Roti / chapati (wheat, plain)", 100), ("Chana / chole, boiled (no gravy)", 150), ("Curd (dahi), whole milk", 150)],
-    # Calcium.
     [("Ragi (finger millet)", 80), ("Paneer", 80), ("Milk, cow", 250)],
-    # Light.
     [("Rice flakes (poha), raw", 60), ("Milk, cow", 200)],
 ]
 
 _PLAN_C = [
-    # Calcium-heavy day.
     [("Roti / chapati (wheat, plain)", 80), ("Milk, cow", 250), ("Paneer", 100), ("Sesame seeds, white (til)", 15)],
-    # Greens + dairy.
     [("Rice, cooked (white)", 150), ("Palak paneer", 150), ("Curd (dahi), whole milk", 150)],
-    # Light.
     [("Rice flakes (poha), raw", 60), ("Banana (kela)", 100)],
-    # Egg day for D/B12.
     [("Roti / chapati (wheat, plain)", 80), ("Egg, whole, boiled", 100), ("Milk, cow", 250)],
-    # Calcium focus.
     [("Ragi (finger millet)", 80), ("Curd (dahi), whole milk", 150), ("Almond (badam)", 20)],
-    # Fish day.
     [("Rice, cooked (white)", 150), ("Fish, rohu", 150), ("Milk, cow", 250)],
-    # Gap day.
     [],
-    # Dairy + greens.
     [("Roti / chapati (wheat, plain)", 80), ("Paneer", 100), ("Spinach (palak)", 100), ("Milk, cow", 250)],
-    # Light.
     [("Rice flakes (poha), raw", 60), ("Curd (dahi), whole milk", 100)],
-    # Mixed.
     [("Roti / chapati (wheat, plain)", 80), ("Chicken curry", 100), ("Milk, cow", 250)],
-    # Legumes + dairy.
     [("Rice, cooked (white)", 150), ("Rajma, boiled (no gravy)", 150), ("Curd (dahi), whole milk", 150)],
-    # Fruit + dairy.
     [("Orange (santra)", 150), ("Milk, cow", 250)],
-    # Chana.
     [("Roti / chapati (wheat, plain)", 100), ("Chana / chole, boiled (no gravy)", 150), ("Sesame seeds, white (til)", 10)],
-    # Lentil + paneer.
     [("Rice, cooked (white)", 150), ("Lentil dal (masoor), raw", 80), ("Paneer", 80)],
 ]
 
@@ -182,131 +87,162 @@ _MEAL_PLANS: dict[str, list[list[tuple[str, float]]]] = {
 }
 
 
-def _load_foods(db: Session) -> dict[str, Food]:
-    """Return a mapping from English food name to Food row."""
-    rows = db.query(Food).filter(Food.name_en.in_(_FOOD_NAMES)).all()
-    by_name = {row.name_en: row for row in rows}
-    missing = set(_FOOD_NAMES) - set(by_name)
-    if missing:
-        raise RuntimeError(f"Demo foods missing from DB: {sorted(missing)}")
+def _load_foods_map(db: Client) -> dict[str, dict[str, object]]:
+    foods_docs = list(db.collection("foods").stream())
+    by_name: dict[str, dict[str, object]] = {}
+    for d in foods_docs:
+        data = d.to_dict() or {}
+        data["id"] = d.id
+        name_en = str(data.get("name_en", "")).strip().lower()
+        by_name[name_en] = data
     return by_name
 
 
-def _ensure_user(db: Session, demo: dict[str, object]) -> User:
-    """Create or update a demo user and apply phase-based targets."""
-    username = str(demo["username"])
-    user = db.query(User).filter(User.username == username).first()
-    if user is None:
-        user = User(
-            id=str(uuid4()),
-            username=username,
-            name=str(demo["name"]),
-            age=int(demo["age"]),  # type: ignore[arg-type]
-            gender=str(demo["gender"]),
-            phase=str(demo["phase"]),
-        )
-        db.add(user)
-    else:
-        user.name = str(demo["name"])
-        user.age = int(demo["age"])  # type: ignore[arg-type]
-        user.gender = str(demo["gender"])
-        user.phase = str(demo["phase"])
-
-    targets = calculate_dynamic_rdas(
-        base_age=user.age or 30,
-        base_gender=user.gender or "female",
-        phase=user.phase or "follicular",
-    )
-    user.target_iron_mg = targets.target_iron_mg
-    user.target_calcium_mg = targets.target_calcium_mg
-    user.target_vit_d_iu = targets.target_vit_d_mcg * 40.0
-    user.target_b12_mcg = targets.target_b12_mcg
-
-    db.commit()
-    db.refresh(user)
-    return user
+def _find_food(foods: dict[str, dict[str, object]], query: str) -> dict[str, object] | None:
+    q = query.strip().lower()
+    if q in foods:
+        return foods[q]
+    for name, data in foods.items():
+        if q in name or name in q:
+            return data
+    return None
 
 
-def _clear_demo_logs(db: Session, user: User) -> None:
-    """Delete previous demo meal logs for this user so re-runs never duplicate."""
-    db.query(MealLog).filter(MealLog.user_id == user.id).delete(synchronize_session=False)
-    db.commit()
+def _ensure_auth_user(email: str) -> str:
+    try:
+        user = auth.get_user_by_email(email)
+        return str(user.uid)
+    except Exception:
+        user = auth.create_user(email=email, password="test123password")
+        return str(user.uid)
 
 
-def _create_logs_for_user(
-    db: Session,
-    user: User,
-    foods: dict[str, Food],
-    meal_plan: list[list[tuple[str, float]]],
-) -> int:
-    """Create 10 days of backdated logs and return the count created."""
-    logs_created = 0
-    start_date = date(2026, 9, 24)
+def _clear_subcollection(db: Client, user_ref: Any) -> None:
+    logs_col = user_ref.collection("meal_logs")
+    while True:
+        docs = list(logs_col.limit(500).stream())
+        if not docs:
+            break
+        batch = db.batch()
+        for d in docs:
+            batch.delete(d.reference)
+        batch.commit()
 
-    # Base times for up to 5 meals: Breakfast, Lunch, Snack, Dinner, Late Snack
+
+def seed() -> None:
+    app = _initialize()
+    db: Client = firestore.client(app)
+    foods_map = _load_foods_map(db)
+
+    total_logs_all = 0
+    start_date = date.today() - timedelta(days=9)
+
     base_times = [
         time(8, 30, 0),
         time(13, 0, 0),
         time(17, 0, 0),
         time(20, 0, 0),
-        time(22, 0, 0)
+        time(22, 0, 0),
     ]
 
-    for day_offset, meals in enumerate(meal_plan[:10]):
-        day = start_date + timedelta(days=day_offset)
-        for meal_index, (food_name, qty_g) in enumerate(meals):
-            food = foods[food_name]
-            ratio = qty_g / 100.0
-            
-            # Map index to a base time, fallback to 12:00 if index > 4
-            m_time = base_times[meal_index] if meal_index < len(base_times) else time(12, 0, 0)
-            base_dt = datetime.combine(day, m_time, tzinfo=timezone.utc)
-            
-            # Add random jitter between -15 to 30 minutes
-            jitter = timedelta(minutes=random.randint(-15, 30))
-            logged_at = base_dt + jitter
-            
-            log = MealLog(
-                id=str(uuid4()),
-                user_id=user.id,
-                food_id=food.id,
-                food_name=food.name_en,
-                logged_at=logged_at,
-                meal_type="demo",
-                qty_g=qty_g,
-                energy_kcal=round(food.energy_kcal * ratio, 2),
-                protein_g=round(food.protein_g * ratio, 2),
-                iron_mg=round(food.iron_mg * ratio, 2),
-                calcium_mg=round(food.calcium_mg * ratio, 2),
-                vit_d_iu=round(food.vit_d_iu * ratio, 2),
-                b12_mcg=round(food.b12_mcg * ratio, 2),
-                notes="Seeded by scripts/seed_demo_users.py",
-            )
-            db.add(log)
-            logs_created += 1
+    for demo in _DEMO_USERS:
+        username = str(demo["username"])
+        name = str(demo["name"])
+        age = int(demo["age"])  # type: ignore[arg-type]
+        gender = str(demo["gender"])
+        phase = str(demo["phase"])
+        email = f"{username}@auranutri.demo"
 
-    db.commit()
-    return logs_created
+        uid = _ensure_auth_user(email)
+        user_ref = db.collection("users").document(uid)
 
+        rdas = calculate_dynamic_rdas(base_age=age, base_gender=gender, phase=phase)
+        now_iso = datetime.now(timezone.utc).isoformat()
 
-def seed() -> None:
-    """Main entry point: create demo users and backdated meal logs."""
-    # Ensure tables exist in case this runs against a fresh clone.
-    from app.database import Base
+        user_doc = {
+            "id": uid,
+            "username": username,
+            "name": name,
+            "email": email,
+            "age": age,
+            "gender": gender,
+            "phase": phase,
+            "target_iron_mg": rdas.target_iron_mg,
+            "target_calcium_mg": rdas.target_calcium_mg,
+            "target_vit_d_iu": round(rdas.target_vit_d_mcg * 40.0, 2),
+            "target_b12_mcg": rdas.target_b12_mcg,
+            "current_streak": 5,
+            "longest_streak": 10,
+            "last_log_date": (date.today()).isoformat(),
+            "cheat_charms_available": 1,
+            "cheat_charms_used_this_week": 0,
+            "cheat_day_used_at": None,
+            "phase_adjusted_at": now_iso,
+            "walkthrough_completed": False,
+            "created_at": now_iso,
+            "updated_at": now_iso,
+        }
+        user_ref.set(user_doc)
+        _clear_subcollection(db, user_ref)
 
-    Base.metadata.create_all(bind=engine)
+        plan = _MEAL_PLANS.get(username, _PLAN_A)
+        user_logs = 0
+        batch = db.batch()
+        batch_count = 0
 
-    db = SessionLocal()
-    try:
-        foods = _load_foods(db)
-        for demo in _DEMO_USERS:
-            user = _ensure_user(db, demo)
-            _clear_demo_logs(db, user)
-            meal_plan = _MEAL_PLANS[str(demo["username"])]
-            count = _create_logs_for_user(db, user, foods, meal_plan)
-            print(f"Seeded {count} logs for {user.username} ({user.name}, phase={user.phase}, age={user.age})")
-    finally:
-        db.close()
+        for day_offset, meals in enumerate(plan[:10]):
+            day = start_date + timedelta(days=day_offset)
+            for meal_idx, (food_name, qty_g) in enumerate(meals):
+                food_data = _find_food(foods_map, food_name)
+                ratio = qty_g / 100.0
+
+                energy = round(float(food_data.get("energy_kcal", 0.0)) * ratio, 2) if food_data else 0.0
+                protein = round(float(food_data.get("protein_g", 0.0)) * ratio, 2) if food_data else 0.0
+                iron = round(float(food_data.get("iron_mg", 0.0)) * ratio, 2) if food_data else 0.0
+                calcium = round(float(food_data.get("calcium_mg", 0.0)) * ratio, 2) if food_data else 0.0
+                vit_d = round(float(food_data.get("vit_d_iu", 0.0)) * ratio, 2) if food_data else 0.0
+                b12 = round(float(food_data.get("b12_mcg", 0.0)) * ratio, 2) if food_data else 0.0
+
+                m_time = base_times[meal_idx] if meal_idx < len(base_times) else time(12, 0, 0)
+                base_dt = datetime.combine(day, m_time, tzinfo=timezone.utc)
+                jitter = timedelta(minutes=random.randint(-15, 30))
+                logged_at = (base_dt + jitter).isoformat()
+
+                log_id = str(uuid4())
+                log_ref = user_ref.collection("meal_logs").document(log_id)
+                log_data = {
+                    "id": log_id,
+                    "user_id": uid,
+                    "food_id": str(food_data.get("id")) if food_data else None,
+                    "food_name": str(food_data.get("name_en")) if food_data else food_name,
+                    "logged_at": logged_at,
+                    "meal_type": "demo",
+                    "qty_g": qty_g,
+                    "energy_kcal": energy,
+                    "protein_g": protein,
+                    "iron_mg": iron,
+                    "calcium_mg": calcium,
+                    "vit_d_iu": vit_d,
+                    "b12_mcg": b12,
+                    "notes": "Seeded by scripts/seed_demo_users.py",
+                    "created_at": logged_at,
+                }
+                batch.set(log_ref, log_data)
+                batch_count += 1
+                user_logs += 1
+
+                if batch_count == 400:
+                    batch.commit()
+                    batch = db.batch()
+                    batch_count = 0
+
+        if batch_count > 0:
+            batch.commit()
+
+        total_logs_all += user_logs
+        print(f"Seeded {user_logs} logs for {username} ({name}, uid={uid}, phase={phase}, age={age})")
+
+    print(f"Seeded {len(_DEMO_USERS)} demo users with {total_logs_all} meal logs total.")
 
 
 if __name__ == "__main__":

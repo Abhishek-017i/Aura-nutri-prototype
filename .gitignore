@@ -13,8 +13,19 @@ backend/*.db
 # Frontend
 frontend/node_modules/
 frontend/dist/
+# Frontend env (secrets)
+frontend/.env.local
+frontend/.env.*.local
 
 # OS/Editor
 .DS_Store
 .idea/
 *.pyc
+
+# Firebase / service accounts
+backend/firebase-service-account.json
+
+# Python
+backend/.mypy_cache/
+backend/.ruff_cache/
+backend/.pytest_cache/

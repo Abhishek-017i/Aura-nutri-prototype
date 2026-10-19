@@ -1,4 +1,5 @@
-"""14-day rolling micronutrient risk scorer.
+"""Deprecated: migrated to Firestore in 4.0.4.
+14-day rolling micronutrient risk scorer.
 
 Deterministic, explainable scoring: compare the user's average daily intake
 over the last 14 days against phase-adjusted RDAs and classify each nutrient

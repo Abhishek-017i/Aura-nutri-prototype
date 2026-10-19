@@ -1,144 +1,101 @@
-import structlog
-from fastapi import APIRouter, Depends, status
-from sqlalchemy.orm import Session
+from datetime import datetime, timezone
+from typing import Any
 
-from app.database import get_db
+import structlog
+from fastapi import APIRouter, Request, status
+from pydantic import BaseModel, Field
+
 from app.errors import AppError
-from app.models import User
-from app.schemas import LoginIn, LoginOut, UserCreate, UserRead, UserUpdate
-from app.services.phase_engine import calculate_dynamic_rdas
+from app.services.firestore_client import get_firestore_client
+from app.services.phase_engine import Phase, calculate_dynamic_rdas
 
 logger = structlog.get_logger()
 router = APIRouter(prefix="/api/users", tags=["users"])
 
 
-# This is a mock password shared by every user in the prototype. It is
-# intentionally not hashed because real authentication (Firebase phone OTP)
-# is explicitly out of scope for Round 2. Do not copy this pattern to
-# production.
-_MOCK_PASSWORD = "test123"
+class CompleteSignupIn(BaseModel):
+    name: str = Field(..., min_length=1, max_length=255)
+    age: int = Field(..., ge=1, le=120)
+    phase: str = Field(..., min_length=1, max_length=50)
 
 
-@router.post("/login", response_model=LoginOut)
-async def login(payload: LoginIn, db: Session = Depends(get_db)) -> LoginOut:
-    """Mock login.
+@router.post("/complete-signup", status_code=status.HTTP_201_CREATED)
+async def complete_signup(payload: CompleteSignupIn, request: Request) -> dict[str, Any]:
+    uid: str = request.state.uid
+    email: str | None = getattr(request.state, "email", None)
+    db = get_firestore_client()
 
-    Accepts any username. If the username has not been seen before, creates
-    the user with name = username and phase unset. The password is a hardcoded
-    prototype constant; on mismatch we return 401 so the frontend can show a
-    clear "wrong password" message.
-    """
-    # Hardcoded prototype password check. Not real auth. Validate credentials
-    # before touching the database so a wrong password does not create a user.
-    if payload.password != _MOCK_PASSWORD:
-        raise AppError("invalid_credentials", "Incorrect username or password", status=401)
-
-    user = db.query(User).filter(User.username == payload.username).first()
-    if user is None:
-        user = User(
-            username=payload.username,
-            name=payload.username,
-            phase=None,
-        )
-        db.add(user)
-        db.commit()
-        db.refresh(user)
-        logger.info("user_created_on_login", user_id=user.id, username=user.username)
-
-    logger.info("user_logged_in", user_id=user.id, username=user.username)
-    return LoginOut(
-        user_id=user.id,
-        username=user.username,
-        name=user.name,
-        phase=user.phase,
-        token=user.id,
-    )
-
-
-@router.post("", response_model=UserRead, status_code=status.HTTP_201_CREATED)
-async def create_user(payload: UserCreate, db: Session = Depends(get_db)) -> User:
-    user = User(**payload.model_dump())
-    db.add(user)
-    db.commit()
-    db.refresh(user)
-    logger.info("user_created", user_id=user.id)
-    return user
-
-
-@router.get("/{user_id}", response_model=UserRead)
-async def get_user(user_id: str, db: Session = Depends(get_db)) -> User:
-    user = db.query(User).filter(User.id == user_id).first()
-    if user is None:
-        user = User(id=user_id, username=f"recovered_{user_id[:8]}", name="Recovered User", phase=None)
-        db.add(user)
-        db.commit()
-        db.refresh(user)
-    return user
-
-
-def _apply_phase_targets_from_age(user: User) -> None:
-    """Recalculate targets when age changes while a phase is already set."""
-    if not user.phase:
-        return
     try:
-        targets = calculate_dynamic_rdas(
-            base_age=user.age or 30,
-            base_gender=user.gender or "female",
-            phase=user.phase,
-        )
-    except ValueError:
-        return
-    user.target_iron_mg = targets.target_iron_mg
-    user.target_calcium_mg = targets.target_calcium_mg
-    user.target_vit_d_iu = targets.target_vit_d_mcg * 40.0
-    user.target_b12_mcg = targets.target_b12_mcg
+        Phase(payload.phase)
+    except ValueError as exc:
+        raise AppError("invalid_phase", f"Unknown phase: {payload.phase}", status=422) from exc
+
+    rdas = calculate_dynamic_rdas(payload.age, "female", payload.phase)
+    now = datetime.now(timezone.utc).isoformat()
+
+    user_data: dict[str, Any] = {
+        "id": uid,
+        "name": payload.name,
+        "email": email or "",
+        "age": payload.age,
+        "gender": "female",
+        "phase": payload.phase,
+        "target_iron_mg": rdas.target_iron_mg,
+        "target_calcium_mg": rdas.target_calcium_mg,
+        "target_vit_d_iu": round(rdas.target_vit_d_mcg * 40.0, 2),
+        "target_b12_mcg": rdas.target_b12_mcg,
+        "current_streak": 0,
+        "longest_streak": 0,
+        "last_log_date": None,
+        "cheat_charms_available": 1,
+        "cheat_charms_used_this_week": 0,
+        "cheat_day_used_at": None,
+        "phase_adjusted_at": now,
+        "walkthrough_completed": False,
+        "created_at": now,
+        "updated_at": now,
+    }
+
+    db.collection("users").document(uid).set(user_data)
+    logger.info("user_complete_signup_created", uid=uid, name=payload.name, phase=payload.phase)
+    return user_data
 
 
-@router.put("/{user_id}", response_model=UserRead)
-async def update_user(
-    user_id: str, payload: UserUpdate, db: Session = Depends(get_db)
-) -> User:
-    user = db.query(User).filter(User.id == user_id).first()
-    if user is None:
-        user = User(id=user_id, username=f"recovered_{user_id[:8]}", name="Recovered User", phase=None)
-        db.add(user)
-        db.commit()
-        db.refresh(user)
-
-    data = payload.model_dump(exclude_unset=True)
-
-    if "username" in data and data["username"] != user.username:
-        existing = (
-            db.query(User).filter(User.username == data["username"]).first()
-        )
-        if existing is not None:
-            raise AppError(
-                "username_taken",
-                "This username is already taken. Please choose another one.",
-                status=409,
-            )
-
-    age_changed = "age" in data and data["age"] != user.age
-    for field, value in data.items():
-        setattr(user, field, value)
-
-    if age_changed:
-        _apply_phase_targets_from_age(user)
-
-    db.commit()
-    db.refresh(user)
-    logger.info("user_updated", user_id=user_id, fields=list(data.keys()))
-    return user
+@router.get("/profile")
+async def get_current_user_profile(request: Request) -> dict[str, Any]:
+    uid: str = request.state.uid
+    db = get_firestore_client()
+    doc_snap = db.collection("users").document(uid).get()
+    if not doc_snap.exists:
+        raise AppError("user_not_found", "Profile not found. Complete signup first.", status=404)
+    data = doc_snap.to_dict() or {}
+    data["id"] = uid
+    return data
 
 
-@router.delete("/{user_id}", status_code=status.HTTP_204_NO_CONTENT)
-async def delete_user(user_id: str, db: Session = Depends(get_db)) -> None:
-    user = db.query(User).filter(User.id == user_id).first()
-    if user is None:
-        user = User(id=user_id, username=f"recovered_{user_id[:8]}", name="Recovered User", phase=None)
-        db.add(user)
-        db.commit()
-        db.refresh(user)
-    db.delete(user)
-    db.commit()
-    logger.info("user_deleted", user_id=user_id)
+@router.get("/{user_id}")
+async def get_user_by_id(user_id: str, request: Request) -> dict[str, Any]:
+    db = get_firestore_client()
+    doc_snap = db.collection("users").document(user_id).get()
+    if not doc_snap.exists:
+        raise AppError("user_not_found", "Profile not found. Complete signup first.", status=404)
+    data = doc_snap.to_dict() or {}
+    data["id"] = user_id
+    return data
+
+
+@router.put("/{user_id}")
+async def update_user(user_id: str, payload: dict[str, Any], request: Request) -> dict[str, Any]:
+    db = get_firestore_client()
+    doc_ref = db.collection("users").document(user_id)
+    doc_snap = doc_ref.get()
+    if not doc_snap.exists:
+        raise AppError("user_not_found", "Profile not found. Complete signup first.", status=404)
+
+    user_data = doc_snap.to_dict() or {}
+    now = datetime.now(timezone.utc).isoformat()
+    payload["updated_at"] = now
+    user_data.update(payload)
+    doc_ref.set(user_data)
+    user_data["id"] = user_id
+    return user_data

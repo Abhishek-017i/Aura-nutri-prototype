@@ -1,12 +1,13 @@
-"""Groq client wrapper with token-bucket rate limiting.
+"""Groq client wrapper with multi-key rotation and token-bucket rate limiting.
 
 All production Groq calls (STT, parsing, chat) should go through this module so
-that free-tier quotas are not exhausted during the demo.
+that free-tier quotas are rotated and handled gracefully.
 """
 
 import asyncio
-from typing import Any
+from typing import Any, Callable, TypeVar
 
+import groq
 import httpx
 import structlog
 from groq import Groq
@@ -14,9 +15,11 @@ from groq import Groq
 from app.config import settings
 from app.errors import AppError
 from app.schemas.parse import LlmParsedMeal
-from app.services.rate_limiter import groq_bucket
+from app.services.rate_limiter import KeyedRateLimiter
 
 logger = structlog.get_logger()
+
+T = TypeVar("T")
 
 _CHAT_SYSTEM_PROMPT = (
     "You are AURA-Nutri, a calm Indian nutrition assistant. "
@@ -52,23 +55,83 @@ _PARSE_RETRY_PROMPT = (
 # with httpx >= 0.28 because it passes the deprecated ``proxies`` argument.
 _HTTP_CLIENT = httpx.Client(timeout=60.0)
 
+_clients: dict[str, Groq] = {}
+_limiter: KeyedRateLimiter | None = None
 
-def _get_client() -> Groq:
-    if not settings.groq_api_key:
-        raise AppError(
-            "groq_key_missing",
-            "Groq API key is not configured.",
-            status=503,
-        )
-    try:
-        return Groq(api_key=settings.groq_api_key, http_client=_HTTP_CLIENT)
-    except TypeError as exc:
-        logger.error("groq_client_init_failed", error=str(exc))
-        raise AppError(
-            "groq_client_init_failed",
-            "Groq client could not be initialised.",
-            status=503,
-        ) from exc
+
+def _init_clients() -> None:
+    global _clients, _limiter
+    keys = settings.groq_api_keys
+    if not keys:
+        raise RuntimeError("No Groq API keys configured")
+    _clients = {
+        k: Groq(api_key=k, http_client=_HTTP_CLIENT)
+        for k in keys
+    }
+    _limiter = KeyedRateLimiter(
+        keys=keys,
+        capacity=settings.groq_rate_limit_rpm,
+        refill_per_minute=float(settings.groq_rate_limit_rpm),
+    )
+
+
+def get_limiter() -> KeyedRateLimiter:
+    global _limiter
+    if _limiter is None:
+        _init_clients()
+    if _limiter is None:
+        raise RuntimeError("No Groq API keys configured")
+    return _limiter
+
+
+def _execute_with_rotation(fn: Callable[[Groq], T], max_attempts: int | None = None) -> T:
+    global _clients, _limiter
+    if not _clients or _limiter is None:
+        try:
+            _init_clients()
+        except Exception as exc:
+            logger.error("groq_init_failed", error=str(exc))
+            raise AppError(
+                "groq_key_missing",
+                "Groq API key is not configured.",
+                status=503,
+            ) from exc
+
+    assert _limiter is not None
+    attempts_limit = min(max_attempts or len(_clients) * 2, 6)
+
+    for attempt in range(attempts_limit):
+        key = _limiter.acquire()
+        if key is None:
+            raise AppError(
+                code="groq_exhausted",
+                message="All Groq keys are rate-limited. Please retry in a minute.",
+                status=429,
+            )
+
+        client = _clients[key]
+        try:
+            res = fn(client)
+            _limiter.mark_success(key)
+            return res
+        except groq.RateLimitError as exc:
+            logger.warning("groq_rate_limit_hit", key_index=settings.groq_api_keys.index(key) if key in settings.groq_api_keys else -1)
+            _limiter.mark_failed(key, 60.0)
+            continue
+        except groq.APIStatusError as exc:
+            if exc.status_code == 401 or exc.status_code >= 500:
+                logger.warning("groq_api_error_failing_key", status=exc.status_code, key_index=settings.groq_api_keys.index(key) if key in settings.groq_api_keys else -1)
+                _limiter.mark_failed(key, 30.0)
+                continue
+            raise
+        except Exception:
+            raise
+
+    raise AppError(
+        code="groq_exhausted",
+        message="All Groq keys failed or rate-limited. Please retry in a minute.",
+        status=429,
+    )
 
 
 def _validate_chat_output(content: str) -> str:
@@ -79,21 +142,6 @@ def _validate_chat_output(content: str) -> str:
     if not stripped:
         raise AppError("groq_empty_response", "Chat model returned an empty response", status=502)
     return stripped
-
-
-def _chat_sync(
-    client: Groq,
-    messages: Any,
-    model: str,
-    max_tokens: int,
-    temperature: float,
-) -> Any:
-    return client.chat.completions.create(
-        model=model,
-        messages=messages,
-        max_tokens=max_tokens,
-        temperature=temperature,
-    )
 
 
 def _strip_json_markdown(content: str) -> str:
@@ -110,11 +158,7 @@ def _strip_json_markdown(content: str) -> str:
 
 
 def _parse_json_items(content: str) -> list[dict[str, Any]]:
-    """Validate and extract items from an LLM parse response.
-
-    Returns the items list if the response matches the expected schema, or
-    raises :class:`AppError` otherwise.
-    """
+    """Validate and extract items from an LLM parse response."""
     raw = _strip_json_markdown(content)
     try:
         parsed = LlmParsedMeal.model_validate_json(raw)
@@ -136,71 +180,32 @@ def _parse_json_items(content: str) -> list[dict[str, Any]]:
     return items
 
 
-def _parse_sync(
-    client: Groq,
-    messages: Any,
-    model: str,
-    max_tokens: int,
-    temperature: float,
-) -> Any:
-    return client.chat.completions.create(
-        model=model,
-        messages=messages,
-        max_tokens=max_tokens,
-        temperature=temperature,
-        response_format={"type": "json_object"},
-    )
-
-
 async def parse_meal_text(
     text: str,
     system_prompt: str | None = None,
 ) -> list[dict[str, Any]]:
-    """Ask the LLM to extract structured food items from free-form meal text.
-
-    Consumes one token from the shared Groq bucket. Validates the response
-    against :class:`LlmParsedMeal` and retries once with a stricter prompt on
-    validation failure.
-
-    Args:
-        text: Raw meal description in English, Hindi, or Hinglish.
-        system_prompt: Optional system prompt. Defaults to the parser system
-            prompt.
-
-    Returns:
-        A list of parsed item dictionaries with ``food``, ``quantity`` and
-        optional ``meal`` keys.
-
-    Raises:
-        AppError: If rate-limited, the key is missing, or parsing fails twice.
-    """
-    allowed, wait_seconds = groq_bucket.consume()
-    if not allowed:
-        logger.warning("groq_rate_limit_exceeded", model="openai/gpt-oss-20b", wait_seconds=wait_seconds)
-        raise AppError(
-            "groq_rate_limited",
-            f"Groq rate limit reached. Retry after {int(wait_seconds)} seconds.",
-            status=429,
-        )
-
-    client = _get_client()
+    """Ask the LLM to extract structured food items from free-form meal text with key rotation."""
     messages: list[dict[str, str]] = [
         {"role": "system", "content": system_prompt or _PARSE_SYSTEM_PROMPT},
         {"role": "user", "content": text},
     ]
     logger.info("groq_parse_request", text=text)
 
-    try:
-        response: Any = await asyncio.to_thread(
-            _parse_sync,
-            client,
-            messages,
-            "openai/gpt-oss-20b",
-            512,
-            0.2,
+    def _call(client: Groq) -> Any:
+        return client.chat.completions.create(
+            model="openai/gpt-oss-20b",
+            messages=messages,  # type: ignore[arg-type]
+            max_tokens=512,
+            temperature=0.2,
+            response_format={"type": "json_object"},
         )
+
+    try:
+        response: Any = await asyncio.to_thread(_execute_with_rotation, _call)
     except Exception as exc:
         logger.error("groq_parse_error", error=str(exc), text=text)
+        if isinstance(exc, AppError):
+            raise
         raise AppError(
             "groq_parse_failed",
             "Meal parsing failed. Please rephrase or type your meal.",
@@ -226,16 +231,11 @@ async def parse_meal_text(
     messages.append({"role": "system", "content": _PARSE_RETRY_PROMPT})
 
     try:
-        response = await asyncio.to_thread(
-            _parse_sync,
-            client,
-            messages,
-            "openai/gpt-oss-20b",
-            512,
-            0.2,
-        )
+        response = await asyncio.to_thread(_execute_with_rotation, _call)
     except Exception as exc:
         logger.error("groq_parse_retry_error", error=str(exc), text=text)
+        if isinstance(exc, AppError):
+            raise
         raise AppError(
             "groq_parse_failed",
             "Meal parsing failed. Please rephrase or type your meal.",
@@ -262,32 +262,7 @@ async def chat_completion(
     max_tokens: int = 512,
     temperature: float = 0.4,
 ) -> str:
-    """Send a chat completion request to Groq with rate-limit guard.
-
-    Args:
-        messages: OpenAI-style message list.
-        system_prompt: Optional system prompt. Defaults to the AURA assistant
-            system prompt.
-        model: Groq model ID.
-        max_tokens: Maximum tokens in the response.
-        temperature: Sampling temperature.
-
-    Returns:
-        The validated response content string.
-
-    Raises:
-        AppError: If rate-limited, key missing, or the response fails validation.
-    """
-    allowed, wait_seconds = groq_bucket.consume()
-    if not allowed:
-        logger.warning("groq_rate_limit_exceeded", model=model, wait_seconds=wait_seconds)
-        raise AppError(
-            "groq_rate_limited",
-            f"Groq rate limit reached. Retry after {int(wait_seconds)} seconds.",
-            status=429,
-        )
-
-    client = _get_client()
+    """Send a chat completion request to Groq with rate-limit guard and rotation."""
     full_messages = [
         {"role": "system", "content": system_prompt or _CHAT_SYSTEM_PROMPT},
         *messages,
@@ -299,17 +274,20 @@ async def chat_completion(
         max_tokens=max_tokens,
     )
 
-    try:
-        response: Any = await asyncio.to_thread(
-            _chat_sync,
-            client,
-            full_messages,
-            model,
-            max_tokens,
-            temperature,
+    def _call(client: Groq) -> Any:
+        return client.chat.completions.create(
+            model=model,
+            messages=full_messages,  # type: ignore[arg-type]
+            max_tokens=max_tokens,
+            temperature=temperature,
         )
+
+    try:
+        response: Any = await asyncio.to_thread(_execute_with_rotation, _call)
     except Exception as exc:
         logger.error("groq_chat_error", error=str(exc), model=model)
+        if isinstance(exc, AppError):
+            raise
         raise AppError(
             "groq_request_failed",
             "Chat assistant is temporarily unavailable. Please try again.",
@@ -335,46 +313,23 @@ async def chat_completion(
     return validated
 
 
-def _transcribe_sync(client: Groq, audio_bytes: bytes, filename: str) -> Any:
-    # Intentionally omit the `language` parameter so Whisper auto-detects
-    # English, Hindi, and Hinglish rather than forcing a single language.
-    return client.audio.transcriptions.create(
-        file=(filename, audio_bytes),
-        model="whisper-large-v3",
-        response_format="text",
-    )
-
-
 async def transcribe_audio(audio_bytes: bytes, filename: str = "audio.webm") -> str:
-    """Transcribe audio bytes with Groq Whisper.
-
-    Args:
-        audio_bytes: Raw audio file bytes.
-        filename: Filename to send to the API.
-
-    Returns:
-        Transcribed text.
-    """
-    allowed, wait_seconds = groq_bucket.consume()
-    if not allowed:
-        raise AppError(
-            "groq_rate_limited",
-            f"Groq rate limit reached. Retry after {int(wait_seconds)} seconds.",
-            status=429,
-        )
-
-    client = _get_client()
+    """Transcribe audio bytes with Groq Whisper and rotation."""
     logger.info("groq_transcribe_request", filename=filename, size_bytes=len(audio_bytes))
 
-    try:
-        response: Any = await asyncio.to_thread(
-            _transcribe_sync,
-            client,
-            audio_bytes,
-            filename,
+    def _call(client: Groq) -> Any:
+        return client.audio.transcriptions.create(
+            file=(filename, audio_bytes),
+            model="whisper-large-v3",
+            response_format="text",
         )
+
+    try:
+        response: Any = await asyncio.to_thread(_execute_with_rotation, _call)
     except Exception as exc:
         logger.error("groq_transcribe_error", error=str(exc))
+        if isinstance(exc, AppError):
+            raise
         raise AppError(
             "groq_transcribe_failed",
             "Voice transcription failed. Please type your meal instead.",

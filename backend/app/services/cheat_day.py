@@ -1,4 +1,5 @@
-"""Cheat-day mechanic: one cheat charm per rolling 7-day window.
+"""Deprecated: migrated to Firestore in 4.0.4.
+Cheat-day mechanic: one cheat charm per rolling 7-day window.
 
 Streak-preserving cheat days are tracked as integer charms. The service is
 deterministic and contains no LLM involvement.

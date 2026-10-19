@@ -1,3 +1,5 @@
+"""Deprecated: migrated to Firestore in 4.0.4."""
+
 import uuid
 
 from sqlalchemy import Float, String, Text
