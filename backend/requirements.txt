@@ -9,7 +9,7 @@ sentence-transformers==3.*
 langchain==0.3.*
 langchain-community==0.3.*
 pandas==2.2.*
-numpy==2.1.*
+numpy<2.0.0
 python-dotenv==1.0.*
 structlog==24.*
 rapidfuzz==3.*
