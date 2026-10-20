@@ -80,31 +80,38 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     const initAuth = async () => {
       try {
-        // 1. Catch the Google Redirect result FIRST
-        const result = await getRedirectResult(auth)
-        if (result?.user && mounted) {
-          setUser(result.user)
+        try {
+          // 1. Catch the Google Redirect result FIRST
+          const result = await getRedirectResult(auth)
+          if (result?.user && mounted) {
+            setUser(result.user)
+          }
+        } catch (err) {
+          console.error('Redirect result error:', err)
+          if (mounted) setError(err instanceof Error ? err.message : 'Auth error')
         }
-      } catch (err) {
-        console.error('Redirect result error:', err)
-        if (mounted) setError(err instanceof Error ? err.message : 'Auth error')
-      }
 
-      // 2. After redirect check, start listening to auth state
-      if (mounted) {
-        const unsubscribe = onAuthStateChanged(
-          auth,
-          (currentUser) => {
-            setUser(currentUser)
-            setLoading(false)
-            setError(null)
-          },
-          (err) => {
-            setError(err.message)
-            setLoading(false)
-          },
-        )
-        return unsubscribe
+        // 2. After redirect check, start listening to auth state
+        if (mounted) {
+          const unsubscribe = onAuthStateChanged(
+            auth,
+            (currentUser) => {
+              setUser(currentUser)
+              setLoading(false)
+              setError(null)
+            },
+            (err) => {
+              setError(err.message)
+              setLoading(false)
+            },
+          )
+          return unsubscribe
+        }
+      } catch (criticalErr) {
+        console.error('Critical auth init error:', criticalErr)
+        if (mounted) {
+          setLoading(false)
+        }
       }
     }
 

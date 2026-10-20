@@ -17,7 +17,7 @@ import { getUserDoc } from './lib/firestore.ts'
 import type { Dashboard as DashboardType, Phase, UserProfile } from './lib/types.ts'
 
 export default function App() {
-  const { user: authUser, signOut } = useAuth()
+  const { user: authUser, loading: authLoading, signOut } = useAuth()
   const [profile, setProfile] = useState<UserProfile | null>(null)
   const [activeTab, setActiveTab] = useState<Tab>('home')
   const [logOpen, setLogOpen] = useState(false)
@@ -46,9 +46,18 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange)
   }, [])
 
+  // Redirect authenticated user if they land on /login or /signup
+  useEffect(() => {
+    if (authUser && (route === '/login' || route === '/signup')) {
+      if (typeof window !== 'undefined') {
+        window.location.hash = '#/'
+      }
+    }
+  }, [authUser, route])
+
   // Sync profile from Firestore whenever authenticated user changes
   const loadProfile = useCallback(async () => {
-    if (!authUser) {
+    if (!authUser?.uid) {
       setProfile(null)
       return
     }
@@ -144,28 +153,38 @@ export default function App() {
     setRefreshTrigger((n) => n + 1)
   }
 
-  // Routing
-  if (route === '/signup') {
+  // 1. Loading screen while Firebase verifies authentication state
+  if (authLoading) {
     return (
-      <Signup
-        onSuccess={async () => {
-          // Wait for Firestore & Backend to finish committing the profile
-          await new Promise((resolve) => setTimeout(resolve, 1000))
-          if (typeof window !== 'undefined') {
-            window.location.hash = '#/'
-          }
-          setRefreshTrigger((n) => n + 1)
-        }}
-        onNavigateToLogin={() => {
-          if (typeof window !== 'undefined') {
-            window.location.hash = '#/login'
-          }
-        }}
-      />
+      <div className="min-h-screen bg-[#FAF7F2] p-6 flex flex-col justify-center items-center gap-4">
+        <div className="w-10 h-10 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
+        <p className="text-sm text-muted font-sans font-medium">Checking authentication...</p>
+      </div>
     )
   }
 
-  if (route === '/login') {
+  // 2. Unauthenticated flows: redirect or render Signup / Login
+  if (!authUser) {
+    if (route === '/signup') {
+      return (
+        <Signup
+          onSuccess={async () => {
+            // Wait for Firestore & Backend to finish committing the profile
+            await new Promise((resolve) => setTimeout(resolve, 1000))
+            if (typeof window !== 'undefined') {
+              window.location.hash = '#/'
+            }
+            setRefreshTrigger((n) => n + 1)
+          }}
+          onNavigateToLogin={() => {
+            if (typeof window !== 'undefined') {
+              window.location.hash = '#/login'
+            }
+          }}
+        />
+      )
+    }
+
     return (
       <Login
         onSuccess={() => {
@@ -182,6 +201,7 @@ export default function App() {
       />
     )
   }
+
 
   // Fallback profile object while loading from Firestore
   const fallbackProfile: UserProfile = profile || {

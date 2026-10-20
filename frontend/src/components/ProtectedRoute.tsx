@@ -9,15 +9,23 @@ interface ProtectedRouteProps {
 
 export function ProtectedRoute({ children, requirePhase = false }: ProtectedRouteProps) {
   const { user, loading } = useAuth()
-  const [phaseLoading, setPhaseLoading] = useState<boolean>(() => requirePhase)
+  const [phaseLoading, setPhaseLoading] = useState<boolean>(false)
   const [hasPhase, setHasPhase] = useState<boolean>(true)
 
   useEffect(() => {
     let isMounted = true
-    if (!requirePhase || !user) {
+
+    if (!user) {
+      setPhaseLoading(false)
       return
     }
 
+    if (!requirePhase) {
+      setPhaseLoading(false)
+      return
+    }
+
+    setPhaseLoading(true)
     getUserDoc(user.uid)
       .then((data) => {
         if (!isMounted) return
@@ -28,7 +36,8 @@ export function ProtectedRoute({ children, requirePhase = false }: ProtectedRout
         }
         setPhaseLoading(false)
       })
-      .catch(() => {
+      .catch((err) => {
+        console.error('Error fetching user doc in ProtectedRoute:', err)
         if (!isMounted) return
         setHasPhase(false)
         setPhaseLoading(false)
@@ -51,16 +60,29 @@ export function ProtectedRoute({ children, requirePhase = false }: ProtectedRout
 
   if (loading || phaseLoading) {
     return (
-      <div className="min-h-screen bg-[#FAF7F2] p-6 flex flex-col gap-4">
-        <div className="h-8 w-48 bg-[#E2E8F0] rounded animate-pulse" />
-        <div className="h-32 bg-[#E2E8F0] rounded-lg animate-pulse" />
-        <div className="h-64 bg-[#E2E8F0] rounded-lg animate-pulse" />
+      <div className="min-h-screen bg-[#FAF7F2] p-6 flex flex-col justify-center items-center gap-4">
+        <div className="w-10 h-10 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
+        <p className="text-sm text-muted font-sans font-medium">Loading your nutrition space...</p>
       </div>
     )
   }
 
-  if (!user || (requirePhase && !hasPhase)) {
-    return null
+  if (!user) {
+    return (
+      <div className="min-h-screen bg-[#FAF7F2] p-6 flex flex-col justify-center items-center gap-4">
+        <div className="w-10 h-10 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
+        <p className="text-sm text-muted font-sans font-medium">Redirecting to login...</p>
+      </div>
+    )
+  }
+
+  if (requirePhase && !hasPhase) {
+    return (
+      <div className="min-h-screen bg-[#FAF7F2] p-6 flex flex-col justify-center items-center gap-4">
+        <div className="w-10 h-10 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
+        <p className="text-sm text-muted font-sans font-medium">Completing your cycle setup...</p>
+      </div>
+    )
   }
 
   return <>{children}</>
