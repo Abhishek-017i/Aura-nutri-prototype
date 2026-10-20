@@ -1,55 +1,110 @@
 import { useState } from 'react'
+import {
+  signInWithEmailAndPassword,
+  signInWithRedirect,
+  GoogleAuthProvider,
+} from 'firebase/auth'
 
-import { login, HTTPError } from '../lib/api.ts'
+import { auth } from '../lib/firebase.ts'
 import { bodyFontClass, copy, t } from '../lib/copy.ts'
 import { LanguageToggle } from '../lib/language.tsx'
 import { useLanguage } from '../lib/useLanguage.ts'
-import type { UserProfile } from '../lib/types.ts'
 
 interface LoginProps {
-  onComplete: (user: UserProfile) => void
+  onSuccess?: () => void
+  onNavigateToSignup?: () => void
 }
 
-export function Login({ onComplete }: LoginProps) {
+function getFriendlyAuthErrorMessage(errorCode: string, defaultMessage: string): string {
+  switch (errorCode) {
+    case 'auth/invalid-email':
+      return 'Invalid email address format.'
+    case 'auth/user-not-found':
+      return 'No account found with this email. Please sign up.'
+    case 'auth/wrong-password':
+    case 'auth/invalid-credential':
+      return 'Incorrect email or password. Please try again.'
+    case 'auth/user-disabled':
+      return 'This user account has been disabled.'
+    case 'auth/too-many-requests':
+      return 'Too many failed login attempts. Please try again later.'
+    case 'auth/popup-closed-by-user':
+      return 'Google sign-in was closed before completing.'
+    case 'auth/network-request-failed':
+      return 'Network error. Please check your connection and retry.'
+    default:
+      return defaultMessage || 'Failed to log in. Please check your credentials.'
+  }
+}
+
+export function Login({ onSuccess, onNavigateToSignup }: LoginProps) {
   const { language } = useLanguage()
-  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
+  const [googleLoading, setGoogleLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+
+  const navigateToSignup = () => {
+    if (onNavigateToSignup) {
+      onNavigateToSignup()
+    } else if (typeof window !== 'undefined') {
+      window.location.hash = '#/signup'
+    }
+  }
+
+  const navigateToHome = () => {
+    if (onSuccess) {
+      onSuccess()
+    } else if (typeof window !== 'undefined') {
+      window.location.hash = '#/'
+    }
+  }
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
-    if (!username.trim() || !password) return
+    const trimmedEmail = email.trim()
+    if (!trimmedEmail || !password) return
 
     setLoading(true)
     setError(null)
 
     try {
-      const user = await login({
-        username: username.trim(),
-        password,
-      })
-      onComplete(user)
-    } catch (err) {
-      if (err instanceof HTTPError && err.status === 401) {
-        setError(t(copy.login.wrongPassword, language))
-      } else if (err instanceof HTTPError) {
-        setError(err.message)
-      } else {
-        // Non-HTTP errors (network, JSON parse, etc.) used to fall into this
-        // branch and surface the generic "कुछ गलत हो गया" banner. We now route
-        // them to a short inline message so only truly wrong credentials get
-        // the prominent inline error.
-        setError(t(copy.login.genericError, language))
-      }
+      await signInWithEmailAndPassword(auth, trimmedEmail, password)
+      navigateToHome()
+    } catch (err: unknown) {
+      const authErr = err as { code?: string; message?: string }
+      const friendlyMessage = getFriendlyAuthErrorMessage(
+        authErr?.code ?? '',
+        authErr?.message ?? 'Sign in failed',
+      )
+      setError(friendlyMessage)
     } finally {
       setLoading(false)
     }
   }
 
+  const handleGoogleSignIn = async () => {
+    setGoogleLoading(true)
+    setError(null)
+
+    try {
+      const provider = new GoogleAuthProvider()
+      await signInWithRedirect(auth, provider)
+    } catch (err: unknown) {
+      const authErr = err as { code?: string; message?: string }
+      const friendlyMessage = getFriendlyAuthErrorMessage(
+        authErr?.code ?? '',
+        authErr?.message ?? 'Google sign in failed',
+      )
+      setError(friendlyMessage)
+      setGoogleLoading(false)
+    }
+  }
+
   return (
     <main className="min-h-screen w-full max-w-chat mx-auto px-6 py-12 flex flex-col justify-center bg-background">
-      <div className="bg-card border border-border rounded-card p-8">
+      <div className="bg-card border border-border rounded-card p-8 shadow-sm">
         <div className="flex items-start justify-between gap-4 mb-2">
           <h1 className="font-display text-3xl font-semibold text-dark-text">
             {t(copy.login.title, language)}
@@ -62,23 +117,30 @@ export function Login({ onComplete }: LoginProps) {
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="username" className={`${bodyFontClass(language)} block text-sm font-medium text-dark-text mb-2`}>
-              {t(copy.login.usernameLabel, language)}
+            <label
+              htmlFor="email"
+              className={`${bodyFontClass(language)} block text-sm font-medium text-dark-text mb-2`}
+            >
+              Email
             </label>
             <input
-              id="username"
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder={t(copy.login.usernamePlaceholder, language)}
+              id="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@example.com"
               className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-dark-text placeholder:text-muted focus-visible:outline-dark-text"
-              disabled={loading}
-              autoComplete="username"
+              disabled={loading || googleLoading}
+              autoComplete="email"
+              required
             />
           </div>
 
           <div>
-            <label htmlFor="password" className={`${bodyFontClass(language)} block text-sm font-medium text-dark-text mb-2`}>
+            <label
+              htmlFor="password"
+              className={`${bodyFontClass(language)} block text-sm font-medium text-dark-text mb-2`}
+            >
               {t(copy.login.passwordLabel, language)}
             </label>
             <input
@@ -88,22 +150,53 @@ export function Login({ onComplete }: LoginProps) {
               onChange={(e) => setPassword(e.target.value)}
               placeholder={t(copy.login.passwordPlaceholder, language)}
               className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-dark-text placeholder:text-muted focus-visible:outline-dark-text"
-              disabled={loading}
+              disabled={loading || googleLoading}
               autoComplete="current-password"
+              required
             />
             {error && (
-              <p className={`${bodyFontClass(language)} mt-2 text-sm text-rose`}>{error}</p>
+              <p className={`${bodyFontClass(language)} mt-3 text-sm text-rose bg-rose/10 border border-rose/30 p-2.5 rounded-data`}>
+                {error}
+              </p>
             )}
           </div>
 
           <button
             type="submit"
-            disabled={loading || !username.trim() || !password}
-            className={`${bodyFontClass(language)} w-full px-6 py-3 bg-primary text-white rounded-data font-medium disabled:opacity-50`}
+            disabled={loading || googleLoading || !email.trim() || !password}
+            className={`${bodyFontClass(language)} w-full px-6 py-3 bg-primary text-white rounded-data font-medium disabled:opacity-50 transition-opacity`}
           >
-            {loading ? t(copy.login.saving, language) : t(copy.login.continue, language)}
+            {loading ? t(copy.login.saving, language) : 'Log In'}
           </button>
         </form>
+
+        <div className="relative my-6 text-center">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-border" />
+          </div>
+          <span className="relative bg-card px-3 text-xs uppercase tracking-wider text-muted font-sans">
+            or
+          </span>
+        </div>
+
+        <button
+          type="button"
+          onClick={handleGoogleSignIn}
+          disabled={loading || googleLoading}
+          className={`${bodyFontClass(language)} w-full px-6 py-3 bg-background border border-border text-dark-text rounded-data font-medium flex items-center justify-center gap-2 hover:bg-soft-peach/20 disabled:opacity-50 transition-colors`}
+        >
+          {googleLoading ? 'Signing in with Google...' : 'Continue with Google'}
+        </button>
+
+        <div className="mt-6 text-center">
+          <button
+            type="button"
+            onClick={navigateToSignup}
+            className={`${bodyFontClass(language)} text-sm text-primary hover:underline font-medium`}
+          >
+            Don't have an account? Sign up
+          </button>
+        </div>
       </div>
 
       <p className={`${bodyFontClass(language)} mt-6 text-xs text-muted text-center`}>
