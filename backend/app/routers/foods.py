@@ -22,9 +22,26 @@ async def list_foods(
     return search_foods(db, query=q, category=category, limit=limit)
 
 
+from datetime import datetime, timezone
+from typing import Any
+
+from app.services.firestore_client import iter_collection
+
+
+@router.get("/export")
+async def export_foods() -> dict[str, Any]:
+    foods = list(iter_collection("foods"))
+    return {
+        "version": datetime.now(timezone.utc).date().isoformat(),
+        "count": len(foods),
+        "foods": foods,
+    }
+
+
 @router.get("/{food_id}", response_model=FoodRead)
 async def get_food(food_id: str, db: Session = Depends(get_db)) -> Food:
     food = db.query(Food).filter(Food.id == food_id).first()
     if food is None:
         raise AppError("food_not_found", "Food not found", status=404)
     return food
+

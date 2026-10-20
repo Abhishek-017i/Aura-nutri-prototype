@@ -84,7 +84,6 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
   }, [language, user.id])
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     void loadData()
   }, [loadData, refreshTrigger])
 

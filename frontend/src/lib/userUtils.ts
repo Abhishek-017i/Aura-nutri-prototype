@@ -83,20 +83,18 @@ export function useDynamicGreeting(
   user?: { name?: string | null; username?: string | null } | null,
   language: Language = 'en',
 ) {
-  const [greeting, setGreeting] = useState(() => getTimeGreeting(new Date(), language))
+  const [now, setNow] = useState(() => new Date())
 
   useEffect(() => {
-    // Update immediately on mount / language change
-    setGreeting(getTimeGreeting(new Date(), language))
-
     // Re-check periodically to update greeting when time period changes
     const timer = setInterval(() => {
-      const nextGreeting = getTimeGreeting(new Date(), language)
-      setGreeting((prev) => (prev !== nextGreeting ? nextGreeting : prev))
+      setNow(new Date())
     }, 30000)
 
     return () => clearInterval(timer)
-  }, [language])
+  }, [])
+
+  const greeting = getTimeGreeting(now, language)
 
   const name = user ? getDisplayName(user) : ''
   const isGeneric = !name || name.toLowerCase() === 'friend'

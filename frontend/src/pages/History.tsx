@@ -125,7 +125,6 @@ export function History({ user, refreshTrigger }: HistoryProps) {
   }, [language, user.id])
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     void loadAll()
   }, [loadAll, refreshTrigger])
 

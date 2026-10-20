@@ -13,6 +13,7 @@ class ChatIn(BaseModel):
 
 class ChatOut(BaseModel):
     reply: str
+    llm_provider: str | None = None
     disclaimer: str = (
         "AURA-Nutri provides food intelligence, not medical advice. Always consult a "
         "qualified physician or registered dietitian before changing your diet or taking "
