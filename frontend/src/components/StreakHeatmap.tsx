@@ -28,30 +28,30 @@ export function StreakHeatmap({ logs, language }: StreakHeatmapProps) {
 
   return (
     <div className="flex flex-col gap-3">
-      <div className="flex flex-wrap gap-1 max-w-[20rem]">
-        {days.map(d => {
-          let bgClass = "bg-background border border-border"
+      <div className="flex flex-wrap gap-1.5 max-w-[22rem]">
+        {days.map((d) => {
+          let bgClass = "bg-soft-pink/60 border border-border/80"
           if (d.count > 0) {
             bgClass = "bg-primary"
           }
-          const opacity = d.count > 0 ? Math.min(1, 0.4 + d.count * 0.15) : 1
-          
+          const opacity = d.count > 0 ? Math.min(1, 0.45 + d.count * 0.18) : 1
+
           return (
             <div
               key={d.date}
               title={`${d.date}: ${d.count} meals`}
-              className={`w-4 h-4 rounded-sm ${bgClass}`}
+              className={`w-4 h-4 rounded-md transition-transform hover:scale-110 ${bgClass}`}
               style={{ opacity: d.count > 0 ? opacity : 1 }}
             />
           )
         })}
       </div>
-      <div className="flex items-center gap-2 text-xs text-muted font-sans">
+      <div className="flex items-center gap-2 text-xs text-muted font-sans font-medium">
         <span>{language === 'hi' ? 'कम' : 'Less'}</span>
-        <div className="w-4 h-4 rounded-sm bg-background border border-border" />
-        <div className="w-4 h-4 rounded-sm bg-primary" style={{ opacity: 0.55 }} />
-        <div className="w-4 h-4 rounded-sm bg-primary" style={{ opacity: 0.85 }} />
-        <div className="w-4 h-4 rounded-sm bg-primary" style={{ opacity: 1 }} />
+        <div className="w-3.5 h-3.5 rounded-md bg-soft-pink/60 border border-border/80" />
+        <div className="w-3.5 h-3.5 rounded-md bg-primary" style={{ opacity: 0.55 }} />
+        <div className="w-3.5 h-3.5 rounded-md bg-primary" style={{ opacity: 0.8 }} />
+        <div className="w-3.5 h-3.5 rounded-md bg-primary" style={{ opacity: 1 }} />
         <span>{language === 'hi' ? 'ज़्यादा' : 'More'}</span>
       </div>
     </div>

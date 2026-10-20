@@ -72,6 +72,7 @@ class LoginIn(BaseModel):
 
     username: str = Field(..., min_length=1, max_length=100)
     password: str = Field(..., min_length=1, max_length=100)
+    name: str | None = Field(default=None, max_length=255)
 
 
 class LoginOut(BaseModel):

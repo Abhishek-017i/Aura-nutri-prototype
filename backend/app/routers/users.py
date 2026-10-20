@@ -34,16 +34,23 @@ async def login(payload: LoginIn, db: Session = Depends(get_db)) -> LoginOut:
         raise AppError("invalid_credentials", "Incorrect username or password", status=401)
 
     user = db.query(User).filter(User.username == payload.username).first()
+    clean_name = payload.name.strip() if payload.name and payload.name.strip() else None
+
     if user is None:
         user = User(
             username=payload.username,
-            name=payload.username,
+            name=clean_name or payload.username,
             phase=None,
         )
         db.add(user)
         db.commit()
         db.refresh(user)
-        logger.info("user_created_on_login", user_id=user.id, username=user.username)
+        logger.info("user_created_on_login", user_id=user.id, username=user.username, name=user.name)
+    elif clean_name and (user.name == user.username or "@" in user.name):
+        user.name = clean_name
+        db.commit()
+        db.refresh(user)
+        logger.info("user_name_updated_on_login", user_id=user.id, name=user.name)
 
     logger.info("user_logged_in", user_id=user.id, username=user.username)
     return LoginOut(

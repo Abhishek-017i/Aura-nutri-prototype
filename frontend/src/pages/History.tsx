@@ -125,7 +125,7 @@ export function History({ user, refreshTrigger }: HistoryProps) {
   }, [language, user.id])
 
   useEffect(() => {
-    // eslint-disable-next-border react-hooks/set-state-in-effect
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     void loadAll()
   }, [loadAll, refreshTrigger])
 
@@ -159,22 +159,41 @@ export function History({ user, refreshTrigger }: HistoryProps) {
     return { worst, daysLogged: riskScore.days_logged }
   }, [riskScore])
 
+function getMealThumbnail(foodName: string | null, mealType: string | null): string {
+  const name = (foodName || '').toLowerCase()
+  const type = (mealType || '').toLowerCase()
+
+  if (name.includes('poha') || name.includes('oat') || name.includes('egg') || name.includes('toast') || type.includes('breakfast')) {
+    return 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=160&h=160&q=80'
+  }
+  if (name.includes('yogurt') || name.includes('fruit') || name.includes('nut') || name.includes('smoothie') || type.includes('snack')) {
+    return 'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=160&h=160&q=80'
+  }
+  if (name.includes('dal') || name.includes('roti') || name.includes('rice') || name.includes('sabzi') || name.includes('curry') || type.includes('lunch')) {
+    return 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=160&h=160&q=80'
+  }
+  return 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=160&h=160&q=80'
+}
+
   if (loading) {
     return <HistorySkeleton />
   }
 
   if (error) {
     return (
-      <main className="min-h-[60vh] w-full max-w-dashboard mx-auto px-6 py-8">
-        <div className="bg-rose/10 border border-rose rounded-card p-6">
-          <h2 className="font-display text-xl font-semibold text-dark-text mb-2">
+      <main className="min-h-[60vh] w-full max-w-dashboard mx-auto px-4 sm:px-6 py-8">
+        <div className="bg-card border border-border rounded-3xl p-6 sm:p-8 shadow-card text-center">
+          <div className="w-12 h-12 rounded-full bg-soft-pink text-primary mx-auto flex items-center justify-center text-xl mb-3">
+            ⚠️
+          </div>
+          <h2 className="font-display text-xl font-bold text-plum mb-2">
             {t(copy.dashboard.errorTitle, language)}
           </h2>
-          <p className={`${bodyFontClass(language)} text-dark-text mb-4`}>{error}</p>
+          <p className={`${bodyFontClass(language)} text-muted text-sm mb-6 max-w-md mx-auto`}>{error}</p>
           <button
             type="button"
             onClick={() => void loadAll()}
-            className="px-4 py-2 bg-primary text-white rounded-data font-sans font-medium"
+            className="px-6 py-2.5 bg-primary text-white rounded-full font-semibold shadow-fab hover:scale-105 active:scale-95 transition-all text-sm"
           >
             {t(copy.history.retry, language)}
           </button>
@@ -184,28 +203,57 @@ export function History({ user, refreshTrigger }: HistoryProps) {
   }
 
   return (
-    <main className="w-full max-w-dashboard mx-auto px-6 py-6 space-y-6">
-      <section className="bg-card border border-border rounded-card p-6">
-        <h2 className="font-display text-lg font-medium text-dark-text mb-4">
-          {t(copy.history.trendTitle, language)}
-        </h2>
+    <main className="w-full max-w-dashboard mx-auto px-4 sm:px-6 py-4 space-y-5">
+      {/* 14-Day Trend & Risk Section */}
+      <section className="bg-white border border-border rounded-3xl p-5 sm:p-7 shadow-card hover:shadow-card-hover transition-all">
+        <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-full bg-soft-pink flex items-center justify-center text-primary text-base shadow-sm">
+              ✨
+            </div>
+            <h2 className="font-display text-lg sm:text-xl font-bold text-plum tracking-tight">
+              {t(copy.history.trendTitle, language)}
+            </h2>
+          </div>
+          {riskScore && (
+            <span className="text-xs font-semibold text-primary bg-soft-pink px-3 py-1 rounded-full">
+              {formatCopy(copy.history.daysLogged, language, { days: riskScore.days_logged })}
+            </span>
+          )}
+        </div>
+
         {riskScore ? (
           <>
-            <div className={`${bodyFontClass(language)} text-sm text-muted mb-4 space-y-1`}>
-              <p>
-                {formatCopy(copy.history.daysLogged, language, { days: riskScore.days_logged })}
-              </p>
-              <p>
-                {formatCopy(copy.history.overallRisk, language, {
-                  risk: t(copy.riskBadge[riskScore.overall_risk], language),
-                })}
-              </p>
+            <div className={`${bodyFontClass(language)} text-sm text-muted mb-5 space-y-2`}>
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-xs font-bold text-muted">Overall Nutritional Risk:</span>
+                <span
+                  className="px-3 py-0.5 rounded-full text-xs font-bold"
+                  style={{
+                    backgroundColor:
+                      riskScore.overall_risk === 'LOW'
+                        ? '#F0F0E3'
+                        : riskScore.overall_risk === 'MEDIUM'
+                        ? '#FFF4E5'
+                        : '#F8DDE5',
+                    color:
+                      riskScore.overall_risk === 'LOW'
+                        ? '#626839'
+                        : riskScore.overall_risk === 'MEDIUM'
+                        ? '#F59E0B'
+                        : '#C85D80',
+                  }}
+                >
+                  {t(copy.riskBadge[riskScore.overall_risk], language)}
+                </span>
+              </div>
               {summary?.worst && (
-                <p>
-                  {summary.worst.explanation}
+                <p className="text-xs sm:text-sm text-plum leading-relaxed bg-soft-pink/50 p-3.5 rounded-2xl border border-border">
+                  💡 {summary.worst.explanation}
                 </p>
               )}
             </div>
+
             {riskScore.nutrients.length > 0 && (
               <NutrientSummaryLines nutrients={riskScore.nutrients} language={language} />
             )}
@@ -217,58 +265,100 @@ export function History({ user, refreshTrigger }: HistoryProps) {
         )}
       </section>
 
-      <section className="bg-card border border-border rounded-card p-6">
-        <h2 className="font-display text-lg font-medium text-dark-text mb-4">
-          {t(copy.history.title, language)}
-        </h2>
+      {/* Logged Meals List Section */}
+      <section className="bg-white border border-border rounded-3xl p-5 sm:p-7 shadow-card hover:shadow-card-hover transition-all">
+        <div className="flex items-center justify-between mb-5">
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-full bg-soft-pink flex items-center justify-center text-primary text-base shadow-sm">
+              🍲
+            </div>
+            <h2 className="font-display text-lg sm:text-xl font-bold text-plum tracking-tight">
+              {t(copy.history.title, language)}
+            </h2>
+          </div>
+          <span className="text-xs font-semibold text-primary bg-soft-pink px-3 py-1 rounded-full">
+            {logs.length} Meals
+          </span>
+        </div>
 
         {logs.length === 0 ? (
-          <div className="text-center py-8">
-            <h3 className="font-display text-xl font-medium text-dark-text mb-2">
+          <div className="text-center py-10 px-4 rounded-2xl bg-background border border-dashed border-border">
+            <div className="w-14 h-14 rounded-full bg-soft-pink text-primary mx-auto flex items-center justify-center text-2xl mb-3 shadow-sm">
+              🥗
+            </div>
+            <h3 className="font-display text-lg font-bold text-plum mb-1">
               {t(copy.history.emptyTitle, language)}
             </h3>
-            <p className={`${bodyFontClass(language)} text-muted max-w-md mx-auto`}>
+            <p className={`${bodyFontClass(language)} text-sm text-muted max-w-md mx-auto`}>
               {t(copy.history.emptyBody, language)}
             </p>
           </div>
         ) : (
           <div className="space-y-6">
             {groupedLogs.map(({ date, items }) => (
-              <div key={date}>
-                <h3 className="font-display text-base font-medium text-dark-text mb-3">
-                  {formatDateLong(`${date}T00:00:00`, language)}
-                </h3>
+              <div key={date} className="space-y-3">
+                <div className="flex items-center gap-2 px-1">
+                  <span className="w-2.5 h-2.5 rounded-full bg-primary" />
+                  <h3 className="font-display text-sm sm:text-base font-bold text-plum">
+                    {formatDateLong(`${date}T00:00:00`, language)}
+                  </h3>
+                </div>
+
                 <div className="space-y-3">
-                  {items.map((log) => (
-                    <div
-                      key={log.id}
-                      className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 bg-background rounded-data"
-                    >
-                      <div className="min-w-0">
-                        <p className={`${bodyFontClass(language)} font-medium text-dark-text truncate`}>
-                          {log.food_name ?? t(copy.dashboard.notMatched, language)}
-                        </p>
-                        <p className="font-sans text-xs text-muted">
-                          {formatTime(log.logged_at, language)} · {Math.round(log.qty_g)}g
-                        </p>
+                  {items.map((log) => {
+                    const thumb = getMealThumbnail(log.food_name, log.meal_type)
+                    return (
+                      <div
+                        key={log.id}
+                        className="p-3.5 sm:p-4 bg-white border border-border rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:border-primary/40 hover:shadow-sm transition-all duration-200"
+                      >
+                        <div className="flex items-center gap-3 min-w-0">
+                          <img
+                            src={thumb}
+                            alt={log.food_name || 'Meal'}
+                            className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl object-cover border border-border flex-shrink-0 shadow-sm"
+                            onError={(e) => {
+                              e.currentTarget.style.display = 'none'
+                            }}
+                          />
+                          <div className="min-w-0">
+                            <p className={`${bodyFontClass(language)} font-bold text-sm sm:text-base text-plum truncate`}>
+                              {log.food_name ?? t(copy.dashboard.notMatched, language)}
+                            </p>
+                            <p className="font-sans text-xs text-muted">
+                              {formatTime(log.logged_at, language)} · {Math.round(log.qty_g)}g
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-2 sm:gap-3 flex-wrap sm:flex-nowrap justify-between sm:justify-end">
+                          {log.energy_kcal > 0 && (
+                            <span className="px-3 py-1 rounded-full text-xs font-bold bg-soft-pink text-primary-dark border border-primary/20">
+                              {Math.round(log.energy_kcal)} kcal
+                            </span>
+                          )}
+                          <div className="flex items-center gap-1.5 flex-shrink-0">
+                            {NUTRIENT_ORDER.map((key) => {
+                              const value = nutrientValue(log, key)
+                              return (
+                                <div
+                                  key={key}
+                                  className="text-center px-2 py-1 rounded-xl bg-background border border-border min-w-[38px]"
+                                >
+                                  <p className="font-sans text-[9px] uppercase font-bold text-muted">
+                                    {t(copy.history[NUTRIENT_COPY_KEYS[key]], language)}
+                                  </p>
+                                  <p className="font-display text-xs font-bold text-plum">
+                                    {Math.round(value)}
+                                  </p>
+                                </div>
+                              )
+                            })}
+                          </div>
+                        </div>
                       </div>
-                      <div className="flex items-center gap-3 flex-shrink-0">
-                        {NUTRIENT_ORDER.map((key) => {
-                          const value = nutrientValue(log, key)
-                          return (
-                            <div key={key} className="text-center min-w-[44px]">
-                              <p className="font-sans text-[10px] uppercase text-muted">
-                                {t(copy.history[NUTRIENT_COPY_KEYS[key]], language)}
-                              </p>
-                              <p className="font-display text-sm font-medium text-dark-text">
-                                {Math.round(value)}
-                              </p>
-                            </div>
-                          )
-                        })}
-                      </div>
-                    </div>
-                  ))}
+                    )
+                  })}
                 </div>
               </div>
             ))}
@@ -278,7 +368,7 @@ export function History({ user, refreshTrigger }: HistoryProps) {
                 type="button"
                 onClick={handleLoadMore}
                 disabled={loadingMore}
-                className={`${bodyFontClass(language)} w-full px-4 py-3 bg-peach text-dark-text rounded-data font-medium disabled:opacity-50`}
+                className={`${bodyFontClass(language)} w-full px-6 py-3 bg-light-olive hover:bg-olive/20 text-olive-deep border border-olive/30 rounded-full font-bold transition-all shadow-sm disabled:opacity-50 mt-4 text-sm`}
               >
                 {loadingMore ? t(copy.history.loadingMore, language) : t(copy.history.loadMore, language)}
               </button>
@@ -287,7 +377,7 @@ export function History({ user, refreshTrigger }: HistoryProps) {
         )}
       </section>
 
-      <p className={`${bodyFontClass(language)} text-xs text-muted text-center`}>
+      <p className={`${bodyFontClass(language)} text-xs text-muted text-center max-w-xl mx-auto pt-2 pb-4`}>
         {riskScore?.disclaimer ??
           'AURA-Nutri provides food intelligence, not medical advice. Always consult a qualified physician or registered dietitian before changing your diet or taking supplements.'}
       </p>
@@ -298,12 +388,12 @@ export function History({ user, refreshTrigger }: HistoryProps) {
 function statusColor(level: NutrientRisk['risk_level']): string {
   switch (level) {
     case 'LOW':
-      return '#5F8A68'
+      return '#80864A'
     case 'MEDIUM':
-      return '#C8953D'
+      return '#D97706'
     case 'HIGH':
     default:
-      return '#C96B67'
+      return '#C85D80'
   }
 }
 
@@ -315,8 +405,9 @@ function NutrientSummaryLines({
   language: Language
 }) {
   const byName = new Map(nutrients.map((n) => [n.nutrient, n]))
+
   return (
-    <div className="space-y-3">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
       {NUTRIENT_ORDER.map((key) => {
         const nutrient = byName.get(NUTRIENT_BACKEND_NAME[key])
         if (!nutrient) return null
@@ -324,18 +415,28 @@ function NutrientSummaryLines({
         return (
           <div
             key={key}
-            className="flex items-start gap-3 p-3 bg-background rounded-data"
+            className="flex items-start gap-3 p-3.5 bg-background/60 border border-border rounded-2xl hover:border-primary/30 transition-all"
           >
             <div
-              className="w-3 h-3 mt-1.5 rounded-full flex-shrink-0"
+              className="w-3.5 h-3.5 mt-1 rounded-full flex-shrink-0 shadow-sm"
               style={{ backgroundColor: color }}
             />
             <div className="flex-1 min-w-0">
-              <p className={`${bodyFontClass(language)} text-sm text-dark-text`}>
-                {t(copy.history[NUTRIENT_COPY_KEYS[key]], language)}{' '}
-                <span className="font-display font-medium">{Math.round(nutrient.percent)}%</span>
-              </p>
-              <p className={`${bodyFontClass(language)} text-sm text-muted mt-0.5`}>
+              <div className="flex items-center justify-between gap-2">
+                <p className={`${bodyFontClass(language)} text-xs sm:text-sm font-bold text-plum`}>
+                  {t(copy.history[NUTRIENT_COPY_KEYS[key]], language)}
+                </p>
+                <span
+                  className="px-2.5 py-0.5 rounded-full text-[10px] font-bold"
+                  style={{
+                    backgroundColor: `${color}1A`,
+                    color: color,
+                  }}
+                >
+                  {Math.round(nutrient.percent)}% of target
+                </span>
+              </div>
+              <p className={`${bodyFontClass(language)} text-xs text-muted mt-1 leading-relaxed`}>
                 {t(copy.history[NUTRIENT_SUGGESTION_KEYS[key]], language)}
               </p>
             </div>
@@ -348,32 +449,18 @@ function NutrientSummaryLines({
 
 function HistorySkeleton() {
   return (
-    <main className="w-full max-w-dashboard mx-auto px-6 py-6 space-y-6 animate-pulse">
-      <div className="bg-card border border-border rounded-card p-6">
-        <div className="h-6 w-40 bg-primary/10 rounded-data mb-4" />
-        <div className="h-4 w-64 bg-primary/10 rounded-data mb-6" />
-        <div className="space-y-3">
+    <main className="w-full max-w-dashboard mx-auto px-4 sm:px-6 py-6 space-y-6 animate-pulse">
+      <div className="bg-card border border-border rounded-3xl p-6 shadow-card">
+        <div className="h-6 w-44 bg-soft-pink rounded-full mb-4" />
+        <div className="h-4 w-64 bg-soft-pink/60 rounded-full mb-6" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="flex items-start gap-3 p-3 bg-background rounded-data">
-              <div className="w-3 h-3 mt-1.5 rounded-full bg-primary/10 flex-shrink-0" />
-              <div className="flex-1 space-y-2">
-                <div className="h-4 w-32 bg-primary/10 rounded-data" />
-                <div className="h-4 w-full bg-primary/10 rounded-data" />
-              </div>
-            </div>
+            <div key={i} className="h-20 bg-soft-pink/40 rounded-2xl" />
           ))}
         </div>
-      </div>
-
-      <div className="bg-card border border-border rounded-card p-6 space-y-4">
-        <div className="h-6 w-32 bg-primary/10 rounded-data mb-4" />
-        {[1, 2, 3].map((i) => (
-          <div key={i}>
-            <div className="h-4 w-24 bg-primary/10 rounded-data mb-3" />
-            <div className="h-16 bg-background rounded-data" />
-          </div>
-        ))}
       </div>
     </main>
   )
 }
+
+

@@ -62,30 +62,32 @@ export function MealPreview({
 
   return (
     <div className="space-y-6">
-      <h3 className="font-display text-lg font-medium text-dark-text">
-        {t(copy.dashboard.previewTitle, language)}
-      </h3>
-      <p className={`${bodyFontClass(language)} text-sm text-muted`}>
-        {t(copy.dashboard.confirmHint, language)}
-      </p>
+      <div>
+        <h3 className="font-display text-lg font-bold text-dark-text">
+          {t(copy.dashboard.previewTitle, language)}
+        </h3>
+        <p className={`${bodyFontClass(language)} text-xs sm:text-sm text-muted mt-0.5`}>
+          {t(copy.dashboard.confirmHint, language)}
+        </p>
+      </div>
 
       <ul className="space-y-3">
         {items.map((item, index) => (
           <li
             key={index}
-            className="border border-border rounded-data p-3 space-y-2"
+            className="border border-border/80 bg-background/50 rounded-2xl p-4 space-y-3 transition-all hover:border-primary/40 hover:bg-white"
           >
             <div className="flex items-start justify-between gap-3">
               <div className="flex-1 min-w-0">
-                <p className={`${bodyFontClass(language)} text-sm font-medium text-dark-text`}>
+                <p className={`${bodyFontClass(language)} text-sm font-bold text-dark-text`}>
                   {item.food_name}
                   {!item.matched && (
-                    <span className="ml-2 text-xs text-rose">
+                    <span className="ml-2 text-xs font-semibold text-rose">
                       ({t(copy.dashboard.notMatched, language)})
                     </span>
                   )}
                 </p>
-                <p className={`${bodyFontClass(language)} text-xs text-muted`}>
+                <p className={`${bodyFontClass(language)} text-xs text-muted mt-0.5`}>
                   {item.serving_description}
                 </p>
               </div>
@@ -93,15 +95,15 @@ export function MealPreview({
                 type="button"
                 onClick={() => handleRemove(index)}
                 disabled={isLoading}
-                className={`${bodyFontClass(language)} text-xs text-rose hover:text-rose/80 disabled:opacity-50`}
+                className={`${bodyFontClass(language)} px-2.5 py-1 rounded-full text-xs font-semibold text-rose hover:bg-rose/10 transition-colors disabled:opacity-50`}
               >
                 {t(copy.dashboard.remove, language)}
               </button>
             </div>
 
-            <div className="flex flex-wrap items-center gap-4">
-              <label className={`${bodyFontClass(language)} text-xs text-muted`}>
-                {t(copy.dashboard.quantity, language)}
+            <div className="flex flex-wrap items-center justify-between gap-3 pt-1 border-t border-border/40">
+              <label className={`${bodyFontClass(language)} text-xs text-muted font-medium flex items-center`}>
+                {t(copy.dashboard.quantity, language)}:
                 <input
                   type="number"
                   min={0}
@@ -109,39 +111,34 @@ export function MealPreview({
                   value={item.qty_g}
                   onChange={(e) => handleQtyChange(index, e.target.value)}
                   disabled={isLoading}
-                  className="ml-2 w-24 px-2 py-1 bg-background border border-border rounded-data text-sm text-dark-text focus-visible:outline-dark-text disabled:opacity-60"
+                  className="ml-2 w-20 px-2.5 py-1 bg-white border border-border rounded-xl text-xs font-bold text-dark-text focus:border-primary focus:ring-1 focus:ring-primary/20 disabled:opacity-60"
                 />
               </label>
-              <span className={`${bodyFontClass(language)} text-xs text-muted`}>
-                {Math.round(item.iron_mg)}mg {t(copy.dashboard.iron, language)} ·{' '}
-                {Math.round(item.calcium_mg)}mg {t(nutrientLabels.calcium, language)} ·{' '}
-                {Math.round(item.vit_d_iu)}IU {t(nutrientLabels.vit_d, language)} ·{' '}
-                {Math.round(item.b12_mcg)}mcg {t(nutrientLabels.b12, language)}
-              </span>
+
+              <div className="flex items-center gap-1.5 flex-wrap text-[11px] font-semibold text-muted">
+                <span className="bg-soft-pink px-2 py-0.5 rounded-md text-primary-dark">{Math.round(item.iron_mg)}mg iron</span>
+                <span className="bg-light-olive px-2 py-0.5 rounded-md text-olive-deep border border-olive/20">{Math.round(item.calcium_mg)}mg calcium</span>
+                <span className="bg-amber/10 px-2 py-0.5 rounded-md text-amber">{Math.round(item.vit_d_iu)}IU vit D</span>
+              </div>
             </div>
           </li>
         ))}
       </ul>
 
-      <div className={`${bodyFontClass(language)} flex flex-wrap gap-4 text-sm text-muted border-t border-border pt-3`}>
-        <span>{Math.round(tTotals.iron)}mg {t(copy.dashboard.iron, language)}</span>
-        <span>
-          {Math.round(tTotals.calcium)}mg {t(nutrientLabels.calcium, language)}
-        </span>
-        <span>
-          {Math.round(tTotals.vit_d)}IU {t(nutrientLabels.vit_d, language)}
-        </span>
-        <span>
-          {Math.round(tTotals.b12)}mcg {t(nutrientLabels.b12, language)}
-        </span>
+      {/* Totals Summary */}
+      <div className={`${bodyFontClass(language)} p-3.5 bg-soft-pink/50 rounded-2xl flex flex-wrap gap-3 text-xs font-bold text-primary-dark border border-border/60`}>
+        <span>💧 {Math.round(tTotals.iron)}mg {t(copy.dashboard.iron, language)}</span>
+        <span>🦴 {Math.round(tTotals.calcium)}mg {t(nutrientLabels.calcium, language)}</span>
+        <span>☀️ {Math.round(tTotals.vit_d)}IU {t(nutrientLabels.vit_d, language)}</span>
+        <span>✨ {Math.round(tTotals.b12)}mcg {t(nutrientLabels.b12, language)}</span>
       </div>
 
-      <div className="flex flex-col sm:flex-row gap-3">
+      <div className="flex flex-col sm:flex-row gap-3 pt-2">
         <button
           type="button"
           onClick={onConfirm}
           disabled={isLoading || !canConfirm}
-          className={`${bodyFontClass(language)} flex-1 px-4 py-3 bg-primary text-white rounded-data text-base font-medium disabled:opacity-50`}
+          className={`${bodyFontClass(language)} flex-1 px-6 py-3.5 bg-gradient-to-r from-primary to-primary-dark text-white rounded-full text-sm font-semibold shadow-fab hover:scale-[1.01] active:scale-[0.99] transition-all disabled:opacity-50`}
         >
           {isLoading
             ? t(copy.dashboard.logging, language)
@@ -151,7 +148,7 @@ export function MealPreview({
           type="button"
           onClick={onCancel}
           disabled={isLoading}
-          className={`${bodyFontClass(language)} flex-1 px-4 py-3 bg-card border border-border text-dark-text rounded-data font-medium disabled:opacity-50`}
+          className={`${bodyFontClass(language)} px-6 py-3.5 bg-card border border-border text-dark-text hover:bg-soft-pink/50 rounded-full text-sm font-semibold transition-all disabled:opacity-50`}
         >
           {t(copy.dashboard.cancel, language)}
         </button>

@@ -132,18 +132,23 @@ export function LogMealModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-primary/40"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-dark-text/30 backdrop-blur-sm animate-in fade-in duration-200"
       onClick={(e) => {
         if (e.target === e.currentTarget && !isLoading) handleClose()
       }}
     >
-      <div className="w-full max-w-chat max-h-[90vh] overflow-y-auto bg-card border border-border rounded-card shadow-modal p-6">
-        <div className="flex items-start justify-between gap-4 mb-4">
-          <h2 className="font-display text-xl font-medium text-dark-text">
-            {view === 'input'
-              ? t(copy.dashboard.voiceTitle, language)
-              : t(copy.dashboard.previewTitle, language)}
-          </h2>
+      <div className="w-full max-w-chat max-h-[90vh] overflow-y-auto bg-card border border-border rounded-3xl shadow-modal p-6 sm:p-8 animate-in zoom-in-95 duration-200">
+        <div className="flex items-start justify-between gap-4 mb-5">
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-full bg-soft-pink flex items-center justify-center text-primary-dark text-base shadow-sm">
+              🍲
+            </div>
+            <h2 className="font-display text-xl sm:text-2xl font-bold text-dark-text">
+              {view === 'input'
+                ? t(copy.dashboard.voiceTitle, language)
+                : t(copy.dashboard.previewTitle, language)}
+            </h2>
+          </div>
           <button
             type="button"
             onClick={(e) => {
@@ -151,7 +156,7 @@ export function LogMealModal({
               handleClose()
             }}
             disabled={isLoading}
-            className="w-8 h-8 rounded-data bg-background border border-border flex items-center justify-center text-muted hover:text-dark-text disabled:opacity-50"
+            className="w-9 h-9 rounded-full bg-soft-pink/70 border border-border/80 flex items-center justify-center text-primary-dark hover:bg-soft-pink transition-all disabled:opacity-50"
             aria-label={t(copy.dashboard.close, language)}
           >
             <svg
@@ -159,7 +164,7 @@ export function LogMealModal({
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
               aria-hidden="true"
@@ -178,7 +183,7 @@ export function LogMealModal({
                 onClick={handleMicClick}
               />
               <div className="flex-1 w-full">
-                <p className={`${bodyFontClass(language)} text-sm text-muted mb-3`}>
+                <p className={`${bodyFontClass(language)} text-xs sm:text-sm text-muted mb-2 font-medium`}>
                   {t(copy.dashboard.voiceHint, language)}
                 </p>
                 <textarea
@@ -191,10 +196,10 @@ export function LogMealModal({
                   placeholder={t(copy.dashboard.placeholder, language)}
                   rows={3}
                   disabled={isLoading}
-                  className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-dark-text placeholder:text-muted focus-visible:outline-dark-text resize-none disabled:opacity-60"
+                  className="w-full px-4 py-3 bg-background/80 border border-border rounded-2xl font-sans text-sm text-dark-text placeholder:text-muted focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none disabled:opacity-60"
                 />
                 {voice.error && (
-                  <p className={`${bodyFontClass(language)} mt-2 text-sm text-rose`}>{voice.error}</p>
+                  <p className={`${bodyFontClass(language)} mt-2 text-xs text-rose font-medium`}>{voice.error}</p>
                 )}
                 <p className={`${bodyFontClass(language)} mt-2 text-xs text-muted`}>
                   {t(copy.dashboard.logMealHint, language)}
@@ -203,7 +208,7 @@ export function LogMealModal({
                   type="button"
                   onClick={handleParse}
                   disabled={isLoading || !input.trim()}
-                  className={`${bodyFontClass(language)} mt-4 w-full px-4 py-3 bg-primary text-white rounded-data text-base font-medium disabled:opacity-50`}
+                  className={`${bodyFontClass(language)} mt-4 w-full px-6 py-3.5 bg-gradient-to-r from-primary to-primary-dark text-white rounded-full text-sm sm:text-base font-semibold shadow-fab hover:scale-[1.01] active:scale-[0.99] transition-all disabled:opacity-50`}
                 >
                   {stage === 'parsing'
                     ? t(copy.dashboard.parsing, language)
@@ -213,7 +218,7 @@ export function LogMealModal({
             </div>
 
             {error && (
-              <p className={`${bodyFontClass(language)} mt-4 text-sm text-rose`}>{error}</p>
+              <p className={`${bodyFontClass(language)} mt-4 text-xs sm:text-sm text-rose font-medium bg-rose/10 p-3 rounded-xl border border-rose/20`}>{error}</p>
             )}
           </>
         ) : (
@@ -228,7 +233,7 @@ export function LogMealModal({
         )}
 
         {view === 'preview' && error && (
-          <p className={`${bodyFontClass(language)} mt-4 text-sm text-rose`}>{error}</p>
+          <p className={`${bodyFontClass(language)} mt-4 text-xs sm:text-sm text-rose font-medium bg-rose/10 p-3 rounded-xl border border-rose/20`}>{error}</p>
         )}
       </div>
     </div>

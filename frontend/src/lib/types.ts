@@ -197,6 +197,7 @@ export interface PhaseOut {
 export interface LoginPayload {
   username: string
   password: string
+  name?: string
 }
 
 export interface LoginResponse {

@@ -156,3 +156,115 @@ export function IconLeaf({ className = 'w-5 h-5' }: IconProps) {
     </svg>
   )
 }
+
+export function IconBell({ className = 'w-5 h-5', hasAlert = true }: IconProps & { hasAlert?: boolean }) {
+  return (
+    <div className="relative inline-flex items-center justify-center">
+      <svg
+        className={className}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+        <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+      </svg>
+      {hasAlert && (
+        <span className="absolute top-0 right-0 w-2 h-2 rounded-full bg-primary ring-2 ring-white" />
+      )}
+    </div>
+  )
+}
+
+export function IconUtensils({ className = 'w-5 h-5' }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M18 2v6a3 3 0 0 1-3 3 3 3 0 0 1-3-3V2" />
+      <path d="M15 11v11" />
+      <path d="M5 2v4a3 3 0 0 0 3 3h0a3 3 0 0 0 3-3V2" />
+      <path d="M8 9v13" />
+    </svg>
+  )
+}
+
+export function IconSparkles({ className = 'w-5 h-5' }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      stroke="none"
+      aria-hidden="true"
+    >
+      <path d="M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4L12 2zM19 17l1.2 2.8L23 21l-2.8 1.2L19 25l-1.2-2.8L15 21l2.8-1.2L19 17z" />
+    </svg>
+  )
+}
+
+export function IconChevronRight({ className = 'w-4 h-4' }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="m9 18 6-6-6-6" />
+    </svg>
+  )
+}
+
+export function IconArrowRight({ className = 'w-4 h-4' }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M5 12h14M12 5l7 7-7 7" />
+    </svg>
+  )
+}
+
+export function IconLogoPetals({ className = 'w-7 h-7' }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 36 36" fill="currentColor">
+      <path
+        d="M18 4C14 11 11 17 11 23a7 7 0 0 0 14 0c0-6-3-12-7-19z"
+        fill="#E88BA8"
+      />
+      <path
+        d="M8 12c3 4 7 8 13 9a7 7 0 0 1-10 6 7 7 0 0 1-3-15z"
+        fill="#80864A"
+        opacity="0.9"
+      />
+      <path
+        d="M28 12c-3 4-7 8-13 9a7 7 0 0 0 10 6 7 7 0 0 0 3-15z"
+        fill="#C85D80"
+        opacity="0.9"
+      />
+    </svg>
+  )
+}

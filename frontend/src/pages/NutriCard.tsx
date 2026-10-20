@@ -3,7 +3,7 @@ import html2canvas from 'html2canvas'
 import { getDashboard } from '../lib/api.ts'
 //import { useLanguage } from '../lib/useLanguage.ts'
 import type { Dashboard, User } from '../lib/types.ts'
-import { IconFire, IconLeaf } from '../components/icons.tsx'
+import { IconFire, IconLogoPetals } from '../components/icons.tsx'
 
 interface NutriCardProps {
   user: User
@@ -91,7 +91,7 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
       <div className="absolute top-4 left-4 right-4 flex justify-between z-10 max-w-sm mx-auto w-full">
         <button
           onClick={onClose}
-          className="w-10 h-10 rounded-full bg-white/20 backdrop-blur flex items-center justify-center text-white"
+          className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/30 transition-all"
         >
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M18 6 6 18M6 6l12 12" />
@@ -100,10 +100,10 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
         <div className="flex gap-2">
           <button
             onClick={handleDownload}
-            className="px-4 py-2 rounded-full bg-white text-black font-sans text-sm font-semibold flex items-center gap-2"
+            className="px-4 py-2 rounded-full bg-gradient-to-r from-primary to-primary-dark text-white font-sans text-sm font-semibold flex items-center gap-2 shadow-card hover:scale-105 active:scale-95 transition-all"
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" /></svg>
-            Save
+            Save Card
           </button>
         </div>
       </div>
@@ -143,7 +143,7 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
             </div>
             <div className="flex flex-col items-center pt-2">
               <div className="flex items-center gap-1 text-white">
-                <IconFire className="w-5 h-5 text-white" />
+                <IconFire className="w-5 h-5 text-primary" />
                 <span className="font-bold text-2xl tracking-tighter">6</span>
               </div>
               <span className="text-white/80 text-[8px] font-bold tracking-[0.1em] uppercase mt-1">DAY STREAK</span>
@@ -165,8 +165,8 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
                 if (!p) return null
                 const percentVal = Math.min(Math.round((p.current / p.target) * 100), 100)
                 const isComplete = percentVal >= 100
-                const ringColor = isComplete ? '#5F8A68' : '#DFA58D' // Emerald or Peach/Amber
-                const trackColor = 'rgba(255,255,255,0.15)'
+                const ringColor = isComplete ? '#80864A' : '#E88BA8' // Olive Green or Primary Pink
+                const trackColor = 'rgba(255,255,255,0.18)'
 
                 // SVG Circle math
                 const size = 64
@@ -219,10 +219,10 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
             {/* Footer Branding */}
             <div className="flex items-center justify-between pt-4 border-t border-white/10">
               <div className="flex items-center gap-2">
-                <IconLeaf className="w-5 h-5 text-[#82977F]" />
+                <IconLogoPetals className="w-5 h-5 text-primary" />
                 <div className="flex flex-col">
-                  <span className="text-white font-bold text-[12px] tracking-wide">AURA-Nutri</span>
-                  <span className="text-white/50 text-[8px] tracking-[0.15em] uppercase">YOUR DAILY AURA</span>
+                  <span className="text-white font-bold text-[12px] tracking-wide">Women Nutri Aura</span>
+                  <span className="text-white/50 text-[8px] tracking-[0.15em] uppercase">NUTRITION · BALANCE · VITALITY</span>
                 </div>
               </div>
               <svg className="w-5 h-5 text-white/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">

@@ -37,16 +37,16 @@ export function LanguageToggle() {
   const { language, setLanguage } = useLanguage()
 
   return (
-    <div className="inline-flex bg-card border border-border rounded-data overflow-hidden">
+    <div className="inline-flex items-center p-0.5 bg-soft-pink/70 border border-border rounded-full shadow-sm">
       <button
         type="button"
         onClick={() => setLanguage('en')}
         aria-pressed={language === 'en'}
         className={[
-          'px-3 py-1 text-sm font-sans font-medium transition-colors',
+          'px-2.5 py-1 text-xs font-sans font-semibold rounded-full transition-all duration-200',
           language === 'en'
-            ? 'bg-primary text-white'
-            : 'text-dark-text hover:bg-background',
+            ? 'bg-primary text-white shadow-sm'
+            : 'text-muted hover:text-dark-text',
         ].join(' ')}
       >
         EN
@@ -56,10 +56,10 @@ export function LanguageToggle() {
         onClick={() => setLanguage('hi')}
         aria-pressed={language === 'hi'}
         className={[
-          'px-3 py-1 text-sm font-sans font-medium transition-colors',
+          'px-2.5 py-1 text-xs font-sans font-semibold rounded-full transition-all duration-200',
           language === 'hi'
-            ? 'bg-primary text-white'
-            : 'text-dark-text hover:bg-background',
+            ? 'bg-primary text-white shadow-sm'
+            : 'text-muted hover:text-dark-text',
         ].join(' ')}
       >
         HI

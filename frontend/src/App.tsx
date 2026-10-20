@@ -8,6 +8,8 @@ import { NutriCard } from './pages/NutriCard.tsx'
 import { Profile } from './pages/Profile.tsx'
 import { Layout, type Tab } from './components/Layout.tsx'
 import { LogMealModal } from './components/LogMealModal.tsx'
+import { NameCompletionModal } from './components/NameCompletionModal.tsx'
+import { hasValidName } from './lib/userUtils.ts'
 import type { Dashboard as DashboardType, Phase, UserProfile } from './lib/types.ts'
 
 const STORAGE_KEY = 'aura_user'
@@ -90,6 +92,11 @@ export default function App() {
     setNutriCardOpen(false)
   }
 
+  const handleNameComplete = (updatedUser: UserProfile) => {
+    saveUser(updatedUser)
+    setUser(updatedUser)
+  }
+
   if (!user) {
     return <Login onComplete={handleComplete} />
   }
@@ -136,6 +143,13 @@ export default function App() {
           user={user}
           dashboard={nutriCardDashboard || undefined}
           onClose={handleCloseNutriCard}
+        />
+      )}
+
+      {user && !hasValidName(user) && (
+        <NameCompletionModal
+          user={user}
+          onComplete={handleNameComplete}
         />
       )}
     </>

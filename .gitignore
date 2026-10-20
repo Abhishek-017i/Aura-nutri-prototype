@@ -18,3 +18,5 @@ frontend/dist/
 .DS_Store
 .idea/
 *.pyc
+# Python virtual environment
+backend/.venv/
