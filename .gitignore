@@ -31,3 +31,9 @@ backend/firebase-service-account.json
 backend/.mypy_cache/
 backend/.ruff_cache/
 backend/.pytest_cache/
+
+backend/.venv_old/
+
+# Local environment files
+frontend/.env
+backend/.venv_old/
