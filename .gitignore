@@ -1,7 +1,7 @@
 # Docs (internal, not for public repo)
 docs/
 AGENTS.md
-
+.docs
 # Backend
 backend/.env
 backend/venv/
