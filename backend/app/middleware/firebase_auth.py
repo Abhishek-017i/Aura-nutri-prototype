@@ -2,6 +2,7 @@ from fastapi import Request
 from fastapi.responses import JSONResponse
 from starlette.middleware.base import BaseHTTPMiddleware
 import structlog
+import traceback
 
 from app.services.firebase_auth import verify_token
 
@@ -28,7 +29,13 @@ class FirebaseAuthMiddleware(BaseHTTPMiddleware):
             request.state.uid = decoded["uid"]
             request.state.email = decoded.get("email")
         except Exception as e:
-            logger.error("firebase_token_verification_failed", error=str(e))
+            # Expose the concrete verification failure for the D204 diagnosis.
+            logger.error(
+                "firebase_token_verification_failed",
+                error=str(e),
+                error_type=type(e).__name__,
+                traceback=traceback.format_exc(),
+            )
             return JSONResponse(
                 status_code=401,
                 content={"error": "invalid_token", "message": "Invalid or expired token"},
