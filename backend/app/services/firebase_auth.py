@@ -1,3 +1,5 @@
+import base64
+import json
 from pathlib import Path
 from typing import Any
 
@@ -20,24 +22,65 @@ def _initialize() -> firebase_admin.App:
         _firebase_app = firebase_admin.get_app()
         return _firebase_app
 
-    path_str = get_settings().firebase_service_account_path
-    resolved = Path(path_str).resolve()
-    # Probe the mounted credential format before initialization for the D204 diagnosis.
-    raw = resolved.read_text(encoding="utf-8") if resolved.exists() else ""
-    # TODO: remove firebase_credential_probe log after D204 is resolved.
-    logger.info(
-        "firebase_credential_probe",
-        path=str(resolved),
-        exists=resolved.exists(),
-        size_bytes=len(raw),
-        starts_with=raw[:30],
-        has_escaped_newlines=("\\n" in raw),
-    )
-    if not resolved.exists():
-        raise RuntimeError(f"Firebase service account file not found: {resolved}")
+    settings = get_settings()
+    cred_dict: dict[str, Any] | None = None
 
-    cred = credentials.Certificate(str(resolved))
+    # 1. Try raw JSON or base64 from environment variable
+    raw_env = settings.firebase_credentials_raw.strip()
+    if not raw_env and settings.firebase_service_account_path.strip().startswith("{"):
+        raw_env = settings.firebase_service_account_path.strip()
+
+    if raw_env:
+        # Check if base64 encoded
+        if not raw_env.startswith("{"):
+            try:
+                decoded_bytes = base64.b64decode(raw_env)
+                decoded_str = decoded_bytes.decode("utf-8")
+                if decoded_str.strip().startswith("{"):
+                    raw_env = decoded_str.strip()
+            except Exception:
+                pass
+
+        if raw_env.startswith("{"):
+            try:
+                parsed = json.loads(raw_env)
+                if isinstance(parsed, dict):
+                    cred_dict = parsed
+            except Exception as e:
+                logger.error("firebase_json_parse_error", error=str(e))
+
+    # 2. Try file path if cred_dict not found
+    if cred_dict is None:
+        path_str = settings.firebase_service_account_path
+        resolved = Path(path_str).resolve()
+        if resolved.exists():
+            try:
+                content = resolved.read_text(encoding="utf-8")
+                parsed = json.loads(content)
+                if isinstance(parsed, dict):
+                    cred_dict = parsed
+            except Exception as e:
+                logger.error("firebase_file_read_error", path=str(resolved), error=str(e))
+
+    if cred_dict is None:
+        logger.error(
+            "firebase_credentials_missing",
+            has_raw_env=bool(raw_env),
+            file_path=settings.firebase_service_account_path,
+        )
+        raise RuntimeError(
+            "Firebase credentials not found. Provide credentials via FIREBASE_CREDENTIALS, "
+            "FIREBASE_SERVICE_ACCOUNT_JSON, firebase-service-account.json environment variable, "
+            "or a valid file path at FIREBASE_SERVICE_ACCOUNT_PATH."
+        )
+
+    # Normalize private_key if escaped newlines are present
+    if "private_key" in cred_dict and isinstance(cred_dict["private_key"], str):
+        cred_dict["private_key"] = cred_dict["private_key"].replace("\\n", "\n")
+
+    cred = credentials.Certificate(cred_dict)
     _firebase_app = firebase_admin.initialize_app(cred)
+    logger.info("firebase_initialized_successfully", project_id=cred_dict.get("project_id"))
     return _firebase_app
 
 

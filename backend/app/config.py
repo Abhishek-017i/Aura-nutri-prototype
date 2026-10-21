@@ -20,6 +20,7 @@ def _load_env() -> None:
 
 class Settings(BaseModel):
     firebase_service_account_path: str = "./firebase-service-account.json"
+    firebase_credentials_raw: str = ""
     groq_api_keys: list[str] = Field(default_factory=list)
     gemini_api_key: str = ""
     cors_origins: str = "http://localhost:5173,http://localhost:3000"
@@ -54,6 +55,12 @@ def get_settings() -> Settings:
 
     # Read from environment
     firebase_path = os.getenv("FIREBASE_SERVICE_ACCOUNT_PATH", "./firebase-service-account.json")
+    firebase_raw = (
+        os.getenv("FIREBASE_CREDENTIALS")
+        or os.getenv("FIREBASE_SERVICE_ACCOUNT_JSON")
+        or os.getenv("firebase-service-account.json")
+        or ""
+    )
     groq_keys_raw = os.getenv("GROQ_API_KEYS", "")
     single_groq_key = os.getenv("GROQ_API_KEY", "")
     gemini_key = os.getenv("GEMINI_API_KEY", "")
@@ -68,6 +75,7 @@ def get_settings() -> Settings:
 
     return Settings(
         firebase_service_account_path=firebase_path,
+        firebase_credentials_raw=firebase_raw,
         groq_api_keys=groq_keys_val,
         gemini_api_key=gemini_key,
         cors_origins=cors_origins,

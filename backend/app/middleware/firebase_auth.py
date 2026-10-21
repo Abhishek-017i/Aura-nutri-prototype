@@ -1,6 +1,7 @@
 from fastapi import Request
 from fastapi.responses import JSONResponse
-from starlette.middleware.base import BaseHTTPMiddleware
+from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoint
+from starlette.responses import Response
 import structlog
 import traceback
 
@@ -8,10 +9,10 @@ from app.services.firebase_auth import verify_token
 
 logger = structlog.get_logger()
 
-PUBLIC_PATHS = {"/Health", "/docs", "/openapi.json", "/redoc", "/api/phase/calculate"}
+PUBLIC_PATHS = {"/Health", "/health", "/docs", "/openapi.json", "/redoc", "/api/phase/calculate"}
 
 class FirebaseAuthMiddleware(BaseHTTPMiddleware):
-    async def dispatch(self, request: Request, call_next):
+    async def dispatch(self, request: Request, call_next: RequestResponseEndpoint) -> Response:
         if request.method == "OPTIONS" or request.url.path in PUBLIC_PATHS:
             return await call_next(request)
 
