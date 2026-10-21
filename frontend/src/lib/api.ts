@@ -20,9 +20,14 @@ import type {
 import { auth } from './firebase.ts'
 
 export async function authHeaders(): Promise<HeadersInit> {
+  // 1. Wait for Firebase to be completely ready
+  await auth.authStateReady()
+
   const user = auth.currentUser
   if (!user) return {}
-  const token = await user.getIdToken()
+
+  // 2. Force refresh to ensure the token is valid and not expired
+  const token = await user.getIdToken(true)
   return { Authorization: `Bearer ${token}` }
 }
 
@@ -43,12 +48,12 @@ export class HTTPError extends Error {
 }
 
 async function request<T>(url: string, options: RequestInit = {}): Promise<T> {
-  const auth = await authHeaders()
+  const authHeader = await authHeaders()
   const response = await fetch(url, {
     ...options,
     headers: {
       'Content-Type': 'application/json',
-      ...auth,
+      ...authHeader,
       ...(options.headers || {}),
     },
   })
@@ -222,11 +227,11 @@ export async function transcribeAudio(audioBlob: Blob): Promise<{ transcript: st
     : 'audio.webm'
   formData.append('audio', audioBlob, filename)
 
-  const auth = await authHeaders()
+  const authHeader = await authHeaders()
   const response = await fetch(`${API_BASE_URL}/api/transcribe`, {
     method: 'POST',
     headers: {
-      ...auth,
+      ...authHeader,
     },
     body: formData,
   })
