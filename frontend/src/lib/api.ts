@@ -20,13 +20,15 @@ import type {
 import { auth } from './firebase.ts'
 
 export async function authHeaders(): Promise<HeadersInit> {
-  // 1. Wait for Firebase to be completely ready
+  // CRITICAL: Wait for Firebase to restore the session from IndexedDB
   await auth.authStateReady()
 
   const user = auth.currentUser
-  if (!user) return {}
+  if (!user) {
+    console.error("No Firebase user found. Cannot attach token.")
+    return {}
+  }
 
-  // 2. Force refresh to ensure the token is valid and not expired
   const token = await user.getIdToken(true)
   return { Authorization: `Bearer ${token}` }
 }
