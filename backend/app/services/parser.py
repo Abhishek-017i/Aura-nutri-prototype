@@ -621,16 +621,31 @@ def _build_parsed_item_from_match(
     )
 
 
-def _build_unmatched_item(segment: _ParsedSegment, qty_g: float) -> ParsedItem:
-    unit_label = segment.unit or "serving"
+def _build_unmatched_item(
+    segment: _ParsedSegment | None = None,
+    qty_g: float = 100.0,
+    suggestion: str = "Naya item add karein?",
+    food_phrase: str | None = None,
+    qty_str: str | None = None,
+) -> ParsedItem:
+    if segment is not None:
+        unit_label = segment.unit or "serving"
+        raw_text = segment.raw_text
+        food_name = segment.food_phrase or "unknown"
+        serving_desc = f"{segment.quantity} {unit_label} (unmatched)"
+    else:
+        raw_text = f"{qty_str or '1'} {food_phrase or 'unknown'}".strip()
+        food_name = food_phrase or "unknown"
+        serving_desc = f"{qty_str or '1 serving'} (unmatched)"
+
     return ParsedItem(
-        raw_text=segment.raw_text,
-        food_name=segment.food_phrase or "unknown",
+        raw_text=raw_text,
+        food_name=food_name,
         food_id=None,
         matched=False,
-        suggestion="Naya item add karein?",
+        suggestion=suggestion,
         qty_g=round(qty_g, 2),
-        serving_description=f"{segment.quantity} {unit_label} (unmatched)",
+        serving_description=serving_desc,
         energy_kcal=0.0,
         protein_g=0.0,
         iron_mg=0.0,
@@ -685,6 +700,23 @@ async def parse_meal(db: Session, text: str) -> ParsedMeal:
         qty_str = str(raw.get("quantity", "")).strip()
         if not food_phrase:
             continue
+
+        # NEW: Reject non-ASCII LLM output. Do NOT translate. The LLM was
+        # instructed to output English only; if it disobeyed, reject the item
+        # and let the user retype in English.
+        if not food_phrase.isascii():
+            logger.warning("llm_output_non_ascii_rejected", food=food_phrase, qty=qty_str)
+
+            # Use the existing helper function for unmatched items
+            raw_items.append(
+                _build_unmatched_item(
+                    food_phrase=food_phrase,
+                    qty_str=qty_str,
+                    suggestion="Please type the food name in English.",
+                )
+            )
+            warnings.append(f"Non-English food name '{food_phrase}' rejected. Please type in English.")
+            continue  # Skip the DB search entirely for this item
 
         qty_num, unit, exp_g, unclear = _parse_quantity_string(qty_str)
         if unclear:
