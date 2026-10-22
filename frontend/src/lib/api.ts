@@ -105,10 +105,12 @@ export async function updateUser(
 }
 
 export async function getDashboard(_userId?: string): Promise<Dashboard> {
+  void _userId
   return request<Dashboard>(`${API_BASE_URL}/api/dashboard`)
 }
 
 export async function getRiskScore(_userId?: string): Promise<RiskScore> {
+  void _userId
   return request<RiskScore>(`${API_BASE_URL}/api/risk-score`)
 }
 
@@ -165,8 +167,8 @@ export async function logMeal(
   arg2?: LogMealItem[] | string | null,
   arg3?: string | null,
 ): Promise<LogMealResponse> {
-  let items: LogMealItem[] = []
-  let mealType: string | null = 'voice'
+  let items: LogMealItem[]
+  let mealType: string | null
 
   if (Array.isArray(arg1)) {
     items = arg1
@@ -186,14 +188,17 @@ export async function logMeal(
 }
 
 export async function getStreak(_userId?: string): Promise<StreakOut> {
+  void _userId
   return request<StreakOut>(`${API_BASE_URL}/api/streak`)
 }
 
 export async function getCheatDayStatus(_userId?: string): Promise<CheatDayStatus> {
+  void _userId
   return request<CheatDayStatus>(`${API_BASE_URL}/api/cheat-day`)
 }
 
 export async function claimCheatDay(_userId?: string): Promise<CheatDayStatus> {
+  void _userId
   return request<CheatDayStatus>(
     `${API_BASE_URL}/api/cheat-day/use`,
     { method: 'POST' },

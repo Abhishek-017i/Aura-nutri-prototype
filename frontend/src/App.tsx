@@ -15,7 +15,7 @@ import { getUserDoc } from './lib/firestore.ts'
 import type { Dashboard as DashboardType, Phase, UserProfile } from './lib/types.ts'
 
 export default function App() {
-  const { user: authUser, signOut } = useAuth()
+  const { user: authUser, loading: authLoading, signOut } = useAuth()
   const [profile, setProfile] = useState<UserProfile | null>(null)
   const [activeTab, setActiveTab] = useState<Tab>('home')
   const [logOpen, setLogOpen] = useState(false)
@@ -45,18 +45,22 @@ export default function App() {
   }, [])
 
   // Sync profile from Firestore whenever authenticated user changes
+  const userId = authUser?.uid
+  const userEmail = authUser?.email || ''
+  const userDisplayName = authUser?.displayName || ''
+
   const loadProfile = useCallback(async () => {
-    if (!authUser) {
+    if (!userId) {
       setProfile(null)
       return
     }
     try {
-      const data = await getUserDoc(authUser.uid)
+      const data = await getUserDoc(userId)
       if (data) {
         setProfile({
-          id: authUser.uid,
-          username: (data.username as string) || authUser.email || '',
-          name: (data.name as string) || authUser.displayName || 'Friend',
+          id: userId,
+          username: (data.username as string) || userEmail,
+          name: (data.name as string) || userDisplayName || 'Friend',
           phase: (data.phase as Phase) || null,
           age: typeof data.age === 'number' ? data.age : null,
           gender: (data.gender as string) || 'female',
@@ -74,9 +78,9 @@ export default function App() {
         })
       } else {
         setProfile({
-          id: authUser.uid,
-          username: authUser.email || '',
-          name: authUser.displayName || 'Friend',
+          id: userId,
+          username: userEmail,
+          name: userDisplayName || 'Friend',
           phase: null,
           age: null,
           gender: 'female',
@@ -96,9 +100,10 @@ export default function App() {
     } catch (e) {
       console.error('Failed to load user profile in App:', e)
     }
-  }, [authUser])
+  }, [userId, userEmail, userDisplayName])
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     void loadProfile()
   }, [loadProfile, refreshTrigger])
 
@@ -158,7 +163,8 @@ export default function App() {
     )
   }
 
-    if (route === '/login') {
+  // Force render Login when unauthenticated (per D203) or when on /login
+  if (route === '/login' || (!authLoading && !authUser)) {
     return (
       <Login
         onSuccess={() => {
@@ -173,6 +179,16 @@ export default function App() {
           }
         }}
       />
+    )
+  }
+
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-[#FAF7F2] p-6 flex flex-col gap-4">
+        <div className="h-8 w-48 bg-[#E2E8F0] rounded animate-pulse" />
+        <div className="h-32 bg-[#E2E8F0] rounded-lg animate-pulse" />
+        <div className="h-64 bg-[#E2E8F0] rounded-lg animate-pulse" />
+      </div>
     )
   }
 

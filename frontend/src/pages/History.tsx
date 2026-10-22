@@ -101,10 +101,6 @@ export function History({ user, refreshTrigger }: HistoryProps) {
   )
 
   const loadAll = useCallback(async () => {
-    setLoading(true)
-    setError(null)
-    setOffset(0)
-    setHasMore(true)
     try {
       const score = await getRiskScore(user.id)
       setRiskScore(score)
@@ -125,7 +121,7 @@ export function History({ user, refreshTrigger }: HistoryProps) {
   }, [language, user.id])
 
   useEffect(() => {
-    // eslint-disable-next-border react-hooks/set-state-in-effect
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     void loadAll()
   }, [loadAll, refreshTrigger])
 

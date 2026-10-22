@@ -30,9 +30,6 @@ export function Dashboard({ user, refreshTrigger, onOpenLog }: DashboardProps) {
   const [error, setError] = useState<string | null>(null)
 
   const loadData = useCallback(async () => {
-    setLoading(true)
-    setError(null)
-
     try {
       const today = localDateString(new Date())
       const weekAgo = new Date()
@@ -57,7 +54,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog }: DashboardProps) {
   }, [language, user.id])
 
   useEffect(() => {
-    // eslint-disable-next-border react-hooks/set-state-in-effect
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     void loadData()
   }, [loadData, refreshTrigger])
 

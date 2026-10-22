@@ -57,11 +57,6 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
   const [editError, setEditError] = useState<string | null>(null)
 
   const loadData = useCallback(async () => {
-    setLoading(true)
-    setError(null)
-    setPhaseError(null)
-    setCheatMessage(null)
-
     try {
       const [profileData, cheatData, logsData] = await Promise.all([
         getUser(user.id),
@@ -83,7 +78,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
   }, [language, user.id])
 
   useEffect(() => {
-    // eslint-disable-next-border react-hooks/set-state-in-effect
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     void loadData()
   }, [loadData, refreshTrigger])
 
