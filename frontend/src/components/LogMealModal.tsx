@@ -139,7 +139,7 @@ export function LogMealModal({
     >
       <div className="w-full max-w-chat max-h-[90vh] overflow-y-auto bg-card border border-border rounded-card shadow-modal p-6">
         <div className="flex items-start justify-between gap-4 mb-4">
-          <h2 className="font-display text-xl font-medium text-dark-text">
+          <h2 className="font-display text-xl font-medium text-text-main">
             {view === 'input'
               ? t(copy.dashboard.voiceTitle, language)
               : t(copy.dashboard.previewTitle, language)}
@@ -151,7 +151,7 @@ export function LogMealModal({
               handleClose()
             }}
             disabled={isLoading}
-            className="w-8 h-8 rounded-data bg-background border border-border flex items-center justify-center text-muted hover:text-dark-text disabled:opacity-50"
+            className="w-8 h-8 rounded-data bg-background border border-border flex items-center justify-center text-text-muted hover:text-text-main disabled:opacity-50"
             aria-label={t(copy.dashboard.close, language)}
           >
             <svg
@@ -178,7 +178,7 @@ export function LogMealModal({
                 onClick={handleMicClick}
               />
               <div className="flex-1 w-full">
-                <p className={`${bodyFontClass(language)} text-sm text-muted mb-3`}>
+                <p className={`${bodyFontClass(language)} text-sm text-text-muted mb-3`}>
                   {t(copy.dashboard.voiceHint, language)}
                 </p>
                 <textarea
@@ -191,19 +191,19 @@ export function LogMealModal({
                   placeholder={t(copy.dashboard.placeholder, language)}
                   rows={3}
                   disabled={isLoading}
-                  className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-dark-text placeholder:text-muted focus-visible:outline-dark-text resize-none disabled:opacity-60"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted focus-visible:outline-text-main resize-none disabled:opacity-60"
                 />
                 {voice.error && (
                   <p className={`${bodyFontClass(language)} mt-2 text-sm text-rose`}>{voice.error}</p>
                 )}
-                <p className={`${bodyFontClass(language)} mt-2 text-xs text-muted`}>
+                <p className={`${bodyFontClass(language)} mt-2 text-xs text-text-muted`}>
                   {t(copy.dashboard.logMealHint, language)}
                 </p>
                 <button
                   type="button"
                   onClick={handleParse}
                   disabled={isLoading || !input.trim()}
-                  className={`${bodyFontClass(language)} mt-4 w-full px-4 py-3 bg-primary text-white rounded-data text-base font-medium disabled:opacity-50`}
+                  className={`${bodyFontClass(language)} mt-4 w-full px-4 py-3 bg-primary hover:bg-primary-hover text-white dark:text-background rounded-data text-base font-medium disabled:opacity-50 transition-colors`}
                 >
                   {stage === 'parsing'
                     ? t(copy.dashboard.parsing, language)

@@ -25,11 +25,11 @@ export function ChatWindow({ user }: ChatWindowProps) {
   return (
     <div className="flex flex-col h-[60vh] bg-card border border-border rounded-card">
       <div className="flex items-center justify-between px-4 py-3 border-b border-border">
-        <h2 className="font-display text-lg font-medium text-dark-text">{t(copy.chat.title, language)}</h2>
+        <h2 className="font-display text-lg font-medium text-text-main">{t(copy.chat.title, language)}</h2>
         <button
           type="button"
           onClick={clear}
-          className={`${bodyFontClass(language)} text-sm text-muted hover:text-dark-text`}
+          className={`${bodyFontClass(language)} text-sm text-text-muted hover:text-text-main`}
         >
           {t(copy.chat.clear, language)}
         </button>
@@ -38,10 +38,10 @@ export function ChatWindow({ user }: ChatWindowProps) {
       <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-background">
         {messages.length === 0 && (
           <div className="text-center py-8">
-            <p className={`${bodyFontClass(language)} text-sm text-muted`}>
+            <p className={`${bodyFontClass(language)} text-sm text-text-muted`}>
               {t(copy.chat.emptyPrompt, language)}
             </p>
-            <p className={`${bodyFontClass(language)} text-sm text-muted mt-1`}>
+            <p className={`${bodyFontClass(language)} text-sm text-text-muted mt-1`}>
               {t(copy.chat.emptyExample, language)}
             </p>
           </div>
@@ -59,8 +59,8 @@ export function ChatWindow({ user }: ChatWindowProps) {
               className={[
                 `max-w-[80%] px-4 py-2 rounded-data ${bodyFontClass(language)} text-sm`,
                 message.role === 'user'
-                  ? 'bg-primary text-white'
-                  : 'bg-card border border-border text-dark-text',
+                  ? 'bg-primary text-white dark:text-background'
+                  : 'bg-card border border-border text-text-main',
               ].join(' ')}
             >
               {message.content}
@@ -70,7 +70,7 @@ export function ChatWindow({ user }: ChatWindowProps) {
 
         {isLoading && (
           <div className="flex justify-start">
-            <div className={`bg-card border border-border rounded-data px-4 py-2 ${bodyFontClass(language)} text-sm text-muted`}>
+            <div className={`bg-card border border-border rounded-data px-4 py-2 ${bodyFontClass(language)} text-sm text-text-muted`}>
               {t(copy.chat.typing, language)}
             </div>
           </div>
@@ -92,19 +92,19 @@ export function ChatWindow({ user }: ChatWindowProps) {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder={t(copy.chat.placeholder, language)}
-          className="flex-1 px-4 py-2 bg-background border border-border rounded-data font-sans text-dark-text placeholder:text-muted focus-visible:outline-dark-text"
+          className="flex-1 px-4 py-2 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted focus-visible:outline-text-main"
           disabled={isLoading}
         />
         <button
           type="submit"
           disabled={isLoading || !input.trim()}
-          className={`${bodyFontClass(language)} px-4 py-2 bg-primary text-white rounded-data font-medium disabled:opacity-50`}
+          className={`${bodyFontClass(language)} px-4 py-2 bg-primary hover:bg-primary-hover text-white dark:text-background rounded-data font-medium disabled:opacity-50 transition-colors`}
         >
           {t(copy.chat.send, language)}
         </button>
       </form>
 
-      <p className={`${bodyFontClass(language)} px-4 pb-3 text-xs text-muted text-center bg-card`}>
+      <p className={`${bodyFontClass(language)} px-4 pb-3 text-xs text-text-muted text-center bg-card`}>
         AURA-Nutri provides food intelligence, not medical advice. Always consult a
         qualified physician or registered dietitian before changing your diet or taking
         supplements.

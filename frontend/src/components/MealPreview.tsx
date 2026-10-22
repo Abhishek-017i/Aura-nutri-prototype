@@ -62,10 +62,10 @@ export function MealPreview({
 
   return (
     <div className="space-y-6">
-      <h3 className="font-display text-lg font-medium text-dark-text">
+      <h3 className="font-display text-lg font-medium text-text-main">
         {t(copy.dashboard.previewTitle, language)}
       </h3>
-      <p className={`${bodyFontClass(language)} text-sm text-muted`}>
+      <p className={`${bodyFontClass(language)} text-sm text-text-muted`}>
         {t(copy.dashboard.confirmHint, language)}
       </p>
 
@@ -77,7 +77,7 @@ export function MealPreview({
           >
             <div className="flex items-start justify-between gap-3">
               <div className="flex-1 min-w-0">
-                <p className={`${bodyFontClass(language)} text-sm font-medium text-dark-text`}>
+                <p className={`${bodyFontClass(language)} text-sm font-medium text-text-main`}>
                   {item.food_name}
                   {!item.matched && (
                     <span className="ml-2 text-xs text-rose">
@@ -85,7 +85,7 @@ export function MealPreview({
                     </span>
                   )}
                 </p>
-                <p className={`${bodyFontClass(language)} text-xs text-muted`}>
+                <p className={`${bodyFontClass(language)} text-xs text-text-muted`}>
                   {item.serving_description}
                 </p>
               </div>
@@ -100,7 +100,7 @@ export function MealPreview({
             </div>
 
             <div className="flex flex-wrap items-center gap-4">
-              <label className={`${bodyFontClass(language)} text-xs text-muted`}>
+              <label className={`${bodyFontClass(language)} text-xs text-text-muted`}>
                 {t(copy.dashboard.quantity, language)}
                 <input
                   type="number"
@@ -109,10 +109,10 @@ export function MealPreview({
                   value={item.qty_g}
                   onChange={(e) => handleQtyChange(index, e.target.value)}
                   disabled={isLoading}
-                  className="ml-2 w-24 px-2 py-1 bg-background border border-border rounded-data text-sm text-dark-text focus-visible:outline-dark-text disabled:opacity-60"
+                  className="ml-2 w-24 px-2 py-1 bg-background border border-border rounded-data text-sm text-text-main focus-visible:outline-text-main disabled:opacity-60"
                 />
               </label>
-              <span className={`${bodyFontClass(language)} text-xs text-muted`}>
+              <span className={`${bodyFontClass(language)} text-xs text-text-muted`}>
                 {Math.round(item.iron_mg)}mg {t(copy.dashboard.iron, language)} ·{' '}
                 {Math.round(item.calcium_mg)}mg {t(nutrientLabels.calcium, language)} ·{' '}
                 {Math.round(item.vit_d_iu)}IU {t(nutrientLabels.vit_d, language)} ·{' '}
@@ -123,7 +123,7 @@ export function MealPreview({
         ))}
       </ul>
 
-      <div className={`${bodyFontClass(language)} flex flex-wrap gap-4 text-sm text-muted border-t border-border pt-3`}>
+      <div className={`${bodyFontClass(language)} flex flex-wrap gap-4 text-sm text-text-muted border-t border-border pt-3`}>
         <span>{Math.round(tTotals.iron)}mg {t(copy.dashboard.iron, language)}</span>
         <span>
           {Math.round(tTotals.calcium)}mg {t(nutrientLabels.calcium, language)}
@@ -141,7 +141,7 @@ export function MealPreview({
           type="button"
           onClick={onConfirm}
           disabled={isLoading || !canConfirm}
-          className={`${bodyFontClass(language)} flex-1 px-4 py-3 bg-primary text-white rounded-data text-base font-medium disabled:opacity-50`}
+          className={`${bodyFontClass(language)} flex-1 px-4 py-3 bg-primary hover:bg-primary-hover text-white dark:text-background rounded-data text-base font-medium disabled:opacity-50 transition-colors`}
         >
           {isLoading
             ? t(copy.dashboard.logging, language)
@@ -151,7 +151,7 @@ export function MealPreview({
           type="button"
           onClick={onCancel}
           disabled={isLoading}
-          className={`${bodyFontClass(language)} flex-1 px-4 py-3 bg-card border border-border text-dark-text rounded-data font-medium disabled:opacity-50`}
+          className={`${bodyFontClass(language)} flex-1 px-4 py-3 bg-card border border-border text-text-main rounded-data font-medium disabled:opacity-50 hover:bg-background transition-colors`}
         >
           {t(copy.dashboard.cancel, language)}
         </button>
