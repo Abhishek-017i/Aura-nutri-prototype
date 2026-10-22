@@ -67,7 +67,7 @@ export function Layout({
         </svg>
       </div>
       <header className="fixed top-0 inset-x-0 z-40 bg-background border-b border-border dark:bg-[#20212A] dark:border-[#A77D87]/30 transition-colors">
-        <div className="max-w-dashboard mx-auto px-4 h-14 flex items-center justify-between">
+        <div data-guide="header-controls" className="max-w-dashboard mx-auto px-4 h-14 flex items-center justify-between">
           <LanguageToggle />
 
           <div className="flex items-center gap-3">
@@ -117,6 +117,7 @@ export function Layout({
       <main className="pt-14 pb-24">{children}</main>
 
       <button
+        data-guide="nutricard-button"
         type="button"
         onClick={onOpenNutriCard}
         className="fixed bottom-20 left-4 z-30 w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center text-text-muted hover:text-text-main dark:bg-[#876671] dark:border-[#A77D87]/50 dark:text-[#F7E4E1] dark:hover:bg-[#936F79] transition-all"

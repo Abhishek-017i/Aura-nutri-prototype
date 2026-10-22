@@ -39,7 +39,7 @@ export function NutrientHistograms({ data, targets }: NutrientHistogramsProps) {
   const isDark = theme === 'dark'
 
   return (
-    <section className="bg-card border border-border rounded-card p-6 dark:bg-[#876671] dark:border-[#A77D87]/40 dark:rounded-2xl transition-colors">
+    <section data-guide="seven-day-trends" className="bg-card border border-border rounded-card p-6 dark:bg-[#876671] dark:border-[#A77D87]/40 dark:rounded-2xl transition-colors">
       <div className="flex items-center justify-between mb-6">
         <h2 className="font-display text-lg font-medium text-text-main dark:text-[#F7E4E1]">
           {t(copy.dashboard.weeklyTrendsTitle, language)}

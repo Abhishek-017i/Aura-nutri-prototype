@@ -430,7 +430,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
         )}
       </section>
 
-      <section className="bg-card border border-border rounded-card p-6 dark:bg-[#876671] dark:border-[#A77D87]/40 dark:rounded-2xl transition-colors">
+      <section data-guide="profile-phase" className="bg-card border border-border rounded-card p-6 dark:bg-[#876671] dark:border-[#A77D87]/40 dark:rounded-2xl transition-colors">
         <h2 className="font-display text-lg font-medium text-text-main dark:text-[#F7E4E1] mb-2">
           {t(copy.profile.phaseAdjust, language)}
         </h2>
@@ -505,7 +505,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
         )}
       </section>
 
-      <section className="bg-card border border-border rounded-card p-6 dark:bg-[#876671] dark:border-[#A77D87]/40 dark:rounded-2xl transition-colors">
+      <section data-guide="streak-section" className="bg-card border border-border rounded-card p-6 dark:bg-[#876671] dark:border-[#A77D87]/40 dark:rounded-2xl transition-colors">
         <h2 className="font-display text-lg font-medium text-text-main dark:text-[#F7E4E1] mb-4">
           {t(copy.profile.streakTitle, language)}
         </h2>
@@ -514,6 +514,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
         </div>
 
         <button
+          data-guide="cheat-charm"
           type="button"
           onClick={() => void handleUseCheat()}
           disabled={cheatLoading || !cheat?.available}
