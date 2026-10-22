@@ -13,9 +13,6 @@ from typing import Any
 
 import pandas as pd
 import structlog
-import unicodedata
-from indic_transliteration import sanscript
-from indic_transliteration.sanscript import transliterate
 from rapidfuzz import fuzz
 from sqlalchemy import or_
 from sqlalchemy.orm import Session
@@ -23,6 +20,7 @@ from sqlalchemy.orm import Session
 from app.models import Food
 from app.schemas.parse import ParsedItem, ParsedMeal, QuantityOption
 from app.services.firestore_client import get_firestore_client
+from app.services.groq_client import translate_food_names
 from app.services.language_fallback import parse_with_fallback
 
 logger = structlog.get_logger()
@@ -704,40 +702,39 @@ async def parse_meal(db: Session, text: str) -> ParsedMeal:
         if not food_phrase:
             continue
 
-        # HARD TRANSLITERATION: If the string is not pure ASCII (contains Hindi/Urdu/etc),
-        # force-convert it to Latin script using indic-transliteration.
+        # If LLM output is non-ASCII (Hindi/Urdu/other script), ask the LLM
+        # to translate it to standard English romanized spelling. Do NOT
+        # use phonetic romanization — it produces spellings (sbzi, daal)
+        # that match wrong DB entries.
         if not food_phrase.isascii():
-            logger.warning("llm_output_non_ascii_transliterating", original=food_phrase)
-            original_phrase = food_phrase
+            logger.warning("llm_output_non_ascii_translating_via_llm", original=food_phrase)
             try:
-                transliterated = transliterate(
-                    food_phrase, sanscript.DEVANAGARI, sanscript.IAST
+                translated_list = await translate_food_names([food_phrase])
+                translated = translated_list[0] if translated_list else ""
+                if translated and translated.isascii():
+                    logger.info("translated_food_via_llm", original=food_phrase, translated=translated)
+                    food_phrase = translated
+                else:
+                    logger.warning("llm_translation_still_non_ascii", original=food_phrase, translated=translated)
+                    raw_items.append(
+                        _build_unmatched_item(
+                            food_phrase=food_phrase,
+                            qty_str=qty_str,
+                            suggestion="Please type the food name in English.",
+                        )
+                    )
+                    warnings.append(f"Could not translate '{food_phrase}' to English.")
+                    continue
+            except Exception as exc:
+                logger.error("llm_translation_failed", error=str(exc), original=food_phrase)
+                raw_items.append(
+                    _build_unmatched_item(
+                        food_phrase=food_phrase,
+                        qty_str=qty_str,
+                        suggestion="Please type the food name in English.",
+                    )
                 )
-                food_phrase = (
-                    unicodedata.normalize("NFKD", transliterated)
-                    .encode("ASCII", "ignore")
-                    .decode("ASCII")
-                    .strip()
-                )
-                logger.info(
-                    "transliterated_food",
-                    original=original_phrase,
-                    transliterated=food_phrase,
-                )
-            except Exception as e:
-                logger.error(
-                    "transliteration_failed",
-                    error=str(e),
-                    original=original_phrase,
-                )
-                food_phrase = (
-                    original_phrase.encode("ASCII", "ignore").decode("ASCII").strip()
-                )
-
-            if not food_phrase:
-                logger.warning(
-                    "transliteration_resulted_in_empty", original=original_phrase
-                )
+                warnings.append(f"Could not translate '{food_phrase}' to English.")
                 continue
 
         qty_num, unit, exp_g, unclear = _parse_quantity_string(qty_str)
