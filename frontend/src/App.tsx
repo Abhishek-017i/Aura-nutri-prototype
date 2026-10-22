@@ -184,10 +184,10 @@ export default function App() {
 
   if (authLoading) {
     return (
-      <div className="min-h-screen bg-[#FAF7F2] p-6 flex flex-col gap-4">
-        <div className="h-8 w-48 bg-[#E2E8F0] rounded animate-pulse" />
-        <div className="h-32 bg-[#E2E8F0] rounded-lg animate-pulse" />
-        <div className="h-64 bg-[#E2E8F0] rounded-lg animate-pulse" />
+      <div className="min-h-screen bg-background p-6 flex flex-col gap-4">
+        <div className="h-8 w-48 bg-primary/10 rounded animate-pulse" />
+        <div className="h-32 bg-primary/10 rounded-lg animate-pulse" />
+        <div className="h-64 bg-primary/10 rounded-lg animate-pulse" />
       </div>
     )
   }

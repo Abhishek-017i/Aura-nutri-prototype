@@ -226,10 +226,10 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
         {/* Header & Step Indicator */}
         <div className="flex items-start justify-between gap-4 mb-2">
           <div>
-            <span className={`${bodyFontClass(language)} text-xs uppercase tracking-wider text-muted font-medium`}>
+            <span className={`${bodyFontClass(language)} text-xs uppercase tracking-wider text-text-muted font-medium`}>
               Step {step} of 3
             </span>
-            <h1 className="font-display text-2xl sm:text-3xl font-semibold text-dark-text mt-1">
+            <h1 className="font-display text-2xl sm:text-3xl font-semibold text-text-main mt-1">
               {step === 1 && 'Create Account'}
               {step === 2 && 'Personal Details'}
               {step === 3 && 'Select Cycle Phase'}
@@ -255,14 +255,14 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
         {/* STEP 1: AUTH */}
         {step === 1 && (
           <div>
-            <p className={`${bodyFontClass(language)} text-sm text-muted mb-6`}>
+            <p className={`${bodyFontClass(language)} text-sm text-text-muted mb-6`}>
               Start tracking your clinical micronutrients with personalized phase adaptation.
             </p>
             <form onSubmit={handleStep1Submit} className="space-y-4">
               <div>
                 <label
                   htmlFor="signup-email"
-                  className={`${bodyFontClass(language)} block text-sm font-medium text-dark-text mb-1`}
+                  className={`${bodyFontClass(language)} block text-sm font-medium text-text-main mb-1`}
                 >
                   Email
                 </label>
@@ -272,7 +272,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
-                  className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-dark-text placeholder:text-muted focus-visible:outline-dark-text"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted focus-visible:outline-text-main"
                   disabled={loading}
                   autoComplete="email"
                   required
@@ -282,7 +282,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
               <div>
                 <label
                   htmlFor="signup-password"
-                  className={`${bodyFontClass(language)} block text-sm font-medium text-dark-text mb-1`}
+                  className={`${bodyFontClass(language)} block text-sm font-medium text-text-main mb-1`}
                 >
                   Password
                 </label>
@@ -292,7 +292,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="At least 6 characters"
-                  className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-dark-text placeholder:text-muted focus-visible:outline-dark-text"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted focus-visible:outline-text-main"
                   disabled={loading}
                   autoComplete="new-password"
                   required
@@ -302,7 +302,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
               <div>
                 <label
                   htmlFor="signup-confirm-password"
-                  className={`${bodyFontClass(language)} block text-sm font-medium text-dark-text mb-1`}
+                  className={`${bodyFontClass(language)} block text-sm font-medium text-text-main mb-1`}
                 >
                   Confirm Password
                 </label>
@@ -312,7 +312,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Re-enter your password"
-                  className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-dark-text placeholder:text-muted focus-visible:outline-dark-text"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted focus-visible:outline-text-main"
                   disabled={loading}
                   autoComplete="new-password"
                   required
@@ -322,7 +322,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
               <button
                 type="submit"
                 disabled={loading || !email.trim() || !password}
-                className={`${bodyFontClass(language)} w-full mt-2 px-6 py-3 bg-primary text-white rounded-data font-medium disabled:opacity-50 transition-opacity`}
+                className={`${bodyFontClass(language)} w-full mt-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white dark:text-background rounded-data font-medium disabled:opacity-50 transition-colors`}
               >
                 {loading ? 'Creating Account...' : 'Next: Your Details'}
               </button>
@@ -332,7 +332,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
               <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-t border-border" />
               </div>
-              <span className="relative bg-card px-3 text-xs uppercase tracking-wider text-muted font-sans">
+              <span className="relative bg-card px-3 text-xs uppercase tracking-wider text-text-muted font-sans">
                 or
               </span>
             </div>
@@ -341,7 +341,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
               type="button"
               onClick={handleGoogleSignup}
               disabled={loading}
-              className={`${bodyFontClass(language)} w-full px-6 py-3 bg-background border border-border text-dark-text rounded-data font-medium flex items-center justify-center gap-2 hover:bg-soft-peach/20 disabled:opacity-50 transition-colors`}
+              className={`${bodyFontClass(language)} w-full px-6 py-3 bg-background border border-border text-text-main rounded-data font-medium flex items-center justify-center gap-2 hover:bg-soft-accent/40 disabled:opacity-50 transition-colors`}
             >
               Continue with Google
             </button>
@@ -361,14 +361,14 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
         {/* STEP 2: DETAILS */}
         {step === 2 && (
           <form onSubmit={handleStep2Submit} className="space-y-4">
-            <p className={`${bodyFontClass(language)} text-sm text-muted mb-4`}>
+            <p className={`${bodyFontClass(language)} text-sm text-text-muted mb-4`}>
               We use your age to accurately look up ICMR-NIN RDA requirements.
             </p>
 
             <div>
               <label
                 htmlFor="details-name"
-                className={`${bodyFontClass(language)} block text-sm font-medium text-dark-text mb-1`}
+                className={`${bodyFontClass(language)} block text-sm font-medium text-text-main mb-1`}
               >
                 Your Full Name
               </label>
@@ -378,7 +378,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="e.g. Ananya Sharma"
-                className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-dark-text placeholder:text-muted focus-visible:outline-dark-text"
+                className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted focus-visible:outline-text-main"
                 disabled={loading}
                 autoFocus
                 required
@@ -388,7 +388,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
             <div>
               <label
                 htmlFor="details-age"
-                className={`${bodyFontClass(language)} block text-sm font-medium text-dark-text mb-1`}
+                className={`${bodyFontClass(language)} block text-sm font-medium text-text-main mb-1`}
               >
                 Age (years)
               </label>
@@ -400,7 +400,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
                 placeholder="28"
-                className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-dark-text placeholder:text-muted focus-visible:outline-dark-text"
+                className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted focus-visible:outline-text-main"
                 disabled={loading}
                 required
               />
@@ -414,14 +414,14 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                   setStep(1)
                 }}
                 disabled={loading}
-                className={`${bodyFontClass(language)} px-4 py-3 bg-background border border-border text-dark-text rounded-data font-medium`}
+                className={`${bodyFontClass(language)} px-4 py-3 bg-background border border-border text-text-main rounded-data font-medium hover:bg-soft-accent/20 transition-colors`}
               >
                 Back
               </button>
               <button
                 type="submit"
                 disabled={loading || !name.trim() || !age.trim()}
-                className={`${bodyFontClass(language)} flex-1 px-6 py-3 bg-primary text-white rounded-data font-medium disabled:opacity-50`}
+                className={`${bodyFontClass(language)} flex-1 px-6 py-3 bg-primary hover:bg-primary-hover text-white dark:text-background rounded-data font-medium disabled:opacity-50 transition-colors`}
               >
                 Next: Select Phase
               </button>
@@ -432,7 +432,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
         {/* STEP 3: PHASE */}
         {step === 3 && (
           <div>
-            <p className={`${bodyFontClass(language)} text-sm text-muted mb-4`}>
+            <p className={`${bodyFontClass(language)} text-sm text-text-muted mb-4`}>
               Choose your current physiological phase to configure dynamic nutrient RDA baselines:
             </p>
 
@@ -445,8 +445,8 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                     onClick={() => setPhase(item.id)}
                     className={`cursor-pointer p-4 rounded-card border transition-all ${
                       isSelected
-                        ? 'border-primary bg-soft-sage/30 ring-1 ring-primary'
-                        : 'border-border bg-background hover:border-muted/60'
+                        ? 'border-primary bg-soft-accent/40 ring-1 ring-primary'
+                        : 'border-border bg-background hover:border-text-muted/60'
                     }`}
                   >
                     <div className="flex items-center justify-between">
@@ -462,16 +462,16 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                         />
                         <label
                           htmlFor={`phase-radio-${item.id}`}
-                          className="font-display font-medium text-dark-text cursor-pointer"
+                          className="font-display font-medium text-text-main cursor-pointer"
                         >
                           {item.label}
                         </label>
                       </div>
-                      <span className="text-xs text-muted font-sans font-medium">
+                      <span className="text-xs text-text-muted font-sans font-medium">
                         {item.subtitle}
                       </span>
                     </div>
-                    <p className={`${bodyFontClass(language)} text-xs text-muted mt-2 pl-7`}>
+                    <p className={`${bodyFontClass(language)} text-xs text-text-muted mt-2 pl-7`}>
                       {item.description}
                     </p>
                   </div>
@@ -487,7 +487,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                   setStep(2)
                 }}
                 disabled={loading}
-                className={`${bodyFontClass(language)} px-4 py-3 bg-background border border-border text-dark-text rounded-data font-medium`}
+                className={`${bodyFontClass(language)} px-4 py-3 bg-background border border-border text-text-main rounded-data font-medium hover:bg-soft-accent/20 transition-colors`}
               >
                 Back
               </button>
@@ -495,7 +495,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                 type="button"
                 onClick={handleCompleteSignup}
                 disabled={loading}
-                className={`${bodyFontClass(language)} flex-1 px-6 py-3 bg-primary text-white rounded-data font-medium disabled:opacity-50`}
+                className={`${bodyFontClass(language)} flex-1 px-6 py-3 bg-primary hover:bg-primary-hover text-white dark:text-background rounded-data font-medium disabled:opacity-50 transition-colors`}
               >
                 {loading ? 'Completing Setup...' : 'Complete Signup'}
               </button>
@@ -504,7 +504,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
         )}
       </div>
 
-      <p className={`${bodyFontClass(language)} mt-6 text-xs text-muted text-center`}>
+      <p className={`${bodyFontClass(language)} mt-6 text-xs text-text-muted text-center`}>
         AURA-Nutri provides food intelligence, not medical advice. Always consult a
         qualified physician or registered dietitian before changing your diet or taking
         supplements.

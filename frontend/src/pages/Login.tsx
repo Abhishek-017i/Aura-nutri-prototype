@@ -106,12 +106,12 @@ export function Login({ onSuccess, onNavigateToSignup }: LoginProps) {
     <main className="min-h-screen w-full max-w-chat mx-auto px-6 py-12 flex flex-col justify-center bg-background">
       <div className="bg-card border border-border rounded-card p-8 shadow-sm">
         <div className="flex items-start justify-between gap-4 mb-2">
-          <h1 className="font-display text-3xl font-semibold text-dark-text">
+          <h1 className="font-display text-3xl font-semibold text-text-main">
             {t(copy.login.title, language)}
           </h1>
           <LanguageToggle />
         </div>
-        <p className={`${bodyFontClass(language)} text-lg text-muted mb-8`}>
+        <p className={`${bodyFontClass(language)} text-lg text-text-muted mb-8`}>
           {t(copy.login.subtitle, language)}
         </p>
 
@@ -119,7 +119,7 @@ export function Login({ onSuccess, onNavigateToSignup }: LoginProps) {
           <div>
             <label
               htmlFor="email"
-              className={`${bodyFontClass(language)} block text-sm font-medium text-dark-text mb-2`}
+              className={`${bodyFontClass(language)} block text-sm font-medium text-text-main mb-2`}
             >
               Email
             </label>
@@ -129,7 +129,7 @@ export function Login({ onSuccess, onNavigateToSignup }: LoginProps) {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
-              className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-dark-text placeholder:text-muted focus-visible:outline-dark-text"
+              className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted focus-visible:outline-text-main"
               disabled={loading || googleLoading}
               autoComplete="email"
               required
@@ -139,7 +139,7 @@ export function Login({ onSuccess, onNavigateToSignup }: LoginProps) {
           <div>
             <label
               htmlFor="password"
-              className={`${bodyFontClass(language)} block text-sm font-medium text-dark-text mb-2`}
+              className={`${bodyFontClass(language)} block text-sm font-medium text-text-main mb-2`}
             >
               {t(copy.login.passwordLabel, language)}
             </label>
@@ -149,7 +149,7 @@ export function Login({ onSuccess, onNavigateToSignup }: LoginProps) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder={t(copy.login.passwordPlaceholder, language)}
-              className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-dark-text placeholder:text-muted focus-visible:outline-dark-text"
+              className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted focus-visible:outline-text-main"
               disabled={loading || googleLoading}
               autoComplete="current-password"
               required
@@ -164,7 +164,7 @@ export function Login({ onSuccess, onNavigateToSignup }: LoginProps) {
           <button
             type="submit"
             disabled={loading || googleLoading || !email.trim() || !password}
-            className={`${bodyFontClass(language)} w-full px-6 py-3 bg-primary text-white rounded-data font-medium disabled:opacity-50 transition-opacity`}
+            className={`${bodyFontClass(language)} w-full px-6 py-3 bg-primary hover:bg-primary-hover text-white dark:text-background rounded-data font-medium disabled:opacity-50 transition-colors`}
           >
             {loading ? t(copy.login.saving, language) : 'Log In'}
           </button>
@@ -174,7 +174,7 @@ export function Login({ onSuccess, onNavigateToSignup }: LoginProps) {
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-border" />
           </div>
-          <span className="relative bg-card px-3 text-xs uppercase tracking-wider text-muted font-sans">
+          <span className="relative bg-card px-3 text-xs uppercase tracking-wider text-text-muted font-sans">
             or
           </span>
         </div>
@@ -183,7 +183,7 @@ export function Login({ onSuccess, onNavigateToSignup }: LoginProps) {
           type="button"
           onClick={handleGoogleSignIn}
           disabled={loading || googleLoading}
-          className={`${bodyFontClass(language)} w-full px-6 py-3 bg-background border border-border text-dark-text rounded-data font-medium flex items-center justify-center gap-2 hover:bg-soft-peach/20 disabled:opacity-50 transition-colors`}
+          className={`${bodyFontClass(language)} w-full px-6 py-3 bg-background border border-border text-text-main rounded-data font-medium flex items-center justify-center gap-2 hover:bg-soft-accent/40 disabled:opacity-50 transition-colors`}
         >
           {googleLoading ? 'Signing in with Google...' : 'Continue with Google'}
         </button>
@@ -199,7 +199,7 @@ export function Login({ onSuccess, onNavigateToSignup }: LoginProps) {
         </div>
       </div>
 
-      <p className={`${bodyFontClass(language)} mt-6 text-xs text-muted text-center`}>
+      <p className={`${bodyFontClass(language)} mt-6 text-xs text-text-muted text-center`}>
         AURA-Nutri provides food intelligence, not medical advice. Always consult a
         qualified physician or registered dietitian before changing your diet or taking
         supplements.

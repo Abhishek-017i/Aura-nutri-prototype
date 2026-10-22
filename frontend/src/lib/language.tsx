@@ -45,8 +45,8 @@ export function LanguageToggle() {
         className={[
           'px-3 py-1 text-sm font-sans font-medium transition-colors',
           language === 'en'
-            ? 'bg-primary text-white'
-            : 'text-dark-text hover:bg-background',
+            ? 'bg-primary text-white dark:text-background'
+            : 'text-text-main hover:bg-background',
         ].join(' ')}
       >
         EN
@@ -58,8 +58,8 @@ export function LanguageToggle() {
         className={[
           'px-3 py-1 text-sm font-sans font-medium transition-colors',
           language === 'hi'
-            ? 'bg-primary text-white'
-            : 'text-dark-text hover:bg-background',
+            ? 'bg-primary text-white dark:text-background'
+            : 'text-text-main hover:bg-background',
         ].join(' ')}
       >
         HI

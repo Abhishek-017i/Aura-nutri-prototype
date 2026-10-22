@@ -3,9 +3,61 @@
 @tailwind utilities;
 
 
+:root {
+  --color-background: 255 245 248;
+  --color-card: 255 255 255;
+  --color-border: 240 221 227;
+  --color-primary: 217 114 142;
+  --color-primary-hover: 194 93 120;
+  --color-text-main: 61 41 46;
+  --color-text-muted: 138 113 118;
+  --color-soft-accent: 252 228 236;
+  --color-emerald: 95 138 104;
+  --color-amber: 200 149 61;
+  --color-rose: 201 107 103;
+
+  --background: #FFF5F8;
+  --card: #FFFFFF;
+  --border: #F0DDE3;
+  --primary: #D9728E;
+  --primary-hover: #C25D78;
+  --text-main: #3D292E;
+  --text-muted: #8A7176;
+  --soft-accent: #FCE4EC;
+  --emerald: #5F8A68;
+  --amber: #C8953D;
+  --rose: #C96B67;
+}
+
+.dark {
+  --color-background: 26 18 20;
+  --color-card: 36 25 28;
+  --color-border: 56 38 42;
+  --color-primary: 232 143 168;
+  --color-primary-hover: 245 163 186;
+  --color-text-main: 247 234 237;
+  --color-text-muted: 184 163 168;
+  --color-soft-accent: 61 36 43;
+  --color-emerald: 108 176 120;
+  --color-amber: 229 170 78;
+  --color-rose: 226 123 118;
+
+  --background: #1A1214;
+  --card: #24191C;
+  --border: #38262A;
+  --primary: #E88FA8;
+  --primary-hover: #F5A3BA;
+  --text-main: #F7EAED;
+  --text-muted: #B8A3A8;
+  --soft-accent: #3D242B;
+  --emerald: #6CB078;
+  --amber: #E5AA4E;
+  --rose: #E27B76;
+}
+
 @layer base {
   body {
-    @apply bg-background text-dark-text font-sans antialiased;
+    @apply bg-background text-text-main font-sans antialiased;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -14,7 +66,7 @@
 
   :focus-visible {
     @apply outline-none;
-    outline: 2px solid theme('colors.dark-text');
+    outline: 2px solid theme('colors.text-main');
     outline-offset: 2px;
   }
 

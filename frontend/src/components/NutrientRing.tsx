@@ -4,8 +4,8 @@ import { nutrientLabels, t } from '../lib/copy.ts'
 import type { Language } from '../lib/language.tsx'
 
 function ringColor(percent: number): string {
-  if (percent >= 100) return '#5F8A68'
-  return '#C8953D'
+  if (percent >= 100) return 'var(--emerald)'
+  return 'var(--amber)'
 }
 
 interface NutrientRingProps {
@@ -48,20 +48,20 @@ export function NutrientRing({
             endAngle={-270}
           >
             <PolarAngleAxis type="number" domain={[0, 100]} angleAxisId={0} tick={false} />
-            <RadialBar dataKey="value" background={{ fill: '#E5DDD3' }} fill={color} cornerRadius={percent > 0 && percent < 100 ? 4 : 0} />
+            <RadialBar dataKey="value" background={{ fill: 'var(--border)' }} fill={color} cornerRadius={percent > 0 && percent < 100 ? 4 : 0} />
           </RadialBarChart>
         </ResponsiveContainer>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className={`font-display font-semibold ${textSize} text-dark-text`}>
+          <span className={`font-display font-semibold ${textSize} text-text-main`}>
             {Math.round(percent)}%
           </span>
-          <span className={`font-sans ${subTextSize} text-muted`}>
+          <span className={`font-sans ${subTextSize} text-text-muted`}>
             {Math.round(current)} / {Math.round(target)} {unit}
           </span>
         </div>
       </div>
       <div className="mt-2 text-center">
-        <p className={`${fontClass} font-medium ${subTextSize} text-dark-text`}>
+        <p className={`${fontClass} font-medium ${subTextSize} text-text-main`}>
           {label}
         </p>
       </div>

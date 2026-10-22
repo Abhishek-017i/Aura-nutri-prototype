@@ -165,7 +165,7 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
                 if (!p) return null
                 const percentVal = Math.min(Math.round((p.current / p.target) * 100), 100)
                 const isComplete = percentVal >= 100
-                const ringColor = isComplete ? '#5F8A68' : '#DFA58D' // Emerald or Peach/Amber
+                const ringColor = isComplete ? 'var(--emerald)' : 'var(--primary)'
                 const trackColor = 'rgba(255,255,255,0.15)'
 
                 // SVG Circle math
@@ -219,7 +219,7 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
             {/* Footer Branding */}
             <div className="flex items-center justify-between pt-4 border-t border-white/10">
               <div className="flex items-center gap-2">
-                <IconLeaf className="w-5 h-5 text-[#82977F]" />
+                <IconLeaf className="w-5 h-5 text-primary" />
                 <div className="flex flex-col">
                   <span className="text-white font-bold text-[12px] tracking-wide">AURA-Nutri</span>
                   <span className="text-white/50 text-[8px] tracking-[0.15em] uppercase">YOUR DAILY AURA</span>

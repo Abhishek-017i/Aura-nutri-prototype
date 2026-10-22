@@ -20,9 +20,9 @@ const NUTRIENT_ORDER: ('iron' | 'calcium' | 'vit_d' | 'b12')[] = [
 ]
 
 function statusColor(percent: number): string {
-  if (percent >= 100) return '#5F8A68'
-  if (percent >= 50) return '#C8953D'
-  return '#C96B67'
+  if (percent >= 100) return 'var(--emerald)'
+  if (percent >= 50) return 'var(--amber)'
+  return 'var(--rose)'
 }
 
 export function NutrientHistograms({ data, targets }: NutrientHistogramsProps) {
@@ -30,13 +30,13 @@ export function NutrientHistograms({ data, targets }: NutrientHistogramsProps) {
 
   return (
     <section className="bg-card border border-border rounded-card p-6">
-      <h2 className="font-display text-lg font-medium text-dark-text mb-6">
+      <h2 className="font-display text-lg font-medium text-text-main mb-6">
         {t(copy.dashboard.weeklyTrendsTitle, language)}
       </h2>
 
       {data.length === 0 || data.every((d) => Object.values(d.values).every((v) => v === 0)) ? (
         <div className="border border-dashed border-border rounded-data p-6 text-center">
-          <p className={`${bodyFontClass(language)} text-muted`}>
+          <p className={`${bodyFontClass(language)} text-text-muted`}>
             {t(copy.dashboard.weeklyEmpty, language)}
           </p>
         </div>
@@ -47,10 +47,10 @@ export function NutrientHistograms({ data, targets }: NutrientHistogramsProps) {
             return (
               <div key={nutrient}>
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className={`${bodyFontClass(language)} font-medium text-dark-text`}>
+                  <h3 className={`${bodyFontClass(language)} font-medium text-text-main`}>
                     {t(nutrientLabels[nutrient], language)}
                   </h3>
-                  <span className={`${bodyFontClass(language)} text-xs text-muted`}>
+                  <span className={`${bodyFontClass(language)} text-xs text-text-muted`}>
                     {Math.round(target)} {nutrient === 'vit_d' ? 'IU' : nutrient === 'b12' ? 'mcg' : 'mg'}
                   </span>
                 </div>
@@ -70,7 +70,7 @@ export function NutrientHistograms({ data, targets }: NutrientHistogramsProps) {
                             title={`${Math.round(value)} / ${Math.round(target)}`}
                           />
                         </div>
-                        <span className={`${bodyFontClass(language)} text-[9px] whitespace-nowrap text-muted uppercase tracking-tighter`}>
+                        <span className={`${bodyFontClass(language)} text-[9px] whitespace-nowrap text-text-muted uppercase tracking-tighter`}>
                           {day.label}
                         </span>
                       </div>

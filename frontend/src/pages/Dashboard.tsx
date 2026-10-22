@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
-import { DailyGoalsTracker } from '../components/DailyGoalsTracker.tsx'
 import { NutrientHistograms } from '../components/NutrientHistograms.tsx'
 import { NutrientRing } from '../components/NutrientRing.tsx'
 import { getDashboard, listLogs, HTTPError } from '../lib/api.ts'
@@ -103,21 +102,6 @@ export function Dashboard({ user, refreshTrigger, onOpenLog }: DashboardProps) {
     }))
   }, [weeklyLogs, language])
 
-  const dailyGoals = useMemo(
-    () =>
-      weeklyData.map((day) => {
-        const percents = NUTRIENT_ORDER.map((n) => {
-          const target = targets.get(n) ?? 0
-          if (target === 0) return 0
-          return Math.min((day.values[n] / target) * 100, 100)
-        })
-        const average = percents.length ? Math.round(percents.reduce((a, b) => a + b, 0) / percents.length) : 0
-        const complete = percents.every((p) => p >= 100)
-        return { date: day.date, label: day.label, percent: average, complete }
-      }),
-    [weeklyData, targets],
-  )
-
   if (loading) {
     return <DashboardSkeleton />
   }
@@ -126,16 +110,16 @@ export function Dashboard({ user, refreshTrigger, onOpenLog }: DashboardProps) {
     return (
       <main className="min-h-[60vh] w-full max-w-dashboard mx-auto px-6 py-8">
         <div className="bg-rose/10 border border-rose rounded-card p-6">
-          <h2 className="font-display text-xl font-semibold text-dark-text mb-2">
+          <h2 className="font-display text-xl font-semibold text-text-main mb-2">
             {t(copy.dashboard.errorTitle, language)}
           </h2>
-          <p className={`${bodyFontClass(language)} text-dark-text mb-4`}>
+          <p className={`${bodyFontClass(language)} text-text-main mb-4`}>
             {error ?? t(copy.dashboard.loadFallback, language)}
           </p>
           <button
             type="button"
             onClick={() => void loadData()}
-            className="px-4 py-2 bg-primary text-white rounded-data font-sans font-medium"
+            className="px-4 py-2 bg-primary hover:bg-primary-hover text-white dark:text-background rounded-data font-sans font-medium transition-colors"
           >
             {t(copy.dashboard.retry, language)}
           </button>
@@ -150,16 +134,16 @@ export function Dashboard({ user, refreshTrigger, onOpenLog }: DashboardProps) {
     <main className="w-full max-w-dashboard mx-auto px-6 py-6 space-y-6">
       {hasNoData ? (
         <section className="bg-card border border-border rounded-card p-8 text-center">
-          <h2 className="font-display text-xl font-medium text-dark-text mb-2">
+          <h2 className="font-display text-xl font-medium text-text-main mb-2">
             {t(copy.dashboard.emptyTitle, language)}
           </h2>
-          <p className={`${bodyFontClass(language)} text-muted mb-6 max-w-md mx-auto`}>
+          <p className={`${bodyFontClass(language)} text-text-muted mb-6 max-w-md mx-auto`}>
             {t(copy.dashboard.emptyBody, language)}
           </p>
           <button
             type="button"
             onClick={onOpenLog}
-            className="px-6 py-3 bg-primary text-white rounded-data font-sans font-medium"
+            className="px-6 py-3 bg-primary hover:bg-primary-hover text-white dark:text-background rounded-data font-sans font-medium transition-colors"
           >
             {t(copy.dashboard.logMeal, language)}
           </button>
@@ -167,7 +151,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog }: DashboardProps) {
       ) : (
         <>
           <section className="bg-card border border-border rounded-card p-6">
-            <h2 className="font-display text-lg font-medium text-dark-text mb-6">
+            <h2 className="font-display text-lg font-medium text-text-main mb-6">
               {t(copy.dashboard.progressTitle, language)}
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center">
@@ -190,17 +174,15 @@ export function Dashboard({ user, refreshTrigger, onOpenLog }: DashboardProps) {
             </div>
           </section>
 
-          <DailyGoalsTracker days={dailyGoals} />
-
           <NutrientHistograms data={weeklyData} targets={targets} />
 
           <section className="bg-card border border-border rounded-card p-4">
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div>
-                <p className={`${bodyFontClass(language)} text-xs text-muted uppercase tracking-wide`}>
+                <p className={`${bodyFontClass(language)} text-xs text-text-muted uppercase tracking-wide`}>
                   {t(copy.dashboard.phaseLabel, language)}
                 </p>
-                <p className="font-display text-xl font-medium text-dark-text capitalize">
+                <p className="font-display text-xl font-medium text-text-main capitalize">
                   {dashboard.phase ? t(phaseLabels[dashboard.phase], language) : '-'}
                 </p>
               </div>
@@ -212,7 +194,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog }: DashboardProps) {
         </>
       )}
 
-      <p className={`${bodyFontClass(language)} text-xs text-muted text-center`}>
+      <p className={`${bodyFontClass(language)} text-xs text-text-muted text-center`}>
         {dashboard.disclaimer}
       </p>
     </main>
@@ -227,18 +209,6 @@ function DashboardSkeleton() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center">
           {[1, 2, 3, 4].map((i) => (
             <div key={i} className="w-36 h-36 rounded-full bg-primary/10" />
-          ))}
-        </div>
-      </div>
-
-      <div className="bg-card border border-border rounded-card p-6">
-        <div className="h-6 w-32 bg-primary/10 rounded-data mb-6" />
-        <div className="flex items-start justify-between gap-2">
-          {[1, 2, 3, 4, 5, 6, 7].map((i) => (
-            <div key={i} className="flex flex-col items-center gap-2">
-              <div className="w-14 h-14 rounded-full bg-primary/10" />
-              <div className="h-3 w-8 bg-primary/10 rounded-data" />
-            </div>
           ))}
         </div>
       </div>
@@ -259,3 +229,4 @@ function DashboardSkeleton() {
     </main>
   )
 }
+
