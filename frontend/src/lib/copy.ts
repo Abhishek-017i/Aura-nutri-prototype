@@ -32,6 +32,33 @@ export const phaseLabels: Record<string, CopyRecord> = {
   pregnancy_lactation: { en: 'Pregnancy / Lactation', hi: 'गर्भावस्था / स्तनपान' },
 }
 
+export const phaseSubtitles: Record<string, CopyRecord> = {
+  menstrual: {
+    en: 'Active bleeding cycle · Replenish iron & energy',
+    hi: 'सक्रिय मासिक चक्र · आयरन और ऊर्जा पर ध्यान दें',
+  },
+  follicular: {
+    en: 'Post-period to ovulation · Balanced nourishment',
+    hi: 'मासिक के बाद ओव्यूलेशन तक · संतुलित पोषण',
+  },
+  ovulatory: {
+    en: 'Peak energy window · Light nourishing foods',
+    hi: 'उच्च ऊर्जा चरण · हल्का पौष्टिक आहार',
+  },
+  luteal: {
+    en: 'Pre-period window · Magnesium & calcium support',
+    hi: 'मासिक पूर्व चरण · मैग्नीशियम और कैल्शियम सहायता',
+  },
+  menopause: {
+    en: 'Hormonal transition · Calcium & Vitamin D focus',
+    hi: 'हार्मोनल बदलाव · कैल्शियम और विटामिन डी पर ध्यान',
+  },
+  pregnancy_lactation: {
+    en: 'Maternal nourishment · Elevated daily micronutrient goals',
+    hi: 'मातृत्व पोषण · दैनिक पोषण के उच्च लक्ष्य',
+  },
+}
+
 export const nutrientLabels: Record<'iron' | 'calcium' | 'vit_d' | 'b12', CopyRecord> = {
   iron: { en: 'Iron', hi: 'लोहा' },
   calcium: { en: 'Calcium', hi: 'कैल्शियम' },
@@ -87,6 +114,13 @@ export const copy = {
   dashboard: {
     greeting: { en: 'Namaste, {name}', hi: 'नमस्ते, {name}' },
     phaseLabel: { en: 'Phase', hi: 'अवस्था' },
+    changePhase: { en: 'Change Phase', hi: 'अवस्था बदलें' },
+    selectPhaseTitle: { en: 'Change Menstrual Phase', hi: 'मासिक चक्र की अवस्था बदलें' },
+    selectPhaseSubtitle: {
+      en: 'Select your current phase. Nutritional targets adjust automatically.',
+      hi: 'अपनी वर्तमान अवस्था चुनें। पोषण संबंधी लक्ष्य स्वचालित रूप से समायोजित होंगे।',
+    },
+    phaseUpdated: { en: 'Phase updated to {phase}', hi: 'अवस्था बदलकर {phase} की गई' },
     logout: { en: 'Logout', hi: 'लॉग आउट' },
     close: { en: 'Close', hi: 'बंद करें' },
     errorTitle: { en: 'Error', hi: 'त्रुटि' },

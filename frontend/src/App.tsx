@@ -230,6 +230,7 @@ export default function App() {
             user={fallbackProfile}
             refreshTrigger={refreshTrigger}
             onOpenLog={() => setLogOpen(true)}
+            onPhaseChange={handlePhaseChange}
           />
         )}
         {activeTab === 'chat' && <Chat user={fallbackProfile} />}
