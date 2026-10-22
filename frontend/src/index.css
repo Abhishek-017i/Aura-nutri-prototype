@@ -4,13 +4,20 @@
 
 
 :root {
+  /* LIGHT THEME (DO NOT ALTER - EXACT ORIGINAL PRESERVED) */
   --color-background: 255 245 248;
   --color-card: 255 255 255;
+  --color-card-secondary: 255 255 255;
+  --color-card-elevated: 255 255 255;
+  --color-surface-light: 255 245 248;
+  --color-surface-light-secondary: 252 228 236;
   --color-border: 240 221 227;
   --color-primary: 217 114 142;
   --color-primary-hover: 194 93 120;
   --color-text-main: 61 41 46;
   --color-text-muted: 138 113 118;
+  --color-text-light-primary: 61 41 46;
+  --color-text-light-secondary: 138 113 118;
   --color-soft-accent: 252 228 236;
   --color-emerald: 95 138 104;
   --color-amber: 200 149 61;
@@ -18,41 +25,73 @@
 
   --background: #FFF5F8;
   --card: #FFFFFF;
+  --card-secondary: #FFFFFF;
+  --card-elevated: #FFFFFF;
+  --surface-light: #FFF5F8;
+  --surface-light-secondary: #FCE4EC;
   --border: #F0DDE3;
   --primary: #D9728E;
   --primary-hover: #C25D78;
   --text-main: #3D292E;
   --text-muted: #8A7176;
+  --text-light-primary: #3D292E;
+  --text-light-secondary: #8A7176;
   --soft-accent: #FCE4EC;
   --emerald: #5F8A68;
   --amber: #C8953D;
   --rose: #C96B67;
+  --lavender: #E8DFF5;
 }
 
 .dark {
-  --color-background: 26 18 20;
-  --color-card: 36 25 28;
-  --color-border: 56 38 42;
-  --color-primary: 232 143 168;
-  --color-primary-hover: 245 163 186;
-  --color-text-main: 247 234 237;
-  --color-text-muted: 184 163 168;
-  --color-soft-accent: 61 36 43;
-  --color-emerald: 108 176 120;
-  --color-amber: 229 170 78;
-  --color-rose: 226 123 118;
+  /* DARK THEME - EXACT REFERENCE SPECIFICATION */
+  /* Main Surfaces */
+  --color-background: 32 33 42;             /* #20212A Main application & sidebar background */
+  --color-card: 135 102 113;                /* #876671 Main card background */
+  --color-card-secondary: 147 111 121;      /* #936F79 Secondary card background */
+  --color-card-elevated: 167 125 135;       /* #A77D87 Elevated surface */
+  --color-surface-light: 247 228 225;       /* #F7E4E1 Primary light surface */
+  --color-surface-light-secondary: 234 200 200; /* #EAC8C8 Secondary light surface */
 
-  --background: #1A1214;
-  --card: #24191C;
-  --border: #38262A;
-  --primary: #E88FA8;
-  --primary-hover: #F5A3BA;
-  --text-main: #F7EAED;
-  --text-muted: #B8A3A8;
-  --soft-accent: #3D242B;
-  --emerald: #6CB078;
-  --amber: #E5AA4E;
+  /* Text */
+  --color-text-main: 247 228 225;           /* #F7E4E1 Primary text on dark backgrounds */
+  --color-text-muted: 235 215 217;          /* #EBD7D9 Secondary text on dark backgrounds */
+  --color-text-light-primary: 41 33 42;     /* #29212A Primary text on light cards */
+  --color-text-light-secondary: 92 72 80;   /* #5C4850 Secondary text on light cards */
+
+  /* Borders & Accents */
+  --color-border: 167 125 135;              /* #A77D87 Subtle border */
+  --color-primary: 234 200 200;             /* #EAC8C8 Primary accent */
+  --color-primary-hover: 247 228 225;       /* #F7E4E1 Hover accent */
+  --color-soft-accent: 147 111 121;         /* #936F79 Soft accent / pill surface */
+
+  /* Status & Supporting Nutrient Palette */
+  --color-emerald: 143 197 183;             /* #8FC5B7 Supporting teal */
+  --color-amber: 221 186 131;               /* #DDBA83 Supporting amber */
+  --color-rose: 226 123 118;                /* #E27B76 Muted rose */
+  --color-lavender: 184 168 201;            /* #B8A8C9 Supporting lavender */
+  --color-secondary-nutrient: 213 168 180;  /* #D5A8B4 Secondary nutrition accent */
+
+  /* Direct hex variables */
+  --background: #20212A;
+  --card: #876671;
+  --card-secondary: #936F79;
+  --card-elevated: #A77D87;
+  --surface-light: #F7E4E1;
+  --surface-light-secondary: #EAC8C8;
+  --text-main: #F7E4E1;
+  --text-muted: #EBD7D9;
+  --text-light-primary: #29212A;
+  --text-light-secondary: #5C4850;
+  --border: #A77D87;
+  --primary: #EAC8C8;
+  --primary-hover: #F7E4E1;
+  --soft-accent: #936F79;
+  --emerald: #8FC5B7;
+  --amber: #DDBA83;
   --rose: #E27B76;
+  --lavender: #B8A8C9;
+  --nutrient-secondary: #D5A8B4;
 }
 
 @layer base {
@@ -70,6 +109,10 @@
     outline-offset: 2px;
   }
 
+  .dark :focus-visible {
+    outline-color: #F7E4E1;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -79,4 +122,34 @@
       transition-duration: 0.01ms !important;
     }
   }
+}
+
+/* Scoped Dark Mode UI Enhancements (Reference Aesthetic) */
+.dark .rounded-card {
+  border-radius: 1.25rem; /* 20px - matches the beautifully rounded cards of the reference image */
+}
+
+.dark .rounded-data {
+  border-radius: 0.75rem; /* 12px */
+}
+
+/* In dark mode, ensure borders are soft and refined */
+.dark .border-border {
+  border-color: rgba(167, 125, 135, 0.4);
+}
+
+/* Subtle scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #20212A;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #876671;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #A77D87;
 }

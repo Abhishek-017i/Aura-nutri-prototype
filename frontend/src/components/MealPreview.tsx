@@ -62,10 +62,10 @@ export function MealPreview({
 
   return (
     <div className="space-y-6">
-      <h3 className="font-display text-lg font-medium text-text-main">
+      <h3 className="font-display text-lg font-medium text-text-main dark:text-[#F7E4E1]">
         {t(copy.dashboard.previewTitle, language)}
       </h3>
-      <p className={`${bodyFontClass(language)} text-sm text-text-muted`}>
+      <p className={`${bodyFontClass(language)} text-sm text-text-muted dark:text-[#EBD7D9]`}>
         {t(copy.dashboard.confirmHint, language)}
       </p>
 
@@ -73,19 +73,19 @@ export function MealPreview({
         {items.map((item, index) => (
           <li
             key={index}
-            className="border border-border rounded-data p-3 space-y-2"
+            className="border border-border rounded-data p-3 space-y-2 dark:bg-[#936F79] dark:border-[#A77D87]"
           >
             <div className="flex items-start justify-between gap-3">
               <div className="flex-1 min-w-0">
-                <p className={`${bodyFontClass(language)} text-sm font-medium text-text-main`}>
+                <p className={`${bodyFontClass(language)} text-sm font-medium text-text-main dark:text-[#F7E4E1]`}>
                   {item.food_name}
                   {!item.matched && (
-                    <span className="ml-2 text-xs text-rose">
+                    <span className="ml-2 text-xs text-rose dark:text-[#E27B76]">
                       ({t(copy.dashboard.notMatched, language)})
                     </span>
                   )}
                 </p>
-                <p className={`${bodyFontClass(language)} text-xs text-text-muted`}>
+                <p className={`${bodyFontClass(language)} text-xs text-text-muted dark:text-[#EBD7D9]`}>
                   {item.serving_description}
                 </p>
               </div>
@@ -93,14 +93,14 @@ export function MealPreview({
                 type="button"
                 onClick={() => handleRemove(index)}
                 disabled={isLoading}
-                className={`${bodyFontClass(language)} text-xs text-rose hover:text-rose/80 disabled:opacity-50`}
+                className={`${bodyFontClass(language)} text-xs text-rose dark:text-[#EAC8C8] hover:text-rose/80 dark:hover:text-[#F7E4E1] disabled:opacity-50`}
               >
                 {t(copy.dashboard.remove, language)}
               </button>
             </div>
 
             <div className="flex flex-wrap items-center gap-4">
-              <label className={`${bodyFontClass(language)} text-xs text-text-muted`}>
+              <label className={`${bodyFontClass(language)} text-xs text-text-muted dark:text-[#EBD7D9]`}>
                 {t(copy.dashboard.quantity, language)}
                 <input
                   type="number"
@@ -109,10 +109,10 @@ export function MealPreview({
                   value={item.qty_g}
                   onChange={(e) => handleQtyChange(index, e.target.value)}
                   disabled={isLoading}
-                  className="ml-2 w-24 px-2 py-1 bg-background border border-border rounded-data text-sm text-text-main focus-visible:outline-text-main disabled:opacity-60"
+                  className="ml-2 w-24 px-2 py-1 bg-background border border-border rounded-data text-sm text-text-main focus-visible:outline-text-main disabled:opacity-60 dark:bg-[#20212A] dark:text-[#F7E4E1] dark:border-[#A77D87]"
                 />
               </label>
-              <span className={`${bodyFontClass(language)} text-xs text-text-muted`}>
+              <span className={`${bodyFontClass(language)} text-xs text-text-muted dark:text-[#EBD7D9]`}>
                 {Math.round(item.iron_mg)}mg {t(copy.dashboard.iron, language)} ·{' '}
                 {Math.round(item.calcium_mg)}mg {t(nutrientLabels.calcium, language)} ·{' '}
                 {Math.round(item.vit_d_iu)}IU {t(nutrientLabels.vit_d, language)} ·{' '}
@@ -123,7 +123,7 @@ export function MealPreview({
         ))}
       </ul>
 
-      <div className={`${bodyFontClass(language)} flex flex-wrap gap-4 text-sm text-text-muted border-t border-border pt-3`}>
+      <div className={`${bodyFontClass(language)} flex flex-wrap gap-4 text-sm text-text-muted dark:text-[#EBD7D9] border-t border-border dark:border-[#A77D87] pt-3`}>
         <span>{Math.round(tTotals.iron)}mg {t(copy.dashboard.iron, language)}</span>
         <span>
           {Math.round(tTotals.calcium)}mg {t(nutrientLabels.calcium, language)}
@@ -141,7 +141,7 @@ export function MealPreview({
           type="button"
           onClick={onConfirm}
           disabled={isLoading || !canConfirm}
-          className={`${bodyFontClass(language)} flex-1 px-4 py-3 bg-primary hover:bg-primary-hover text-white dark:text-background rounded-data text-base font-medium disabled:opacity-50 transition-colors`}
+          className={`${bodyFontClass(language)} flex-1 px-4 py-3 bg-primary hover:bg-primary-hover text-white dark:bg-[#EAC8C8] dark:hover:bg-[#F7E4E1] dark:text-[#20212A] rounded-data text-base font-medium disabled:opacity-50 transition-colors`}
         >
           {isLoading
             ? t(copy.dashboard.logging, language)
@@ -151,7 +151,7 @@ export function MealPreview({
           type="button"
           onClick={onCancel}
           disabled={isLoading}
-          className={`${bodyFontClass(language)} flex-1 px-4 py-3 bg-card border border-border text-text-main rounded-data font-medium disabled:opacity-50 hover:bg-background transition-colors`}
+          className={`${bodyFontClass(language)} flex-1 px-4 py-3 bg-card border border-border text-text-main rounded-data font-medium disabled:opacity-50 hover:bg-background dark:bg-[#936F79] dark:border-[#A77D87] dark:text-[#F7E4E1] dark:hover:bg-[#876671] transition-colors`}
         >
           {t(copy.dashboard.cancel, language)}
         </button>

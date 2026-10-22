@@ -7,6 +7,10 @@ export default {
       colors: {
         background: 'rgb(var(--color-background) / <alpha-value>)',
         card: 'rgb(var(--color-card) / <alpha-value>)',
+        'card-secondary': 'rgb(var(--color-card-secondary) / <alpha-value>)',
+        'card-elevated': 'rgb(var(--color-card-elevated) / <alpha-value>)',
+        'surface-light': 'rgb(var(--color-surface-light) / <alpha-value>)',
+        'surface-light-secondary': 'rgb(var(--color-surface-light-secondary) / <alpha-value>)',
         border: 'rgb(var(--color-border) / <alpha-value>)',
         primary: {
           DEFAULT: 'rgb(var(--color-primary) / <alpha-value>)',
@@ -15,6 +19,8 @@ export default {
         'primary-hover': 'rgb(var(--color-primary-hover) / <alpha-value>)',
         'text-main': 'rgb(var(--color-text-main) / <alpha-value>)',
         'text-muted': 'rgb(var(--color-text-muted) / <alpha-value>)',
+        'text-light-primary': 'rgb(var(--color-text-light-primary) / <alpha-value>)',
+        'text-light-secondary': 'rgb(var(--color-text-light-secondary) / <alpha-value>)',
         'soft-accent': 'rgb(var(--color-soft-accent) / <alpha-value>)',
 
         // Semantic aliases for compatibility & seamless theme mapping
@@ -25,10 +31,12 @@ export default {
         sage: 'rgb(var(--color-primary) / <alpha-value>)',
         peach: 'rgb(var(--color-primary) / <alpha-value>)',
 
-        // Status Colors (WCAG AA compliant in light & dark)
+        // Status & Nutrient Supporting Colors (WCAG AA compliant in light & dark)
         emerald: 'rgb(var(--color-emerald) / <alpha-value>)',
         amber: 'rgb(var(--color-amber) / <alpha-value>)',
         rose: 'rgb(var(--color-rose) / <alpha-value>)',
+        lavender: 'rgb(var(--color-lavender) / <alpha-value>)',
+        'secondary-nutrient': 'rgb(var(--color-secondary-nutrient) / <alpha-value>)',
 
         white: '#FFFFFF',
 
