@@ -10,6 +10,7 @@ import { NutriCard } from './components/NutriCard';
 import { Profile } from './pages/Profile.tsx'
 import { Layout, type Tab } from './components/Layout.tsx'
 import { LogMealModal } from './components/LogMealModal.tsx'
+import { AuraGuide } from './components/AuraGuide.tsx'
 import { ProtectedRoute } from './components/ProtectedRoute.tsx'
 import { useAuth } from './contexts/useAuth.ts'
 import { getUserDoc } from './lib/firestore.ts'
@@ -259,6 +260,13 @@ export default function App() {
           onClose={handleCloseNutriCard}
         />
       )}
+
+      <AuraGuide
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+        onOpenNutriCard={() => setNutriCardOpen(true)}
+        isModalOpen={logOpen || nutriCardOpen}
+      />
     </ProtectedRoute>
   )
 }

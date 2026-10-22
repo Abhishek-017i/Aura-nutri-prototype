@@ -181,7 +181,7 @@ export function History({ user, refreshTrigger }: HistoryProps) {
 
   return (
     <main className="w-full max-w-dashboard mx-auto px-6 py-6 space-y-6">
-      <section className="bg-card border border-border rounded-card p-6 dark:bg-[#876671] dark:border-[#A77D87]/40 dark:rounded-2xl transition-colors">
+      <section data-guide="history-trends" className="bg-card border border-border rounded-card p-6 dark:bg-[#876671] dark:border-[#A77D87]/40 dark:rounded-2xl transition-colors">
         <h2 className="font-display text-lg font-medium text-text-main dark:text-[#F7E4E1] mb-4">
           {t(copy.history.trendTitle, language)}
         </h2>

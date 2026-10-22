@@ -23,7 +23,7 @@ export function ChatWindow({ user }: ChatWindowProps) {
   }
 
   return (
-    <div className="flex flex-col h-[60vh] bg-card border border-border rounded-card dark:bg-[#876671] dark:border-[#A77D87]">
+    <div data-guide="chat-window" className="flex flex-col h-[60vh] bg-card border border-border rounded-card dark:bg-[#876671] dark:border-[#A77D87]">
       <div className="flex items-center justify-between px-4 py-3 border-b border-border dark:border-[#A77D87]">
         <h2 className="font-display text-lg font-medium text-text-main dark:text-[#F7E4E1]">{t(copy.chat.title, language)}</h2>
         <button

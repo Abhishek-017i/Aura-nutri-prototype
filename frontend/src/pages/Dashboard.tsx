@@ -132,7 +132,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog }: DashboardProps) {
 
   return (
     <main className="w-full max-w-dashboard mx-auto px-6 py-6 space-y-6">
-      <div className="flex items-center justify-between pt-1">
+      <div className="flex items-center justify-between pt-1" data-guide="dashboard-header">
         <div>
           <h1 className="font-display text-2xl md:text-3xl font-semibold text-text-main dark:text-[#F7E4E1] tracking-tight">
             {language === 'hi' ? 'आज का वेलनेस' : "Today's Wellness"}
@@ -161,7 +161,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog }: DashboardProps) {
         </section>
       ) : (
         <>
-          <section className="bg-card border border-border rounded-card p-6 dark:bg-[#876671] dark:border-[#A77D87]/40 dark:rounded-2xl transition-colors">
+          <section data-guide="nutrient-progress" className="bg-card border border-border rounded-card p-6 dark:bg-[#876671] dark:border-[#A77D87]/40 dark:rounded-2xl transition-colors">
             <div className="flex items-center justify-between mb-6">
               <h2 className="font-display text-lg font-medium text-text-main dark:text-[#F7E4E1]">
                 {t(copy.dashboard.progressTitle, language)}
