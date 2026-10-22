@@ -379,6 +379,8 @@ async def transcribe_audio(audio_bytes: bytes, filename: str = "audio.webm") -> 
             file=(filename, audio_bytes),
             model="whisper-large-v3",
             response_format="text",
+            language="en",
+            prompt="Indian meal transcript in Hinglish Latin letters: dal, roti, sabzi, chawal, paneer, chicken, egg, paratha",
         )
 
     try:
