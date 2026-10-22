@@ -13,6 +13,9 @@ from typing import Any
 
 import pandas as pd
 import structlog
+import unicodedata
+from indic_transliteration import sanscript
+from indic_transliteration.sanscript import transliterate
 from rapidfuzz import fuzz
 from sqlalchemy import or_
 from sqlalchemy.orm import Session
