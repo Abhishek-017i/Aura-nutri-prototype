@@ -12,3 +12,4 @@ structlog==24.*
 rapidfuzz==3.*
 firebase-admin>=6.4.0
 google-genai>=2.31.0
+indic-transliteration==2.3.45

@@ -13,6 +13,9 @@ from typing import Any
 
 import pandas as pd
 import structlog
+import unicodedata
+from indic_transliteration import sanscript
+from indic_transliteration.sanscript import transliterate
 from rapidfuzz import fuzz
 from sqlalchemy import or_
 from sqlalchemy.orm import Session
@@ -701,22 +704,41 @@ async def parse_meal(db: Session, text: str) -> ParsedMeal:
         if not food_phrase:
             continue
 
-        # NEW: Reject non-ASCII LLM output. Do NOT translate. The LLM was
-        # instructed to output English only; if it disobeyed, reject the item
-        # and let the user retype in English.
+        # HARD TRANSLITERATION: If the string is not pure ASCII (contains Hindi/Urdu/etc),
+        # force-convert it to Latin script using indic-transliteration.
         if not food_phrase.isascii():
-            logger.warning("llm_output_non_ascii_rejected", food=food_phrase, qty=qty_str)
-
-            # Use the existing helper function for unmatched items
-            raw_items.append(
-                _build_unmatched_item(
-                    food_phrase=food_phrase,
-                    qty_str=qty_str,
-                    suggestion="Please type the food name in English.",
+            logger.warning("llm_output_non_ascii_transliterating", original=food_phrase)
+            original_phrase = food_phrase
+            try:
+                transliterated = transliterate(
+                    food_phrase, sanscript.DEVANAGARI, sanscript.IAST
                 )
-            )
-            warnings.append(f"Non-English food name '{food_phrase}' rejected. Please type in English.")
-            continue  # Skip the DB search entirely for this item
+                food_phrase = (
+                    unicodedata.normalize("NFKD", transliterated)
+                    .encode("ASCII", "ignore")
+                    .decode("ASCII")
+                    .strip()
+                )
+                logger.info(
+                    "transliterated_food",
+                    original=original_phrase,
+                    transliterated=food_phrase,
+                )
+            except Exception as e:
+                logger.error(
+                    "transliteration_failed",
+                    error=str(e),
+                    original=original_phrase,
+                )
+                food_phrase = (
+                    original_phrase.encode("ASCII", "ignore").decode("ASCII").strip()
+                )
+
+            if not food_phrase:
+                logger.warning(
+                    "transliteration_resulted_in_empty", original=original_phrase
+                )
+                continue
 
         qty_num, unit, exp_g, unclear = _parse_quantity_string(qty_str)
         if unclear:
