@@ -2,8 +2,9 @@ import type { Language } from './language.tsx'
 
 type CopyRecord = { readonly [K in Language]: string }
 
-export function t(record: CopyRecord, language: Language): string {
-  return record[language]
+export function t(record: CopyRecord | undefined | null, language: Language): string {
+  if (!record) return ''
+  return record[language] ?? record.en ?? record.hi ?? ''
 }
 
 export function formatCopy(
@@ -60,10 +61,10 @@ export const phaseSubtitles: Record<string, CopyRecord> = {
 }
 
 export const nutrientLabels: Record<'iron' | 'calcium' | 'vit_d' | 'b12', CopyRecord> = {
-  iron: { en: 'Iron', hi: 'लोहा' },
-  calcium: { en: 'Calcium', hi: 'कैल्शियम' },
-  vit_d: { en: 'Vitamin D', hi: 'विटामिन डी' },
-  b12: { en: 'Vitamin B12', hi: 'विटामिन बी12' },
+  iron: { en: 'Iron', hi: 'Iron' },
+  calcium: { en: 'Calcium', hi: 'Calcium' },
+  vit_d: { en: 'Vitamin D', hi: 'Vitamin D' },
+  b12: { en: 'Vitamin B12', hi: 'Vitamin B12' },
 }
 
 export const nav: Record<string, CopyRecord> = {
@@ -179,9 +180,9 @@ export const copy = {
     retry: { en: 'Retry', hi: 'पुनः प्रयास करें' },
     parsedResult: { en: 'Parsed result', hi: 'विश्लेषण परिणाम' },
     notMatched: { en: 'not matched', hi: 'मेल नहीं हुआ' },
-    calories: { en: 'kcal', hi: 'कैलोरी' },
-    protein: { en: 'protein', hi: 'प्रोटीन' },
-    iron: { en: 'iron', hi: 'लोहा' },
+    calories: { en: 'kcal', hi: 'kcal' },
+    protein: { en: 'Protein', hi: 'Protein' },
+    iron: { en: 'Iron', hi: 'Iron' },
     progressTitle: { en: "Today's progress", hi: 'आज की प्रगति' },
     dailyGoalsTitle: { en: '7-day goals', hi: '7 दिन के लक्ष्य' },
     weeklyTrendsTitle: { en: '7-day trends', hi: '7 दिन का ट्रेंड' },
@@ -264,11 +265,11 @@ export const copy = {
     time: { en: 'Time', hi: 'समय' },
     meal: { en: 'Meal', hi: 'भोजन' },
     energy: { en: 'Energy', hi: 'ऊर्जा' },
-    protein: { en: 'Protein', hi: 'प्रोटीन' },
-    iron: { en: 'Iron', hi: 'लोहा' },
-    calcium: { en: 'Calcium', hi: 'कैल्शियम' },
-    vit_d: { en: 'Vit D', hi: 'विटामिन डी' },
-    b12: { en: 'B12', hi: 'विटामिन बी12' },
+    protein: { en: 'Protein', hi: 'Protein' },
+    iron: { en: 'Iron', hi: 'Iron' },
+    calcium: { en: 'Calcium', hi: 'Calcium' },
+    vit_d: { en: 'Vit D', hi: 'Vit D' },
+    b12: { en: 'B12', hi: 'B12' },
     suggestionIron: {
       en: 'A bit more dal, spinach, or sesame most days would help close the gap.',
       hi: 'थोड़ी और दाल, पालक या तिल ज़्यादातर दिन खाने से यह बेहतर होगा।',

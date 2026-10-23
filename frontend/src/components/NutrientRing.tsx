@@ -58,7 +58,7 @@ export function NutrientRing({
   const subTextSize = size === 'lg' ? 'text-[11px] sm:text-xs md:text-sm' : 'text-[10px] sm:text-xs'
 
   const label = t(nutrientLabels[nutrient], language)
-  const fontClass = language === 'hi' ? 'font-hindi' : 'font-sans'
+  const fontClass = 'font-sans'
   const trackColor = isDark ? '#34313D' : 'var(--border)'
 
   return (
