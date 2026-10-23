@@ -68,7 +68,7 @@ export const nutrientLabels: Record<'iron' | 'calcium' | 'vit_d' | 'b12', CopyRe
 
 export const nav: Record<string, CopyRecord> = {
   home: { en: 'Home', hi: 'मुख्य' },
-  snapFeed: { en: 'Snap Feed', hi: 'स्नैप फीड' },
+  snapFeed: { en: 'Nutri Cards', hi: 'न्यूट्री कार्ड्स' },
   addFood: { en: 'Add Food', hi: 'भोजन जोड़ें' },
   history: { en: 'History', hi: 'इतिहास' },
   profile: { en: 'Profile', hi: 'प्रोफ़ाइल' },
@@ -369,7 +369,7 @@ export const copy = {
     back: { en: '← Back', hi: '← पीछे' },
     skipTour: { en: 'Skip Tour', hi: 'टूर छोड़ें' },
     finishTour: { en: 'Finish Tour', hi: 'टूर समाप्त करें' },
-    completedTitle: { en: "You're ready to explore Aura Nutri! 💗", hi: 'आप ऑरा न्यूट्री शुरू करने के लिए तैयार हैं! 💗' },
+    completedTitle: { en: "You're ready to explore Aura Nutri!", hi: 'आप ऑरा न्यूट्री शुरू करने के लिए तैयार हैं!' },
     completedSubtitle: {
       en: "Feel free to tap 'Need Help?' whenever you have questions or want to revisit any feature.",
       hi: "जब भी कोई सवाल हो या किसी फ़ीचर को दोबारा देखना हो, आप कभी भी 'मदद चाहिए?' पर टैप कर सकते हैं।",
@@ -377,7 +377,7 @@ export const copy = {
     actions: {
       goToDashboard: { en: 'Go to Dashboard', hi: 'डैशबोर्ड पर जाएँ' },
       goToHome: { en: 'Go to Home', hi: 'मुख्य पर जाएँ' },
-      openSnapFeed: { en: 'Open Snap Feed', hi: 'स्नैप फीड खोलें' },
+      openSnapFeed: { en: 'Open Nutri Cards', hi: 'न्यूट्री कार्ड्स खोलें' },
       logMealAction: { en: 'Add Food', hi: 'भोजन जोड़ें' },
       viewSettings: { en: 'View Settings', hi: 'सेटिंग्स देखें' },
       viewNutrients: { en: 'View Nutrients', hi: 'पोषक तत्व देखें' },
@@ -399,11 +399,11 @@ export const copy = {
         },
       },
       snapFeed: {
-        title: { en: 'Snap Feed', hi: 'स्नैप फीड' },
+        title: { en: 'Nutri Cards', hi: 'न्यूट्री कार्ड्स' },
         summary: { en: 'Create and share wellness story snaps.', hi: 'वेलनेस स्टोरी स्नैप बनाएँ और साझा करें।' },
         text: {
-          en: 'Visit Snap Feed to create and share supported nutrition and wellness story snaps featuring your photo, daily nutrient rings, and streak.',
-          hi: 'अपनी तस्वीर, दैनिक पोषण चक्र और स्ट्रीक के साथ व्यक्तिगत वेलनेस स्टोरी स्नैप बनाने और साझा करने के लिए स्नैप फीड देखें।',
+          en: 'Visit Nutri Cards to create and share supported nutrition and wellness story snaps featuring your photo, daily nutrient rings, and streak.',
+          hi: 'अपनी तस्वीर, दैनिक पोषण चक्र और स्ट्रीक के साथ व्यक्तिगत वेलनेस स्टोरी स्नैप बनाने और साझा करने के लिए न्यूट्री कार्ड्स देखें।',
         },
       },
       addFood: {
