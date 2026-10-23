@@ -7,7 +7,16 @@ import { bodyFontClass, copy, formatCopy, phaseLabels, phaseSubtitles, t } from 
 import { localDateString, formatDateShort } from '../lib/dates.ts'
 import { useLanguage } from '../lib/useLanguage.ts'
 import type { Dashboard, MealLog, Phase } from '../lib/types.ts'
-import { IconX } from '../components/icons.tsx'
+import {
+  IconDroplet,
+  IconHeart,
+  IconLeaf,
+  IconLoader,
+  IconMoon,
+  IconSprout,
+  IconSun,
+  IconX,
+} from '../components/icons.tsx'
 
 interface DashboardProps {
   user: { id: string; name: string; phase?: Phase | null }
@@ -18,16 +27,16 @@ interface DashboardProps {
 
 interface DashboardPhaseOption {
   id: Phase
-  icon: string
+  icon: (props: { className?: string }) => React.JSX.Element
 }
 
 const DASHBOARD_PHASE_OPTIONS: DashboardPhaseOption[] = [
-  { id: 'menstrual', icon: '🌸' },
-  { id: 'follicular', icon: '🌱' },
-  { id: 'ovulatory', icon: '✨' },
-  { id: 'luteal', icon: '🌙' },
-  { id: 'menopause', icon: '🍃' },
-  { id: 'pregnancy_lactation', icon: '🍼' },
+  { id: 'menstrual', icon: IconDroplet },
+  { id: 'follicular', icon: IconSprout },
+  { id: 'ovulatory', icon: IconSun },
+  { id: 'luteal', icon: IconMoon },
+  { id: 'menopause', icon: IconLeaf },
+  { id: 'pregnancy_lactation', icon: IconHeart },
 ]
 
 const NUTRIENT_ORDER: ('iron' | 'calcium' | 'vit_d' | 'b12')[] = [
@@ -329,7 +338,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
       {/* Menstrual Phase Selection Dialog */}
       {isPhaseModalOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm dark:bg-black/75 transition-opacity"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/50 backdrop-blur-sm dark:bg-black/80 transition-opacity"
           role="dialog"
           aria-modal="true"
           aria-labelledby="change-phase-modal-title"
@@ -339,17 +348,17 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
             }
           }}
         >
-          <div className="w-full max-w-md bg-card border border-border rounded-card p-6 shadow-modal dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl dark:shadow-2xl animate-in fade-in zoom-in-95 duration-200">
+          <div className="w-full max-w-[460px] bg-white border border-[#EEDDE3] rounded-2xl shadow-[0_16px_40px_-12px_rgba(61,41,46,0.14)] dark:bg-[#1B1A22] dark:border-[#322E3C] dark:shadow-[0_20px_50px_rgba(0,0,0,0.55)] flex flex-col max-h-[min(88vh,640px)] overflow-hidden animate-in fade-in zoom-in-95 duration-200">
             {/* Header */}
-            <div className="flex items-start justify-between gap-3 mb-4">
-              <div>
+            <div className="flex items-start justify-between gap-3 px-5 sm:px-6 py-4 sm:py-5 border-b border-[#F0DDE3]/80 dark:border-[#2F2C3A] shrink-0">
+              <div className="min-w-0 pr-2">
                 <h3
                   id="change-phase-modal-title"
-                  className="font-display text-xl font-semibold text-text-main dark:text-[#F5F1F7]"
+                  className="font-display text-lg sm:text-xl font-semibold text-text-main dark:text-[#F5F1F7] tracking-tight"
                 >
                   {t(copy.dashboard.selectPhaseTitle, language)}
                 </h3>
-                <p className={`${bodyFontClass(language)} text-xs text-text-muted dark:text-[#C5BECF] mt-0.5 leading-relaxed`}>
+                <p className={`${bodyFontClass(language)} text-xs sm:text-[13px] text-text-muted dark:text-[#C5BECF] mt-1 leading-relaxed`}>
                   {t(copy.dashboard.selectPhaseSubtitle, language)}
                 </p>
               </div>
@@ -357,18 +366,23 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
                 type="button"
                 onClick={handleClosePhaseModal}
                 disabled={phaseUpdating}
-                className="w-8 h-8 rounded-full flex items-center justify-center text-text-muted hover:text-text-main dark:text-[#C5BECF] dark:hover:text-[#F5F1F7] dark:hover:bg-[#272731] disabled:opacity-50 transition-colors"
+                className="w-8 h-8 -mr-1 rounded-full flex items-center justify-center text-text-muted hover:text-text-main hover:bg-[#FCE4EC]/50 dark:text-[#A39AAA] dark:hover:text-[#F5F1F7] dark:hover:bg-[#272731] disabled:opacity-50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:focus-visible:ring-[#E9A5D1] shrink-0"
                 aria-label={t(copy.dashboard.close, language)}
               >
                 <IconX className="w-4 h-4" />
               </button>
             </div>
 
-            {/* Phase Options List */}
-            <div className="space-y-2.5 max-h-[55vh] overflow-y-auto pr-0.5 mb-5" role="radiogroup">
+            {/* Scrollable Phase List */}
+            <div
+              className="flex-1 overflow-y-auto min-h-0 px-4 sm:px-6 py-3 sm:py-4 space-y-2 overscroll-contain"
+              role="radiogroup"
+              aria-label={t(copy.dashboard.selectPhaseTitle, language)}
+            >
               {DASHBOARD_PHASE_OPTIONS.map((option) => {
                 const isSelected = selectedPhase === option.id
                 const subtitle = phaseSubtitles[option.id] ? t(phaseSubtitles[option.id], language) : ''
+                const IconComponent = option.icon
 
                 return (
                   <button
@@ -378,48 +392,43 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
                     aria-checked={isSelected}
                     onClick={() => setSelectedPhase(option.id)}
                     className={[
-                      'w-full p-3.5 rounded-data dark:rounded-xl border text-left transition-all duration-150 flex items-start gap-3',
+                      'w-full p-3 sm:p-3.5 rounded-xl border text-left transition-all duration-150 flex items-center gap-3.5 group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:focus-visible:ring-[#E9A5D1]',
                       isSelected
-                        ? 'bg-soft-accent border-primary dark:bg-[#EBC6E7] dark:border-[#E4C5E4] dark:shadow-md'
-                        : 'bg-background border-border hover:bg-card dark:bg-[#272731] dark:border-[#34313D] dark:hover:bg-[#302D39]',
+                        ? 'bg-[#FDF2F5] border-[#D9728E] shadow-xs dark:bg-[#282230] dark:border-[#E9A5D1]/80'
+                        : 'bg-[#FAF7F8]/60 hover:bg-[#FAF7F8] border-[#EEDDE3]/80 hover:border-[#DFC7CF] dark:bg-[#21202A] dark:border-[#2D2A37] dark:hover:bg-[#262432] dark:hover:border-[#3D384B]',
                     ].join(' ')}
                   >
-                    <span className="text-xl select-none leading-none pt-0.5">{option.icon}</span>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center justify-between">
-                        <span
-                          className={[
-                            'font-display text-sm font-semibold capitalize',
-                            isSelected
-                              ? 'text-primary dark:text-[#29212F]'
-                              : 'text-text-main dark:text-[#F5F1F7]',
-                          ].join(' ')}
-                        >
-                          {t(phaseLabels[option.id], language)}
-                        </span>
-                        <div
-                          className={[
-                            'w-4 h-4 rounded-full border flex items-center justify-center transition-colors',
-                            isSelected
-                              ? 'border-primary bg-primary text-white dark:border-[#29212F] dark:bg-[#29212F] dark:text-[#EBC6E7]'
-                              : 'border-border dark:border-[#423847]',
-                          ].join(' ')}
-                        >
-                          {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-current" />}
-                        </div>
+                    <div
+                      className={[
+                        'w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-colors',
+                        isSelected
+                          ? 'bg-[#D9728E]/15 text-[#B8506E] dark:bg-[#E9A5D1]/20 dark:text-[#E9A5D1]'
+                          : 'bg-[#F5ECF0] text-[#7A5B64] group-hover:text-text-main dark:bg-[#2A2735] dark:text-[#B5ACBF] dark:group-hover:text-[#EAE4F2]',
+                      ].join(' ')}
+                    >
+                      <IconComponent className="w-4 h-4" />
+                    </div>
+
+                    <div className="flex-1 min-w-0 pr-1">
+                      <div className="font-medium text-[13.5px] sm:text-sm text-text-main dark:text-[#F5F1F7] capitalize">
+                        {t(phaseLabels[option.id], language)}
                       </div>
                       {subtitle && (
-                        <p
-                          className={[
-                            `${bodyFontClass(language)} text-xs mt-0.5 leading-normal`,
-                            isSelected
-                              ? 'text-text-main dark:text-[#62576A]'
-                              : 'text-text-muted dark:text-[#C5BECF]',
-                          ].join(' ')}
-                        >
+                        <p className={`${bodyFontClass(language)} text-[11.5px] sm:text-xs text-text-muted dark:text-[#C5BECF] mt-0.5 leading-snug line-clamp-2`}>
                           {subtitle}
                         </p>
                       )}
+                    </div>
+
+                    <div
+                      className={[
+                        'w-4 h-4 rounded-full border flex items-center justify-center shrink-0 transition-all',
+                        isSelected
+                          ? 'border-[#D9728E] bg-[#D9728E] text-white dark:border-[#E9A5D1] dark:bg-[#E9A5D1] dark:text-[#18181F] shadow-xs'
+                          : 'border-[#D4C0C7] dark:border-[#4B4456] bg-transparent',
+                      ].join(' ')}
+                    >
+                      {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-current" />}
                     </div>
                   </button>
                 )
@@ -428,18 +437,20 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
 
             {/* Error Message */}
             {phaseError && (
-              <p className={`${bodyFontClass(language)} mb-4 text-xs font-medium text-rose dark:text-[#F08B9C]`}>
-                {phaseError}
-              </p>
+              <div className="px-4 sm:px-6 pb-2 shrink-0">
+                <p className={`${bodyFontClass(language)} text-xs font-medium text-rose dark:text-[#F08B9C] p-2.5 rounded-lg bg-rose/10 border border-rose/20`}>
+                  {phaseError}
+                </p>
+              </div>
             )}
 
             {/* Actions */}
-            <div className="flex items-center gap-3">
+            <div className="border-t border-[#F0DDE3]/80 dark:border-[#2F2C3A] px-5 sm:px-6 py-3.5 sm:py-4 shrink-0 flex items-center gap-3 bg-[#FAF7F8]/40 dark:bg-[#1B1A22]/70 backdrop-blur-xs">
               <button
                 type="button"
                 onClick={handleClosePhaseModal}
                 disabled={phaseUpdating}
-                className={`${bodyFontClass(language)} flex-1 py-2.5 px-4 bg-background border border-border text-text-main hover:bg-card dark:bg-[#272731] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#302D39] rounded-data dark:rounded-xl font-medium disabled:opacity-50 transition-colors`}
+                className={`${bodyFontClass(language)} flex-1 py-2.5 px-4 bg-transparent hover:bg-black/5 dark:hover:bg-[#252430] border border-[#E4CED6] dark:border-[#353140] text-text-main dark:text-[#E0DBE8] rounded-xl text-xs sm:text-sm font-medium disabled:opacity-50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:focus-visible:ring-[#E9A5D1]`}
               >
                 {t(copy.profile.cancel, language)}
               </button>
@@ -447,10 +458,13 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
                 type="button"
                 onClick={handleSavePhase}
                 disabled={phaseUpdating || !selectedPhase || selectedPhase === dashboard?.phase}
-                className={`${bodyFontClass(language)} flex-1 py-2.5 px-4 bg-primary hover:bg-primary-hover text-white dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] dark:text-[#121216] rounded-data dark:rounded-xl font-medium shadow-sm disabled:opacity-50 transition-colors flex items-center justify-center gap-2`}
+                className={`${bodyFontClass(language)} flex-1 py-2.5 px-4 bg-[#D9728E] hover:bg-[#C25D78] text-white dark:bg-[#E9A5D1] dark:hover:bg-[#DE92C3] dark:text-[#1A1821] rounded-xl text-xs sm:text-sm font-medium shadow-sm hover:shadow dark:shadow-none disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D9728E] focus-visible:ring-offset-1`}
               >
                 {phaseUpdating ? (
-                  <span>{t(copy.profile.updating, language)}</span>
+                  <>
+                    <IconLoader className="w-3.5 h-3.5" />
+                    <span>{t(copy.profile.updating, language)}</span>
+                  </>
                 ) : (
                   <span>{t(copy.profile.saveChanges, language)}</span>
                 )}

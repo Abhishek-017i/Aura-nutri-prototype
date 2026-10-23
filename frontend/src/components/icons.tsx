@@ -299,4 +299,75 @@ export function IconCamera({ className = 'w-5 h-5' }: IconProps) {
   )
 }
 
+export function IconDroplet({ className = 'w-5 h-5' }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+    </svg>
+  )
+}
+
+export function IconSprout({ className = 'w-5 h-5' }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M7 20h10" />
+      <path d="M10 20c0-7 3-10 8-11" />
+      <path d="M18 9a4.5 4.5 0 0 0-8.5-1.5" />
+      <path d="M12 15a4.5 4.5 0 0 0-7.5-1.5" />
+    </svg>
+  )
+}
+
+export function IconHeart({ className = 'w-5 h-5' }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+    </svg>
+  )
+}
+
+export function IconLoader({ className = 'w-4 h-4' }: IconProps) {
+  return (
+    <svg
+      className={`${className} animate-spin`}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+    </svg>
+  )
+}
+
 
