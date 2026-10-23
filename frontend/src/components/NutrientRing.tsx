@@ -53,17 +53,17 @@ export function NutrientRing({
   const isDark = theme === 'dark'
   const color = getRingColor(percent, nutrient, isDark)
   const data = [{ name: nutrient, value: Math.min(percent, 100), fill: color }]
-  const sizeClass = size === 'lg' ? 'w-40 h-40 sm:w-44 sm:h-44' : 'w-28 h-28'
-  const textSize = size === 'lg' ? 'text-2xl' : 'text-lg'
-  const subTextSize = size === 'lg' ? 'text-sm' : 'text-xs'
+  const sizeClass = size === 'lg' ? 'w-32 sm:w-40 md:w-44' : 'w-24 sm:w-28'
+  const textSize = size === 'lg' ? 'text-lg sm:text-xl md:text-2xl' : 'text-base sm:text-lg'
+  const subTextSize = size === 'lg' ? 'text-[11px] sm:text-xs md:text-sm' : 'text-[10px] sm:text-xs'
 
   const label = t(nutrientLabels[nutrient], language)
   const fontClass = language === 'hi' ? 'font-hindi' : 'font-sans'
   const trackColor = isDark ? '#34313D' : 'var(--border)'
 
   return (
-    <div className={`${sizeClass} flex flex-col items-center justify-between`}>
-      <div className="relative w-full h-full">
+    <div className={`${sizeClass} flex flex-col items-center justify-between min-w-0 max-w-full`}>
+      <div className="relative w-full aspect-square flex items-center justify-center">
         <ResponsiveContainer width="100%" height="100%">
           <RadialBarChart
             innerRadius="72%"
@@ -81,17 +81,20 @@ export function NutrientRing({
             />
           </RadialBarChart>
         </ResponsiveContainer>
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className={`font-display font-semibold ${textSize} text-text-main dark:text-[#F5F1F7]`}>
+        <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none px-2 text-center select-none">
+          <span className={`font-display font-semibold ${textSize} text-text-main dark:text-[#F5F1F7] leading-none mb-1`}>
             {Math.round(percent)}%
           </span>
-          <span className={`font-sans ${subTextSize} text-text-muted dark:text-[#C5BECF] font-medium`}>
+          <span
+            className={`font-sans ${subTextSize} text-text-muted dark:text-[#C5BECF] font-medium leading-tight max-w-[85%] truncate`}
+            title={`${Math.round(current)} / ${Math.round(target)} ${unit}`}
+          >
             {Math.round(current)} / {Math.round(target)} {unit}
           </span>
         </div>
       </div>
-      <div className="mt-2 text-center">
-        <p className={`${fontClass} font-medium ${subTextSize} text-text-main dark:text-[#F5F1F7]`}>
+      <div className="mt-1.5 text-center w-full px-1">
+        <p className={`${fontClass} font-medium ${subTextSize} text-text-main dark:text-[#F5F1F7] truncate`}>
           {label}
         </p>
       </div>

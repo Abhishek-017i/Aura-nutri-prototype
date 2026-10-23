@@ -54,11 +54,6 @@ export function NutrientHistograms({ data, targets }: NutrientHistogramsProps) {
         <h2 className="font-display text-lg font-medium text-text-main dark:text-[#F5F1F7]">
           {t(copy.dashboard.weeklyTrendsTitle, language)}
         </h2>
-        <div className="w-8 h-8 rounded-full flex items-center justify-center text-text-muted dark:text-[#E9A5D1] dark:bg-[#272731]">
-          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-          </svg>
-        </div>
       </div>
 
       {data.length === 0 || data.every((d) => Object.values(d.values).every((v) => v === 0)) ? (
