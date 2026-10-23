@@ -249,20 +249,15 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
               <h2 className="font-display text-lg font-medium text-text-main dark:text-[#F5F1F7]">
                 {t(copy.dashboard.progressTitle, language)}
               </h2>
-              <div className="w-8 h-8 rounded-full flex items-center justify-center text-rose dark:text-[#E9A5D1] dark:bg-[#272731]">
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-                </svg>
-              </div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 justify-items-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 justify-items-center">
               {NUTRIENT_ORDER.map((key) => {
                 const p = progressMap.get(key)
                 if (!p) return null
                 return (
                   <div
                     key={key}
-                    className="w-full flex justify-center p-3 sm:p-4 rounded-card dark:rounded-2xl dark:bg-[#272731] dark:border dark:border-[#34313D]/60 dark:shadow-sm transition-all"
+                    className="w-full flex justify-center p-2 sm:p-4 rounded-card dark:rounded-2xl dark:bg-[#272731] dark:border dark:border-[#34313D]/60 dark:shadow-sm transition-all"
                   >
                     <NutrientRing
                       nutrient={key}
@@ -284,21 +279,6 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
           <section className="bg-card border border-border rounded-card p-6 dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl transition-colors">
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-2xl flex items-center justify-center bg-soft-accent dark:bg-[#593443]/50 dark:border dark:border-[#A85C91]/40 text-primary dark:text-[#E9A5D1] shadow-sm text-2xl select-none">
-                  {dashboard.phase === 'menstrual'
-                    ? '🌸'
-                    : dashboard.phase === 'follicular'
-                    ? '🌱'
-                    : dashboard.phase === 'ovulatory'
-                    ? '✨'
-                    : dashboard.phase === 'luteal'
-                    ? '🌙'
-                    : dashboard.phase === 'menopause'
-                    ? '🍃'
-                    : dashboard.phase === 'pregnancy_lactation'
-                    ? '🍼'
-                    : '🌸'}
-                </div>
                 <div>
                   <p className={`${bodyFontClass(language)} text-xs text-text-muted dark:text-[#C5BECF] uppercase tracking-wider`}>
                     {t(copy.dashboard.phaseLabel, language)}
