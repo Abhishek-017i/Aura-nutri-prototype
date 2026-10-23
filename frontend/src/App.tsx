@@ -5,6 +5,7 @@ import { Dashboard } from './pages/Dashboard.tsx'
 import { History } from './pages/History.tsx'
 import { Login } from './pages/Login.tsx'
 import { Signup } from './pages/Signup.tsx'
+import { SnapFeed } from './pages/SnapFeed.tsx'
 import { NutriCard } from './pages/NutriCard.tsx'
 import { Profile } from './pages/Profile.tsx'
 import { Layout, type Tab } from './components/Layout.tsx'
@@ -23,6 +24,7 @@ export default function App() {
   const [refreshTrigger, setRefreshTrigger] = useState(0)
   const [nutriCardOpen, setNutriCardOpen] = useState(false)
   const [nutriCardDashboard, setNutriCardDashboard] = useState<DashboardType | null>(null)
+  const [isChatOpen, setIsChatOpen] = useState(false)
 
   // Client-side hash routing state: #/login, #/signup, or #/ (default)
   const [route, setRoute] = useState<string>(() => {
@@ -223,6 +225,8 @@ export default function App() {
         onLogout={() => void handleLogout()}
         onOpenLog={() => setLogOpen(true)}
         onOpenNutriCard={() => setNutriCardOpen(true)}
+        isChatOpen={isChatOpen}
+        onToggleChat={() => setIsChatOpen((prev) => !prev)}
       >
         {activeTab === 'home' && (
           <Dashboard
@@ -230,6 +234,12 @@ export default function App() {
             refreshTrigger={refreshTrigger}
             onOpenLog={() => setLogOpen(true)}
             onPhaseChange={handlePhaseChange}
+          />
+        )}
+        {activeTab === 'snap' && (
+          <SnapFeed
+            user={fallbackProfile}
+            onOpenNutriCard={() => setNutriCardOpen(true)}
           />
         )}
         {activeTab === 'chat' && <Chat user={fallbackProfile} />}
@@ -265,7 +275,7 @@ export default function App() {
         activeTab={activeTab}
         onTabChange={setActiveTab}
         onOpenNutriCard={() => setNutriCardOpen(true)}
-        isModalOpen={logOpen || nutriCardOpen}
+        isModalOpen={logOpen || nutriCardOpen || isChatOpen}
       />
     </ProtectedRoute>
   )

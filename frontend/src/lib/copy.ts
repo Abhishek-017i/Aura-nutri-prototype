@@ -68,9 +68,12 @@ export const nutrientLabels: Record<'iron' | 'calcium' | 'vit_d' | 'b12', CopyRe
 
 export const nav: Record<string, CopyRecord> = {
   home: { en: 'Home', hi: 'मुख्य' },
-  chat: { en: 'Chat', hi: 'बातचीत' },
+  snapFeed: { en: 'Snap Feed', hi: 'स्नैप फीड' },
+  addFood: { en: 'Add Food', hi: 'भोजन जोड़ें' },
   history: { en: 'History', hi: 'इतिहास' },
   profile: { en: 'Profile', hi: 'प्रोफ़ाइल' },
+  chat: { en: 'Chat', hi: 'बातचीत' },
+  askAura: { en: 'Ask Aura', hi: 'ऑरा से पूछें' },
 }
 
 export const copy = {
@@ -373,10 +376,13 @@ export const copy = {
     },
     actions: {
       goToDashboard: { en: 'Go to Dashboard', hi: 'डैशबोर्ड पर जाएँ' },
+      goToHome: { en: 'Go to Home', hi: 'मुख्य पर जाएँ' },
+      openSnapFeed: { en: 'Open Snap Feed', hi: 'स्नैप फीड खोलें' },
+      logMealAction: { en: 'Add Food', hi: 'भोजन जोड़ें' },
       viewSettings: { en: 'View Settings', hi: 'सेटिंग्स देखें' },
       viewNutrients: { en: 'View Nutrients', hi: 'पोषक तत्व देखें' },
       viewTrends: { en: 'View Trends', hi: 'रुझान देखें' },
-      openAssistant: { en: 'Open Assistant', hi: 'सहायक खोलें' },
+      openAssistant: { en: 'Ask Aura', hi: 'ऑरा से पूछें' },
       openHistory: { en: 'Open History', hi: 'इतिहास खोलें' },
       viewStreaks: { en: 'View Streaks', hi: 'स्ट्रीक देखें' },
       viewProfile: { en: 'View Profile', hi: 'प्रोफ़ाइल देखें' },
@@ -384,6 +390,30 @@ export const copy = {
       createNutriCard: { en: 'Create NutriCard', hi: 'न्यूट्रीकार्ड बनाएँ' },
     },
     steps: {
+      home: {
+        title: { en: 'Home Dashboard', hi: 'मुख्य डैशबोर्ड' },
+        summary: { en: 'Your daily wellness overview.', hi: 'आपका दैनिक वेलनेस अवलोकन।' },
+        text: {
+          en: 'Your home dashboard brings your daily nutrition and wellness progress together. Start here to get a quick overview of the information that matters to you.',
+          hi: 'मुख्य डैशबोर्ड आपकी दैनिक पोषण और वेलनेस प्रगति को एक साथ लाता है। अपने लिए महत्वपूर्ण जानकारी का अवलोकन पाने के लिए यहाँ देखें।',
+        },
+      },
+      snapFeed: {
+        title: { en: 'Snap Feed', hi: 'स्नैप फीड' },
+        summary: { en: 'Create and share wellness story snaps.', hi: 'वेलनेस स्टोरी स्नैप बनाएँ और साझा करें।' },
+        text: {
+          en: 'Visit Snap Feed to create and share supported nutrition and wellness story snaps featuring your photo, daily nutrient rings, and streak.',
+          hi: 'अपनी तस्वीर, दैनिक पोषण चक्र और स्ट्रीक के साथ व्यक्तिगत वेलनेस स्टोरी स्नैप बनाने और साझा करने के लिए स्नैप फीड देखें।',
+        },
+      },
+      addFood: {
+        title: { en: 'Add Food & Log Meal', hi: 'भोजन जोड़ें और दर्ज करें' },
+        summary: { en: 'Log your meals and track nutrients.', hi: 'भोजन दर्ज करें और पोषक तत्व ट्रैक करें।' },
+        text: {
+          en: 'Tap the central plus button to log a meal. Add the food you eat and track your nutrition using Aura Nutri\'s existing food-logging features.',
+          hi: 'भोजन दर्ज करने के लिए बीच के प्लस बटन पर टैप करें। अपना आहार जोड़ें और ऑरा न्यूट्री की भोजन ट्रैकिंग सुविधाओं का उपयोग करें।',
+        },
+      },
       dashboard: {
         title: { en: 'Dashboard Overview', hi: 'डैशबोर्ड अवलोकन' },
         summary: { en: 'Your daily wellness overview.', hi: 'आपका दैनिक वेलनेस अवलोकन।' },
@@ -417,11 +447,11 @@ export const copy = {
         },
       },
       assistant: {
-        title: { en: 'Nutrition Assistant', hi: 'पोषण सहायक' },
+        title: { en: 'Ask Aura AI Assistant', hi: 'ऑरा एआई सहायक' },
         summary: { en: 'Ask nutrition and cycle questions.', hi: 'पोषण और चक्र संबंधी सवाल पूछें।' },
         text: {
-          en: 'Ask questions about nutrition, discover foods suitable for supported menstrual-cycle phases, or get help with your everyday food-related doubts.',
-          hi: 'पोषण के बारे में प्रश्न पूछें, अपनी मासिक चक्र अवस्था के अनुकूल खाद्य पदार्थ जानें और रोज़मर्रा के आहार संबंधी संशय दूर करें।',
+          en: 'Have a nutrition question? Open Ask Aura to get help with supported nutrition topics and cycle-phase food guidance.',
+          hi: 'पोषण संबंधी कोई प्रश्न है? समर्थित विषयों और चक्र-आधारित आहार मार्गदर्शन के लिए ऑरा से पूछें पर टैप करें।',
         },
       },
       history: {

@@ -4,12 +4,14 @@ import { useChatStream } from '../hooks/useChatStream.ts'
 import { bodyFontClass, copy, t } from '../lib/copy.ts'
 import { useLanguage } from '../lib/useLanguage.ts'
 import type { User } from '../lib/types.ts'
+import { IconX } from './icons.tsx'
 
 interface ChatWindowProps {
   user: User
+  onClose?: () => void
 }
 
-export function ChatWindow({ user }: ChatWindowProps) {
+export function ChatWindow({ user, onClose }: ChatWindowProps) {
   const { language } = useLanguage()
   const { messages, isLoading, error, send, clear } = useChatStream()
   const [input, setInput] = useState('')
@@ -23,16 +25,28 @@ export function ChatWindow({ user }: ChatWindowProps) {
   }
 
   return (
-    <div data-guide="chat-window" className="flex flex-col h-[60vh] bg-card border border-border rounded-card dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl overflow-hidden shadow-sm">
+    <div data-guide="chat-window" className="flex flex-col h-[70vh] sm:h-[60vh] bg-card border border-border rounded-card dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl overflow-hidden shadow-sm">
       <div className="flex items-center justify-between px-4 py-3 border-b border-border dark:border-[#34313D]">
         <h2 className="font-display text-lg font-medium text-text-main dark:text-[#F5F1F7]">{t(copy.chat.title, language)}</h2>
-        <button
-          type="button"
-          onClick={clear}
-          className={`${bodyFontClass(language)} text-sm text-text-muted hover:text-text-main dark:text-[#C5BECF] dark:hover:text-[#F5F1F7] transition-colors`}
-        >
-          {t(copy.chat.clear, language)}
-        </button>
+        <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={clear}
+            className={`${bodyFontClass(language)} text-sm text-text-muted hover:text-text-main dark:text-[#C5BECF] dark:hover:text-[#F5F1F7] transition-colors`}
+          >
+            {t(copy.chat.clear, language)}
+          </button>
+          {onClose && (
+            <button
+              type="button"
+              onClick={onClose}
+              className="w-8 h-8 rounded-full flex items-center justify-center text-text-muted hover:text-text-main dark:text-[#C5BECF] dark:hover:text-[#F5F1F7] dark:hover:bg-[#272731] transition-colors"
+              aria-label="Close chat"
+            >
+              <IconX className="w-4 h-4" />
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-background dark:bg-[#18181F]">
