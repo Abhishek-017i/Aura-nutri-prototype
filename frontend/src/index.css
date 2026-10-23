@@ -44,54 +44,73 @@
 }
 
 .dark {
-  /* DARK THEME - EXACT REFERENCE SPECIFICATION */
+  /* DARK THEME - SOPHISTICATED CHARCOAL & MUTED ROSE / LAVENDER SYSTEM */
   /* Main Surfaces */
-  --color-background: 32 33 42;             /* #20212A Main application & sidebar background */
-  --color-card: 135 102 113;                /* #876671 Main card background */
-  --color-card-secondary: 147 111 121;      /* #936F79 Secondary card background */
-  --color-card-elevated: 167 125 135;       /* #A77D87 Elevated surface */
-  --color-surface-light: 247 228 225;       /* #F7E4E1 Primary light surface */
-  --color-surface-light-secondary: 234 200 200; /* #EAC8C8 Secondary light surface */
+  --color-background: 18 18 22;             /* #121216 Main application background */
+  --color-background-secondary: 24 24 31;   /* #18181F Secondary background */
+  --color-sidebar: 21 21 27;                /* #15151B Sidebar background */
+  --color-card: 32 32 39;                   /* #202027 Standard card background */
+  --color-card-secondary: 39 39 49;         /* #272731 Elevated card background */
+  --color-card-elevated: 48 45 57;          /* #302D39 Secondary surface */
+  --color-surface-light: 235 198 231;       /* #EBC6E7 Highlight card background */
+  --color-surface-light-secondary: 232 216 240; /* #E8D8F0 Alternative highlight background */
 
   /* Text */
-  --color-text-main: 247 228 225;           /* #F7E4E1 Primary text on dark backgrounds */
-  --color-text-muted: 235 215 217;          /* #EBD7D9 Secondary text on dark backgrounds */
-  --color-text-light-primary: 41 33 42;     /* #29212A Primary text on light cards */
-  --color-text-light-secondary: 92 72 80;   /* #5C4850 Secondary text on light cards */
+  --color-text-main: 245 241 247;           /* #F5F1F7 Primary text on dark surfaces */
+  --color-text-muted: 197 190 207;          /* #C5BECF Secondary text on dark surfaces */
+  --color-text-subtle: 163 154 170;         /* #A39AAA Muted text on dark surfaces */
+  --color-text-light-primary: 41 33 47;     /* #29212F Primary text on light highlight cards */
+  --color-text-light-secondary: 98 87 106;  /* #62576A Secondary text on light highlight cards */
 
   /* Borders & Accents */
-  --color-border: 167 125 135;              /* #A77D87 Subtle border */
-  --color-primary: 234 200 200;             /* #EAC8C8 Primary accent */
-  --color-primary-hover: 247 228 225;       /* #F7E4E1 Hover accent */
-  --color-soft-accent: 147 111 121;         /* #936F79 Soft accent / pill surface */
+  --color-border: 52 49 61;                 /* #34313D Standard card border */
+  --color-border-elevated: 66 56 71;        /* #423847 Subtle elevated border */
+  --color-border-highlight: 228 197 228;    /* #E4C5E4 Highlight card border */
 
-  /* Status & Supporting Nutrient Palette */
-  --color-emerald: 143 197 183;             /* #8FC5B7 Supporting teal */
-  --color-amber: 221 186 131;               /* #DDBA83 Supporting amber */
-  --color-rose: 226 123 118;                /* #E27B76 Muted rose */
-  --color-lavender: 184 168 201;            /* #B8A8C9 Supporting lavender */
-  --color-secondary-nutrient: 213 168 180;  /* #D5A8B4 Secondary nutrition accent */
+  /* Pink and Rose Accents */
+  --color-primary: 233 165 209;             /* #E9A5D1 Primary brand pink */
+  --color-primary-hover: 206 139 184;       /* #CE8BB8 Secondary rose */
+  --color-rose-deep: 168 92 145;            /* #A85C91 Deep rose accent */
+  --color-burgundy: 89 52 67;               /* #593443 Muted burgundy */
+  --color-soft-accent: 39 39 49;            /* #272731 Elevated surface for pills / soft accent */
+
+  /* Lavender & Chart Accents */
+  --color-lavender: 198 184 242;            /* #C6B8F2 Primary lavender */
+  --color-lavender-soft: 215 205 247;       /* #D7CDF7 Soft lavender */
+  --color-lavender-blue: 184 200 244;       /* #B8C8F4 Lavender-blue */
+  --color-lilac-muted: 151 135 196;         /* #9787C4 Muted lilac */
+  --color-secondary-nutrient: 184 200 244;  /* #B8C8F4 Supporting lavender-blue / Vit D */
+
+  /* Status Colors */
+  --color-emerald: 120 203 170;             /* #78CBAA Success */
+  --color-amber: 233 193 125;               /* #E9C17D Warning */
+  --color-rose: 240 139 156;                /* #F08B9C Error / Iron */
 
   /* Direct hex variables */
-  --background: #20212A;
-  --card: #876671;
-  --card-secondary: #936F79;
-  --card-elevated: #A77D87;
-  --surface-light: #F7E4E1;
-  --surface-light-secondary: #EAC8C8;
-  --text-main: #F7E4E1;
-  --text-muted: #EBD7D9;
-  --text-light-primary: #29212A;
-  --text-light-secondary: #5C4850;
-  --border: #A77D87;
-  --primary: #EAC8C8;
-  --primary-hover: #F7E4E1;
-  --soft-accent: #936F79;
-  --emerald: #8FC5B7;
-  --amber: #DDBA83;
-  --rose: #E27B76;
-  --lavender: #B8A8C9;
-  --nutrient-secondary: #D5A8B4;
+  --background: #121216;
+  --background-secondary: #18181F;
+  --sidebar: #15151B;
+  --card: #202027;
+  --card-secondary: #272731;
+  --card-elevated: #302D39;
+  --surface-light: #EBC6E7;
+  --surface-light-secondary: #E8D8F0;
+  --text-main: #F5F1F7;
+  --text-muted: #C5BECF;
+  --text-subtle: #A39AAA;
+  --text-light-primary: #29212F;
+  --text-light-secondary: #62576A;
+  --border: #34313D;
+  --border-elevated: #423847;
+  --border-highlight: #E4C5E4;
+  --primary: #E9A5D1;
+  --primary-hover: #CE8BB8;
+  --soft-accent: #272731;
+  --emerald: #78CBAA;
+  --amber: #E9C17D;
+  --rose: #F08B9C;
+  --lavender: #C6B8F2;
+  --nutrient-secondary: #B8C8F4;
 }
 
 @layer base {
@@ -110,7 +129,7 @@
   }
 
   .dark :focus-visible {
-    outline-color: #F7E4E1;
+    outline-color: #E9A5D1;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -126,7 +145,7 @@
 
 /* Scoped Dark Mode UI Enhancements (Reference Aesthetic) */
 .dark .rounded-card {
-  border-radius: 1.25rem; /* 20px - matches the beautifully rounded cards of the reference image */
+  border-radius: 1rem; /* 16px - refined rounded cards */
 }
 
 .dark .rounded-data {
@@ -135,7 +154,7 @@
 
 /* In dark mode, ensure borders are soft and refined */
 .dark .border-border {
-  border-color: rgba(167, 125, 135, 0.4);
+  border-color: #34313D;
 }
 
 /* Subtle scrollbar for dark mode */
@@ -144,12 +163,12 @@
   height: 6px;
 }
 .dark ::-webkit-scrollbar-track {
-  background: #20212A;
+  background: #121216;
 }
 .dark ::-webkit-scrollbar-thumb {
-  background: #876671;
+  background: #34313D;
   border-radius: 9999px;
 }
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #A77D87;
+  background: #423847;
 }

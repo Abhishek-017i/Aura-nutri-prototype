@@ -183,17 +183,17 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
   if (error || !dashboard) {
     return (
       <main className="min-h-[60vh] w-full max-w-dashboard mx-auto px-6 py-8">
-        <div className="bg-rose/10 border border-rose rounded-card p-6 dark:bg-[#936F79]/50 dark:border-[#E27B76]/50 dark:rounded-2xl">
-          <h2 className="font-display text-xl font-semibold text-text-main dark:text-[#F7E4E1] mb-2">
+        <div className="bg-rose/10 border border-rose rounded-card p-6 dark:bg-[#593443]/30 dark:border-[#F08B9C]/50 dark:rounded-2xl">
+          <h2 className="font-display text-xl font-semibold text-text-main dark:text-[#F5F1F7] mb-2">
             {t(copy.dashboard.errorTitle, language)}
           </h2>
-          <p className={`${bodyFontClass(language)} text-text-main dark:text-[#EBD7D9] mb-4`}>
+          <p className={`${bodyFontClass(language)} text-text-main dark:text-[#C5BECF] mb-4`}>
             {error ?? t(copy.dashboard.loadFallback, language)}
           </p>
           <button
             type="button"
             onClick={() => void loadData()}
-            className="px-4 py-2 bg-primary hover:bg-primary-hover text-white dark:text-[#20212A] dark:bg-[#EAC8C8] dark:hover:bg-[#F7E4E1] rounded-data dark:rounded-xl font-sans font-medium transition-colors"
+            className="px-4 py-2 bg-primary hover:bg-primary-hover text-white dark:text-[#121216] dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] rounded-data dark:rounded-xl font-sans font-medium transition-colors"
           >
             {t(copy.dashboard.retry, language)}
           </button>
@@ -208,39 +208,39 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
     <main className="w-full max-w-dashboard mx-auto px-6 py-6 space-y-6">
       <div className="flex items-center justify-between pt-1" data-guide="dashboard-header">
         <div>
-          <h1 className="font-display text-2xl md:text-3xl font-semibold text-text-main dark:text-[#F7E4E1] tracking-tight">
+          <h1 className="font-display text-2xl md:text-3xl font-semibold text-text-main dark:text-[#F5F1F7] tracking-tight">
             {language === 'hi' ? 'आज का वेलनेस' : "Today's Wellness"}
           </h1>
-          <p className={`${bodyFontClass(language)} text-xs sm:text-sm text-text-muted dark:text-[#EBD7D9] mt-0.5`}>
+          <p className={`${bodyFontClass(language)} text-xs sm:text-sm text-text-muted dark:text-[#C5BECF] mt-0.5`}>
             {t(copy.dashboard.greeting, language).replace('{name}', user.name)}
           </p>
         </div>
       </div>
 
       {hasNoData ? (
-        <section className="bg-card border border-border rounded-card p-8 text-center dark:bg-[#876671] dark:border-[#A77D87]/40 dark:rounded-2xl transition-colors">
-          <h2 className="font-display text-xl font-medium text-text-main dark:text-[#F7E4E1] mb-2">
+        <section className="bg-card border border-border rounded-card p-8 text-center dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl transition-colors">
+          <h2 className="font-display text-xl font-medium text-text-main dark:text-[#F5F1F7] mb-2">
             {t(copy.dashboard.emptyTitle, language)}
           </h2>
-          <p className={`${bodyFontClass(language)} text-text-muted dark:text-[#EBD7D9] mb-6 max-w-md mx-auto`}>
+          <p className={`${bodyFontClass(language)} text-text-muted dark:text-[#C5BECF] mb-6 max-w-md mx-auto`}>
             {t(copy.dashboard.emptyBody, language)}
           </p>
           <button
             type="button"
             onClick={onOpenLog}
-            className="px-6 py-3 bg-primary hover:bg-primary-hover text-white dark:text-[#20212A] dark:bg-[#EAC8C8] dark:hover:bg-[#F7E4E1] rounded-data dark:rounded-xl font-sans font-medium transition-colors"
+            className="px-6 py-3 bg-primary hover:bg-primary-hover text-white dark:text-[#121216] dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] rounded-data dark:rounded-xl font-sans font-medium transition-colors"
           >
             {t(copy.dashboard.logMeal, language)}
           </button>
         </section>
       ) : (
         <>
-          <section data-guide="nutrient-progress" className="bg-card border border-border rounded-card p-6 dark:bg-[#876671] dark:border-[#A77D87]/40 dark:rounded-2xl transition-colors">
+          <section data-guide="nutrient-progress" className="bg-card border border-border rounded-card p-6 dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl transition-colors">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="font-display text-lg font-medium text-text-main dark:text-[#F7E4E1]">
+              <h2 className="font-display text-lg font-medium text-text-main dark:text-[#F5F1F7]">
                 {t(copy.dashboard.progressTitle, language)}
               </h2>
-              <div className="w-8 h-8 rounded-full flex items-center justify-center text-rose dark:text-[#F7E4E1] dark:bg-[#936F79]">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center text-rose dark:text-[#E9A5D1] dark:bg-[#272731]">
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
                 </svg>
@@ -253,7 +253,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
                 return (
                   <div
                     key={key}
-                    className="w-full flex justify-center p-3 sm:p-4 rounded-card dark:rounded-2xl dark:bg-[#F7E4E1] dark:shadow-sm transition-all"
+                    className="w-full flex justify-center p-3 sm:p-4 rounded-card dark:rounded-2xl dark:bg-[#272731] dark:border dark:border-[#34313D]/60 dark:shadow-sm transition-all"
                   >
                     <NutrientRing
                       nutrient={key}
@@ -272,10 +272,10 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
 
           <NutrientHistograms data={weeklyData} targets={targets} />
 
-          <section className="bg-card border border-border rounded-card p-6 dark:bg-[#876671] dark:border-[#A77D87]/40 dark:rounded-2xl transition-colors">
+          <section className="bg-card border border-border rounded-card p-6 dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl transition-colors">
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-2xl flex items-center justify-center bg-soft-accent dark:bg-[#F7E4E1] text-primary dark:text-[#29212A] shadow-sm text-2xl select-none">
+                <div className="w-12 h-12 rounded-2xl flex items-center justify-center bg-soft-accent dark:bg-[#593443]/50 dark:border dark:border-[#A85C91]/40 text-primary dark:text-[#E9A5D1] shadow-sm text-2xl select-none">
                   {dashboard.phase === 'menstrual'
                     ? '🌸'
                     : dashboard.phase === 'follicular'
@@ -291,16 +291,16 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
                     : '🌸'}
                 </div>
                 <div>
-                  <p className={`${bodyFontClass(language)} text-xs text-text-muted dark:text-[#EBD7D9] uppercase tracking-wider`}>
+                  <p className={`${bodyFontClass(language)} text-xs text-text-muted dark:text-[#C5BECF] uppercase tracking-wider`}>
                     {t(copy.dashboard.phaseLabel, language)}
                   </p>
-                  <p className="font-display text-xl font-medium text-text-main dark:text-[#F7E4E1] capitalize">
+                  <p className="font-display text-xl font-medium text-text-main dark:text-[#F5F1F7] capitalize">
                     {dashboard.phase ? t(phaseLabels[dashboard.phase], language) : '-'}
                   </p>
                   <button
                     type="button"
                     onClick={handleOpenPhaseModal}
-                    className="inline-flex items-center gap-1 mt-1 text-xs font-semibold text-primary hover:text-primary-hover dark:text-[#EAC8C8] dark:hover:text-[#F7E4E1] transition-colors focus-visible:outline-2 focus-visible:outline-primary group rounded"
+                    className="inline-flex items-center gap-1 mt-1 text-xs font-semibold text-primary hover:text-primary-hover dark:text-[#E9A5D1] dark:hover:text-[#CE8BB8] transition-colors focus-visible:outline-2 focus-visible:outline-primary group rounded"
                     aria-haspopup="dialog"
                     aria-expanded={isPhaseModalOpen}
                   >
@@ -312,11 +312,11 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
                 </div>
               </div>
               <div className="flex flex-col sm:items-end gap-2">
-                <div className="px-4 py-2 rounded-xl bg-background dark:bg-[#936F79] border border-border dark:border-[#A77D87]/30 text-xs font-sans text-text-muted dark:text-[#F7E4E1]">
+                <div className="px-4 py-2 rounded-xl bg-background dark:bg-[#272731] border border-border dark:border-[#34313D] text-xs font-sans text-text-muted dark:text-[#C5BECF]">
                   <span>{new Date(dashboard.date).toLocaleDateString(language === 'hi' ? 'hi-IN' : 'en-US', { weekday: 'short', month: 'short', day: 'numeric' })}</span>
                 </div>
                 {phaseSuccessMessage && (
-                  <span className="text-xs font-medium text-emerald dark:text-[#8FC5B7] animate-in fade-in duration-200">
+                  <span className="text-xs font-medium text-emerald dark:text-[#78CBAA] animate-in fade-in duration-200">
                     ✓ {phaseSuccessMessage}
                   </span>
                 )}
@@ -329,7 +329,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
       {/* Menstrual Phase Selection Dialog */}
       {isPhaseModalOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm dark:bg-black/60 transition-opacity"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm dark:bg-black/75 transition-opacity"
           role="dialog"
           aria-modal="true"
           aria-labelledby="change-phase-modal-title"
@@ -339,17 +339,17 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
             }
           }}
         >
-          <div className="w-full max-w-md bg-card border border-border rounded-card p-6 shadow-modal dark:bg-[#876671] dark:border-[#A77D87] dark:shadow-2xl animate-in fade-in zoom-in-95 duration-200">
+          <div className="w-full max-w-md bg-card border border-border rounded-card p-6 shadow-modal dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl dark:shadow-2xl animate-in fade-in zoom-in-95 duration-200">
             {/* Header */}
             <div className="flex items-start justify-between gap-3 mb-4">
               <div>
                 <h3
                   id="change-phase-modal-title"
-                  className="font-display text-xl font-semibold text-text-main dark:text-[#F7E4E1]"
+                  className="font-display text-xl font-semibold text-text-main dark:text-[#F5F1F7]"
                 >
                   {t(copy.dashboard.selectPhaseTitle, language)}
                 </h3>
-                <p className={`${bodyFontClass(language)} text-xs text-text-muted dark:text-[#EBD7D9] mt-0.5 leading-relaxed`}>
+                <p className={`${bodyFontClass(language)} text-xs text-text-muted dark:text-[#C5BECF] mt-0.5 leading-relaxed`}>
                   {t(copy.dashboard.selectPhaseSubtitle, language)}
                 </p>
               </div>
@@ -357,7 +357,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
                 type="button"
                 onClick={handleClosePhaseModal}
                 disabled={phaseUpdating}
-                className="w-8 h-8 rounded-full flex items-center justify-center text-text-muted hover:text-text-main dark:text-[#EBD7D9] dark:hover:text-[#F7E4E1] dark:hover:bg-[#936F79] disabled:opacity-50 transition-colors"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-text-muted hover:text-text-main dark:text-[#C5BECF] dark:hover:text-[#F5F1F7] dark:hover:bg-[#272731] disabled:opacity-50 transition-colors"
                 aria-label={t(copy.dashboard.close, language)}
               >
                 <IconX className="w-4 h-4" />
@@ -380,8 +380,8 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
                     className={[
                       'w-full p-3.5 rounded-data dark:rounded-xl border text-left transition-all duration-150 flex items-start gap-3',
                       isSelected
-                        ? 'bg-soft-accent border-primary dark:bg-[#F7E4E1] dark:border-[#EAC8C8] shadow-sm'
-                        : 'bg-background border-border hover:bg-card dark:bg-[#936F79]/50 dark:border-[#A77D87]/40 dark:hover:bg-[#936F79]',
+                        ? 'bg-soft-accent border-primary dark:bg-[#EBC6E7] dark:border-[#E4C5E4] dark:shadow-md'
+                        : 'bg-background border-border hover:bg-card dark:bg-[#272731] dark:border-[#34313D] dark:hover:bg-[#302D39]',
                     ].join(' ')}
                   >
                     <span className="text-xl select-none leading-none pt-0.5">{option.icon}</span>
@@ -391,8 +391,8 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
                           className={[
                             'font-display text-sm font-semibold capitalize',
                             isSelected
-                              ? 'text-primary dark:text-[#29212A]'
-                              : 'text-text-main dark:text-[#F7E4E1]',
+                              ? 'text-primary dark:text-[#29212F]'
+                              : 'text-text-main dark:text-[#F5F1F7]',
                           ].join(' ')}
                         >
                           {t(phaseLabels[option.id], language)}
@@ -401,8 +401,8 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
                           className={[
                             'w-4 h-4 rounded-full border flex items-center justify-center transition-colors',
                             isSelected
-                              ? 'border-primary bg-primary text-white dark:border-[#20212A] dark:bg-[#20212A] dark:text-[#F7E4E1]'
-                              : 'border-border dark:border-[#A77D87]',
+                              ? 'border-primary bg-primary text-white dark:border-[#29212F] dark:bg-[#29212F] dark:text-[#EBC6E7]'
+                              : 'border-border dark:border-[#423847]',
                           ].join(' ')}
                         >
                           {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-current" />}
@@ -413,8 +413,8 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
                           className={[
                             `${bodyFontClass(language)} text-xs mt-0.5 leading-normal`,
                             isSelected
-                              ? 'text-text-main dark:text-[#5C4850]'
-                              : 'text-text-muted dark:text-[#EBD7D9]',
+                              ? 'text-text-main dark:text-[#62576A]'
+                              : 'text-text-muted dark:text-[#C5BECF]',
                           ].join(' ')}
                         >
                           {subtitle}
@@ -428,7 +428,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
 
             {/* Error Message */}
             {phaseError && (
-              <p className={`${bodyFontClass(language)} mb-4 text-xs font-medium text-rose dark:text-[#E27B76]`}>
+              <p className={`${bodyFontClass(language)} mb-4 text-xs font-medium text-rose dark:text-[#F08B9C]`}>
                 {phaseError}
               </p>
             )}
@@ -439,7 +439,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
                 type="button"
                 onClick={handleClosePhaseModal}
                 disabled={phaseUpdating}
-                className={`${bodyFontClass(language)} flex-1 py-2.5 px-4 bg-background border border-border text-text-main hover:bg-card dark:bg-[#936F79] dark:border-[#A77D87] dark:text-[#F7E4E1] dark:hover:bg-[#A77D87] rounded-data dark:rounded-xl font-medium disabled:opacity-50 transition-colors`}
+                className={`${bodyFontClass(language)} flex-1 py-2.5 px-4 bg-background border border-border text-text-main hover:bg-card dark:bg-[#272731] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#302D39] rounded-data dark:rounded-xl font-medium disabled:opacity-50 transition-colors`}
               >
                 {t(copy.profile.cancel, language)}
               </button>
@@ -447,7 +447,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
                 type="button"
                 onClick={handleSavePhase}
                 disabled={phaseUpdating || !selectedPhase || selectedPhase === dashboard?.phase}
-                className={`${bodyFontClass(language)} flex-1 py-2.5 px-4 bg-primary hover:bg-primary-hover text-white dark:bg-[#EAC8C8] dark:hover:bg-[#F7E4E1] dark:text-[#20212A] rounded-data dark:rounded-xl font-medium shadow-sm disabled:opacity-50 transition-colors flex items-center justify-center gap-2`}
+                className={`${bodyFontClass(language)} flex-1 py-2.5 px-4 bg-primary hover:bg-primary-hover text-white dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] dark:text-[#121216] rounded-data dark:rounded-xl font-medium shadow-sm disabled:opacity-50 transition-colors flex items-center justify-center gap-2`}
               >
                 {phaseUpdating ? (
                   <span>{t(copy.profile.updating, language)}</span>
@@ -460,7 +460,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
         </div>
       )}
 
-      <p className={`${bodyFontClass(language)} text-xs text-text-muted dark:text-[#EBD7D9]/70 text-center`}>
+      <p className={`${bodyFontClass(language)} text-xs text-text-muted dark:text-[#A39AAA] text-center`}>
         {dashboard.disclaimer}
       </p>
     </main>
@@ -470,23 +470,23 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
 function DashboardSkeleton() {
   return (
     <main className="w-full max-w-dashboard mx-auto px-6 py-6 space-y-6 animate-pulse">
-      <div className="bg-card border border-border rounded-card p-6 dark:bg-[#876671] dark:border-[#A77D87]/40 dark:rounded-2xl">
-        <div className="h-6 w-40 bg-primary/10 dark:bg-[#936F79] rounded-data mb-6" />
+      <div className="bg-card border border-border rounded-card p-6 dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl">
+        <div className="h-6 w-40 bg-primary/10 dark:bg-[#272731] rounded-data mb-6" />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center">
           {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="w-36 h-36 rounded-full bg-primary/10 dark:bg-[#F7E4E1]/80" />
+            <div key={i} className="w-36 h-36 rounded-full bg-primary/10 dark:bg-[#272731]" />
           ))}
         </div>
       </div>
 
-      <div className="bg-card border border-border rounded-card p-6 space-y-6 dark:bg-[#876671] dark:border-[#A77D87]/40 dark:rounded-2xl">
-        <div className="h-6 w-32 bg-primary/10 dark:bg-[#936F79] rounded-data" />
+      <div className="bg-card border border-border rounded-card p-6 space-y-6 dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl">
+        <div className="h-6 w-32 bg-primary/10 dark:bg-[#272731] rounded-data" />
         {[1, 2, 3, 4].map((i) => (
-          <div key={i} className="dark:bg-[#F7E4E1] dark:p-4 dark:rounded-2xl">
-            <div className="h-4 w-24 bg-primary/10 dark:bg-[#936F79] rounded-data mb-3" />
+          <div key={i} className="dark:bg-[#272731] dark:p-4 dark:rounded-2xl">
+            <div className="h-4 w-24 bg-primary/10 dark:bg-[#302D39] rounded-data mb-3" />
             <div className="flex items-end gap-3 h-24">
               {[1, 2, 3, 4, 5, 6, 7].map((j) => (
-                <div key={j} className="flex-1 h-16 bg-primary/10 dark:bg-[#D5A8B4]/70 rounded-t-data" />
+                <div key={j} className="flex-1 h-16 bg-primary/10 dark:bg-[#18181F] rounded-t-data" />
               ))}
             </div>
           </div>

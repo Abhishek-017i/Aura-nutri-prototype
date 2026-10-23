@@ -66,7 +66,7 @@ export function Layout({
           <path d="M20,70 Q50,60 70,30 Q40,40 20,70 Z" />
         </svg>
       </div>
-      <header className="fixed top-0 inset-x-0 z-40 bg-background border-b border-border dark:bg-[#20212A] dark:border-[#A77D87]/30 transition-colors">
+      <header className="fixed top-0 inset-x-0 z-40 bg-background border-b border-border dark:bg-[#15151B] dark:border-[#34313D] transition-colors">
         <div data-guide="header-controls" className="max-w-dashboard mx-auto px-4 h-14 flex items-center justify-between">
           <LanguageToggle />
 
@@ -74,7 +74,7 @@ export function Layout({
             <button
               type="button"
               onClick={toggleTheme}
-              className="w-9 h-9 rounded-full bg-card border border-border flex items-center justify-center text-text-main hover:text-primary dark:bg-[#876671] dark:border-[#A77D87]/50 dark:text-[#F7E4E1] dark:hover:bg-[#936F79] transition-colors"
+              className="w-9 h-9 rounded-full bg-card border border-border flex items-center justify-center text-text-main hover:text-primary dark:bg-[#272731] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#302D39] dark:hover:text-[#E9A5D1] transition-colors"
               aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
               title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
             >
@@ -84,26 +84,26 @@ export function Layout({
                 <IconMoon className="w-4 h-4" />
               )}
             </button>
-            <IconFire className="w-6 h-6 text-rose dark:text-[#EAC8C8]" />
+            <IconFire className="w-6 h-6 text-rose dark:text-[#E9A5D1]" />
             <div className="relative">
               <button
                 type="button"
                 onClick={() => setMenuOpen((prev) => !prev)}
-                className="w-9 h-9 rounded-full bg-card border border-border flex items-center justify-center text-sm font-sans font-semibold text-text-main dark:bg-[#876671] dark:border-[#A77D87]/50 dark:text-[#F7E4E1] dark:hover:bg-[#936F79] transition-colors"
+                className="w-9 h-9 rounded-full bg-card border border-border flex items-center justify-center text-sm font-sans font-semibold text-text-main dark:bg-[#272731] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#302D39] transition-colors"
                 aria-haspopup="menu"
                 aria-expanded={menuOpen}
               >
                 {initial}
               </button>
               {menuOpen && (
-                <div className="absolute right-0 top-full mt-2 w-40 bg-card border border-border rounded-card shadow-modal overflow-hidden dark:bg-[#876671] dark:border-[#A77D87]/50 dark:shadow-xl dark:rounded-2xl">
+                <div className="absolute right-0 top-full mt-2 w-40 bg-card border border-border rounded-card shadow-modal overflow-hidden dark:bg-[#272731] dark:border-[#34313D] dark:shadow-xl dark:rounded-2xl">
                   <button
                     type="button"
                     onClick={() => {
                       setMenuOpen(false)
                       onLogout()
                     }}
-                    className={`${bodyFontClass(language)} w-full px-4 py-3 text-left text-sm text-text-main hover:bg-background dark:text-[#F7E4E1] dark:hover:bg-[#936F79] transition-colors`}
+                    className={`${bodyFontClass(language)} w-full px-4 py-3 text-left text-sm text-text-main hover:bg-background dark:text-[#F5F1F7] dark:hover:bg-[#302D39] transition-colors`}
                   >
                     {t(copy.dashboard.logout, language)}
                   </button>
@@ -120,7 +120,7 @@ export function Layout({
         data-guide="nutricard-button"
         type="button"
         onClick={onOpenNutriCard}
-        className="fixed bottom-20 left-4 z-30 w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center text-text-muted hover:text-text-main dark:bg-[#876671] dark:border-[#A77D87]/50 dark:text-[#F7E4E1] dark:hover:bg-[#936F79] transition-all"
+        className="fixed bottom-20 left-4 z-30 w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center text-text-muted hover:text-text-main dark:bg-[#272731] dark:border-[#34313D] dark:text-[#C5BECF] dark:hover:text-[#F5F1F7] dark:hover:bg-[#302D39] transition-all"
         aria-label="NutriCard"
       >
         <IconCheatDay className="w-5 h-5" />
@@ -129,13 +129,13 @@ export function Layout({
       <button
         type="button"
         onClick={onOpenLog}
-        className="fixed bottom-20 right-4 z-30 w-14 h-14 rounded-card bg-primary hover:bg-primary-hover border border-primary flex items-center justify-center text-white dark:text-[#20212A] dark:bg-[#EAC8C8] dark:hover:bg-[#F7E4E1] dark:border-transparent dark:rounded-2xl shadow-none dark:shadow-lg transition-all"
+        className="fixed bottom-20 right-4 z-30 w-14 h-14 rounded-card bg-primary hover:bg-primary-hover border border-primary flex items-center justify-center text-white dark:text-[#121216] dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] dark:border-transparent dark:rounded-2xl shadow-none dark:shadow-lg dark:shadow-[#E9A5D1]/10 transition-all"
         aria-label={t(copy.dashboard.logMeal, language)}
       >
         <IconPlus className="w-7 h-7" />
       </button>
 
-      <nav className="fixed bottom-0 inset-x-0 z-30 bg-card border-t border-border dark:bg-[#20212A] dark:border-[#A77D87]/30 transition-colors">
+      <nav className="fixed bottom-0 inset-x-0 z-30 bg-card border-t border-border dark:bg-[#15151B] dark:border-[#34313D] transition-colors">
         <div className="max-w-dashboard mx-auto h-14 flex items-center justify-around">
           {TABS.map(({ id, labelKey, icon: Icon }) => {
             const isActive = activeTab === id
@@ -147,8 +147,8 @@ export function Layout({
                 className={[
                   'flex flex-col items-center justify-center gap-0.5 w-16 h-12 rounded-data transition-all',
                   isActive
-                    ? 'bg-soft-accent text-text-main dark:bg-[#876671] dark:text-[#F7E4E1] dark:rounded-xl dark:shadow-sm'
-                    : 'text-text-muted hover:text-text-main dark:text-[#EBD7D9]/70 dark:hover:text-[#F7E4E1] dark:hover:bg-[#936F79]/30 dark:rounded-xl',
+                    ? 'bg-soft-accent text-text-main dark:bg-[#272731] dark:text-[#E9A5D1] dark:border dark:border-[#34313D] dark:rounded-xl dark:shadow-sm'
+                    : 'text-text-muted hover:text-text-main dark:text-[#A39AAA] dark:hover:text-[#F5F1F7] dark:hover:bg-[#272731]/40 dark:rounded-xl',
                 ].join(' ')}
                 aria-current={isActive ? 'page' : undefined}
               >

@@ -6,12 +6,16 @@ export default {
     extend: {
       colors: {
         background: 'rgb(var(--color-background) / <alpha-value>)',
+        'background-secondary': 'rgb(var(--color-background-secondary, var(--color-background)) / <alpha-value>)',
+        sidebar: 'rgb(var(--color-sidebar, var(--color-background)) / <alpha-value>)',
         card: 'rgb(var(--color-card) / <alpha-value>)',
         'card-secondary': 'rgb(var(--color-card-secondary) / <alpha-value>)',
         'card-elevated': 'rgb(var(--color-card-elevated) / <alpha-value>)',
         'surface-light': 'rgb(var(--color-surface-light) / <alpha-value>)',
         'surface-light-secondary': 'rgb(var(--color-surface-light-secondary) / <alpha-value>)',
         border: 'rgb(var(--color-border) / <alpha-value>)',
+        'border-elevated': 'rgb(var(--color-border-elevated, var(--color-border)) / <alpha-value>)',
+        'border-highlight': 'rgb(var(--color-border-highlight, var(--color-border)) / <alpha-value>)',
         primary: {
           DEFAULT: 'rgb(var(--color-primary) / <alpha-value>)',
           hover: 'rgb(var(--color-primary-hover) / <alpha-value>)',
@@ -19,6 +23,7 @@ export default {
         'primary-hover': 'rgb(var(--color-primary-hover) / <alpha-value>)',
         'text-main': 'rgb(var(--color-text-main) / <alpha-value>)',
         'text-muted': 'rgb(var(--color-text-muted) / <alpha-value>)',
+        'text-subtle': 'rgb(var(--color-text-subtle, var(--color-text-muted)) / <alpha-value>)',
         'text-light-primary': 'rgb(var(--color-text-light-primary) / <alpha-value>)',
         'text-light-secondary': 'rgb(var(--color-text-light-secondary) / <alpha-value>)',
         'soft-accent': 'rgb(var(--color-soft-accent) / <alpha-value>)',
@@ -35,6 +40,8 @@ export default {
         emerald: 'rgb(var(--color-emerald) / <alpha-value>)',
         amber: 'rgb(var(--color-amber) / <alpha-value>)',
         rose: 'rgb(var(--color-rose) / <alpha-value>)',
+        'rose-deep': 'rgb(var(--color-rose-deep, var(--color-primary)) / <alpha-value>)',
+        burgundy: 'rgb(var(--color-burgundy, var(--color-card)) / <alpha-value>)',
         lavender: 'rgb(var(--color-lavender) / <alpha-value>)',
         'secondary-nutrient': 'rgb(var(--color-secondary-nutrient) / <alpha-value>)',
 
