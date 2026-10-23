@@ -4,6 +4,7 @@ import { useLanguage } from '../lib/useLanguage.ts'
 import { bodyFontClass, copy, formatCopy, t } from '../lib/copy.ts'
 import type { Tab } from './Layout.tsx'
 import {
+  IconCamera,
   IconChat,
   IconChevronLeft,
   IconChevronRight,
@@ -13,8 +14,8 @@ import {
   IconHistory,
   IconHome,
   IconLeaf,
+  IconPlus,
   IconProfile,
-  IconSun,
   IconX,
 } from './icons.tsx'
 
@@ -39,20 +40,52 @@ interface TourStepConfig {
 
 const TOUR_STEPS: TourStepConfig[] = [
   {
-    id: 'dashboard',
-    copyKey: 'dashboard',
-    actionKey: 'goToDashboard',
+    id: 'home',
+    copyKey: 'home',
+    actionKey: 'goToHome',
     tab: 'home',
-    targetSelector: '[data-guide="dashboard-header"]',
+    targetSelector: '[data-tour="home"]',
     icon: IconHome,
   },
   {
-    id: 'settings',
-    copyKey: 'settings',
-    actionKey: 'viewSettings',
+    id: 'snapFeed',
+    copyKey: 'snapFeed',
+    actionKey: 'openSnapFeed',
+    tab: 'snap',
+    targetSelector: '[data-tour="snap-feed"]',
+    icon: IconCamera,
+  },
+  {
+    id: 'addFood',
+    copyKey: 'addFood',
+    actionKey: 'logMealAction',
     tab: 'home',
-    targetSelector: '[data-guide="header-controls"]',
-    icon: IconSun,
+    targetSelector: '[data-tour="add-food"]',
+    icon: IconPlus,
+  },
+  {
+    id: 'history',
+    copyKey: 'history',
+    actionKey: 'openHistory',
+    tab: 'history',
+    targetSelector: '[data-tour="history"]',
+    icon: IconHistory,
+  },
+  {
+    id: 'profile',
+    copyKey: 'profile',
+    actionKey: 'viewProfile',
+    tab: 'profile',
+    targetSelector: '[data-tour="profile"]',
+    icon: IconProfile,
+  },
+  {
+    id: 'assistant',
+    copyKey: 'assistant',
+    actionKey: 'openAssistant',
+    tab: 'home',
+    targetSelector: '[data-tour="ai-assistant"]',
+    icon: IconChat,
   },
   {
     id: 'nutrients',
@@ -71,22 +104,6 @@ const TOUR_STEPS: TourStepConfig[] = [
     icon: IconCompass,
   },
   {
-    id: 'assistant',
-    copyKey: 'assistant',
-    actionKey: 'openAssistant',
-    tab: 'chat',
-    targetSelector: '[data-guide="chat-window"]',
-    icon: IconChat,
-  },
-  {
-    id: 'history',
-    copyKey: 'history',
-    actionKey: 'openHistory',
-    tab: 'history',
-    targetSelector: '[data-guide="history-trends"]',
-    icon: IconHistory,
-  },
-  {
     id: 'streaks',
     copyKey: 'streaks',
     actionKey: 'viewStreaks',
@@ -95,29 +112,12 @@ const TOUR_STEPS: TourStepConfig[] = [
     icon: IconFire,
   },
   {
-    id: 'profile',
-    copyKey: 'profile',
-    actionKey: 'viewProfile',
-    tab: 'profile',
-    targetSelector: '[data-guide="profile-phase"]',
-    icon: IconProfile,
-  },
-  {
     id: 'cheatDay',
     copyKey: 'cheatDay',
     actionKey: 'viewCheatDay',
     tab: 'profile',
     targetSelector: '[data-guide="cheat-charm"]',
     icon: IconLeaf,
-  },
-  {
-    id: 'nutriCard',
-    copyKey: 'nutriCard',
-    actionKey: 'createNutriCard',
-    tab: 'home',
-    targetSelector: '[data-guide="nutricard-button"]',
-    icon: IconCompass,
-    action: 'openNutriCard',
   },
 ]
 
@@ -270,9 +270,9 @@ export function AuraGuide({
 
     const isMobile = window.innerWidth < 640
     if (isMobile) {
-      // On mobile screens, dock at the bottom above the nav bar to prevent clipping
+      // On mobile screens, dock above the floating bottom nav bar to prevent clipping
       return {
-        bottom: '80px',
+        bottom: '96px',
         left: '16px',
         right: '16px',
         maxWidth: 'calc(100vw - 32px)',
@@ -295,7 +295,7 @@ export function AuraGuide({
       }
     } else {
       return {
-        bottom: `${Math.max(16, window.innerHeight - targetRect.top + 12)}px`,
+        bottom: `${Math.max(24, window.innerHeight - targetRect.top + 16)}px`,
         left: `${left}px`,
         width: `${popoverWidth}px`,
       }
@@ -309,7 +309,7 @@ export function AuraGuide({
 
   return (
     <>
-      {/* 1. NEED HELP FLOATING ENTRY BUTTON */}
+      {/* 1. NEED HELP FLOATING ENTRY BUTTON (Placed on left side above bottom nav) */}
       {mode === 'closed' && (
         <>
           {/* Desktop floating button */}
@@ -317,7 +317,7 @@ export function AuraGuide({
             ref={triggerButtonRef}
             type="button"
             onClick={() => setMode('welcome')}
-            className="fixed bottom-20 right-24 z-30 hidden md:flex items-center gap-2 px-4 py-2.5 rounded-full bg-card border border-border text-text-main hover:bg-soft-accent shadow-md dark:bg-[#202027] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#272731] dark:shadow-xl transition-all duration-200 focus-visible:outline-2 focus-visible:outline-primary active:scale-95"
+            className="fixed bottom-24 left-4 sm:left-6 md:left-8 z-30 hidden md:flex items-center gap-2 px-4 py-2.5 rounded-full bg-card border border-border text-text-main hover:bg-soft-accent shadow-lg dark:bg-[#202027] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#272731] dark:shadow-xl transition-all duration-200 focus-visible:outline-2 focus-visible:outline-primary active:scale-95"
             aria-label={t(copy.guide.buttonLabel, language)}
             title={t(copy.guide.badge, language)}
           >
@@ -331,7 +331,7 @@ export function AuraGuide({
           <button
             type="button"
             onClick={() => setMode('welcome')}
-            className="fixed bottom-36 right-4 z-30 flex md:hidden items-center gap-1.5 px-3.5 py-2 rounded-full bg-card border border-border text-text-main hover:bg-soft-accent shadow-md dark:bg-[#202027] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#272731] dark:shadow-xl transition-all duration-200 focus-visible:outline-2 focus-visible:outline-primary active:scale-95 text-xs font-medium"
+            className="fixed bottom-24 left-4 z-30 flex md:hidden items-center gap-1.5 px-3.5 py-2 rounded-full bg-card border border-border text-text-main hover:bg-soft-accent shadow-lg dark:bg-[#202027] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#272731] dark:shadow-xl transition-all duration-200 focus-visible:outline-2 focus-visible:outline-primary active:scale-95 text-xs font-medium"
             aria-label={t(copy.guide.buttonLabel, language)}
           >
             <IconHelpCircle className="w-4 h-4 text-primary dark:text-[#E9A5D1]" />
