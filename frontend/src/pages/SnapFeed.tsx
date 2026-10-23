@@ -56,10 +56,10 @@ export function SnapFeed({ user, onOpenNutriCard }: SnapFeedProps) {
       const url = canvas.toDataURL('image/png')
       const a = document.createElement('a')
       a.href = url
-      a.download = `AURA-SnapFeed-${new Date().toISOString().split('T')[0]}.png`
+      a.download = `AURA-NutriCards-${new Date().toISOString().split('T')[0]}.png`
       a.click()
     } catch (err) {
-      console.error('Failed to generate snap card image', err)
+      console.error('Failed to generate nutri card image', err)
     } finally {
       setSaving(false)
     }
@@ -120,7 +120,7 @@ export function SnapFeed({ user, onOpenNutriCard }: SnapFeedProps) {
             disabled={saving}
             className={`${bodyFontClass(language)} inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] dark:text-[#121216] shadow-sm disabled:opacity-50 transition-all`}
           >
-            <span>{saving ? 'Saving...' : 'Save Snap'}</span>
+            <span>{saving ? 'Saving...' : 'Save Card'}</span>
           </button>
         </div>
       </div>
@@ -129,7 +129,7 @@ export function SnapFeed({ user, onOpenNutriCard }: SnapFeedProps) {
         <div className="flex flex-col items-center justify-center py-20">
           <div className="animate-spin w-10 h-10 border-2 border-primary border-t-transparent rounded-full mb-3" />
           <p className={`${bodyFontClass(language)} text-sm text-text-muted dark:text-[#C5BECF]`}>
-            Loading daily wellness snap...
+            Loading daily nutri card...
           </p>
         </div>
       ) : (
@@ -277,7 +277,7 @@ export function SnapFeed({ user, onOpenNutriCard }: SnapFeedProps) {
                       </div>
                     </div>
                     <span className="text-white/40 text-[9px] uppercase tracking-wider font-semibold">
-                      wellness snap
+                      nutri card
                     </span>
                   </div>
                 </div>
@@ -289,7 +289,7 @@ export function SnapFeed({ user, onOpenNutriCard }: SnapFeedProps) {
           <div className="w-full max-w-sm space-y-4">
             <div className="p-6 rounded-card border border-border bg-card dark:bg-[#202027] dark:border-[#34313D] space-y-4 shadow-sm">
               <h3 className="font-display text-lg font-semibold text-text-main dark:text-[#F5F1F7]">
-                How Snap Feed Works
+                How Nutri Cards Work
               </h3>
               <p
                 className={`${bodyFontClass(language)} text-sm text-text-muted dark:text-[#C5BECF] leading-relaxed`}
@@ -321,7 +321,7 @@ export function SnapFeed({ user, onOpenNutriCard }: SnapFeedProps) {
                     3
                   </div>
                   <p className={`${bodyFontClass(language)} text-xs text-text-muted dark:text-[#C5BECF]`}>
-                    Tap <strong>Save Snap</strong> to export a high-resolution PNG ready for your Instagram Stories or personal wellness journal.
+                    Tap <strong>Save Card</strong> to export a high-resolution PNG ready for your Instagram Stories or personal wellness journal.
                   </p>
                 </div>
               </div>
