@@ -51,10 +51,10 @@ export function ProtectedRoute({ children, requirePhase = false }: ProtectedRout
 
   if (loading || phaseLoading) {
     return (
-      <div className="min-h-screen bg-[#FAF7F2] dark:bg-[#20212A] p-6 flex flex-col gap-4">
-        <div className="h-8 w-48 bg-[#E2E8F0] dark:bg-[#936F79] rounded animate-pulse" />
-        <div className="h-32 bg-[#E2E8F0] dark:bg-[#876671] rounded-lg animate-pulse" />
-        <div className="h-64 bg-[#E2E8F0] dark:bg-[#876671] rounded-lg animate-pulse" />
+      <div className="min-h-screen bg-[#FAF7F2] dark:bg-[#121216] p-6 flex flex-col gap-4">
+        <div className="h-8 w-48 bg-[#E2E8F0] dark:bg-[#272731] rounded animate-pulse" />
+        <div className="h-32 bg-[#E2E8F0] dark:bg-[#202027] rounded-lg animate-pulse" />
+        <div className="h-64 bg-[#E2E8F0] dark:bg-[#202027] rounded-lg animate-pulse" />
       </div>
     )
   }

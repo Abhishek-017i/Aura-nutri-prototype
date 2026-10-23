@@ -20,8 +20,8 @@ export function MicButton({
         'relative w-16 h-16 rounded-full border-2 flex items-center justify-center',
         'transition-colors duration-200 disabled:opacity-50',
         isListening
-          ? 'border-primary bg-primary text-white dark:bg-[#EAC8C8] dark:border-[#EAC8C8] dark:text-[#20212A]'
-          : 'border-primary bg-soft-accent text-primary dark:bg-[#936F79] dark:border-[#EAC8C8] dark:text-[#EAC8C8]',
+          ? 'border-primary bg-primary text-white dark:bg-[#E9A5D1] dark:border-[#E9A5D1] dark:text-[#121216]'
+          : 'border-primary bg-soft-accent text-primary dark:bg-[#272731] dark:border-[#E9A5D1] dark:text-[#E9A5D1]',
       ].join(' ')}
     >
       {!isListening && (

@@ -11,21 +11,22 @@ function getRingColor(percent: number, nutrient: string, isDark: boolean): strin
   }
 
   // Exact restrained dark mode palette from reference specification:
-  // Complete: Supporting teal #8FC5B7
-  if (percent >= 100) return '#8FC5B7'
+  // Complete: Supporting teal #78CBAA
+  if (percent >= 100) return '#78CBAA'
 
-  // Nutrient specific restrained tones
+  // Nutrient specific restrained tones:
+  // Iron: #F08B9C, Calcium: #78CBAA, Vitamin D: #B8C8F4, Vitamin B12: #D7CDF7
   switch (nutrient) {
     case 'iron':
-      return '#876671' // dusty rose
+      return '#F08B9C' // Muted rose
     case 'calcium':
-      return '#8FC5B7' // supporting teal
+      return '#78CBAA' // Teal / Success
     case 'vit_d':
-      return '#DDBA83' // supporting amber
+      return '#B8C8F4' // Lavender-blue
     case 'b12':
-      return '#B8A8C9' // supporting lavender
+      return '#D7CDF7' // Soft lavender
     default:
-      return '#D5A8B4' // secondary nutrition accent
+      return '#E9A5D1' // Primary brand pink
   }
 }
 
@@ -58,7 +59,7 @@ export function NutrientRing({
 
   const label = t(nutrientLabels[nutrient], language)
   const fontClass = language === 'hi' ? 'font-hindi' : 'font-sans'
-  const trackColor = isDark ? 'rgba(135, 102, 113, 0.18)' : 'var(--border)'
+  const trackColor = isDark ? '#34313D' : 'var(--border)'
 
   return (
     <div className={`${sizeClass} flex flex-col items-center justify-between`}>
@@ -81,16 +82,16 @@ export function NutrientRing({
           </RadialBarChart>
         </ResponsiveContainer>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className={`font-display font-semibold ${textSize} text-text-main dark:text-[#29212A]`}>
+          <span className={`font-display font-semibold ${textSize} text-text-main dark:text-[#F5F1F7]`}>
             {Math.round(percent)}%
           </span>
-          <span className={`font-sans ${subTextSize} text-text-muted dark:text-[#5C4850] font-medium`}>
+          <span className={`font-sans ${subTextSize} text-text-muted dark:text-[#C5BECF] font-medium`}>
             {Math.round(current)} / {Math.round(target)} {unit}
           </span>
         </div>
       </div>
       <div className="mt-2 text-center">
-        <p className={`${fontClass} font-medium ${subTextSize} text-text-main dark:text-[#29212A]`}>
+        <p className={`${fontClass} font-medium ${subTextSize} text-text-main dark:text-[#F5F1F7]`}>
           {label}
         </p>
       </div>

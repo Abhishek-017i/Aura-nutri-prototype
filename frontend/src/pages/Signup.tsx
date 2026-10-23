@@ -222,14 +222,14 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
 
   return (
     <main className="min-h-screen w-full max-w-chat mx-auto px-6 py-12 flex flex-col justify-center bg-background transition-colors">
-      <div className="bg-card border border-border rounded-card p-8 shadow-sm dark:bg-[#876671] dark:border-[#A77D87]/40 dark:rounded-2xl">
+      <div className="bg-card border border-border rounded-card p-8 shadow-sm dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl">
         {/* Header & Step Indicator */}
         <div className="flex items-start justify-between gap-4 mb-2">
           <div>
-            <span className={`${bodyFontClass(language)} text-xs uppercase tracking-wider text-text-muted dark:text-[#EBD7D9] font-medium`}>
+            <span className={`${bodyFontClass(language)} text-xs uppercase tracking-wider text-text-muted dark:text-[#C5BECF] font-medium`}>
               Step {step} of 3
             </span>
-            <h1 className="font-display text-2xl sm:text-3xl font-semibold text-text-main dark:text-[#F7E4E1] mt-1">
+            <h1 className="font-display text-2xl sm:text-3xl font-semibold text-text-main dark:text-[#F5F1F7] mt-1">
               {step === 1 && 'Create Account'}
               {step === 2 && 'Personal Details'}
               {step === 3 && 'Select Cycle Phase'}
@@ -239,30 +239,30 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
         </div>
 
         {/* Step Progress Bar */}
-        <div className="w-full bg-border dark:bg-[#936F79] h-1.5 rounded-full my-4 overflow-hidden">
+        <div className="w-full bg-border dark:bg-[#272731] h-1.5 rounded-full my-4 overflow-hidden">
           <div
-            className="bg-primary dark:bg-[#EAC8C8] h-full transition-all duration-300"
+            className="bg-primary dark:bg-[#E9A5D1] h-full transition-all duration-300"
             style={{ width: `${(step / 3) * 100}%` }}
           />
         </div>
 
         {error && (
-          <div className="mb-6 p-3 bg-rose/10 border border-rose/30 rounded-data dark:bg-[#936F79]/50 dark:border-[#E27B76]/50 dark:text-[#E27B76] dark:rounded-xl">
-            <p className={`${bodyFontClass(language)} text-sm text-rose dark:text-[#E27B76]`}>{error}</p>
+          <div className="mb-6 p-3 bg-rose/10 border border-rose/30 rounded-data dark:bg-[#593443]/40 dark:border-[#F08B9C]/50 dark:text-[#F08B9C] dark:rounded-xl">
+            <p className={`${bodyFontClass(language)} text-sm text-rose dark:text-[#F08B9C]`}>{error}</p>
           </div>
         )}
 
         {/* STEP 1: AUTH */}
         {step === 1 && (
           <div>
-            <p className={`${bodyFontClass(language)} text-sm text-text-muted dark:text-[#EBD7D9] mb-6`}>
+            <p className={`${bodyFontClass(language)} text-sm text-text-muted dark:text-[#C5BECF] mb-6`}>
               Start tracking your clinical micronutrients with personalized phase adaptation.
             </p>
             <form onSubmit={handleStep1Submit} className="space-y-4">
               <div>
                 <label
                   htmlFor="signup-email"
-                  className={`${bodyFontClass(language)} block text-sm font-medium text-text-main dark:text-[#F7E4E1] mb-1`}
+                  className={`${bodyFontClass(language)} block text-sm font-medium text-text-main dark:text-[#F5F1F7] mb-1`}
                 >
                   Email
                 </label>
@@ -272,7 +272,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
-                  className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted dark:bg-[#20212A] dark:border-[#A77D87] dark:text-[#F7E4E1] dark:placeholder-[#EBD7D9]/60 dark:rounded-xl focus-visible:outline-text-main"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted dark:bg-[#18181F] dark:border-[#34313D] dark:text-[#F5F1F7] dark:placeholder-[#A39AAA] dark:rounded-xl focus-visible:outline-text-main dark:focus-visible:outline-[#E9A5D1]"
                   disabled={loading}
                   autoComplete="email"
                   required
@@ -282,7 +282,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
               <div>
                 <label
                   htmlFor="signup-password"
-                  className={`${bodyFontClass(language)} block text-sm font-medium text-text-main dark:text-[#F7E4E1] mb-1`}
+                  className={`${bodyFontClass(language)} block text-sm font-medium text-text-main dark:text-[#F5F1F7] mb-1`}
                 >
                   Password
                 </label>
@@ -292,7 +292,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="At least 6 characters"
-                  className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted dark:bg-[#20212A] dark:border-[#A77D87] dark:text-[#F7E4E1] dark:placeholder-[#EBD7D9]/60 dark:rounded-xl focus-visible:outline-text-main"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted dark:bg-[#18181F] dark:border-[#34313D] dark:text-[#F5F1F7] dark:placeholder-[#A39AAA] dark:rounded-xl focus-visible:outline-text-main dark:focus-visible:outline-[#E9A5D1]"
                   disabled={loading}
                   autoComplete="new-password"
                   required
@@ -302,7 +302,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
               <div>
                 <label
                   htmlFor="signup-confirm-password"
-                  className={`${bodyFontClass(language)} block text-sm font-medium text-text-main dark:text-[#F7E4E1] mb-1`}
+                  className={`${bodyFontClass(language)} block text-sm font-medium text-text-main dark:text-[#F5F1F7] mb-1`}
                 >
                   Confirm Password
                 </label>
@@ -312,7 +312,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Re-enter your password"
-                  className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted dark:bg-[#20212A] dark:border-[#A77D87] dark:text-[#F7E4E1] dark:placeholder-[#EBD7D9]/60 dark:rounded-xl focus-visible:outline-text-main"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted dark:bg-[#18181F] dark:border-[#34313D] dark:text-[#F5F1F7] dark:placeholder-[#A39AAA] dark:rounded-xl focus-visible:outline-text-main dark:focus-visible:outline-[#E9A5D1]"
                   disabled={loading}
                   autoComplete="new-password"
                   required
@@ -322,7 +322,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
               <button
                 type="submit"
                 disabled={loading || !email.trim() || !password}
-                className={`${bodyFontClass(language)} w-full mt-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white dark:text-[#20212A] dark:bg-[#EAC8C8] dark:hover:bg-[#F7E4E1] rounded-data dark:rounded-xl font-medium disabled:opacity-50 transition-colors`}
+                className={`${bodyFontClass(language)} w-full mt-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white dark:text-[#121216] dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] rounded-data dark:rounded-xl font-medium disabled:opacity-50 transition-colors`}
               >
                 {loading ? 'Creating Account...' : 'Next: Your Details'}
               </button>
@@ -330,9 +330,9 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
 
             <div className="relative my-6 text-center">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-border dark:border-[#A77D87]/40" />
+                <div className="w-full border-t border-border dark:border-[#34313D]" />
               </div>
-              <span className="relative bg-card dark:bg-[#876671] px-3 text-xs uppercase tracking-wider text-text-muted dark:text-[#EBD7D9] font-sans">
+              <span className="relative bg-card dark:bg-[#202027] px-3 text-xs uppercase tracking-wider text-text-muted dark:text-[#C5BECF] font-sans">
                 or
               </span>
             </div>
@@ -341,7 +341,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
               type="button"
               onClick={handleGoogleSignup}
               disabled={loading}
-              className={`${bodyFontClass(language)} w-full px-6 py-3 bg-background border border-border text-text-main rounded-data font-medium flex items-center justify-center gap-2 hover:bg-soft-accent/40 dark:bg-[#936F79] dark:border-[#A77D87] dark:text-[#F7E4E1] dark:hover:bg-[#A77D87] dark:rounded-xl disabled:opacity-50 transition-colors`}
+              className={`${bodyFontClass(language)} w-full px-6 py-3 bg-background border border-border text-text-main rounded-data font-medium flex items-center justify-center gap-2 hover:bg-soft-accent/40 dark:bg-[#272731] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#302D39] dark:rounded-xl disabled:opacity-50 transition-colors`}
             >
               Continue with Google
             </button>
@@ -350,7 +350,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
               <button
                 type="button"
                 onClick={navigateToLogin}
-                className={`${bodyFontClass(language)} text-sm text-primary dark:text-[#EAC8C8] hover:underline font-medium`}
+                className={`${bodyFontClass(language)} text-sm text-primary dark:text-[#E9A5D1] hover:underline font-medium`}
               >
                 Already have an account? Log in
               </button>
@@ -361,14 +361,14 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
         {/* STEP 2: DETAILS */}
         {step === 2 && (
           <form onSubmit={handleStep2Submit} className="space-y-4">
-            <p className={`${bodyFontClass(language)} text-sm text-text-muted dark:text-[#EBD7D9] mb-4`}>
+            <p className={`${bodyFontClass(language)} text-sm text-text-muted dark:text-[#C5BECF] mb-4`}>
               We use your age to accurately look up ICMR-NIN RDA requirements.
             </p>
 
             <div>
               <label
                 htmlFor="details-name"
-                className={`${bodyFontClass(language)} block text-sm font-medium text-text-main dark:text-[#F7E4E1] mb-1`}
+                className={`${bodyFontClass(language)} block text-sm font-medium text-text-main dark:text-[#F5F1F7] mb-1`}
               >
                 Your Full Name
               </label>
@@ -378,7 +378,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="e.g. Ananya Sharma"
-                className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted dark:bg-[#20212A] dark:border-[#A77D87] dark:text-[#F7E4E1] dark:placeholder-[#EBD7D9]/60 dark:rounded-xl focus-visible:outline-text-main"
+                className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted dark:bg-[#18181F] dark:border-[#34313D] dark:text-[#F5F1F7] dark:placeholder-[#A39AAA] dark:rounded-xl focus-visible:outline-text-main dark:focus-visible:outline-[#E9A5D1]"
                 disabled={loading}
                 autoFocus
                 required
@@ -388,7 +388,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
             <div>
               <label
                 htmlFor="details-age"
-                className={`${bodyFontClass(language)} block text-sm font-medium text-text-main dark:text-[#F7E4E1] mb-1`}
+                className={`${bodyFontClass(language)} block text-sm font-medium text-text-main dark:text-[#F5F1F7] mb-1`}
               >
                 Age (years)
               </label>
@@ -400,7 +400,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
                 placeholder="28"
-                className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted dark:bg-[#20212A] dark:border-[#A77D87] dark:text-[#F7E4E1] dark:placeholder-[#EBD7D9]/60 dark:rounded-xl focus-visible:outline-text-main"
+                className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted dark:bg-[#18181F] dark:border-[#34313D] dark:text-[#F5F1F7] dark:placeholder-[#A39AAA] dark:rounded-xl focus-visible:outline-text-main dark:focus-visible:outline-[#E9A5D1]"
                 disabled={loading}
                 required
               />
@@ -414,14 +414,14 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                   setStep(1)
                 }}
                 disabled={loading}
-                className={`${bodyFontClass(language)} px-4 py-3 bg-background border border-border text-text-main rounded-data font-medium hover:bg-soft-accent/20 dark:bg-[#936F79] dark:border-[#A77D87] dark:text-[#F7E4E1] dark:hover:bg-[#A77D87] dark:rounded-xl transition-colors`}
+                className={`${bodyFontClass(language)} px-4 py-3 bg-background border border-border text-text-main rounded-data font-medium hover:bg-soft-accent/20 dark:bg-[#272731] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#302D39] dark:rounded-xl transition-colors`}
               >
                 Back
               </button>
               <button
                 type="submit"
                 disabled={loading || !name.trim() || !age.trim()}
-                className={`${bodyFontClass(language)} flex-1 px-6 py-3 bg-primary hover:bg-primary-hover text-white dark:text-[#20212A] dark:bg-[#EAC8C8] dark:hover:bg-[#F7E4E1] rounded-data dark:rounded-xl font-medium disabled:opacity-50 transition-colors`}
+                className={`${bodyFontClass(language)} flex-1 px-6 py-3 bg-primary hover:bg-primary-hover text-white dark:text-[#121216] dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] rounded-data dark:rounded-xl font-medium disabled:opacity-50 transition-colors`}
               >
                 Next: Select Phase
               </button>
@@ -432,7 +432,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
         {/* STEP 3: PHASE */}
         {step === 3 && (
           <div>
-            <p className={`${bodyFontClass(language)} text-sm text-text-muted dark:text-[#EBD7D9] mb-4`}>
+            <p className={`${bodyFontClass(language)} text-sm text-text-muted dark:text-[#C5BECF] mb-4`}>
               Choose your current physiological phase to configure dynamic nutrient RDA baselines:
             </p>
 
@@ -445,8 +445,8 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                     onClick={() => setPhase(item.id)}
                     className={`cursor-pointer p-4 rounded-card border transition-all ${
                       isSelected
-                        ? 'border-primary bg-soft-accent/40 ring-1 ring-primary dark:bg-[#F7E4E1] dark:border-transparent dark:ring-2 dark:ring-[#F7E4E1] dark:rounded-2xl dark:shadow-md'
-                        : 'border-border bg-background hover:border-text-muted/60 dark:bg-[#936F79] dark:border-[#A77D87]/40 dark:rounded-2xl dark:hover:border-[#F7E4E1]/50'
+                        ? 'border-primary bg-soft-accent/40 ring-1 ring-primary dark:bg-[#EBC6E7] dark:border-[#E4C5E4] dark:ring-2 dark:ring-[#EBC6E7] dark:rounded-2xl dark:shadow-md'
+                        : 'border-border bg-background hover:border-text-muted/60 dark:bg-[#272731] dark:border-[#34313D] dark:rounded-2xl dark:hover:border-[#E9A5D1]/50 dark:hover:bg-[#302D39]'
                     }`}
                   >
                     <div className="flex items-center justify-between">
@@ -464,8 +464,8 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                           htmlFor={`phase-radio-${item.id}`}
                           className={`font-display font-medium cursor-pointer ${
                             isSelected
-                              ? 'text-text-main dark:text-[#29212A]'
-                              : 'text-text-main dark:text-[#F7E4E1]'
+                              ? 'text-text-main dark:text-[#29212F]'
+                              : 'text-text-main dark:text-[#F5F1F7]'
                           }`}
                         >
                           {item.label}
@@ -473,16 +473,16 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                       </div>
                       <span className={`text-xs font-sans font-medium ${
                         isSelected
-                          ? 'text-text-muted dark:text-[#5C4850]'
-                          : 'text-text-muted dark:text-[#EBD7D9]'
+                          ? 'text-text-muted dark:text-[#62576A]'
+                          : 'text-text-muted dark:text-[#C5BECF]'
                       }`}>
                         {item.subtitle}
                       </span>
                     </div>
                     <p className={`${bodyFontClass(language)} text-xs mt-2 pl-7 ${
                       isSelected
-                        ? 'text-text-muted dark:text-[#5C4850]'
-                        : 'text-text-muted dark:text-[#EBD7D9]'
+                        ? 'text-text-muted dark:text-[#62576A]'
+                        : 'text-text-muted dark:text-[#C5BECF]'
                     }`}>
                       {item.description}
                     </p>
@@ -499,7 +499,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                   setStep(2)
                 }}
                 disabled={loading}
-                className={`${bodyFontClass(language)} px-4 py-3 bg-background border border-border text-text-main rounded-data font-medium hover:bg-soft-accent/20 dark:bg-[#936F79] dark:border-[#A77D87] dark:text-[#F7E4E1] dark:hover:bg-[#A77D87] dark:rounded-xl transition-colors`}
+                className={`${bodyFontClass(language)} px-4 py-3 bg-background border border-border text-text-main rounded-data font-medium hover:bg-soft-accent/20 dark:bg-[#272731] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#302D39] dark:rounded-xl transition-colors`}
               >
                 Back
               </button>
@@ -507,7 +507,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                 type="button"
                 onClick={handleCompleteSignup}
                 disabled={loading}
-                className={`${bodyFontClass(language)} flex-1 px-6 py-3 bg-primary hover:bg-primary-hover text-white dark:text-[#20212A] dark:bg-[#EAC8C8] dark:hover:bg-[#F7E4E1] rounded-data dark:rounded-xl font-medium disabled:opacity-50 transition-colors`}
+                className={`${bodyFontClass(language)} flex-1 px-6 py-3 bg-primary hover:bg-primary-hover text-white dark:text-[#121216] dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] rounded-data dark:rounded-xl font-medium disabled:opacity-50 transition-colors`}
               >
                 {loading ? 'Completing Setup...' : 'Complete Signup'}
               </button>
@@ -516,7 +516,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
         )}
       </div>
 
-      <p className={`${bodyFontClass(language)} mt-6 text-xs text-text-muted dark:text-[#EBD7D9]/70 text-center`}>
+      <p className={`${bodyFontClass(language)} mt-6 text-xs text-text-muted dark:text-[#A39AAA] text-center`}>
         AURA-Nutri provides food intelligence, not medical advice. Always consult a
         qualified physician or registered dietitian before changing your diet or taking
         supplements.
