@@ -7,7 +7,7 @@ import {
 
 import { auth } from '../lib/firebase.ts'
 import { completeSignup, patchPhase, HTTPError } from '../lib/api.ts'
-import { bodyFontClass } from '../lib/copy.ts'
+import { bodyFontClass, copy, t, formatCopy } from '../lib/copy.ts'
 import { LanguageToggle } from '../lib/language.tsx'
 import { useLanguage } from '../lib/useLanguage.ts'
 import type { Phase } from '../lib/types.ts'
@@ -17,62 +17,26 @@ interface SignupProps {
   onNavigateToLogin?: () => void
 }
 
-interface PhaseCardOption {
-  id: Phase
-  label: string
-  subtitle: string
-  description: string
-}
+const PHASE_KEYS: Phase[] = ['follicular', 'menstrual', 'luteal', 'menopause', 'pregnancy_lactation']
 
-const PHASE_CARDS: PhaseCardOption[] = [
-  {
-    id: 'follicular',
-    label: 'Follicular Phase',
-    subtitle: 'Post-menstruation to ovulation',
-    description: 'Higher energy levels, focus on balanced protein and essential vitamins.',
-  },
-  {
-    id: 'menstrual',
-    label: 'Menstrual Phase',
-    subtitle: 'Active bleeding cycle',
-    description: 'Higher iron and restorative nutrient demands to replenish blood loss.',
-  },
-  {
-    id: 'luteal',
-    label: 'Luteal Phase',
-    subtitle: 'Post-ovulation to pre-period',
-    description: 'Increased metabolic rate; magnesium, B6, and calcium supportive nutrition.',
-  },
-  {
-    id: 'menopause',
-    label: 'Menopause',
-    subtitle: 'Perimenopause and post-menopause',
-    description: 'Higher calcium and Vitamin D targets to support bone mineral density.',
-  },
-  {
-    id: 'pregnancy_lactation',
-    label: 'Pregnancy & Lactation',
-    subtitle: 'Maternal nourishment',
-    description: 'Elevated micronutrient demands including iron, folate, calcium, and B12.',
-  },
-]
+type AuthErrorKey = keyof typeof copy.authErrors
 
-function getFriendlyAuthErrorMessage(errorCode: string, defaultMessage: string): string {
+function mapSignupAuthErrorCode(errorCode: string): AuthErrorKey {
   switch (errorCode) {
     case 'auth/email-already-in-use':
-      return 'An account with this email already exists. Please log in.'
+      return 'emailAlreadyInUse'
     case 'auth/invalid-email':
-      return 'Please enter a valid email address.'
+      return 'invalidEmail'
     case 'auth/weak-password':
-      return 'Password is too weak. Please use at least 6 characters.'
+      return 'weakPassword'
     case 'auth/operation-not-allowed':
-      return 'Email/password accounts are not enabled.'
+      return 'operationNotAllowed'
     case 'auth/popup-closed-by-user':
-      return 'Google sign-up was cancelled before finishing.'
+      return 'popupClosed'
     case 'auth/network-request-failed':
-      return 'Network error. Please check your internet connection.'
+      return 'networkError'
     default:
-      return defaultMessage || 'Signup failed. Please try again.'
+      return 'genericSignupError'
   }
 }
 
@@ -94,7 +58,8 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
 
   // Status
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  const [errorKey, setErrorKey] = useState<AuthErrorKey | null>(null)
+  const [rawError, setRawError] = useState<string | null>(null)
 
   const navigateToLogin = () => {
     if (onNavigateToLogin) {
@@ -117,30 +82,39 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
     e.preventDefault()
     const trimmedEmail = email.trim()
     if (!trimmedEmail) {
-      setError('Email address is required.')
+      setErrorKey('emailRequired')
+      setRawError(null)
       return
     }
     if (password.length < 6) {
-      setError('Password must be at least 6 characters.')
+      setErrorKey('passwordLength')
+      setRawError(null)
       return
     }
     if (password !== confirmPassword) {
-      setError('Passwords do not match.')
+      setErrorKey('passwordsDoNotMatch')
+      setRawError(null)
       return
     }
 
     setLoading(true)
-    setError(null)
+    setErrorKey(null)
+    setRawError(null)
 
     try {
-      // If user is already logged in with this email, advance or create
       if (!auth.currentUser || auth.currentUser.email !== trimmedEmail) {
         await createUserWithEmailAndPassword(auth, trimmedEmail, password)
       }
       setStep(2)
     } catch (err: unknown) {
       const authErr = err as { code?: string; message?: string }
-      setError(getFriendlyAuthErrorMessage(authErr?.code ?? '', authErr?.message ?? 'Registration failed'))
+      if (authErr?.code) {
+        setErrorKey(mapSignupAuthErrorCode(authErr.code))
+        setRawError(null)
+      } else {
+        setErrorKey(null)
+        setRawError(authErr?.message || null)
+      }
     } finally {
       setLoading(false)
     }
@@ -148,13 +122,20 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
 
   const handleGoogleSignup = async () => {
     setLoading(true)
-    setError(null)
+    setErrorKey(null)
+    setRawError(null)
     try {
       const provider = new GoogleAuthProvider()
       await signInWithRedirect(auth, provider)
     } catch (err: unknown) {
       const authErr = err as { code?: string; message?: string }
-      setError(getFriendlyAuthErrorMessage(authErr?.code ?? '', authErr?.message ?? 'Google signup failed'))
+      if (authErr?.code) {
+        setErrorKey(mapSignupAuthErrorCode(authErr.code))
+        setRawError(null)
+      } else {
+        setErrorKey(null)
+        setRawError(authErr?.message || null)
+      }
       setLoading(false)
     }
   }
@@ -164,30 +145,35 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
     e.preventDefault()
     const trimmedName = name.trim()
     if (!trimmedName) {
-      setError('Please enter your name.')
+      setErrorKey('nameRequired')
+      setRawError(null)
       return
     }
 
     const ageNum = parseInt(age, 10)
     if (isNaN(ageNum) || ageNum <= 0 || ageNum > 120) {
-      setError('Please enter a valid age between 1 and 120.')
+      setErrorKey('invalidAge')
+      setRawError(null)
       return
     }
 
-    setError(null)
+    setErrorKey(null)
+    setRawError(null)
     setStep(3)
   }
 
   // STEP 3 Handlers (Finalize)
   const handleCompleteSignup = async () => {
     if (!auth.currentUser) {
-      setError('Session expired. Please start over from step 1.')
+      setErrorKey('sessionExpired')
+      setRawError(null)
       setStep(1)
       return
     }
 
     setLoading(true)
-    setError(null)
+    setErrorKey(null)
+    setRawError(null)
 
     try {
       const ageNum = parseInt(age, 10) || 28
@@ -203,17 +189,17 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
       try {
         await patchPhase({ phase })
       } catch (phaseErr) {
-        // Even if phase patch fails, user doc was created by complete-signup
         console.warn('Phase patch warning:', phaseErr)
       }
 
       navigateToHome()
     } catch (err: unknown) {
       if (err instanceof HTTPError) {
-        setError(err.message)
+        setErrorKey(null)
+        setRawError(err.message)
       } else {
-        const errorObj = err as Error
-        setError(errorObj?.message || 'Failed to complete signup. Please try again.')
+        setErrorKey('genericCompleteError')
+        setRawError(null)
       }
     } finally {
       setLoading(false)
@@ -227,12 +213,12 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
         <div className="flex items-start justify-between gap-4 mb-2">
           <div>
             <span className={`${bodyFontClass(language)} text-xs uppercase tracking-wider text-text-muted dark:text-[#C5BECF] font-medium`}>
-              Step {step} of 3
+              {formatCopy(copy.signup.stepIndicator, language, { step })}
             </span>
             <h1 className="font-display text-2xl sm:text-3xl font-semibold text-text-main dark:text-[#F5F1F7] mt-1">
-              {step === 1 && 'Create Account'}
-              {step === 2 && 'Personal Details'}
-              {step === 3 && 'Select Cycle Phase'}
+              {step === 1 && t(copy.signup.createAccountTitle, language)}
+              {step === 2 && t(copy.signup.personalDetailsTitle, language)}
+              {step === 3 && t(copy.signup.selectPhaseTitle, language)}
             </h1>
           </div>
           <LanguageToggle />
@@ -246,9 +232,11 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
           />
         </div>
 
-        {error && (
+        {(errorKey || rawError) && (
           <div className="mb-6 p-3 bg-rose/10 border border-rose/30 rounded-data dark:bg-[#593443]/40 dark:border-[#F08B9C]/50 dark:text-[#F08B9C] dark:rounded-xl">
-            <p className={`${bodyFontClass(language)} text-sm text-rose dark:text-[#F08B9C]`}>{error}</p>
+            <p className={`${bodyFontClass(language)} text-sm text-rose dark:text-[#F08B9C]`}>
+              {errorKey ? t(copy.authErrors[errorKey], language) : rawError}
+            </p>
           </div>
         )}
 
@@ -256,7 +244,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
         {step === 1 && (
           <div>
             <p className={`${bodyFontClass(language)} text-sm text-text-muted dark:text-[#C5BECF] mb-6`}>
-              Start tracking your clinical micronutrients with personalized phase adaptation.
+              {t(copy.signup.step1Subtitle, language)}
             </p>
             <form onSubmit={handleStep1Submit} className="space-y-4">
               <div>
@@ -264,14 +252,14 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                   htmlFor="signup-email"
                   className={`${bodyFontClass(language)} block text-sm font-medium text-text-main dark:text-[#F5F1F7] mb-1`}
                 >
-                  Email
+                  {t(copy.signup.emailLabel, language)}
                 </label>
                 <input
                   id="signup-email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@example.com"
+                  placeholder={t(copy.signup.emailPlaceholder, language)}
                   className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted dark:bg-[#18181F] dark:border-[#34313D] dark:text-[#F5F1F7] dark:placeholder-[#A39AAA] dark:rounded-xl focus-visible:outline-text-main dark:focus-visible:outline-[#E9A5D1]"
                   disabled={loading}
                   autoComplete="email"
@@ -284,14 +272,14 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                   htmlFor="signup-password"
                   className={`${bodyFontClass(language)} block text-sm font-medium text-text-main dark:text-[#F5F1F7] mb-1`}
                 >
-                  Password
+                  {t(copy.signup.passwordLabel, language)}
                 </label>
                 <input
                   id="signup-password"
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="At least 6 characters"
+                  placeholder={t(copy.signup.passwordPlaceholder, language)}
                   className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted dark:bg-[#18181F] dark:border-[#34313D] dark:text-[#F5F1F7] dark:placeholder-[#A39AAA] dark:rounded-xl focus-visible:outline-text-main dark:focus-visible:outline-[#E9A5D1]"
                   disabled={loading}
                   autoComplete="new-password"
@@ -304,14 +292,14 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                   htmlFor="signup-confirm-password"
                   className={`${bodyFontClass(language)} block text-sm font-medium text-text-main dark:text-[#F5F1F7] mb-1`}
                 >
-                  Confirm Password
+                  {t(copy.signup.confirmPasswordLabel, language)}
                 </label>
                 <input
                   id="signup-confirm-password"
                   type="password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  placeholder="Re-enter your password"
+                  placeholder={t(copy.signup.confirmPasswordPlaceholder, language)}
                   className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted dark:bg-[#18181F] dark:border-[#34313D] dark:text-[#F5F1F7] dark:placeholder-[#A39AAA] dark:rounded-xl focus-visible:outline-text-main dark:focus-visible:outline-[#E9A5D1]"
                   disabled={loading}
                   autoComplete="new-password"
@@ -324,7 +312,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                 disabled={loading || !email.trim() || !password}
                 className={`${bodyFontClass(language)} w-full mt-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white dark:text-[#121216] dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] rounded-data dark:rounded-xl font-medium disabled:opacity-50 transition-colors`}
               >
-                {loading ? 'Creating Account...' : 'Next: Your Details'}
+                {loading ? t(copy.signup.creatingAccount, language) : t(copy.signup.nextDetails, language)}
               </button>
             </form>
 
@@ -333,7 +321,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                 <div className="w-full border-t border-border dark:border-[#34313D]" />
               </div>
               <span className="relative bg-card dark:bg-[#202027] px-3 text-xs uppercase tracking-wider text-text-muted dark:text-[#C5BECF] font-sans">
-                or
+                {t(copy.signup.orDivider, language)}
               </span>
             </div>
 
@@ -343,7 +331,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
               disabled={loading}
               className={`${bodyFontClass(language)} w-full px-6 py-3 bg-background border border-border text-text-main rounded-data font-medium flex items-center justify-center gap-2 hover:bg-soft-accent/40 dark:bg-[#272731] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#302D39] dark:rounded-xl disabled:opacity-50 transition-colors`}
             >
-              Continue with Google
+              {loading ? t(copy.signup.googleSigningIn, language) : t(copy.signup.continueWithGoogle, language)}
             </button>
 
             <div className="mt-6 text-center">
@@ -352,7 +340,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                 onClick={navigateToLogin}
                 className={`${bodyFontClass(language)} text-sm text-primary dark:text-[#E9A5D1] hover:underline font-medium`}
               >
-                Already have an account? Log in
+                {t(copy.signup.alreadyHaveAccount, language)}
               </button>
             </div>
           </div>
@@ -362,7 +350,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
         {step === 2 && (
           <form onSubmit={handleStep2Submit} className="space-y-4">
             <p className={`${bodyFontClass(language)} text-sm text-text-muted dark:text-[#C5BECF] mb-4`}>
-              We use your age to accurately look up ICMR-NIN RDA requirements.
+              {t(copy.signup.step2Subtitle, language)}
             </p>
 
             <div>
@@ -370,14 +358,14 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                 htmlFor="details-name"
                 className={`${bodyFontClass(language)} block text-sm font-medium text-text-main dark:text-[#F5F1F7] mb-1`}
               >
-                Your Full Name
+                {t(copy.signup.nameLabel, language)}
               </label>
               <input
                 id="details-name"
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="e.g. Ananya Sharma"
+                placeholder={t(copy.signup.namePlaceholder, language)}
                 className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted dark:bg-[#18181F] dark:border-[#34313D] dark:text-[#F5F1F7] dark:placeholder-[#A39AAA] dark:rounded-xl focus-visible:outline-text-main dark:focus-visible:outline-[#E9A5D1]"
                 disabled={loading}
                 autoFocus
@@ -390,7 +378,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                 htmlFor="details-age"
                 className={`${bodyFontClass(language)} block text-sm font-medium text-text-main dark:text-[#F5F1F7] mb-1`}
               >
-                Age (years)
+                {t(copy.signup.ageLabel, language)}
               </label>
               <input
                 id="details-age"
@@ -399,7 +387,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                 max={120}
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
-                placeholder="28"
+                placeholder={t(copy.signup.agePlaceholder, language)}
                 className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted dark:bg-[#18181F] dark:border-[#34313D] dark:text-[#F5F1F7] dark:placeholder-[#A39AAA] dark:rounded-xl focus-visible:outline-text-main dark:focus-visible:outline-[#E9A5D1]"
                 disabled={loading}
                 required
@@ -410,20 +398,21 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
               <button
                 type="button"
                 onClick={() => {
-                  setError(null)
+                  setErrorKey(null)
+                  setRawError(null)
                   setStep(1)
                 }}
                 disabled={loading}
                 className={`${bodyFontClass(language)} px-4 py-3 bg-background border border-border text-text-main rounded-data font-medium hover:bg-soft-accent/20 dark:bg-[#272731] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#302D39] dark:rounded-xl transition-colors`}
               >
-                Back
+                {t(copy.signup.backButton, language)}
               </button>
               <button
                 type="submit"
                 disabled={loading || !name.trim() || !age.trim()}
                 className={`${bodyFontClass(language)} flex-1 px-6 py-3 bg-primary hover:bg-primary-hover text-white dark:text-[#121216] dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] rounded-data dark:rounded-xl font-medium disabled:opacity-50 transition-colors`}
               >
-                Next: Select Phase
+                {t(copy.signup.nextPhase, language)}
               </button>
             </div>
           </form>
@@ -433,16 +422,17 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
         {step === 3 && (
           <div>
             <p className={`${bodyFontClass(language)} text-sm text-text-muted dark:text-[#C5BECF] mb-4`}>
-              Choose your current physiological phase to configure dynamic nutrient RDA baselines:
+              {t(copy.signup.step3Subtitle, language)}
             </p>
 
             <div className="space-y-3 mb-6 max-h-[360px] overflow-y-auto pr-1">
-              {PHASE_CARDS.map((item) => {
-                const isSelected = phase === item.id
+              {PHASE_KEYS.map((phaseId) => {
+                const isSelected = phase === phaseId
+                const optionCopy = copy.signup.phaseOptions[phaseId]
                 return (
                   <div
-                    key={item.id}
-                    onClick={() => setPhase(item.id)}
+                    key={phaseId}
+                    onClick={() => setPhase(phaseId)}
                     className={`cursor-pointer p-4 rounded-card border transition-all ${
                       isSelected
                         ? 'border-primary bg-soft-accent/40 ring-1 ring-primary dark:bg-[#EBC6E7] dark:border-[#E4C5E4] dark:ring-2 dark:ring-[#EBC6E7] dark:rounded-2xl dark:shadow-md'
@@ -453,22 +443,22 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                       <div className="flex items-center gap-3">
                         <input
                           type="radio"
-                          id={`phase-radio-${item.id}`}
+                          id={`phase-radio-${phaseId}`}
                           name="cycle_phase"
-                          value={item.id}
+                          value={phaseId}
                           checked={isSelected}
-                          onChange={() => setPhase(item.id)}
+                          onChange={() => setPhase(phaseId)}
                           className="h-4 w-4 text-primary accent-primary"
                         />
                         <label
-                          htmlFor={`phase-radio-${item.id}`}
+                          htmlFor={`phase-radio-${phaseId}`}
                           className={`font-display font-medium cursor-pointer ${
                             isSelected
                               ? 'text-text-main dark:text-[#29212F]'
                               : 'text-text-main dark:text-[#F5F1F7]'
                           }`}
                         >
-                          {item.label}
+                          {t(optionCopy.label, language)}
                         </label>
                       </div>
                       <span className={`text-xs font-sans font-medium ${
@@ -476,7 +466,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                           ? 'text-text-muted dark:text-[#62576A]'
                           : 'text-text-muted dark:text-[#C5BECF]'
                       }`}>
-                        {item.subtitle}
+                        {t(optionCopy.subtitle, language)}
                       </span>
                     </div>
                     <p className={`${bodyFontClass(language)} text-xs mt-2 pl-7 ${
@@ -484,7 +474,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                         ? 'text-text-muted dark:text-[#62576A]'
                         : 'text-text-muted dark:text-[#C5BECF]'
                     }`}>
-                      {item.description}
+                      {t(optionCopy.description, language)}
                     </p>
                   </div>
                 )
@@ -495,13 +485,14 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
               <button
                 type="button"
                 onClick={() => {
-                  setError(null)
+                  setErrorKey(null)
+                  setRawError(null)
                   setStep(2)
                 }}
                 disabled={loading}
                 className={`${bodyFontClass(language)} px-4 py-3 bg-background border border-border text-text-main rounded-data font-medium hover:bg-soft-accent/20 dark:bg-[#272731] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#302D39] dark:rounded-xl transition-colors`}
               >
-                Back
+                {t(copy.signup.backButton, language)}
               </button>
               <button
                 type="button"
@@ -509,7 +500,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
                 disabled={loading}
                 className={`${bodyFontClass(language)} flex-1 px-6 py-3 bg-primary hover:bg-primary-hover text-white dark:text-[#121216] dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] rounded-data dark:rounded-xl font-medium disabled:opacity-50 transition-colors`}
               >
-                {loading ? 'Completing Setup...' : 'Complete Signup'}
+                {loading ? t(copy.signup.completingSetup, language) : t(copy.signup.completeSignup, language)}
               </button>
             </div>
           </div>
@@ -517,9 +508,7 @@ export function Signup({ onSuccess, onNavigateToLogin }: SignupProps) {
       </div>
 
       <p className={`${bodyFontClass(language)} mt-6 text-xs text-text-muted dark:text-[#A39AAA] text-center`}>
-        AURA-Nutri provides food intelligence, not medical advice. Always consult a
-        qualified physician or registered dietitian before changing your diet or taking
-        supplements.
+        {t(copy.signup.disclaimer, language)}
       </p>
     </main>
   )

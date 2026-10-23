@@ -284,14 +284,14 @@ interface OverlayProps {
 
 function FilterOverlay({ filterId, todayStr, stats, streakDays, onFlipCamera }: OverlayProps) {
   return (
-    <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-5 text-white select-none overflow-hidden">
+    <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4 text-white select-none overflow-hidden scale-[0.90] origin-center transition-transform duration-200">
       {/* ============================================================== */}
       {/* FILTER 1: "Minimal Glass"                                     */}
       {/* ============================================================== */}
       {filterId === 1 && (
         <>
           {/* Top Header */}
-          <div className="relative z-10 flex items-start justify-between pt-1">
+          <div className="relative z-10 flex items-start justify-between pt-14">
             <div className="flex items-center gap-2">
               <AuraBrandLogo className="h-6 w-auto drop-shadow" />
               <span className="text-white font-medium text-sm tracking-wide drop-shadow">Aura-Nutri</span>
@@ -312,7 +312,7 @@ function FilterOverlay({ filterId, todayStr, stats, streakDays, onFlipCamera }: 
           </svg>
 
           {/* Bottom Area */}
-          <div className="relative z-10 space-y-3 pb-24">
+          <div className="relative z-10 space-y-3 pb-20">
             <div className="pl-1">
               <h1 className="font-serif text-3xl sm:text-4xl leading-[1.05] text-white tracking-normal drop-shadow-md">
                 Nourish
@@ -374,7 +374,7 @@ function FilterOverlay({ filterId, todayStr, stats, streakDays, onFlipCamera }: 
             <div className="w-32 h-[1px] bg-white rotate-45 origin-top-left translate-x-6 -translate-y-2" />
           </div>
 
-          <div className="relative z-10 flex items-start justify-between pt-1">
+          <div className="relative z-10 flex items-start justify-between pt-14">
             <div className="flex items-center gap-2">
               <AuraBrandLogo className="h-6 w-auto drop-shadow" />
               <span className="text-white font-medium text-sm tracking-wide drop-shadow">Aura-Nutri</span>
@@ -394,7 +394,7 @@ function FilterOverlay({ filterId, todayStr, stats, streakDays, onFlipCamera }: 
             <div className="w-36 h-[1px] bg-white -rotate-45 origin-bottom-right -translate-x-6 translate-y-2" />
           </div>
 
-          <div className="relative z-10 pl-2 mt-12 mb-auto">
+          <div className="relative z-10 pl-2 mt-4 mb-auto">
             <div className="border-l-2 border-white/80 pl-3">
               <h1 className="font-sans font-black text-3xl tracking-tight leading-[1.02] text-white uppercase drop-shadow-md">
                 FUEL
@@ -407,7 +407,7 @@ function FilterOverlay({ filterId, todayStr, stats, streakDays, onFlipCamera }: 
             </div>
           </div>
 
-          <div className="relative z-10 pb-24 space-y-3 bg-gradient-to-t from-black/80 via-black/40 to-transparent pt-6 -mx-5 px-5">
+          <div className="relative z-10 pb-20 space-y-2.5 bg-gradient-to-t from-black/80 via-black/40 to-transparent pt-4 -mx-5 px-5">
             <div className="flex items-center gap-3">
               <IconDrop className="w-4 h-4 text-white shrink-0 opacity-90" />
               <div className="w-24 shrink-0">
@@ -464,7 +464,7 @@ function FilterOverlay({ filterId, todayStr, stats, streakDays, onFlipCamera }: 
       {/* ============================================================== */}
       {filterId === 3 && (
         <>
-          <div className="relative z-10 flex items-start justify-between pt-1">
+          <div className="relative z-10 flex items-start justify-between pt-14">
             <div className="flex items-center gap-2">
               <AuraBrandLogo className="h-6 w-auto drop-shadow" />
               <span className="text-white font-medium text-sm tracking-wide drop-shadow">Aura-Nutri</span>
@@ -478,7 +478,7 @@ function FilterOverlay({ filterId, todayStr, stats, streakDays, onFlipCamera }: 
             </div>
           </div>
 
-          <div className="relative z-10 pl-1 mt-10 mb-auto">
+          <div className="relative z-10 pl-1 mt-4 mb-auto">
             <h1 className="font-serif italic text-2xl sm:text-3xl leading-[1.15] text-white drop-shadow-md">
               Healthy
               <br />
@@ -493,7 +493,7 @@ function FilterOverlay({ filterId, todayStr, stats, streakDays, onFlipCamera }: 
             <BotanicalLeafSvg className="w-48 h-72 drop-shadow-lg" />
           </div>
 
-          <div className="relative z-10 pb-24 space-y-2.5 pl-1">
+          <div className="relative z-10 pb-20 space-y-2.5 pl-1">
             <div className="flex items-center gap-3">
               <IconDrop className="w-4 h-4 text-white opacity-90" />
               <div>
@@ -535,7 +535,7 @@ function FilterOverlay({ filterId, todayStr, stats, streakDays, onFlipCamera }: 
       {filterId === 4 && (
         <>
           {/* Top Row: Logo left, Date right */}
-          <div className="relative z-10 flex items-start justify-between pt-1">
+          <div className="relative z-10 flex items-start justify-between pt-14">
             <div className="flex items-center gap-2">
               <AuraBrandLogo className="h-6 w-auto drop-shadow" />
               <span className="text-white font-medium text-sm tracking-wide drop-shadow">Aura-Nutri</span>
@@ -544,7 +544,7 @@ function FilterOverlay({ filterId, todayStr, stats, streakDays, onFlipCamera }: 
           </div>
 
           {/* Dynamic Curved Streak Banner Frame */}
-          <div className="relative z-10 mt-6 px-1">
+          <div className="relative z-10 mt-3 px-1">
             <div className="relative py-3.5 px-4 rounded-3xl border border-white/60 bg-black/20 backdrop-blur-[2px] shadow-lg">
               {/* Star on top right corner of banner */}
               <div className="absolute -top-2.5 -right-2 text-white">
@@ -578,7 +578,7 @@ function FilterOverlay({ filterId, todayStr, stats, streakDays, onFlipCamera }: 
           </div>
 
           {/* 4 Circular Gauges */}
-          <div className="relative z-10 pb-20">
+          <div className="relative z-10 pb-16">
             <div className="grid grid-cols-4 gap-2 px-1">
               {[
                 { name: 'Iron', unit: 'mg', val: stats.iron.displayVal, pct: stats.iron.percent },
@@ -660,8 +660,8 @@ function FilterOverlay({ filterId, todayStr, stats, streakDays, onFlipCamera }: 
       {/* ============================================================== */}
       {filterId === 5 && (
         <>
-          {/* Top Row: Logo with sparkles left, Camera flip right */}
-          <div className="relative z-10 flex items-start justify-between pt-1">
+          {/* Top Row: Logo with sparkles left, streak badge right */}
+          <div className="relative z-10 flex items-start justify-between pt-14">
             <div className="flex flex-col">
               <div className="flex items-center gap-2">
                 <AuraBrandLogo className="h-6 w-auto drop-shadow" />
@@ -677,31 +677,17 @@ function FilterOverlay({ filterId, todayStr, stats, streakDays, onFlipCamera }: 
               </div>
             </div>
 
-            {/* Doodled Camera Flip Icon */}
-            <div className="relative">
-              <button
-                type="button"
-                onClick={onFlipCamera}
-                className="pointer-events-auto w-10 h-10 rounded-full border border-white/60 bg-black/30 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/50 transition-colors"
-                aria-label="Flip camera"
-              >
-                <IconFlipCamera className="w-5 h-5" />
-              </button>
-              {/* Doodle rays around flip button */}
-              <div className="absolute -top-1 -left-1 text-white/80 pointer-events-none">
-                <span className="text-[9px]">ˏ</span>
-              </div>
-              <div className="absolute -top-2 right-1 text-white/80 pointer-events-none">
-                <span className="text-[9px]">ˈ</span>
-              </div>
-              <div className="absolute -top-1 -right-1.5 text-white/80 pointer-events-none">
-                <span className="text-[9px]">ˎ</span>
+            <div className="flex flex-col items-end gap-1">
+              <span className="text-[11px] font-medium tracking-wide text-white/90 drop-shadow">{todayStr}</span>
+              <div className="flex items-center gap-1.5 px-3 py-0.5 rounded-full border border-white/60 bg-black/30 backdrop-blur-sm text-white">
+                <IconFire className="w-3.5 h-3.5 text-white" />
+                <span className="text-[11px] font-medium tracking-tight">{streakDays} Day Streak</span>
               </div>
             </div>
           </div>
 
           {/* Middle: Y2K Big Brush Script & Sparkles */}
-          <div className="relative z-10 pl-2 mt-4 mb-auto">
+          <div className="relative z-10 pl-2 mt-2 mb-auto">
             {/* Crown above Aura */}
             <div className="flex items-center gap-1 mb-[-4px] pl-10 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
               <IconCrownDoodle className="w-6 h-6 rotate-12" />
@@ -732,7 +718,7 @@ function FilterOverlay({ filterId, todayStr, stats, streakDays, onFlipCamera }: 
               <div className="w-32 h-[2px] bg-white mt-1.5 rounded-full ml-1" />
             </div>
 
-            <div className="mt-4 pl-1">
+            <div className="mt-3 pl-1">
               <p className="font-sans font-extrabold text-[11px] sm:text-xs tracking-[0.2em] text-white uppercase drop-shadow">
                 GOOD NUTRITION
               </p>
@@ -744,7 +730,7 @@ function FilterOverlay({ filterId, todayStr, stats, streakDays, onFlipCamera }: 
           </div>
 
           {/* Bottom Floating Pill Container */}
-          <div className="relative z-10 pb-20">
+          <div className="relative z-10 pb-16">
             <div className="relative">
               {/* Botanical leaves wrapping around pill ends */}
               <div className="absolute -left-3 -top-3 w-8 h-12 pointer-events-none opacity-90">
@@ -816,22 +802,21 @@ function FilterOverlay({ filterId, todayStr, stats, streakDays, onFlipCamera }: 
       {/* ============================================================== */}
       {filterId === 6 && (
         <>
-          {/* Top Row: Frosted cloud badge left, Circular glow button right */}
-          <div className="relative z-10 flex items-start justify-between pt-1">
+          {/* Top Row: Frosted cloud badge left, streak badge right */}
+          <div className="relative z-10 flex items-start justify-between pt-14">
             <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/40 shadow-lg">
               <AuraBrandLogo className="h-6 w-auto drop-shadow" />
               <span className="text-white font-medium text-xs tracking-wide drop-shadow">Aura-Nutri</span>
               <IconSparkleStar className="w-3 h-3 text-white ml-0.5" />
             </div>
 
-            <button
-              type="button"
-              onClick={onFlipCamera}
-              className="pointer-events-auto w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/40 flex items-center justify-center text-white shadow-lg hover:bg-white/30 transition-colors"
-              aria-label="Flip camera"
-            >
-              <IconFlipCamera className="w-5 h-5" />
-            </button>
+            <div className="flex flex-col items-end gap-1">
+              <span className="text-[11px] font-medium tracking-wide text-white/90 drop-shadow">{todayStr}</span>
+              <div className="flex items-center gap-1.5 px-3 py-0.5 rounded-full border border-white/60 bg-black/30 backdrop-blur-sm text-white">
+                <IconFire className="w-3.5 h-3.5 text-white" />
+                <span className="text-[11px] font-medium tracking-tight">{streakDays} Day Streak</span>
+              </div>
+            </div>
           </div>
 
           {/* Middle/Lower: Massive Editorial Text Block with Frosted Cloud Glow */}
@@ -861,7 +846,7 @@ function FilterOverlay({ filterId, todayStr, stats, streakDays, onFlipCamera }: 
           </div>
 
           {/* Bottom Bar: Frosted pill with horizontal mini-progress bars */}
-          <div className="relative z-10 pb-20">
+          <div className="relative z-10 pb-16">
             <div className="rounded-2xl sm:rounded-full bg-white/20 backdrop-blur-md border border-white/40 p-2.5 sm:px-3 shadow-2xl">
               <div className="grid grid-cols-4 divide-x divide-white/25 text-center">
                 {/* Iron */}
@@ -954,7 +939,7 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
   // Fallback demo background image in case camera is unsupported or denied
   const fallbackImage = 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&q=80&w=1080&h=1920'
 
-  // Initialize and attach camera stream
+  // Initialize and attach camera stream with 9:16 aspect ratio
   useEffect(() => {
     let currentStream: MediaStream | null = null
 
@@ -966,14 +951,25 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
 
       try {
         setCameraError(false)
-        const mediaStream = await navigator.mediaDevices.getUserMedia({
-          video: {
-            facingMode,
-            width: { ideal: 1080 },
-            height: { ideal: 1920 },
-          },
-          audio: false,
-        })
+        let mediaStream: MediaStream
+        try {
+          mediaStream = await navigator.mediaDevices.getUserMedia({
+            video: {
+              facingMode,
+              aspectRatio: { ideal: 9 / 16 },
+              width: { ideal: 1080 },
+              height: { ideal: 1920 },
+            },
+            audio: false,
+          })
+        } catch {
+          // Fallback if ideal dimensions are unsupported by device
+          mediaStream = await navigator.mediaDevices.getUserMedia({
+            video: { facingMode },
+            audio: false,
+          })
+        }
+
         currentStream = mediaStream
         setStream(mediaStream)
         if (videoRef.current) {
@@ -994,10 +990,23 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
     }
   }, [facingMode])
 
+  // Keep video element connected to stream if re-rendered or retaken
+  useEffect(() => {
+    if (stream && videoRef.current) {
+      if (videoRef.current.srcObject !== stream) {
+        videoRef.current.srcObject = stream
+      }
+      void videoRef.current.play().catch(() => {})
+    }
+  }, [stream, finalImage])
+
   // Stop stream when closing modal
   const handleClose = () => {
     if (stream) {
       stream.getTracks().forEach((track) => track.stop())
+    }
+    if (videoRef.current) {
+      videoRef.current.srcObject = null
     }
     onClose()
   }
@@ -1008,10 +1017,13 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
       stream.getTracks().forEach((track) => track.stop())
       setStream(null)
     }
+    if (videoRef.current) {
+      videoRef.current.srcObject = null
+    }
     setFacingMode((prev) => (prev === 'user' ? 'environment' : 'user'))
   }
 
-  // Real user and dashboard data formatting per Step 2
+  // Real user and dashboard data formatting
   const todayStr = new Date().toLocaleDateString('en-US', {
     month: 'short',
     day: '2-digit',
@@ -1025,7 +1037,7 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
   // Extract real nutrient stats
   const stats = getNutrientStats(dashboard || undefined, user)
 
-  // Step 4: Capture Logic (html2canvas)
+  // Step 4: Capture Logic (Strict 9:16 aspect preservation matching native camera exactly)
   const handleCapture = async () => {
     if (isProcessing) return
     setIsProcessing(true)
@@ -1034,18 +1046,48 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
       const video = videoRef.current
       let frameDataUrl = ''
 
-      if (video && !cameraError && video.videoWidth > 0) {
+      if (video && !cameraError && video.videoWidth > 0 && video.videoHeight > 0) {
+        const targetW = 1080
+        const targetH = 1920
         const canvas = canvasRef.current || document.createElement('canvas')
-        canvas.width = video.videoWidth
-        canvas.height = video.videoHeight
+        canvas.width = targetW
+        canvas.height = targetH
         const ctx = canvas.getContext('2d')
 
         if (ctx) {
+          const vw = video.videoWidth
+          const vh = video.videoHeight
+          const targetRatio = targetW / targetH // 9 / 16 = 0.5625
+          const videoRatio = vw / vh
+
+          let sx = 0
+          let sy = 0
+          let sWidth = vw
+          let sHeight = vh
+
+          if (videoRatio > targetRatio) {
+            // Video is wider than 9:16: crop width to 9:16 center (matches object-cover in 9:16 viewfinder)
+            sWidth = vh * targetRatio
+            sHeight = vh
+            sx = (vw - sWidth) / 2
+            sy = 0
+          } else if (videoRatio < targetRatio) {
+            // Video is taller than 9:16: crop height to 9:16 center
+            sWidth = vw
+            sHeight = vw / targetRatio
+            sx = 0
+            sy = (vh - sHeight) / 2
+          }
+
+          ctx.save()
           if (facingMode === 'user') {
-            ctx.translate(canvas.width, 0)
+            ctx.translate(targetW, 0)
             ctx.scale(-1, 1)
           }
-          ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
+          // Exact 9:16 to 9:16 draw - zero squeeze, zero zoom distortion, exactly what the camera takes
+          ctx.drawImage(video, sx, sy, sWidth, sHeight, 0, 0, targetW, targetH)
+          ctx.restore()
+
           frameDataUrl = canvas.toDataURL('image/jpeg', 0.95)
         }
       }
@@ -1056,28 +1098,35 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
 
       setCapturedFrame(frameDataUrl)
 
-      // Wait a tick for DOM state update before executing html2canvas
-      setTimeout(async () => {
-        if (!captureContainerRef.current) {
-          setIsProcessing(false)
-          return
-        }
+      // Ensure frame image is loaded before triggering html2canvas
+      const preloader = new Image()
+      preloader.onload = () => {
+        setTimeout(async () => {
+          if (!captureContainerRef.current) {
+            setIsProcessing(false)
+            return
+          }
 
-        try {
-          const renderedCanvas = await html2canvas(captureContainerRef.current, {
-            scale: 2,
-            useCORS: true,
-            allowTaint: true,
-            backgroundColor: '#000000',
-          })
-          const pngUrl = renderedCanvas.toDataURL('image/png')
-          setFinalImage(pngUrl)
-        } catch (canvasErr) {
-          console.error('html2canvas rendering error:', canvasErr)
-        } finally {
-          setIsProcessing(false)
-        }
-      }, 150)
+          try {
+            const renderedCanvas = await html2canvas(captureContainerRef.current, {
+              scale: 2,
+              useCORS: true,
+              allowTaint: true,
+              backgroundColor: '#000000',
+            })
+            const pngUrl = renderedCanvas.toDataURL('image/png')
+            setFinalImage(pngUrl)
+          } catch (canvasErr) {
+            console.error('html2canvas rendering error:', canvasErr)
+          } finally {
+            setIsProcessing(false)
+          }
+        }, 80)
+      }
+      preloader.onerror = () => {
+        setIsProcessing(false)
+      }
+      preloader.src = frameDataUrl
     } catch (err) {
       console.error('Capture failed:', err)
       setIsProcessing(false)
@@ -1093,10 +1142,16 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
     a.click()
   }
 
-  // Retake photo
+  // Retake photo: seamlessly clear image overlay and resume video stream
   const handleRetake = () => {
     setCapturedFrame(null)
     setFinalImage(null)
+    if (videoRef.current && stream) {
+      if (videoRef.current.srcObject !== stream) {
+        videoRef.current.srcObject = stream
+      }
+      void videoRef.current.play().catch(() => {})
+    }
   }
 
   const templatesList = [
@@ -1113,11 +1168,111 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
       {/* Hidden processing canvas */}
       <canvas ref={canvasRef} className="hidden" />
 
-      {/* Main View Container */}
-      <div className="relative w-full max-w-[380px] h-[85vh] max-h-[740px] aspect-[9/16] rounded-[28px] overflow-hidden bg-black shadow-2xl flex flex-col justify-between border border-white/10">
-        {/* Preview of captured final image if ready */}
-        {finalImage ? (
-          <div className="relative w-full h-full flex flex-col justify-between bg-black">
+      {/* Main View Container - Strict 9:16 Story Card */}
+      <div className="relative aspect-[9/16] h-[min(84vh,740px)] w-auto max-w-[calc(min(84vh,740px)*9/16)] rounded-[28px] overflow-hidden bg-black shadow-2xl flex flex-col justify-between border border-white/10">
+        {/* Live Camera Feed & Active Overlay - Pure 9:16 Viewfinder (Always mounted) */}
+        <div className="relative w-full h-full overflow-hidden bg-black">
+          {/* Camera Video Feed */}
+          {!cameraError ? (
+            <video
+              ref={videoRef}
+              autoPlay
+              playsInline
+              muted
+              className={`w-full h-full object-cover ${facingMode === 'user' ? 'scale-x-[-1]' : ''}`}
+            />
+          ) : (
+            <div className="relative w-full h-full">
+              <img
+                src={fallbackImage}
+                alt="Camera feed placeholder"
+                className="w-full h-full object-cover"
+                crossOrigin="anonymous"
+              />
+              <div className="absolute top-16 inset-x-4 text-center">
+                <span className="inline-block px-2.5 py-1 rounded-full bg-black/60 text-white/80 text-[10px] backdrop-blur-sm border border-white/10">
+                  Live camera preview unavailable (using demo feed)
+                </span>
+              </div>
+            </div>
+          )}
+
+          {/* Active Filter Overlay */}
+          <FilterOverlay
+            filterId={activeFilter}
+            todayStr={todayStr}
+            stats={stats}
+            streakDays={streakDays}
+            onFlipCamera={handleFlipCamera}
+          />
+
+          {/* Top Control Bar: Camera Flip (Left), Filter Options Box (Center), Close (Right) */}
+          <div className="absolute top-3 inset-x-3 z-30 flex items-center justify-between gap-2 pointer-events-auto">
+            {/* Camera Flip Button (Rear to Front / Front to Rear, default Front) */}
+            <button
+              type="button"
+              onClick={handleFlipCamera}
+              className="w-8 h-8 rounded-full bg-black/60 backdrop-blur-md text-white flex items-center justify-center border border-white/20 hover:bg-black/80 active:scale-95 transition-all shadow-lg shrink-0"
+              aria-label="Flip camera (rear to front)"
+              title={facingMode === 'user' ? 'Switch to Rear Camera' : 'Switch to Front Camera (Selfie)'}
+            >
+              <IconFlipCamera className="w-4 h-4" />
+            </button>
+
+            {/* Filter Switcher Box at Top */}
+            <div
+              className="flex items-center gap-1 bg-black/60 backdrop-blur-md px-1.5 py-1 rounded-full border border-white/20 shadow-xl overflow-x-auto [&::-webkit-scrollbar]:hidden max-w-[245px] sm:max-w-[265px]"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {templatesList.map((f) => (
+                <button
+                  key={f.id}
+                  type="button"
+                  onClick={() => setActiveFilter(f.id)}
+                  className={`px-2 py-0.5 rounded-full text-[10px] font-medium tracking-wide whitespace-nowrap transition-all ${
+                    activeFilter === f.id
+                      ? 'bg-white text-black font-bold shadow-sm scale-105'
+                      : 'text-white/70 hover:text-white hover:bg-white/10'
+                  }`}
+                >
+                  {f.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Close Button on Top Right */}
+            <button
+              type="button"
+              onClick={handleClose}
+              className="w-8 h-8 rounded-full bg-black/60 backdrop-blur-md text-white flex items-center justify-center border border-white/20 hover:bg-black/80 active:scale-95 transition-all shadow-lg shrink-0"
+              aria-label="Close camera"
+            >
+              <IconClose className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Bottom Camera Controls: Clean, Centered Shutter */}
+          <div className="absolute bottom-5 inset-x-0 px-8 flex justify-center items-center z-30 pointer-events-auto">
+            {/* Shutter Button */}
+            <button
+              type="button"
+              onClick={handleCapture}
+              disabled={isProcessing}
+              className="w-16 h-16 rounded-full border-4 border-black/40 bg-white shadow-2xl flex items-center justify-center active:scale-95 transition-transform disabled:opacity-50 hover:scale-105"
+              aria-label="Capture photo"
+            >
+              {isProcessing ? (
+                <div className="w-6 h-6 border-2 border-black border-t-transparent rounded-full animate-spin" />
+              ) : (
+                <div className="w-12 h-12 rounded-full border-2 border-black/20" />
+              )}
+            </button>
+          </div>
+        </div>
+
+        {/* Preview of captured final image if ready (Overlays on top without unmounting video) */}
+        {finalImage && (
+          <div className="absolute inset-0 z-50 flex flex-col justify-between bg-black">
             <img src={finalImage} alt="Captured Nutri-Card" className="w-full h-full object-cover" />
 
             {/* Action Bar on top */}
@@ -1125,14 +1280,14 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
               <button
                 type="button"
                 onClick={handleRetake}
-                className="px-3.5 py-1.5 rounded-full bg-black/50 backdrop-blur-md text-white text-xs font-medium border border-white/20 hover:bg-black/70 transition-colors"
+                className="px-3.5 py-1.5 rounded-full bg-black/50 backdrop-blur-md text-white text-xs font-medium border border-white/20 hover:bg-black/70 active:scale-95 transition-all shadow-lg"
               >
                 Retake
               </button>
               <button
                 type="button"
                 onClick={handleClose}
-                className="w-8 h-8 rounded-full bg-black/50 backdrop-blur-md text-white flex items-center justify-center border border-white/20 hover:bg-black/70 transition-colors"
+                className="w-8 h-8 rounded-full bg-black/50 backdrop-blur-md text-white flex items-center justify-center border border-white/20 hover:bg-black/70 active:scale-95 transition-all shadow-lg"
                 aria-label="Close"
               >
                 <IconClose className="w-4 h-4" />
@@ -1151,141 +1306,34 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
               </button>
             </div>
           </div>
-        ) : (
-          <>
-            {/* Live Camera Feed & Active Overlay */}
-            <div className="relative w-full h-full overflow-hidden bg-black">
-              {/* Camera Video Feed */}
-              {!cameraError ? (
-                <video
-                  ref={videoRef}
-                  autoPlay
-                  playsInline
-                  muted
-                  className={`w-full h-full object-cover ${facingMode === 'user' ? 'scale-x-[-1]' : ''}`}
-                />
-              ) : (
-                <div className="relative w-full h-full">
-                  <img
-                    src={fallbackImage}
-                    alt="Camera feed placeholder"
-                    className="w-full h-full object-cover"
-                    crossOrigin="anonymous"
-                  />
-                  <div className="absolute top-16 inset-x-4 text-center">
-                    <span className="inline-block px-2.5 py-1 rounded-full bg-black/60 text-white/80 text-[10px] backdrop-blur-sm border border-white/10">
-                      Live camera preview unavailable (using demo feed)
-                    </span>
-                  </div>
-                </div>
-              )}
+        )}
 
-              {/* Active Filter Overlay */}
+        {/* Hidden Target Container for html2canvas rendering - Exact 1080x1920 (9:16) */}
+        <div className="fixed -left-[9999px] -top-[9999px] pointer-events-none" aria-hidden="true">
+          <div
+            ref={captureContainerRef}
+            className="w-[1080px] h-[1920px] relative overflow-hidden bg-black"
+            style={{ fontFamily: "'Source Sans 3', sans-serif" }}
+          >
+            {capturedFrame && (
+              <img
+                src={capturedFrame}
+                alt="Captured background"
+                className="w-[1080px] h-[1920px] absolute inset-0 object-cover"
+                crossOrigin="anonymous"
+              />
+            )}
+            {/* Scaled-up Overlay for 1080x1920 rendering */}
+            <div className="scale-[2.8421] origin-top-left w-[380px] h-[675.5px] absolute inset-0">
               <FilterOverlay
                 filterId={activeFilter}
                 todayStr={todayStr}
                 stats={stats}
                 streakDays={streakDays}
-                onFlipCamera={handleFlipCamera}
               />
-
-              {/* Close Button on Top Right */}
-              <button
-                type="button"
-                onClick={handleClose}
-                className="absolute top-4 right-4 z-50 w-8 h-8 rounded-full bg-black/40 backdrop-blur-md text-white flex items-center justify-center border border-white/20 hover:bg-black/60 transition-colors"
-                aria-label="Close camera"
-              >
-                <IconClose className="w-4 h-4" />
-              </button>
-
-              {/* Template Switcher: 6 Distinct Dots/Pills */}
-              <div className="absolute bottom-20 inset-x-0 flex justify-center items-center gap-1 z-40 px-2">
-                {templatesList.map((f) => (
-                  <button
-                    key={f.id}
-                    type="button"
-                    onClick={() => setActiveFilter(f.id)}
-                    className={`px-2.5 py-1 rounded-full text-[10px] font-medium tracking-wide transition-all ${
-                      activeFilter === f.id
-                        ? 'bg-white text-black shadow-md font-semibold scale-105'
-                        : 'bg-black/50 text-white/80 border border-white/20 backdrop-blur-sm hover:bg-black/70'
-                    }`}
-                  >
-                    {f.label}
-                  </button>
-                ))}
-              </div>
-
-              {/* Bottom Camera Controls */}
-              <div className="absolute bottom-4 inset-x-0 px-6 flex justify-between items-center z-50">
-                {/* Gallery / Filter Cycle Button (1 through 6) */}
-                <button
-                  type="button"
-                  onClick={() => setActiveFilter((prev) => (prev % 6) + 1)}
-                  className="w-10 h-10 rounded-full bg-black/40 border border-white/20 flex items-center justify-center text-white backdrop-blur-sm hover:bg-black/60 active:scale-95 transition-transform"
-                  aria-label="Next filter template"
-                  title="Cycle template (1-6)"
-                >
-                  <IconGallery className="w-4 h-4" />
-                </button>
-
-                {/* Shutter Button */}
-                <button
-                  type="button"
-                  onClick={handleCapture}
-                  disabled={isProcessing}
-                  className="w-16 h-16 rounded-full border-4 border-black bg-white shadow-2xl flex items-center justify-center active:scale-95 transition-transform disabled:opacity-50"
-                  aria-label="Capture photo"
-                >
-                  {isProcessing ? (
-                    <div className="w-6 h-6 border-2 border-black border-t-transparent rounded-full animate-spin" />
-                  ) : (
-                    <div className="w-12 h-12 rounded-full border-2 border-black/20" />
-                  )}
-                </button>
-
-                {/* Camera Flip Button */}
-                <button
-                  type="button"
-                  onClick={handleFlipCamera}
-                  className="w-10 h-10 rounded-full bg-black/40 border border-white/20 flex items-center justify-center text-white backdrop-blur-sm hover:bg-black/60 active:scale-95 transition-transform"
-                  aria-label="Flip camera"
-                  title="Flip camera"
-                >
-                  <IconFlipCamera className="w-4 h-4" />
-                </button>
-              </div>
             </div>
-
-            {/* Hidden Target Container for html2canvas rendering */}
-            <div className="fixed -left-[9999px] -top-[9999px] pointer-events-none" aria-hidden="true">
-              <div
-                ref={captureContainerRef}
-                className="w-[1080px] h-[1920px] relative overflow-hidden bg-black"
-                style={{ fontFamily: "'Source Sans 3', sans-serif" }}
-              >
-                {capturedFrame && (
-                  <img
-                    src={capturedFrame}
-                    alt="Captured background"
-                    className="w-full h-full object-cover"
-                    crossOrigin="anonymous"
-                  />
-                )}
-                {/* Scaled-up Overlay for 1080x1920 rendering */}
-                <div className="scale-[2.84] origin-top-left w-[380px] h-[676px] absolute inset-0">
-                  <FilterOverlay
-                    filterId={activeFilter}
-                    todayStr={todayStr}
-                    stats={stats}
-                    streakDays={streakDays}
-                  />
-                </div>
-              </div>
-            </div>
-          </>
-        )}
+          </div>
+        </div>
       </div>
     </div>
   )
