@@ -34,28 +34,28 @@ export const phaseLabels: Record<string, CopyRecord> = {
 
 export const phaseSubtitles: Record<string, CopyRecord> = {
   menstrual: {
-    en: 'Active bleeding cycle · Replenish iron & energy',
-    hi: 'सक्रिय मासिक चक्र · आयरन और ऊर्जा पर ध्यान दें',
+    en: 'Menstrual phase · Iron and energy support',
+    hi: 'मासिक चक्र अवस्था · आयरन और ऊर्जा सहायता',
   },
   follicular: {
-    en: 'Post-period to ovulation · Balanced nourishment',
-    hi: 'मासिक के बाद ओव्यूलेशन तक · संतुलित पोषण',
+    en: 'Follicular phase · Balanced nourishment',
+    hi: 'फॉलिकुलर अवस्था · संतुलित पोषण',
   },
   ovulatory: {
-    en: 'Peak energy window · Light nourishing foods',
-    hi: 'उच्च ऊर्जा चरण · हल्का पौष्टिक आहार',
+    en: 'Ovulatory phase · Energy and nutrient balance',
+    hi: 'ओव्यूलेटरी अवस्था · ऊर्जा और पोषक तत्व संतुलन',
   },
   luteal: {
-    en: 'Pre-period window · Magnesium & calcium support',
-    hi: 'मासिक पूर्व चरण · मैग्नीशियम और कैल्शियम सहायता',
+    en: 'Luteal phase · Magnesium and calcium support',
+    hi: 'ल्यूटियल अवस्था · मैग्नीशियम और कैल्शियम सहायता',
   },
   menopause: {
-    en: 'Hormonal transition · Calcium & Vitamin D focus',
-    hi: 'हार्मोनल बदलाव · कैल्शियम और विटामिन डी पर ध्यान',
+    en: 'Menopausal transition · Bone and overall health',
+    hi: 'मेनोपॉज़ल बदलाव · अस्थि और समग्र स्वास्थ्य',
   },
   pregnancy_lactation: {
-    en: 'Maternal nourishment · Elevated daily micronutrient goals',
-    hi: 'मातृत्व पोषण · दैनिक पोषण के उच्च लक्ष्य',
+    en: 'Maternal nourishment · Elevated micronutrient support',
+    hi: 'मातृत्व पोषण · विशेष पोषक तत्व सहायता',
   },
 }
 
@@ -118,10 +118,10 @@ export const copy = {
     greeting: { en: 'Namaste, {name}', hi: 'नमस्ते, {name}' },
     phaseLabel: { en: 'Phase', hi: 'अवस्था' },
     changePhase: { en: 'Change Phase', hi: 'अवस्था बदलें' },
-    selectPhaseTitle: { en: 'Change Menstrual Phase', hi: 'मासिक चक्र की अवस्था बदलें' },
+    selectPhaseTitle: { en: 'Menstrual phase', hi: 'मासिक चक्र की अवस्था' },
     selectPhaseSubtitle: {
-      en: 'Select your current phase. Nutritional targets adjust automatically.',
-      hi: 'अपनी वर्तमान अवस्था चुनें। पोषण संबंधी लक्ष्य स्वचालित रूप से समायोजित होंगे।',
+      en: 'Choose your current phase to personalize your nutrition guidance.',
+      hi: 'अपने पोषण मार्गदर्शन को अनुकूलित करने के लिए अपनी वर्तमान अवस्था चुनें।',
     },
     phaseUpdated: { en: 'Phase updated to {phase}', hi: 'अवस्था बदलकर {phase} की गई' },
     logout: { en: 'Logout', hi: 'लॉग आउट' },
