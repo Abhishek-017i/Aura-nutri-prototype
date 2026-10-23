@@ -5,6 +5,7 @@ that free-tier quotas are rotated and handled gracefully.
 """
 
 import asyncio
+import json
 from typing import Any, Callable, TypeVar
 
 import groq
@@ -37,6 +38,14 @@ _PARSE_SYSTEM_PROMPT = (
     "Hindi, or Hinglish. Extract each distinct food item and return ONLY a JSON "
     "object with an 'items' array. Each item must have 'food' (short normalized "
     "food name) and 'quantity' (e.g. '1 katori', '2 roti', '1 glass', '150g'). "
+    "CRITICAL LANGUAGE LOCK: You MUST output the 'food' field using ONLY standard "
+    "English letters (Latin alphabet, a-z, A-Z, 0-9, spaces). "
+    "You are STRICTLY FORBIDDEN from using Devanagari, Urdu, Arabic, Cyrillic, "
+    "Japanese, or ANY non-Latin script. If you use a non-Latin script, the "
+    "application will CRASH. "
+    "You MUST transliterate or translate the food name into English. "
+    "Example: If the user says 'सब्ज़ी' or 'سبزی', you MUST output 'sabzi'. "
+    "If the user says 'अफगानी चिकन', you MUST output 'afghani chicken'. "
     "Optional 'meal' field may be 'breakfast', 'lunch', 'dinner', or 'snack'. "
     "Use standard Indian household units: roti, chapati, paratha, katori, bowl, "
     "plate, glass, cup, piece, slice, egg. Prefer cooked/preparation names where "
@@ -313,6 +322,54 @@ async def chat_completion(
     return validated
 
 
+_TRANSLATE_SYSTEM_PROMPT = (
+    "You are a food-name translator. The user will give you one or more food "
+    "names written in any script (Devanagari, Urdu, Cyrillic, Japanese, etc.). "
+    "Translate each to standard English romanized spelling as used in Indian "
+    "food databases (e.g. सब्ज़ी -> sabzi, سبزی -> sabzi, दाल -> dal, "
+    "रोटी -> roti, अफगानी चिकन -> afghani chicken). "
+    "Output ONLY a JSON object: {\"translations\": [\"word1\", \"word2\"]} "
+    "in the same order as input. Lowercase only. No explanation, no punctuation."
+)
+
+
+async def translate_food_names(names: list[str]) -> list[str]:
+    """Translate non-ASCII food names to English romanized form via LLM.
+
+    Falls back to returning the input unchanged if translation fails.
+    """
+    if not names:
+        return []
+    user_message = "Translate these food names to English and return JSON: " + ", ".join(names)
+
+    def _call(client: Groq) -> Any:
+        return client.chat.completions.create(
+            model="openai/gpt-oss-20b",
+            messages=[
+                {"role": "system", "content": _TRANSLATE_SYSTEM_PROMPT},
+                {"role": "user", "content": user_message},
+            ],
+            max_tokens=200,
+            temperature=0.0,
+            response_format={"type": "json_object"},
+        )
+
+    try:
+        response: Any = await asyncio.to_thread(_execute_with_rotation, _call)
+        content = response.choices[0].message.content
+        stripped = _strip_json_markdown(content)
+        parsed = json.loads(stripped)
+        translated = parsed.get("translations", [])
+        if len(translated) != len(names):
+            logger.warning("translate_count_mismatch", in_count=len(names),
+                           out_count=len(translated))
+            return names  # fallback to original
+        return [str(t).strip().lower() for t in translated]
+    except Exception as exc:
+        logger.warning("translate_food_names_failed", error=str(exc), names=names)
+        return names  # fallback to original
+
+
 async def transcribe_audio(audio_bytes: bytes, filename: str = "audio.webm") -> str:
     """Transcribe audio bytes with Groq Whisper and rotation."""
     logger.info("groq_transcribe_request", filename=filename, size_bytes=len(audio_bytes))
@@ -322,6 +379,8 @@ async def transcribe_audio(audio_bytes: bytes, filename: str = "audio.webm") -> 
             file=(filename, audio_bytes),
             model="whisper-large-v3",
             response_format="text",
+            language="en",
+            prompt="Indian meal transcript in Hinglish Latin letters: dal, roti, sabzi, chawal, paneer, chicken, egg, paratha",
         )
 
     try:
