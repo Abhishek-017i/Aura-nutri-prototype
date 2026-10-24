@@ -244,7 +244,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
         </section>
       ) : (
         <>
-          <section data-guide="nutrient-progress" className="bg-transparent border-0 p-0 sm:py-2 transition-colors">
+          <section data-guide="nutrient-progress" className="bg-transparent border border-[#F3D9E1] rounded-2xl p-5 sm:p-6 dark:border-[#34313D] transition-colors">
             <div className="flex items-center justify-between mb-4 sm:mb-6">
               <h2 className="font-display text-lg sm:text-xl font-medium text-text-main dark:text-[#F5F1F7]">
                 {t(copy.dashboard.progressTitle, language)}
