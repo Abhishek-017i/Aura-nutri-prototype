@@ -48,10 +48,10 @@ export default {
         white: '#FFFFFF',
 
         // Nutrient accents (Healthcare palette)
-        iron: '#C65D75',
-        calcium: '#5486C7',
-        vitd: '#D99A28',
-        b12: '#319B91',
+        iron: '#C43D5B',
+        calcium: '#4F91E8',
+        vitd: '#E5A126',
+        b12: '#168F83',
       },
       fontFamily: {
         display: ['Fraunces', 'Georgia', 'Times New Roman', 'serif'],

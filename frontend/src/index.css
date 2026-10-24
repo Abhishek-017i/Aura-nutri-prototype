@@ -43,11 +43,15 @@
   --lavender: #E8DFF5;
 
   /* Dedicated Nutrient Color Tokens (Healthcare Palette) */
-  --nutrient-iron: #C65D75;
-  --nutrient-calcium: #5486C7;
-  --nutrient-vitd: #D99A28;
-  --nutrient-b12: #319B91;
-  --nutrient-track: #F0E1E6;
+  --nutrient-iron: #C43D5B;
+  --nutrient-iron-track: #F3D6DE;
+  --nutrient-calcium: #4F91E8;
+  --nutrient-calcium-track: #DCE8FA;
+  --nutrient-vitd: #E5A126;
+  --nutrient-vitd-track: #F7E8C9;
+  --nutrient-b12: #168F83;
+  --nutrient-b12-track: #D2EBE6;
+  --nutrient-track: #F3D6DE;
 }
 
 .dark {
@@ -120,10 +124,14 @@
   --nutrient-secondary: #B8C8F4;
 
   /* Dedicated Nutrient Color Tokens (Dark mode high-contrast healthcare palette) */
-  --nutrient-iron: #E07A92;
-  --nutrient-calcium: #6BA0E5;
-  --nutrient-vitd: #F0B342;
-  --nutrient-b12: #45B5AA;
+  --nutrient-iron: #E05A78;
+  --nutrient-iron-track: #38222A;
+  --nutrient-calcium: #68A4F3;
+  --nutrient-calcium-track: #1E2838;
+  --nutrient-vitd: #F5B33C;
+  --nutrient-vitd-track: #362B1D;
+  --nutrient-b12: #26ABA0;
+  --nutrient-b12-track: #192C29;
   --nutrient-track: #2B2936;
 }
 
