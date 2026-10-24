@@ -244,20 +244,20 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
         </section>
       ) : (
         <>
-          <section data-guide="nutrient-progress" className="bg-card border border-border rounded-card p-6 dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl transition-colors">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="font-display text-lg font-medium text-text-main dark:text-[#F5F1F7]">
+          <section data-guide="nutrient-progress" className="bg-card border border-[#F3D9E1] rounded-card p-5 sm:p-6 dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl transition-colors shadow-[0_2px_12px_-4px_rgba(217,114,142,0.06)] dark:shadow-none">
+            <div className="flex items-center justify-between mb-5 sm:mb-6">
+              <h2 className="font-display text-lg sm:text-xl font-medium text-text-main dark:text-[#F5F1F7]">
                 {t(copy.dashboard.progressTitle, language)}
               </h2>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 justify-items-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-5 justify-items-center">
               {NUTRIENT_ORDER.map((key) => {
                 const p = progressMap.get(key)
                 if (!p) return null
                 return (
                   <div
                     key={key}
-                    className="w-full flex justify-center p-2 sm:p-4 rounded-card dark:rounded-2xl dark:bg-[#272731] dark:border dark:border-[#34313D]/60 dark:shadow-sm transition-all"
+                    className="w-full flex justify-center p-2.5 sm:p-4 rounded-card dark:rounded-2xl bg-[#FFFBFD]/80 dark:bg-[#272731] border border-[#F6E3E9]/70 dark:border-[#34313D]/60 dark:shadow-sm transition-all hover:border-[#F0DDE3] dark:hover:border-[#423E4D]"
                   >
                     <NutrientRing
                       nutrient={key}

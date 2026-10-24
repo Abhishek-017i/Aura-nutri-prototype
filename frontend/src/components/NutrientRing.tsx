@@ -3,32 +3,7 @@ import { RadialBar, RadialBarChart, ResponsiveContainer, PolarAngleAxis } from '
 import { nutrientLabels, t } from '../lib/copy.ts'
 import type { Language } from '../lib/language.tsx'
 import { useTheme } from '../contexts/useTheme.ts'
-
-function getRingColor(percent: number, nutrient: string, isDark: boolean): string {
-  if (!isDark) {
-    if (percent >= 100) return 'var(--emerald)'
-    return 'var(--amber)'
-  }
-
-  // Exact restrained dark mode palette from reference specification:
-  // Complete: Supporting teal #78CBAA
-  if (percent >= 100) return '#78CBAA'
-
-  // Nutrient specific restrained tones:
-  // Iron: #F08B9C, Calcium: #78CBAA, Vitamin D: #B8C8F4, Vitamin B12: #D7CDF7
-  switch (nutrient) {
-    case 'iron':
-      return '#F08B9C' // Muted rose
-    case 'calcium':
-      return '#78CBAA' // Teal / Success
-    case 'vit_d':
-      return '#B8C8F4' // Lavender-blue
-    case 'b12':
-      return '#D7CDF7' // Soft lavender
-    default:
-      return '#E9A5D1' // Primary brand pink
-  }
-}
+import { getNutrientColor } from '../lib/nutrientColors.ts'
 
 interface NutrientRingProps {
   nutrient: 'iron' | 'calcium' | 'vit_d' | 'b12'
@@ -51,22 +26,32 @@ export function NutrientRing({
 }: NutrientRingProps) {
   const { theme } = useTheme()
   const isDark = theme === 'dark'
-  const color = getRingColor(percent, nutrient, isDark)
-  const data = [{ name: nutrient, value: Math.min(percent, 100), fill: color }]
-  const sizeClass = size === 'lg' ? 'w-32 sm:w-40 md:w-44' : 'w-24 sm:w-28'
-  const textSize = size === 'lg' ? 'text-lg sm:text-xl md:text-2xl' : 'text-base sm:text-lg'
-  const subTextSize = size === 'lg' ? 'text-[11px] sm:text-xs md:text-sm' : 'text-[10px] sm:text-xs'
+  const color = getNutrientColor(nutrient, isDark)
+  const clampedPercent = Math.max(0, Math.min(percent, 100))
+  const data = [{ name: nutrient, value: clampedPercent, fill: color }]
+
+  // Responsive sizing:
+  // lg (Today's Progress dashboard): 112px mobile, 136px sm, 152px md/desktop
+  // md: 96px mobile, 112px sm
+  const sizeClass = size === 'lg' ? 'w-28 sm:w-36 md:w-38 lg:w-40' : 'w-24 sm:w-28'
+  const textSize = size === 'lg' ? 'text-base sm:text-lg md:text-xl' : 'text-sm sm:text-base'
+  const subTextSize = size === 'lg' ? 'text-[10px] sm:text-[11px] md:text-xs' : 'text-[9px] sm:text-[10px]'
 
   const label = t(nutrientLabels[nutrient], language)
-  const fontClass = 'font-sans'
-  const trackColor = isDark ? '#34313D' : 'var(--border)'
+  // Track color: #F0E1E6 in light mode per specification, refined dark track #2B2936 in dark mode
+  const trackColor = isDark ? '#2B2936' : '#F0E1E6'
+
+  // Format consumed / target cleanly without awkward decimal noise
+  const formatVal = (v: number) => (v % 1 === 0 ? Math.round(v) : v < 10 ? v.toFixed(1) : Math.round(v))
+  const displayedCurrent = formatVal(current)
+  const displayedTarget = formatVal(target)
 
   return (
-    <div className={`${sizeClass} flex flex-col items-center justify-between min-w-0 max-w-full`}>
+    <div className={`${sizeClass} flex flex-col items-center justify-between min-w-0 max-w-full select-none`}>
       <div className="relative w-full aspect-square flex items-center justify-center">
         <ResponsiveContainer width="100%" height="100%">
           <RadialBarChart
-            innerRadius="72%"
+            innerRadius="74%"
             outerRadius="100%"
             data={data}
             startAngle={90}
@@ -77,27 +62,37 @@ export function NutrientRing({
               dataKey="value"
               background={{ fill: trackColor }}
               fill={color}
-              cornerRadius={percent > 0 && percent < 100 ? 6 : 0}
+              cornerRadius={clampedPercent > 0 ? 8 : 0}
             />
           </RadialBarChart>
         </ResponsiveContainer>
-        <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none px-2 text-center select-none">
-          <span className={`font-display font-semibold ${textSize} text-text-main dark:text-[#F5F1F7] leading-none mb-1`}>
+
+        {/* Center Content: readable percentage & amount */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none px-1 text-center">
+          <span className={`font-display font-semibold ${textSize} text-text-main dark:text-[#F5F1F7] leading-none mb-0.5 sm:mb-1 tracking-tight`}>
             {Math.round(percent)}%
           </span>
           <span
-            className={`font-sans ${subTextSize} text-text-muted dark:text-[#C5BECF] font-medium leading-tight max-w-[85%] truncate`}
-            title={`${Math.round(current)} / ${Math.round(target)} ${unit}`}
+            className={`font-sans ${subTextSize} text-text-muted dark:text-[#C5BECF] font-medium leading-tight max-w-[90%] truncate`}
+            title={`${displayedCurrent} / ${displayedTarget} ${unit}`}
           >
-            {Math.round(current)} / {Math.round(target)} {unit}
+            {displayedCurrent}/{displayedTarget} {unit}
           </span>
         </div>
       </div>
-      <div className="mt-1.5 text-center w-full px-1">
-        <p className={`${fontClass} font-medium ${subTextSize} text-text-main dark:text-[#F5F1F7] truncate`}>
+
+      {/* Nutrient Label under ring with subtle color indicator dot */}
+      <div className="mt-2 text-center w-full px-1 flex items-center justify-center gap-1.5 min-w-0">
+        <span
+          className="w-2 h-2 rounded-full shrink-0"
+          style={{ backgroundColor: color }}
+          aria-hidden="true"
+        />
+        <p className="font-sans font-medium text-xs sm:text-sm text-text-main dark:text-[#F5F1F7] truncate">
           {label}
         </p>
       </div>
     </div>
   )
 }
+

@@ -4,6 +4,7 @@ import { getDashboard } from '../lib/api.ts'
 //import { useLanguage } from '../lib/useLanguage.ts'
 import type { Dashboard, User } from '../lib/types.ts'
 import { IconFire, IconLeaf } from '../components/icons.tsx'
+import { getNutrientColor } from '../lib/nutrientColors.ts'
 
 interface NutriCardProps {
   user: User
@@ -164,8 +165,7 @@ export function NutriCard({ user, dashboard: initialDashboard, onClose }: NutriC
                 const p = progressMap.get(key)
                 if (!p) return null
                 const percentVal = Math.min(Math.round((p.current / p.target) * 100), 100)
-                const isComplete = percentVal >= 100
-                const ringColor = isComplete ? 'var(--emerald)' : 'var(--primary)'
+                const ringColor = getNutrientColor(key, true)
                 const trackColor = 'rgba(255,255,255,0.15)'
 
                 // SVG Circle math
