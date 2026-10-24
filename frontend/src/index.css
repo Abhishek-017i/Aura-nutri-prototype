@@ -194,3 +194,150 @@
 .dark ::-webkit-scrollbar-thumb:hover {
   background: #423847;
 }
+
+/* ==========================================================================
+   AURA NUTRI CHATBOT — DRIBBBLE-INSPIRED VISUAL EXPERIMENT (SCOPED)
+   Warm blush/peach foundation, restrained warm orange focal accent,
+   refined rounded bubbles, pill composer, and circular controls.
+   Works seamlessly across light and dark modes.
+   ========================================================================== */
+
+:root {
+  --aura-chat-bg: #FFF7F4;
+  --aura-chat-surface: #FFFCFA;
+  --aura-chat-blush: #F8DCE2;
+  --aura-chat-peach: #FCE8DE;
+  --aura-chat-peach-border: #F6C8B4;
+  --aura-chat-orange: #E88A4D;
+  --aura-chat-orange-deep: #D8753F;
+  --aura-chat-rose: #D9728E;
+  --aura-chat-text: #3D292E;
+  --aura-chat-muted: #8A7176;
+  --aura-chat-border: #F0DDE3;
+  --aura-chat-shadow: 0 4px 20px -2px rgba(93, 52, 43, 0.08);
+  --aura-chat-bubble-shadow: 0 1px 3px 0 rgba(93, 52, 43, 0.04);
+}
+
+.dark {
+  --aura-chat-bg: #15151B;
+  --aura-chat-surface: #202027;
+  --aura-chat-blush: #2C2633;
+  --aura-chat-peach: #2E262B;
+  --aura-chat-peach-border: #4A3A40;
+  --aura-chat-orange: #E88A4D;
+  --aura-chat-orange-deep: #D8753F;
+  --aura-chat-rose: #E9A5D1;
+  --aura-chat-text: #F5F1F7;
+  --aura-chat-muted: #C5BECF;
+  --aura-chat-border: #34313D;
+  --aura-chat-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.45);
+  --aura-chat-bubble-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.aura-chat-root {
+  background-color: var(--aura-chat-surface);
+  border-color: var(--aura-chat-border);
+  box-shadow: var(--aura-chat-shadow);
+  border-radius: 24px;
+}
+
+.aura-chat-body {
+  background-color: var(--aura-chat-bg);
+}
+
+.aura-chat-header {
+  border-bottom-color: var(--aura-chat-border);
+  background-color: var(--aura-chat-surface);
+}
+
+.aura-chat-bubble-assistant {
+  background-color: var(--aura-chat-surface);
+  border: 1px solid var(--aura-chat-border);
+  color: var(--aura-chat-text);
+  box-shadow: var(--aura-chat-bubble-shadow);
+  border-radius: 20px 20px 20px 6px;
+}
+
+.aura-chat-bubble-user {
+  background-color: var(--aura-chat-orange);
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px -1px rgba(232, 138, 77, 0.35);
+  border-radius: 20px 20px 6px 20px;
+}
+
+.dark .aura-chat-bubble-assistant {
+  background-color: #23232C;
+  border-color: #383442;
+  color: #F5F1F7;
+}
+
+.dark .aura-chat-bubble-user {
+  background-color: #E88A4D;
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px -1px rgba(232, 138, 77, 0.25);
+}
+
+.aura-chat-intro-card {
+  background-color: var(--aura-chat-peach);
+  border: 1px solid var(--aura-chat-peach-border);
+  border-radius: 20px;
+}
+
+.aura-chat-composer {
+  background-color: var(--aura-chat-surface);
+  border: 1px solid var(--aura-chat-border);
+  box-shadow: 0 2px 10px -2px rgba(93, 52, 43, 0.05);
+  border-radius: 9999px;
+}
+
+.dark .aura-chat-composer {
+  background-color: #1A1A22;
+  border-color: #383442;
+  box-shadow: 0 2px 12px -2px rgba(0, 0, 0, 0.35);
+}
+
+.aura-chat-action-btn {
+  background-color: var(--aura-chat-orange);
+  color: #FFFFFF;
+  transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.aura-chat-action-btn:hover:not(:disabled) {
+  background-color: var(--aura-chat-orange-deep);
+  box-shadow: 0 4px 12px -2px rgba(216, 117, 63, 0.4);
+}
+
+.aura-chat-action-btn:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.aura-chat-mic-btn {
+  background-color: var(--aura-chat-peach);
+  color: var(--aura-chat-orange-deep);
+  border: 1px solid var(--aura-chat-peach-border);
+  transition: transform 0.15s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.aura-chat-mic-btn:hover:not(:disabled) {
+  background-color: #F9D8C8;
+  color: #C6622E;
+}
+
+.dark .aura-chat-mic-btn {
+  background-color: #2C2428;
+  color: #F29B63;
+  border-color: #4A3A40;
+}
+
+.dark .aura-chat-mic-btn:hover:not(:disabled) {
+  background-color: #382C32;
+  color: #FFAE78;
+}
+
+.aura-chat-mic-btn-active {
+  background-color: #D8753F !important;
+  color: #FFFFFF !important;
+  border-color: #D8753F !important;
+  box-shadow: 0 0 0 3px rgba(232, 138, 77, 0.25);
+}
+
