@@ -7,7 +7,7 @@ interface ChatProps {
 
 export function Chat({ user }: ChatProps) {
   return (
-    <main className="min-h-[60vh] w-full max-w-chat mx-auto px-6 py-8">
+    <main className="w-full max-w-2xl mx-auto px-3 sm:px-6 py-4 sm:py-8 pb-28 sm:pb-32">
       <ChatWindow user={user} />
     </main>
   )
