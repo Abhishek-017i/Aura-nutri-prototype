@@ -132,18 +132,21 @@ export function LogMealModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-primary/40 dark:bg-black/75 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 dark:bg-black/75 backdrop-blur-sm"
       onClick={(e) => {
         if (e.target === e.currentTarget && !isLoading) handleClose()
       }}
     >
-      <div className="w-full max-w-chat max-h-[90vh] overflow-y-auto bg-card border border-border rounded-card shadow-modal p-6 dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl">
-        <div className="flex items-start justify-between gap-4 mb-4">
-          <h2 className="font-display text-xl font-medium text-text-main dark:text-[#F5F1F7]">
-            {view === 'input'
-              ? t(copy.dashboard.voiceTitle, language)
-              : t(copy.dashboard.previewTitle, language)}
-          </h2>
+      <div className="w-full max-w-chat max-h-[90vh] overflow-y-auto aura-card-surface shadow-2xl p-6 sm:p-7">
+        <div className="flex items-start justify-between gap-4 mb-5">
+          <div className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-primary" />
+            <h2 className="font-display text-xl font-semibold text-text-main dark:text-[#F5F1F7]">
+              {view === 'input'
+                ? t(copy.dashboard.voiceTitle, language)
+                : t(copy.dashboard.previewTitle, language)}
+            </h2>
+          </div>
           <button
             type="button"
             onClick={(e) => {
@@ -151,7 +154,7 @@ export function LogMealModal({
               handleClose()
             }}
             disabled={isLoading}
-            className="w-8 h-8 rounded-data bg-background border border-border flex items-center justify-center text-text-muted hover:text-text-main disabled:opacity-50 dark:bg-[#272731] dark:border-[#34313D] dark:text-[#C5BECF] dark:hover:text-[#F5F1F7] dark:hover:bg-[#302D39]"
+            className="w-9 h-9 rounded-full bg-[#FFFBF8] border border-[#F2DCE3] flex items-center justify-center text-text-muted hover:text-text-main disabled:opacity-50 dark:bg-[#272731] dark:border-[#34313D] dark:text-[#C5BECF] dark:hover:text-[#F5F1F7] dark:hover:bg-[#302D39] shadow-2xs transition-all cursor-pointer"
             aria-label={t(copy.dashboard.close, language)}
           >
             <svg
@@ -191,7 +194,7 @@ export function LogMealModal({
                   placeholder={t(copy.dashboard.placeholder, language)}
                   rows={3}
                   disabled={isLoading}
-                  className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted focus-visible:outline-text-main resize-none disabled:opacity-60 dark:bg-[#18181F] dark:text-[#F5F1F7] dark:border-[#34313D] dark:placeholder-[#A39AAA] dark:focus-visible:outline-[#E9A5D1] dark:rounded-xl"
+                  className="w-full px-4 py-3 bg-[#FFFBF8] border border-[#F2DCE3] rounded-2xl font-sans text-text-main placeholder:text-text-muted/70 focus-visible:outline-primary resize-none disabled:opacity-60 dark:bg-[#18181F] dark:text-[#F5F1F7] dark:border-[#34313D] dark:placeholder-[#A39AAA] dark:focus-visible:outline-[#E9A5D1]"
                 />
                 {voice.error && (
                   <p className={`${bodyFontClass(language)} mt-2 text-sm text-rose dark:text-[#F08B9C]`}>{voice.error}</p>
@@ -203,7 +206,7 @@ export function LogMealModal({
                   type="button"
                   onClick={handleParse}
                   disabled={isLoading || !input.trim()}
-                  className={`${bodyFontClass(language)} mt-4 w-full px-4 py-3 bg-primary hover:bg-primary-hover text-white dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] dark:text-[#121216] rounded-data dark:rounded-xl text-base font-medium disabled:opacity-50 transition-colors`}
+                  className={`${bodyFontClass(language)} mt-4 w-full px-5 py-3 bg-primary hover:bg-primary-hover text-white dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] dark:text-[#121216] rounded-2xl text-base font-medium disabled:opacity-50 transition-all shadow-sm cursor-pointer`}
                 >
                   {stage === 'parsing'
                     ? t(copy.dashboard.parsing, language)

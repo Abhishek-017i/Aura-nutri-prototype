@@ -184,11 +184,15 @@ export function History({ user, refreshTrigger }: HistoryProps) {
   }
 
   return (
-    <main className="w-full max-w-dashboard mx-auto px-6 py-6 space-y-6">
-      <section data-guide="history-trends" className="bg-card border border-border rounded-card p-6 dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl transition-colors">
-        <h2 className="font-display text-lg font-medium text-text-main dark:text-[#F5F1F7] mb-4">
-          {t(copy.history.trendTitle, language)}
-        </h2>
+    <main className="w-full max-w-dashboard mx-auto px-4 sm:px-6 py-6 space-y-6">
+      {/* 14-Day Trends Section */}
+      <section data-guide="history-trends" className="aura-card-surface p-6 transition-all">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="w-2.5 h-2.5 rounded-full bg-primary" />
+          <h2 className="font-display text-lg sm:text-xl font-semibold text-text-main dark:text-[#F5F1F7]">
+            {t(copy.history.trendTitle, language)}
+          </h2>
+        </div>
         {riskScore ? (
           <>
             <div className={`${bodyFontClass(language)} text-sm text-text-muted dark:text-[#C5BECF] mb-4 space-y-1`}>
@@ -217,10 +221,14 @@ export function History({ user, refreshTrigger }: HistoryProps) {
         )}
       </section>
 
-      <section className="bg-card border border-border rounded-card p-6 dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl transition-colors">
-        <h2 className="font-display text-lg font-medium text-text-main dark:text-[#F5F1F7] mb-4">
-          {t(copy.history.title, language)}
-        </h2>
+      {/* Logged Meals History */}
+      <section className="aura-card-surface p-6 transition-all">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="w-2.5 h-2.5 rounded-full bg-coral" />
+          <h2 className="font-display text-lg sm:text-xl font-semibold text-text-main dark:text-[#F5F1F7]">
+            {t(copy.history.title, language)}
+          </h2>
+        </div>
 
         {logs.length === 0 ? (
           <div className="text-center py-8">
@@ -235,14 +243,14 @@ export function History({ user, refreshTrigger }: HistoryProps) {
           <div className="space-y-6">
             {groupedLogs.map(({ date, items }) => (
               <div key={date}>
-                <h3 className="font-display text-base font-medium text-text-main dark:text-[#F5F1F7] mb-3">
+                <h3 className="font-display text-base font-semibold text-text-main dark:text-[#F5F1F7] mb-3">
                   {formatDateLong(`${date}T00:00:00`, language)}
                 </h3>
                 <div className="space-y-3">
                   {items.map((log) => (
                     <div
                       key={log.id}
-                      className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 bg-background dark:bg-[#18181F] border border-transparent dark:border-[#34313D] rounded-data dark:rounded-xl transition-colors"
+                      className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 bg-[#FFFBF8] dark:bg-[#18181F] border border-[#F2DCE3] dark:border-[#34313D] rounded-xl transition-all shadow-2xs"
                     >
                       <div className="min-w-0">
                         <p className={`${bodyFontClass(language)} font-medium text-text-main dark:text-[#F5F1F7] truncate`}>

@@ -227,7 +227,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
       </div>
 
       {hasNoData ? (
-        <section className="bg-card border border-border rounded-card p-8 text-center dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl transition-colors">
+        <section className="aura-card-surface p-8 text-center transition-colors">
           <h2 className="font-display text-xl font-medium text-text-main dark:text-[#F5F1F7] mb-2">
             {t(copy.dashboard.emptyTitle, language)}
           </h2>
@@ -237,18 +237,22 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
           <button
             type="button"
             onClick={onOpenLog}
-            className="px-6 py-3 bg-primary hover:bg-primary-hover text-white dark:text-[#121216] dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] rounded-data dark:rounded-xl font-sans font-medium transition-colors"
+            className="px-6 py-3 bg-primary hover:bg-primary-hover text-white dark:text-[#121216] dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] rounded-xl font-sans font-medium transition-all shadow-sm hover:scale-[1.01] active:scale-[0.99]"
           >
             {t(copy.dashboard.logMeal, language)}
           </button>
         </section>
       ) : (
         <>
-          <section data-guide="nutrient-progress" className="bg-transparent border border-[#F3D9E1] rounded-2xl p-5 sm:p-6 dark:border-[#34313D] transition-colors">
+          {/* Today's Progress Card */}
+          <section data-guide="nutrient-progress" className="aura-card-surface p-5 sm:p-6 transition-all">
             <div className="flex items-center justify-between mb-4 sm:mb-6">
-              <h2 className="font-display text-lg sm:text-xl font-medium text-text-main dark:text-[#F5F1F7]">
-                {t(copy.dashboard.progressTitle, language)}
-              </h2>
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-primary" />
+                <h2 className="font-display text-lg sm:text-xl font-semibold text-text-main dark:text-[#F5F1F7]">
+                  {t(copy.dashboard.progressTitle, language)}
+                </h2>
+              </div>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 justify-items-center">
               {NUTRIENT_ORDER.map((key) => {
@@ -274,22 +278,27 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
             </div>
           </section>
 
+          {/* 7-Day Histograms */}
           <NutrientHistograms data={weeklyData} targets={targets} />
 
-          <section className="bg-card border border-border rounded-card p-6 dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl transition-colors">
+          {/* Menstrual Phase Summary Card */}
+          <section className="aura-card-surface p-6 transition-all">
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-soft-accent dark:bg-[#272129] border border-peach/50 dark:border-[#3F333E] flex items-center justify-center text-primary dark:text-[#E9A5D1] shadow-2xs">
+                  <IconDroplet className="w-6 h-6" />
+                </div>
                 <div>
-                  <p className={`${bodyFontClass(language)} text-xs text-text-muted dark:text-[#C5BECF] uppercase tracking-wider`}>
+                  <p className={`${bodyFontClass(language)} text-xs text-text-muted dark:text-[#C5BECF] uppercase tracking-wider font-medium`}>
                     {t(copy.dashboard.phaseLabel, language)}
                   </p>
-                  <p className="font-display text-xl font-medium text-text-main dark:text-[#F5F1F7] capitalize">
+                  <p className="font-display text-xl font-semibold text-text-main dark:text-[#F5F1F7] capitalize">
                     {dashboard.phase ? t(phaseLabels[dashboard.phase], language) : '-'}
                   </p>
                   <button
                     type="button"
                     onClick={handleOpenPhaseModal}
-                    className="inline-flex items-center gap-1 mt-1 text-xs font-semibold text-primary hover:text-primary-hover dark:text-[#E9A5D1] dark:hover:text-[#CE8BB8] transition-colors focus-visible:outline-2 focus-visible:outline-primary group rounded"
+                    className="inline-flex items-center gap-1.5 mt-1 text-xs font-semibold text-primary hover:text-primary-hover dark:text-[#E9A5D1] dark:hover:text-[#CE8BB8] transition-colors focus-visible:outline-2 focus-visible:outline-primary group rounded cursor-pointer"
                     aria-haspopup="dialog"
                     aria-expanded={isPhaseModalOpen}
                   >
@@ -301,7 +310,7 @@ export function Dashboard({ user, refreshTrigger, onOpenLog, onPhaseChange }: Da
                 </div>
               </div>
               <div className="flex flex-col sm:items-end gap-2">
-                <div className="px-4 py-2 rounded-xl bg-background dark:bg-[#272731] border border-border dark:border-[#34313D] text-xs font-sans text-text-muted dark:text-[#C5BECF]">
+                <div className="px-4 py-2 rounded-xl bg-soft-accent/60 dark:bg-[#272129] border border-[#F2DCE3] dark:border-[#34313D] text-xs font-sans text-text-muted dark:text-[#C5BECF]">
                   <span>{new Date(dashboard.date).toLocaleDateString(language === 'hi' ? 'hi-IN' : 'en-US', { weekday: 'short', month: 'short', day: 'numeric' })}</span>
                 </div>
                 {phaseSuccessMessage && (
