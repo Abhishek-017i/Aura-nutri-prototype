@@ -7,8 +7,8 @@ interface ChatProps {
 
 export function Chat({ user }: ChatProps) {
   return (
-    <main className="w-full max-w-2xl mx-auto px-3 sm:px-6 py-4 sm:py-8 pb-28 sm:pb-32">
-      <ChatWindow user={user} />
+    <main className="w-full sm:max-w-3xl sm:mx-auto px-0 sm:px-6 py-0 sm:py-6 h-[calc(100dvh-3.5rem)] sm:h-[82vh] flex flex-col">
+      <ChatWindow user={user} fullHeight isDedicatedPage />
     </main>
   )
 }

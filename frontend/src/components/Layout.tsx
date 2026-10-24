@@ -180,15 +180,15 @@ export function Layout({
         </span>
       </button>
 
-      {/* Slide-over / Modal for Chat when toggled from floating Ask Aura button */}
+      {/* Full-screen mobile experience & spacious desktop conversational modal */}
       {isChatOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/40 backdrop-blur-sm dark:bg-black/60 transition-opacity animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 flex items-stretch sm:items-center justify-center p-0 sm:p-6 bg-black/50 backdrop-blur-sm dark:bg-black/75 transition-opacity animate-in fade-in duration-200"
           role="dialog"
           aria-modal="true"
         >
-          <div className="w-full max-w-lg max-h-[85vh] sm:rounded-2xl overflow-hidden shadow-2xl">
-            <ChatWindow user={user} onClose={onToggleChat} />
+          <div className="w-full h-full sm:h-auto sm:max-h-[90vh] sm:max-w-2xl sm:rounded-[28px] overflow-hidden shadow-2xl flex flex-col">
+            <ChatWindow user={user} onClose={onToggleChat} fullHeight />
           </div>
         </div>
       )}

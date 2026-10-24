@@ -204,6 +204,7 @@
 
 :root {
   --aura-chat-bg: #FFF7F4;
+  --aura-chat-gradient: linear-gradient(180deg, #F7DCE3 0%, #FBE9E5 38%, #FFF5EE 72%, #FFFCF9 100%);
   --aura-chat-surface: #FFFCFA;
   --aura-chat-blush: #F8DCE2;
   --aura-chat-peach: #FCE8DE;
@@ -220,6 +221,7 @@
 
 .dark {
   --aura-chat-bg: #15151B;
+  --aura-chat-gradient: linear-gradient(180deg, #261D26 0%, #1F1B24 40%, #181820 75%, #15151B 100%);
   --aura-chat-surface: #202027;
   --aura-chat-blush: #2C2633;
   --aura-chat-peach: #2E262B;
@@ -235,19 +237,23 @@
 }
 
 .aura-chat-root {
-  background-color: var(--aura-chat-surface);
+  background: var(--aura-chat-gradient);
   border-color: var(--aura-chat-border);
   box-shadow: var(--aura-chat-shadow);
-  border-radius: 24px;
 }
 
 .aura-chat-body {
-  background-color: var(--aura-chat-bg);
+  background: transparent;
 }
 
 .aura-chat-header {
   border-bottom-color: var(--aura-chat-border);
-  background-color: var(--aura-chat-surface);
+  background-color: rgba(255, 252, 250, 0.75);
+}
+
+.dark .aura-chat-header {
+  border-bottom-color: var(--aura-chat-border);
+  background-color: rgba(32, 32, 39, 0.75);
 }
 
 .aura-chat-bubble-assistant {
@@ -278,9 +284,15 @@
 }
 
 .aura-chat-intro-card {
-  background-color: var(--aura-chat-peach);
+  background-color: rgba(252, 232, 222, 0.85);
+  backdrop-filter: blur(8px);
   border: 1px solid var(--aura-chat-peach-border);
   border-radius: 20px;
+}
+
+.dark .aura-chat-intro-card {
+  background-color: rgba(46, 38, 43, 0.85);
+  border-color: #4A3A40;
 }
 
 .aura-chat-composer {
@@ -340,4 +352,5 @@
   border-color: #D8753F !important;
   box-shadow: 0 0 0 3px rgba(232, 138, 77, 0.25);
 }
+
 

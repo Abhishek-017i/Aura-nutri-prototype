@@ -10,9 +10,11 @@ import { IconLoader, IconMicrophone, IconSend, IconX } from './icons.tsx'
 interface ChatWindowProps {
   user: User
   onClose?: () => void
+  fullHeight?: boolean
+  isDedicatedPage?: boolean
 }
 
-export function ChatWindow({ user, onClose }: ChatWindowProps) {
+export function ChatWindow({ user, onClose, fullHeight = false, isDedicatedPage = false }: ChatWindowProps) {
   const { language } = useLanguage()
   const { messages, isLoading, error, send, clear } = useChatStream()
   const [input, setInput] = useState('')
@@ -66,10 +68,15 @@ export function ChatWindow({ user, onClose }: ChatWindowProps) {
   return (
     <div
       data-guide="chat-window"
-      className="aura-chat-root flex flex-col h-[74vh] sm:h-[68vh] border overflow-hidden transition-all duration-300"
+      className={[
+        'aura-chat-root flex flex-col w-full overflow-hidden transition-all duration-200 border-0 sm:border',
+        fullHeight
+          ? 'h-full min-h-[100dvh] sm:min-h-0 sm:h-[82vh] rounded-none sm:rounded-[28px]'
+          : 'h-[100dvh] sm:h-[75vh] rounded-none sm:rounded-[28px]',
+      ].join(' ')}
     >
       {/* Refined Header */}
-      <div className="aura-chat-header flex items-center justify-between px-5 py-3.5 border-b backdrop-blur-sm z-10">
+      <div className="aura-chat-header flex items-center justify-between px-4 sm:px-6 py-3.5 border-b backdrop-blur-md z-10 flex-shrink-0">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-full bg-peach/40 dark:bg-card-secondary flex items-center justify-center border border-peach/50 dark:border-[#423847] text-primary dark:text-[#E9A5D1] shadow-xs">
             <span className="font-display font-bold text-xs">A</span>
@@ -208,7 +215,14 @@ export function ChatWindow({ user, onClose }: ChatWindowProps) {
       </div>
 
       {/* Pill-like Chat Composer */}
-      <div className="p-3.5 sm:p-4 bg-transparent border-t border-peach/30 dark:border-[#34313D]">
+      <div
+        className={[
+          'bg-transparent border-t border-peach/30 dark:border-[#34313D] flex-shrink-0 z-10',
+          isDedicatedPage
+            ? 'p-3 sm:p-4 pb-24 sm:pb-5'
+            : 'p-3 sm:p-4 pb-safe sm:pb-5',
+        ].join(' ')}
+      >
         <form onSubmit={handleSubmit} className="relative max-w-xl mx-auto">
           <div className="aura-chat-composer flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 transition-all focus-within:ring-2 focus-within:ring-[#E88A4D]/40">
             {/* Integrated Mic Button */}
