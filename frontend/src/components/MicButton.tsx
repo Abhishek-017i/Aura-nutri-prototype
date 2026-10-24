@@ -20,8 +20,8 @@ export function MicButton({
         'relative w-16 h-16 rounded-full border-2 flex items-center justify-center',
         'transition-colors duration-200 disabled:opacity-50',
         isListening
-          ? 'border-primary bg-primary text-white'
-          : 'border-primary bg-soft-sage',
+          ? 'border-primary bg-primary text-white dark:bg-[#E9A5D1] dark:border-[#E9A5D1] dark:text-[#121216]'
+          : 'border-primary bg-soft-accent text-primary dark:bg-[#272731] dark:border-[#E9A5D1] dark:text-[#E9A5D1]',
       ].join(' ')}
     >
       {!isListening && (
@@ -33,7 +33,7 @@ export function MicButton({
           height="28"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#FFFFFF"
+          stroke="currentColor"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -47,7 +47,7 @@ export function MicButton({
           height="28"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#334155"
+          stroke="currentColor"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"

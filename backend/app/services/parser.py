@@ -13,6 +13,9 @@ from typing import Any
 
 import pandas as pd  # type: ignore[import-untyped]
 import structlog
+import unicodedata
+from indic_transliteration import sanscript
+from indic_transliteration.sanscript import transliterate
 from rapidfuzz import fuzz
 from sqlalchemy import or_
 from sqlalchemy.orm import Session
@@ -20,6 +23,7 @@ from sqlalchemy.orm import Session
 from app.models import Food
 from app.schemas.parse import ParsedItem, ParsedMeal, QuantityOption
 from app.services.firestore_client import get_firestore_client
+from app.services.groq_client import translate_food_names
 from app.services.language_fallback import parse_with_fallback
 
 logger = structlog.get_logger()
@@ -627,16 +631,31 @@ def _build_parsed_item_from_match(
     )
 
 
-def _build_unmatched_item(segment: _ParsedSegment, qty_g: float) -> ParsedItem:
-    unit_label = segment.unit or "serving"
+def _build_unmatched_item(
+    segment: _ParsedSegment | None = None,
+    qty_g: float = 100.0,
+    suggestion: str = "Naya item add karein?",
+    food_phrase: str | None = None,
+    qty_str: str | None = None,
+) -> ParsedItem:
+    if segment is not None:
+        unit_label = segment.unit or "serving"
+        raw_text = segment.raw_text
+        food_name = segment.food_phrase or "unknown"
+        serving_desc = f"{segment.quantity} {unit_label} (unmatched)"
+    else:
+        raw_text = f"{qty_str or '1'} {food_phrase or 'unknown'}".strip()
+        food_name = food_phrase or "unknown"
+        serving_desc = f"{qty_str or '1 serving'} (unmatched)"
+
     return ParsedItem(
-        raw_text=segment.raw_text,
-        food_name=segment.food_phrase or "unknown",
+        raw_text=raw_text,
+        food_name=food_name,
         food_id=None,
         matched=False,
-        suggestion="Naya item add karein?",
+        suggestion=suggestion,
         qty_g=round(qty_g, 2),
-        serving_description=f"{segment.quantity} {unit_label} (unmatched)",
+        serving_description=serving_desc,
         energy_kcal=0.0,
         protein_g=0.0,
         iron_mg=0.0,
@@ -694,6 +713,41 @@ async def parse_meal(db: Session, text: str) -> ParsedMeal:
             warnings.append("Unsupported language detected. Please speak in English or Hinglish.")
             continue
         qty_str = str(raw.get("quantity", "")).strip()
+
+        # If LLM output is non-ASCII (Hindi/Urdu/other script), ask the LLM
+        # to translate it to standard English romanized spelling. Do NOT
+        # use phonetic romanization — it produces spellings (sbzi, daal)
+        # that match wrong DB entries.
+        if not food_phrase.isascii():
+            logger.warning("llm_output_non_ascii_translating_via_llm", original=food_phrase)
+            try:
+                translated_list = await translate_food_names([food_phrase])
+                translated = translated_list[0] if translated_list else ""
+                if translated and translated.isascii():
+                    logger.info("translated_food_via_llm", original=food_phrase, translated=translated)
+                    food_phrase = translated
+                else:
+                    logger.warning("llm_translation_still_non_ascii", original=food_phrase, translated=translated)
+                    raw_items.append(
+                        _build_unmatched_item(
+                            food_phrase=food_phrase,
+                            qty_str=qty_str,
+                            suggestion="Please type the food name in English.",
+                        )
+                    )
+                    warnings.append(f"Could not translate '{food_phrase}' to English.")
+                    continue
+            except Exception as exc:
+                logger.error("llm_translation_failed", error=str(exc), original=food_phrase)
+                raw_items.append(
+                    _build_unmatched_item(
+                        food_phrase=food_phrase,
+                        qty_str=qty_str,
+                        suggestion="Please type the food name in English.",
+                    )
+                )
+                warnings.append(f"Could not translate '{food_phrase}' to English.")
+                continue
 
         qty_num, unit, exp_g, unclear = _parse_quantity_string(qty_str)
         if unclear:

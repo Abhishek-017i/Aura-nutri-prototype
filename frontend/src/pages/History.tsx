@@ -162,15 +162,15 @@ export function History({ user, refreshTrigger }: HistoryProps) {
   if (error) {
     return (
       <main className="min-h-[60vh] w-full max-w-dashboard mx-auto px-6 py-8">
-        <div className="bg-rose/10 border border-rose rounded-card p-6">
-          <h2 className="font-display text-xl font-semibold text-dark-text mb-2">
+        <div className="bg-rose/10 border border-rose rounded-card p-6 dark:bg-[#593443]/30 dark:border-[#F08B9C]/50 dark:rounded-2xl">
+          <h2 className="font-display text-xl font-semibold text-text-main dark:text-[#F5F1F7] mb-2">
             {t(copy.dashboard.errorTitle, language)}
           </h2>
-          <p className={`${bodyFontClass(language)} text-dark-text mb-4`}>{error}</p>
+          <p className={`${bodyFontClass(language)} text-text-main dark:text-[#C5BECF] mb-4`}>{error}</p>
           <button
             type="button"
             onClick={() => void loadAll()}
-            className="px-4 py-2 bg-primary text-white rounded-data font-sans font-medium"
+            className="px-4 py-2 bg-primary hover:bg-primary-hover text-white dark:text-[#121216] dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] rounded-data dark:rounded-xl font-sans font-medium transition-colors"
           >
             {t(copy.history.retry, language)}
           </button>
@@ -181,13 +181,13 @@ export function History({ user, refreshTrigger }: HistoryProps) {
 
   return (
     <main className="w-full max-w-dashboard mx-auto px-6 py-6 space-y-6">
-      <section className="bg-card border border-border rounded-card p-6">
-        <h2 className="font-display text-lg font-medium text-dark-text mb-4">
+      <section data-guide="history-trends" className="bg-card border border-border rounded-card p-6 dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl transition-colors">
+        <h2 className="font-display text-lg font-medium text-text-main dark:text-[#F5F1F7] mb-4">
           {t(copy.history.trendTitle, language)}
         </h2>
         {riskScore ? (
           <>
-            <div className={`${bodyFontClass(language)} text-sm text-muted mb-4 space-y-1`}>
+            <div className={`${bodyFontClass(language)} text-sm text-text-muted dark:text-[#C5BECF] mb-4 space-y-1`}>
               <p>
                 {formatCopy(copy.history.daysLogged, language, { days: riskScore.days_logged })}
               </p>
@@ -207,23 +207,23 @@ export function History({ user, refreshTrigger }: HistoryProps) {
             )}
           </>
         ) : (
-          <p className={`${bodyFontClass(language)} text-sm text-muted`}>
+          <p className={`${bodyFontClass(language)} text-sm text-text-muted dark:text-[#C5BECF]`}>
             {t(copy.history.emptyBody, language)}
           </p>
         )}
       </section>
 
-      <section className="bg-card border border-border rounded-card p-6">
-        <h2 className="font-display text-lg font-medium text-dark-text mb-4">
+      <section className="bg-card border border-border rounded-card p-6 dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl transition-colors">
+        <h2 className="font-display text-lg font-medium text-text-main dark:text-[#F5F1F7] mb-4">
           {t(copy.history.title, language)}
         </h2>
 
         {logs.length === 0 ? (
           <div className="text-center py-8">
-            <h3 className="font-display text-xl font-medium text-dark-text mb-2">
+            <h3 className="font-display text-xl font-medium text-text-main dark:text-[#F5F1F7] mb-2">
               {t(copy.history.emptyTitle, language)}
             </h3>
-            <p className={`${bodyFontClass(language)} text-muted max-w-md mx-auto`}>
+            <p className={`${bodyFontClass(language)} text-text-muted dark:text-[#C5BECF] max-w-md mx-auto`}>
               {t(copy.history.emptyBody, language)}
             </p>
           </div>
@@ -231,20 +231,20 @@ export function History({ user, refreshTrigger }: HistoryProps) {
           <div className="space-y-6">
             {groupedLogs.map(({ date, items }) => (
               <div key={date}>
-                <h3 className="font-display text-base font-medium text-dark-text mb-3">
+                <h3 className="font-display text-base font-medium text-text-main dark:text-[#F5F1F7] mb-3">
                   {formatDateLong(`${date}T00:00:00`, language)}
                 </h3>
                 <div className="space-y-3">
                   {items.map((log) => (
                     <div
                       key={log.id}
-                      className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 bg-background rounded-data"
+                      className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 bg-background dark:bg-[#18181F] border border-transparent dark:border-[#34313D] rounded-data dark:rounded-xl transition-colors"
                     >
                       <div className="min-w-0">
-                        <p className={`${bodyFontClass(language)} font-medium text-dark-text truncate`}>
+                        <p className={`${bodyFontClass(language)} font-medium text-text-main dark:text-[#F5F1F7] truncate`}>
                           {log.food_name ?? t(copy.dashboard.notMatched, language)}
                         </p>
-                        <p className="font-sans text-xs text-muted">
+                        <p className="font-sans text-xs text-text-muted dark:text-[#C5BECF]">
                           {formatTime(log.logged_at, language)} · {Math.round(log.qty_g)}g
                         </p>
                       </div>
@@ -253,10 +253,10 @@ export function History({ user, refreshTrigger }: HistoryProps) {
                           const value = nutrientValue(log, key)
                           return (
                             <div key={key} className="text-center min-w-[44px]">
-                              <p className="font-sans text-[10px] uppercase text-muted">
+                              <p className="font-sans text-[10px] uppercase text-text-muted dark:text-[#A39AAA] font-medium">
                                 {t(copy.history[NUTRIENT_COPY_KEYS[key]], language)}
                               </p>
-                              <p className="font-display text-sm font-medium text-dark-text">
+                              <p className="font-display text-sm font-medium text-text-main dark:text-[#F5F1F7]">
                                 {Math.round(value)}
                               </p>
                             </div>
@@ -274,7 +274,7 @@ export function History({ user, refreshTrigger }: HistoryProps) {
                 type="button"
                 onClick={handleLoadMore}
                 disabled={loadingMore}
-                className={`${bodyFontClass(language)} w-full px-4 py-3 bg-peach text-dark-text rounded-data font-medium disabled:opacity-50`}
+                className={`${bodyFontClass(language)} w-full px-4 py-3 bg-primary hover:bg-primary-hover text-white dark:text-[#121216] dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] rounded-data dark:rounded-xl font-medium disabled:opacity-50 transition-colors`}
               >
                 {loadingMore ? t(copy.history.loadingMore, language) : t(copy.history.loadMore, language)}
               </button>
@@ -283,7 +283,7 @@ export function History({ user, refreshTrigger }: HistoryProps) {
         )}
       </section>
 
-      <p className={`${bodyFontClass(language)} text-xs text-muted text-center`}>
+      <p className={`${bodyFontClass(language)} text-xs text-text-muted dark:text-[#A39AAA] text-center`}>
         {riskScore?.disclaimer ??
           'AURA-Nutri provides food intelligence, not medical advice. Always consult a qualified physician or registered dietitian before changing your diet or taking supplements.'}
       </p>
@@ -294,12 +294,12 @@ export function History({ user, refreshTrigger }: HistoryProps) {
 function statusColor(level: NutrientRisk['risk_level']): string {
   switch (level) {
     case 'LOW':
-      return '#5F8A68'
+      return 'var(--emerald)'
     case 'MEDIUM':
-      return '#C8953D'
+      return 'var(--amber)'
     case 'HIGH':
     default:
-      return '#C96B67'
+      return 'var(--rose)'
   }
 }
 
@@ -320,18 +320,18 @@ function NutrientSummaryLines({
         return (
           <div
             key={key}
-            className="flex items-start gap-3 p-3 bg-background rounded-data"
+            className="flex items-start gap-3 p-3.5 bg-background dark:bg-[#272731] border border-transparent dark:border-[#34313D] rounded-data dark:rounded-xl transition-colors"
           >
             <div
               className="w-3 h-3 mt-1.5 rounded-full flex-shrink-0"
               style={{ backgroundColor: color }}
             />
             <div className="flex-1 min-w-0">
-              <p className={`${bodyFontClass(language)} text-sm text-dark-text`}>
+              <p className={`${bodyFontClass(language)} text-sm text-text-main dark:text-[#F5F1F7]`}>
                 {t(copy.history[NUTRIENT_COPY_KEYS[key]], language)}{' '}
                 <span className="font-display font-medium">{Math.round(nutrient.percent)}%</span>
               </p>
-              <p className={`${bodyFontClass(language)} text-sm text-muted mt-0.5`}>
+              <p className={`${bodyFontClass(language)} text-sm text-text-muted dark:text-[#C5BECF] mt-0.5`}>
                 {t(copy.history[NUTRIENT_SUGGESTION_KEYS[key]], language)}
               </p>
             </div>
@@ -345,28 +345,28 @@ function NutrientSummaryLines({
 function HistorySkeleton() {
   return (
     <main className="w-full max-w-dashboard mx-auto px-6 py-6 space-y-6 animate-pulse">
-      <div className="bg-card border border-border rounded-card p-6">
-        <div className="h-6 w-40 bg-primary/10 rounded-data mb-4" />
-        <div className="h-4 w-64 bg-primary/10 rounded-data mb-6" />
+      <div className="bg-card border border-border rounded-card p-6 dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl">
+        <div className="h-6 w-40 bg-primary/10 dark:bg-[#272731] rounded-data mb-4" />
+        <div className="h-4 w-64 bg-primary/10 dark:bg-[#272731] rounded-data mb-6" />
         <div className="space-y-3">
           {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="flex items-start gap-3 p-3 bg-background rounded-data">
-              <div className="w-3 h-3 mt-1.5 rounded-full bg-primary/10 flex-shrink-0" />
+            <div key={i} className="flex items-start gap-3 p-3 bg-background dark:bg-[#272731] rounded-data">
+              <div className="w-3 h-3 mt-1.5 rounded-full bg-primary/10 dark:bg-[#E9A5D1] flex-shrink-0" />
               <div className="flex-1 space-y-2">
-                <div className="h-4 w-32 bg-primary/10 rounded-data" />
-                <div className="h-4 w-full bg-primary/10 rounded-data" />
+                <div className="h-4 w-32 bg-primary/10 dark:bg-[#34313D] rounded-data" />
+                <div className="h-4 w-full bg-primary/10 dark:bg-[#34313D] rounded-data" />
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="bg-card border border-border rounded-card p-6 space-y-4">
-        <div className="h-6 w-32 bg-primary/10 rounded-data mb-4" />
+      <div className="bg-card border border-border rounded-card p-6 space-y-4 dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl">
+        <div className="h-6 w-32 bg-primary/10 dark:bg-[#272731] rounded-data mb-4" />
         {[1, 2, 3].map((i) => (
           <div key={i}>
-            <div className="h-4 w-24 bg-primary/10 rounded-data mb-3" />
-            <div className="h-16 bg-background rounded-data" />
+            <div className="h-4 w-24 bg-primary/10 dark:bg-[#272731] rounded-data mb-3" />
+            <div className="h-16 bg-background dark:bg-[#272731] rounded-data" />
           </div>
         ))}
       </div>

@@ -46,7 +46,7 @@ export function StreakHeatmap({ logs, language }: StreakHeatmapProps) {
           )
         })}
       </div>
-      <div className="flex items-center gap-2 text-xs text-muted font-sans">
+      <div className="flex items-center gap-2 text-xs text-text-muted dark:text-[#C5BECF] font-sans">
         <span>{language === 'hi' ? 'कम' : 'Less'}</span>
         <div className="w-4 h-4 rounded-sm bg-background border border-border" />
         <div className="w-4 h-4 rounded-sm bg-primary" style={{ opacity: 0.55 }} />

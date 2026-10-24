@@ -3,9 +3,119 @@
 @tailwind utilities;
 
 
+:root {
+  /* LIGHT THEME (DO NOT ALTER - EXACT ORIGINAL PRESERVED) */
+  --color-background: 255 245 248;
+  --color-card: 255 255 255;
+  --color-card-secondary: 255 255 255;
+  --color-card-elevated: 255 255 255;
+  --color-surface-light: 255 245 248;
+  --color-surface-light-secondary: 252 228 236;
+  --color-border: 240 221 227;
+  --color-primary: 217 114 142;
+  --color-primary-hover: 194 93 120;
+  --color-text-main: 61 41 46;
+  --color-text-muted: 138 113 118;
+  --color-text-light-primary: 61 41 46;
+  --color-text-light-secondary: 138 113 118;
+  --color-soft-accent: 252 228 236;
+  --color-emerald: 95 138 104;
+  --color-amber: 200 149 61;
+  --color-rose: 201 107 103;
+
+  --background: #FFF5F8;
+  --card: #FFFFFF;
+  --card-secondary: #FFFFFF;
+  --card-elevated: #FFFFFF;
+  --surface-light: #FFF5F8;
+  --surface-light-secondary: #FCE4EC;
+  --border: #F0DDE3;
+  --primary: #D9728E;
+  --primary-hover: #C25D78;
+  --text-main: #3D292E;
+  --text-muted: #8A7176;
+  --text-light-primary: #3D292E;
+  --text-light-secondary: #8A7176;
+  --soft-accent: #FCE4EC;
+  --emerald: #5F8A68;
+  --amber: #C8953D;
+  --rose: #C96B67;
+  --lavender: #E8DFF5;
+}
+
+.dark {
+  /* DARK THEME - SOPHISTICATED CHARCOAL & MUTED ROSE / LAVENDER SYSTEM */
+  /* Main Surfaces */
+  --color-background: 18 18 22;             /* #121216 Main application background */
+  --color-background-secondary: 24 24 31;   /* #18181F Secondary background */
+  --color-sidebar: 21 21 27;                /* #15151B Sidebar background */
+  --color-card: 32 32 39;                   /* #202027 Standard card background */
+  --color-card-secondary: 39 39 49;         /* #272731 Elevated card background */
+  --color-card-elevated: 48 45 57;          /* #302D39 Secondary surface */
+  --color-surface-light: 235 198 231;       /* #EBC6E7 Highlight card background */
+  --color-surface-light-secondary: 232 216 240; /* #E8D8F0 Alternative highlight background */
+
+  /* Text */
+  --color-text-main: 245 241 247;           /* #F5F1F7 Primary text on dark surfaces */
+  --color-text-muted: 197 190 207;          /* #C5BECF Secondary text on dark surfaces */
+  --color-text-subtle: 163 154 170;         /* #A39AAA Muted text on dark surfaces */
+  --color-text-light-primary: 41 33 47;     /* #29212F Primary text on light highlight cards */
+  --color-text-light-secondary: 98 87 106;  /* #62576A Secondary text on light highlight cards */
+
+  /* Borders & Accents */
+  --color-border: 52 49 61;                 /* #34313D Standard card border */
+  --color-border-elevated: 66 56 71;        /* #423847 Subtle elevated border */
+  --color-border-highlight: 228 197 228;    /* #E4C5E4 Highlight card border */
+
+  /* Pink and Rose Accents */
+  --color-primary: 233 165 209;             /* #E9A5D1 Primary brand pink */
+  --color-primary-hover: 206 139 184;       /* #CE8BB8 Secondary rose */
+  --color-rose-deep: 168 92 145;            /* #A85C91 Deep rose accent */
+  --color-burgundy: 89 52 67;               /* #593443 Muted burgundy */
+  --color-soft-accent: 39 39 49;            /* #272731 Elevated surface for pills / soft accent */
+
+  /* Lavender & Chart Accents */
+  --color-lavender: 198 184 242;            /* #C6B8F2 Primary lavender */
+  --color-lavender-soft: 215 205 247;       /* #D7CDF7 Soft lavender */
+  --color-lavender-blue: 184 200 244;       /* #B8C8F4 Lavender-blue */
+  --color-lilac-muted: 151 135 196;         /* #9787C4 Muted lilac */
+  --color-secondary-nutrient: 184 200 244;  /* #B8C8F4 Supporting lavender-blue / Vit D */
+
+  /* Status Colors */
+  --color-emerald: 120 203 170;             /* #78CBAA Success */
+  --color-amber: 233 193 125;               /* #E9C17D Warning */
+  --color-rose: 240 139 156;                /* #F08B9C Error / Iron */
+
+  /* Direct hex variables */
+  --background: #121216;
+  --background-secondary: #18181F;
+  --sidebar: #15151B;
+  --card: #202027;
+  --card-secondary: #272731;
+  --card-elevated: #302D39;
+  --surface-light: #EBC6E7;
+  --surface-light-secondary: #E8D8F0;
+  --text-main: #F5F1F7;
+  --text-muted: #C5BECF;
+  --text-subtle: #A39AAA;
+  --text-light-primary: #29212F;
+  --text-light-secondary: #62576A;
+  --border: #34313D;
+  --border-elevated: #423847;
+  --border-highlight: #E4C5E4;
+  --primary: #E9A5D1;
+  --primary-hover: #CE8BB8;
+  --soft-accent: #272731;
+  --emerald: #78CBAA;
+  --amber: #E9C17D;
+  --rose: #F08B9C;
+  --lavender: #C6B8F2;
+  --nutrient-secondary: #B8C8F4;
+}
+
 @layer base {
   body {
-    @apply bg-background text-dark-text font-sans antialiased;
+    @apply bg-background text-text-main font-sans antialiased;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -14,8 +124,12 @@
 
   :focus-visible {
     @apply outline-none;
-    outline: 2px solid theme('colors.dark-text');
+    outline: 2px solid theme('colors.text-main');
     outline-offset: 2px;
+  }
+
+  .dark :focus-visible {
+    outline-color: #E9A5D1;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -27,4 +141,34 @@
       transition-duration: 0.01ms !important;
     }
   }
+}
+
+/* Scoped Dark Mode UI Enhancements (Reference Aesthetic) */
+.dark .rounded-card {
+  border-radius: 1rem; /* 16px - refined rounded cards */
+}
+
+.dark .rounded-data {
+  border-radius: 0.75rem; /* 12px */
+}
+
+/* In dark mode, ensure borders are soft and refined */
+.dark .border-border {
+  border-color: #34313D;
+}
+
+/* Subtle scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #121216;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #34313D;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #423847;
 }

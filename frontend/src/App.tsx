@@ -5,11 +5,12 @@ import { Dashboard } from './pages/Dashboard.tsx'
 import { History } from './pages/History.tsx'
 import { Login } from './pages/Login.tsx'
 import { Signup } from './pages/Signup.tsx'
-//import { NutriCard } from './pages/NutriCard.tsx'
-import { NutriCard } from './components/NutriCard';
+import { SnapFeed } from './pages/SnapFeed.tsx'
+import { NutriCard } from './components/NutriCard'
 import { Profile } from './pages/Profile.tsx'
 import { Layout, type Tab } from './components/Layout.tsx'
 import { LogMealModal } from './components/LogMealModal.tsx'
+import { AuraGuide } from './components/AuraGuide.tsx'
 import { ProtectedRoute } from './components/ProtectedRoute.tsx'
 import { useAuth } from './contexts/useAuth.ts'
 import { getUserDoc } from './lib/firestore.ts'
@@ -23,6 +24,7 @@ export default function App() {
   const [refreshTrigger, setRefreshTrigger] = useState(0)
   const [nutriCardOpen, setNutriCardOpen] = useState(false)
   const [nutriCardDashboard, setNutriCardDashboard] = useState<DashboardType | null>(null)
+  const [isChatOpen, setIsChatOpen] = useState(false)
 
   // Client-side hash routing state: #/login, #/signup, or #/ (default)
   const [route, setRoute] = useState<string>(() => {
@@ -185,10 +187,10 @@ export default function App() {
 
   if (authLoading) {
     return (
-      <div className="min-h-screen bg-[#FAF7F2] p-6 flex flex-col gap-4">
-        <div className="h-8 w-48 bg-[#E2E8F0] rounded animate-pulse" />
-        <div className="h-32 bg-[#E2E8F0] rounded-lg animate-pulse" />
-        <div className="h-64 bg-[#E2E8F0] rounded-lg animate-pulse" />
+      <div className="min-h-screen bg-background p-6 flex flex-col gap-4">
+        <div className="h-8 w-48 bg-primary/10 rounded animate-pulse" />
+        <div className="h-32 bg-primary/10 rounded-lg animate-pulse" />
+        <div className="h-64 bg-primary/10 rounded-lg animate-pulse" />
       </div>
     )
   }
@@ -223,12 +225,21 @@ export default function App() {
         onLogout={() => void handleLogout()}
         onOpenLog={() => setLogOpen(true)}
         onOpenNutriCard={() => setNutriCardOpen(true)}
+        isChatOpen={isChatOpen}
+        onToggleChat={() => setIsChatOpen((prev) => !prev)}
       >
         {activeTab === 'home' && (
           <Dashboard
             user={fallbackProfile}
             refreshTrigger={refreshTrigger}
             onOpenLog={() => setLogOpen(true)}
+            onPhaseChange={handlePhaseChange}
+          />
+        )}
+        {activeTab === 'snap' && (
+          <SnapFeed
+            user={fallbackProfile}
+            onOpenNutriCard={() => setNutriCardOpen(true)}
           />
         )}
         {activeTab === 'chat' && <Chat user={fallbackProfile} />}
@@ -259,6 +270,13 @@ export default function App() {
           onClose={handleCloseNutriCard}
         />
       )}
+
+      <AuraGuide
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+        onOpenNutriCard={() => setNutriCardOpen(true)}
+        isModalOpen={logOpen || nutriCardOpen || isChatOpen}
+      />
     </ProtectedRoute>
   )
 }

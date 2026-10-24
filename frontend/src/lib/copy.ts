@@ -2,8 +2,9 @@ import type { Language } from './language.tsx'
 
 type CopyRecord = { readonly [K in Language]: string }
 
-export function t(record: CopyRecord, language: Language): string {
-  return record[language]
+export function t(record: CopyRecord | undefined | null, language: Language): string {
+  if (!record) return ''
+  return record[language] ?? record.en ?? record.hi ?? ''
 }
 
 export function formatCopy(
@@ -32,18 +33,48 @@ export const phaseLabels: Record<string, CopyRecord> = {
   pregnancy_lactation: { en: 'Pregnancy / Lactation', hi: 'गर्भावस्था / स्तनपान' },
 }
 
+export const phaseSubtitles: Record<string, CopyRecord> = {
+  menstrual: {
+    en: 'Menstrual phase · Iron and energy support',
+    hi: 'मासिक चक्र अवस्था · आयरन और ऊर्जा सहायता',
+  },
+  follicular: {
+    en: 'Follicular phase · Balanced nourishment',
+    hi: 'फॉलिकुलर अवस्था · संतुलित पोषण',
+  },
+  ovulatory: {
+    en: 'Ovulatory phase · Energy and nutrient balance',
+    hi: 'ओव्यूलेटरी अवस्था · ऊर्जा और पोषक तत्व संतुलन',
+  },
+  luteal: {
+    en: 'Luteal phase · Magnesium and calcium support',
+    hi: 'ल्यूटियल अवस्था · मैग्नीशियम और कैल्शियम सहायता',
+  },
+  menopause: {
+    en: 'Menopausal transition · Bone and overall health',
+    hi: 'मेनोपॉज़ल बदलाव · अस्थि और समग्र स्वास्थ्य',
+  },
+  pregnancy_lactation: {
+    en: 'Maternal nourishment · Elevated micronutrient support',
+    hi: 'मातृत्व पोषण · विशेष पोषक तत्व सहायता',
+  },
+}
+
 export const nutrientLabels: Record<'iron' | 'calcium' | 'vit_d' | 'b12', CopyRecord> = {
-  iron: { en: 'Iron', hi: 'लोहा' },
-  calcium: { en: 'Calcium', hi: 'कैल्शियम' },
-  vit_d: { en: 'Vitamin D', hi: 'विटामिन डी' },
-  b12: { en: 'Vitamin B12', hi: 'विटामिन बी12' },
+  iron: { en: 'Iron', hi: 'Iron' },
+  calcium: { en: 'Calcium', hi: 'Calcium' },
+  vit_d: { en: 'Vitamin D', hi: 'Vitamin D' },
+  b12: { en: 'Vitamin B12', hi: 'Vitamin B12' },
 }
 
 export const nav: Record<string, CopyRecord> = {
   home: { en: 'Home', hi: 'मुख्य' },
-  chat: { en: 'Chat', hi: 'बातचीत' },
+  snapFeed: { en: 'Nutri Cards', hi: 'न्यूट्री कार्ड्स' },
+  addFood: { en: 'Add Food', hi: 'भोजन जोड़ें' },
   history: { en: 'History', hi: 'इतिहास' },
   profile: { en: 'Profile', hi: 'प्रोफ़ाइल' },
+  chat: { en: 'Chat', hi: 'बातचीत' },
+  askAura: { en: 'Ask Aura', hi: 'ऑरा से पूछें' },
 }
 
 export const copy = {
@@ -87,6 +118,13 @@ export const copy = {
   dashboard: {
     greeting: { en: 'Namaste, {name}', hi: 'नमस्ते, {name}' },
     phaseLabel: { en: 'Phase', hi: 'अवस्था' },
+    changePhase: { en: 'Change Phase', hi: 'अवस्था बदलें' },
+    selectPhaseTitle: { en: 'Menstrual phase', hi: 'मासिक चक्र की अवस्था' },
+    selectPhaseSubtitle: {
+      en: 'Choose your current phase to personalize your nutrition guidance.',
+      hi: 'अपने पोषण मार्गदर्शन को अनुकूलित करने के लिए अपनी वर्तमान अवस्था चुनें।',
+    },
+    phaseUpdated: { en: 'Phase updated to {phase}', hi: 'अवस्था बदलकर {phase} की गई' },
     logout: { en: 'Logout', hi: 'लॉग आउट' },
     close: { en: 'Close', hi: 'बंद करें' },
     errorTitle: { en: 'Error', hi: 'त्रुटि' },
@@ -142,9 +180,9 @@ export const copy = {
     retry: { en: 'Retry', hi: 'पुनः प्रयास करें' },
     parsedResult: { en: 'Parsed result', hi: 'विश्लेषण परिणाम' },
     notMatched: { en: 'not matched', hi: 'मेल नहीं हुआ' },
-    calories: { en: 'kcal', hi: 'कैलोरी' },
-    protein: { en: 'protein', hi: 'प्रोटीन' },
-    iron: { en: 'iron', hi: 'लोहा' },
+    calories: { en: 'kcal', hi: 'kcal' },
+    protein: { en: 'Protein', hi: 'Protein' },
+    iron: { en: 'Iron', hi: 'Iron' },
     progressTitle: { en: "Today's progress", hi: 'आज की प्रगति' },
     dailyGoalsTitle: { en: '7-day goals', hi: '7 दिन के लक्ष्य' },
     weeklyTrendsTitle: { en: '7-day trends', hi: '7 दिन का ट्रेंड' },
@@ -227,11 +265,11 @@ export const copy = {
     time: { en: 'Time', hi: 'समय' },
     meal: { en: 'Meal', hi: 'भोजन' },
     energy: { en: 'Energy', hi: 'ऊर्जा' },
-    protein: { en: 'Protein', hi: 'प्रोटीन' },
-    iron: { en: 'Iron', hi: 'लोहा' },
-    calcium: { en: 'Calcium', hi: 'कैल्शियम' },
-    vit_d: { en: 'Vit D', hi: 'विटामिन डी' },
-    b12: { en: 'B12', hi: 'विटामिन बी12' },
+    protein: { en: 'Protein', hi: 'Protein' },
+    iron: { en: 'Iron', hi: 'Iron' },
+    calcium: { en: 'Calcium', hi: 'Calcium' },
+    vit_d: { en: 'Vit D', hi: 'Vit D' },
+    b12: { en: 'B12', hi: 'B12' },
     suggestionIron: {
       en: 'A bit more dal, spinach, or sesame most days would help close the gap.',
       hi: 'थोड़ी और दाल, पालक या तिल ज़्यादातर दिन खाने से यह बेहतर होगा।',
@@ -309,5 +347,154 @@ export const copy = {
     },
     retry: { en: 'Retry', hi: 'पुनः प्रयास करें' },
     updating: { en: 'Updating...', hi: 'अपडेट हो रहा है...' },
+  },
+  guide: {
+    buttonLabel: { en: 'Need Help?', hi: 'मदद चाहिए?' },
+    badge: { en: 'Aura Guide', hi: 'ऑरा गाइड' },
+    welcomeTitle: { en: 'Welcome to Aura Nutri! 💗', hi: 'ऑरा न्यूट्री में आपका स्वागत है! 💗' },
+    welcomeSubtitle: {
+      en: 'Your personal space to understand your nutrition, explore cycle-aware food guidance, and track your wellness journey.',
+      hi: 'अपने पोषण को समझने, चक्र-सचेत आहार मार्गदर्शन प्राप्त करने और अपनी वेलनेस यात्रा को ट्रैक करने के लिए आपका व्यक्तिगत स्थान।',
+    },
+    startTour: { en: 'Start Guided Tour', hi: 'गाइडेड टूर शुरू करें' },
+    exploreFeatures: { en: 'Explore a Feature', hi: 'फ़ीचर चुनें' },
+    notNow: { en: 'Not Now', hi: 'अभी नहीं' },
+    exploreTitle: { en: 'Explore Aura Features', hi: 'ऑरा के फ़ीचर्स जानें' },
+    exploreSubtitle: {
+      en: 'Select any feature to learn what it does or jump straight to it.',
+      hi: 'किसी भी फ़ीचर के बारे में जानने या उस पर सीधे जाने के लिए चुनें।',
+    },
+    backToWelcome: { en: 'Back to Guide', hi: 'वापस जाएँ' },
+    stepIndicator: { en: '{current} of {total}', hi: '{total} में से {current}' },
+    next: { en: 'Next →', hi: 'आगे →' },
+    back: { en: '← Back', hi: '← पीछे' },
+    skipTour: { en: 'Skip Tour', hi: 'टूर छोड़ें' },
+    finishTour: { en: 'Finish Tour', hi: 'टूर समाप्त करें' },
+    completedTitle: { en: "You're ready to explore Aura Nutri!", hi: 'आप ऑरा न्यूट्री शुरू करने के लिए तैयार हैं!' },
+    completedSubtitle: {
+      en: "Feel free to tap 'Need Help?' whenever you have questions or want to revisit any feature.",
+      hi: "जब भी कोई सवाल हो या किसी फ़ीचर को दोबारा देखना हो, आप कभी भी 'मदद चाहिए?' पर टैप कर सकते हैं।",
+    },
+    actions: {
+      goToDashboard: { en: 'Go to Dashboard', hi: 'डैशबोर्ड पर जाएँ' },
+      goToHome: { en: 'Go to Home', hi: 'मुख्य पर जाएँ' },
+      openSnapFeed: { en: 'Open Nutri Cards', hi: 'न्यूट्री कार्ड्स खोलें' },
+      logMealAction: { en: 'Add Food', hi: 'भोजन जोड़ें' },
+      viewSettings: { en: 'View Settings', hi: 'सेटिंग्स देखें' },
+      viewNutrients: { en: 'View Nutrients', hi: 'पोषक तत्व देखें' },
+      viewTrends: { en: 'View Trends', hi: 'रुझान देखें' },
+      openAssistant: { en: 'Ask Aura', hi: 'ऑरा से पूछें' },
+      openHistory: { en: 'Open History', hi: 'इतिहास खोलें' },
+      viewStreaks: { en: 'View Streaks', hi: 'स्ट्रीक देखें' },
+      viewProfile: { en: 'View Profile', hi: 'प्रोफ़ाइल देखें' },
+      viewCheatDay: { en: 'View Cheat Day', hi: 'चीट डे देखें' },
+      createNutriCard: { en: 'Create NutriCard', hi: 'न्यूट्रीकार्ड बनाएँ' },
+    },
+    steps: {
+      home: {
+        title: { en: 'Home Dashboard', hi: 'मुख्य डैशबोर्ड' },
+        summary: { en: 'Your daily wellness overview.', hi: 'आपका दैनिक वेलनेस अवलोकन।' },
+        text: {
+          en: 'Your home dashboard brings your daily nutrition and wellness progress together. Start here to get a quick overview of the information that matters to you.',
+          hi: 'मुख्य डैशबोर्ड आपकी दैनिक पोषण और वेलनेस प्रगति को एक साथ लाता है। अपने लिए महत्वपूर्ण जानकारी का अवलोकन पाने के लिए यहाँ देखें।',
+        },
+      },
+      snapFeed: {
+        title: { en: 'Nutri Cards', hi: 'न्यूट्री कार्ड्स' },
+        summary: { en: 'Create and share wellness story snaps.', hi: 'वेलनेस स्टोरी स्नैप बनाएँ और साझा करें।' },
+        text: {
+          en: 'Visit Nutri Cards to create and share supported nutrition and wellness story snaps featuring your photo, daily nutrient rings, and streak.',
+          hi: 'अपनी तस्वीर, दैनिक पोषण चक्र और स्ट्रीक के साथ व्यक्तिगत वेलनेस स्टोरी स्नैप बनाने और साझा करने के लिए न्यूट्री कार्ड्स देखें।',
+        },
+      },
+      addFood: {
+        title: { en: 'Add Food & Log Meal', hi: 'भोजन जोड़ें और दर्ज करें' },
+        summary: { en: 'Log your meals and track nutrients.', hi: 'भोजन दर्ज करें और पोषक तत्व ट्रैक करें।' },
+        text: {
+          en: 'Tap the central plus button to log a meal. Add the food you eat and track your nutrition using Aura Nutri\'s existing food-logging features.',
+          hi: 'भोजन दर्ज करने के लिए बीच के प्लस बटन पर टैप करें। अपना आहार जोड़ें और ऑरा न्यूट्री की भोजन ट्रैकिंग सुविधाओं का उपयोग करें।',
+        },
+      },
+      dashboard: {
+        title: { en: 'Dashboard Overview', hi: 'डैशबोर्ड अवलोकन' },
+        summary: { en: 'Your daily wellness overview.', hi: 'आपका दैनिक वेलनेस अवलोकन।' },
+        text: {
+          en: 'Your dashboard brings your daily nutrition and wellness progress together. Start here to get a quick overview of the information that matters to you.',
+          hi: 'डैशबोर्ड आपके दैनिक पोषण और वेलनेस प्रगति को एक साथ प्रस्तुत करता है। आवश्यक जानकारी का त्वरित अवलोकन पाने के लिए यहाँ से शुरुआत करें।',
+        },
+      },
+      settings: {
+        title: { en: 'Language & Appearance', hi: 'भाषा और रूप-रंग' },
+        summary: { en: 'Language & dark mode controls.', hi: 'भाषा और डार्क मोड सेटिंग्स।' },
+        text: {
+          en: "Choose the language you're comfortable with and switch between light and dark modes to make Aura Nutri easier to use.",
+          hi: 'अपनी पसंदीदा भाषा चुनें और ऑरा न्यूट्री को अधिक सुविधाजनक बनाने के लिए लाइट और डार्क मोड के बीच आसानी से बदलें।',
+        },
+      },
+      nutrients: {
+        title: { en: 'Nutrient Progress', hi: 'पोषक तत्व प्रगति' },
+        summary: { en: 'Daily intake against targets.', hi: 'दैनिक लक्ष्य के सापेक्ष पोषण।' },
+        text: {
+          en: 'Track nutrients such as iron, vitamin D, and B12. See how your recorded intake compares with your displayed daily goals.',
+          hi: 'आयरन, विटामिन डी और बी12 जैसे मुख्य पोषक तत्वों को ट्रैक करें और देखें कि आपका आहार दैनिक लक्ष्यों की तुलना में कैसा है।',
+        },
+      },
+      trends: {
+        title: { en: 'Seven-Day Trends', hi: '7-दिवसीय रुझान' },
+        summary: { en: 'Review weekly nutrition patterns.', hi: 'साप्ताहिक आहार पैटर्न देखें।' },
+        text: {
+          en: 'Review your nutrition trends over the last seven days to understand your recorded food intake and spot patterns in your daily diet.',
+          hi: 'अपने रिकॉर्ड किए गए भोजन को समझने और दैनिक आहार में पैटर्न पहचानने के लिए पिछले सात दिनों के पोषण रुझानों की समीक्षा करें।',
+        },
+      },
+      assistant: {
+        title: { en: 'Ask Aura AI Assistant', hi: 'ऑरा एआई सहायक' },
+        summary: { en: 'Ask nutrition and cycle questions.', hi: 'पोषण और चक्र संबंधी सवाल पूछें।' },
+        text: {
+          en: 'Have a nutrition question? Open Ask Aura to get help with supported nutrition topics and cycle-phase food guidance.',
+          hi: 'पोषण संबंधी कोई प्रश्न है? समर्थित विषयों और चक्र-आधारित आहार मार्गदर्शन के लिए ऑरा से पूछें पर टैप करें।',
+        },
+      },
+      history: {
+        title: { en: 'History & Risk Insights', hi: 'इतिहास और जोखिम अंतर्दृष्टि' },
+        summary: { en: '14-day history and gap insights.', hi: '14-दिवसीय रिकॉर्ड और सुझाव।' },
+        text: {
+          en: 'Explore your food history and 14-day trends to understand recorded nutrition patterns and review helpful dietary gap suggestions.',
+          hi: 'अपने भोजन के इतिहास और 14-दिवसीय रुझानों को देखें ताकि पोषण पैटर्न को समझ सकें और जरूरी सुझावों की समीक्षा कर सकें।',
+        },
+      },
+      streaks: {
+        title: { en: 'Consistency & Streaks', hi: 'निरंतरता और स्ट्रीक' },
+        summary: { en: 'Track daily logging habits.', hi: 'दैनिक भोजन दर्ज करने की निरंतरता।' },
+        text: {
+          en: 'Track your logging consistency and view your active streak heatmap. Use it as a simple, encouraging way to build healthy habits.',
+          hi: 'भोजन दर्ज करने की निरंतरता को ट्रैक करें और अपनी सक्रिय स्ट्रीक देखें। यह स्वस्थ आदतें बनाने का एक सरल और उत्साहवर्धक तरीका है।',
+        },
+      },
+      profile: {
+        title: { en: 'Profile & Cycle Phases', hi: 'प्रोफ़ाइल और चक्र अवस्थाएँ' },
+        summary: { en: 'Personal details and phase targets.', hi: 'व्यक्तिगत विवरण और अवस्था लक्ष्य।' },
+        text: {
+          en: 'Manage your personal details, explore your recorded cycle information, and access the phase-related guidance available in Aura Nutri.',
+          hi: 'अपने व्यक्तिगत विवरण प्रबंधित करें, चक्र की जानकारी देखें और ऑरा न्यूट्री में उपलब्ध अवस्था-आधारित पोषण मार्गदर्शन प्राप्त करें।',
+        },
+      },
+      cheatDay: {
+        title: { en: 'Cheat Day Charms', hi: 'चीट डे आकर्षण' },
+        summary: { en: 'Flexible streak protection.', hi: 'स्ट्रीक सुरक्षा के साथ लचीलापन।' },
+        text: {
+          en: 'Enjoy flexibility in your food choices. Use your weekly cheat charms on off-track days to protect your streak without breaking momentum.',
+          hi: 'अपने खान-पान में बिना किसी तनाव के लचीलापन रखें। अपनी स्ट्रीक को सुरक्षित रखने के लिए साप्ताहिक चीट आकर्षण का उपयोग करें।',
+        },
+      },
+      nutriCard: {
+        title: { en: 'NutriCard Story Snap', hi: 'न्यूट्रीकार्ड स्टोरी स्नैप' },
+        summary: { en: 'Create and share wellness snaps.', hi: 'वेलनेस स्नैप बनाएँ और साझा करें।' },
+        text: {
+          en: 'Create personalized wellness snaps featuring your photo, daily nutrient rings, and streak. Save and share your daily progress image anytime.',
+          hi: 'अपनी तस्वीर, दैनिक पोषण चक्र और स्ट्रीक के साथ व्यक्तिगत वेलनेस स्नैप बनाएँ। अपनी दैनिक प्रगति छवि को कभी भी सहेजें और साझा करें।',
+        },
+      },
+    },
   },
 } as const
