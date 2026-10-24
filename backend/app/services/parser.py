@@ -11,7 +11,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-import pandas as pd
+import pandas as pd  # type: ignore[import-untyped]
 import structlog
 import unicodedata
 from indic_transliteration import sanscript
@@ -27,6 +27,12 @@ from app.services.groq_client import translate_food_names
 from app.services.language_fallback import parse_with_fallback
 
 logger = structlog.get_logger()
+
+
+def _clean_food_name(text: str) -> str:
+    # Remove Devanagari, Urdu, Cyrillic and keep only ASCII (English letters, numbers, spaces)
+    cleaned = re.sub(r"[^\x00-\x7F]+", "", text)
+    return cleaned.strip()
 
 # ---------------------------------------------------------------------------
 # Flags from dish_flags.csv (Gulam's dataset)
@@ -701,9 +707,12 @@ async def parse_meal(db: Session, text: str) -> ParsedMeal:
     raw_items: list[ParsedItem] = []
     for raw in llm_items:
         food_phrase = str(raw.get("food", "")).strip()
-        qty_str = str(raw.get("quantity", "")).strip()
+        food_phrase = _clean_food_name(food_phrase)
         if not food_phrase:
+            # If the phrase was entirely non-English, add a warning and skip
+            warnings.append("Unsupported language detected. Please speak in English or Hinglish.")
             continue
+        qty_str = str(raw.get("quantity", "")).strip()
 
         # If LLM output is non-ASCII (Hindi/Urdu/other script), ask the LLM
         # to translate it to standard English romanized spelling. Do NOT

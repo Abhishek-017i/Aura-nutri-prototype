@@ -201,9 +201,10 @@ async def parse_meal_text(
     logger.info("groq_parse_request", text=text)
 
     def _call(client: Groq) -> Any:
-        return client.chat.completions.create(
+        create_fn: Any = client.chat.completions.create
+        return create_fn(
             model="openai/gpt-oss-20b",
-            messages=messages,  # type: ignore[arg-type]
+            messages=messages,
             max_tokens=512,
             temperature=0.2,
             response_format={"type": "json_object"},
