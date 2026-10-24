@@ -4,45 +4,51 @@
 
 
 :root {
-  /* LIGHT THEME (DO NOT ALTER - EXACT ORIGINAL PRESERVED) */
-  --color-background: 255 245 248;
-  --color-card: 255 255 255;
-  --color-card-secondary: 255 255 255;
-  --color-card-elevated: 255 255 255;
-  --color-surface-light: 255 245 248;
-  --color-surface-light-secondary: 252 228 236;
-  --color-border: 240 221 227;
-  --color-primary: 217 114 142;
-  --color-primary-hover: 194 93 120;
-  --color-text-main: 61 41 46;
-  --color-text-muted: 138 113 118;
-  --color-text-light-primary: 61 41 46;
-  --color-text-light-secondary: 138 113 118;
-  --color-soft-accent: 252 228 236;
-  --color-emerald: 95 138 104;
-  --color-amber: 200 149 61;
-  --color-rose: 201 107 103;
+  /* OFFICIAL AURA NUTRI BRAND PALETTE & SURFACE SYSTEM */
+  /* Brand Colors: Blush (#F9DCE5), Warm Peach (#FBE8DF), Warm Ivory (#FFF5EF), Coral (#E78672), Deep Rose (#C65D75), Espresso (#49343B) */
+  --color-background: 255 245 239;               /* #FFF5EF Warm Ivory default base */
+  --color-card: 255 255 255;                     /* Clean, distinguished card surface */
+  --color-card-secondary: 251 232 223;           /* #FBE8DF Warm Peach secondary surface */
+  --color-card-elevated: 255 252 249;            /* #FFFCF9 Light elevated surface */
+  --color-surface-light: 249 220 229;            /* #F9DCE5 Blush surface highlight */
+  --color-surface-light-secondary: 251 232 223;  /* #FBE8DF Peach surface secondary */
+  --color-border: 242 220 227;                   /* Subtle warm-pink border */
+  --color-primary: 198 93 117;                   /* #C65D75 Deep Rose */
+  --color-primary-hover: 175 75 98;              /* Deeper Rose hover */
+  --color-text-main: 73 52 59;                   /* #49343B Espresso Text */
+  --color-text-muted: 146 117 125;               /* Muted Espresso */
+  --color-text-light-primary: 73 52 59;
+  --color-text-light-secondary: 146 117 125;
+  --color-soft-accent: 251 232 223;              /* #FBE8DF Warm Peach */
+  --color-coral: 231 134 114;                    /* #E78672 Coral Accent */
+  --color-deep-rose: 198 93 117;                 /* #C65D75 Deep Rose */
+  --color-emerald: 118 169 139;                  /* #76A98B Follicular / Wellness Green */
+  --color-amber: 217 164 65;                     /* #D9A441 Ovulatory / Amber */
+  --color-rose: 198 93 117;                      /* #C65D75 Menstrual / Rose */
 
-  --background: #FFF5F8;
+  --background: #FFF5EF;
+  --page-gradient: linear-gradient(180deg, #F9DCE5 0%, #FBE8DF 45%, #FFF5EF 100%);
   --card: #FFFFFF;
-  --card-secondary: #FFFFFF;
-  --card-elevated: #FFFFFF;
-  --surface-light: #FFF5F8;
-  --surface-light-secondary: #FCE4EC;
-  --border: #F0DDE3;
-  --primary: #D9728E;
-  --primary-hover: #C25D78;
-  --text-main: #3D292E;
-  --text-muted: #8A7176;
-  --text-light-primary: #3D292E;
-  --text-light-secondary: #8A7176;
-  --soft-accent: #FCE4EC;
-  --emerald: #5F8A68;
-  --amber: #C8953D;
-  --rose: #C96B67;
+  --card-secondary: #FBE8DF;
+  --card-elevated: #FFFCF9;
+  --surface-light: #F9DCE5;
+  --surface-light-secondary: #FBE8DF;
+  --border: #F2DCE3;
+  --primary: #C65D75;
+  --primary-hover: #AF4B62;
+  --coral: #E78672;
+  --deep-rose: #C65D75;
+  --text-main: #49343B;
+  --text-muted: #92757D;
+  --text-light-primary: #49343B;
+  --text-light-secondary: #92757D;
+  --soft-accent: #FBE8DF;
+  --emerald: #76A98B;
+  --amber: #D9A441;
+  --rose: #C65D75;
   --lavender: #E8DFF5;
 
-  /* Dedicated Nutrient Color Tokens (Healthcare Palette) */
+  /* Preserved Semantic Healthcare Nutrient Mapping (Do not alter) */
   --nutrient-iron: #C43D5B;
   --nutrient-iron-track: #F3D6DE;
   --nutrient-calcium: #4F91E8;
@@ -52,6 +58,12 @@
   --nutrient-b12: #168F83;
   --nutrient-b12-track: #D2EBE6;
   --nutrient-track: #F3D6DE;
+
+  /* Preserved Semantic Cycle Phase Colors (Visual Mapping) */
+  --phase-menstrual: #C65D75;
+  --phase-follicular: #76A98B;
+  --phase-ovulatory: #D9A441;
+  --phase-luteal: #9277B8;
 }
 
 .dark {
@@ -193,6 +205,46 @@
 }
 .dark ::-webkit-scrollbar-thumb:hover {
   background: #423847;
+}
+
+/* ==========================================================================
+   UNIFIED PAGE GRADIENT & SURFACE DEPTH SYSTEM
+   Soft blush pink (#F9DCE5) -> warm peach (#FBE8DF) -> warm ivory (#FFF5EF)
+   ========================================================================== */
+.aura-page-bg {
+  background: linear-gradient(180deg, #F9DCE5 0%, #FBE8DF 45%, #FFF5EF 100%);
+  min-height: 100vh;
+}
+
+.dark .aura-page-bg {
+  background: #121216;
+  min-height: 100vh;
+}
+
+.aura-card-surface {
+  background-color: #FFFFFF;
+  border: 1px solid #F2DCE3;
+  box-shadow: 0 4px 20px -2px rgba(73, 52, 59, 0.05);
+  border-radius: 20px;
+}
+
+.dark .aura-card-surface {
+  background-color: #202027;
+  border-color: #34313D;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+}
+
+.aura-peach-surface {
+  background-color: #FBE8DF;
+  border: 1px solid #F3D0C1;
+  border-radius: 16px;
+}
+
+.dark .aura-peach-surface {
+  background-color: #272129;
+  border-color: #3F333E;
+  border-radius: 16px;
 }
 
 /* ==========================================================================

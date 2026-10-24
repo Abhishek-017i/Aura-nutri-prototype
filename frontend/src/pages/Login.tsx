@@ -103,15 +103,15 @@ export function Login({ onSuccess, onNavigateToSignup }: LoginProps) {
   }
 
   return (
-    <main className="min-h-screen w-full max-w-chat mx-auto px-6 py-12 flex flex-col justify-center bg-background transition-colors">
-      <div className="bg-card border border-border rounded-card p-8 shadow-sm dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl">
+    <main className="min-h-screen w-full flex flex-col justify-center px-4 sm:px-6 py-12 aura-page-bg transition-colors">
+      <div className="w-full max-w-chat mx-auto aura-card-surface p-8 sm:p-10 shadow-sm dark:bg-[#202027] dark:border-[#34313D]">
         <div className="flex items-start justify-between gap-4 mb-2">
           <h1 className="font-display text-3xl font-semibold text-text-main dark:text-[#F5F1F7]">
             {t(copy.login.title, language)}
           </h1>
           <LanguageToggle />
         </div>
-        <p className={`${bodyFontClass(language)} text-lg text-text-muted dark:text-[#C5BECF] mb-8`}>
+        <p className={`${bodyFontClass(language)} text-base text-text-muted dark:text-[#C5BECF] mb-8`}>
           {t(copy.login.subtitle, language)}
         </p>
 
@@ -129,7 +129,7 @@ export function Login({ onSuccess, onNavigateToSignup }: LoginProps) {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
-              className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted dark:bg-[#18181F] dark:border-[#34313D] dark:text-[#F5F1F7] dark:placeholder-[#A39AAA] dark:rounded-xl focus-visible:outline-text-main dark:focus-visible:outline-[#E9A5D1]"
+              className="w-full px-4 py-3 bg-[#FFFBF8] border border-[#F2DCE3] rounded-xl font-sans text-text-main placeholder:text-text-muted/60 dark:bg-[#18181F] dark:border-[#34313D] dark:text-[#F5F1F7] dark:placeholder-[#A39AAA] focus-visible:outline-primary dark:focus-visible:outline-[#E9A5D1]"
               disabled={loading || googleLoading}
               autoComplete="email"
               required
@@ -149,13 +149,13 @@ export function Login({ onSuccess, onNavigateToSignup }: LoginProps) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder={t(copy.login.passwordPlaceholder, language)}
-              className="w-full px-4 py-3 bg-background border border-border rounded-data font-sans text-text-main placeholder:text-text-muted dark:bg-[#18181F] dark:border-[#34313D] dark:text-[#F5F1F7] dark:placeholder-[#A39AAA] dark:rounded-xl focus-visible:outline-text-main dark:focus-visible:outline-[#E9A5D1]"
+              className="w-full px-4 py-3 bg-[#FFFBF8] border border-[#F2DCE3] rounded-xl font-sans text-text-main placeholder:text-text-muted/60 dark:bg-[#18181F] dark:border-[#34313D] dark:text-[#F5F1F7] dark:placeholder-[#A39AAA] focus-visible:outline-primary dark:focus-visible:outline-[#E9A5D1]"
               disabled={loading || googleLoading}
               autoComplete="current-password"
               required
             />
             {error && (
-              <p className={`${bodyFontClass(language)} mt-3 text-sm text-rose bg-rose/10 border border-rose/30 p-2.5 rounded-data dark:bg-[#593443]/40 dark:border-[#F08B9C]/50 dark:text-[#F08B9C] dark:rounded-xl`}>
+              <p className={`${bodyFontClass(language)} mt-3 text-sm text-rose bg-rose/10 border border-rose/30 p-2.5 rounded-xl dark:bg-[#593443]/40 dark:border-[#F08B9C]/50 dark:text-[#F08B9C]`}>
                 {error}
               </p>
             )}
@@ -164,7 +164,7 @@ export function Login({ onSuccess, onNavigateToSignup }: LoginProps) {
           <button
             type="submit"
             disabled={loading || googleLoading || !email.trim() || !password}
-            className={`${bodyFontClass(language)} w-full px-6 py-3 bg-primary hover:bg-primary-hover text-white dark:text-[#121216] dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] rounded-data dark:rounded-xl font-medium disabled:opacity-50 transition-colors`}
+            className={`${bodyFontClass(language)} w-full px-6 py-3.5 bg-primary hover:bg-primary-hover text-white dark:text-[#121216] dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] rounded-xl font-medium shadow-sm disabled:opacity-50 transition-colors`}
           >
             {loading ? t(copy.login.saving, language) : 'Log In'}
           </button>
@@ -172,9 +172,9 @@ export function Login({ onSuccess, onNavigateToSignup }: LoginProps) {
 
         <div className="relative my-6 text-center">
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-border dark:border-[#34313D]" />
+            <div className="w-full border-t border-[#F2DCE3] dark:border-[#34313D]" />
           </div>
-          <span className="relative bg-card dark:bg-[#202027] px-3 text-xs uppercase tracking-wider text-text-muted dark:text-[#C5BECF] font-sans">
+          <span className="relative bg-[#FFFBF8] dark:bg-[#202027] px-3 text-xs uppercase tracking-wider text-text-muted dark:text-[#C5BECF] font-sans">
             or
           </span>
         </div>
@@ -183,7 +183,7 @@ export function Login({ onSuccess, onNavigateToSignup }: LoginProps) {
           type="button"
           onClick={handleGoogleSignIn}
           disabled={loading || googleLoading}
-          className={`${bodyFontClass(language)} w-full px-6 py-3 bg-background border border-border text-text-main rounded-data font-medium flex items-center justify-center gap-2 hover:bg-soft-accent/40 dark:bg-[#272731] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#302D39] dark:rounded-xl disabled:opacity-50 transition-colors`}
+          className={`${bodyFontClass(language)} w-full px-6 py-3 bg-[#FFFBF8] border border-[#F2DCE3] text-text-main rounded-xl font-medium flex items-center justify-center gap-2 hover:bg-soft-accent/30 dark:bg-[#272731] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#302D39] disabled:opacity-50 transition-colors`}
         >
           {googleLoading ? 'Signing in with Google...' : 'Continue with Google'}
         </button>
@@ -199,7 +199,7 @@ export function Login({ onSuccess, onNavigateToSignup }: LoginProps) {
         </div>
       </div>
 
-      <p className={`${bodyFontClass(language)} mt-6 text-xs text-text-muted dark:text-[#A39AAA] text-center`}>
+      <p className={`${bodyFontClass(language)} mt-6 text-xs text-text-muted dark:text-[#A39AAA] text-center max-w-chat mx-auto px-4`}>
         AURA-Nutri provides food intelligence, not medical advice. Always consult a
         qualified physician or registered dietitian before changing your diet or taking
         supplements.

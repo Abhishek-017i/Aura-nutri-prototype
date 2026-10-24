@@ -315,17 +315,20 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
   }
 
   return (
-    <main className="w-full max-w-dashboard mx-auto px-6 py-6 space-y-6">
-      <section className="bg-card border border-border rounded-card p-6 dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl transition-colors">
+    <main className="w-full max-w-dashboard mx-auto px-4 sm:px-6 py-6 space-y-6">
+      <section className="aura-card-surface p-6 transition-all">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="font-display text-lg font-medium text-text-main dark:text-[#F5F1F7]">
-            {t(copy.profile.personal, language)}
-          </h2>
+          <div className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-primary" />
+            <h2 className="font-display text-lg sm:text-xl font-semibold text-text-main dark:text-[#F5F1F7]">
+              {t(copy.profile.personal, language)}
+            </h2>
+          </div>
           {!isEditing && (
             <button
               type="button"
               onClick={() => void handleStartEdit()}
-              className={`${bodyFontClass(language)} px-3 py-1.5 bg-background border border-border rounded-data text-sm font-medium text-text-main hover:bg-card dark:bg-[#272731] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#302D39] dark:rounded-xl transition-colors`}
+              className={`${bodyFontClass(language)} px-3.5 py-1.5 bg-[#FFFBF8] border border-[#F2DCE3] rounded-xl text-sm font-medium text-text-main hover:bg-soft-accent/50 dark:bg-[#272731] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#302D39] shadow-2xs transition-all cursor-pointer`}
             >
               {t(copy.profile.edit, language)}
             </button>
@@ -404,25 +407,25 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
           </form>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="p-3.5 bg-background dark:bg-[#272731] border border-transparent dark:border-[#34313D] rounded-data dark:rounded-xl">
-              <p className={`${bodyFontClass(language)} text-xs text-text-muted dark:text-[#C5BECF] uppercase tracking-wide`}>
+            <div className="p-4 bg-[#FFFBF8] dark:bg-[#272731] border border-[#F2DCE3] dark:border-[#34313D] rounded-xl shadow-2xs">
+              <p className={`${bodyFontClass(language)} text-xs text-text-muted dark:text-[#C5BECF] uppercase tracking-wide font-medium`}>
                 {t(copy.profile.name, language)}
               </p>
-              <p className="font-display text-lg font-medium text-text-main dark:text-[#F5F1F7]">{profile.name}</p>
+              <p className="font-display text-lg font-semibold text-text-main dark:text-[#F5F1F7] mt-1">{profile.name}</p>
             </div>
-            <div className="p-3.5 bg-background dark:bg-[#272731] border border-transparent dark:border-[#34313D] rounded-data dark:rounded-xl">
-              <p className={`${bodyFontClass(language)} text-xs text-text-muted dark:text-[#C5BECF] uppercase tracking-wide`}>
+            <div className="p-4 bg-[#FFFBF8] dark:bg-[#272731] border border-[#F2DCE3] dark:border-[#34313D] rounded-xl shadow-2xs">
+              <p className={`${bodyFontClass(language)} text-xs text-text-muted dark:text-[#C5BECF] uppercase tracking-wide font-medium`}>
                 {t(copy.profile.age, language)}
               </p>
-              <p className="font-display text-lg font-medium text-text-main dark:text-[#F5F1F7]">
+              <p className="font-display text-lg font-semibold text-text-main dark:text-[#F5F1F7] mt-1">
                 {profile.age ?? t(copy.profile.ageNotSet, language)}
               </p>
             </div>
-            <div className="p-3.5 bg-background dark:bg-[#272731] border border-transparent dark:border-[#34313D] rounded-data dark:rounded-xl">
-              <p className={`${bodyFontClass(language)} text-xs text-text-muted dark:text-[#C5BECF] uppercase tracking-wide`}>
+            <div className="p-4 bg-[#FFFBF8] dark:bg-[#272731] border border-[#F2DCE3] dark:border-[#34313D] rounded-xl shadow-2xs">
+              <p className={`${bodyFontClass(language)} text-xs text-text-muted dark:text-[#C5BECF] uppercase tracking-wide font-medium`}>
                 {t(copy.profile.phase, language)}
               </p>
-              <p className="font-display text-lg font-medium text-text-main dark:text-[#F5F1F7] capitalize">
+              <p className="font-display text-lg font-semibold text-text-main dark:text-[#F5F1F7] capitalize mt-1">
                 {t(phaseLabels[profile.phase], language)}
               </p>
             </div>
@@ -430,10 +433,13 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
         )}
       </section>
 
-      <section data-guide="profile-phase" className="bg-card border border-border rounded-card p-6 dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl transition-colors">
-        <h2 className="font-display text-lg font-medium text-text-main dark:text-[#F5F1F7] mb-2">
-          {t(copy.profile.phaseAdjust, language)}
-        </h2>
+      <section data-guide="profile-phase" className="aura-card-surface p-6 transition-all">
+        <div className="flex items-center gap-2 mb-2">
+          <span className="w-2.5 h-2.5 rounded-full bg-coral" />
+          <h2 className="font-display text-lg sm:text-xl font-semibold text-text-main dark:text-[#F5F1F7]">
+            {t(copy.profile.phaseAdjust, language)}
+          </h2>
+        </div>
         <p className={`${bodyFontClass(language)} text-sm text-text-muted dark:text-[#C5BECF] mb-4`}>
           {t(copy.profile.phaseHint, language)}
         </p>
@@ -443,7 +449,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
             type="button"
             onClick={() => void handlePhaseOffset(-2)}
             disabled={phaseUpdating}
-            className="px-3 py-2 bg-background border border-border rounded-data text-sm font-medium text-text-main hover:bg-card dark:bg-[#272731] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#302D39] dark:rounded-xl disabled:opacity-50 transition-colors"
+            className="px-3.5 py-2 bg-[#FFFBF8] border border-[#F2DCE3] rounded-xl text-sm font-medium text-text-main hover:bg-soft-accent/50 dark:bg-[#272731] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#302D39] disabled:opacity-50 transition-all shadow-2xs cursor-pointer"
           >
             {t(copy.profile.shiftBack2, language)}
           </button>
@@ -485,7 +491,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
             value={profile.phase}
             onChange={(e) => void handleSetPhase(e.target.value as Phase)}
             disabled={phaseUpdating}
-            className="px-3 py-2 bg-background border border-border rounded-data font-sans text-text-main dark:bg-[#18181F] dark:border-[#34313D] dark:text-[#F5F1F7] dark:rounded-xl disabled:opacity-50"
+            className="px-4 py-2.5 bg-[#FFFBF8] border border-[#F2DCE3] rounded-xl font-sans text-text-main dark:bg-[#18181F] dark:border-[#34313D] dark:text-[#F5F1F7] dark:rounded-xl disabled:opacity-50"
           >
             {PHASE_OPTIONS.map((option) => (
               <option key={option} value={option}>
@@ -505,10 +511,13 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
         )}
       </section>
 
-      <section data-guide="streak-section" className="bg-card border border-border rounded-card p-6 dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl transition-colors">
-        <h2 className="font-display text-lg font-medium text-text-main dark:text-[#F5F1F7] mb-4">
-          {t(copy.profile.streakTitle, language)}
-        </h2>
+      <section data-guide="streak-section" className="aura-card-surface p-6 transition-all">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="w-2.5 h-2.5 rounded-full bg-primary" />
+          <h2 className="font-display text-lg sm:text-xl font-semibold text-text-main dark:text-[#F5F1F7]">
+            {t(copy.profile.streakTitle, language)}
+          </h2>
+        </div>
         <div className="mb-6">
           <StreakHeatmap logs={logs} language={language} />
         </div>
@@ -518,7 +527,7 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
           type="button"
           onClick={() => void handleUseCheat()}
           disabled={cheatLoading || !cheat?.available}
-          className={`${bodyFontClass(language)} px-4 py-2 bg-primary hover:bg-primary-hover text-white dark:text-[#121216] dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] rounded-data dark:rounded-xl font-medium disabled:opacity-50 transition-colors`}
+          className={`${bodyFontClass(language)} px-5 py-2.5 bg-primary hover:bg-primary-hover text-white dark:text-[#121216] dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] rounded-xl font-medium disabled:opacity-50 transition-all shadow-2xs cursor-pointer`}
         >
           {cheatLoading ? t(copy.profile.updating, language) : t(copy.profile.useCheatDay, language)}
         </button>
@@ -528,8 +537,8 @@ export function Profile({ user, refreshTrigger, onPhaseChange, onSetupComplete }
         )}
       </section>
 
-      <section className="bg-card border border-border rounded-card p-6 dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl transition-colors">
-        <h2 className="font-display text-lg font-medium text-text-main dark:text-[#F5F1F7] mb-2">
+      <section className="aura-card-surface p-6 transition-all">
+        <h2 className="font-display text-lg sm:text-xl font-semibold text-text-main dark:text-[#F5F1F7] mb-2">
           {t(copy.dashboard.logout, language)}
         </h2>
         <p className={`${bodyFontClass(language)} text-sm text-text-muted dark:text-[#C5BECF]`}>

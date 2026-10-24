@@ -123,7 +123,7 @@ export function MealPreview({
         ))}
       </ul>
 
-      <div className={`${bodyFontClass(language)} flex flex-wrap gap-4 text-sm text-text-muted dark:text-[#C5BECF] border-t border-border dark:border-[#34313D] pt-3`}>
+      <div className={`${bodyFontClass(language)} flex flex-wrap gap-4 text-sm font-medium text-text-muted dark:text-[#C5BECF] border-t border-[#F2DCE3] dark:border-[#34313D] pt-3`}>
         <span>{Math.round(tTotals.iron)}mg {t(nutrientLabels.iron, language)}</span>
         <span>
           {Math.round(tTotals.calcium)}mg {t(nutrientLabels.calcium, language)}
@@ -136,12 +136,12 @@ export function MealPreview({
         </span>
       </div>
 
-      <div className="flex flex-col sm:flex-row gap-3">
+      <div className="flex flex-col sm:flex-row gap-3 pt-2">
         <button
           type="button"
           onClick={onConfirm}
           disabled={isLoading || !canConfirm}
-          className={`${bodyFontClass(language)} flex-1 px-4 py-3 bg-primary hover:bg-primary-hover text-white dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] dark:text-[#121216] rounded-data dark:rounded-xl text-base font-medium disabled:opacity-50 transition-colors`}
+          className={`${bodyFontClass(language)} flex-1 px-5 py-3 bg-primary hover:bg-primary-hover text-white dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] dark:text-[#121216] rounded-2xl text-base font-semibold disabled:opacity-50 transition-all shadow-sm cursor-pointer`}
         >
           {isLoading
             ? t(copy.dashboard.logging, language)
@@ -151,7 +151,7 @@ export function MealPreview({
           type="button"
           onClick={onCancel}
           disabled={isLoading}
-          className={`${bodyFontClass(language)} flex-1 px-4 py-3 bg-card border border-border text-text-main rounded-data dark:rounded-xl font-medium disabled:opacity-50 hover:bg-background dark:bg-[#272731] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#302D39] transition-colors`}
+          className={`${bodyFontClass(language)} flex-1 px-5 py-3 bg-[#FFFBF8] border border-[#F2DCE3] text-text-main rounded-2xl font-medium disabled:opacity-50 hover:bg-soft-accent/50 dark:bg-[#272731] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#302D39] transition-all cursor-pointer`}
         >
           {t(copy.dashboard.cancel, language)}
         </button>

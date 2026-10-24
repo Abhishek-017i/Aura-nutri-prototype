@@ -104,7 +104,7 @@ export function SnapFeed({ user, onOpenNutriCard }: SnapFeedProps) {
 
         {/* Action buttons */}
         <div className="flex items-center gap-3">
-          <label className="cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-card border border-border text-text-main text-xs font-semibold hover:bg-soft-accent dark:bg-[#202027] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#272731] shadow-sm transition-all">
+          <label className="cursor-pointer inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/90 border border-[#F2DCE3] text-text-main text-xs font-semibold hover:bg-soft-accent/60 dark:bg-[#202027] dark:border-[#34313D] dark:text-[#F5F1F7] dark:hover:bg-[#272731] shadow-2xs transition-all">
             <IconCamera className="w-4 h-4 text-primary dark:text-[#E9A5D1]" />
             <span>Upload Photo</span>
             <input
@@ -119,7 +119,7 @@ export function SnapFeed({ user, onOpenNutriCard }: SnapFeedProps) {
             type="button"
             onClick={handleDownload}
             disabled={saving}
-            className={`${bodyFontClass(language)} inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] dark:text-[#121216] shadow-sm disabled:opacity-50 transition-all`}
+            className={`${bodyFontClass(language)} inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary hover:bg-primary-hover text-white text-xs font-semibold dark:bg-[#E9A5D1] dark:hover:bg-[#CE8BB8] dark:text-[#121216] shadow-sm disabled:opacity-50 transition-all cursor-pointer`}
           >
             <span>{saving ? 'Saving...' : 'Save Card'}</span>
           </button>

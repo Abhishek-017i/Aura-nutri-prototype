@@ -27,28 +27,31 @@ export function NutrientHistograms({ data, targets }: NutrientHistogramsProps) {
   const isDark = theme === 'dark'
 
   return (
-    <section data-guide="seven-day-trends" className="bg-card border border-border rounded-card p-6 dark:bg-[#202027] dark:border-[#34313D] dark:rounded-2xl transition-colors">
+    <section data-guide="seven-day-trends" className="aura-card-surface p-6 transition-all">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="font-display text-lg font-medium text-text-main dark:text-[#F5F1F7]">
-          {t(copy.dashboard.weeklyTrendsTitle, language)}
-        </h2>
+        <div className="flex items-center gap-2">
+          <span className="w-2.5 h-2.5 rounded-full bg-coral" />
+          <h2 className="font-display text-lg sm:text-xl font-semibold text-text-main dark:text-[#F5F1F7]">
+            {t(copy.dashboard.weeklyTrendsTitle, language)}
+          </h2>
+        </div>
       </div>
 
       {data.length === 0 || data.every((d) => Object.values(d.values).every((v) => v === 0)) ? (
-        <div className="border border-dashed border-border dark:border-[#34313D] dark:bg-[#272731]/30 rounded-data p-6 text-center">
+        <div className="border border-dashed border-[#F2DCE3] dark:border-[#34313D] dark:bg-[#272731]/30 rounded-2xl p-6 text-center">
           <p className={`${bodyFontClass(language)} text-text-muted dark:text-[#C5BECF]`}>
             {t(copy.dashboard.weeklyEmpty, language)}
           </p>
         </div>
       ) : (
-        <div className="space-y-6">
+        <div className="space-y-5">
           {NUTRIENT_ORDER.map((nutrient) => {
             const target = targets.get(nutrient) ?? 0
             const nutrientColor = getNutrientColor(nutrient, isDark)
             return (
               <div
                 key={nutrient}
-                className="p-4 rounded-xl bg-background/50 dark:bg-[#272731] border border-[#F3D9E1]/60 dark:border-[#34313D]/60 dark:rounded-2xl transition-all"
+                className="p-4 sm:p-5 rounded-2xl bg-[#FFFBF8] dark:bg-[#272731] border border-[#F2DCE3] dark:border-[#34313D] transition-all shadow-2xs"
               >
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2">
