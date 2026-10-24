@@ -5,6 +5,7 @@ import { bodyFontClass, copy, t } from '../lib/copy.ts'
 import { useLanguage } from '../lib/useLanguage.ts'
 import type { Dashboard, UserProfile } from '../lib/types.ts'
 import { IconCamera, IconFire, IconLeaf } from '../components/icons.tsx'
+import { getNutrientColor } from '../lib/nutrientColors.ts'
 
 interface SnapFeedProps {
   user: UserProfile
@@ -205,8 +206,7 @@ export function SnapFeed({ user, onOpenNutriCard }: SnapFeedProps) {
                         Math.round((currentVal / targetVal) * 100),
                         100,
                       )
-                      const isComplete = percentVal >= 100
-                      const ringColor = isComplete ? '#78CBAA' : '#E9A5D1'
+                      const ringColor = getNutrientColor(key, true)
                       const trackColor = 'rgba(255,255,255,0.18)'
 
                       const size = 56

@@ -47,11 +47,11 @@ export default {
 
         white: '#FFFFFF',
 
-        // Nutrient accents (retained identity colors)
-        iron: '#B7410E',
-        calcium: '#2F6B5E',
-        vitd: '#C98A12',
-        b12: '#6B4FA0',
+        // Nutrient accents (Healthcare palette)
+        iron: '#C65D75',
+        calcium: '#5486C7',
+        vitd: '#D99A28',
+        b12: '#319B91',
       },
       fontFamily: {
         display: ['Fraunces', 'Georgia', 'Times New Roman', 'serif'],

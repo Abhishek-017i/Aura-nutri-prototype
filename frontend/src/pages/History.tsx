@@ -4,6 +4,8 @@ import { bodyFontClass, copy, formatCopy, t } from '../lib/copy.ts'
 import { formatDateLong, formatTime, localDateString } from '../lib/dates.ts'
 import { getRiskScore, listLogs, HTTPError } from '../lib/api.ts'
 import { useLanguage } from '../lib/useLanguage.ts'
+import { useTheme } from '../contexts/useTheme.ts'
+import { getNutrientColor } from '../lib/nutrientColors.ts'
 import type { Language } from '../lib/language.tsx'
 import type { MealLog, NutrientRisk, RiskScore } from '../lib/types.ts'
 
@@ -59,6 +61,8 @@ function nutrientValue(log: MealLog, key: string): number {
 
 export function History({ user, refreshTrigger }: HistoryProps) {
   const { language } = useLanguage()
+  const { theme } = useTheme()
+  const isDark = theme === 'dark'
   const [riskScore, setRiskScore] = useState<RiskScore | null>(null)
   const [logs, setLogs] = useState<MealLog[]>([])
   const [loading, setLoading] = useState(true)
@@ -248,15 +252,23 @@ export function History({ user, refreshTrigger }: HistoryProps) {
                           {formatTime(log.logged_at, language)} · {Math.round(log.qty_g)}g
                         </p>
                       </div>
-                      <div className="flex items-center gap-3 flex-shrink-0">
+                      <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
                         {NUTRIENT_ORDER.map((key) => {
                           const value = nutrientValue(log, key)
+                          const nutrientColor = getNutrientColor(key, isDark)
                           return (
-                            <div key={key} className="text-center min-w-[44px]">
-                              <p className="font-sans text-[10px] uppercase text-text-muted dark:text-[#A39AAA] font-medium">
-                                {t(copy.history[NUTRIENT_COPY_KEYS[key]], language)}
-                              </p>
-                              <p className="font-display text-sm font-medium text-text-main dark:text-[#F5F1F7]">
+                            <div key={key} className="text-center min-w-[42px] px-1 py-0.5 rounded bg-black/[0.02] dark:bg-white/[0.02]">
+                              <div className="flex items-center justify-center gap-1 mb-0.5">
+                                <span
+                                  className="w-1.5 h-1.5 rounded-full shrink-0"
+                                  style={{ backgroundColor: nutrientColor }}
+                                  aria-hidden="true"
+                                />
+                                <p className="font-sans text-[10px] uppercase text-text-muted dark:text-[#A39AAA] font-medium leading-none">
+                                  {t(copy.history[NUTRIENT_COPY_KEYS[key]], language)}
+                                </p>
+                              </div>
+                              <p className="font-display text-sm font-medium text-text-main dark:text-[#F5F1F7] leading-tight">
                                 {Math.round(value)}
                               </p>
                             </div>

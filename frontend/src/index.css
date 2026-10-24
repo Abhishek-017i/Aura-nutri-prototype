@@ -41,6 +41,13 @@
   --amber: #C8953D;
   --rose: #C96B67;
   --lavender: #E8DFF5;
+
+  /* Dedicated Nutrient Color Tokens (Healthcare Palette) */
+  --nutrient-iron: #C65D75;
+  --nutrient-calcium: #5486C7;
+  --nutrient-vitd: #D99A28;
+  --nutrient-b12: #319B91;
+  --nutrient-track: #F0E1E6;
 }
 
 .dark {
@@ -111,6 +118,13 @@
   --rose: #F08B9C;
   --lavender: #C6B8F2;
   --nutrient-secondary: #B8C8F4;
+
+  /* Dedicated Nutrient Color Tokens (Dark mode high-contrast healthcare palette) */
+  --nutrient-iron: #E07A92;
+  --nutrient-calcium: #6BA0E5;
+  --nutrient-vitd: #F0B342;
+  --nutrient-b12: #45B5AA;
+  --nutrient-track: #2B2936;
 }
 
 @layer base {
